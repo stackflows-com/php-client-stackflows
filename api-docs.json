@@ -1,0 +1,249 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Stackflows Gateway API",
+        "description": "Stackflows Gateway API",
+        "contact": {
+            "email": "you@your-company.com"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "https://virtserver.swaggerhub.com/Stackflows/Gateway/1.0.0",
+            "description": "SwaggerHub API Auto Mocking"
+        },
+        {
+            "url": "https://gateway.stackflows.com/",
+            "description": "Stackflows Gateway Server"
+        }
+    ],
+    "paths": {
+        "/api/service-tasks/pending": {
+            "post": {
+                "tags": [
+                    "service task"
+                ],
+                "summary": "Fetch and Lock Service Tasks",
+                "description": "Fetches and locks a specific number of external tasks for execution by a worker. ",
+                "operationId": "getPending",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/GetPendingServiceTaskRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Request successful.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/ServiceTask"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/signal": {
+            "post": {
+                "tags": [
+                    "signal"
+                ],
+                "summary": "Throw a Signal",
+                "description": "Throw a Signal",
+                "operationId": "throwSignal",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ThrowSignalRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "204": {
+                        "description": "Request successful."
+                    }
+                }
+            }
+        },
+        "/api/tasks": {
+            "get": {
+                "tags": [
+                    "user task"
+                ],
+                "summary": "Get a list of tasks",
+                "description": "Queries for tasks that fulfill a given filter.",
+                "operationId": "getList",
+                "parameters": [
+                    {
+                        "name": "engine",
+                        "in": "query",
+                        "description": "Engine uuid",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Request successful.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/UserTask"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "GetPendingServiceTaskRequest": {
+                "properties": {
+                    "engine": {
+                        "description": "The engine model uuid.",
+                        "type": "string"
+                    },
+                    "limit": {
+                        "description": "The maximum number of tasks to return.",
+                        "type": "integer"
+                    },
+                    "topics": {
+                        "description": "A list of topics for which external tasks should be fetched.",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "type": "object"
+            },
+            "ThrowSignalRequest": {
+                "properties": {
+                    "engine": {
+                        "description": "The engine model uuid.",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "The name of the signal to deliver.",
+                        "type": "string"
+                    },
+                    "variables": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Variable"
+                        },
+                        "nullable": true
+                    }
+                },
+                "type": "object"
+            },
+            "ServiceTask": {
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "processDefinitionKey": {
+                        "type": "string"
+                    },
+                    "variables": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Variable"
+                        },
+                        "nullable": true
+                    }
+                },
+                "type": "object"
+            },
+            "UserTask": {
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "assignee": {
+                        "type": "string"
+                    },
+                    "owner": {
+                        "type": "string"
+                    },
+                    "taskDefinitionKey": {
+                        "type": "string"
+                    },
+                    "variables": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Variable"
+                        },
+                        "nullable": true
+                    }
+                },
+                "type": "object"
+            },
+            "Variable": {
+                "properties": {
+                    "name": {
+                        "description": "The variable's name.",
+                        "type": "string"
+                    },
+                    "type": {
+                        "description": "The variable's type.",
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "value": {
+                        "description": "The variable's value.",
+                        "type": "object"
+                    },
+                    "valueInfo": {
+                        "description": "TA JSON object containing additional, value-type-dependent properties.",
+                        "type": "object",
+                        "additionalProperties": true
+                    }
+                },
+                "type": "object"
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "signal"
+        },
+        {
+            "name": "user task"
+        },
+        {
+            "name": "service task"
+        }
+    ],
+    "security": [
+        []
+    ]
+}
