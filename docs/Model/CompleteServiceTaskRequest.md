@@ -1,12 +1,10 @@
-# # GetPendingServiceTaskRequest
+# # CompleteServiceTaskRequest
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **engine** | **string** | The engine model uuid. | [optional]
-**limit** | **int** | The maximum number of tasks to return. | [optional]
-**lockDuration** | **int** | The duration to lock the tasks for in milliseconds. | [optional]
-**topics** | **string[]** | A list of topics for which tasks should be fetched. | [optional]
+**variables** | [**\Stackflows\GatewayApi\Model\Variable[]**](Variable.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

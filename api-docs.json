@@ -58,6 +58,42 @@
                 }
             }
         },
+        "/api/service-tasks/{id}/complete": {
+            "post": {
+                "tags": [
+                    "service task"
+                ],
+                "summary": "Complete Service Task",
+                "description": "Completes an service task by id and updates variables.",
+                "operationId": "complete",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Task id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CompleteServiceTaskRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "204": {
+                        "description": "Request successful."
+                    }
+                }
+            }
+        },
         "/api/signal": {
             "post": {
                 "tags": [
@@ -122,6 +158,22 @@
     },
     "components": {
         "schemas": {
+            "CompleteServiceTaskRequest": {
+                "properties": {
+                    "engine": {
+                        "description": "The engine model uuid.",
+                        "type": "string"
+                    },
+                    "variables": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Variable"
+                        },
+                        "nullable": true
+                    }
+                },
+                "type": "object"
+            },
             "GetPendingServiceTaskRequest": {
                 "properties": {
                     "engine": {
@@ -132,8 +184,12 @@
                         "description": "The maximum number of tasks to return.",
                         "type": "integer"
                     },
+                    "lockDuration": {
+                        "description": "The duration to lock the tasks for in milliseconds.",
+                        "type": "integer"
+                    },
                     "topics": {
-                        "description": "A list of topics for which external tasks should be fetched.",
+                        "description": "A list of topics for which tasks should be fetched.",
                         "type": "array",
                         "items": {
                             "type": "string"

@@ -1,6 +1,6 @@
 <?php
 /**
- * GetPendingServiceTaskRequest
+ * CompleteServiceTaskRequest
  *
  * PHP version 7.2
  *
@@ -33,7 +33,7 @@ use \ArrayAccess;
 use \Stackflows\GatewayApi\ObjectSerializer;
 
 /**
- * GetPendingServiceTaskRequest Class Doc Comment
+ * CompleteServiceTaskRequest Class Doc Comment
  *
  * @category Class
  * @package  Stackflows\GatewayApi
@@ -43,7 +43,7 @@ use \Stackflows\GatewayApi\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class GetPendingServiceTaskRequest implements ModelInterface, ArrayAccess, \JsonSerializable
+class CompleteServiceTaskRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -52,7 +52,7 @@ class GetPendingServiceTaskRequest implements ModelInterface, ArrayAccess, \Json
       *
       * @var string
       */
-    protected static $openAPIModelName = 'GetPendingServiceTaskRequest';
+    protected static $openAPIModelName = 'CompleteServiceTaskRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -61,9 +61,7 @@ class GetPendingServiceTaskRequest implements ModelInterface, ArrayAccess, \Json
       */
     protected static $openAPITypes = [
         'engine' => 'string',
-        'limit' => 'int',
-        'lockDuration' => 'int',
-        'topics' => 'string[]'
+        'variables' => '\Stackflows\GatewayApi\Model\Variable[]'
     ];
 
     /**
@@ -75,9 +73,7 @@ class GetPendingServiceTaskRequest implements ModelInterface, ArrayAccess, \Json
       */
     protected static $openAPIFormats = [
         'engine' => null,
-        'limit' => null,
-        'lockDuration' => null,
-        'topics' => null
+        'variables' => null
     ];
 
     /**
@@ -108,9 +104,7 @@ class GetPendingServiceTaskRequest implements ModelInterface, ArrayAccess, \Json
      */
     protected static $attributeMap = [
         'engine' => 'engine',
-        'limit' => 'limit',
-        'lockDuration' => 'lockDuration',
-        'topics' => 'topics'
+        'variables' => 'variables'
     ];
 
     /**
@@ -120,9 +114,7 @@ class GetPendingServiceTaskRequest implements ModelInterface, ArrayAccess, \Json
      */
     protected static $setters = [
         'engine' => 'setEngine',
-        'limit' => 'setLimit',
-        'lockDuration' => 'setLockDuration',
-        'topics' => 'setTopics'
+        'variables' => 'setVariables'
     ];
 
     /**
@@ -132,9 +124,7 @@ class GetPendingServiceTaskRequest implements ModelInterface, ArrayAccess, \Json
      */
     protected static $getters = [
         'engine' => 'getEngine',
-        'limit' => 'getLimit',
-        'lockDuration' => 'getLockDuration',
-        'topics' => 'getTopics'
+        'variables' => 'getVariables'
     ];
 
     /**
@@ -195,9 +185,7 @@ class GetPendingServiceTaskRequest implements ModelInterface, ArrayAccess, \Json
     public function __construct(array $data = null)
     {
         $this->container['engine'] = $data['engine'] ?? null;
-        $this->container['limit'] = $data['limit'] ?? null;
-        $this->container['lockDuration'] = $data['lockDuration'] ?? null;
-        $this->container['topics'] = $data['topics'] ?? null;
+        $this->container['variables'] = $data['variables'] ?? null;
     }
 
     /**
@@ -249,73 +237,25 @@ class GetPendingServiceTaskRequest implements ModelInterface, ArrayAccess, \Json
     }
 
     /**
-     * Gets limit
+     * Gets variables
      *
-     * @return int|null
+     * @return \Stackflows\GatewayApi\Model\Variable[]|null
      */
-    public function getLimit()
+    public function getVariables()
     {
-        return $this->container['limit'];
+        return $this->container['variables'];
     }
 
     /**
-     * Sets limit
+     * Sets variables
      *
-     * @param int|null $limit The maximum number of tasks to return.
+     * @param \Stackflows\GatewayApi\Model\Variable[]|null $variables variables
      *
      * @return self
      */
-    public function setLimit($limit)
+    public function setVariables($variables)
     {
-        $this->container['limit'] = $limit;
-
-        return $this;
-    }
-
-    /**
-     * Gets lockDuration
-     *
-     * @return int|null
-     */
-    public function getLockDuration()
-    {
-        return $this->container['lockDuration'];
-    }
-
-    /**
-     * Sets lockDuration
-     *
-     * @param int|null $lockDuration The duration to lock the tasks for in milliseconds.
-     *
-     * @return self
-     */
-    public function setLockDuration($lockDuration)
-    {
-        $this->container['lockDuration'] = $lockDuration;
-
-        return $this;
-    }
-
-    /**
-     * Gets topics
-     *
-     * @return string[]|null
-     */
-    public function getTopics()
-    {
-        return $this->container['topics'];
-    }
-
-    /**
-     * Sets topics
-     *
-     * @param string[]|null $topics A list of topics for which tasks should be fetched.
-     *
-     * @return self
-     */
-    public function setTopics($topics)
-    {
-        $this->container['topics'] = $topics;
+        $this->container['variables'] = $variables;
 
         return $this;
     }
