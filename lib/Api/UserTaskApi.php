@@ -116,6 +116,242 @@ class UserTaskApi
     }
 
     /**
+     * Operation completeTask
+     *
+     * Complete User Task
+     *
+     * @param  string $id Task id (required)
+     * @param  \Stackflows\GatewayApi\Model\CompleteUserTaskRequest $completeUserTaskRequest completeUserTaskRequest (required)
+     *
+     * @throws \Stackflows\GatewayApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return void
+     */
+    public function completeTask($id, $completeUserTaskRequest)
+    {
+        $this->completeTaskWithHttpInfo($id, $completeUserTaskRequest);
+    }
+
+    /**
+     * Operation completeTaskWithHttpInfo
+     *
+     * Complete User Task
+     *
+     * @param  string $id Task id (required)
+     * @param  \Stackflows\GatewayApi\Model\CompleteUserTaskRequest $completeUserTaskRequest (required)
+     *
+     * @throws \Stackflows\GatewayApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function completeTaskWithHttpInfo($id, $completeUserTaskRequest)
+    {
+        $request = $this->completeTaskRequest($id, $completeUserTaskRequest);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return [null, $statusCode, $response->getHeaders()];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation completeTaskAsync
+     *
+     * Complete User Task
+     *
+     * @param  string $id Task id (required)
+     * @param  \Stackflows\GatewayApi\Model\CompleteUserTaskRequest $completeUserTaskRequest (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function completeTaskAsync($id, $completeUserTaskRequest)
+    {
+        return $this->completeTaskAsyncWithHttpInfo($id, $completeUserTaskRequest)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation completeTaskAsyncWithHttpInfo
+     *
+     * Complete User Task
+     *
+     * @param  string $id Task id (required)
+     * @param  \Stackflows\GatewayApi\Model\CompleteUserTaskRequest $completeUserTaskRequest (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function completeTaskAsyncWithHttpInfo($id, $completeUserTaskRequest)
+    {
+        $returnType = '';
+        $request = $this->completeTaskRequest($id, $completeUserTaskRequest);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'completeTask'
+     *
+     * @param  string $id Task id (required)
+     * @param  \Stackflows\GatewayApi\Model\CompleteUserTaskRequest $completeUserTaskRequest (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function completeTaskRequest($id, $completeUserTaskRequest)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null || (is_array($id) && count($id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $id when calling completeTask'
+            );
+        }
+        // verify the required parameter 'completeUserTaskRequest' is set
+        if ($completeUserTaskRequest === null || (is_array($completeUserTaskRequest) && count($completeUserTaskRequest) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $completeUserTaskRequest when calling completeTask'
+            );
+        }
+
+        $resourcePath = '/api/tasks/{id}/complete';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'id' . '}',
+                ObjectSerializer::toPathValue($id),
+                $resourcePath
+            );
+        }
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                []
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                [],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($completeUserTaskRequest)) {
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($completeUserTaskRequest));
+            } else {
+                $httpBody = $completeUserTaskRequest;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation getList
      *
      * Get a list of tasks

@@ -154,11 +154,63 @@
                     }
                 }
             }
+        },
+        "/api/tasks/{id}/complete": {
+            "post": {
+                "tags": [
+                    "user task"
+                ],
+                "summary": "Complete User Task",
+                "description": "Completes an user task by id and updates variables.",
+                "operationId": "completeTask",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Task id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CompleteUserTaskRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "204": {
+                        "description": "Request successful."
+                    }
+                }
+            }
         }
     },
     "components": {
         "schemas": {
             "CompleteServiceTaskRequest": {
+                "properties": {
+                    "engine": {
+                        "description": "The engine model uuid.",
+                        "type": "string"
+                    },
+                    "variables": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Variable"
+                        },
+                        "nullable": true
+                    }
+                },
+                "type": "object"
+            },
+            "CompleteUserTaskRequest": {
                 "properties": {
                     "engine": {
                         "description": "The engine model uuid.",

@@ -61,12 +61,16 @@ All URIs are relative to *https://virtserver.swaggerhub.com/Stackflows/Gateway/1
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*ServiceTaskApi* | [**complete**](docs/Api/ServiceTaskApi.md#complete) | **POST** /api/service-tasks/{id}/complete | Complete Service Task
 *ServiceTaskApi* | [**getPending**](docs/Api/ServiceTaskApi.md#getpending) | **POST** /api/service-tasks/pending | Fetch and Lock Service Tasks
 *SignalApi* | [**throwSignal**](docs/Api/SignalApi.md#throwsignal) | **POST** /api/signal | Throw a Signal
+*UserTaskApi* | [**completeTask**](docs/Api/UserTaskApi.md#completetask) | **POST** /api/tasks/{id}/complete | Complete User Task
 *UserTaskApi* | [**getList**](docs/Api/UserTaskApi.md#getlist) | **GET** /api/tasks | Get a list of tasks
 
 ## Models
 
+- [CompleteServiceTaskRequest](docs/Model/CompleteServiceTaskRequest.md)
+- [CompleteUserTaskRequest](docs/Model/CompleteUserTaskRequest.md)
 - [GetPendingServiceTaskRequest](docs/Model/GetPendingServiceTaskRequest.md)
 - [ServiceTask](docs/Model/ServiceTask.md)
 - [ThrowSignalRequest](docs/Model/ThrowSignalRequest.md)
