@@ -68,7 +68,7 @@ No authorization required
 ## `getList()`
 
 ```php
-getList($engine): \Stackflows\GatewayApi\Model\UserTask[]
+getList($engine, $createdAfter): \Stackflows\GatewayApi\Model\UserTask[]
 ```
 
 Get a list of tasks
@@ -89,9 +89,10 @@ $apiInstance = new Stackflows\GatewayApi\Api\UserTaskApi(
     new GuzzleHttp\Client()
 );
 $engine = 'engine_example'; // string | Engine uuid
+$createdAfter = 2017-07-21T17:32:28Z; // \DateTime | Restrict to tasks that were created after the given date
 
 try {
-    $result = $apiInstance->getList($engine);
+    $result = $apiInstance->getList($engine, $createdAfter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UserTaskApi->getList: ', $e->getMessage(), PHP_EOL;
@@ -103,6 +104,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **engine** | **string**| Engine uuid |
+ **createdAfter** | **\DateTime**| Restrict to tasks that were created after the given date | [optional]
 
 ### Return type
 

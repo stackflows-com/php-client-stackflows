@@ -357,14 +357,15 @@ class UserTaskApi
      * Get a list of tasks
      *
      * @param  string $engine Engine uuid (required)
+     * @param  \DateTime $createdAfter Restrict to tasks that were created after the given date (optional)
      *
      * @throws \Stackflows\GatewayApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\GatewayApi\Model\UserTask[]
      */
-    public function getList($engine)
+    public function getList($engine, $createdAfter = null)
     {
-        list($response) = $this->getListWithHttpInfo($engine);
+        list($response) = $this->getListWithHttpInfo($engine, $createdAfter);
         return $response;
     }
 
@@ -374,14 +375,15 @@ class UserTaskApi
      * Get a list of tasks
      *
      * @param  string $engine Engine uuid (required)
+     * @param  \DateTime $createdAfter Restrict to tasks that were created after the given date (optional)
      *
      * @throws \Stackflows\GatewayApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\GatewayApi\Model\UserTask[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getListWithHttpInfo($engine)
+    public function getListWithHttpInfo($engine, $createdAfter = null)
     {
-        $request = $this->getListRequest($engine);
+        $request = $this->getListRequest($engine, $createdAfter);
 
         try {
             $options = $this->createHttpClientOption();
@@ -460,13 +462,14 @@ class UserTaskApi
      * Get a list of tasks
      *
      * @param  string $engine Engine uuid (required)
+     * @param  \DateTime $createdAfter Restrict to tasks that were created after the given date (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getListAsync($engine)
+    public function getListAsync($engine, $createdAfter = null)
     {
-        return $this->getListAsyncWithHttpInfo($engine)
+        return $this->getListAsyncWithHttpInfo($engine, $createdAfter)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -480,14 +483,15 @@ class UserTaskApi
      * Get a list of tasks
      *
      * @param  string $engine Engine uuid (required)
+     * @param  \DateTime $createdAfter Restrict to tasks that were created after the given date (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getListAsyncWithHttpInfo($engine)
+    public function getListAsyncWithHttpInfo($engine, $createdAfter = null)
     {
         $returnType = '\Stackflows\GatewayApi\Model\UserTask[]';
-        $request = $this->getListRequest($engine);
+        $request = $this->getListRequest($engine, $createdAfter);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -526,11 +530,12 @@ class UserTaskApi
      * Create request for operation 'getList'
      *
      * @param  string $engine Engine uuid (required)
+     * @param  \DateTime $createdAfter Restrict to tasks that were created after the given date (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getListRequest($engine)
+    public function getListRequest($engine, $createdAfter = null)
     {
         // verify the required parameter 'engine' is set
         if ($engine === null || (is_array($engine) && count($engine) === 0)) {
@@ -555,6 +560,17 @@ class UserTaskApi
             }
             else {
                 $queryParams['engine'] = $engine;
+            }
+        }
+        // query params
+        if ($createdAfter !== null) {
+            if('form' === 'form' && is_array($createdAfter)) {
+                foreach($createdAfter as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            }
+            else {
+                $queryParams['createdAfter'] = $createdAfter;
             }
         }
 
