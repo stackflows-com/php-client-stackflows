@@ -315,6 +315,10 @@
                     "taskDefinitionKey": {
                         "type": "string"
                     },
+                    "createdAt": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
                     "variables": {
                         "type": "array",
                         "items": {

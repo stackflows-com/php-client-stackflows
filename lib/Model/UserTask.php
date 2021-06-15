@@ -65,6 +65,7 @@ class UserTask implements ModelInterface, ArrayAccess, \JsonSerializable
         'assignee' => 'string',
         'owner' => 'string',
         'taskDefinitionKey' => 'string',
+        'createdAt' => '\DateTime',
         'variables' => '\Stackflows\GatewayApi\Model\Variable[]'
     ];
 
@@ -81,6 +82,7 @@ class UserTask implements ModelInterface, ArrayAccess, \JsonSerializable
         'assignee' => null,
         'owner' => null,
         'taskDefinitionKey' => null,
+        'createdAt' => 'date-time',
         'variables' => null
     ];
 
@@ -116,6 +118,7 @@ class UserTask implements ModelInterface, ArrayAccess, \JsonSerializable
         'assignee' => 'assignee',
         'owner' => 'owner',
         'taskDefinitionKey' => 'taskDefinitionKey',
+        'createdAt' => 'createdAt',
         'variables' => 'variables'
     ];
 
@@ -130,6 +133,7 @@ class UserTask implements ModelInterface, ArrayAccess, \JsonSerializable
         'assignee' => 'setAssignee',
         'owner' => 'setOwner',
         'taskDefinitionKey' => 'setTaskDefinitionKey',
+        'createdAt' => 'setCreatedAt',
         'variables' => 'setVariables'
     ];
 
@@ -144,6 +148,7 @@ class UserTask implements ModelInterface, ArrayAccess, \JsonSerializable
         'assignee' => 'getAssignee',
         'owner' => 'getOwner',
         'taskDefinitionKey' => 'getTaskDefinitionKey',
+        'createdAt' => 'getCreatedAt',
         'variables' => 'getVariables'
     ];
 
@@ -209,6 +214,7 @@ class UserTask implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['assignee'] = $data['assignee'] ?? null;
         $this->container['owner'] = $data['owner'] ?? null;
         $this->container['taskDefinitionKey'] = $data['taskDefinitionKey'] ?? null;
+        $this->container['createdAt'] = $data['createdAt'] ?? null;
         $this->container['variables'] = $data['variables'] ?? null;
     }
 
@@ -352,6 +358,30 @@ class UserTask implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setTaskDefinitionKey($taskDefinitionKey)
     {
         $this->container['taskDefinitionKey'] = $taskDefinitionKey;
+
+        return $this;
+    }
+
+    /**
+     * Gets createdAt
+     *
+     * @return \DateTime|null
+     */
+    public function getCreatedAt()
+    {
+        return $this->container['createdAt'];
+    }
+
+    /**
+     * Sets createdAt
+     *
+     * @param \DateTime|null $createdAt createdAt
+     *
+     * @return self
+     */
+    public function setCreatedAt($createdAt)
+    {
+        $this->container['createdAt'] = $createdAt;
 
         return $this;
     }
