@@ -89,7 +89,7 @@ $apiInstance = new Stackflows\GatewayApi\Api\UserTaskApi(
     new GuzzleHttp\Client()
 );
 $engine = 'engine_example'; // string | Engine uuid
-$createdAfter = 2017-07-21T17:32:28Z; // \DateTime | Restrict to tasks that were created after the given date
+$createdAfter = 2017-07-21T17:32:28Z; // string | Restrict to tasks that were created after the given date. Format ISO8601
 
 try {
     $result = $apiInstance->getList($engine, $createdAfter);
@@ -104,7 +104,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **engine** | **string**| Engine uuid |
- **createdAfter** | **\DateTime**| Restrict to tasks that were created after the given date | [optional]
+ **createdAfter** | **string**| Restrict to tasks that were created after the given date. Format ISO8601 | [optional]
 
 ### Return type
 

@@ -357,7 +357,7 @@ class UserTaskApi
      * Get a list of tasks
      *
      * @param  string $engine Engine uuid (required)
-     * @param  \DateTime $createdAfter Restrict to tasks that were created after the given date (optional)
+     * @param  string $createdAfter Restrict to tasks that were created after the given date. Format ISO8601 (optional)
      *
      * @throws \Stackflows\GatewayApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -375,7 +375,7 @@ class UserTaskApi
      * Get a list of tasks
      *
      * @param  string $engine Engine uuid (required)
-     * @param  \DateTime $createdAfter Restrict to tasks that were created after the given date (optional)
+     * @param  string $createdAfter Restrict to tasks that were created after the given date. Format ISO8601 (optional)
      *
      * @throws \Stackflows\GatewayApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -462,7 +462,7 @@ class UserTaskApi
      * Get a list of tasks
      *
      * @param  string $engine Engine uuid (required)
-     * @param  \DateTime $createdAfter Restrict to tasks that were created after the given date (optional)
+     * @param  string $createdAfter Restrict to tasks that were created after the given date. Format ISO8601 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -483,7 +483,7 @@ class UserTaskApi
      * Get a list of tasks
      *
      * @param  string $engine Engine uuid (required)
-     * @param  \DateTime $createdAfter Restrict to tasks that were created after the given date (optional)
+     * @param  string $createdAfter Restrict to tasks that were created after the given date. Format ISO8601 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -530,7 +530,7 @@ class UserTaskApi
      * Create request for operation 'getList'
      *
      * @param  string $engine Engine uuid (required)
-     * @param  \DateTime $createdAfter Restrict to tasks that were created after the given date (optional)
+     * @param  string $createdAfter Restrict to tasks that were created after the given date. Format ISO8601 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

@@ -140,10 +140,9 @@
                     {
                         "name": "createdAfter",
                         "in": "query",
-                        "description": "Restrict to tasks that were created after the given date",
+                        "description": "Restrict to tasks that were created after the given date. Format ISO8601",
                         "schema": {
-                            "type": "string",
-                            "format": "date-time"
+                            "type": "string"
                         },
                         "example": "2017-07-21T17:32:28Z"
                     }
