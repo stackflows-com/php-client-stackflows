@@ -23,6 +23,31 @@
         }
     ],
     "paths": {
+        "/api/start": {
+            "post": {
+                "tags": [
+                    "process"
+                ],
+                "summary": "Start the process",
+                "description": "Start the process",
+                "operationId": "startProcess",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/StartProcessRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "204": {
+                        "description": "Request successful."
+                    }
+                }
+            }
+        },
         "/api/service-tasks/pending": {
             "post": {
                 "tags": [
@@ -210,11 +235,11 @@
                         "type": "string"
                     },
                     "variables": {
+                        "nullable": true,
                         "type": "array",
                         "items": {
                             "$ref": "#/components/schemas/Variable"
-                        },
-                        "nullable": true
+                        }
                     }
                 },
                 "type": "object"
@@ -226,11 +251,11 @@
                         "type": "string"
                     },
                     "variables": {
+                        "nullable": true,
                         "type": "array",
                         "items": {
                             "$ref": "#/components/schemas/Variable"
-                        },
-                        "nullable": true
+                        }
                     }
                 },
                 "type": "object"
@@ -259,6 +284,26 @@
                 },
                 "type": "object"
             },
+            "StartProcessRequest": {
+                "properties": {
+                    "engine": {
+                        "description": "The engine model uuid.",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "The process name.",
+                        "type": "string"
+                    },
+                    "variables": {
+                        "nullable": true,
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Variable"
+                        }
+                    }
+                },
+                "type": "object"
+            },
             "ThrowSignalRequest": {
                 "properties": {
                     "engine": {
@@ -270,11 +315,11 @@
                         "type": "string"
                     },
                     "variables": {
+                        "nullable": true,
                         "type": "array",
                         "items": {
                             "$ref": "#/components/schemas/Variable"
-                        },
-                        "nullable": true
+                        }
                     }
                 },
                 "type": "object"
@@ -288,11 +333,11 @@
                         "type": "string"
                     },
                     "variables": {
+                        "nullable": true,
                         "type": "array",
                         "items": {
                             "$ref": "#/components/schemas/Variable"
-                        },
-                        "nullable": true
+                        }
                     }
                 },
                 "type": "object"
@@ -319,11 +364,11 @@
                         "format": "date-time"
                     },
                     "variables": {
+                        "nullable": true,
                         "type": "array",
                         "items": {
                             "$ref": "#/components/schemas/Variable"
-                        },
-                        "nullable": true
+                        }
                     }
                 },
                 "type": "object"
@@ -335,9 +380,9 @@
                         "type": "string"
                     },
                     "type": {
+                        "nullable": true,
                         "description": "The variable's type.",
-                        "type": "string",
-                        "nullable": true
+                        "type": "string"
                     },
                     "value": {
                         "description": "The variable's value.",
