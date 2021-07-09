@@ -24,11 +24,15 @@ Start the process
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer (JWT) authorization: bearerAuth
+$config = Stackflows\GatewayApi\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Stackflows\GatewayApi\Api\ProcessApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $startProcessRequest = new \Stackflows\GatewayApi\Model\StartProcessRequest(); // \Stackflows\GatewayApi\Model\StartProcessRequest
 
@@ -51,7 +55,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../../README.md#bearerAuth)
 
 ### HTTP request headers
 

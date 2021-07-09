@@ -25,11 +25,15 @@ Completes an service task by id and updates variables.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer (JWT) authorization: bearerAuth
+$config = Stackflows\GatewayApi\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Stackflows\GatewayApi\Api\ServiceTaskApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $id = 'id_example'; // string | Task id
 $completeServiceTaskRequest = new \Stackflows\GatewayApi\Model\CompleteServiceTaskRequest(); // \Stackflows\GatewayApi\Model\CompleteServiceTaskRequest
@@ -54,7 +58,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -82,11 +86,15 @@ Fetches and locks a specific number of external tasks for execution by a worker.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer (JWT) authorization: bearerAuth
+$config = Stackflows\GatewayApi\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Stackflows\GatewayApi\Api\ServiceTaskApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $getPendingServiceTaskRequest = new \Stackflows\GatewayApi\Model\GetPendingServiceTaskRequest(); // \Stackflows\GatewayApi\Model\GetPendingServiceTaskRequest
 
@@ -110,7 +118,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../../README.md#bearerAuth)
 
 ### HTTP request headers
 

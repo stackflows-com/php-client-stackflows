@@ -443,8 +443,12 @@ class Configuration
                 "description" => "SwaggerHub API Auto Mocking",
             ],
             [
-                "url" => "https://gateway.stackflows.com",
+                "url" => "http://gateway.stackflows.com",
                 "description" => "Stackflows Gateway Server",
+            ],
+            [
+                "url" => "http://gateway.test",
+                "description" => "Dev Gateway Server",
             ]
         ];
     }

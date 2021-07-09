@@ -38,19 +38,22 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
+// Configure Bearer (JWT) authorization: bearerAuth
+$config = Stackflows\GatewayApi\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$serviceTask = new Stackflows\GatewayApi\Api\ServiceTaskApi(
+
+$apiInstance = new Stackflows\GatewayApi\Api\ProcessApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
-$getPendingServiceTaskRequest = new \Stackflows\GatewayApi\Model\GetPendingServiceTaskRequest(); // \Stackflows\GatewayApi\Model\GetPendingServiceTaskRequest
+$startProcessRequest = new \Stackflows\GatewayApi\Model\StartProcessRequest(); // \Stackflows\GatewayApi\Model\StartProcessRequest
 
 try {
-    $result = $serviceTask->getPending($getPendingServiceTaskRequest);
-    print_r($result);
+    $apiInstance->startProcess($startProcessRequest);
 } catch (Exception $e) {
-    echo 'Exception when calling ServiceTaskApi->getPending: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ProcessApi->startProcess: ', $e->getMessage(), PHP_EOL;
 }
 
 ```
@@ -80,7 +83,11 @@ Class | Method | HTTP request | Description
 - [Variable](docs/Model/Variable.md)
 
 ## Authorization
-All endpoints do not require authorization.
+
+### bearerAuth
+
+- **Type**: Bearer authentication (JWT)
+
 ## Tests
 
 To run the tests, use:
