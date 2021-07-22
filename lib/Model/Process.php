@@ -1,6 +1,6 @@
 <?php
 /**
- * StartProcessRequest
+ * Process
  *
  * PHP version 7.2
  *
@@ -33,7 +33,7 @@ use \ArrayAccess;
 use \Stackflows\GatewayApi\ObjectSerializer;
 
 /**
- * StartProcessRequest Class Doc Comment
+ * Process Class Doc Comment
  *
  * @category Class
  * @package  Stackflows\GatewayApi
@@ -43,7 +43,7 @@ use \Stackflows\GatewayApi\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class StartProcessRequest implements ModelInterface, ArrayAccess, \JsonSerializable
+class Process implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -52,7 +52,7 @@ class StartProcessRequest implements ModelInterface, ArrayAccess, \JsonSerializa
       *
       * @var string
       */
-    protected static $openAPIModelName = 'StartProcessRequest';
+    protected static $openAPIModelName = 'Process';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -60,9 +60,10 @@ class StartProcessRequest implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
-        'instances' => 'string[]',
+        'id' => 'string',
         'name' => 'string',
-        'variables' => '\Stackflows\GatewayApi\Model\Variable[]'
+        'definitionName' => 'string',
+        'instanceId' => 'string'
     ];
 
     /**
@@ -73,9 +74,10 @@ class StartProcessRequest implements ModelInterface, ArrayAccess, \JsonSerializa
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'instances' => null,
+        'id' => null,
         'name' => null,
-        'variables' => null
+        'definitionName' => null,
+        'instanceId' => null
     ];
 
     /**
@@ -105,9 +107,10 @@ class StartProcessRequest implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $attributeMap = [
-        'instances' => 'instances',
+        'id' => 'id',
         'name' => 'name',
-        'variables' => 'variables'
+        'definitionName' => 'definitionName',
+        'instanceId' => 'instanceId'
     ];
 
     /**
@@ -116,9 +119,10 @@ class StartProcessRequest implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $setters = [
-        'instances' => 'setInstances',
+        'id' => 'setId',
         'name' => 'setName',
-        'variables' => 'setVariables'
+        'definitionName' => 'setDefinitionName',
+        'instanceId' => 'setInstanceId'
     ];
 
     /**
@@ -127,9 +131,10 @@ class StartProcessRequest implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $getters = [
-        'instances' => 'getInstances',
+        'id' => 'getId',
         'name' => 'getName',
-        'variables' => 'getVariables'
+        'definitionName' => 'getDefinitionName',
+        'instanceId' => 'getInstanceId'
     ];
 
     /**
@@ -189,9 +194,10 @@ class StartProcessRequest implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function __construct(array $data = null)
     {
-        $this->container['instances'] = $data['instances'] ?? null;
+        $this->container['id'] = $data['id'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
-        $this->container['variables'] = $data['variables'] ?? null;
+        $this->container['definitionName'] = $data['definitionName'] ?? null;
+        $this->container['instanceId'] = $data['instanceId'] ?? null;
     }
 
     /**
@@ -219,25 +225,25 @@ class StartProcessRequest implements ModelInterface, ArrayAccess, \JsonSerializa
 
 
     /**
-     * Gets instances
+     * Gets id
      *
-     * @return string[]|null
+     * @return string|null
      */
-    public function getInstances()
+    public function getId()
     {
-        return $this->container['instances'];
+        return $this->container['id'];
     }
 
     /**
-     * Sets instances
+     * Sets id
      *
-     * @param string[]|null $instances instances
+     * @param string|null $id id
      *
      * @return self
      */
-    public function setInstances($instances)
+    public function setId($id)
     {
-        $this->container['instances'] = $instances;
+        $this->container['id'] = $id;
 
         return $this;
     }
@@ -255,7 +261,7 @@ class StartProcessRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets name
      *
-     * @param string|null $name The process name.
+     * @param string|null $name name
      *
      * @return self
      */
@@ -267,25 +273,49 @@ class StartProcessRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     }
 
     /**
-     * Gets variables
+     * Gets definitionName
      *
-     * @return \Stackflows\GatewayApi\Model\Variable[]|null
+     * @return string|null
      */
-    public function getVariables()
+    public function getDefinitionName()
     {
-        return $this->container['variables'];
+        return $this->container['definitionName'];
     }
 
     /**
-     * Sets variables
+     * Sets definitionName
      *
-     * @param \Stackflows\GatewayApi\Model\Variable[]|null $variables variables
+     * @param string|null $definitionName definitionName
      *
      * @return self
      */
-    public function setVariables($variables)
+    public function setDefinitionName($definitionName)
     {
-        $this->container['variables'] = $variables;
+        $this->container['definitionName'] = $definitionName;
+
+        return $this;
+    }
+
+    /**
+     * Gets instanceId
+     *
+     * @return string|null
+     */
+    public function getInstanceId()
+    {
+        return $this->container['instanceId'];
+    }
+
+    /**
+     * Sets instanceId
+     *
+     * @param string|null $instanceId instanceId
+     *
+     * @return self
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->container['instanceId'] = $instanceId;
 
         return $this;
     }

@@ -116,6 +116,290 @@ class ProcessApi
     }
 
     /**
+     * Operation createProcess
+     *
+     * Create a process
+     *
+     * @param  string $name The name for the deployment to be created. (optional)
+     * @param  string[] $instances instances (optional)
+     * @param  \SplFileObject $notation The binary data to create the deployment resource. (optional)
+     *
+     * @throws \Stackflows\GatewayApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Stackflows\GatewayApi\Model\Process[]
+     */
+    public function createProcess($name = null, $instances = null, $notation = null)
+    {
+        list($response) = $this->createProcessWithHttpInfo($name, $instances, $notation);
+        return $response;
+    }
+
+    /**
+     * Operation createProcessWithHttpInfo
+     *
+     * Create a process
+     *
+     * @param  string $name The name for the deployment to be created. (optional)
+     * @param  string[] $instances (optional)
+     * @param  \SplFileObject $notation The binary data to create the deployment resource. (optional)
+     *
+     * @throws \Stackflows\GatewayApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Stackflows\GatewayApi\Model\Process[], HTTP status code, HTTP response headers (array of strings)
+     */
+    public function createProcessWithHttpInfo($name = null, $instances = null, $notation = null)
+    {
+        $request = $this->createProcessRequest($name, $instances, $notation);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\Stackflows\GatewayApi\Model\Process[]' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Stackflows\GatewayApi\Model\Process[]', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\Stackflows\GatewayApi\Model\Process[]';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Stackflows\GatewayApi\Model\Process[]',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation createProcessAsync
+     *
+     * Create a process
+     *
+     * @param  string $name The name for the deployment to be created. (optional)
+     * @param  string[] $instances (optional)
+     * @param  \SplFileObject $notation The binary data to create the deployment resource. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function createProcessAsync($name = null, $instances = null, $notation = null)
+    {
+        return $this->createProcessAsyncWithHttpInfo($name, $instances, $notation)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation createProcessAsyncWithHttpInfo
+     *
+     * Create a process
+     *
+     * @param  string $name The name for the deployment to be created. (optional)
+     * @param  string[] $instances (optional)
+     * @param  \SplFileObject $notation The binary data to create the deployment resource. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function createProcessAsyncWithHttpInfo($name = null, $instances = null, $notation = null)
+    {
+        $returnType = '\Stackflows\GatewayApi\Model\Process[]';
+        $request = $this->createProcessRequest($name, $instances, $notation);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'createProcess'
+     *
+     * @param  string $name The name for the deployment to be created. (optional)
+     * @param  string[] $instances (optional)
+     * @param  \SplFileObject $notation The binary data to create the deployment resource. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function createProcessRequest($name = null, $instances = null, $notation = null)
+    {
+
+        $resourcePath = '/api/processes';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+        // form params
+        if ($name !== null) {
+            $formParams['name'] = ObjectSerializer::toFormValue($name);
+        }
+        // form params
+        if ($instances !== null) {
+            $formParams['instances'] = ObjectSerializer::toFormValue($instances);
+        }
+        // form params
+        if ($notation !== null) {
+            $multipart = true;
+            $formParams['notation'] = [];
+            $paramFiles = is_array($notation) ? $notation : [$notation];
+            foreach ($paramFiles as $paramFile) {
+                $formParams['notation'][] = \GuzzleHttp\Psr7\Utils::tryFopen(
+                    ObjectSerializer::toFormValue($paramFile),
+                    'rb'
+                );
+            }
+        }
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['multipart/form-data']
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }
+
+        // this endpoint requires Bearer (JWT) authentication (access token)
+        if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation startProcess
      *
      * Start the process
@@ -258,7 +542,7 @@ class ProcessApi
             );
         }
 
-        $resourcePath = '/api/start';
+        $resourcePath = '/api/processes/start';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

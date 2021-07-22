@@ -27,7 +27,7 @@
         }
     ],
     "paths": {
-        "/api/start": {
+        "/api/processes/start": {
             "post": {
                 "tags": [
                     "process"
@@ -48,6 +48,41 @@
                 "responses": {
                     "204": {
                         "description": "Request successful."
+                    }
+                }
+            }
+        },
+        "/api/processes": {
+            "post": {
+                "tags": [
+                    "process"
+                ],
+                "summary": "Create a process",
+                "description": "Create a process",
+                "operationId": "createProcess",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "$ref": "#/components/schemas/StoreProcessRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Request successful.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Process"
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -290,9 +325,12 @@
             },
             "StartProcessRequest": {
                 "properties": {
-                    "engine": {
-                        "description": "The engine model uuid.",
-                        "type": "string"
+                    "instances": {
+                        "nullable": false,
+                        "type": "array",
+                        "items": {
+                            "$ref": "string"
+                        }
                     },
                     "name": {
                         "description": "The process name.",
@@ -304,6 +342,28 @@
                         "items": {
                             "$ref": "#/components/schemas/Variable"
                         }
+                    }
+                },
+                "type": "object"
+            },
+            "StoreProcessRequest": {
+                "properties": {
+                    "name": {
+                        "description": "The name for the deployment to be created.",
+                        "type": "string"
+                    },
+                    "instances": {
+                        "nullable": false,
+                        "type": "array",
+                        "items": {
+                            "$ref": "string"
+                        }
+                    },
+                    "notation": {
+                        "nullable": false,
+                        "description": "The binary data to create the deployment resource.",
+                        "type": "string",
+                        "format": "binary"
                     }
                 },
                 "type": "object"
@@ -324,6 +384,23 @@
                         "items": {
                             "$ref": "#/components/schemas/Variable"
                         }
+                    }
+                },
+                "type": "object"
+            },
+            "Process": {
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "definitionName": {
+                        "type": "string"
+                    },
+                    "instanceId": {
+                        "type": "string"
                     }
                 },
                 "type": "object"
