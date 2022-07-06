@@ -1,6 +1,6 @@
 <?php
 /**
- * AuthenticatedUserOrganizationsApiTest
+ * InstallationApiTest
  * PHP version 7.4
  *
  * @category Class
@@ -33,14 +33,14 @@ use \Stackflows\Clients\Stackflows\ObjectSerializer;
 use PHPUnit\Framework\TestCase;
 
 /**
- * AuthenticatedUserOrganizationsApiTest Class Doc Comment
+ * InstallationApiTest Class Doc Comment
  *
  * @category Class
  * @package  Stackflows\Clients\Stackflows
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class AuthenticatedUserOrganizationsApiTest extends TestCase
+class InstallationApiTest extends TestCase
 {
 
     /**
@@ -72,60 +72,96 @@ class AuthenticatedUserOrganizationsApiTest extends TestCase
     }
 
     /**
-     * Test case for authUserOrganizationsDelete
+     * Test case for enginesCreate
      *
-     * Delete.
+     * Create Engine.
      *
      */
-    public function testAuthUserOrganizationsDelete()
+    public function testEnginesCreate()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for authUserOrganizationsList
+     * Test case for enginesDelete
      *
-     * List.
+     * Delete Engine.
      *
      */
-    public function testAuthUserOrganizationsList()
+    public function testEnginesDelete()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for authUserOrganizationsShow
+     * Test case for enginesShow
      *
-     * View.
+     * View Engine.
      *
      */
-    public function testAuthUserOrganizationsShow()
+    public function testEnginesShow()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for authUserOrganizationsStore
+     * Test case for enginesUpdate
      *
-     * Create.
+     * Update Engine.
      *
      */
-    public function testAuthUserOrganizationsStore()
+    public function testEnginesUpdate()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for authUserOrganizationsUpdate
+     * Test case for environmentsCreate
      *
-     * Update.
+     * Create Environment.
      *
      */
-    public function testAuthUserOrganizationsUpdate()
+    public function testEnvironmentsCreate()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for environmentsDeleteBulk
+     *
+     * Delete Environments.
+     *
+     */
+    public function testEnvironmentsDeleteBulk()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for environmentsList
+     *
+     * List Environments.
+     *
+     */
+    public function testEnvironmentsList()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for getEngine
+     *
+     * List Engines.
+     *
+     */
+    public function testGetEngine()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

@@ -50,125 +50,124 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new Stackflows\Clients\Stackflows\Api\AuthenticatedEnvironmentBusinessModelCommentsApi(
+$apiInstance = new Stackflows\Clients\Stackflows\Api\AuthenticationApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$diagram = 03b764f0-fc1f-11ec-9893-6df708406f80; // string | 
-$authBusinessModelDiagramsCommentsCreateRequest = new \Stackflows\Clients\Stackflows\Model\AuthBusinessModelDiagramsCommentsCreateRequest(); // \Stackflows\Clients\Stackflows\Model\AuthBusinessModelDiagramsCommentsCreateRequest
+$authLoginRequest = new \Stackflows\Clients\Stackflows\Model\AuthLoginRequest(); // \Stackflows\Clients\Stackflows\Model\AuthLoginRequest
 $contentType = application/json; // string | 
 $accept = application/json; // string | 
 
 try {
-    $result = $apiInstance->authBusinessModelDiagramsCommentsCreate($diagram, $authBusinessModelDiagramsCommentsCreateRequest, $contentType, $accept);
+    $result = $apiInstance->authLogin($authLoginRequest, $contentType, $accept);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling AuthenticatedEnvironmentBusinessModelCommentsApi->authBusinessModelDiagramsCommentsCreate: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AuthenticationApi->authLogin: ', $e->getMessage(), PHP_EOL;
 }
 
 ```
 
 ## API Endpoints
 
-All URIs are relative to *http://localhost:8081*
+All URIs are relative to *https://stage-backoffice.stackflows.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*AuthenticatedEnvironmentBusinessModelCommentsApi* | [**authBusinessModelDiagramsCommentsCreate**](docs/Api/AuthenticatedEnvironmentBusinessModelCommentsApi.md#authbusinessmodeldiagramscommentscreate) | **POST** /api/v2/auth/environment/business-model-diagrams/{diagram}/comments | Create
-*AuthenticatedEnvironmentBusinessModelCommentsApi* | [**authBusinessModelDiagramsCommentsDelete**](docs/Api/AuthenticatedEnvironmentBusinessModelCommentsApi.md#authbusinessmodeldiagramscommentsdelete) | **DELETE** /api/v2/auth/environment/business-model-diagrams/{diagram}/comments/{comment} | Delete
-*AuthenticatedEnvironmentBusinessModelCommentsApi* | [**authBusinessModelDiagramsCommentsList**](docs/Api/AuthenticatedEnvironmentBusinessModelCommentsApi.md#authbusinessmodeldiagramscommentslist) | **GET** /api/v2/auth/environment/business-model-diagrams/{diagram}/comments | List
-*AuthenticatedEnvironmentBusinessModelDiagramsApi* | [**authBusinessModelDiagramsCreate**](docs/Api/AuthenticatedEnvironmentBusinessModelDiagramsApi.md#authbusinessmodeldiagramscreate) | **POST** /api/v2/auth/environment/business-model-diagrams | Create
-*AuthenticatedEnvironmentBusinessModelDiagramsApi* | [**authBusinessModelDiagramsDelete**](docs/Api/AuthenticatedEnvironmentBusinessModelDiagramsApi.md#authbusinessmodeldiagramsdelete) | **DELETE** /api/v2/auth/environment/business-model-diagrams/{diagram} | Delete
-*AuthenticatedEnvironmentBusinessModelDiagramsApi* | [**authBusinessModelDiagramsList**](docs/Api/AuthenticatedEnvironmentBusinessModelDiagramsApi.md#authbusinessmodeldiagramslist) | **GET** /api/v2/auth/environment/business-model-diagrams | List
-*AuthenticatedEnvironmentBusinessModelDiagramsApi* | [**authBusinessModelDiagramsPublish**](docs/Api/AuthenticatedEnvironmentBusinessModelDiagramsApi.md#authbusinessmodeldiagramspublish) | **POST** /api/v2/auth/environment/business-model-diagrams/{diagram}/publish | Publish
-*AuthenticatedEnvironmentBusinessModelDiagramsApi* | [**authBusinessModelDiagramsShow**](docs/Api/AuthenticatedEnvironmentBusinessModelDiagramsApi.md#authbusinessmodeldiagramsshow) | **GET** /api/v2/auth/environment/business-model-diagrams/{diagram} | View
-*AuthenticatedEnvironmentBusinessModelsApi* | [**authBusinessModelsCommentsList**](docs/Api/AuthenticatedEnvironmentBusinessModelsApi.md#authbusinessmodelscommentslist) | **GET** /api/v2/auth/environment/business-models/{model}/comments | List Comments
-*AuthenticatedEnvironmentBusinessModelsApi* | [**authBusinessModelsCreate**](docs/Api/AuthenticatedEnvironmentBusinessModelsApi.md#authbusinessmodelscreate) | **POST** /api/v2/auth/environment/business-models | Create
-*AuthenticatedEnvironmentBusinessModelsApi* | [**authBusinessModelsDelete**](docs/Api/AuthenticatedEnvironmentBusinessModelsApi.md#authbusinessmodelsdelete) | **DELETE** /api/v2/auth/environment/business-models/{model} | Delete
-*AuthenticatedEnvironmentBusinessModelsApi* | [**authBusinessModelsList**](docs/Api/AuthenticatedEnvironmentBusinessModelsApi.md#authbusinessmodelslist) | **GET** /api/v2/auth/environment/business-models | List
-*AuthenticatedEnvironmentBusinessModelsApi* | [**authBusinessModelsShow**](docs/Api/AuthenticatedEnvironmentBusinessModelsApi.md#authbusinessmodelsshow) | **GET** /api/v2/auth/environment/business-models/{model} | View
-*AuthenticatedEnvironmentServiceTasksApi* | [**authServiceTasksLock**](docs/Api/AuthenticatedEnvironmentServiceTasksApi.md#authservicetaskslock) | **POST** /api/v2/auth/environment/service-tasks | Lock
-*AuthenticatedEnvironmentServiceTasksApi* | [**authServiceTasksServe**](docs/Api/AuthenticatedEnvironmentServiceTasksApi.md#authservicetasksserve) | **POST** /api/v2/auth/environment/service-tasks/{reference}/serve | Serve
-*AuthenticatedEnvironmentServiceTasksApi* | [**authServiceTasksUnlock**](docs/Api/AuthenticatedEnvironmentServiceTasksApi.md#authservicetasksunlock) | **POST** /api/v2/auth/environment/service-tasks/{reference}/unlock | Unlock
-*AuthenticatedEnvironmentTaggedBusinessModelsApi* | [**authTaggedBusinessModelsStart**](docs/Api/AuthenticatedEnvironmentTaggedBusinessModelsApi.md#authtaggedbusinessmodelsstart) | **POST** /api/v2/auth/environment/tagged/business-process-models | Starts business processes by tags
-*AuthenticatedEnvironmentUserTasksApi* | [**authUserTasksComplete**](docs/Api/AuthenticatedEnvironmentUserTasksApi.md#authusertaskscomplete) | **POST** /api/v2/auth/environment/user-tasks/{id}/complete | Complete
-*AuthenticatedEnvironmentUserTasksApi* | [**authUserTasksErrorize**](docs/Api/AuthenticatedEnvironmentUserTasksApi.md#authusertaskserrorize) | **POST** /api/v2/auth/environment/user-tasks/{id}/errorize | Errorize
-*AuthenticatedEnvironmentUserTasksApi* | [**authUserTasksEscalate**](docs/Api/AuthenticatedEnvironmentUserTasksApi.md#authusertasksescalate) | **POST** /api/v2/auth/environment/user-tasks/{id}/escalate | Escalate
-*AuthenticatedEnvironmentUserTasksApi* | [**authUserTasksIndex**](docs/Api/AuthenticatedEnvironmentUserTasksApi.md#authusertasksindex) | **GET** /api/v2/auth/environment/user-tasks | List
-*AuthenticatedUserApi* | [**authUserMe**](docs/Api/AuthenticatedUserApi.md#authuserme) | **GET** /api/v2/auth/user | Me
-*AuthenticatedUserApi* | [**authUserRevoke**](docs/Api/AuthenticatedUserApi.md#authuserrevoke) | **DELETE** /api/v2/auth/user/tokens | Revoke all tokens
-*AuthenticatedUserApi* | [**authUserUpdate**](docs/Api/AuthenticatedUserApi.md#authuserupdate) | **PUT** /api/v2/auth/user | Update
-*AuthenticatedUserOrganizationsApi* | [**authUserOrganizationsDelete**](docs/Api/AuthenticatedUserOrganizationsApi.md#authuserorganizationsdelete) | **DELETE** /api/v2/auth/user/organizations/{organization} | Delete
-*AuthenticatedUserOrganizationsApi* | [**authUserOrganizationsList**](docs/Api/AuthenticatedUserOrganizationsApi.md#authuserorganizationslist) | **GET** /api/v2/auth/user/organizations | List
-*AuthenticatedUserOrganizationsApi* | [**authUserOrganizationsShow**](docs/Api/AuthenticatedUserOrganizationsApi.md#authuserorganizationsshow) | **GET** /api/v2/auth/user/organizations/{id} | View
-*AuthenticatedUserOrganizationsApi* | [**authUserOrganizationsStore**](docs/Api/AuthenticatedUserOrganizationsApi.md#authuserorganizationsstore) | **POST** /api/v2/auth/user/organizations | Create
-*AuthenticatedUserOrganizationsApi* | [**authUserOrganizationsUpdate**](docs/Api/AuthenticatedUserOrganizationsApi.md#authuserorganizationsupdate) | **PUT** /api/v2/auth/user/organizations/{id} | Update
 *AuthenticationApi* | [**authLogin**](docs/Api/AuthenticationApi.md#authlogin) | **POST** /api/v2/auth/login | Login
 *AuthenticationApi* | [**authRegister**](docs/Api/AuthenticationApi.md#authregister) | **POST** /api/v2/auth/register | Register
 *AuthenticationApi* | [**authResetPassword**](docs/Api/AuthenticationApi.md#authresetpassword) | **POST** /api/v2/auth/reset-password | Restore password
-*BusinessModelCommentsApi* | [**businessModelDiagramsCommentsCreate**](docs/Api/BusinessModelCommentsApi.md#businessmodeldiagramscommentscreate) | **POST** /api/v2/business-model-diagrams/{diagram}/comments | Create
-*BusinessModelCommentsApi* | [**businessModelDiagramsCommentsDelete**](docs/Api/BusinessModelCommentsApi.md#businessmodeldiagramscommentsdelete) | **DELETE** /api/v2/business-model-diagrams/{diagram}/comments/{comment} | Delete
-*BusinessModelCommentsApi* | [**businessModelDiagramsCommentsList**](docs/Api/BusinessModelCommentsApi.md#businessmodeldiagramscommentslist) | **GET** /api/v2/business-model-diagrams/{diagram}/comments | List
-*BusinessModelDiagramsApi* | [**businessModelDiagramsCreate**](docs/Api/BusinessModelDiagramsApi.md#businessmodeldiagramscreate) | **POST** /api/v2/business-model-diagrams | Create
-*BusinessModelDiagramsApi* | [**businessModelDiagramsDelete**](docs/Api/BusinessModelDiagramsApi.md#businessmodeldiagramsdelete) | **DELETE** /api/v2/business-model-diagrams/{diagram} | Delete
-*BusinessModelDiagramsApi* | [**businessModelDiagramsList**](docs/Api/BusinessModelDiagramsApi.md#businessmodeldiagramslist) | **GET** /api/v2/business-model-diagrams | List
-*BusinessModelDiagramsApi* | [**businessModelDiagramsPublish**](docs/Api/BusinessModelDiagramsApi.md#businessmodeldiagramspublish) | **POST** /api/v2/business-model-diagrams/{diagram}/publish | Publish
-*BusinessModelDiagramsApi* | [**businessModelDiagramsShow**](docs/Api/BusinessModelDiagramsApi.md#businessmodeldiagramsshow) | **GET** /api/v2/business-model-diagrams/{diagram} | View
-*BusinessModelDiagramsApi* | [**businessModelDiagramsUpdate**](docs/Api/BusinessModelDiagramsApi.md#businessmodeldiagramsupdate) | **PUT** /api/v2/business-model-diagrams/{diagram} | Update
-*BusinessModelExceptionsApi* | [**businessModelExceptionsCreate**](docs/Api/BusinessModelExceptionsApi.md#businessmodelexceptionscreate) | **POST** /api/v2/business-model-exceptions | Create
-*BusinessModelExceptionsApi* | [**businessModelExceptionsDelete**](docs/Api/BusinessModelExceptionsApi.md#businessmodelexceptionsdelete) | **DELETE** /api/v2/business-model-exceptions/{exception} | Delete
-*BusinessModelExceptionsApi* | [**businessModelExceptionsList**](docs/Api/BusinessModelExceptionsApi.md#businessmodelexceptionslist) | **GET** /api/v2/business-model-exceptions | List
-*BusinessModelExceptionsApi* | [**businessModelExceptionsShow**](docs/Api/BusinessModelExceptionsApi.md#businessmodelexceptionsshow) | **GET** /api/v2/business-model-exceptions/{exception} | View
-*BusinessModelExceptionsApi* | [**businessModelExceptionsUpdate**](docs/Api/BusinessModelExceptionsApi.md#businessmodelexceptionsupdate) | **PUT** /api/v2/business-model-exceptions/{exception} | Update
-*BusinessModelPublicationsApi* | [**businessModelPublicationsList**](docs/Api/BusinessModelPublicationsApi.md#businessmodelpublicationslist) | **GET** /api/v2/business-model-publications | List
-*BusinessModelPublicationsApi* | [**businessModelPublicationsShow**](docs/Api/BusinessModelPublicationsApi.md#businessmodelpublicationsshow) | **GET** /api/v2/business-model-publications/{publication} | View
-*BusinessModelsApi* | [**businessModelsCommentsList**](docs/Api/BusinessModelsApi.md#businessmodelscommentslist) | **GET** /api/v2/business-models/{model}/comments | List Comments
-*BusinessModelsApi* | [**businessModelsCreate**](docs/Api/BusinessModelsApi.md#businessmodelscreate) | **POST** /api/v2/business-models | Create
-*BusinessModelsApi* | [**businessModelsDelete**](docs/Api/BusinessModelsApi.md#businessmodelsdelete) | **DELETE** /api/v2/business-models/{model} | Delete
-*BusinessModelsApi* | [**businessModelsDeleteBulk**](docs/Api/BusinessModelsApi.md#businessmodelsdeletebulk) | **DELETE** /api/v2/business-models | Delete bulk
-*BusinessModelsApi* | [**businessModelsList**](docs/Api/BusinessModelsApi.md#businessmodelslist) | **GET** /api/v2/business-models | List
-*BusinessModelsApi* | [**businessModelsPostRevision**](docs/Api/BusinessModelsApi.md#businessmodelspostrevision) | **POST** /api/v2/business-models/{model}/revisions | Submit Related Diagram
-*BusinessModelsApi* | [**businessModelsShow**](docs/Api/BusinessModelsApi.md#businessmodelsshow) | **GET** /api/v2/business-models/{model} | View
-*BusinessModelsApi* | [**businessModelsShowRevision**](docs/Api/BusinessModelsApi.md#businessmodelsshowrevision) | **GET** /api/v2/business-models/{model}/revisions/{revision} | View Related Diagram
-*BusinessModelsApi* | [**businessModelsShowRevisions**](docs/Api/BusinessModelsApi.md#businessmodelsshowrevisions) | **GET** /api/v2/business-models/{model}/revisions | List Disgrams
-*BusinessModelsApi* | [**businessModelsTag**](docs/Api/BusinessModelsApi.md#businessmodelstag) | **POST** /api/v2/business-models/{taggable}/tag | Tag
-*BusinessModelsApi* | [**businessModelsUpdate**](docs/Api/BusinessModelsApi.md#businessmodelsupdate) | **PUT** /api/v2/business-models/{model} | Update
-*BusinessProcessTagsApi* | [**businessProcessesCreate**](docs/Api/BusinessProcessTagsApi.md#businessprocessescreate) | **POST** /api/v2/business-processes | Create
-*BusinessProcessTagsApi* | [**businessProcessesDelete**](docs/Api/BusinessProcessTagsApi.md#businessprocessesdelete) | **DELETE** /api/v2/business-processes/{tag} | Delete
-*BusinessProcessTagsApi* | [**businessProcessesDeleteBulk**](docs/Api/BusinessProcessTagsApi.md#businessprocessesdeletebulk) | **DELETE** /api/v2/business-processes | Delete bulk
-*BusinessProcessTagsApi* | [**businessProcessesList**](docs/Api/BusinessProcessTagsApi.md#businessprocesseslist) | **GET** /api/v2/business-processes | List
-*BusinessProcessTagsApi* | [**businessProcessesShow**](docs/Api/BusinessProcessTagsApi.md#businessprocessesshow) | **GET** /api/v2/business-processes/{tag} | View
-*BusinessProcessTagsApi* | [**businessProcessesUpdate**](docs/Api/BusinessProcessTagsApi.md#businessprocessesupdate) | **PUT** /api/v2/business-processes/{tag} | Update
-*CategoriesApi* | [**categoriesCreate**](docs/Api/CategoriesApi.md#categoriescreate) | **POST** /api/v2/categories | Create
-*CategoriesApi* | [**categoriesDelete**](docs/Api/CategoriesApi.md#categoriesdelete) | **DELETE** /api/v2/categories/{category} | Delete
-*CategoriesApi* | [**categoriesList**](docs/Api/CategoriesApi.md#categorieslist) | **GET** /api/v2/categories | List
-*CategoriesApi* | [**categoriesShow**](docs/Api/CategoriesApi.md#categoriesshow) | **GET** /api/v2/categories/{id} | View
-*CategoriesApi* | [**categoriesUpdate**](docs/Api/CategoriesApi.md#categoriesupdate) | **PUT** /api/v2/categories/{id} | Update
-*EnginesApi* | [**enginesCreate**](docs/Api/EnginesApi.md#enginescreate) | **POST** /api/v2/engines | Create
-*EnginesApi* | [**enginesDelete**](docs/Api/EnginesApi.md#enginesdelete) | **DELETE** /api/v2/engines/{engine} | Delete
-*EnginesApi* | [**enginesShow**](docs/Api/EnginesApi.md#enginesshow) | **GET** /api/v2/engines/{id} | View
-*EnginesApi* | [**enginesUpdate**](docs/Api/EnginesApi.md#enginesupdate) | **PUT** /api/v2/engines/{id} | Update
-*EnginesApi* | [**getEngine**](docs/Api/EnginesApi.md#getengine) | **GET** /api/v2/engines | List
-*EnvironmentsApi* | [**environmentsCreate**](docs/Api/EnvironmentsApi.md#environmentscreate) | **POST** /api/v2/environments | Create
-*EnvironmentsApi* | [**environmentsDeleteBulk**](docs/Api/EnvironmentsApi.md#environmentsdeletebulk) | **DELETE** /api/v2/environments | Delete Bulk
-*EnvironmentsApi* | [**environmentsList**](docs/Api/EnvironmentsApi.md#environmentslist) | **GET** /api/v2/environments | List
-*OrganizationApi* | [**organizationUnitsCreate**](docs/Api/OrganizationApi.md#organizationunitscreate) | **POST** /api/v2/organization-units | Create
-*OrganizationApi* | [**organizationUnitsDelete**](docs/Api/OrganizationApi.md#organizationunitsdelete) | **DELETE** /api/v2/organization-units/{organizationUnit} | Delete
-*OrganizationApi* | [**organizationUnitsList**](docs/Api/OrganizationApi.md#organizationunitslist) | **GET** /api/v2/organization-units | List
-*OrganizationApi* | [**organizationUnitsShow**](docs/Api/OrganizationApi.md#organizationunitsshow) | **GET** /api/v2/organization-units/{organizationUnit} | View
-*OrganizationApi* | [**organizationUnitsUpdate**](docs/Api/OrganizationApi.md#organizationunitsupdate) | **PUT** /api/v2/organization-units/{organizationUnit} | Update
-*TaggedBusinessProcessModelsApi* | [**taggedBusinessModelsStart**](docs/Api/TaggedBusinessProcessModelsApi.md#taggedbusinessmodelsstart) | **POST** /api/v2/tagged/business-models | Starts business processes by tags
-*TagsApi* | [**tagsCreate**](docs/Api/TagsApi.md#tagscreate) | **POST** /api/v2/tags | Create
-*TagsApi* | [**tagsDelete**](docs/Api/TagsApi.md#tagsdelete) | **DELETE** /api/v2/tags/{tag} | Delete
-*TagsApi* | [**tagsList**](docs/Api/TagsApi.md#tagslist) | **GET** /api/v2/tags | List
-*TagsApi* | [**tagsShow**](docs/Api/TagsApi.md#tagsshow) | **GET** /api/v2/tags/{id} | View
-*TagsApi* | [**tagsUpdate**](docs/Api/TagsApi.md#tagsupdate) | **PUT** /api/v2/tags/{id} | Update
-*TasksApi* | [**tasksCreate**](docs/Api/TasksApi.md#taskscreate) | **POST** /api/v2/tasks | Create task
-*TasksApi* | [**tasksDelete**](docs/Api/TasksApi.md#tasksdelete) | **DELETE** /api/v2/tasks/{task} | Delete task
-*TasksApi* | [**tasksList**](docs/Api/TasksApi.md#taskslist) | **GET** /api/v2/tasks | List
-*TasksApi* | [**tasksShow**](docs/Api/TasksApi.md#tasksshow) | **GET** /api/v2/tasks/{id} | View task
-*TasksApi* | [**tasksUpdate**](docs/Api/TasksApi.md#tasksupdate) | **PUT** /api/v2/tasks/{id} | Update task
+*EnvironmentApi* | [**authBusinessModelDiagramsCommentsCreate**](docs/Api/EnvironmentApi.md#authbusinessmodeldiagramscommentscreate) | **POST** /api/v2/auth/environment/business-model-diagrams/{diagram}/comments | Create Business Model Diagram Comment
+*EnvironmentApi* | [**authBusinessModelDiagramsCommentsDelete**](docs/Api/EnvironmentApi.md#authbusinessmodeldiagramscommentsdelete) | **DELETE** /api/v2/auth/environment/business-model-diagrams/{diagram}/comments/{comment} | Delete Business Model Diagram Comment
+*EnvironmentApi* | [**authBusinessModelDiagramsCommentsList**](docs/Api/EnvironmentApi.md#authbusinessmodeldiagramscommentslist) | **GET** /api/v2/auth/environment/business-model-diagrams/{diagram}/comments | List Business Model Diagram Comments
+*EnvironmentApi* | [**authBusinessModelDiagramsCreate**](docs/Api/EnvironmentApi.md#authbusinessmodeldiagramscreate) | **POST** /api/v2/auth/environment/business-model-diagrams | Create Business Model Diagram
+*EnvironmentApi* | [**authBusinessModelDiagramsDelete**](docs/Api/EnvironmentApi.md#authbusinessmodeldiagramsdelete) | **DELETE** /api/v2/auth/environment/business-model-diagrams/{diagram} | Delete Business Model Diagram
+*EnvironmentApi* | [**authBusinessModelDiagramsList**](docs/Api/EnvironmentApi.md#authbusinessmodeldiagramslist) | **GET** /api/v2/auth/environment/business-model-diagrams | List Business Model Diagram
+*EnvironmentApi* | [**authBusinessModelDiagramsPublish**](docs/Api/EnvironmentApi.md#authbusinessmodeldiagramspublish) | **POST** /api/v2/auth/environment/business-model-diagrams/{diagram}/publish | Publish Business Model Diagram
+*EnvironmentApi* | [**authBusinessModelDiagramsShow**](docs/Api/EnvironmentApi.md#authbusinessmodeldiagramsshow) | **GET** /api/v2/auth/environment/business-model-diagrams/{diagram} | View Business Model Diagram
+*EnvironmentApi* | [**authBusinessModelsCommentsList**](docs/Api/EnvironmentApi.md#authbusinessmodelscommentslist) | **GET** /api/v2/auth/environment/business-models/{model}/comments | List Business Model Comments
+*EnvironmentApi* | [**authBusinessModelsCreate**](docs/Api/EnvironmentApi.md#authbusinessmodelscreate) | **POST** /api/v2/auth/environment/business-models | Create Business Model
+*EnvironmentApi* | [**authBusinessModelsDelete**](docs/Api/EnvironmentApi.md#authbusinessmodelsdelete) | **DELETE** /api/v2/auth/environment/business-models/{model} | Delete Business Model
+*EnvironmentApi* | [**authBusinessModelsList**](docs/Api/EnvironmentApi.md#authbusinessmodelslist) | **GET** /api/v2/auth/environment/business-models | List Business Models
+*EnvironmentApi* | [**authBusinessModelsShow**](docs/Api/EnvironmentApi.md#authbusinessmodelsshow) | **GET** /api/v2/auth/environment/business-models/{model} | View Business Model
+*EnvironmentApi* | [**authServiceTasksLock**](docs/Api/EnvironmentApi.md#authservicetaskslock) | **POST** /api/v2/auth/environment/service-tasks | Lock Service Tasks
+*EnvironmentApi* | [**authServiceTasksServe**](docs/Api/EnvironmentApi.md#authservicetasksserve) | **POST** /api/v2/auth/environment/service-tasks/{reference}/serve | Serve Service Task
+*EnvironmentApi* | [**authServiceTasksUnlock**](docs/Api/EnvironmentApi.md#authservicetasksunlock) | **POST** /api/v2/auth/environment/service-tasks/{reference}/unlock | Unlock Service Task
+*EnvironmentApi* | [**authTaggedBusinessModelsStart**](docs/Api/EnvironmentApi.md#authtaggedbusinessmodelsstart) | **POST** /api/v2/auth/environment/tagged/business-process-models | Starts Business Process Models by Tag
+*EnvironmentApi* | [**authUserTasksComplete**](docs/Api/EnvironmentApi.md#authusertaskscomplete) | **POST** /api/v2/auth/environment/user-tasks/{id}/complete | Complete User Task
+*EnvironmentApi* | [**authUserTasksErrorize**](docs/Api/EnvironmentApi.md#authusertaskserrorize) | **POST** /api/v2/auth/environment/user-tasks/{id}/errorize | Errorize User Task
+*EnvironmentApi* | [**authUserTasksEscalate**](docs/Api/EnvironmentApi.md#authusertasksescalate) | **POST** /api/v2/auth/environment/user-tasks/{id}/escalate | Escalate User Task
+*EnvironmentApi* | [**authUserTasksIndex**](docs/Api/EnvironmentApi.md#authusertasksindex) | **GET** /api/v2/auth/environment/user-tasks | List User Tasks
+*InstallationApi* | [**enginesCreate**](docs/Api/InstallationApi.md#enginescreate) | **POST** /api/v2/engines | Create Engine
+*InstallationApi* | [**enginesDelete**](docs/Api/InstallationApi.md#enginesdelete) | **DELETE** /api/v2/engines/{engine} | Delete Engine
+*InstallationApi* | [**enginesShow**](docs/Api/InstallationApi.md#enginesshow) | **GET** /api/v2/engines/{id} | View Engine
+*InstallationApi* | [**enginesUpdate**](docs/Api/InstallationApi.md#enginesupdate) | **PUT** /api/v2/engines/{id} | Update Engine
+*InstallationApi* | [**environmentsCreate**](docs/Api/InstallationApi.md#environmentscreate) | **POST** /api/v2/environments | Create Environment
+*InstallationApi* | [**environmentsDeleteBulk**](docs/Api/InstallationApi.md#environmentsdeletebulk) | **DELETE** /api/v2/environments | Delete Environments
+*InstallationApi* | [**environmentsList**](docs/Api/InstallationApi.md#environmentslist) | **GET** /api/v2/environments | List Environments
+*InstallationApi* | [**getEngine**](docs/Api/InstallationApi.md#getengine) | **GET** /api/v2/engines | List Engines
+*OperationsApi* | [**businessModelDiagramsCommentsCreate**](docs/Api/OperationsApi.md#businessmodeldiagramscommentscreate) | **POST** /api/v2/business-model-diagrams/{diagram}/comments | Create Business Model Diagram Comment
+*OperationsApi* | [**businessModelDiagramsCommentsDelete**](docs/Api/OperationsApi.md#businessmodeldiagramscommentsdelete) | **DELETE** /api/v2/business-model-diagrams/{diagram}/comments/{comment} | Delete Business Model Diagram Comment
+*OperationsApi* | [**businessModelDiagramsCommentsList**](docs/Api/OperationsApi.md#businessmodeldiagramscommentslist) | **GET** /api/v2/business-model-diagrams/{diagram}/comments | List Business Model Diagram Comments
+*OperationsApi* | [**businessModelDiagramsCreate**](docs/Api/OperationsApi.md#businessmodeldiagramscreate) | **POST** /api/v2/business-model-diagrams | Create Business Model Diagram
+*OperationsApi* | [**businessModelDiagramsDelete**](docs/Api/OperationsApi.md#businessmodeldiagramsdelete) | **DELETE** /api/v2/business-model-diagrams/{diagram} | Delete Business Model Diagram
+*OperationsApi* | [**businessModelDiagramsList**](docs/Api/OperationsApi.md#businessmodeldiagramslist) | **GET** /api/v2/business-model-diagrams | List Business Model Diagram
+*OperationsApi* | [**businessModelDiagramsPublish**](docs/Api/OperationsApi.md#businessmodeldiagramspublish) | **POST** /api/v2/business-model-diagrams/{diagram}/publish | Publish Business Model Diagram
+*OperationsApi* | [**businessModelDiagramsShow**](docs/Api/OperationsApi.md#businessmodeldiagramsshow) | **GET** /api/v2/business-model-diagrams/{diagram} | View Business Model Diagram
+*OperationsApi* | [**businessModelDiagramsUpdate**](docs/Api/OperationsApi.md#businessmodeldiagramsupdate) | **PUT** /api/v2/business-model-diagrams/{diagram} | Update Business Model Diagram
+*OperationsApi* | [**businessModelExceptionsCreate**](docs/Api/OperationsApi.md#businessmodelexceptionscreate) | **POST** /api/v2/business-model-exceptions | Create Business Model Exception
+*OperationsApi* | [**businessModelExceptionsDelete**](docs/Api/OperationsApi.md#businessmodelexceptionsdelete) | **DELETE** /api/v2/business-model-exceptions/{exception} | Delete Business Model Exception
+*OperationsApi* | [**businessModelExceptionsList**](docs/Api/OperationsApi.md#businessmodelexceptionslist) | **GET** /api/v2/business-model-exceptions | List Business Model Exceptions
+*OperationsApi* | [**businessModelExceptionsShow**](docs/Api/OperationsApi.md#businessmodelexceptionsshow) | **GET** /api/v2/business-model-exceptions/{exception} | View Business Model Exception
+*OperationsApi* | [**businessModelExceptionsUpdate**](docs/Api/OperationsApi.md#businessmodelexceptionsupdate) | **PUT** /api/v2/business-model-exceptions/{exception} | Update Business Model Exception
+*OperationsApi* | [**businessModelPublicationsList**](docs/Api/OperationsApi.md#businessmodelpublicationslist) | **GET** /api/v2/business-model-publications | List Business Model Publications
+*OperationsApi* | [**businessModelPublicationsShow**](docs/Api/OperationsApi.md#businessmodelpublicationsshow) | **GET** /api/v2/business-model-publications/{publication} | View Business Model Publication
+*OperationsApi* | [**businessModelsCommentsList**](docs/Api/OperationsApi.md#businessmodelscommentslist) | **GET** /api/v2/business-models/{model}/comments | List Business Model Comments
+*OperationsApi* | [**businessModelsCreate**](docs/Api/OperationsApi.md#businessmodelscreate) | **POST** /api/v2/business-models | Create Business Model
+*OperationsApi* | [**businessModelsDelete**](docs/Api/OperationsApi.md#businessmodelsdelete) | **DELETE** /api/v2/business-models/{model} | Delete Business Model
+*OperationsApi* | [**businessModelsDeleteBulk**](docs/Api/OperationsApi.md#businessmodelsdeletebulk) | **DELETE** /api/v2/business-models | Delete Business Models
+*OperationsApi* | [**businessModelsList**](docs/Api/OperationsApi.md#businessmodelslist) | **GET** /api/v2/business-models | List Business Models
+*OperationsApi* | [**businessModelsPostRevision**](docs/Api/OperationsApi.md#businessmodelspostrevision) | **POST** /api/v2/business-models/{model}/revisions | Submit Business Model Diagram
+*OperationsApi* | [**businessModelsShow**](docs/Api/OperationsApi.md#businessmodelsshow) | **GET** /api/v2/business-models/{model} | View Business Model
+*OperationsApi* | [**businessModelsShowRevision**](docs/Api/OperationsApi.md#businessmodelsshowrevision) | **GET** /api/v2/business-models/{model}/revisions/{revision} | View Business Model Diagram
+*OperationsApi* | [**businessModelsShowRevisions**](docs/Api/OperationsApi.md#businessmodelsshowrevisions) | **GET** /api/v2/business-models/{model}/revisions | List Business Model Disgrams
+*OperationsApi* | [**businessModelsTag**](docs/Api/OperationsApi.md#businessmodelstag) | **POST** /api/v2/business-models/{taggable}/tag | Tag Business Model
+*OperationsApi* | [**businessModelsUpdate**](docs/Api/OperationsApi.md#businessmodelsupdate) | **PUT** /api/v2/business-models/{model} | Update Business Model
+*OperationsApi* | [**businessProcessesCreate**](docs/Api/OperationsApi.md#businessprocessescreate) | **POST** /api/v2/business-processes | Create Business Process Tag
+*OperationsApi* | [**businessProcessesDelete**](docs/Api/OperationsApi.md#businessprocessesdelete) | **DELETE** /api/v2/business-processes/{tag} | Delete Business Process Tag
+*OperationsApi* | [**businessProcessesDeleteBulk**](docs/Api/OperationsApi.md#businessprocessesdeletebulk) | **DELETE** /api/v2/business-processes | Delete Business Process Tags
+*OperationsApi* | [**businessProcessesList**](docs/Api/OperationsApi.md#businessprocesseslist) | **GET** /api/v2/business-processes | List Business Process Tags
+*OperationsApi* | [**businessProcessesShow**](docs/Api/OperationsApi.md#businessprocessesshow) | **GET** /api/v2/business-processes/{tag} | View Business Process Tag
+*OperationsApi* | [**businessProcessesUpdate**](docs/Api/OperationsApi.md#businessprocessesupdate) | **PUT** /api/v2/business-processes/{tag} | Update Business Process Tag
+*OperationsApi* | [**categoriesCreate**](docs/Api/OperationsApi.md#categoriescreate) | **POST** /api/v2/categories | Create Category
+*OperationsApi* | [**categoriesDelete**](docs/Api/OperationsApi.md#categoriesdelete) | **DELETE** /api/v2/categories/{category} | Delete Category
+*OperationsApi* | [**categoriesList**](docs/Api/OperationsApi.md#categorieslist) | **GET** /api/v2/categories | List Categories
+*OperationsApi* | [**categoriesShow**](docs/Api/OperationsApi.md#categoriesshow) | **GET** /api/v2/categories/{id} | View Category
+*OperationsApi* | [**categoriesUpdate**](docs/Api/OperationsApi.md#categoriesupdate) | **PUT** /api/v2/categories/{id} | Update Category
+*OperationsApi* | [**tagsCreate**](docs/Api/OperationsApi.md#tagscreate) | **POST** /api/v2/tags | Create Tag
+*OperationsApi* | [**tagsDelete**](docs/Api/OperationsApi.md#tagsdelete) | **DELETE** /api/v2/tags/{tag} | Delete Tag
+*OperationsApi* | [**tagsList**](docs/Api/OperationsApi.md#tagslist) | **GET** /api/v2/tags | List Tags
+*OperationsApi* | [**tagsShow**](docs/Api/OperationsApi.md#tagsshow) | **GET** /api/v2/tags/{id} | View Tag
+*OperationsApi* | [**tagsUpdate**](docs/Api/OperationsApi.md#tagsupdate) | **PUT** /api/v2/tags/{id} | Update Tag
+*OperationsApi* | [**tasksCreate**](docs/Api/OperationsApi.md#taskscreate) | **POST** /api/v2/tasks | Create Task
+*OperationsApi* | [**tasksDelete**](docs/Api/OperationsApi.md#tasksdelete) | **DELETE** /api/v2/tasks/{task} | Delete Task
+*OperationsApi* | [**tasksList**](docs/Api/OperationsApi.md#taskslist) | **GET** /api/v2/tasks | List Tasks
+*OperationsApi* | [**tasksShow**](docs/Api/OperationsApi.md#tasksshow) | **GET** /api/v2/tasks/{id} | View Task
+*OperationsApi* | [**tasksUpdate**](docs/Api/OperationsApi.md#tasksupdate) | **PUT** /api/v2/tasks/{id} | Update Task
+*OrganizationApi* | [**organizationUnitsCreate**](docs/Api/OrganizationApi.md#organizationunitscreate) | **POST** /api/v2/organization-units | Create Organzation Unit
+*OrganizationApi* | [**organizationUnitsDelete**](docs/Api/OrganizationApi.md#organizationunitsdelete) | **DELETE** /api/v2/organization-units/{organizationUnit} | Delete Organzation Unit
+*OrganizationApi* | [**organizationUnitsList**](docs/Api/OrganizationApi.md#organizationunitslist) | **GET** /api/v2/organization-units | List Organzation Units
+*OrganizationApi* | [**organizationUnitsShow**](docs/Api/OrganizationApi.md#organizationunitsshow) | **GET** /api/v2/organization-units/{organizationUnit} | View Organzation Unit
+*OrganizationApi* | [**organizationUnitsUpdate**](docs/Api/OrganizationApi.md#organizationunitsupdate) | **PUT** /api/v2/organization-units/{organizationUnit} | Update Organzation Unit
+*TaggedApi* | [**taggedBusinessModelsStart**](docs/Api/TaggedApi.md#taggedbusinessmodelsstart) | **POST** /api/v2/tagged/business-models | Starts Business Process Models by Tag
+*UserApi* | [**authUserMe**](docs/Api/UserApi.md#authuserme) | **GET** /api/v2/auth/user | Me
+*UserApi* | [**authUserOrganizationsDelete**](docs/Api/UserApi.md#authuserorganizationsdelete) | **DELETE** /api/v2/auth/user/organizations/{organization} | Delete Organization
+*UserApi* | [**authUserOrganizationsList**](docs/Api/UserApi.md#authuserorganizationslist) | **GET** /api/v2/auth/user/organizations | List Organizations
+*UserApi* | [**authUserOrganizationsShow**](docs/Api/UserApi.md#authuserorganizationsshow) | **GET** /api/v2/auth/user/organizations/{id} | View Organization
+*UserApi* | [**authUserOrganizationsStore**](docs/Api/UserApi.md#authuserorganizationsstore) | **POST** /api/v2/auth/user/organizations | Create Organization
+*UserApi* | [**authUserOrganizationsUpdate**](docs/Api/UserApi.md#authuserorganizationsupdate) | **PUT** /api/v2/auth/user/organizations/{id} | Update Organization
+*UserApi* | [**authUserRevoke**](docs/Api/UserApi.md#authuserrevoke) | **DELETE** /api/v2/auth/user/tokens | Revoke all tokens
+*UserApi* | [**authUserUpdate**](docs/Api/UserApi.md#authuserupdate) | **PUT** /api/v2/auth/user | Update
 
 ## Models
 
@@ -190,7 +189,6 @@ Class | Method | HTTP request | Description
 - [AuthUserTasksIndex401Response](docs/Model/AuthUserTasksIndex401Response.md)
 - [AuthUserUpdateRequest](docs/Model/AuthUserUpdateRequest.md)
 - [BusinessBaseModelDiagramResource](docs/Model/BusinessBaseModelDiagramResource.md)
-- [BusinessBaseModelExceptionResource](docs/Model/BusinessBaseModelExceptionResource.md)
 - [BusinessBaseModelPublicationResource](docs/Model/BusinessBaseModelPublicationResource.md)
 - [BusinessBaseModelResource](docs/Model/BusinessBaseModelResource.md)
 - [BusinessModelDiagramsCommentsCreateRequest](docs/Model/BusinessModelDiagramsCommentsCreateRequest.md)
@@ -213,7 +211,6 @@ Class | Method | HTTP request | Description
 - [EnvironmentResource](docs/Model/EnvironmentResource.md)
 - [EnvironmentsCreateRequest](docs/Model/EnvironmentsCreateRequest.md)
 - [EnvironmentsDeleteBulkRequest](docs/Model/EnvironmentsDeleteBulkRequest.md)
-- [OrganizationUnitResource](docs/Model/OrganizationUnitResource.md)
 - [OrganizationUnitsCreateRequest](docs/Model/OrganizationUnitsCreateRequest.md)
 - [OrganizationUnitsUpdateRequest](docs/Model/OrganizationUnitsUpdateRequest.md)
 - [TagResource](docs/Model/TagResource.md)

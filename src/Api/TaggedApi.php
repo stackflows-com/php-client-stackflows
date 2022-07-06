@@ -1,6 +1,6 @@
 <?php
 /**
- * TaggedBusinessProcessModelsApi
+ * TaggedApi
  * PHP version 7.4
  *
  * @category Class
@@ -40,14 +40,14 @@ use Stackflows\Clients\Stackflows\HeaderSelector;
 use Stackflows\Clients\Stackflows\ObjectSerializer;
 
 /**
- * TaggedBusinessProcessModelsApi Class Doc Comment
+ * TaggedApi Class Doc Comment
  *
  * @category Class
  * @package  Stackflows\Clients\Stackflows
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class TaggedBusinessProcessModelsApi
+class TaggedApi
 {
     /**
      * @var ClientInterface
@@ -118,7 +118,7 @@ class TaggedBusinessProcessModelsApi
     /**
      * Operation taggedBusinessModelsStart
      *
-     * Starts business processes by tags
+     * Starts Business Process Models by Tag
      *
      * @param  \Stackflows\Clients\Stackflows\Model\TaggedBusinessModelsStartRequest $taggedBusinessModelsStartRequest taggedBusinessModelsStartRequest (required)
      * @param  string $contentType  (optional)
@@ -137,7 +137,7 @@ class TaggedBusinessProcessModelsApi
     /**
      * Operation taggedBusinessModelsStartWithHttpInfo
      *
-     * Starts business processes by tags
+     * Starts Business Process Models by Tag
      *
      * @param  \Stackflows\Clients\Stackflows\Model\TaggedBusinessModelsStartRequest $taggedBusinessModelsStartRequest (required)
      * @param  string $contentType  (optional)
@@ -238,7 +238,7 @@ class TaggedBusinessProcessModelsApi
     /**
      * Operation taggedBusinessModelsStartAsync
      *
-     * Starts business processes by tags
+     * Starts Business Process Models by Tag
      *
      * @param  \Stackflows\Clients\Stackflows\Model\TaggedBusinessModelsStartRequest $taggedBusinessModelsStartRequest (required)
      * @param  string $contentType  (optional)
@@ -260,7 +260,7 @@ class TaggedBusinessProcessModelsApi
     /**
      * Operation taggedBusinessModelsStartAsyncWithHttpInfo
      *
-     * Starts business processes by tags
+     * Starts Business Process Models by Tag
      *
      * @param  \Stackflows\Clients\Stackflows\Model\TaggedBusinessModelsStartRequest $taggedBusinessModelsStartRequest (required)
      * @param  string $contentType  (optional)

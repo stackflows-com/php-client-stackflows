@@ -74,7 +74,7 @@ class OrganizationApiTest extends TestCase
     /**
      * Test case for organizationUnitsCreate
      *
-     * Create.
+     * Create Organzation Unit.
      *
      */
     public function testOrganizationUnitsCreate()
@@ -86,7 +86,7 @@ class OrganizationApiTest extends TestCase
     /**
      * Test case for organizationUnitsDelete
      *
-     * Delete.
+     * Delete Organzation Unit.
      *
      */
     public function testOrganizationUnitsDelete()
@@ -98,7 +98,7 @@ class OrganizationApiTest extends TestCase
     /**
      * Test case for organizationUnitsList
      *
-     * List.
+     * List Organzation Units.
      *
      */
     public function testOrganizationUnitsList()
@@ -110,7 +110,7 @@ class OrganizationApiTest extends TestCase
     /**
      * Test case for organizationUnitsShow
      *
-     * View.
+     * View Organzation Unit.
      *
      */
     public function testOrganizationUnitsShow()
@@ -122,7 +122,7 @@ class OrganizationApiTest extends TestCase
     /**
      * Test case for organizationUnitsUpdate
      *
-     * Update.
+     * Update Organzation Unit.
      *
      */
     public function testOrganizationUnitsUpdate()

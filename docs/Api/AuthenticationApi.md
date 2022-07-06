@@ -1,6 +1,6 @@
 # Stackflows\Clients\Stackflows\AuthenticationApi
 
-All URIs are relative to http://localhost:8081.
+All URIs are relative to https://stage-backoffice.stackflows.com.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

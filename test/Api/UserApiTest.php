@@ -1,6 +1,6 @@
 <?php
 /**
- * BusinessModelsApiTest
+ * UserApiTest
  * PHP version 7.4
  *
  * @category Class
@@ -33,14 +33,14 @@ use \Stackflows\Clients\Stackflows\ObjectSerializer;
 use PHPUnit\Framework\TestCase;
 
 /**
- * BusinessModelsApiTest Class Doc Comment
+ * UserApiTest Class Doc Comment
  *
  * @category Class
  * @package  Stackflows\Clients\Stackflows
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class BusinessModelsApiTest extends TestCase
+class UserApiTest extends TestCase
 {
 
     /**
@@ -72,132 +72,96 @@ class BusinessModelsApiTest extends TestCase
     }
 
     /**
-     * Test case for businessModelsCommentsList
+     * Test case for authUserMe
      *
-     * List Comments.
+     * Me.
      *
      */
-    public function testBusinessModelsCommentsList()
+    public function testAuthUserMe()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for businessModelsCreate
+     * Test case for authUserOrganizationsDelete
      *
-     * Create.
+     * Delete Organization.
      *
      */
-    public function testBusinessModelsCreate()
+    public function testAuthUserOrganizationsDelete()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for businessModelsDelete
+     * Test case for authUserOrganizationsList
      *
-     * Delete.
+     * List Organizations.
      *
      */
-    public function testBusinessModelsDelete()
+    public function testAuthUserOrganizationsList()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for businessModelsDeleteBulk
+     * Test case for authUserOrganizationsShow
      *
-     * Delete bulk.
+     * View Organization.
      *
      */
-    public function testBusinessModelsDeleteBulk()
+    public function testAuthUserOrganizationsShow()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for businessModelsList
+     * Test case for authUserOrganizationsStore
      *
-     * List.
+     * Create Organization.
      *
      */
-    public function testBusinessModelsList()
+    public function testAuthUserOrganizationsStore()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for businessModelsPostRevision
+     * Test case for authUserOrganizationsUpdate
      *
-     * Submit Related Diagram.
+     * Update Organization.
      *
      */
-    public function testBusinessModelsPostRevision()
+    public function testAuthUserOrganizationsUpdate()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for businessModelsShow
+     * Test case for authUserRevoke
      *
-     * View.
+     * Revoke all tokens.
      *
      */
-    public function testBusinessModelsShow()
+    public function testAuthUserRevoke()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for businessModelsShowRevision
-     *
-     * View Related Diagram.
-     *
-     */
-    public function testBusinessModelsShowRevision()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for businessModelsShowRevisions
-     *
-     * List Disgrams.
-     *
-     */
-    public function testBusinessModelsShowRevisions()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for businessModelsTag
-     *
-     * Tag.
-     *
-     */
-    public function testBusinessModelsTag()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for businessModelsUpdate
+     * Test case for authUserUpdate
      *
      * Update.
      *
      */
-    public function testBusinessModelsUpdate()
+    public function testAuthUserUpdate()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

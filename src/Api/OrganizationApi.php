@@ -118,7 +118,7 @@ class OrganizationApi
     /**
      * Operation organizationUnitsCreate
      *
-     * Create
+     * Create Organzation Unit
      *
      * @param  \Stackflows\Clients\Stackflows\Model\OrganizationUnitsCreateRequest $organizationUnitsCreateRequest organizationUnitsCreateRequest (required)
      * @param  string $contentType  (optional)
@@ -126,18 +126,17 @@ class OrganizationApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Stackflows\Clients\Stackflows\Model\OrganizationUnitResource
+     * @return void
      */
     public function organizationUnitsCreate($organizationUnitsCreateRequest, $contentType = null, $accept = null)
     {
-        list($response) = $this->organizationUnitsCreateWithHttpInfo($organizationUnitsCreateRequest, $contentType, $accept);
-        return $response;
+        $this->organizationUnitsCreateWithHttpInfo($organizationUnitsCreateRequest, $contentType, $accept);
     }
 
     /**
      * Operation organizationUnitsCreateWithHttpInfo
      *
-     * Create
+     * Create Organzation Unit
      *
      * @param  \Stackflows\Clients\Stackflows\Model\OrganizationUnitsCreateRequest $organizationUnitsCreateRequest (required)
      * @param  string $contentType  (optional)
@@ -145,7 +144,7 @@ class OrganizationApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Stackflows\Clients\Stackflows\Model\OrganizationUnitResource, HTTP status code, HTTP response headers (array of strings)
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function organizationUnitsCreateWithHttpInfo($organizationUnitsCreateRequest, $contentType = null, $accept = null)
     {
@@ -186,50 +185,10 @@ class OrganizationApi
                 );
             }
 
-            switch($statusCode) {
-                case 200:
-                    if ('\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource' !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            $returnType = '\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource';
-            if ($returnType === '\SplFileObject') {
-                $content = $response->getBody(); //stream goes to serializer
-            } else {
-                $content = (string) $response->getBody();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
+            return [null, $statusCode, $response->getHeaders()];
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
             }
             throw $e;
         }
@@ -238,7 +197,7 @@ class OrganizationApi
     /**
      * Operation organizationUnitsCreateAsync
      *
-     * Create
+     * Create Organzation Unit
      *
      * @param  \Stackflows\Clients\Stackflows\Model\OrganizationUnitsCreateRequest $organizationUnitsCreateRequest (required)
      * @param  string $contentType  (optional)
@@ -260,7 +219,7 @@ class OrganizationApi
     /**
      * Operation organizationUnitsCreateAsyncWithHttpInfo
      *
-     * Create
+     * Create Organzation Unit
      *
      * @param  \Stackflows\Clients\Stackflows\Model\OrganizationUnitsCreateRequest $organizationUnitsCreateRequest (required)
      * @param  string $contentType  (optional)
@@ -271,27 +230,14 @@ class OrganizationApi
      */
     public function organizationUnitsCreateAsyncWithHttpInfo($organizationUnitsCreateRequest, $contentType = null, $accept = null)
     {
-        $returnType = '\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource';
+        $returnType = '';
         $request = $this->organizationUnitsCreateRequest($organizationUnitsCreateRequest, $contentType, $accept);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -350,11 +296,11 @@ class OrganizationApi
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
+                []
             );
         } else {
             $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
+                [],
                 ['application/json']
             );
         }
@@ -414,7 +360,7 @@ class OrganizationApi
     /**
      * Operation organizationUnitsDelete
      *
-     * Delete
+     * Delete Organzation Unit
      *
      * @param  string $organizationUnit  (required)
      * @param  string $contentType  (optional)
@@ -422,18 +368,17 @@ class OrganizationApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Stackflows\Clients\Stackflows\Model\OrganizationUnitResource
+     * @return void
      */
     public function organizationUnitsDelete($organizationUnit, $contentType = null, $accept = null)
     {
-        list($response) = $this->organizationUnitsDeleteWithHttpInfo($organizationUnit, $contentType, $accept);
-        return $response;
+        $this->organizationUnitsDeleteWithHttpInfo($organizationUnit, $contentType, $accept);
     }
 
     /**
      * Operation organizationUnitsDeleteWithHttpInfo
      *
-     * Delete
+     * Delete Organzation Unit
      *
      * @param  string $organizationUnit  (required)
      * @param  string $contentType  (optional)
@@ -441,7 +386,7 @@ class OrganizationApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Stackflows\Clients\Stackflows\Model\OrganizationUnitResource, HTTP status code, HTTP response headers (array of strings)
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function organizationUnitsDeleteWithHttpInfo($organizationUnit, $contentType = null, $accept = null)
     {
@@ -482,50 +427,10 @@ class OrganizationApi
                 );
             }
 
-            switch($statusCode) {
-                case 200:
-                    if ('\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource' !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            $returnType = '\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource';
-            if ($returnType === '\SplFileObject') {
-                $content = $response->getBody(); //stream goes to serializer
-            } else {
-                $content = (string) $response->getBody();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
+            return [null, $statusCode, $response->getHeaders()];
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
             }
             throw $e;
         }
@@ -534,7 +439,7 @@ class OrganizationApi
     /**
      * Operation organizationUnitsDeleteAsync
      *
-     * Delete
+     * Delete Organzation Unit
      *
      * @param  string $organizationUnit  (required)
      * @param  string $contentType  (optional)
@@ -556,7 +461,7 @@ class OrganizationApi
     /**
      * Operation organizationUnitsDeleteAsyncWithHttpInfo
      *
-     * Delete
+     * Delete Organzation Unit
      *
      * @param  string $organizationUnit  (required)
      * @param  string $contentType  (optional)
@@ -567,27 +472,14 @@ class OrganizationApi
      */
     public function organizationUnitsDeleteAsyncWithHttpInfo($organizationUnit, $contentType = null, $accept = null)
     {
-        $returnType = '\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource';
+        $returnType = '';
         $request = $this->organizationUnitsDeleteRequest($organizationUnit, $contentType, $accept);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -654,11 +546,11 @@ class OrganizationApi
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
+                []
             );
         } else {
             $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
+                [],
                 []
             );
         }
@@ -712,7 +604,7 @@ class OrganizationApi
     /**
      * Operation organizationUnitsList
      *
-     * List
+     * List Organzation Units
      *
      * @param  string $filterRoot1 Retrieve only root nodes (optional)
      * @param  string $includechildren Load children (optional)
@@ -721,18 +613,17 @@ class OrganizationApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Stackflows\Clients\Stackflows\Model\OrganizationUnitResource
+     * @return void
      */
     public function organizationUnitsList($filterRoot1 = null, $includechildren = null, $contentType = null, $accept = null)
     {
-        list($response) = $this->organizationUnitsListWithHttpInfo($filterRoot1, $includechildren, $contentType, $accept);
-        return $response;
+        $this->organizationUnitsListWithHttpInfo($filterRoot1, $includechildren, $contentType, $accept);
     }
 
     /**
      * Operation organizationUnitsListWithHttpInfo
      *
-     * List
+     * List Organzation Units
      *
      * @param  string $filterRoot1 Retrieve only root nodes (optional)
      * @param  string $includechildren Load children (optional)
@@ -741,7 +632,7 @@ class OrganizationApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Stackflows\Clients\Stackflows\Model\OrganizationUnitResource, HTTP status code, HTTP response headers (array of strings)
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function organizationUnitsListWithHttpInfo($filterRoot1 = null, $includechildren = null, $contentType = null, $accept = null)
     {
@@ -782,46 +673,14 @@ class OrganizationApi
                 );
             }
 
-            switch($statusCode) {
-                case 200:
-                    if ('\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource' !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            $returnType = '\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource';
-            if ($returnType === '\SplFileObject') {
-                $content = $response->getBody(); //stream goes to serializer
-            } else {
-                $content = (string) $response->getBody();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
+            return [null, $statusCode, $response->getHeaders()];
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
-                case 200:
+                case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource',
+                        '\Stackflows\Clients\Stackflows\Model\AuthUserTasksIndex401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -834,7 +693,7 @@ class OrganizationApi
     /**
      * Operation organizationUnitsListAsync
      *
-     * List
+     * List Organzation Units
      *
      * @param  string $filterRoot1 Retrieve only root nodes (optional)
      * @param  string $includechildren Load children (optional)
@@ -857,7 +716,7 @@ class OrganizationApi
     /**
      * Operation organizationUnitsListAsyncWithHttpInfo
      *
-     * List
+     * List Organzation Units
      *
      * @param  string $filterRoot1 Retrieve only root nodes (optional)
      * @param  string $includechildren Load children (optional)
@@ -869,27 +728,14 @@ class OrganizationApi
      */
     public function organizationUnitsListAsyncWithHttpInfo($filterRoot1 = null, $includechildren = null, $contentType = null, $accept = null)
     {
-        $returnType = '\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource';
+        $returnType = '';
         $request = $this->organizationUnitsListRequest($filterRoot1, $includechildren, $contentType, $accept);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -1019,7 +865,7 @@ class OrganizationApi
     /**
      * Operation organizationUnitsShow
      *
-     * View
+     * View Organzation Unit
      *
      * @param  string $organizationUnit  (required)
      * @param  string $contentType  (optional)
@@ -1027,18 +873,17 @@ class OrganizationApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Stackflows\Clients\Stackflows\Model\OrganizationUnitResource
+     * @return void
      */
     public function organizationUnitsShow($organizationUnit, $contentType = null, $accept = null)
     {
-        list($response) = $this->organizationUnitsShowWithHttpInfo($organizationUnit, $contentType, $accept);
-        return $response;
+        $this->organizationUnitsShowWithHttpInfo($organizationUnit, $contentType, $accept);
     }
 
     /**
      * Operation organizationUnitsShowWithHttpInfo
      *
-     * View
+     * View Organzation Unit
      *
      * @param  string $organizationUnit  (required)
      * @param  string $contentType  (optional)
@@ -1046,7 +891,7 @@ class OrganizationApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Stackflows\Clients\Stackflows\Model\OrganizationUnitResource, HTTP status code, HTTP response headers (array of strings)
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function organizationUnitsShowWithHttpInfo($organizationUnit, $contentType = null, $accept = null)
     {
@@ -1087,46 +932,14 @@ class OrganizationApi
                 );
             }
 
-            switch($statusCode) {
-                case 200:
-                    if ('\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource' !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            $returnType = '\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource';
-            if ($returnType === '\SplFileObject') {
-                $content = $response->getBody(); //stream goes to serializer
-            } else {
-                $content = (string) $response->getBody();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
+            return [null, $statusCode, $response->getHeaders()];
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
-                case 200:
+                case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource',
+                        '\Stackflows\Clients\Stackflows\Model\AuthUserTasksIndex401Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1139,7 +952,7 @@ class OrganizationApi
     /**
      * Operation organizationUnitsShowAsync
      *
-     * View
+     * View Organzation Unit
      *
      * @param  string $organizationUnit  (required)
      * @param  string $contentType  (optional)
@@ -1161,7 +974,7 @@ class OrganizationApi
     /**
      * Operation organizationUnitsShowAsyncWithHttpInfo
      *
-     * View
+     * View Organzation Unit
      *
      * @param  string $organizationUnit  (required)
      * @param  string $contentType  (optional)
@@ -1172,27 +985,14 @@ class OrganizationApi
      */
     public function organizationUnitsShowAsyncWithHttpInfo($organizationUnit, $contentType = null, $accept = null)
     {
-        $returnType = '\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource';
+        $returnType = '';
         $request = $this->organizationUnitsShowRequest($organizationUnit, $contentType, $accept);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -1317,7 +1117,7 @@ class OrganizationApi
     /**
      * Operation organizationUnitsUpdate
      *
-     * Update
+     * Update Organzation Unit
      *
      * @param  string $organizationUnit  (required)
      * @param  string $contentType  (optional)
@@ -1326,18 +1126,17 @@ class OrganizationApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Stackflows\Clients\Stackflows\Model\OrganizationUnitResource
+     * @return void
      */
     public function organizationUnitsUpdate($organizationUnit, $contentType = null, $accept = null, $organizationUnitsUpdateRequest = null)
     {
-        list($response) = $this->organizationUnitsUpdateWithHttpInfo($organizationUnit, $contentType, $accept, $organizationUnitsUpdateRequest);
-        return $response;
+        $this->organizationUnitsUpdateWithHttpInfo($organizationUnit, $contentType, $accept, $organizationUnitsUpdateRequest);
     }
 
     /**
      * Operation organizationUnitsUpdateWithHttpInfo
      *
-     * Update
+     * Update Organzation Unit
      *
      * @param  string $organizationUnit  (required)
      * @param  string $contentType  (optional)
@@ -1346,7 +1145,7 @@ class OrganizationApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Stackflows\Clients\Stackflows\Model\OrganizationUnitResource, HTTP status code, HTTP response headers (array of strings)
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function organizationUnitsUpdateWithHttpInfo($organizationUnit, $contentType = null, $accept = null, $organizationUnitsUpdateRequest = null)
     {
@@ -1387,50 +1186,10 @@ class OrganizationApi
                 );
             }
 
-            switch($statusCode) {
-                case 200:
-                    if ('\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource' !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            $returnType = '\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource';
-            if ($returnType === '\SplFileObject') {
-                $content = $response->getBody(); //stream goes to serializer
-            } else {
-                $content = (string) $response->getBody();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
+            return [null, $statusCode, $response->getHeaders()];
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
             }
             throw $e;
         }
@@ -1439,7 +1198,7 @@ class OrganizationApi
     /**
      * Operation organizationUnitsUpdateAsync
      *
-     * Update
+     * Update Organzation Unit
      *
      * @param  string $organizationUnit  (required)
      * @param  string $contentType  (optional)
@@ -1462,7 +1221,7 @@ class OrganizationApi
     /**
      * Operation organizationUnitsUpdateAsyncWithHttpInfo
      *
-     * Update
+     * Update Organzation Unit
      *
      * @param  string $organizationUnit  (required)
      * @param  string $contentType  (optional)
@@ -1474,27 +1233,14 @@ class OrganizationApi
      */
     public function organizationUnitsUpdateAsyncWithHttpInfo($organizationUnit, $contentType = null, $accept = null, $organizationUnitsUpdateRequest = null)
     {
-        $returnType = '\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource';
+        $returnType = '';
         $request = $this->organizationUnitsUpdateRequest($organizationUnit, $contentType, $accept, $organizationUnitsUpdateRequest);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -1562,11 +1308,11 @@ class OrganizationApi
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
+                []
             );
         } else {
             $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
+                [],
                 ['application/json']
             );
         }

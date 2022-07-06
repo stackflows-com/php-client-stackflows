@@ -1,10 +1,10 @@
-# Stackflows\Clients\Stackflows\TaggedBusinessProcessModelsApi
+# Stackflows\Clients\Stackflows\TaggedApi
 
-All URIs are relative to http://localhost:8081.
+All URIs are relative to https://stage-backoffice.stackflows.com.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**taggedBusinessModelsStart()**](TaggedBusinessProcessModelsApi.md#taggedBusinessModelsStart) | **POST** /api/v2/tagged/business-models | Starts business processes by tags
+[**taggedBusinessModelsStart()**](TaggedApi.md#taggedBusinessModelsStart) | **POST** /api/v2/tagged/business-models | Starts Business Process Models by Tag
 
 
 ## `taggedBusinessModelsStart()`
@@ -13,7 +13,7 @@ Method | HTTP request | Description
 taggedBusinessModelsStart($taggedBusinessModelsStartRequest, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource
 ```
 
-Starts business processes by tags
+Starts Business Process Models by Tag
 
 
 
@@ -25,7 +25,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new Stackflows\Clients\Stackflows\Api\TaggedBusinessProcessModelsApi(
+$apiInstance = new Stackflows\Clients\Stackflows\Api\TaggedApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -38,7 +38,7 @@ try {
     $result = $apiInstance->taggedBusinessModelsStart($taggedBusinessModelsStartRequest, $contentType, $accept);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling TaggedBusinessProcessModelsApi->taggedBusinessModelsStart: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling TaggedApi->taggedBusinessModelsStart: ', $e->getMessage(), PHP_EOL;
 }
 ```
 

@@ -1,6 +1,6 @@
 <?php
 /**
- * AuthenticatedEnvironmentServiceTasksApiTest
+ * TaggedApiTest
  * PHP version 7.4
  *
  * @category Class
@@ -33,14 +33,14 @@ use \Stackflows\Clients\Stackflows\ObjectSerializer;
 use PHPUnit\Framework\TestCase;
 
 /**
- * AuthenticatedEnvironmentServiceTasksApiTest Class Doc Comment
+ * TaggedApiTest Class Doc Comment
  *
  * @category Class
  * @package  Stackflows\Clients\Stackflows
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class AuthenticatedEnvironmentServiceTasksApiTest extends TestCase
+class TaggedApiTest extends TestCase
 {
 
     /**
@@ -72,36 +72,12 @@ class AuthenticatedEnvironmentServiceTasksApiTest extends TestCase
     }
 
     /**
-     * Test case for authServiceTasksLock
+     * Test case for taggedBusinessModelsStart
      *
-     * Lock.
-     *
-     */
-    public function testAuthServiceTasksLock()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for authServiceTasksServe
-     *
-     * Serve.
+     * Starts Business Process Models by Tag.
      *
      */
-    public function testAuthServiceTasksServe()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for authServiceTasksUnlock
-     *
-     * Unlock.
-     *
-     */
-    public function testAuthServiceTasksUnlock()
+    public function testTaggedBusinessModelsStart()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
