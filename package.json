@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "@openapitools/openapi-generator-cli": "^2.5.1"
+  },
+  "scripts": {
+    "generator": "./node_modules/.bin/openapi-generator-cli",
+    "download": "wget https://backoffice.stackflows.com/docs.openapi -O openapi.yaml",
+    "generate": "npm run generator -- generate -i ./openapi.yaml -g php -o ./ -c ./generator.json"
+  }
+}

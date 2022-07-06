@@ -1,0 +1,8 @@
+{
+  "composerPackageName": "stackflows/php-client-stackflows",
+  "invokerPackage": "Stackflows\\Clients\\Stackflows",
+  "packageName": "Stackflows REST API Client",
+  "variableNamingConvention": "camelCase",
+  "sortParamsByRequiredFlag": true,
+  "srcBasePath": "src"
+}

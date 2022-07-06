@@ -1,13 +1,17 @@
 {
-    "name": "stackflows-com/php-client-stackflows",
-    "description": "Stackflows Gateway API",
+    "name": "stackflows/php-client-stackflows",
+    "description": "Pagination query params are as follows: page[size]=10&page[number]=1",
     "keywords": [
-        "stackflows-client",
+        "openapitools",
+        "openapi-generator",
+        "openapi",
         "php",
-        "sdk"
+        "sdk",
+        "rest",
+        "api"
     ],
-    "homepage": "https://github.com/stackflows-com/php-client-stackflows",
-    "license": "MIT",
+    "homepage": "https://openapi-generator.tech",
+    "license": "unlicense",
     "authors": [
         {
             "name": "OpenAPI-Generator contributors",
@@ -15,21 +19,21 @@
         }
     ],
     "require": {
-        "php": ">=7.2",
+        "php": "^7.4 || ^8.0",
         "ext-curl": "*",
         "ext-json": "*",
         "ext-mbstring": "*",
-        "guzzlehttp/guzzle": "^6.2 || ^7.0"
+        "guzzlehttp/guzzle": "^7.3",
+        "guzzlehttp/psr7": "^1.7 || ^2.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^8.0 || ^9.0",
-        "friendsofphp/php-cs-fixer": "^2.12"
+        "friendsofphp/php-cs-fixer": "^3.5"
     },
     "autoload": {
-        "psr-4": { "Stackflows\\GatewayApi\\" : "lib/" }
+        "psr-4": { "Stackflows\\Clients\\Stackflows\\" : "src/" }
     },
     "autoload-dev": {
-        "psr-4": { "Stackflows\\GatewayApi\\Test\\" : "test/" }
-    },
-    "minimum-stability": "dev"
+        "psr-4": { "Stackflows\\Clients\\Stackflows\\Test\\" : "test/" }
+    }
 }
