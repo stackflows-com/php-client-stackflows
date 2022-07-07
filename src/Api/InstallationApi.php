@@ -424,7 +424,7 @@ class InstallationApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Stackflows\Clients\Stackflows\Model\CategoryResource
+     * @return \Stackflows\Clients\Stackflows\Model\CategoryResource[]
      */
     public function deleteEnvironmentsDeleteBulk($contentType = null, $accept = null, $deleteEnvironmentsDeleteBulkRequest = null)
     {
@@ -443,7 +443,7 @@ class InstallationApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Stackflows\Clients\Stackflows\Model\CategoryResource, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Stackflows\Clients\Stackflows\Model\CategoryResource[], HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteEnvironmentsDeleteBulkWithHttpInfo($contentType = null, $accept = null, $deleteEnvironmentsDeleteBulkRequest = null)
     {
@@ -486,23 +486,23 @@ class InstallationApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Stackflows\Clients\Stackflows\Model\CategoryResource' === '\SplFileObject') {
+                    if ('\Stackflows\Clients\Stackflows\Model\CategoryResource[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Stackflows\Clients\Stackflows\Model\CategoryResource' !== 'string') {
+                        if ('\Stackflows\Clients\Stackflows\Model\CategoryResource[]' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\CategoryResource', []),
+                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\CategoryResource[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Stackflows\Clients\Stackflows\Model\CategoryResource';
+            $returnType = '\Stackflows\Clients\Stackflows\Model\CategoryResource[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -523,7 +523,7 @@ class InstallationApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Stackflows\Clients\Stackflows\Model\CategoryResource',
+                        '\Stackflows\Clients\Stackflows\Model\CategoryResource[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -569,7 +569,7 @@ class InstallationApi
      */
     public function deleteEnvironmentsDeleteBulkAsyncWithHttpInfo($contentType = null, $accept = null, $deleteEnvironmentsDeleteBulkRequest = null)
     {
-        $returnType = '\Stackflows\Clients\Stackflows\Model\CategoryResource';
+        $returnType = '\Stackflows\Clients\Stackflows\Model\CategoryResource[]';
         $request = $this->deleteEnvironmentsDeleteBulkRequest($contentType, $accept, $deleteEnvironmentsDeleteBulkRequest);
 
         return $this->client
@@ -713,7 +713,7 @@ class InstallationApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Stackflows\Clients\Stackflows\Model\EngineResource
+     * @return \Stackflows\Clients\Stackflows\Model\EngineResource[]
      */
     public function getEngine($contentType = null, $accept = null)
     {
@@ -731,7 +731,7 @@ class InstallationApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Stackflows\Clients\Stackflows\Model\EngineResource, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Stackflows\Clients\Stackflows\Model\EngineResource[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getEngineWithHttpInfo($contentType = null, $accept = null)
     {
@@ -774,23 +774,23 @@ class InstallationApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Stackflows\Clients\Stackflows\Model\EngineResource' === '\SplFileObject') {
+                    if ('\Stackflows\Clients\Stackflows\Model\EngineResource[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Stackflows\Clients\Stackflows\Model\EngineResource' !== 'string') {
+                        if ('\Stackflows\Clients\Stackflows\Model\EngineResource[]' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\EngineResource', []),
+                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\EngineResource[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Stackflows\Clients\Stackflows\Model\EngineResource';
+            $returnType = '\Stackflows\Clients\Stackflows\Model\EngineResource[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -811,7 +811,7 @@ class InstallationApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Stackflows\Clients\Stackflows\Model\EngineResource',
+                        '\Stackflows\Clients\Stackflows\Model\EngineResource[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -855,7 +855,7 @@ class InstallationApi
      */
     public function getEngineAsyncWithHttpInfo($contentType = null, $accept = null)
     {
-        $returnType = '\Stackflows\Clients\Stackflows\Model\EngineResource';
+        $returnType = '\Stackflows\Clients\Stackflows\Model\EngineResource[]';
         $request = $this->getEngineRequest($contentType, $accept);
 
         return $this->client
@@ -1309,7 +1309,7 @@ class InstallationApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Stackflows\Clients\Stackflows\Model\EnvironmentResource
+     * @return \Stackflows\Clients\Stackflows\Model\EnvironmentResource[]
      */
     public function getEnvironmentsList($contentType = null, $accept = null)
     {
@@ -1327,7 +1327,7 @@ class InstallationApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Stackflows\Clients\Stackflows\Model\EnvironmentResource, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Stackflows\Clients\Stackflows\Model\EnvironmentResource[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getEnvironmentsListWithHttpInfo($contentType = null, $accept = null)
     {
@@ -1370,23 +1370,23 @@ class InstallationApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Stackflows\Clients\Stackflows\Model\EnvironmentResource' === '\SplFileObject') {
+                    if ('\Stackflows\Clients\Stackflows\Model\EnvironmentResource[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Stackflows\Clients\Stackflows\Model\EnvironmentResource' !== 'string') {
+                        if ('\Stackflows\Clients\Stackflows\Model\EnvironmentResource[]' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\EnvironmentResource', []),
+                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\EnvironmentResource[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Stackflows\Clients\Stackflows\Model\EnvironmentResource';
+            $returnType = '\Stackflows\Clients\Stackflows\Model\EnvironmentResource[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1407,7 +1407,7 @@ class InstallationApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Stackflows\Clients\Stackflows\Model\EnvironmentResource',
+                        '\Stackflows\Clients\Stackflows\Model\EnvironmentResource[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1451,7 +1451,7 @@ class InstallationApi
      */
     public function getEnvironmentsListAsyncWithHttpInfo($contentType = null, $accept = null)
     {
-        $returnType = '\Stackflows\Clients\Stackflows\Model\EnvironmentResource';
+        $returnType = '\Stackflows\Clients\Stackflows\Model\EnvironmentResource[]';
         $request = $this->getEnvironmentsListRequest($contentType, $accept);
 
         return $this->client

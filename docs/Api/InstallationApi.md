@@ -77,7 +77,7 @@ No authorization required
 ## `deleteEnvironmentsDeleteBulk()`
 
 ```php
-deleteEnvironmentsDeleteBulk($contentType, $accept, $deleteEnvironmentsDeleteBulkRequest): \Stackflows\Clients\Stackflows\Model\CategoryResource
+deleteEnvironmentsDeleteBulk($contentType, $accept, $deleteEnvironmentsDeleteBulkRequest): \Stackflows\Clients\Stackflows\Model\CategoryResource[]
 ```
 
 Delete Environments
@@ -119,7 +119,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\CategoryResource**](../Model/CategoryResource.md)
+[**\Stackflows\Clients\Stackflows\Model\CategoryResource[]**](../Model/CategoryResource.md)
 
 ### Authorization
 
@@ -137,7 +137,7 @@ No authorization required
 ## `getEngine()`
 
 ```php
-getEngine($contentType, $accept): \Stackflows\Clients\Stackflows\Model\EngineResource
+getEngine($contentType, $accept): \Stackflows\Clients\Stackflows\Model\EngineResource[]
 ```
 
 List Engines
@@ -177,7 +177,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\EngineResource**](../Model/EngineResource.md)
+[**\Stackflows\Clients\Stackflows\Model\EngineResource[]**](../Model/EngineResource.md)
 
 ### Authorization
 
@@ -216,7 +216,7 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\InstallationApi(
     new GuzzleHttp\Client()
 );
 $id = 4241dbd0-fd0b-11ec-a738-470c54c64da4; // string | The ID of the engine.
-$engine = ut; // string | ID of an engine
+$engine = repellendus; // string | ID of an engine
 $contentType = application/json; // string | 
 $accept = application/json; // string | 
 
@@ -257,7 +257,7 @@ No authorization required
 ## `getEnvironmentsList()`
 
 ```php
-getEnvironmentsList($contentType, $accept): \Stackflows\Clients\Stackflows\Model\EnvironmentResource
+getEnvironmentsList($contentType, $accept): \Stackflows\Clients\Stackflows\Model\EnvironmentResource[]
 ```
 
 List Environments
@@ -297,7 +297,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\EnvironmentResource**](../Model/EnvironmentResource.md)
+[**\Stackflows\Clients\Stackflows\Model\EnvironmentResource[]**](../Model/EnvironmentResource.md)
 
 ### Authorization
 
@@ -456,7 +456,7 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\InstallationApi(
     new GuzzleHttp\Client()
 );
 $id = 4241dbd0-fd0b-11ec-a738-470c54c64da4; // string | The ID of the engine.
-$engine = ut; // string | ID of an engine
+$engine = repellendus; // string | ID of an engine
 $contentType = application/json; // string | 
 $accept = application/json; // string | 
 $putEnginesUpdateRequest = new \Stackflows\Clients\Stackflows\Model\PutEnginesUpdateRequest(); // \Stackflows\Clients\Stackflows\Model\PutEnginesUpdateRequest

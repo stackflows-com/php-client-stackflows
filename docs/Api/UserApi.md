@@ -158,7 +158,7 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\UserApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$includeorganizations = quisquam; // string | Possible includes
+$includeorganizations = sunt; // string | Possible includes
 $contentType = application/json; // string | 
 $accept = application/json; // string | 
 
@@ -198,7 +198,7 @@ No authorization required
 ## `getUserOrganizationsList()`
 
 ```php
-getUserOrganizationsList($contentType, $accept): \Stackflows\Clients\Stackflows\Model\OrganizationUnitResource
+getUserOrganizationsList($contentType, $accept): \Stackflows\Clients\Stackflows\Model\OrganizationUnitResource[]
 ```
 
 List Organizations
@@ -238,7 +238,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource**](../Model/OrganizationUnitResource.md)
+[**\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource[]**](../Model/OrganizationUnitResource.md)
 
 ### Authorization
 

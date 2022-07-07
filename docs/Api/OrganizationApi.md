@@ -34,7 +34,7 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OrganizationApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$organizationUnit = aliquam; // string | 
+$organizationUnit = in; // string | 
 $contentType = application/json; // string | 
 $accept = application/json; // string | 
 
@@ -74,7 +74,7 @@ No authorization required
 ## `getOrganizationUnitsList()`
 
 ```php
-getOrganizationUnitsList($filterRoot1, $includechildren, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\OrganizationUnitResource
+getOrganizationUnitsList($filterRoot1, $includechildren, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\OrganizationUnitResource[]
 ```
 
 List Organzation Units
@@ -94,8 +94,8 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OrganizationApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$filterRoot1 = perferendis; // string | Retrieve only root nodes
-$includechildren = asperiores; // string | Load children
+$filterRoot1 = ut; // string | Retrieve only root nodes
+$includechildren = ipsa; // string | Load children
 $contentType = application/json; // string | 
 $accept = application/json; // string | 
 
@@ -118,7 +118,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource**](../Model/OrganizationUnitResource.md)
+[**\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource[]**](../Model/OrganizationUnitResource.md)
 
 ### Authorization
 
@@ -156,7 +156,7 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OrganizationApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$organizationUnit = aliquam; // string | 
+$organizationUnit = in; // string | 
 $contentType = application/json; // string | 
 $accept = application/json; // string | 
 
@@ -276,7 +276,7 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OrganizationApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$organizationUnit = aliquam; // string | 
+$organizationUnit = in; // string | 
 $contentType = application/json; // string | 
 $accept = application/json; // string | 
 $putOrganizationUnitsUpdateRequest = new \Stackflows\Clients\Stackflows\Model\PutOrganizationUnitsUpdateRequest(); // \Stackflows\Clients\Stackflows\Model\PutOrganizationUnitsUpdateRequest

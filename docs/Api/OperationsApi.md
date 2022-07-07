@@ -199,7 +199,7 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$exception = in; // string | 
+$exception = sed; // string | 
 $contentType = application/json; // string | 
 $accept = application/json; // string | 
 
@@ -419,7 +419,7 @@ No authorization required
 ## `deleteBusinessProcessesDeleteBulk()`
 
 ```php
-deleteBusinessProcessesDeleteBulk($contentType, $accept, $deleteBusinessProcessesDeleteBulkRequest): \Stackflows\Clients\Stackflows\Model\TagResource
+deleteBusinessProcessesDeleteBulk($contentType, $accept, $deleteBusinessProcessesDeleteBulkRequest): \Stackflows\Clients\Stackflows\Model\TagResource[]
 ```
 
 Delete Business Process Tags
@@ -461,7 +461,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\TagResource**](../Model/TagResource.md)
+[**\Stackflows\Clients\Stackflows\Model\TagResource[]**](../Model/TagResource.md)
 
 ### Authorization
 
@@ -659,7 +659,7 @@ No authorization required
 ## `getBusinessModelDiagramsCommentsList()`
 
 ```php
-getBusinessModelDiagramsCommentsList($diagram, $include, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\CommentResource
+getBusinessModelDiagramsCommentsList($diagram, $include, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\CommentResource[]
 ```
 
 List Business Model Diagram Comments
@@ -703,7 +703,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\CommentResource**](../Model/CommentResource.md)
+[**\Stackflows\Clients\Stackflows\Model\CommentResource[]**](../Model/CommentResource.md)
 
 ### Authorization
 
@@ -721,7 +721,7 @@ No authorization required
 ## `getBusinessModelDiagramsList()`
 
 ```php
-getBusinessModelDiagramsList($contentType, $accept): \Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource
+getBusinessModelDiagramsList($contentType, $accept): \Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource[]
 ```
 
 List Business Model Diagram
@@ -761,7 +761,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource**](../Model/BusinessBaseModelDiagramResource.md)
+[**\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource[]**](../Model/BusinessBaseModelDiagramResource.md)
 
 ### Authorization
 
@@ -800,7 +800,7 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     new GuzzleHttp\Client()
 );
 $diagram = 03b764f0-fc1f-11ec-9893-6df708406f80; // string | 
-$includesnapshotsdeploysdeploysStatistics = ipsa; // string | Possible includes
+$includesnapshotsdeploysdeploysStatistics = rerum; // string | Possible includes
 $contentType = application/json; // string | 
 $accept = application/json; // string | 
 
@@ -841,7 +841,7 @@ No authorization required
 ## `getBusinessModelExceptionsList()`
 
 ```php
-getBusinessModelExceptionsList($contentType, $accept): \Stackflows\Clients\Stackflows\Model\BusinessBaseModelExceptionResource
+getBusinessModelExceptionsList($contentType, $accept): \Stackflows\Clients\Stackflows\Model\BusinessBaseModelExceptionResource[]
 ```
 
 List Business Model Exceptions
@@ -881,7 +881,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\BusinessBaseModelExceptionResource**](../Model/BusinessBaseModelExceptionResource.md)
+[**\Stackflows\Clients\Stackflows\Model\BusinessBaseModelExceptionResource[]**](../Model/BusinessBaseModelExceptionResource.md)
 
 ### Authorization
 
@@ -919,7 +919,7 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$exception = in; // string | 
+$exception = sed; // string | 
 $contentType = application/json; // string | 
 $accept = application/json; // string | 
 
@@ -959,7 +959,7 @@ No authorization required
 ## `getBusinessModelPublicationsList()`
 
 ```php
-getBusinessModelPublicationsList($contentType, $accept): \Stackflows\Clients\Stackflows\Model\BusinessBaseModelPublicationResource
+getBusinessModelPublicationsList($contentType, $accept): \Stackflows\Clients\Stackflows\Model\BusinessBaseModelPublicationResource[]
 ```
 
 List Business Model Publications
@@ -999,7 +999,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\BusinessBaseModelPublicationResource**](../Model/BusinessBaseModelPublicationResource.md)
+[**\Stackflows\Clients\Stackflows\Model\BusinessBaseModelPublicationResource[]**](../Model/BusinessBaseModelPublicationResource.md)
 
 ### Authorization
 
@@ -1038,7 +1038,7 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     new GuzzleHttp\Client()
 );
 $publication = 25027da0-d893-11ec-85cc-f181a6cfaf8e; // string | 
-$appendstatisticsoutliers = molestiae; // string | Possible appends
+$appendstatisticsoutliers = eos; // string | Possible appends
 $contentType = application/json; // string | 
 $accept = application/json; // string | 
 
@@ -1079,7 +1079,7 @@ No authorization required
 ## `getBusinessModelsCommentsList()`
 
 ```php
-getBusinessModelsCommentsList($model, $include, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\CommentResource
+getBusinessModelsCommentsList($model, $include, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\CommentResource[]
 ```
 
 List Business Model Comments
@@ -1123,7 +1123,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\CommentResource**](../Model/CommentResource.md)
+[**\Stackflows\Clients\Stackflows\Model\CommentResource[]**](../Model/CommentResource.md)
 
 ### Authorization
 
@@ -1141,7 +1141,7 @@ No authorization required
 ## `getBusinessModelsList()`
 
 ```php
-getBusinessModelsList($includeownercompanycategorytagscommentsCounttagsCountdiagrams, $filterWithAnyTagstestTaganotherTestTag, $filterWithoutAnyTags1, $filterAutocompletetes, $filterSearchtes, $filterCategories12, $filterUncategorized, $filterSubscribable, $sortnameCreatedAtUpdatedAt, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource
+getBusinessModelsList($includeownercompanycategorytagscommentsCounttagsCountdiagrams, $filterWithAnyTagstestTaganotherTestTag, $filterWithoutAnyTags1, $filterAutocompletetes, $filterSearchtes, $filterCategories12, $filterUncategorized, $filterSubscribable, $sortnameCreatedAtUpdatedAt, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource[]
 ```
 
 List Business Models
@@ -1161,15 +1161,15 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$includeownercompanycategorytagscommentsCounttagsCountdiagrams = ut; // string | Possible includes
-$filterWithAnyTagstestTaganotherTestTag = eos; // string | Will return models that has any of specified tags
-$filterWithoutAnyTags1 = vel; // string | Will return list of all models that has no tags at all
-$filterAutocompletetes = delectus; // string | Retrieve list that has \"tes\" at the start of their name
-$filterSearchtes = voluptatem; // string | Retrieve list that has \"tes\" in their name
-$filterCategories12 = eos; // string | Filter by specific categories
+$includeownercompanycategorytagscommentsCounttagsCountdiagrams = repudiandae; // string | Possible includes
+$filterWithAnyTagstestTaganotherTestTag = ut; // string | Will return models that has any of specified tags
+$filterWithoutAnyTags1 = voluptatem; // string | Will return list of all models that has no tags at all
+$filterAutocompletetes = odit; // string | Retrieve list that has \"tes\" at the start of their name
+$filterSearchtes = mollitia; // string | Retrieve list that has \"tes\" in their name
+$filterCategories12 = ad; // string | Filter by specific categories
 $filterUncategorized = true; // bool | List only uncategorized process models.
 $filterSubscribable = true; // bool | List only subscribable process models.
-$sortnameCreatedAtUpdatedAt = fuga; // string | Sorting example
+$sortnameCreatedAtUpdatedAt = nesciunt; // string | Sorting example
 $contentType = application/json; // string | 
 $accept = application/json; // string | 
 
@@ -1199,7 +1199,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource**](../Model/BusinessBaseModelResource.md)
+[**\Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource[]**](../Model/BusinessBaseModelResource.md)
 
 ### Authorization
 
@@ -1238,7 +1238,7 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     new GuzzleHttp\Client()
 );
 $model = 06a4ad30-f87d-11ec-ba01-1558c1387592; // string | 
-$includeownercompanycategorytagscommentsCounttagsCountdiagrams = sit; // string | Possible includes
+$includeownercompanycategorytagscommentsCounttagsCountdiagrams = doloremque; // string | Possible includes
 $contentType = application/json; // string | 
 $accept = application/json; // string | 
 
@@ -1300,7 +1300,7 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     new GuzzleHttp\Client()
 );
 $model = 06a4ad30-f87d-11ec-ba01-1558c1387592; // string | 
-$revision = doloribus; // string | 
+$revision = dolorem; // string | 
 $contentType = application/json; // string | 
 $accept = application/json; // string | 
 
@@ -1341,7 +1341,7 @@ No authorization required
 ## `getBusinessModelsShowRevisions()`
 
 ```php
-getBusinessModelsShowRevisions($model, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource
+getBusinessModelsShowRevisions($model, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource[]
 ```
 
 List Business Model Disgrams
@@ -1383,7 +1383,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource**](../Model/BusinessBaseModelDiagramResource.md)
+[**\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource[]**](../Model/BusinessBaseModelDiagramResource.md)
 
 ### Authorization
 
@@ -1401,7 +1401,7 @@ No authorization required
 ## `getBusinessProcessesList()`
 
 ```php
-getBusinessProcessesList($includeprocessModels, $includeprocessModelsCount, $filterAutocompletetes, $filterSearchtes, $sortnameCreatedAtUpdatedAt, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\TagResource
+getBusinessProcessesList($includeprocessModels, $includeprocessModelsCount, $filterAutocompletetes, $filterSearchtes, $sortnameCreatedAtUpdatedAt, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\TagResource[]
 ```
 
 List Business Process Tags
@@ -1421,11 +1421,11 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$includeprocessModels = perferendis; // string | Will add process models to the response
-$includeprocessModelsCount = 12; // int | Will add process models count to the response
-$filterAutocompletetes = eos; // string | Retrieve list that has \"tes\" at the start of their name
-$filterSearchtes = blanditiis; // string | Retrieve list that has \"tes\" in their name
-$sortnameCreatedAtUpdatedAt = laboriosam; // string | Sorting example
+$includeprocessModels = accusantium; // string | Will add process models to the response
+$includeprocessModelsCount = 20; // int | Will add process models count to the response
+$filterAutocompletetes = qui; // string | Retrieve list that has \"tes\" at the start of their name
+$filterSearchtes = nihil; // string | Retrieve list that has \"tes\" in their name
+$sortnameCreatedAtUpdatedAt = officia; // string | Sorting example
 $contentType = application/json; // string | 
 $accept = application/json; // string | 
 
@@ -1451,7 +1451,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\TagResource**](../Model/TagResource.md)
+[**\Stackflows\Clients\Stackflows\Model\TagResource[]**](../Model/TagResource.md)
 
 ### Authorization
 
@@ -1490,7 +1490,7 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     new GuzzleHttp\Client()
 );
 $tag = 3; // int | 
-$includeprocessModels = magnam; // string | Will add process models to the response
+$includeprocessModels = autem; // string | Will add process models to the response
 $includeprocessModelsCount = 11; // int | Will add process models count to the response
 $contentType = application/json; // string | 
 $accept = application/json; // string | 
@@ -1533,7 +1533,7 @@ No authorization required
 ## `getCategoriesList()`
 
 ```php
-getCategoriesList($filterRoot, $filterSiblings, $filterAutocomplete, $filterSearch, $fieldsBusinessProcessLatestDiagram, $include, $filterSearchBusinessModels, $sort, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\CategoryResource
+getCategoriesList($filterRoot, $filterSiblings, $filterAutocomplete, $filterSearch, $fieldsBusinessProcessLatestDiagram, $include, $filterSearchBusinessModels, $sort, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\CategoryResource[]
 ```
 
 List Categories
@@ -1589,7 +1589,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\CategoryResource**](../Model/CategoryResource.md)
+[**\Stackflows\Clients\Stackflows\Model\CategoryResource[]**](../Model/CategoryResource.md)
 
 ### Authorization
 
@@ -1667,7 +1667,7 @@ No authorization required
 ## `getTagsList()`
 
 ```php
-getTagsList($contentType, $accept): \Stackflows\Clients\Stackflows\Model\TagResource
+getTagsList($contentType, $accept): \Stackflows\Clients\Stackflows\Model\TagResource[]
 ```
 
 List Tags
@@ -1707,7 +1707,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\TagResource**](../Model/TagResource.md)
+[**\Stackflows\Clients\Stackflows\Model\TagResource[]**](../Model/TagResource.md)
 
 ### Authorization
 
@@ -1785,7 +1785,7 @@ No authorization required
 ## `getTasksList()`
 
 ```php
-getTasksList($contentType, $accept): \Stackflows\Clients\Stackflows\Model\TaskResource
+getTasksList($contentType, $accept): \Stackflows\Clients\Stackflows\Model\TaskResource[]
 ```
 
 List Tasks
@@ -1825,7 +1825,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\TaskResource**](../Model/TaskResource.md)
+[**\Stackflows\Clients\Stackflows\Model\TaskResource[]**](../Model/TaskResource.md)
 
 ### Authorization
 
@@ -2029,7 +2029,7 @@ No authorization required
 ## `postBusinessModelDiagramsPublish()`
 
 ```php
-postBusinessModelDiagramsPublish($diagram, $contentType, $accept, $postBusinessModelDiagramsPublishRequest): \Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource
+postBusinessModelDiagramsPublish($diagram, $contentType, $accept, $postEnvironmentBusinessModelDiagramsPublishRequest): \Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource
 ```
 
 Publish Business Model Diagram
@@ -2052,10 +2052,10 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
 $diagram = 03b764f0-fc1f-11ec-9893-6df708406f80; // string | 
 $contentType = application/json; // string | 
 $accept = application/json; // string | 
-$postBusinessModelDiagramsPublishRequest = new \Stackflows\Clients\Stackflows\Model\PostBusinessModelDiagramsPublishRequest(); // \Stackflows\Clients\Stackflows\Model\PostBusinessModelDiagramsPublishRequest
+$postEnvironmentBusinessModelDiagramsPublishRequest = new \Stackflows\Clients\Stackflows\Model\PostEnvironmentBusinessModelDiagramsPublishRequest(); // \Stackflows\Clients\Stackflows\Model\PostEnvironmentBusinessModelDiagramsPublishRequest
 
 try {
-    $result = $apiInstance->postBusinessModelDiagramsPublish($diagram, $contentType, $accept, $postBusinessModelDiagramsPublishRequest);
+    $result = $apiInstance->postBusinessModelDiagramsPublish($diagram, $contentType, $accept, $postEnvironmentBusinessModelDiagramsPublishRequest);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OperationsApi->postBusinessModelDiagramsPublish: ', $e->getMessage(), PHP_EOL;
@@ -2069,7 +2069,7 @@ Name | Type | Description  | Notes
  **diagram** | **string**|  |
  **contentType** | **string**|  | [optional]
  **accept** | **string**|  | [optional]
- **postBusinessModelDiagramsPublishRequest** | [**\Stackflows\Clients\Stackflows\Model\PostBusinessModelDiagramsPublishRequest**](../Model/PostBusinessModelDiagramsPublishRequest.md)|  | [optional]
+ **postEnvironmentBusinessModelDiagramsPublishRequest** | [**\Stackflows\Clients\Stackflows\Model\PostEnvironmentBusinessModelDiagramsPublishRequest**](../Model/PostEnvironmentBusinessModelDiagramsPublishRequest.md)|  | [optional]
 
 ### Return type
 
@@ -2661,7 +2661,7 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$exception = in; // string | 
+$exception = sed; // string | 
 $putBusinessModelExceptionsUpdateRequest = new \Stackflows\Clients\Stackflows\Model\PutBusinessModelExceptionsUpdateRequest(); // \Stackflows\Clients\Stackflows\Model\PutBusinessModelExceptionsUpdateRequest
 $contentType = application/json; // string | 
 $accept = application/json; // string | 

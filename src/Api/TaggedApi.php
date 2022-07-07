@@ -126,7 +126,7 @@ class TaggedApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource
+     * @return \Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource[]
      */
     public function postTaggedBusinessModelsStart($postTaggedBusinessModelsStartRequest, $contentType = null, $accept = null)
     {
@@ -145,7 +145,7 @@ class TaggedApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource[], HTTP status code, HTTP response headers (array of strings)
      */
     public function postTaggedBusinessModelsStartWithHttpInfo($postTaggedBusinessModelsStartRequest, $contentType = null, $accept = null)
     {
@@ -188,23 +188,23 @@ class TaggedApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource' === '\SplFileObject') {
+                    if ('\Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource' !== 'string') {
+                        if ('\Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource[]' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource', []),
+                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource';
+            $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -225,7 +225,7 @@ class TaggedApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource',
+                        '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -271,7 +271,7 @@ class TaggedApi
      */
     public function postTaggedBusinessModelsStartAsyncWithHttpInfo($postTaggedBusinessModelsStartRequest, $contentType = null, $accept = null)
     {
-        $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource';
+        $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource[]';
         $request = $this->postTaggedBusinessModelsStartRequest($postTaggedBusinessModelsStartRequest, $contentType, $accept);
 
         return $this->client

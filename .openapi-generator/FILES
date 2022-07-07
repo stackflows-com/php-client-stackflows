@@ -21,7 +21,6 @@ docs/Model/EngineResource.md
 docs/Model/EnvironmentResource.md
 docs/Model/OrganizationUnitResource.md
 docs/Model/PostBusinessModelDiagramsCommentsCreateRequest.md
-docs/Model/PostBusinessModelDiagramsPublishRequest.md
 docs/Model/PostBusinessModelExceptionsCreateRequest.md
 docs/Model/PostBusinessModelsCreateRequest.md
 docs/Model/PostBusinessModelsTagRequest.md
@@ -29,6 +28,7 @@ docs/Model/PostBusinessProcessesCreateRequest.md
 docs/Model/PostCategoriesCreateRequest.md
 docs/Model/PostEnginesCreateRequest.md
 docs/Model/PostEnvironmentBusinessModelDiagramsCommentsCreateRequest.md
+docs/Model/PostEnvironmentBusinessModelDiagramsPublishRequest.md
 docs/Model/PostEnvironmentBusinessModelsCreateRequest.md
 docs/Model/PostEnvironmentServiceTasksLockRequest.md
 docs/Model/PostEnvironmentServiceTasksServeRequest.md
@@ -86,7 +86,6 @@ src/Model/EnvironmentResource.php
 src/Model/ModelInterface.php
 src/Model/OrganizationUnitResource.php
 src/Model/PostBusinessModelDiagramsCommentsCreateRequest.php
-src/Model/PostBusinessModelDiagramsPublishRequest.php
 src/Model/PostBusinessModelExceptionsCreateRequest.php
 src/Model/PostBusinessModelsCreateRequest.php
 src/Model/PostBusinessModelsTagRequest.php
@@ -94,6 +93,7 @@ src/Model/PostBusinessProcessesCreateRequest.php
 src/Model/PostCategoriesCreateRequest.php
 src/Model/PostEnginesCreateRequest.php
 src/Model/PostEnvironmentBusinessModelDiagramsCommentsCreateRequest.php
+src/Model/PostEnvironmentBusinessModelDiagramsPublishRequest.php
 src/Model/PostEnvironmentBusinessModelsCreateRequest.php
 src/Model/PostEnvironmentServiceTasksLockRequest.php
 src/Model/PostEnvironmentServiceTasksServeRequest.php
@@ -146,7 +146,6 @@ test/Model/EngineResourceTest.php
 test/Model/EnvironmentResourceTest.php
 test/Model/OrganizationUnitResourceTest.php
 test/Model/PostBusinessModelDiagramsCommentsCreateRequestTest.php
-test/Model/PostBusinessModelDiagramsPublishRequestTest.php
 test/Model/PostBusinessModelExceptionsCreateRequestTest.php
 test/Model/PostBusinessModelsCreateRequestTest.php
 test/Model/PostBusinessModelsTagRequestTest.php
@@ -154,6 +153,7 @@ test/Model/PostBusinessProcessesCreateRequestTest.php
 test/Model/PostCategoriesCreateRequestTest.php
 test/Model/PostEnginesCreateRequestTest.php
 test/Model/PostEnvironmentBusinessModelDiagramsCommentsCreateRequestTest.php
+test/Model/PostEnvironmentBusinessModelDiagramsPublishRequestTest.php
 test/Model/PostEnvironmentBusinessModelsCreateRequestTest.php
 test/Model/PostEnvironmentServiceTasksLockRequestTest.php
 test/Model/PostEnvironmentServiceTasksServeRequestTest.php

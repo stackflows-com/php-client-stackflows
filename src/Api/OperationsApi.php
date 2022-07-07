@@ -1925,7 +1925,7 @@ class OperationsApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Stackflows\Clients\Stackflows\Model\TagResource
+     * @return \Stackflows\Clients\Stackflows\Model\TagResource[]
      */
     public function deleteBusinessProcessesDeleteBulk($contentType = null, $accept = null, $deleteBusinessProcessesDeleteBulkRequest = null)
     {
@@ -1944,7 +1944,7 @@ class OperationsApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Stackflows\Clients\Stackflows\Model\TagResource, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Stackflows\Clients\Stackflows\Model\TagResource[], HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteBusinessProcessesDeleteBulkWithHttpInfo($contentType = null, $accept = null, $deleteBusinessProcessesDeleteBulkRequest = null)
     {
@@ -1987,23 +1987,23 @@ class OperationsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Stackflows\Clients\Stackflows\Model\TagResource' === '\SplFileObject') {
+                    if ('\Stackflows\Clients\Stackflows\Model\TagResource[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Stackflows\Clients\Stackflows\Model\TagResource' !== 'string') {
+                        if ('\Stackflows\Clients\Stackflows\Model\TagResource[]' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\TagResource', []),
+                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\TagResource[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Stackflows\Clients\Stackflows\Model\TagResource';
+            $returnType = '\Stackflows\Clients\Stackflows\Model\TagResource[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -2024,7 +2024,7 @@ class OperationsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Stackflows\Clients\Stackflows\Model\TagResource',
+                        '\Stackflows\Clients\Stackflows\Model\TagResource[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2070,7 +2070,7 @@ class OperationsApi
      */
     public function deleteBusinessProcessesDeleteBulkAsyncWithHttpInfo($contentType = null, $accept = null, $deleteBusinessProcessesDeleteBulkRequest = null)
     {
-        $returnType = '\Stackflows\Clients\Stackflows\Model\TagResource';
+        $returnType = '\Stackflows\Clients\Stackflows\Model\TagResource[]';
         $request = $this->deleteBusinessProcessesDeleteBulkRequest($contentType, $accept, $deleteBusinessProcessesDeleteBulkRequest);
 
         return $this->client
@@ -3110,7 +3110,7 @@ class OperationsApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Stackflows\Clients\Stackflows\Model\CommentResource
+     * @return \Stackflows\Clients\Stackflows\Model\CommentResource[]
      */
     public function getBusinessModelDiagramsCommentsList($diagram, $include = null, $contentType = null, $accept = null)
     {
@@ -3130,7 +3130,7 @@ class OperationsApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Stackflows\Clients\Stackflows\Model\CommentResource, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Stackflows\Clients\Stackflows\Model\CommentResource[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getBusinessModelDiagramsCommentsListWithHttpInfo($diagram, $include = null, $contentType = null, $accept = null)
     {
@@ -3173,23 +3173,23 @@ class OperationsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Stackflows\Clients\Stackflows\Model\CommentResource' === '\SplFileObject') {
+                    if ('\Stackflows\Clients\Stackflows\Model\CommentResource[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Stackflows\Clients\Stackflows\Model\CommentResource' !== 'string') {
+                        if ('\Stackflows\Clients\Stackflows\Model\CommentResource[]' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\CommentResource', []),
+                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\CommentResource[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Stackflows\Clients\Stackflows\Model\CommentResource';
+            $returnType = '\Stackflows\Clients\Stackflows\Model\CommentResource[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -3210,7 +3210,7 @@ class OperationsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Stackflows\Clients\Stackflows\Model\CommentResource',
+                        '\Stackflows\Clients\Stackflows\Model\CommentResource[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3258,7 +3258,7 @@ class OperationsApi
      */
     public function getBusinessModelDiagramsCommentsListAsyncWithHttpInfo($diagram, $include = null, $contentType = null, $accept = null)
     {
-        $returnType = '\Stackflows\Clients\Stackflows\Model\CommentResource';
+        $returnType = '\Stackflows\Clients\Stackflows\Model\CommentResource[]';
         $request = $this->getBusinessModelDiagramsCommentsListRequest($diagram, $include, $contentType, $accept);
 
         return $this->client
@@ -3420,7 +3420,7 @@ class OperationsApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource
+     * @return \Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource[]
      */
     public function getBusinessModelDiagramsList($contentType = null, $accept = null)
     {
@@ -3438,7 +3438,7 @@ class OperationsApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getBusinessModelDiagramsListWithHttpInfo($contentType = null, $accept = null)
     {
@@ -3481,23 +3481,23 @@ class OperationsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource' === '\SplFileObject') {
+                    if ('\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource' !== 'string') {
+                        if ('\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource[]' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource', []),
+                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource';
+            $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -3518,7 +3518,7 @@ class OperationsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource',
+                        '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3562,7 +3562,7 @@ class OperationsApi
      */
     public function getBusinessModelDiagramsListAsyncWithHttpInfo($contentType = null, $accept = null)
     {
-        $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource';
+        $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource[]';
         $request = $this->getBusinessModelDiagramsListRequest($contentType, $accept);
 
         return $this->client
@@ -4011,7 +4011,7 @@ class OperationsApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Stackflows\Clients\Stackflows\Model\BusinessBaseModelExceptionResource
+     * @return \Stackflows\Clients\Stackflows\Model\BusinessBaseModelExceptionResource[]
      */
     public function getBusinessModelExceptionsList($contentType = null, $accept = null)
     {
@@ -4029,7 +4029,7 @@ class OperationsApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Stackflows\Clients\Stackflows\Model\BusinessBaseModelExceptionResource, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Stackflows\Clients\Stackflows\Model\BusinessBaseModelExceptionResource[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getBusinessModelExceptionsListWithHttpInfo($contentType = null, $accept = null)
     {
@@ -4072,23 +4072,23 @@ class OperationsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Stackflows\Clients\Stackflows\Model\BusinessBaseModelExceptionResource' === '\SplFileObject') {
+                    if ('\Stackflows\Clients\Stackflows\Model\BusinessBaseModelExceptionResource[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Stackflows\Clients\Stackflows\Model\BusinessBaseModelExceptionResource' !== 'string') {
+                        if ('\Stackflows\Clients\Stackflows\Model\BusinessBaseModelExceptionResource[]' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelExceptionResource', []),
+                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelExceptionResource[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelExceptionResource';
+            $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelExceptionResource[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -4109,7 +4109,7 @@ class OperationsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelExceptionResource',
+                        '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelExceptionResource[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4153,7 +4153,7 @@ class OperationsApi
      */
     public function getBusinessModelExceptionsListAsyncWithHttpInfo($contentType = null, $accept = null)
     {
-        $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelExceptionResource';
+        $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelExceptionResource[]';
         $request = $this->getBusinessModelExceptionsListRequest($contentType, $accept);
 
         return $this->client
@@ -4588,7 +4588,7 @@ class OperationsApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Stackflows\Clients\Stackflows\Model\BusinessBaseModelPublicationResource
+     * @return \Stackflows\Clients\Stackflows\Model\BusinessBaseModelPublicationResource[]
      */
     public function getBusinessModelPublicationsList($contentType = null, $accept = null)
     {
@@ -4606,7 +4606,7 @@ class OperationsApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Stackflows\Clients\Stackflows\Model\BusinessBaseModelPublicationResource, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Stackflows\Clients\Stackflows\Model\BusinessBaseModelPublicationResource[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getBusinessModelPublicationsListWithHttpInfo($contentType = null, $accept = null)
     {
@@ -4649,23 +4649,23 @@ class OperationsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Stackflows\Clients\Stackflows\Model\BusinessBaseModelPublicationResource' === '\SplFileObject') {
+                    if ('\Stackflows\Clients\Stackflows\Model\BusinessBaseModelPublicationResource[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Stackflows\Clients\Stackflows\Model\BusinessBaseModelPublicationResource' !== 'string') {
+                        if ('\Stackflows\Clients\Stackflows\Model\BusinessBaseModelPublicationResource[]' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelPublicationResource', []),
+                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelPublicationResource[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelPublicationResource';
+            $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelPublicationResource[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -4686,7 +4686,7 @@ class OperationsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelPublicationResource',
+                        '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelPublicationResource[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4730,7 +4730,7 @@ class OperationsApi
      */
     public function getBusinessModelPublicationsListAsyncWithHttpInfo($contentType = null, $accept = null)
     {
-        $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelPublicationResource';
+        $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelPublicationResource[]';
         $request = $this->getBusinessModelPublicationsListRequest($contentType, $accept);
 
         return $this->client
@@ -5181,7 +5181,7 @@ class OperationsApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Stackflows\Clients\Stackflows\Model\CommentResource
+     * @return \Stackflows\Clients\Stackflows\Model\CommentResource[]
      */
     public function getBusinessModelsCommentsList($model, $include = null, $contentType = null, $accept = null)
     {
@@ -5201,7 +5201,7 @@ class OperationsApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Stackflows\Clients\Stackflows\Model\CommentResource, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Stackflows\Clients\Stackflows\Model\CommentResource[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getBusinessModelsCommentsListWithHttpInfo($model, $include = null, $contentType = null, $accept = null)
     {
@@ -5244,23 +5244,23 @@ class OperationsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Stackflows\Clients\Stackflows\Model\CommentResource' === '\SplFileObject') {
+                    if ('\Stackflows\Clients\Stackflows\Model\CommentResource[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Stackflows\Clients\Stackflows\Model\CommentResource' !== 'string') {
+                        if ('\Stackflows\Clients\Stackflows\Model\CommentResource[]' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\CommentResource', []),
+                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\CommentResource[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Stackflows\Clients\Stackflows\Model\CommentResource';
+            $returnType = '\Stackflows\Clients\Stackflows\Model\CommentResource[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -5281,7 +5281,7 @@ class OperationsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Stackflows\Clients\Stackflows\Model\CommentResource',
+                        '\Stackflows\Clients\Stackflows\Model\CommentResource[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5329,7 +5329,7 @@ class OperationsApi
      */
     public function getBusinessModelsCommentsListAsyncWithHttpInfo($model, $include = null, $contentType = null, $accept = null)
     {
-        $returnType = '\Stackflows\Clients\Stackflows\Model\CommentResource';
+        $returnType = '\Stackflows\Clients\Stackflows\Model\CommentResource[]';
         $request = $this->getBusinessModelsCommentsListRequest($model, $include, $contentType, $accept);
 
         return $this->client
@@ -5500,7 +5500,7 @@ class OperationsApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource
+     * @return \Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource[]
      */
     public function getBusinessModelsList($includeownercompanycategorytagscommentsCounttagsCountdiagrams = null, $filterWithAnyTagstestTaganotherTestTag = null, $filterWithoutAnyTags1 = null, $filterAutocompletetes = null, $filterSearchtes = null, $filterCategories12 = null, $filterUncategorized = null, $filterSubscribable = null, $sortnameCreatedAtUpdatedAt = null, $contentType = null, $accept = null)
     {
@@ -5527,7 +5527,7 @@ class OperationsApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getBusinessModelsListWithHttpInfo($includeownercompanycategorytagscommentsCounttagsCountdiagrams = null, $filterWithAnyTagstestTaganotherTestTag = null, $filterWithoutAnyTags1 = null, $filterAutocompletetes = null, $filterSearchtes = null, $filterCategories12 = null, $filterUncategorized = null, $filterSubscribable = null, $sortnameCreatedAtUpdatedAt = null, $contentType = null, $accept = null)
     {
@@ -5570,23 +5570,23 @@ class OperationsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource' === '\SplFileObject') {
+                    if ('\Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource' !== 'string') {
+                        if ('\Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource[]' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource', []),
+                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource';
+            $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -5607,7 +5607,7 @@ class OperationsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource',
+                        '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5669,7 +5669,7 @@ class OperationsApi
      */
     public function getBusinessModelsListAsyncWithHttpInfo($includeownercompanycategorytagscommentsCounttagsCountdiagrams = null, $filterWithAnyTagstestTaganotherTestTag = null, $filterWithoutAnyTags1 = null, $filterAutocompletetes = null, $filterSearchtes = null, $filterCategories12 = null, $filterUncategorized = null, $filterSubscribable = null, $sortnameCreatedAtUpdatedAt = null, $contentType = null, $accept = null)
     {
-        $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource';
+        $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource[]';
         $request = $this->getBusinessModelsListRequest($includeownercompanycategorytagscommentsCounttagsCountdiagrams, $filterWithAnyTagstestTaganotherTestTag, $filterWithoutAnyTags1, $filterAutocompletetes, $filterSearchtes, $filterCategories12, $filterUncategorized, $filterSubscribable, $sortnameCreatedAtUpdatedAt, $contentType, $accept);
 
         return $this->client
@@ -6526,7 +6526,7 @@ class OperationsApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource
+     * @return \Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource[]
      */
     public function getBusinessModelsShowRevisions($model, $contentType = null, $accept = null)
     {
@@ -6545,7 +6545,7 @@ class OperationsApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getBusinessModelsShowRevisionsWithHttpInfo($model, $contentType = null, $accept = null)
     {
@@ -6588,23 +6588,23 @@ class OperationsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource' === '\SplFileObject') {
+                    if ('\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource' !== 'string') {
+                        if ('\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource[]' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource', []),
+                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource';
+            $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -6625,7 +6625,7 @@ class OperationsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource',
+                        '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6671,7 +6671,7 @@ class OperationsApi
      */
     public function getBusinessModelsShowRevisionsAsyncWithHttpInfo($model, $contentType = null, $accept = null)
     {
-        $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource';
+        $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource[]';
         $request = $this->getBusinessModelsShowRevisionsRequest($model, $contentType, $accept);
 
         return $this->client
@@ -6828,7 +6828,7 @@ class OperationsApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Stackflows\Clients\Stackflows\Model\TagResource
+     * @return \Stackflows\Clients\Stackflows\Model\TagResource[]
      */
     public function getBusinessProcessesList($includeprocessModels = null, $includeprocessModelsCount = null, $filterAutocompletetes = null, $filterSearchtes = null, $sortnameCreatedAtUpdatedAt = null, $contentType = null, $accept = null)
     {
@@ -6851,7 +6851,7 @@ class OperationsApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Stackflows\Clients\Stackflows\Model\TagResource, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Stackflows\Clients\Stackflows\Model\TagResource[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getBusinessProcessesListWithHttpInfo($includeprocessModels = null, $includeprocessModelsCount = null, $filterAutocompletetes = null, $filterSearchtes = null, $sortnameCreatedAtUpdatedAt = null, $contentType = null, $accept = null)
     {
@@ -6894,23 +6894,23 @@ class OperationsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Stackflows\Clients\Stackflows\Model\TagResource' === '\SplFileObject') {
+                    if ('\Stackflows\Clients\Stackflows\Model\TagResource[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Stackflows\Clients\Stackflows\Model\TagResource' !== 'string') {
+                        if ('\Stackflows\Clients\Stackflows\Model\TagResource[]' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\TagResource', []),
+                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\TagResource[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Stackflows\Clients\Stackflows\Model\TagResource';
+            $returnType = '\Stackflows\Clients\Stackflows\Model\TagResource[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -6931,7 +6931,7 @@ class OperationsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Stackflows\Clients\Stackflows\Model\TagResource',
+                        '\Stackflows\Clients\Stackflows\Model\TagResource[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6985,7 +6985,7 @@ class OperationsApi
      */
     public function getBusinessProcessesListAsyncWithHttpInfo($includeprocessModels = null, $includeprocessModelsCount = null, $filterAutocompletetes = null, $filterSearchtes = null, $sortnameCreatedAtUpdatedAt = null, $contentType = null, $accept = null)
     {
-        $returnType = '\Stackflows\Clients\Stackflows\Model\TagResource';
+        $returnType = '\Stackflows\Clients\Stackflows\Model\TagResource[]';
         $request = $this->getBusinessProcessesListRequest($includeprocessModels, $includeprocessModelsCount, $filterAutocompletetes, $filterSearchtes, $sortnameCreatedAtUpdatedAt, $contentType, $accept);
 
         return $this->client
@@ -7506,7 +7506,7 @@ class OperationsApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Stackflows\Clients\Stackflows\Model\CategoryResource
+     * @return \Stackflows\Clients\Stackflows\Model\CategoryResource[]
      */
     public function getCategoriesList($filterRoot = null, $filterSiblings = null, $filterAutocomplete = null, $filterSearch = null, $fieldsBusinessProcessLatestDiagram = null, $include = null, $filterSearchBusinessModels = null, $sort = null, $contentType = null, $accept = null)
     {
@@ -7532,7 +7532,7 @@ class OperationsApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Stackflows\Clients\Stackflows\Model\CategoryResource, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Stackflows\Clients\Stackflows\Model\CategoryResource[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getCategoriesListWithHttpInfo($filterRoot = null, $filterSiblings = null, $filterAutocomplete = null, $filterSearch = null, $fieldsBusinessProcessLatestDiagram = null, $include = null, $filterSearchBusinessModels = null, $sort = null, $contentType = null, $accept = null)
     {
@@ -7575,23 +7575,23 @@ class OperationsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Stackflows\Clients\Stackflows\Model\CategoryResource' === '\SplFileObject') {
+                    if ('\Stackflows\Clients\Stackflows\Model\CategoryResource[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Stackflows\Clients\Stackflows\Model\CategoryResource' !== 'string') {
+                        if ('\Stackflows\Clients\Stackflows\Model\CategoryResource[]' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\CategoryResource', []),
+                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\CategoryResource[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Stackflows\Clients\Stackflows\Model\CategoryResource';
+            $returnType = '\Stackflows\Clients\Stackflows\Model\CategoryResource[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -7612,7 +7612,7 @@ class OperationsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Stackflows\Clients\Stackflows\Model\CategoryResource',
+                        '\Stackflows\Clients\Stackflows\Model\CategoryResource[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7672,7 +7672,7 @@ class OperationsApi
      */
     public function getCategoriesListAsyncWithHttpInfo($filterRoot = null, $filterSiblings = null, $filterAutocomplete = null, $filterSearch = null, $fieldsBusinessProcessLatestDiagram = null, $include = null, $filterSearchBusinessModels = null, $sort = null, $contentType = null, $accept = null)
     {
-        $returnType = '\Stackflows\Clients\Stackflows\Model\CategoryResource';
+        $returnType = '\Stackflows\Clients\Stackflows\Model\CategoryResource[]';
         $request = $this->getCategoriesListRequest($filterRoot, $filterSiblings, $filterAutocomplete, $filterSearch, $fieldsBusinessProcessLatestDiagram, $include, $filterSearchBusinessModels, $sort, $contentType, $accept);
 
         return $this->client
@@ -8187,7 +8187,7 @@ class OperationsApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Stackflows\Clients\Stackflows\Model\TagResource
+     * @return \Stackflows\Clients\Stackflows\Model\TagResource[]
      */
     public function getTagsList($contentType = null, $accept = null)
     {
@@ -8205,7 +8205,7 @@ class OperationsApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Stackflows\Clients\Stackflows\Model\TagResource, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Stackflows\Clients\Stackflows\Model\TagResource[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getTagsListWithHttpInfo($contentType = null, $accept = null)
     {
@@ -8248,23 +8248,23 @@ class OperationsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Stackflows\Clients\Stackflows\Model\TagResource' === '\SplFileObject') {
+                    if ('\Stackflows\Clients\Stackflows\Model\TagResource[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Stackflows\Clients\Stackflows\Model\TagResource' !== 'string') {
+                        if ('\Stackflows\Clients\Stackflows\Model\TagResource[]' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\TagResource', []),
+                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\TagResource[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Stackflows\Clients\Stackflows\Model\TagResource';
+            $returnType = '\Stackflows\Clients\Stackflows\Model\TagResource[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -8285,7 +8285,7 @@ class OperationsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Stackflows\Clients\Stackflows\Model\TagResource',
+                        '\Stackflows\Clients\Stackflows\Model\TagResource[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -8329,7 +8329,7 @@ class OperationsApi
      */
     public function getTagsListAsyncWithHttpInfo($contentType = null, $accept = null)
     {
-        $returnType = '\Stackflows\Clients\Stackflows\Model\TagResource';
+        $returnType = '\Stackflows\Clients\Stackflows\Model\TagResource[]';
         $request = $this->getTagsListRequest($contentType, $accept);
 
         return $this->client
@@ -8764,7 +8764,7 @@ class OperationsApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Stackflows\Clients\Stackflows\Model\TaskResource
+     * @return \Stackflows\Clients\Stackflows\Model\TaskResource[]
      */
     public function getTasksList($contentType = null, $accept = null)
     {
@@ -8782,7 +8782,7 @@ class OperationsApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Stackflows\Clients\Stackflows\Model\TaskResource, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Stackflows\Clients\Stackflows\Model\TaskResource[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getTasksListWithHttpInfo($contentType = null, $accept = null)
     {
@@ -8825,23 +8825,23 @@ class OperationsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Stackflows\Clients\Stackflows\Model\TaskResource' === '\SplFileObject') {
+                    if ('\Stackflows\Clients\Stackflows\Model\TaskResource[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Stackflows\Clients\Stackflows\Model\TaskResource' !== 'string') {
+                        if ('\Stackflows\Clients\Stackflows\Model\TaskResource[]' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\TaskResource', []),
+                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\TaskResource[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Stackflows\Clients\Stackflows\Model\TaskResource';
+            $returnType = '\Stackflows\Clients\Stackflows\Model\TaskResource[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -8862,7 +8862,7 @@ class OperationsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Stackflows\Clients\Stackflows\Model\TaskResource',
+                        '\Stackflows\Clients\Stackflows\Model\TaskResource[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -8906,7 +8906,7 @@ class OperationsApi
      */
     public function getTasksListAsyncWithHttpInfo($contentType = null, $accept = null)
     {
-        $returnType = '\Stackflows\Clients\Stackflows\Model\TaskResource';
+        $returnType = '\Stackflows\Clients\Stackflows\Model\TaskResource[]';
         $request = $this->getTasksListRequest($contentType, $accept);
 
         return $this->client
@@ -9980,15 +9980,15 @@ class OperationsApi
      * @param  string $diagram  (required)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
-     * @param  \Stackflows\Clients\Stackflows\Model\PostBusinessModelDiagramsPublishRequest $postBusinessModelDiagramsPublishRequest postBusinessModelDiagramsPublishRequest (optional)
+     * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentBusinessModelDiagramsPublishRequest $postEnvironmentBusinessModelDiagramsPublishRequest postEnvironmentBusinessModelDiagramsPublishRequest (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource
      */
-    public function postBusinessModelDiagramsPublish($diagram, $contentType = null, $accept = null, $postBusinessModelDiagramsPublishRequest = null)
+    public function postBusinessModelDiagramsPublish($diagram, $contentType = null, $accept = null, $postEnvironmentBusinessModelDiagramsPublishRequest = null)
     {
-        list($response) = $this->postBusinessModelDiagramsPublishWithHttpInfo($diagram, $contentType, $accept, $postBusinessModelDiagramsPublishRequest);
+        list($response) = $this->postBusinessModelDiagramsPublishWithHttpInfo($diagram, $contentType, $accept, $postEnvironmentBusinessModelDiagramsPublishRequest);
         return $response;
     }
 
@@ -10000,15 +10000,15 @@ class OperationsApi
      * @param  string $diagram  (required)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
-     * @param  \Stackflows\Clients\Stackflows\Model\PostBusinessModelDiagramsPublishRequest $postBusinessModelDiagramsPublishRequest (optional)
+     * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentBusinessModelDiagramsPublishRequest $postEnvironmentBusinessModelDiagramsPublishRequest (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postBusinessModelDiagramsPublishWithHttpInfo($diagram, $contentType = null, $accept = null, $postBusinessModelDiagramsPublishRequest = null)
+    public function postBusinessModelDiagramsPublishWithHttpInfo($diagram, $contentType = null, $accept = null, $postEnvironmentBusinessModelDiagramsPublishRequest = null)
     {
-        $request = $this->postBusinessModelDiagramsPublishRequest($diagram, $contentType, $accept, $postBusinessModelDiagramsPublishRequest);
+        $request = $this->postBusinessModelDiagramsPublishRequest($diagram, $contentType, $accept, $postEnvironmentBusinessModelDiagramsPublishRequest);
 
         try {
             $options = $this->createHttpClientOption();
@@ -10102,14 +10102,14 @@ class OperationsApi
      * @param  string $diagram  (required)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
-     * @param  \Stackflows\Clients\Stackflows\Model\PostBusinessModelDiagramsPublishRequest $postBusinessModelDiagramsPublishRequest (optional)
+     * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentBusinessModelDiagramsPublishRequest $postEnvironmentBusinessModelDiagramsPublishRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postBusinessModelDiagramsPublishAsync($diagram, $contentType = null, $accept = null, $postBusinessModelDiagramsPublishRequest = null)
+    public function postBusinessModelDiagramsPublishAsync($diagram, $contentType = null, $accept = null, $postEnvironmentBusinessModelDiagramsPublishRequest = null)
     {
-        return $this->postBusinessModelDiagramsPublishAsyncWithHttpInfo($diagram, $contentType, $accept, $postBusinessModelDiagramsPublishRequest)
+        return $this->postBusinessModelDiagramsPublishAsyncWithHttpInfo($diagram, $contentType, $accept, $postEnvironmentBusinessModelDiagramsPublishRequest)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -10125,15 +10125,15 @@ class OperationsApi
      * @param  string $diagram  (required)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
-     * @param  \Stackflows\Clients\Stackflows\Model\PostBusinessModelDiagramsPublishRequest $postBusinessModelDiagramsPublishRequest (optional)
+     * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentBusinessModelDiagramsPublishRequest $postEnvironmentBusinessModelDiagramsPublishRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postBusinessModelDiagramsPublishAsyncWithHttpInfo($diagram, $contentType = null, $accept = null, $postBusinessModelDiagramsPublishRequest = null)
+    public function postBusinessModelDiagramsPublishAsyncWithHttpInfo($diagram, $contentType = null, $accept = null, $postEnvironmentBusinessModelDiagramsPublishRequest = null)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource';
-        $request = $this->postBusinessModelDiagramsPublishRequest($diagram, $contentType, $accept, $postBusinessModelDiagramsPublishRequest);
+        $request = $this->postBusinessModelDiagramsPublishRequest($diagram, $contentType, $accept, $postEnvironmentBusinessModelDiagramsPublishRequest);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -10177,12 +10177,12 @@ class OperationsApi
      * @param  string $diagram  (required)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
-     * @param  \Stackflows\Clients\Stackflows\Model\PostBusinessModelDiagramsPublishRequest $postBusinessModelDiagramsPublishRequest (optional)
+     * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentBusinessModelDiagramsPublishRequest $postEnvironmentBusinessModelDiagramsPublishRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function postBusinessModelDiagramsPublishRequest($diagram, $contentType = null, $accept = null, $postBusinessModelDiagramsPublishRequest = null)
+    public function postBusinessModelDiagramsPublishRequest($diagram, $contentType = null, $accept = null, $postEnvironmentBusinessModelDiagramsPublishRequest = null)
     {
         // verify the required parameter 'diagram' is set
         if ($diagram === null || (is_array($diagram) && count($diagram) === 0)) {
@@ -10230,11 +10230,11 @@ class OperationsApi
         }
 
         // for model (json/xml)
-        if (isset($postBusinessModelDiagramsPublishRequest)) {
+        if (isset($postEnvironmentBusinessModelDiagramsPublishRequest)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($postBusinessModelDiagramsPublishRequest));
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($postEnvironmentBusinessModelDiagramsPublishRequest));
             } else {
-                $httpBody = $postBusinessModelDiagramsPublishRequest;
+                $httpBody = $postEnvironmentBusinessModelDiagramsPublishRequest;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
