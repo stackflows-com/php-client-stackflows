@@ -1,6 +1,6 @@
 <?php
 /**
- * GetEnvironmentUserTasksIndex401Response
+ * ServiceTaskTypeResource
  *
  * PHP version 7.4
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \Stackflows\Clients\Stackflows\ObjectSerializer;
 
 /**
- * GetEnvironmentUserTasksIndex401Response Class Doc Comment
+ * ServiceTaskTypeResource Class Doc Comment
  *
  * @category Class
  * @package  Stackflows\Clients\Stackflows
@@ -40,7 +40,7 @@ use \Stackflows\Clients\Stackflows\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class GetEnvironmentUserTasksIndex401Response implements ModelInterface, ArrayAccess, \JsonSerializable
+class ServiceTaskTypeResource implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class GetEnvironmentUserTasksIndex401Response implements ModelInterface, ArrayAc
       *
       * @var string
       */
-    protected static $openAPIModelName = 'getEnvironmentUserTasksIndex_401_response';
+    protected static $openAPIModelName = 'ServiceTaskTypeResource';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,7 +57,7 @@ class GetEnvironmentUserTasksIndex401Response implements ModelInterface, ArrayAc
       * @var string[]
       */
     protected static $openAPITypes = [
-        'message' => 'string'
+        'reference' => 'string'
     ];
 
     /**
@@ -68,7 +68,7 @@ class GetEnvironmentUserTasksIndex401Response implements ModelInterface, ArrayAc
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'message' => null
+        'reference' => null
     ];
 
     /**
@@ -98,7 +98,7 @@ class GetEnvironmentUserTasksIndex401Response implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $attributeMap = [
-        'message' => 'message'
+        'reference' => 'reference'
     ];
 
     /**
@@ -107,7 +107,7 @@ class GetEnvironmentUserTasksIndex401Response implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $setters = [
-        'message' => 'setMessage'
+        'reference' => 'setReference'
     ];
 
     /**
@@ -116,7 +116,7 @@ class GetEnvironmentUserTasksIndex401Response implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $getters = [
-        'message' => 'getMessage'
+        'reference' => 'getReference'
     ];
 
     /**
@@ -176,7 +176,7 @@ class GetEnvironmentUserTasksIndex401Response implements ModelInterface, ArrayAc
      */
     public function __construct(array $data = null)
     {
-        $this->container['message'] = $data['message'] ?? null;
+        $this->container['reference'] = $data['reference'] ?? null;
     }
 
     /**
@@ -204,25 +204,25 @@ class GetEnvironmentUserTasksIndex401Response implements ModelInterface, ArrayAc
 
 
     /**
-     * Gets message
+     * Gets reference
      *
      * @return string|null
      */
-    public function getMessage()
+    public function getReference()
     {
-        return $this->container['message'];
+        return $this->container['reference'];
     }
 
     /**
-     * Sets message
+     * Sets reference
      *
-     * @param string|null $message message
+     * @param string|null $reference reference
      *
      * @return self
      */
-    public function setMessage($message)
+    public function setReference($reference)
     {
-        $this->container['message'] = $message;
+        $this->container['reference'] = $reference;
 
         return $this;
     }

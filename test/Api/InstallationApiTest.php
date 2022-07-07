@@ -72,12 +72,12 @@ class InstallationApiTest extends TestCase
     }
 
     /**
-     * Test case for deleteEnginesDelete
+     * Test case for deleteEngines
      *
      * Delete Engine.
      *
      */
-    public function testDeleteEnginesDelete()
+    public function testDeleteEngines()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

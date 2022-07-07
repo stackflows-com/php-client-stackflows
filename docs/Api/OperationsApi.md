@@ -4,16 +4,16 @@ All URIs are relative to http://localhost:8081.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteBusinessModelDiagramsCommentsDelete()**](OperationsApi.md#deleteBusinessModelDiagramsCommentsDelete) | **DELETE** /api/v2/business-model-diagrams/{diagram}/comments/{comment} | Delete Business Model Diagram Comment
-[**deleteBusinessModelDiagramsDelete()**](OperationsApi.md#deleteBusinessModelDiagramsDelete) | **DELETE** /api/v2/business-model-diagrams/{diagram} | Delete Business Model Diagram
-[**deleteBusinessModelExceptionsDelete()**](OperationsApi.md#deleteBusinessModelExceptionsDelete) | **DELETE** /api/v2/business-model-exceptions/{exception} | Delete Business Model Exception
-[**deleteBusinessModelsDelete()**](OperationsApi.md#deleteBusinessModelsDelete) | **DELETE** /api/v2/business-models/{model} | Delete Business Model
+[**deleteBusinessModelDiagrams()**](OperationsApi.md#deleteBusinessModelDiagrams) | **DELETE** /api/v2/business-model-diagrams/{diagram} | Delete Business Model Diagram
+[**deleteBusinessModelDiagramsComments()**](OperationsApi.md#deleteBusinessModelDiagramsComments) | **DELETE** /api/v2/business-model-diagrams/{diagram}/comments/{comment} | Delete Business Model Diagram Comment
+[**deleteBusinessModelExceptions()**](OperationsApi.md#deleteBusinessModelExceptions) | **DELETE** /api/v2/business-model-exceptions/{exception} | Delete Business Model Exception
+[**deleteBusinessModels()**](OperationsApi.md#deleteBusinessModels) | **DELETE** /api/v2/business-models/{model} | Delete Business Model
 [**deleteBusinessModelsDeleteBulk()**](OperationsApi.md#deleteBusinessModelsDeleteBulk) | **DELETE** /api/v2/business-models | Delete Business Models
-[**deleteBusinessProcessesDelete()**](OperationsApi.md#deleteBusinessProcessesDelete) | **DELETE** /api/v2/business-processes/{tag} | Delete Business Process Tag
+[**deleteBusinessProcesses()**](OperationsApi.md#deleteBusinessProcesses) | **DELETE** /api/v2/business-processes/{tag} | Delete Business Process Tag
 [**deleteBusinessProcessesDeleteBulk()**](OperationsApi.md#deleteBusinessProcessesDeleteBulk) | **DELETE** /api/v2/business-processes | Delete Business Process Tags
-[**deleteCategoriesDelete()**](OperationsApi.md#deleteCategoriesDelete) | **DELETE** /api/v2/categories/{category} | Delete Category
-[**deleteTagsDelete()**](OperationsApi.md#deleteTagsDelete) | **DELETE** /api/v2/tags/{tag} | Delete Tag
-[**deleteTasksDelete()**](OperationsApi.md#deleteTasksDelete) | **DELETE** /api/v2/tasks/{task} | Delete Task
+[**deleteCategories()**](OperationsApi.md#deleteCategories) | **DELETE** /api/v2/categories/{category} | Delete Category
+[**deleteTags()**](OperationsApi.md#deleteTags) | **DELETE** /api/v2/tags/{tag} | Delete Tag
+[**deleteTasks()**](OperationsApi.md#deleteTasks) | **DELETE** /api/v2/tasks/{task} | Delete Task
 [**getBusinessModelDiagramsCommentsList()**](OperationsApi.md#getBusinessModelDiagramsCommentsList) | **GET** /api/v2/business-model-diagrams/{diagram}/comments | List Business Model Diagram Comments
 [**getBusinessModelDiagramsList()**](OperationsApi.md#getBusinessModelDiagramsList) | **GET** /api/v2/business-model-diagrams | List Business Model Diagram
 [**getBusinessModelDiagramsShow()**](OperationsApi.md#getBusinessModelDiagramsShow) | **GET** /api/v2/business-model-diagrams/{diagram} | View Business Model Diagram
@@ -54,10 +54,70 @@ Method | HTTP request | Description
 [**putTasksUpdate()**](OperationsApi.md#putTasksUpdate) | **PUT** /api/v2/tasks/{id} | Update Task
 
 
-## `deleteBusinessModelDiagramsCommentsDelete()`
+## `deleteBusinessModelDiagrams()`
 
 ```php
-deleteBusinessModelDiagramsCommentsDelete($diagram, $comment, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\CommentResource
+deleteBusinessModelDiagrams($diagram, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource
+```
+
+Delete Business Model Diagram
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$diagram = 03b764f0-fc1f-11ec-9893-6df708406f80; // string | 
+$contentType = application/json; // string | 
+$accept = application/json; // string | 
+
+try {
+    $result = $apiInstance->deleteBusinessModelDiagrams($diagram, $contentType, $accept);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling OperationsApi->deleteBusinessModelDiagrams: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **diagram** | **string**|  |
+ **contentType** | **string**|  | [optional]
+ **accept** | **string**|  | [optional]
+
+### Return type
+
+[**\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource**](../Model/BusinessBaseModelDiagramResource.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `deleteBusinessModelDiagramsComments()`
+
+```php
+deleteBusinessModelDiagramsComments($diagram, $comment, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\CommentResource
 ```
 
 Delete Business Model Diagram Comment
@@ -83,10 +143,10 @@ $contentType = application/json; // string |
 $accept = application/json; // string | 
 
 try {
-    $result = $apiInstance->deleteBusinessModelDiagramsCommentsDelete($diagram, $comment, $contentType, $accept);
+    $result = $apiInstance->deleteBusinessModelDiagramsComments($diagram, $comment, $contentType, $accept);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling OperationsApi->deleteBusinessModelDiagramsCommentsDelete: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OperationsApi->deleteBusinessModelDiagramsComments: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -116,70 +176,10 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `deleteBusinessModelDiagramsDelete()`
+## `deleteBusinessModelExceptions()`
 
 ```php
-deleteBusinessModelDiagramsDelete($diagram, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource
-```
-
-Delete Business Model Diagram
-
-
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-
-$apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
-$diagram = 03b764f0-fc1f-11ec-9893-6df708406f80; // string | 
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
-
-try {
-    $result = $apiInstance->deleteBusinessModelDiagramsDelete($diagram, $contentType, $accept);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling OperationsApi->deleteBusinessModelDiagramsDelete: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **diagram** | **string**|  |
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
-
-### Return type
-
-[**\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource**](../Model/BusinessBaseModelDiagramResource.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `deleteBusinessModelExceptionsDelete()`
-
-```php
-deleteBusinessModelExceptionsDelete($exception, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\BusinessBaseModelExceptionResource
+deleteBusinessModelExceptions($exception, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\BusinessBaseModelExceptionResource
 ```
 
 Delete Business Model Exception
@@ -199,15 +199,15 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$exception = sit; // string | 
+$exception = in; // string | 
 $contentType = application/json; // string | 
 $accept = application/json; // string | 
 
 try {
-    $result = $apiInstance->deleteBusinessModelExceptionsDelete($exception, $contentType, $accept);
+    $result = $apiInstance->deleteBusinessModelExceptions($exception, $contentType, $accept);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling OperationsApi->deleteBusinessModelExceptionsDelete: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OperationsApi->deleteBusinessModelExceptions: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -236,10 +236,10 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `deleteBusinessModelsDelete()`
+## `deleteBusinessModels()`
 
 ```php
-deleteBusinessModelsDelete($model, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource
+deleteBusinessModels($model, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource
 ```
 
 Delete Business Model
@@ -264,10 +264,10 @@ $contentType = application/json; // string |
 $accept = application/json; // string | 
 
 try {
-    $result = $apiInstance->deleteBusinessModelsDelete($model, $contentType, $accept);
+    $result = $apiInstance->deleteBusinessModels($model, $contentType, $accept);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling OperationsApi->deleteBusinessModelsDelete: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OperationsApi->deleteBusinessModels: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -356,10 +356,10 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `deleteBusinessProcessesDelete()`
+## `deleteBusinessProcesses()`
 
 ```php
-deleteBusinessProcessesDelete($tag, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\TagResource
+deleteBusinessProcesses($tag, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\TagResource
 ```
 
 Delete Business Process Tag
@@ -384,10 +384,10 @@ $contentType = application/json; // string |
 $accept = application/json; // string | 
 
 try {
-    $result = $apiInstance->deleteBusinessProcessesDelete($tag, $contentType, $accept);
+    $result = $apiInstance->deleteBusinessProcesses($tag, $contentType, $accept);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling OperationsApi->deleteBusinessProcessesDelete: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OperationsApi->deleteBusinessProcesses: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -476,10 +476,10 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `deleteCategoriesDelete()`
+## `deleteCategories()`
 
 ```php
-deleteCategoriesDelete($category, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\CategoryResource
+deleteCategories($category, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\CategoryResource
 ```
 
 Delete Category
@@ -504,10 +504,10 @@ $contentType = application/json; // string |
 $accept = application/json; // string | 
 
 try {
-    $result = $apiInstance->deleteCategoriesDelete($category, $contentType, $accept);
+    $result = $apiInstance->deleteCategories($category, $contentType, $accept);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling OperationsApi->deleteCategoriesDelete: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OperationsApi->deleteCategories: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -536,10 +536,10 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `deleteTagsDelete()`
+## `deleteTags()`
 
 ```php
-deleteTagsDelete($tag, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\TagResource
+deleteTags($tag, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\TagResource
 ```
 
 Delete Tag
@@ -564,10 +564,10 @@ $contentType = application/json; // string |
 $accept = application/json; // string | 
 
 try {
-    $result = $apiInstance->deleteTagsDelete($tag, $contentType, $accept);
+    $result = $apiInstance->deleteTags($tag, $contentType, $accept);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling OperationsApi->deleteTagsDelete: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OperationsApi->deleteTags: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -596,10 +596,10 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `deleteTasksDelete()`
+## `deleteTasks()`
 
 ```php
-deleteTasksDelete($task, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\TaskResource
+deleteTasks($task, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\TaskResource
 ```
 
 Delete Task
@@ -624,10 +624,10 @@ $contentType = application/json; // string |
 $accept = application/json; // string | 
 
 try {
-    $result = $apiInstance->deleteTasksDelete($task, $contentType, $accept);
+    $result = $apiInstance->deleteTasks($task, $contentType, $accept);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling OperationsApi->deleteTasksDelete: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OperationsApi->deleteTasks: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -800,7 +800,7 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     new GuzzleHttp\Client()
 );
 $diagram = 03b764f0-fc1f-11ec-9893-6df708406f80; // string | 
-$includesnapshotsdeploysdeploysStatistics = voluptas; // string | Possible includes
+$includesnapshotsdeploysdeploysStatistics = ipsa; // string | Possible includes
 $contentType = application/json; // string | 
 $accept = application/json; // string | 
 
@@ -919,7 +919,7 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$exception = sit; // string | 
+$exception = in; // string | 
 $contentType = application/json; // string | 
 $accept = application/json; // string | 
 
@@ -1038,7 +1038,7 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     new GuzzleHttp\Client()
 );
 $publication = 25027da0-d893-11ec-85cc-f181a6cfaf8e; // string | 
-$appendstatisticsoutliers = corrupti; // string | Possible appends
+$appendstatisticsoutliers = molestiae; // string | Possible appends
 $contentType = application/json; // string | 
 $accept = application/json; // string | 
 
@@ -1161,15 +1161,15 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$includeownercompanycategorytagscommentsCounttagsCountdiagrams = soluta; // string | Possible includes
-$filterWithAnyTagstestTaganotherTestTag = quia; // string | Will return models that has any of specified tags
-$filterWithoutAnyTags1 = eum; // string | Will return list of all models that has no tags at all
-$filterAutocompletetes = qui; // string | Retrieve list that has \"tes\" at the start of their name
-$filterSearchtes = aspernatur; // string | Retrieve list that has \"tes\" in their name
-$filterCategories12 = alias; // string | Filter by specific categories
+$includeownercompanycategorytagscommentsCounttagsCountdiagrams = ut; // string | Possible includes
+$filterWithAnyTagstestTaganotherTestTag = eos; // string | Will return models that has any of specified tags
+$filterWithoutAnyTags1 = vel; // string | Will return list of all models that has no tags at all
+$filterAutocompletetes = delectus; // string | Retrieve list that has \"tes\" at the start of their name
+$filterSearchtes = voluptatem; // string | Retrieve list that has \"tes\" in their name
+$filterCategories12 = eos; // string | Filter by specific categories
 $filterUncategorized = true; // bool | List only uncategorized process models.
 $filterSubscribable = true; // bool | List only subscribable process models.
-$sortnameCreatedAtUpdatedAt = autem; // string | Sorting example
+$sortnameCreatedAtUpdatedAt = fuga; // string | Sorting example
 $contentType = application/json; // string | 
 $accept = application/json; // string | 
 
@@ -1238,7 +1238,7 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     new GuzzleHttp\Client()
 );
 $model = 06a4ad30-f87d-11ec-ba01-1558c1387592; // string | 
-$includeownercompanycategorytagscommentsCounttagsCountdiagrams = praesentium; // string | Possible includes
+$includeownercompanycategorytagscommentsCounttagsCountdiagrams = sit; // string | Possible includes
 $contentType = application/json; // string | 
 $accept = application/json; // string | 
 
@@ -1300,7 +1300,7 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     new GuzzleHttp\Client()
 );
 $model = 06a4ad30-f87d-11ec-ba01-1558c1387592; // string | 
-$revision = provident; // string | 
+$revision = doloribus; // string | 
 $contentType = application/json; // string | 
 $accept = application/json; // string | 
 
@@ -1421,11 +1421,11 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$includeprocessModels = molestiae; // string | Will add process models to the response
-$includeprocessModelsCount = 20; // int | Will add process models count to the response
-$filterAutocompletetes = est; // string | Retrieve list that has \"tes\" at the start of their name
-$filterSearchtes = impedit; // string | Retrieve list that has \"tes\" in their name
-$sortnameCreatedAtUpdatedAt = recusandae; // string | Sorting example
+$includeprocessModels = perferendis; // string | Will add process models to the response
+$includeprocessModelsCount = 12; // int | Will add process models count to the response
+$filterAutocompletetes = eos; // string | Retrieve list that has \"tes\" at the start of their name
+$filterSearchtes = blanditiis; // string | Retrieve list that has \"tes\" in their name
+$sortnameCreatedAtUpdatedAt = laboriosam; // string | Sorting example
 $contentType = application/json; // string | 
 $accept = application/json; // string | 
 
@@ -1490,8 +1490,8 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     new GuzzleHttp\Client()
 );
 $tag = 3; // int | 
-$includeprocessModels = qui; // string | Will add process models to the response
-$includeprocessModelsCount = 1; // int | Will add process models count to the response
+$includeprocessModels = magnam; // string | Will add process models to the response
+$includeprocessModelsCount = 11; // int | Will add process models count to the response
 $contentType = application/json; // string | 
 $accept = application/json; // string | 
 
@@ -2029,7 +2029,7 @@ No authorization required
 ## `postBusinessModelDiagramsPublish()`
 
 ```php
-postBusinessModelDiagramsPublish($diagram, $contentType, $accept, $postEnvironmentBusinessModelDiagramsPublishRequest): \Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource
+postBusinessModelDiagramsPublish($diagram, $contentType, $accept, $postBusinessModelDiagramsPublishRequest): \Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource
 ```
 
 Publish Business Model Diagram
@@ -2052,10 +2052,10 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
 $diagram = 03b764f0-fc1f-11ec-9893-6df708406f80; // string | 
 $contentType = application/json; // string | 
 $accept = application/json; // string | 
-$postEnvironmentBusinessModelDiagramsPublishRequest = new \Stackflows\Clients\Stackflows\Model\PostEnvironmentBusinessModelDiagramsPublishRequest(); // \Stackflows\Clients\Stackflows\Model\PostEnvironmentBusinessModelDiagramsPublishRequest
+$postBusinessModelDiagramsPublishRequest = new \Stackflows\Clients\Stackflows\Model\PostBusinessModelDiagramsPublishRequest(); // \Stackflows\Clients\Stackflows\Model\PostBusinessModelDiagramsPublishRequest
 
 try {
-    $result = $apiInstance->postBusinessModelDiagramsPublish($diagram, $contentType, $accept, $postEnvironmentBusinessModelDiagramsPublishRequest);
+    $result = $apiInstance->postBusinessModelDiagramsPublish($diagram, $contentType, $accept, $postBusinessModelDiagramsPublishRequest);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OperationsApi->postBusinessModelDiagramsPublish: ', $e->getMessage(), PHP_EOL;
@@ -2069,7 +2069,7 @@ Name | Type | Description  | Notes
  **diagram** | **string**|  |
  **contentType** | **string**|  | [optional]
  **accept** | **string**|  | [optional]
- **postEnvironmentBusinessModelDiagramsPublishRequest** | [**\Stackflows\Clients\Stackflows\Model\PostEnvironmentBusinessModelDiagramsPublishRequest**](../Model/PostEnvironmentBusinessModelDiagramsPublishRequest.md)|  | [optional]
+ **postBusinessModelDiagramsPublishRequest** | [**\Stackflows\Clients\Stackflows\Model\PostBusinessModelDiagramsPublishRequest**](../Model/PostBusinessModelDiagramsPublishRequest.md)|  | [optional]
 
 ### Return type
 
@@ -2661,7 +2661,7 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$exception = sit; // string | 
+$exception = in; // string | 
 $putBusinessModelExceptionsUpdateRequest = new \Stackflows\Clients\Stackflows\Model\PutBusinessModelExceptionsUpdateRequest(); // \Stackflows\Clients\Stackflows\Model\PutBusinessModelExceptionsUpdateRequest
 $contentType = application/json; // string | 
 $accept = application/json; // string | 

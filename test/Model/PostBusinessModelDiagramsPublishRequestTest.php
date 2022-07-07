@@ -1,6 +1,6 @@
 <?php
 /**
- * GetEnvironmentUserTasksIndex401ResponseTest
+ * PostBusinessModelDiagramsPublishRequestTest
  *
  * PHP version 7.4
  *
@@ -31,15 +31,15 @@ namespace Stackflows\Clients\Stackflows\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * GetEnvironmentUserTasksIndex401ResponseTest Class Doc Comment
+ * PostBusinessModelDiagramsPublishRequestTest Class Doc Comment
  *
  * @category    Class
- * @description GetEnvironmentUserTasksIndex401Response
+ * @description PostBusinessModelDiagramsPublishRequest
  * @package     Stackflows\Clients\Stackflows
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class GetEnvironmentUserTasksIndex401ResponseTest extends TestCase
+class PostBusinessModelDiagramsPublishRequestTest extends TestCase
 {
 
     /**
@@ -71,18 +71,18 @@ class GetEnvironmentUserTasksIndex401ResponseTest extends TestCase
     }
 
     /**
-     * Test "GetEnvironmentUserTasksIndex401Response"
+     * Test "PostBusinessModelDiagramsPublishRequest"
      */
-    public function testGetEnvironmentUserTasksIndex401Response()
+    public function testPostBusinessModelDiagramsPublishRequest()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "message"
+     * Test attribute "environmentIds"
      */
-    public function testPropertyMessage()
+    public function testPropertyEnvironmentIds()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

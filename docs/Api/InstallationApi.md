@@ -4,7 +4,7 @@ All URIs are relative to http://localhost:8081.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteEnginesDelete()**](InstallationApi.md#deleteEnginesDelete) | **DELETE** /api/v2/engines/{engine} | Delete Engine
+[**deleteEngines()**](InstallationApi.md#deleteEngines) | **DELETE** /api/v2/engines/{engine} | Delete Engine
 [**deleteEnvironmentsDeleteBulk()**](InstallationApi.md#deleteEnvironmentsDeleteBulk) | **DELETE** /api/v2/environments | Delete Environments
 [**getEngine()**](InstallationApi.md#getEngine) | **GET** /api/v2/engines | List Engines
 [**getEnginesShow()**](InstallationApi.md#getEnginesShow) | **GET** /api/v2/engines/{id} | View Engine
@@ -14,10 +14,10 @@ Method | HTTP request | Description
 [**putEnginesUpdate()**](InstallationApi.md#putEnginesUpdate) | **PUT** /api/v2/engines/{id} | Update Engine
 
 
-## `deleteEnginesDelete()`
+## `deleteEngines()`
 
 ```php
-deleteEnginesDelete($engine, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\EngineResource
+deleteEngines($engine, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\EngineResource
 ```
 
 Delete Engine
@@ -42,10 +42,10 @@ $contentType = application/json; // string |
 $accept = application/json; // string | 
 
 try {
-    $result = $apiInstance->deleteEnginesDelete($engine, $contentType, $accept);
+    $result = $apiInstance->deleteEngines($engine, $contentType, $accept);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling InstallationApi->deleteEnginesDelete: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling InstallationApi->deleteEngines: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -216,7 +216,7 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\InstallationApi(
     new GuzzleHttp\Client()
 );
 $id = 4241dbd0-fd0b-11ec-a738-470c54c64da4; // string | The ID of the engine.
-$engine = ipsam; // string | ID of an engine
+$engine = ut; // string | ID of an engine
 $contentType = application/json; // string | 
 $accept = application/json; // string | 
 
@@ -456,7 +456,7 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\InstallationApi(
     new GuzzleHttp\Client()
 );
 $id = 4241dbd0-fd0b-11ec-a738-470c54c64da4; // string | The ID of the engine.
-$engine = ipsam; // string | ID of an engine
+$engine = ut; // string | ID of an engine
 $contentType = application/json; // string | 
 $accept = application/json; // string | 
 $putEnginesUpdateRequest = new \Stackflows\Clients\Stackflows\Model\PutEnginesUpdateRequest(); // \Stackflows\Clients\Stackflows\Model\PutEnginesUpdateRequest

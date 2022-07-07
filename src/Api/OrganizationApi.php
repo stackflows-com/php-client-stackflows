@@ -116,7 +116,7 @@ class OrganizationApi
     }
 
     /**
-     * Operation deleteOrganizationUnitsDelete
+     * Operation deleteOrganizationUnits
      *
      * Delete Organzation Unit
      *
@@ -128,14 +128,14 @@ class OrganizationApi
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\OrganizationUnitResource
      */
-    public function deleteOrganizationUnitsDelete($organizationUnit, $contentType = null, $accept = null)
+    public function deleteOrganizationUnits($organizationUnit, $contentType = null, $accept = null)
     {
-        list($response) = $this->deleteOrganizationUnitsDeleteWithHttpInfo($organizationUnit, $contentType, $accept);
+        list($response) = $this->deleteOrganizationUnitsWithHttpInfo($organizationUnit, $contentType, $accept);
         return $response;
     }
 
     /**
-     * Operation deleteOrganizationUnitsDeleteWithHttpInfo
+     * Operation deleteOrganizationUnitsWithHttpInfo
      *
      * Delete Organzation Unit
      *
@@ -147,9 +147,9 @@ class OrganizationApi
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\OrganizationUnitResource, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteOrganizationUnitsDeleteWithHttpInfo($organizationUnit, $contentType = null, $accept = null)
+    public function deleteOrganizationUnitsWithHttpInfo($organizationUnit, $contentType = null, $accept = null)
     {
-        $request = $this->deleteOrganizationUnitsDeleteRequest($organizationUnit, $contentType, $accept);
+        $request = $this->deleteOrganizationUnitsRequest($organizationUnit, $contentType, $accept);
 
         try {
             $options = $this->createHttpClientOption();
@@ -236,7 +236,7 @@ class OrganizationApi
     }
 
     /**
-     * Operation deleteOrganizationUnitsDeleteAsync
+     * Operation deleteOrganizationUnitsAsync
      *
      * Delete Organzation Unit
      *
@@ -247,9 +247,9 @@ class OrganizationApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteOrganizationUnitsDeleteAsync($organizationUnit, $contentType = null, $accept = null)
+    public function deleteOrganizationUnitsAsync($organizationUnit, $contentType = null, $accept = null)
     {
-        return $this->deleteOrganizationUnitsDeleteAsyncWithHttpInfo($organizationUnit, $contentType, $accept)
+        return $this->deleteOrganizationUnitsAsyncWithHttpInfo($organizationUnit, $contentType, $accept)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -258,7 +258,7 @@ class OrganizationApi
     }
 
     /**
-     * Operation deleteOrganizationUnitsDeleteAsyncWithHttpInfo
+     * Operation deleteOrganizationUnitsAsyncWithHttpInfo
      *
      * Delete Organzation Unit
      *
@@ -269,10 +269,10 @@ class OrganizationApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteOrganizationUnitsDeleteAsyncWithHttpInfo($organizationUnit, $contentType = null, $accept = null)
+    public function deleteOrganizationUnitsAsyncWithHttpInfo($organizationUnit, $contentType = null, $accept = null)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource';
-        $request = $this->deleteOrganizationUnitsDeleteRequest($organizationUnit, $contentType, $accept);
+        $request = $this->deleteOrganizationUnitsRequest($organizationUnit, $contentType, $accept);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -311,7 +311,7 @@ class OrganizationApi
     }
 
     /**
-     * Create request for operation 'deleteOrganizationUnitsDelete'
+     * Create request for operation 'deleteOrganizationUnits'
      *
      * @param  string $organizationUnit  (required)
      * @param  string $contentType  (optional)
@@ -320,12 +320,12 @@ class OrganizationApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deleteOrganizationUnitsDeleteRequest($organizationUnit, $contentType = null, $accept = null)
+    public function deleteOrganizationUnitsRequest($organizationUnit, $contentType = null, $accept = null)
     {
         // verify the required parameter 'organizationUnit' is set
         if ($organizationUnit === null || (is_array($organizationUnit) && count($organizationUnit) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $organizationUnit when calling deleteOrganizationUnitsDelete'
+                'Missing the required parameter $organizationUnit when calling deleteOrganizationUnits'
             );
         }
 

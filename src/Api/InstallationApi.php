@@ -116,7 +116,7 @@ class InstallationApi
     }
 
     /**
-     * Operation deleteEnginesDelete
+     * Operation deleteEngines
      *
      * Delete Engine
      *
@@ -128,14 +128,14 @@ class InstallationApi
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\EngineResource
      */
-    public function deleteEnginesDelete($engine, $contentType = null, $accept = null)
+    public function deleteEngines($engine, $contentType = null, $accept = null)
     {
-        list($response) = $this->deleteEnginesDeleteWithHttpInfo($engine, $contentType, $accept);
+        list($response) = $this->deleteEnginesWithHttpInfo($engine, $contentType, $accept);
         return $response;
     }
 
     /**
-     * Operation deleteEnginesDeleteWithHttpInfo
+     * Operation deleteEnginesWithHttpInfo
      *
      * Delete Engine
      *
@@ -147,9 +147,9 @@ class InstallationApi
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\EngineResource, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteEnginesDeleteWithHttpInfo($engine, $contentType = null, $accept = null)
+    public function deleteEnginesWithHttpInfo($engine, $contentType = null, $accept = null)
     {
-        $request = $this->deleteEnginesDeleteRequest($engine, $contentType, $accept);
+        $request = $this->deleteEnginesRequest($engine, $contentType, $accept);
 
         try {
             $options = $this->createHttpClientOption();
@@ -236,7 +236,7 @@ class InstallationApi
     }
 
     /**
-     * Operation deleteEnginesDeleteAsync
+     * Operation deleteEnginesAsync
      *
      * Delete Engine
      *
@@ -247,9 +247,9 @@ class InstallationApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteEnginesDeleteAsync($engine, $contentType = null, $accept = null)
+    public function deleteEnginesAsync($engine, $contentType = null, $accept = null)
     {
-        return $this->deleteEnginesDeleteAsyncWithHttpInfo($engine, $contentType, $accept)
+        return $this->deleteEnginesAsyncWithHttpInfo($engine, $contentType, $accept)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -258,7 +258,7 @@ class InstallationApi
     }
 
     /**
-     * Operation deleteEnginesDeleteAsyncWithHttpInfo
+     * Operation deleteEnginesAsyncWithHttpInfo
      *
      * Delete Engine
      *
@@ -269,10 +269,10 @@ class InstallationApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteEnginesDeleteAsyncWithHttpInfo($engine, $contentType = null, $accept = null)
+    public function deleteEnginesAsyncWithHttpInfo($engine, $contentType = null, $accept = null)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\EngineResource';
-        $request = $this->deleteEnginesDeleteRequest($engine, $contentType, $accept);
+        $request = $this->deleteEnginesRequest($engine, $contentType, $accept);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -311,7 +311,7 @@ class InstallationApi
     }
 
     /**
-     * Create request for operation 'deleteEnginesDelete'
+     * Create request for operation 'deleteEngines'
      *
      * @param  string $engine  (required)
      * @param  string $contentType  (optional)
@@ -320,12 +320,12 @@ class InstallationApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deleteEnginesDeleteRequest($engine, $contentType = null, $accept = null)
+    public function deleteEnginesRequest($engine, $contentType = null, $accept = null)
     {
         // verify the required parameter 'engine' is set
         if ($engine === null || (is_array($engine) && count($engine) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $engine when calling deleteEnginesDelete'
+                'Missing the required parameter $engine when calling deleteEngines'
             );
         }
 

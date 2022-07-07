@@ -72,36 +72,36 @@ class EnvironmentApiTest extends TestCase
     }
 
     /**
-     * Test case for deleteEnvironmentBusinessModelDiagramsCommentsDelete
-     *
-     * Delete Business Model Diagram Comment.
-     *
-     */
-    public function testDeleteEnvironmentBusinessModelDiagramsCommentsDelete()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for deleteEnvironmentBusinessModelDiagramsDelete
+     * Test case for deleteEnvironmentBusinessModelDiagrams
      *
      * Delete Business Model Diagram.
      *
      */
-    public function testDeleteEnvironmentBusinessModelDiagramsDelete()
+    public function testDeleteEnvironmentBusinessModelDiagrams()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for deleteEnvironmentBusinessModelsDelete
+     * Test case for deleteEnvironmentBusinessModelDiagramsComments
+     *
+     * Delete Business Model Diagram Comment.
+     *
+     */
+    public function testDeleteEnvironmentBusinessModelDiagramsComments()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for deleteEnvironmentBusinessModels
      *
      * Delete Business Model.
      *
      */
-    public function testDeleteEnvironmentBusinessModelsDelete()
+    public function testDeleteEnvironmentBusinessModels()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

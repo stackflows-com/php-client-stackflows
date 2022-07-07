@@ -116,7 +116,305 @@ class OperationsApi
     }
 
     /**
-     * Operation deleteBusinessModelDiagramsCommentsDelete
+     * Operation deleteBusinessModelDiagrams
+     *
+     * Delete Business Model Diagram
+     *
+     * @param  string $diagram  (required)
+     * @param  string $contentType  (optional)
+     * @param  string $accept  (optional)
+     *
+     * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource
+     */
+    public function deleteBusinessModelDiagrams($diagram, $contentType = null, $accept = null)
+    {
+        list($response) = $this->deleteBusinessModelDiagramsWithHttpInfo($diagram, $contentType, $accept);
+        return $response;
+    }
+
+    /**
+     * Operation deleteBusinessModelDiagramsWithHttpInfo
+     *
+     * Delete Business Model Diagram
+     *
+     * @param  string $diagram  (required)
+     * @param  string $contentType  (optional)
+     * @param  string $accept  (optional)
+     *
+     * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function deleteBusinessModelDiagramsWithHttpInfo($diagram, $contentType = null, $accept = null)
+    {
+        $request = $this->deleteBusinessModelDiagramsRequest($diagram, $contentType, $accept);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation deleteBusinessModelDiagramsAsync
+     *
+     * Delete Business Model Diagram
+     *
+     * @param  string $diagram  (required)
+     * @param  string $contentType  (optional)
+     * @param  string $accept  (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function deleteBusinessModelDiagramsAsync($diagram, $contentType = null, $accept = null)
+    {
+        return $this->deleteBusinessModelDiagramsAsyncWithHttpInfo($diagram, $contentType, $accept)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation deleteBusinessModelDiagramsAsyncWithHttpInfo
+     *
+     * Delete Business Model Diagram
+     *
+     * @param  string $diagram  (required)
+     * @param  string $contentType  (optional)
+     * @param  string $accept  (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function deleteBusinessModelDiagramsAsyncWithHttpInfo($diagram, $contentType = null, $accept = null)
+    {
+        $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource';
+        $request = $this->deleteBusinessModelDiagramsRequest($diagram, $contentType, $accept);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'deleteBusinessModelDiagrams'
+     *
+     * @param  string $diagram  (required)
+     * @param  string $contentType  (optional)
+     * @param  string $accept  (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function deleteBusinessModelDiagramsRequest($diagram, $contentType = null, $accept = null)
+    {
+        // verify the required parameter 'diagram' is set
+        if ($diagram === null || (is_array($diagram) && count($diagram) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $diagram when calling deleteBusinessModelDiagrams'
+            );
+        }
+
+        $resourcePath = '/api/v2/business-model-diagrams/{diagram}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+        // header params
+        if ($contentType !== null) {
+            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
+        }
+        // header params
+        if ($accept !== null) {
+            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
+        }
+
+        // path params
+        if ($diagram !== null) {
+            $resourcePath = str_replace(
+                '{' . 'diagram' . '}',
+                ObjectSerializer::toPathValue($diagram),
+                $resourcePath
+            );
+        }
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'DELETE',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation deleteBusinessModelDiagramsComments
      *
      * Delete Business Model Diagram Comment
      *
@@ -129,14 +427,14 @@ class OperationsApi
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\CommentResource
      */
-    public function deleteBusinessModelDiagramsCommentsDelete($diagram, $comment, $contentType = null, $accept = null)
+    public function deleteBusinessModelDiagramsComments($diagram, $comment, $contentType = null, $accept = null)
     {
-        list($response) = $this->deleteBusinessModelDiagramsCommentsDeleteWithHttpInfo($diagram, $comment, $contentType, $accept);
+        list($response) = $this->deleteBusinessModelDiagramsCommentsWithHttpInfo($diagram, $comment, $contentType, $accept);
         return $response;
     }
 
     /**
-     * Operation deleteBusinessModelDiagramsCommentsDeleteWithHttpInfo
+     * Operation deleteBusinessModelDiagramsCommentsWithHttpInfo
      *
      * Delete Business Model Diagram Comment
      *
@@ -149,9 +447,9 @@ class OperationsApi
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\CommentResource, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteBusinessModelDiagramsCommentsDeleteWithHttpInfo($diagram, $comment, $contentType = null, $accept = null)
+    public function deleteBusinessModelDiagramsCommentsWithHttpInfo($diagram, $comment, $contentType = null, $accept = null)
     {
-        $request = $this->deleteBusinessModelDiagramsCommentsDeleteRequest($diagram, $comment, $contentType, $accept);
+        $request = $this->deleteBusinessModelDiagramsCommentsRequest($diagram, $comment, $contentType, $accept);
 
         try {
             $options = $this->createHttpClientOption();
@@ -238,7 +536,7 @@ class OperationsApi
     }
 
     /**
-     * Operation deleteBusinessModelDiagramsCommentsDeleteAsync
+     * Operation deleteBusinessModelDiagramsCommentsAsync
      *
      * Delete Business Model Diagram Comment
      *
@@ -250,9 +548,9 @@ class OperationsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteBusinessModelDiagramsCommentsDeleteAsync($diagram, $comment, $contentType = null, $accept = null)
+    public function deleteBusinessModelDiagramsCommentsAsync($diagram, $comment, $contentType = null, $accept = null)
     {
-        return $this->deleteBusinessModelDiagramsCommentsDeleteAsyncWithHttpInfo($diagram, $comment, $contentType, $accept)
+        return $this->deleteBusinessModelDiagramsCommentsAsyncWithHttpInfo($diagram, $comment, $contentType, $accept)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -261,7 +559,7 @@ class OperationsApi
     }
 
     /**
-     * Operation deleteBusinessModelDiagramsCommentsDeleteAsyncWithHttpInfo
+     * Operation deleteBusinessModelDiagramsCommentsAsyncWithHttpInfo
      *
      * Delete Business Model Diagram Comment
      *
@@ -273,10 +571,10 @@ class OperationsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteBusinessModelDiagramsCommentsDeleteAsyncWithHttpInfo($diagram, $comment, $contentType = null, $accept = null)
+    public function deleteBusinessModelDiagramsCommentsAsyncWithHttpInfo($diagram, $comment, $contentType = null, $accept = null)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\CommentResource';
-        $request = $this->deleteBusinessModelDiagramsCommentsDeleteRequest($diagram, $comment, $contentType, $accept);
+        $request = $this->deleteBusinessModelDiagramsCommentsRequest($diagram, $comment, $contentType, $accept);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -315,7 +613,7 @@ class OperationsApi
     }
 
     /**
-     * Create request for operation 'deleteBusinessModelDiagramsCommentsDelete'
+     * Create request for operation 'deleteBusinessModelDiagramsComments'
      *
      * @param  string $diagram The ID of an diagram. (required)
      * @param  string $comment The ID of an comment. (required)
@@ -325,18 +623,18 @@ class OperationsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deleteBusinessModelDiagramsCommentsDeleteRequest($diagram, $comment, $contentType = null, $accept = null)
+    public function deleteBusinessModelDiagramsCommentsRequest($diagram, $comment, $contentType = null, $accept = null)
     {
         // verify the required parameter 'diagram' is set
         if ($diagram === null || (is_array($diagram) && count($diagram) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $diagram when calling deleteBusinessModelDiagramsCommentsDelete'
+                'Missing the required parameter $diagram when calling deleteBusinessModelDiagramsComments'
             );
         }
         // verify the required parameter 'comment' is set
         if ($comment === null || (is_array($comment) && count($comment) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $comment when calling deleteBusinessModelDiagramsCommentsDelete'
+                'Missing the required parameter $comment when calling deleteBusinessModelDiagramsComments'
             );
         }
 
@@ -433,305 +731,7 @@ class OperationsApi
     }
 
     /**
-     * Operation deleteBusinessModelDiagramsDelete
-     *
-     * Delete Business Model Diagram
-     *
-     * @param  string $diagram  (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
-     *
-     * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource
-     */
-    public function deleteBusinessModelDiagramsDelete($diagram, $contentType = null, $accept = null)
-    {
-        list($response) = $this->deleteBusinessModelDiagramsDeleteWithHttpInfo($diagram, $contentType, $accept);
-        return $response;
-    }
-
-    /**
-     * Operation deleteBusinessModelDiagramsDeleteWithHttpInfo
-     *
-     * Delete Business Model Diagram
-     *
-     * @param  string $diagram  (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
-     *
-     * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function deleteBusinessModelDiagramsDeleteWithHttpInfo($diagram, $contentType = null, $accept = null)
-    {
-        $request = $this->deleteBusinessModelDiagramsDeleteRequest($diagram, $contentType, $accept);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            switch($statusCode) {
-                case 200:
-                    if ('\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource' !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource';
-            if ($returnType === '\SplFileObject') {
-                $content = $response->getBody(); //stream goes to serializer
-            } else {
-                $content = (string) $response->getBody();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation deleteBusinessModelDiagramsDeleteAsync
-     *
-     * Delete Business Model Diagram
-     *
-     * @param  string $diagram  (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function deleteBusinessModelDiagramsDeleteAsync($diagram, $contentType = null, $accept = null)
-    {
-        return $this->deleteBusinessModelDiagramsDeleteAsyncWithHttpInfo($diagram, $contentType, $accept)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation deleteBusinessModelDiagramsDeleteAsyncWithHttpInfo
-     *
-     * Delete Business Model Diagram
-     *
-     * @param  string $diagram  (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function deleteBusinessModelDiagramsDeleteAsyncWithHttpInfo($diagram, $contentType = null, $accept = null)
-    {
-        $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource';
-        $request = $this->deleteBusinessModelDiagramsDeleteRequest($diagram, $contentType, $accept);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'deleteBusinessModelDiagramsDelete'
-     *
-     * @param  string $diagram  (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function deleteBusinessModelDiagramsDeleteRequest($diagram, $contentType = null, $accept = null)
-    {
-        // verify the required parameter 'diagram' is set
-        if ($diagram === null || (is_array($diagram) && count($diagram) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $diagram when calling deleteBusinessModelDiagramsDelete'
-            );
-        }
-
-        $resourcePath = '/api/v2/business-model-diagrams/{diagram}';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-        // header params
-        if ($contentType !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
-        }
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
-
-        // path params
-        if ($diagram !== null) {
-            $resourcePath = str_replace(
-                '{' . 'diagram' . '}',
-                ObjectSerializer::toPathValue($diagram),
-                $resourcePath
-            );
-        }
-
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'DELETE',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation deleteBusinessModelExceptionsDelete
+     * Operation deleteBusinessModelExceptions
      *
      * Delete Business Model Exception
      *
@@ -743,14 +743,14 @@ class OperationsApi
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\BusinessBaseModelExceptionResource
      */
-    public function deleteBusinessModelExceptionsDelete($exception, $contentType = null, $accept = null)
+    public function deleteBusinessModelExceptions($exception, $contentType = null, $accept = null)
     {
-        list($response) = $this->deleteBusinessModelExceptionsDeleteWithHttpInfo($exception, $contentType, $accept);
+        list($response) = $this->deleteBusinessModelExceptionsWithHttpInfo($exception, $contentType, $accept);
         return $response;
     }
 
     /**
-     * Operation deleteBusinessModelExceptionsDeleteWithHttpInfo
+     * Operation deleteBusinessModelExceptionsWithHttpInfo
      *
      * Delete Business Model Exception
      *
@@ -762,9 +762,9 @@ class OperationsApi
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\BusinessBaseModelExceptionResource, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteBusinessModelExceptionsDeleteWithHttpInfo($exception, $contentType = null, $accept = null)
+    public function deleteBusinessModelExceptionsWithHttpInfo($exception, $contentType = null, $accept = null)
     {
-        $request = $this->deleteBusinessModelExceptionsDeleteRequest($exception, $contentType, $accept);
+        $request = $this->deleteBusinessModelExceptionsRequest($exception, $contentType, $accept);
 
         try {
             $options = $this->createHttpClientOption();
@@ -851,7 +851,7 @@ class OperationsApi
     }
 
     /**
-     * Operation deleteBusinessModelExceptionsDeleteAsync
+     * Operation deleteBusinessModelExceptionsAsync
      *
      * Delete Business Model Exception
      *
@@ -862,9 +862,9 @@ class OperationsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteBusinessModelExceptionsDeleteAsync($exception, $contentType = null, $accept = null)
+    public function deleteBusinessModelExceptionsAsync($exception, $contentType = null, $accept = null)
     {
-        return $this->deleteBusinessModelExceptionsDeleteAsyncWithHttpInfo($exception, $contentType, $accept)
+        return $this->deleteBusinessModelExceptionsAsyncWithHttpInfo($exception, $contentType, $accept)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -873,7 +873,7 @@ class OperationsApi
     }
 
     /**
-     * Operation deleteBusinessModelExceptionsDeleteAsyncWithHttpInfo
+     * Operation deleteBusinessModelExceptionsAsyncWithHttpInfo
      *
      * Delete Business Model Exception
      *
@@ -884,10 +884,10 @@ class OperationsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteBusinessModelExceptionsDeleteAsyncWithHttpInfo($exception, $contentType = null, $accept = null)
+    public function deleteBusinessModelExceptionsAsyncWithHttpInfo($exception, $contentType = null, $accept = null)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelExceptionResource';
-        $request = $this->deleteBusinessModelExceptionsDeleteRequest($exception, $contentType, $accept);
+        $request = $this->deleteBusinessModelExceptionsRequest($exception, $contentType, $accept);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -926,7 +926,7 @@ class OperationsApi
     }
 
     /**
-     * Create request for operation 'deleteBusinessModelExceptionsDelete'
+     * Create request for operation 'deleteBusinessModelExceptions'
      *
      * @param  string $exception  (required)
      * @param  string $contentType  (optional)
@@ -935,12 +935,12 @@ class OperationsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deleteBusinessModelExceptionsDeleteRequest($exception, $contentType = null, $accept = null)
+    public function deleteBusinessModelExceptionsRequest($exception, $contentType = null, $accept = null)
     {
         // verify the required parameter 'exception' is set
         if ($exception === null || (is_array($exception) && count($exception) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $exception when calling deleteBusinessModelExceptionsDelete'
+                'Missing the required parameter $exception when calling deleteBusinessModelExceptions'
             );
         }
 
@@ -1029,7 +1029,7 @@ class OperationsApi
     }
 
     /**
-     * Operation deleteBusinessModelsDelete
+     * Operation deleteBusinessModels
      *
      * Delete Business Model
      *
@@ -1041,14 +1041,14 @@ class OperationsApi
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource
      */
-    public function deleteBusinessModelsDelete($model, $contentType = null, $accept = null)
+    public function deleteBusinessModels($model, $contentType = null, $accept = null)
     {
-        list($response) = $this->deleteBusinessModelsDeleteWithHttpInfo($model, $contentType, $accept);
+        list($response) = $this->deleteBusinessModelsWithHttpInfo($model, $contentType, $accept);
         return $response;
     }
 
     /**
-     * Operation deleteBusinessModelsDeleteWithHttpInfo
+     * Operation deleteBusinessModelsWithHttpInfo
      *
      * Delete Business Model
      *
@@ -1060,9 +1060,9 @@ class OperationsApi
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteBusinessModelsDeleteWithHttpInfo($model, $contentType = null, $accept = null)
+    public function deleteBusinessModelsWithHttpInfo($model, $contentType = null, $accept = null)
     {
-        $request = $this->deleteBusinessModelsDeleteRequest($model, $contentType, $accept);
+        $request = $this->deleteBusinessModelsRequest($model, $contentType, $accept);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1149,7 +1149,7 @@ class OperationsApi
     }
 
     /**
-     * Operation deleteBusinessModelsDeleteAsync
+     * Operation deleteBusinessModelsAsync
      *
      * Delete Business Model
      *
@@ -1160,9 +1160,9 @@ class OperationsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteBusinessModelsDeleteAsync($model, $contentType = null, $accept = null)
+    public function deleteBusinessModelsAsync($model, $contentType = null, $accept = null)
     {
-        return $this->deleteBusinessModelsDeleteAsyncWithHttpInfo($model, $contentType, $accept)
+        return $this->deleteBusinessModelsAsyncWithHttpInfo($model, $contentType, $accept)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1171,7 +1171,7 @@ class OperationsApi
     }
 
     /**
-     * Operation deleteBusinessModelsDeleteAsyncWithHttpInfo
+     * Operation deleteBusinessModelsAsyncWithHttpInfo
      *
      * Delete Business Model
      *
@@ -1182,10 +1182,10 @@ class OperationsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteBusinessModelsDeleteAsyncWithHttpInfo($model, $contentType = null, $accept = null)
+    public function deleteBusinessModelsAsyncWithHttpInfo($model, $contentType = null, $accept = null)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource';
-        $request = $this->deleteBusinessModelsDeleteRequest($model, $contentType, $accept);
+        $request = $this->deleteBusinessModelsRequest($model, $contentType, $accept);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1224,7 +1224,7 @@ class OperationsApi
     }
 
     /**
-     * Create request for operation 'deleteBusinessModelsDelete'
+     * Create request for operation 'deleteBusinessModels'
      *
      * @param  string $model  (required)
      * @param  string $contentType  (optional)
@@ -1233,12 +1233,12 @@ class OperationsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deleteBusinessModelsDeleteRequest($model, $contentType = null, $accept = null)
+    public function deleteBusinessModelsRequest($model, $contentType = null, $accept = null)
     {
         // verify the required parameter 'model' is set
         if ($model === null || (is_array($model) && count($model) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $model when calling deleteBusinessModelsDelete'
+                'Missing the required parameter $model when calling deleteBusinessModels'
             );
         }
 
@@ -1617,7 +1617,7 @@ class OperationsApi
     }
 
     /**
-     * Operation deleteBusinessProcessesDelete
+     * Operation deleteBusinessProcesses
      *
      * Delete Business Process Tag
      *
@@ -1629,14 +1629,14 @@ class OperationsApi
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\TagResource
      */
-    public function deleteBusinessProcessesDelete($tag, $contentType = null, $accept = null)
+    public function deleteBusinessProcesses($tag, $contentType = null, $accept = null)
     {
-        list($response) = $this->deleteBusinessProcessesDeleteWithHttpInfo($tag, $contentType, $accept);
+        list($response) = $this->deleteBusinessProcessesWithHttpInfo($tag, $contentType, $accept);
         return $response;
     }
 
     /**
-     * Operation deleteBusinessProcessesDeleteWithHttpInfo
+     * Operation deleteBusinessProcessesWithHttpInfo
      *
      * Delete Business Process Tag
      *
@@ -1648,9 +1648,9 @@ class OperationsApi
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\TagResource, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteBusinessProcessesDeleteWithHttpInfo($tag, $contentType = null, $accept = null)
+    public function deleteBusinessProcessesWithHttpInfo($tag, $contentType = null, $accept = null)
     {
-        $request = $this->deleteBusinessProcessesDeleteRequest($tag, $contentType, $accept);
+        $request = $this->deleteBusinessProcessesRequest($tag, $contentType, $accept);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1737,7 +1737,7 @@ class OperationsApi
     }
 
     /**
-     * Operation deleteBusinessProcessesDeleteAsync
+     * Operation deleteBusinessProcessesAsync
      *
      * Delete Business Process Tag
      *
@@ -1748,9 +1748,9 @@ class OperationsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteBusinessProcessesDeleteAsync($tag, $contentType = null, $accept = null)
+    public function deleteBusinessProcessesAsync($tag, $contentType = null, $accept = null)
     {
-        return $this->deleteBusinessProcessesDeleteAsyncWithHttpInfo($tag, $contentType, $accept)
+        return $this->deleteBusinessProcessesAsyncWithHttpInfo($tag, $contentType, $accept)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1759,7 +1759,7 @@ class OperationsApi
     }
 
     /**
-     * Operation deleteBusinessProcessesDeleteAsyncWithHttpInfo
+     * Operation deleteBusinessProcessesAsyncWithHttpInfo
      *
      * Delete Business Process Tag
      *
@@ -1770,10 +1770,10 @@ class OperationsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteBusinessProcessesDeleteAsyncWithHttpInfo($tag, $contentType = null, $accept = null)
+    public function deleteBusinessProcessesAsyncWithHttpInfo($tag, $contentType = null, $accept = null)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\TagResource';
-        $request = $this->deleteBusinessProcessesDeleteRequest($tag, $contentType, $accept);
+        $request = $this->deleteBusinessProcessesRequest($tag, $contentType, $accept);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1812,7 +1812,7 @@ class OperationsApi
     }
 
     /**
-     * Create request for operation 'deleteBusinessProcessesDelete'
+     * Create request for operation 'deleteBusinessProcesses'
      *
      * @param  int $tag  (required)
      * @param  string $contentType  (optional)
@@ -1821,12 +1821,12 @@ class OperationsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deleteBusinessProcessesDeleteRequest($tag, $contentType = null, $accept = null)
+    public function deleteBusinessProcessesRequest($tag, $contentType = null, $accept = null)
     {
         // verify the required parameter 'tag' is set
         if ($tag === null || (is_array($tag) && count($tag) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $tag when calling deleteBusinessProcessesDelete'
+                'Missing the required parameter $tag when calling deleteBusinessProcesses'
             );
         }
 
@@ -2205,7 +2205,7 @@ class OperationsApi
     }
 
     /**
-     * Operation deleteCategoriesDelete
+     * Operation deleteCategories
      *
      * Delete Category
      *
@@ -2217,14 +2217,14 @@ class OperationsApi
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\CategoryResource
      */
-    public function deleteCategoriesDelete($category, $contentType = null, $accept = null)
+    public function deleteCategories($category, $contentType = null, $accept = null)
     {
-        list($response) = $this->deleteCategoriesDeleteWithHttpInfo($category, $contentType, $accept);
+        list($response) = $this->deleteCategoriesWithHttpInfo($category, $contentType, $accept);
         return $response;
     }
 
     /**
-     * Operation deleteCategoriesDeleteWithHttpInfo
+     * Operation deleteCategoriesWithHttpInfo
      *
      * Delete Category
      *
@@ -2236,9 +2236,9 @@ class OperationsApi
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\CategoryResource, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteCategoriesDeleteWithHttpInfo($category, $contentType = null, $accept = null)
+    public function deleteCategoriesWithHttpInfo($category, $contentType = null, $accept = null)
     {
-        $request = $this->deleteCategoriesDeleteRequest($category, $contentType, $accept);
+        $request = $this->deleteCategoriesRequest($category, $contentType, $accept);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2325,7 +2325,7 @@ class OperationsApi
     }
 
     /**
-     * Operation deleteCategoriesDeleteAsync
+     * Operation deleteCategoriesAsync
      *
      * Delete Category
      *
@@ -2336,9 +2336,9 @@ class OperationsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteCategoriesDeleteAsync($category, $contentType = null, $accept = null)
+    public function deleteCategoriesAsync($category, $contentType = null, $accept = null)
     {
-        return $this->deleteCategoriesDeleteAsyncWithHttpInfo($category, $contentType, $accept)
+        return $this->deleteCategoriesAsyncWithHttpInfo($category, $contentType, $accept)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2347,7 +2347,7 @@ class OperationsApi
     }
 
     /**
-     * Operation deleteCategoriesDeleteAsyncWithHttpInfo
+     * Operation deleteCategoriesAsyncWithHttpInfo
      *
      * Delete Category
      *
@@ -2358,10 +2358,10 @@ class OperationsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteCategoriesDeleteAsyncWithHttpInfo($category, $contentType = null, $accept = null)
+    public function deleteCategoriesAsyncWithHttpInfo($category, $contentType = null, $accept = null)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\CategoryResource';
-        $request = $this->deleteCategoriesDeleteRequest($category, $contentType, $accept);
+        $request = $this->deleteCategoriesRequest($category, $contentType, $accept);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2400,7 +2400,7 @@ class OperationsApi
     }
 
     /**
-     * Create request for operation 'deleteCategoriesDelete'
+     * Create request for operation 'deleteCategories'
      *
      * @param  int $category  (required)
      * @param  string $contentType  (optional)
@@ -2409,12 +2409,12 @@ class OperationsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deleteCategoriesDeleteRequest($category, $contentType = null, $accept = null)
+    public function deleteCategoriesRequest($category, $contentType = null, $accept = null)
     {
         // verify the required parameter 'category' is set
         if ($category === null || (is_array($category) && count($category) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $category when calling deleteCategoriesDelete'
+                'Missing the required parameter $category when calling deleteCategories'
             );
         }
 
@@ -2503,7 +2503,7 @@ class OperationsApi
     }
 
     /**
-     * Operation deleteTagsDelete
+     * Operation deleteTags
      *
      * Delete Tag
      *
@@ -2515,14 +2515,14 @@ class OperationsApi
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\TagResource
      */
-    public function deleteTagsDelete($tag, $contentType = null, $accept = null)
+    public function deleteTags($tag, $contentType = null, $accept = null)
     {
-        list($response) = $this->deleteTagsDeleteWithHttpInfo($tag, $contentType, $accept);
+        list($response) = $this->deleteTagsWithHttpInfo($tag, $contentType, $accept);
         return $response;
     }
 
     /**
-     * Operation deleteTagsDeleteWithHttpInfo
+     * Operation deleteTagsWithHttpInfo
      *
      * Delete Tag
      *
@@ -2534,9 +2534,9 @@ class OperationsApi
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\TagResource, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteTagsDeleteWithHttpInfo($tag, $contentType = null, $accept = null)
+    public function deleteTagsWithHttpInfo($tag, $contentType = null, $accept = null)
     {
-        $request = $this->deleteTagsDeleteRequest($tag, $contentType, $accept);
+        $request = $this->deleteTagsRequest($tag, $contentType, $accept);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2623,7 +2623,7 @@ class OperationsApi
     }
 
     /**
-     * Operation deleteTagsDeleteAsync
+     * Operation deleteTagsAsync
      *
      * Delete Tag
      *
@@ -2634,9 +2634,9 @@ class OperationsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteTagsDeleteAsync($tag, $contentType = null, $accept = null)
+    public function deleteTagsAsync($tag, $contentType = null, $accept = null)
     {
-        return $this->deleteTagsDeleteAsyncWithHttpInfo($tag, $contentType, $accept)
+        return $this->deleteTagsAsyncWithHttpInfo($tag, $contentType, $accept)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2645,7 +2645,7 @@ class OperationsApi
     }
 
     /**
-     * Operation deleteTagsDeleteAsyncWithHttpInfo
+     * Operation deleteTagsAsyncWithHttpInfo
      *
      * Delete Tag
      *
@@ -2656,10 +2656,10 @@ class OperationsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteTagsDeleteAsyncWithHttpInfo($tag, $contentType = null, $accept = null)
+    public function deleteTagsAsyncWithHttpInfo($tag, $contentType = null, $accept = null)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\TagResource';
-        $request = $this->deleteTagsDeleteRequest($tag, $contentType, $accept);
+        $request = $this->deleteTagsRequest($tag, $contentType, $accept);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2698,7 +2698,7 @@ class OperationsApi
     }
 
     /**
-     * Create request for operation 'deleteTagsDelete'
+     * Create request for operation 'deleteTags'
      *
      * @param  int $tag  (required)
      * @param  string $contentType  (optional)
@@ -2707,12 +2707,12 @@ class OperationsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deleteTagsDeleteRequest($tag, $contentType = null, $accept = null)
+    public function deleteTagsRequest($tag, $contentType = null, $accept = null)
     {
         // verify the required parameter 'tag' is set
         if ($tag === null || (is_array($tag) && count($tag) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $tag when calling deleteTagsDelete'
+                'Missing the required parameter $tag when calling deleteTags'
             );
         }
 
@@ -2801,7 +2801,7 @@ class OperationsApi
     }
 
     /**
-     * Operation deleteTasksDelete
+     * Operation deleteTasks
      *
      * Delete Task
      *
@@ -2813,14 +2813,14 @@ class OperationsApi
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\TaskResource
      */
-    public function deleteTasksDelete($task, $contentType = null, $accept = null)
+    public function deleteTasks($task, $contentType = null, $accept = null)
     {
-        list($response) = $this->deleteTasksDeleteWithHttpInfo($task, $contentType, $accept);
+        list($response) = $this->deleteTasksWithHttpInfo($task, $contentType, $accept);
         return $response;
     }
 
     /**
-     * Operation deleteTasksDeleteWithHttpInfo
+     * Operation deleteTasksWithHttpInfo
      *
      * Delete Task
      *
@@ -2832,9 +2832,9 @@ class OperationsApi
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\TaskResource, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteTasksDeleteWithHttpInfo($task, $contentType = null, $accept = null)
+    public function deleteTasksWithHttpInfo($task, $contentType = null, $accept = null)
     {
-        $request = $this->deleteTasksDeleteRequest($task, $contentType, $accept);
+        $request = $this->deleteTasksRequest($task, $contentType, $accept);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2921,7 +2921,7 @@ class OperationsApi
     }
 
     /**
-     * Operation deleteTasksDeleteAsync
+     * Operation deleteTasksAsync
      *
      * Delete Task
      *
@@ -2932,9 +2932,9 @@ class OperationsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteTasksDeleteAsync($task, $contentType = null, $accept = null)
+    public function deleteTasksAsync($task, $contentType = null, $accept = null)
     {
-        return $this->deleteTasksDeleteAsyncWithHttpInfo($task, $contentType, $accept)
+        return $this->deleteTasksAsyncWithHttpInfo($task, $contentType, $accept)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2943,7 +2943,7 @@ class OperationsApi
     }
 
     /**
-     * Operation deleteTasksDeleteAsyncWithHttpInfo
+     * Operation deleteTasksAsyncWithHttpInfo
      *
      * Delete Task
      *
@@ -2954,10 +2954,10 @@ class OperationsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteTasksDeleteAsyncWithHttpInfo($task, $contentType = null, $accept = null)
+    public function deleteTasksAsyncWithHttpInfo($task, $contentType = null, $accept = null)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\TaskResource';
-        $request = $this->deleteTasksDeleteRequest($task, $contentType, $accept);
+        $request = $this->deleteTasksRequest($task, $contentType, $accept);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2996,7 +2996,7 @@ class OperationsApi
     }
 
     /**
-     * Create request for operation 'deleteTasksDelete'
+     * Create request for operation 'deleteTasks'
      *
      * @param  string $task  (required)
      * @param  string $contentType  (optional)
@@ -3005,12 +3005,12 @@ class OperationsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deleteTasksDeleteRequest($task, $contentType = null, $accept = null)
+    public function deleteTasksRequest($task, $contentType = null, $accept = null)
     {
         // verify the required parameter 'task' is set
         if ($task === null || (is_array($task) && count($task) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $task when calling deleteTasksDelete'
+                'Missing the required parameter $task when calling deleteTasks'
             );
         }
 
@@ -9980,15 +9980,15 @@ class OperationsApi
      * @param  string $diagram  (required)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
-     * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentBusinessModelDiagramsPublishRequest $postEnvironmentBusinessModelDiagramsPublishRequest postEnvironmentBusinessModelDiagramsPublishRequest (optional)
+     * @param  \Stackflows\Clients\Stackflows\Model\PostBusinessModelDiagramsPublishRequest $postBusinessModelDiagramsPublishRequest postBusinessModelDiagramsPublishRequest (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource
      */
-    public function postBusinessModelDiagramsPublish($diagram, $contentType = null, $accept = null, $postEnvironmentBusinessModelDiagramsPublishRequest = null)
+    public function postBusinessModelDiagramsPublish($diagram, $contentType = null, $accept = null, $postBusinessModelDiagramsPublishRequest = null)
     {
-        list($response) = $this->postBusinessModelDiagramsPublishWithHttpInfo($diagram, $contentType, $accept, $postEnvironmentBusinessModelDiagramsPublishRequest);
+        list($response) = $this->postBusinessModelDiagramsPublishWithHttpInfo($diagram, $contentType, $accept, $postBusinessModelDiagramsPublishRequest);
         return $response;
     }
 
@@ -10000,15 +10000,15 @@ class OperationsApi
      * @param  string $diagram  (required)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
-     * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentBusinessModelDiagramsPublishRequest $postEnvironmentBusinessModelDiagramsPublishRequest (optional)
+     * @param  \Stackflows\Clients\Stackflows\Model\PostBusinessModelDiagramsPublishRequest $postBusinessModelDiagramsPublishRequest (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postBusinessModelDiagramsPublishWithHttpInfo($diagram, $contentType = null, $accept = null, $postEnvironmentBusinessModelDiagramsPublishRequest = null)
+    public function postBusinessModelDiagramsPublishWithHttpInfo($diagram, $contentType = null, $accept = null, $postBusinessModelDiagramsPublishRequest = null)
     {
-        $request = $this->postBusinessModelDiagramsPublishRequest($diagram, $contentType, $accept, $postEnvironmentBusinessModelDiagramsPublishRequest);
+        $request = $this->postBusinessModelDiagramsPublishRequest($diagram, $contentType, $accept, $postBusinessModelDiagramsPublishRequest);
 
         try {
             $options = $this->createHttpClientOption();
@@ -10102,14 +10102,14 @@ class OperationsApi
      * @param  string $diagram  (required)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
-     * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentBusinessModelDiagramsPublishRequest $postEnvironmentBusinessModelDiagramsPublishRequest (optional)
+     * @param  \Stackflows\Clients\Stackflows\Model\PostBusinessModelDiagramsPublishRequest $postBusinessModelDiagramsPublishRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postBusinessModelDiagramsPublishAsync($diagram, $contentType = null, $accept = null, $postEnvironmentBusinessModelDiagramsPublishRequest = null)
+    public function postBusinessModelDiagramsPublishAsync($diagram, $contentType = null, $accept = null, $postBusinessModelDiagramsPublishRequest = null)
     {
-        return $this->postBusinessModelDiagramsPublishAsyncWithHttpInfo($diagram, $contentType, $accept, $postEnvironmentBusinessModelDiagramsPublishRequest)
+        return $this->postBusinessModelDiagramsPublishAsyncWithHttpInfo($diagram, $contentType, $accept, $postBusinessModelDiagramsPublishRequest)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -10125,15 +10125,15 @@ class OperationsApi
      * @param  string $diagram  (required)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
-     * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentBusinessModelDiagramsPublishRequest $postEnvironmentBusinessModelDiagramsPublishRequest (optional)
+     * @param  \Stackflows\Clients\Stackflows\Model\PostBusinessModelDiagramsPublishRequest $postBusinessModelDiagramsPublishRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postBusinessModelDiagramsPublishAsyncWithHttpInfo($diagram, $contentType = null, $accept = null, $postEnvironmentBusinessModelDiagramsPublishRequest = null)
+    public function postBusinessModelDiagramsPublishAsyncWithHttpInfo($diagram, $contentType = null, $accept = null, $postBusinessModelDiagramsPublishRequest = null)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource';
-        $request = $this->postBusinessModelDiagramsPublishRequest($diagram, $contentType, $accept, $postEnvironmentBusinessModelDiagramsPublishRequest);
+        $request = $this->postBusinessModelDiagramsPublishRequest($diagram, $contentType, $accept, $postBusinessModelDiagramsPublishRequest);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -10177,12 +10177,12 @@ class OperationsApi
      * @param  string $diagram  (required)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
-     * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentBusinessModelDiagramsPublishRequest $postEnvironmentBusinessModelDiagramsPublishRequest (optional)
+     * @param  \Stackflows\Clients\Stackflows\Model\PostBusinessModelDiagramsPublishRequest $postBusinessModelDiagramsPublishRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function postBusinessModelDiagramsPublishRequest($diagram, $contentType = null, $accept = null, $postEnvironmentBusinessModelDiagramsPublishRequest = null)
+    public function postBusinessModelDiagramsPublishRequest($diagram, $contentType = null, $accept = null, $postBusinessModelDiagramsPublishRequest = null)
     {
         // verify the required parameter 'diagram' is set
         if ($diagram === null || (is_array($diagram) && count($diagram) === 0)) {
@@ -10230,11 +10230,11 @@ class OperationsApi
         }
 
         // for model (json/xml)
-        if (isset($postEnvironmentBusinessModelDiagramsPublishRequest)) {
+        if (isset($postBusinessModelDiagramsPublishRequest)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($postEnvironmentBusinessModelDiagramsPublishRequest));
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($postBusinessModelDiagramsPublishRequest));
             } else {
-                $httpBody = $postEnvironmentBusinessModelDiagramsPublishRequest;
+                $httpBody = $postBusinessModelDiagramsPublishRequest;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {

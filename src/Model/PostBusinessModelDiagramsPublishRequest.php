@@ -1,6 +1,6 @@
 <?php
 /**
- * PostEnvironmentBusinessModelDiagramsPublishRequest
+ * PostBusinessModelDiagramsPublishRequest
  *
  * PHP version 7.4
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \Stackflows\Clients\Stackflows\ObjectSerializer;
 
 /**
- * PostEnvironmentBusinessModelDiagramsPublishRequest Class Doc Comment
+ * PostBusinessModelDiagramsPublishRequest Class Doc Comment
  *
  * @category Class
  * @package  Stackflows\Clients\Stackflows
@@ -40,7 +40,7 @@ use \Stackflows\Clients\Stackflows\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class PostEnvironmentBusinessModelDiagramsPublishRequest implements ModelInterface, ArrayAccess, \JsonSerializable
+class PostBusinessModelDiagramsPublishRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class PostEnvironmentBusinessModelDiagramsPublishRequest implements ModelInterfa
       *
       * @var string
       */
-    protected static $openAPIModelName = 'postEnvironmentBusinessModelDiagramsPublish_request';
+    protected static $openAPIModelName = 'postBusinessModelDiagramsPublish_request';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

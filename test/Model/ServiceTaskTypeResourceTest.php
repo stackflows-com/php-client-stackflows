@@ -1,6 +1,6 @@
 <?php
 /**
- * PostEnvironmentBusinessModelDiagramsPublishRequestTest
+ * ServiceTaskTypeResourceTest
  *
  * PHP version 7.4
  *
@@ -31,15 +31,15 @@ namespace Stackflows\Clients\Stackflows\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * PostEnvironmentBusinessModelDiagramsPublishRequestTest Class Doc Comment
+ * ServiceTaskTypeResourceTest Class Doc Comment
  *
  * @category    Class
- * @description PostEnvironmentBusinessModelDiagramsPublishRequest
+ * @description ServiceTaskTypeResource
  * @package     Stackflows\Clients\Stackflows
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class PostEnvironmentBusinessModelDiagramsPublishRequestTest extends TestCase
+class ServiceTaskTypeResourceTest extends TestCase
 {
 
     /**
@@ -71,18 +71,18 @@ class PostEnvironmentBusinessModelDiagramsPublishRequestTest extends TestCase
     }
 
     /**
-     * Test "PostEnvironmentBusinessModelDiagramsPublishRequest"
+     * Test "ServiceTaskTypeResource"
      */
-    public function testPostEnvironmentBusinessModelDiagramsPublishRequest()
+    public function testServiceTaskTypeResource()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "environmentIds"
+     * Test attribute "reference"
      */
-    public function testPropertyEnvironmentIds()
+    public function testPropertyReference()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

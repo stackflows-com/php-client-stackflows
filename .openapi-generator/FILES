@@ -19,9 +19,9 @@ docs/Model/DeleteBusinessProcessesDeleteBulkRequest.md
 docs/Model/DeleteEnvironmentsDeleteBulkRequest.md
 docs/Model/EngineResource.md
 docs/Model/EnvironmentResource.md
-docs/Model/GetEnvironmentUserTasksIndex401Response.md
 docs/Model/OrganizationUnitResource.md
 docs/Model/PostBusinessModelDiagramsCommentsCreateRequest.md
+docs/Model/PostBusinessModelDiagramsPublishRequest.md
 docs/Model/PostBusinessModelExceptionsCreateRequest.md
 docs/Model/PostBusinessModelsCreateRequest.md
 docs/Model/PostBusinessModelsTagRequest.md
@@ -29,7 +29,6 @@ docs/Model/PostBusinessProcessesCreateRequest.md
 docs/Model/PostCategoriesCreateRequest.md
 docs/Model/PostEnginesCreateRequest.md
 docs/Model/PostEnvironmentBusinessModelDiagramsCommentsCreateRequest.md
-docs/Model/PostEnvironmentBusinessModelDiagramsPublishRequest.md
 docs/Model/PostEnvironmentBusinessModelsCreateRequest.md
 docs/Model/PostEnvironmentServiceTasksLockRequest.md
 docs/Model/PostEnvironmentServiceTasksServeRequest.md
@@ -57,9 +56,11 @@ docs/Model/PutTagsUpdateRequest.md
 docs/Model/PutTasksUpdateRequest.md
 docs/Model/PutUserOrganizationsUpdateRequest.md
 docs/Model/PutUserUpdateRequest.md
+docs/Model/ServiceTaskTypeResource.md
 docs/Model/TagResource.md
 docs/Model/TaskResource.md
 docs/Model/UserResource.md
+docs/Model/UserTaskTypeResource.md
 git_push.sh
 phpunit.xml.dist
 src/Api/EnvironmentApi.php
@@ -82,10 +83,10 @@ src/Model/DeleteBusinessProcessesDeleteBulkRequest.php
 src/Model/DeleteEnvironmentsDeleteBulkRequest.php
 src/Model/EngineResource.php
 src/Model/EnvironmentResource.php
-src/Model/GetEnvironmentUserTasksIndex401Response.php
 src/Model/ModelInterface.php
 src/Model/OrganizationUnitResource.php
 src/Model/PostBusinessModelDiagramsCommentsCreateRequest.php
+src/Model/PostBusinessModelDiagramsPublishRequest.php
 src/Model/PostBusinessModelExceptionsCreateRequest.php
 src/Model/PostBusinessModelsCreateRequest.php
 src/Model/PostBusinessModelsTagRequest.php
@@ -93,7 +94,6 @@ src/Model/PostBusinessProcessesCreateRequest.php
 src/Model/PostCategoriesCreateRequest.php
 src/Model/PostEnginesCreateRequest.php
 src/Model/PostEnvironmentBusinessModelDiagramsCommentsCreateRequest.php
-src/Model/PostEnvironmentBusinessModelDiagramsPublishRequest.php
 src/Model/PostEnvironmentBusinessModelsCreateRequest.php
 src/Model/PostEnvironmentServiceTasksLockRequest.php
 src/Model/PostEnvironmentServiceTasksServeRequest.php
@@ -121,9 +121,11 @@ src/Model/PutTagsUpdateRequest.php
 src/Model/PutTasksUpdateRequest.php
 src/Model/PutUserOrganizationsUpdateRequest.php
 src/Model/PutUserUpdateRequest.php
+src/Model/ServiceTaskTypeResource.php
 src/Model/TagResource.php
 src/Model/TaskResource.php
 src/Model/UserResource.php
+src/Model/UserTaskTypeResource.php
 src/ObjectSerializer.php
 test/Api/EnvironmentApiTest.php
 test/Api/InstallationApiTest.php
@@ -142,9 +144,9 @@ test/Model/DeleteBusinessProcessesDeleteBulkRequestTest.php
 test/Model/DeleteEnvironmentsDeleteBulkRequestTest.php
 test/Model/EngineResourceTest.php
 test/Model/EnvironmentResourceTest.php
-test/Model/GetEnvironmentUserTasksIndex401ResponseTest.php
 test/Model/OrganizationUnitResourceTest.php
 test/Model/PostBusinessModelDiagramsCommentsCreateRequestTest.php
+test/Model/PostBusinessModelDiagramsPublishRequestTest.php
 test/Model/PostBusinessModelExceptionsCreateRequestTest.php
 test/Model/PostBusinessModelsCreateRequestTest.php
 test/Model/PostBusinessModelsTagRequestTest.php
@@ -152,7 +154,6 @@ test/Model/PostBusinessProcessesCreateRequestTest.php
 test/Model/PostCategoriesCreateRequestTest.php
 test/Model/PostEnginesCreateRequestTest.php
 test/Model/PostEnvironmentBusinessModelDiagramsCommentsCreateRequestTest.php
-test/Model/PostEnvironmentBusinessModelDiagramsPublishRequestTest.php
 test/Model/PostEnvironmentBusinessModelsCreateRequestTest.php
 test/Model/PostEnvironmentServiceTasksLockRequestTest.php
 test/Model/PostEnvironmentServiceTasksServeRequestTest.php
@@ -180,6 +181,8 @@ test/Model/PutTagsUpdateRequestTest.php
 test/Model/PutTasksUpdateRequestTest.php
 test/Model/PutUserOrganizationsUpdateRequestTest.php
 test/Model/PutUserUpdateRequestTest.php
+test/Model/ServiceTaskTypeResourceTest.php
 test/Model/TagResourceTest.php
 test/Model/TaskResourceTest.php
 test/Model/UserResourceTest.php
+test/Model/UserTaskTypeResourceTest.php

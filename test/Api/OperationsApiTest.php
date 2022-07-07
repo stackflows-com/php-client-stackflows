@@ -72,48 +72,48 @@ class OperationsApiTest extends TestCase
     }
 
     /**
-     * Test case for deleteBusinessModelDiagramsCommentsDelete
-     *
-     * Delete Business Model Diagram Comment.
-     *
-     */
-    public function testDeleteBusinessModelDiagramsCommentsDelete()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for deleteBusinessModelDiagramsDelete
+     * Test case for deleteBusinessModelDiagrams
      *
      * Delete Business Model Diagram.
      *
      */
-    public function testDeleteBusinessModelDiagramsDelete()
+    public function testDeleteBusinessModelDiagrams()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for deleteBusinessModelExceptionsDelete
+     * Test case for deleteBusinessModelDiagramsComments
+     *
+     * Delete Business Model Diagram Comment.
+     *
+     */
+    public function testDeleteBusinessModelDiagramsComments()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for deleteBusinessModelExceptions
      *
      * Delete Business Model Exception.
      *
      */
-    public function testDeleteBusinessModelExceptionsDelete()
+    public function testDeleteBusinessModelExceptions()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for deleteBusinessModelsDelete
+     * Test case for deleteBusinessModels
      *
      * Delete Business Model.
      *
      */
-    public function testDeleteBusinessModelsDelete()
+    public function testDeleteBusinessModels()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -132,12 +132,12 @@ class OperationsApiTest extends TestCase
     }
 
     /**
-     * Test case for deleteBusinessProcessesDelete
+     * Test case for deleteBusinessProcesses
      *
      * Delete Business Process Tag.
      *
      */
-    public function testDeleteBusinessProcessesDelete()
+    public function testDeleteBusinessProcesses()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -156,36 +156,36 @@ class OperationsApiTest extends TestCase
     }
 
     /**
-     * Test case for deleteCategoriesDelete
+     * Test case for deleteCategories
      *
      * Delete Category.
      *
      */
-    public function testDeleteCategoriesDelete()
+    public function testDeleteCategories()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for deleteTagsDelete
+     * Test case for deleteTags
      *
      * Delete Tag.
      *
      */
-    public function testDeleteTagsDelete()
+    public function testDeleteTags()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for deleteTasksDelete
+     * Test case for deleteTasks
      *
      * Delete Task.
      *
      */
-    public function testDeleteTasksDelete()
+    public function testDeleteTasks()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

@@ -4,9 +4,9 @@ All URIs are relative to http://localhost:8081.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteEnvironmentBusinessModelDiagramsCommentsDelete()**](EnvironmentApi.md#deleteEnvironmentBusinessModelDiagramsCommentsDelete) | **DELETE** /api/v2/environment/business-model-diagrams/{diagram}/comments/{comment} | Delete Business Model Diagram Comment
-[**deleteEnvironmentBusinessModelDiagramsDelete()**](EnvironmentApi.md#deleteEnvironmentBusinessModelDiagramsDelete) | **DELETE** /api/v2/environment/business-model-diagrams/{diagram} | Delete Business Model Diagram
-[**deleteEnvironmentBusinessModelsDelete()**](EnvironmentApi.md#deleteEnvironmentBusinessModelsDelete) | **DELETE** /api/v2/environment/business-models/{model} | Delete Business Model
+[**deleteEnvironmentBusinessModelDiagrams()**](EnvironmentApi.md#deleteEnvironmentBusinessModelDiagrams) | **DELETE** /api/v2/environment/business-model-diagrams/{diagram} | Delete Business Model Diagram
+[**deleteEnvironmentBusinessModelDiagramsComments()**](EnvironmentApi.md#deleteEnvironmentBusinessModelDiagramsComments) | **DELETE** /api/v2/environment/business-model-diagrams/{diagram}/comments/{comment} | Delete Business Model Diagram Comment
+[**deleteEnvironmentBusinessModels()**](EnvironmentApi.md#deleteEnvironmentBusinessModels) | **DELETE** /api/v2/environment/business-models/{model} | Delete Business Model
 [**getEnvironmentBusinessModelDiagramsCommentsList()**](EnvironmentApi.md#getEnvironmentBusinessModelDiagramsCommentsList) | **GET** /api/v2/environment/business-model-diagrams/{diagram}/comments | List Business Model Diagram Comments
 [**getEnvironmentBusinessModelDiagramsList()**](EnvironmentApi.md#getEnvironmentBusinessModelDiagramsList) | **GET** /api/v2/environment/business-model-diagrams | List Business Model Diagram
 [**getEnvironmentBusinessModelDiagramsShow()**](EnvironmentApi.md#getEnvironmentBusinessModelDiagramsShow) | **GET** /api/v2/environment/business-model-diagrams/{diagram} | View Business Model Diagram
@@ -27,10 +27,70 @@ Method | HTTP request | Description
 [**postEnvironmentUserTasksEscalate()**](EnvironmentApi.md#postEnvironmentUserTasksEscalate) | **POST** /api/v2/environment/user-tasks/{id}/escalate | Escalate User Task
 
 
-## `deleteEnvironmentBusinessModelDiagramsCommentsDelete()`
+## `deleteEnvironmentBusinessModelDiagrams()`
 
 ```php
-deleteEnvironmentBusinessModelDiagramsCommentsDelete($diagram, $comment, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\CommentResource
+deleteEnvironmentBusinessModelDiagrams($diagram, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource
+```
+
+Delete Business Model Diagram
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new Stackflows\Clients\Stackflows\Api\EnvironmentApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$diagram = 03b764f0-fc1f-11ec-9893-6df708406f80; // string | 
+$contentType = application/json; // string | 
+$accept = application/json; // string | 
+
+try {
+    $result = $apiInstance->deleteEnvironmentBusinessModelDiagrams($diagram, $contentType, $accept);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling EnvironmentApi->deleteEnvironmentBusinessModelDiagrams: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **diagram** | **string**|  |
+ **contentType** | **string**|  | [optional]
+ **accept** | **string**|  | [optional]
+
+### Return type
+
+[**\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource**](../Model/BusinessBaseModelDiagramResource.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `deleteEnvironmentBusinessModelDiagramsComments()`
+
+```php
+deleteEnvironmentBusinessModelDiagramsComments($diagram, $comment, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\CommentResource
 ```
 
 Delete Business Model Diagram Comment
@@ -56,10 +116,10 @@ $contentType = application/json; // string |
 $accept = application/json; // string | 
 
 try {
-    $result = $apiInstance->deleteEnvironmentBusinessModelDiagramsCommentsDelete($diagram, $comment, $contentType, $accept);
+    $result = $apiInstance->deleteEnvironmentBusinessModelDiagramsComments($diagram, $comment, $contentType, $accept);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling EnvironmentApi->deleteEnvironmentBusinessModelDiagramsCommentsDelete: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling EnvironmentApi->deleteEnvironmentBusinessModelDiagramsComments: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -89,70 +149,10 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `deleteEnvironmentBusinessModelDiagramsDelete()`
+## `deleteEnvironmentBusinessModels()`
 
 ```php
-deleteEnvironmentBusinessModelDiagramsDelete($diagram, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource
-```
-
-Delete Business Model Diagram
-
-
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-
-$apiInstance = new Stackflows\Clients\Stackflows\Api\EnvironmentApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
-$diagram = 03b764f0-fc1f-11ec-9893-6df708406f80; // string | 
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
-
-try {
-    $result = $apiInstance->deleteEnvironmentBusinessModelDiagramsDelete($diagram, $contentType, $accept);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling EnvironmentApi->deleteEnvironmentBusinessModelDiagramsDelete: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **diagram** | **string**|  |
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
-
-### Return type
-
-[**\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource**](../Model/BusinessBaseModelDiagramResource.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `deleteEnvironmentBusinessModelsDelete()`
-
-```php
-deleteEnvironmentBusinessModelsDelete($model, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource
+deleteEnvironmentBusinessModels($model, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource
 ```
 
 Delete Business Model
@@ -177,10 +177,10 @@ $contentType = application/json; // string |
 $accept = application/json; // string | 
 
 try {
-    $result = $apiInstance->deleteEnvironmentBusinessModelsDelete($model, $contentType, $accept);
+    $result = $apiInstance->deleteEnvironmentBusinessModels($model, $contentType, $accept);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling EnvironmentApi->deleteEnvironmentBusinessModelsDelete: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling EnvironmentApi->deleteEnvironmentBusinessModels: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -353,7 +353,7 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\EnvironmentApi(
     new GuzzleHttp\Client()
 );
 $diagram = 03b764f0-fc1f-11ec-9893-6df708406f80; // string | 
-$includesnapshotsdeploysdeploysStatistics = aut; // string | Possible includes
+$includesnapshotsdeploysdeploysStatistics = aliquid; // string | Possible includes
 $contentType = application/json; // string | 
 $accept = application/json; // string | 
 
@@ -476,15 +476,15 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\EnvironmentApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$includeownercompanycategorytagscommentsCounttagsCountdiagrams = est; // string | Possible includes
-$filterWithAnyTagstestTaganotherTestTag = ipsam; // string | Will return models that has any of specified tags
-$filterWithoutAnyTags1 = voluptatem; // string | Will return list of all models that has no tags at all
-$filterAutocompletetes = maiores; // string | Retrieve list that has \"tes\" at the start of their name
-$filterSearchtes = est; // string | Retrieve list that has \"tes\" in their name
-$filterCategories12 = id; // string | Filter by specific categories
+$includeownercompanycategorytagscommentsCounttagsCountdiagrams = autem; // string | Possible includes
+$filterWithAnyTagstestTaganotherTestTag = accusantium; // string | Will return models that has any of specified tags
+$filterWithoutAnyTags1 = modi; // string | Will return list of all models that has no tags at all
+$filterAutocompletetes = quasi; // string | Retrieve list that has \"tes\" at the start of their name
+$filterSearchtes = cum; // string | Retrieve list that has \"tes\" in their name
+$filterCategories12 = sequi; // string | Filter by specific categories
 $filterUncategorized = true; // bool | List only uncategorized process models.
 $filterSubscribable = true; // bool | List only subscribable process models.
-$sortnameCreatedAtUpdatedAt = esse; // string | Sorting example
+$sortnameCreatedAtUpdatedAt = autem; // string | Sorting example
 $contentType = application/json; // string | 
 $accept = application/json; // string | 
 
@@ -553,7 +553,7 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\EnvironmentApi(
     new GuzzleHttp\Client()
 );
 $model = 06a4ad30-f87d-11ec-ba01-1558c1387592; // string | 
-$includeownercompanycategorytagscommentsCounttagsCountdiagrams = ea; // string | Possible includes
+$includeownercompanycategorytagscommentsCounttagsCountdiagrams = veritatis; // string | Possible includes
 $contentType = application/json; // string | 
 $accept = application/json; // string | 
 
@@ -594,7 +594,7 @@ No authorization required
 ## `getEnvironmentUserTasksIndex()`
 
 ```php
-getEnvironmentUserTasksIndex($contentType, $accept)
+getEnvironmentUserTasksIndex($contentType, $accept): \Stackflows\Clients\Stackflows\Model\UserTaskTypeResource
 ```
 
 List User Tasks
@@ -618,7 +618,8 @@ $contentType = application/json; // string |
 $accept = application/json; // string | 
 
 try {
-    $apiInstance->getEnvironmentUserTasksIndex($contentType, $accept);
+    $result = $apiInstance->getEnvironmentUserTasksIndex($contentType, $accept);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling EnvironmentApi->getEnvironmentUserTasksIndex: ', $e->getMessage(), PHP_EOL;
 }
@@ -633,7 +634,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**\Stackflows\Clients\Stackflows\Model\UserTaskTypeResource**](../Model/UserTaskTypeResource.md)
 
 ### Authorization
 
@@ -777,7 +778,7 @@ No authorization required
 ## `postEnvironmentBusinessModelDiagramsPublish()`
 
 ```php
-postEnvironmentBusinessModelDiagramsPublish($diagram, $contentType, $accept, $postEnvironmentBusinessModelDiagramsPublishRequest): \Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource
+postEnvironmentBusinessModelDiagramsPublish($diagram, $contentType, $accept, $postBusinessModelDiagramsPublishRequest): \Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource
 ```
 
 Publish Business Model Diagram
@@ -800,10 +801,10 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\EnvironmentApi(
 $diagram = 03b764f0-fc1f-11ec-9893-6df708406f80; // string | 
 $contentType = application/json; // string | 
 $accept = application/json; // string | 
-$postEnvironmentBusinessModelDiagramsPublishRequest = new \Stackflows\Clients\Stackflows\Model\PostEnvironmentBusinessModelDiagramsPublishRequest(); // \Stackflows\Clients\Stackflows\Model\PostEnvironmentBusinessModelDiagramsPublishRequest
+$postBusinessModelDiagramsPublishRequest = new \Stackflows\Clients\Stackflows\Model\PostBusinessModelDiagramsPublishRequest(); // \Stackflows\Clients\Stackflows\Model\PostBusinessModelDiagramsPublishRequest
 
 try {
-    $result = $apiInstance->postEnvironmentBusinessModelDiagramsPublish($diagram, $contentType, $accept, $postEnvironmentBusinessModelDiagramsPublishRequest);
+    $result = $apiInstance->postEnvironmentBusinessModelDiagramsPublish($diagram, $contentType, $accept, $postBusinessModelDiagramsPublishRequest);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling EnvironmentApi->postEnvironmentBusinessModelDiagramsPublish: ', $e->getMessage(), PHP_EOL;
@@ -817,7 +818,7 @@ Name | Type | Description  | Notes
  **diagram** | **string**|  |
  **contentType** | **string**|  | [optional]
  **accept** | **string**|  | [optional]
- **postEnvironmentBusinessModelDiagramsPublishRequest** | [**\Stackflows\Clients\Stackflows\Model\PostEnvironmentBusinessModelDiagramsPublishRequest**](../Model/PostEnvironmentBusinessModelDiagramsPublishRequest.md)|  | [optional]
+ **postBusinessModelDiagramsPublishRequest** | [**\Stackflows\Clients\Stackflows\Model\PostBusinessModelDiagramsPublishRequest**](../Model/PostBusinessModelDiagramsPublishRequest.md)|  | [optional]
 
 ### Return type
 
@@ -899,7 +900,7 @@ No authorization required
 ## `postEnvironmentServiceTasksLock()`
 
 ```php
-postEnvironmentServiceTasksLock($postEnvironmentServiceTasksLockRequest, $contentType, $accept)
+postEnvironmentServiceTasksLock($postEnvironmentServiceTasksLockRequest, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\ServiceTaskTypeResource
 ```
 
 Lock Service Tasks
@@ -924,7 +925,8 @@ $contentType = application/json; // string |
 $accept = application/json; // string | 
 
 try {
-    $apiInstance->postEnvironmentServiceTasksLock($postEnvironmentServiceTasksLockRequest, $contentType, $accept);
+    $result = $apiInstance->postEnvironmentServiceTasksLock($postEnvironmentServiceTasksLockRequest, $contentType, $accept);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling EnvironmentApi->postEnvironmentServiceTasksLock: ', $e->getMessage(), PHP_EOL;
 }
@@ -940,7 +942,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**\Stackflows\Clients\Stackflows\Model\ServiceTaskTypeResource**](../Model/ServiceTaskTypeResource.md)
 
 ### Authorization
 
@@ -949,7 +951,7 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: `application/json`
-- **Accept**: Not defined
+- **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -958,7 +960,7 @@ No authorization required
 ## `postEnvironmentServiceTasksServe()`
 
 ```php
-postEnvironmentServiceTasksServe($reference, $postEnvironmentServiceTasksServeRequest, $contentType, $accept)
+postEnvironmentServiceTasksServe($reference, $postEnvironmentServiceTasksServeRequest, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\ServiceTaskTypeResource
 ```
 
 Serve Service Task
@@ -984,7 +986,8 @@ $contentType = application/json; // string |
 $accept = application/json; // string | 
 
 try {
-    $apiInstance->postEnvironmentServiceTasksServe($reference, $postEnvironmentServiceTasksServeRequest, $contentType, $accept);
+    $result = $apiInstance->postEnvironmentServiceTasksServe($reference, $postEnvironmentServiceTasksServeRequest, $contentType, $accept);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling EnvironmentApi->postEnvironmentServiceTasksServe: ', $e->getMessage(), PHP_EOL;
 }
@@ -1001,7 +1004,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**\Stackflows\Clients\Stackflows\Model\ServiceTaskTypeResource**](../Model/ServiceTaskTypeResource.md)
 
 ### Authorization
 
@@ -1010,7 +1013,7 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: `application/json`
-- **Accept**: Not defined
+- **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -1019,7 +1022,7 @@ No authorization required
 ## `postEnvironmentServiceTasksUnlock()`
 
 ```php
-postEnvironmentServiceTasksUnlock($reference, $postEnvironmentServiceTasksUnlockRequest, $contentType, $accept)
+postEnvironmentServiceTasksUnlock($reference, $postEnvironmentServiceTasksUnlockRequest, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\ServiceTaskTypeResource
 ```
 
 Unlock Service Task
@@ -1045,7 +1048,8 @@ $contentType = application/json; // string |
 $accept = application/json; // string | 
 
 try {
-    $apiInstance->postEnvironmentServiceTasksUnlock($reference, $postEnvironmentServiceTasksUnlockRequest, $contentType, $accept);
+    $result = $apiInstance->postEnvironmentServiceTasksUnlock($reference, $postEnvironmentServiceTasksUnlockRequest, $contentType, $accept);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling EnvironmentApi->postEnvironmentServiceTasksUnlock: ', $e->getMessage(), PHP_EOL;
 }
@@ -1062,7 +1066,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**\Stackflows\Clients\Stackflows\Model\ServiceTaskTypeResource**](../Model/ServiceTaskTypeResource.md)
 
 ### Authorization
 
@@ -1071,7 +1075,7 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: `application/json`
-- **Accept**: Not defined
+- **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -1140,12 +1144,12 @@ No authorization required
 ## `postEnvironmentUserTasksComplete()`
 
 ```php
-postEnvironmentUserTasksComplete($id, $contentType, $accept)
+postEnvironmentUserTasksComplete($id, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\UserTaskTypeResource
 ```
 
 Complete User Task
 
-Completes a task
+
 
 ### Example
 
@@ -1165,7 +1169,8 @@ $contentType = application/json; // string |
 $accept = application/json; // string | 
 
 try {
-    $apiInstance->postEnvironmentUserTasksComplete($id, $contentType, $accept);
+    $result = $apiInstance->postEnvironmentUserTasksComplete($id, $contentType, $accept);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling EnvironmentApi->postEnvironmentUserTasksComplete: ', $e->getMessage(), PHP_EOL;
 }
@@ -1181,7 +1186,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**\Stackflows\Clients\Stackflows\Model\UserTaskTypeResource**](../Model/UserTaskTypeResource.md)
 
 ### Authorization
 
@@ -1190,7 +1195,7 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -1260,7 +1265,7 @@ No authorization required
 ## `postEnvironmentUserTasksEscalate()`
 
 ```php
-postEnvironmentUserTasksEscalate($id, $postEnvironmentUserTasksEscalateRequest, $contentType, $accept)
+postEnvironmentUserTasksEscalate($id, $postEnvironmentUserTasksEscalateRequest, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\UserTaskTypeResource
 ```
 
 Escalate User Task
@@ -1286,7 +1291,8 @@ $contentType = application/json; // string |
 $accept = application/json; // string | 
 
 try {
-    $apiInstance->postEnvironmentUserTasksEscalate($id, $postEnvironmentUserTasksEscalateRequest, $contentType, $accept);
+    $result = $apiInstance->postEnvironmentUserTasksEscalate($id, $postEnvironmentUserTasksEscalateRequest, $contentType, $accept);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling EnvironmentApi->postEnvironmentUserTasksEscalate: ', $e->getMessage(), PHP_EOL;
 }
@@ -1303,7 +1309,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**\Stackflows\Clients\Stackflows\Model\UserTaskTypeResource**](../Model/UserTaskTypeResource.md)
 
 ### Authorization
 
@@ -1312,7 +1318,7 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: `application/json`
-- **Accept**: Not defined
+- **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)

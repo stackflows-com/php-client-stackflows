@@ -116,7 +116,7 @@ class UserApi
     }
 
     /**
-     * Operation deleteUserOrganizationsDelete
+     * Operation deleteUserOrganizations
      *
      * Delete Organization
      *
@@ -128,14 +128,14 @@ class UserApi
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\OrganizationUnitResource
      */
-    public function deleteUserOrganizationsDelete($organization, $contentType = null, $accept = null)
+    public function deleteUserOrganizations($organization, $contentType = null, $accept = null)
     {
-        list($response) = $this->deleteUserOrganizationsDeleteWithHttpInfo($organization, $contentType, $accept);
+        list($response) = $this->deleteUserOrganizationsWithHttpInfo($organization, $contentType, $accept);
         return $response;
     }
 
     /**
-     * Operation deleteUserOrganizationsDeleteWithHttpInfo
+     * Operation deleteUserOrganizationsWithHttpInfo
      *
      * Delete Organization
      *
@@ -147,9 +147,9 @@ class UserApi
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\OrganizationUnitResource, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteUserOrganizationsDeleteWithHttpInfo($organization, $contentType = null, $accept = null)
+    public function deleteUserOrganizationsWithHttpInfo($organization, $contentType = null, $accept = null)
     {
-        $request = $this->deleteUserOrganizationsDeleteRequest($organization, $contentType, $accept);
+        $request = $this->deleteUserOrganizationsRequest($organization, $contentType, $accept);
 
         try {
             $options = $this->createHttpClientOption();
@@ -236,7 +236,7 @@ class UserApi
     }
 
     /**
-     * Operation deleteUserOrganizationsDeleteAsync
+     * Operation deleteUserOrganizationsAsync
      *
      * Delete Organization
      *
@@ -247,9 +247,9 @@ class UserApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteUserOrganizationsDeleteAsync($organization, $contentType = null, $accept = null)
+    public function deleteUserOrganizationsAsync($organization, $contentType = null, $accept = null)
     {
-        return $this->deleteUserOrganizationsDeleteAsyncWithHttpInfo($organization, $contentType, $accept)
+        return $this->deleteUserOrganizationsAsyncWithHttpInfo($organization, $contentType, $accept)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -258,7 +258,7 @@ class UserApi
     }
 
     /**
-     * Operation deleteUserOrganizationsDeleteAsyncWithHttpInfo
+     * Operation deleteUserOrganizationsAsyncWithHttpInfo
      *
      * Delete Organization
      *
@@ -269,10 +269,10 @@ class UserApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteUserOrganizationsDeleteAsyncWithHttpInfo($organization, $contentType = null, $accept = null)
+    public function deleteUserOrganizationsAsyncWithHttpInfo($organization, $contentType = null, $accept = null)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource';
-        $request = $this->deleteUserOrganizationsDeleteRequest($organization, $contentType, $accept);
+        $request = $this->deleteUserOrganizationsRequest($organization, $contentType, $accept);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -311,7 +311,7 @@ class UserApi
     }
 
     /**
-     * Create request for operation 'deleteUserOrganizationsDelete'
+     * Create request for operation 'deleteUserOrganizations'
      *
      * @param  string $organization The ID of an organization. (required)
      * @param  string $contentType  (optional)
@@ -320,12 +320,12 @@ class UserApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deleteUserOrganizationsDeleteRequest($organization, $contentType = null, $accept = null)
+    public function deleteUserOrganizationsRequest($organization, $contentType = null, $accept = null)
     {
         // verify the required parameter 'organization' is set
         if ($organization === null || (is_array($organization) && count($organization) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $organization when calling deleteUserOrganizationsDelete'
+                'Missing the required parameter $organization when calling deleteUserOrganizations'
             );
         }
 

@@ -4,7 +4,7 @@ All URIs are relative to http://localhost:8081.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteUserOrganizationsDelete()**](UserApi.md#deleteUserOrganizationsDelete) | **DELETE** /api/v2/user/organizations/{organization} | Delete Organization
+[**deleteUserOrganizations()**](UserApi.md#deleteUserOrganizations) | **DELETE** /api/v2/user/organizations/{organization} | Delete Organization
 [**deleteUserRevoke()**](UserApi.md#deleteUserRevoke) | **DELETE** /api/v2/user/tokens | Revoke all tokens
 [**getUserMe()**](UserApi.md#getUserMe) | **GET** /api/v2/user | Me
 [**getUserOrganizationsList()**](UserApi.md#getUserOrganizationsList) | **GET** /api/v2/user/organizations | List Organizations
@@ -17,10 +17,10 @@ Method | HTTP request | Description
 [**putUserUpdate()**](UserApi.md#putUserUpdate) | **PUT** /api/v2/user | Update
 
 
-## `deleteUserOrganizationsDelete()`
+## `deleteUserOrganizations()`
 
 ```php
-deleteUserOrganizationsDelete($organization, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\OrganizationUnitResource
+deleteUserOrganizations($organization, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\OrganizationUnitResource
 ```
 
 Delete Organization
@@ -45,10 +45,10 @@ $contentType = application/json; // string |
 $accept = application/json; // string | 
 
 try {
-    $result = $apiInstance->deleteUserOrganizationsDelete($organization, $contentType, $accept);
+    $result = $apiInstance->deleteUserOrganizations($organization, $contentType, $accept);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling UserApi->deleteUserOrganizationsDelete: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling UserApi->deleteUserOrganizations: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -158,7 +158,7 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\UserApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$includeorganizations = quam; // string | Possible includes
+$includeorganizations = quisquam; // string | Possible includes
 $contentType = application/json; // string | 
 $accept = application/json; // string | 
 

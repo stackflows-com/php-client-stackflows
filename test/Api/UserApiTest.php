@@ -72,12 +72,12 @@ class UserApiTest extends TestCase
     }
 
     /**
-     * Test case for deleteUserOrganizationsDelete
+     * Test case for deleteUserOrganizations
      *
      * Delete Organization.
      *
      */
-    public function testDeleteUserOrganizationsDelete()
+    public function testDeleteUserOrganizations()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

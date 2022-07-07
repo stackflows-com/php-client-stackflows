@@ -4,17 +4,17 @@ All URIs are relative to http://localhost:8081.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteOrganizationUnitsDelete()**](OrganizationApi.md#deleteOrganizationUnitsDelete) | **DELETE** /api/v2/organization-units/{organizationUnit} | Delete Organzation Unit
+[**deleteOrganizationUnits()**](OrganizationApi.md#deleteOrganizationUnits) | **DELETE** /api/v2/organization-units/{organizationUnit} | Delete Organzation Unit
 [**getOrganizationUnitsList()**](OrganizationApi.md#getOrganizationUnitsList) | **GET** /api/v2/organization-units | List Organzation Units
 [**getOrganizationUnitsShow()**](OrganizationApi.md#getOrganizationUnitsShow) | **GET** /api/v2/organization-units/{organizationUnit} | View Organzation Unit
 [**postOrganizationUnitsCreate()**](OrganizationApi.md#postOrganizationUnitsCreate) | **POST** /api/v2/organization-units | Create Organzation Unit
 [**putOrganizationUnitsUpdate()**](OrganizationApi.md#putOrganizationUnitsUpdate) | **PUT** /api/v2/organization-units/{organizationUnit} | Update Organzation Unit
 
 
-## `deleteOrganizationUnitsDelete()`
+## `deleteOrganizationUnits()`
 
 ```php
-deleteOrganizationUnitsDelete($organizationUnit, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\OrganizationUnitResource
+deleteOrganizationUnits($organizationUnit, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\OrganizationUnitResource
 ```
 
 Delete Organzation Unit
@@ -34,15 +34,15 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OrganizationApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$organizationUnit = expedita; // string | 
+$organizationUnit = aliquam; // string | 
 $contentType = application/json; // string | 
 $accept = application/json; // string | 
 
 try {
-    $result = $apiInstance->deleteOrganizationUnitsDelete($organizationUnit, $contentType, $accept);
+    $result = $apiInstance->deleteOrganizationUnits($organizationUnit, $contentType, $accept);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling OrganizationApi->deleteOrganizationUnitsDelete: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OrganizationApi->deleteOrganizationUnits: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -94,8 +94,8 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OrganizationApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$filterRoot1 = consectetur; // string | Retrieve only root nodes
-$includechildren = aspernatur; // string | Load children
+$filterRoot1 = perferendis; // string | Retrieve only root nodes
+$includechildren = asperiores; // string | Load children
 $contentType = application/json; // string | 
 $accept = application/json; // string | 
 
@@ -156,7 +156,7 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OrganizationApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$organizationUnit = expedita; // string | 
+$organizationUnit = aliquam; // string | 
 $contentType = application/json; // string | 
 $accept = application/json; // string | 
 
@@ -276,7 +276,7 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OrganizationApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$organizationUnit = expedita; // string | 
+$organizationUnit = aliquam; // string | 
 $contentType = application/json; // string | 
 $accept = application/json; // string | 
 $putOrganizationUnitsUpdateRequest = new \Stackflows\Clients\Stackflows\Model\PutOrganizationUnitsUpdateRequest(); // \Stackflows\Clients\Stackflows\Model\PutOrganizationUnitsUpdateRequest
