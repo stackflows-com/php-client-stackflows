@@ -72,96 +72,132 @@ class UserApiTest extends TestCase
     }
 
     /**
-     * Test case for authUserMe
-     *
-     * Me.
-     *
-     */
-    public function testAuthUserMe()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for authUserOrganizationsDelete
+     * Test case for deleteUserOrganizationsDelete
      *
      * Delete Organization.
      *
      */
-    public function testAuthUserOrganizationsDelete()
+    public function testDeleteUserOrganizationsDelete()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for authUserOrganizationsList
-     *
-     * List Organizations.
-     *
-     */
-    public function testAuthUserOrganizationsList()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for authUserOrganizationsShow
-     *
-     * View Organization.
-     *
-     */
-    public function testAuthUserOrganizationsShow()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for authUserOrganizationsStore
-     *
-     * Create Organization.
-     *
-     */
-    public function testAuthUserOrganizationsStore()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for authUserOrganizationsUpdate
-     *
-     * Update Organization.
-     *
-     */
-    public function testAuthUserOrganizationsUpdate()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for authUserRevoke
+     * Test case for deleteUserRevoke
      *
      * Revoke all tokens.
      *
      */
-    public function testAuthUserRevoke()
+    public function testDeleteUserRevoke()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for authUserUpdate
+     * Test case for getUserMe
+     *
+     * Me.
+     *
+     */
+    public function testGetUserMe()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for getUserOrganizationsList
+     *
+     * List Organizations.
+     *
+     */
+    public function testGetUserOrganizationsList()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for getUserOrganizationsShow
+     *
+     * View Organization.
+     *
+     */
+    public function testGetUserOrganizationsShow()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for postUserLogin
+     *
+     * Login.
+     *
+     */
+    public function testPostUserLogin()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for postUserOrganizationsStore
+     *
+     * Create Organization.
+     *
+     */
+    public function testPostUserOrganizationsStore()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for postUserRegister
+     *
+     * Register.
+     *
+     */
+    public function testPostUserRegister()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for postUserResetPassword
+     *
+     * Restore password.
+     *
+     */
+    public function testPostUserResetPassword()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for putUserOrganizationsUpdate
+     *
+     * Update Organization.
+     *
+     */
+    public function testPutUserOrganizationsUpdate()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for putUserUpdate
      *
      * Update.
      *
      */
-    public function testAuthUserUpdate()
+    public function testPutUserUpdate()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

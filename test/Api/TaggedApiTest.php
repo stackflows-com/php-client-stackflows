@@ -72,12 +72,12 @@ class TaggedApiTest extends TestCase
     }
 
     /**
-     * Test case for taggedBusinessModelsStart
+     * Test case for postTaggedBusinessModelsStart
      *
      * Starts Business Process Models by Tag.
      *
      */
-    public function testTaggedBusinessModelsStart()
+    public function testPostTaggedBusinessModelsStart()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

@@ -72,576 +72,576 @@ class OperationsApiTest extends TestCase
     }
 
     /**
-     * Test case for businessModelDiagramsCommentsCreate
-     *
-     * Create Business Model Diagram Comment.
-     *
-     */
-    public function testBusinessModelDiagramsCommentsCreate()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for businessModelDiagramsCommentsDelete
+     * Test case for deleteBusinessModelDiagramsCommentsDelete
      *
      * Delete Business Model Diagram Comment.
      *
      */
-    public function testBusinessModelDiagramsCommentsDelete()
+    public function testDeleteBusinessModelDiagramsCommentsDelete()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for businessModelDiagramsCommentsList
-     *
-     * List Business Model Diagram Comments.
-     *
-     */
-    public function testBusinessModelDiagramsCommentsList()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for businessModelDiagramsCreate
-     *
-     * Create Business Model Diagram.
-     *
-     */
-    public function testBusinessModelDiagramsCreate()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for businessModelDiagramsDelete
+     * Test case for deleteBusinessModelDiagramsDelete
      *
      * Delete Business Model Diagram.
      *
      */
-    public function testBusinessModelDiagramsDelete()
+    public function testDeleteBusinessModelDiagramsDelete()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for businessModelDiagramsList
-     *
-     * List Business Model Diagram.
-     *
-     */
-    public function testBusinessModelDiagramsList()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for businessModelDiagramsPublish
-     *
-     * Publish Business Model Diagram.
-     *
-     */
-    public function testBusinessModelDiagramsPublish()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for businessModelDiagramsShow
-     *
-     * View Business Model Diagram.
-     *
-     */
-    public function testBusinessModelDiagramsShow()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for businessModelDiagramsUpdate
-     *
-     * Update Business Model Diagram.
-     *
-     */
-    public function testBusinessModelDiagramsUpdate()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for businessModelExceptionsCreate
-     *
-     * Create Business Model Exception.
-     *
-     */
-    public function testBusinessModelExceptionsCreate()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for businessModelExceptionsDelete
+     * Test case for deleteBusinessModelExceptionsDelete
      *
      * Delete Business Model Exception.
      *
      */
-    public function testBusinessModelExceptionsDelete()
+    public function testDeleteBusinessModelExceptionsDelete()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for businessModelExceptionsList
-     *
-     * List Business Model Exceptions.
-     *
-     */
-    public function testBusinessModelExceptionsList()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for businessModelExceptionsShow
-     *
-     * View Business Model Exception.
-     *
-     */
-    public function testBusinessModelExceptionsShow()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for businessModelExceptionsUpdate
-     *
-     * Update Business Model Exception.
-     *
-     */
-    public function testBusinessModelExceptionsUpdate()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for businessModelPublicationsList
-     *
-     * List Business Model Publications.
-     *
-     */
-    public function testBusinessModelPublicationsList()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for businessModelPublicationsShow
-     *
-     * View Business Model Publication.
-     *
-     */
-    public function testBusinessModelPublicationsShow()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for businessModelsCommentsList
-     *
-     * List Business Model Comments.
-     *
-     */
-    public function testBusinessModelsCommentsList()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for businessModelsCreate
-     *
-     * Create Business Model.
-     *
-     */
-    public function testBusinessModelsCreate()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for businessModelsDelete
+     * Test case for deleteBusinessModelsDelete
      *
      * Delete Business Model.
      *
      */
-    public function testBusinessModelsDelete()
+    public function testDeleteBusinessModelsDelete()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for businessModelsDeleteBulk
+     * Test case for deleteBusinessModelsDeleteBulk
      *
      * Delete Business Models.
      *
      */
-    public function testBusinessModelsDeleteBulk()
+    public function testDeleteBusinessModelsDeleteBulk()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for businessModelsList
-     *
-     * List Business Models.
-     *
-     */
-    public function testBusinessModelsList()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for businessModelsPostRevision
-     *
-     * Submit Business Model Diagram.
-     *
-     */
-    public function testBusinessModelsPostRevision()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for businessModelsShow
-     *
-     * View Business Model.
-     *
-     */
-    public function testBusinessModelsShow()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for businessModelsShowRevision
-     *
-     * View Business Model Diagram.
-     *
-     */
-    public function testBusinessModelsShowRevision()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for businessModelsShowRevisions
-     *
-     * List Business Model Disgrams.
-     *
-     */
-    public function testBusinessModelsShowRevisions()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for businessModelsTag
-     *
-     * Tag Business Model.
-     *
-     */
-    public function testBusinessModelsTag()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for businessModelsUpdate
-     *
-     * Update Business Model.
-     *
-     */
-    public function testBusinessModelsUpdate()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for businessProcessesCreate
-     *
-     * Create Business Process Tag.
-     *
-     */
-    public function testBusinessProcessesCreate()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for businessProcessesDelete
+     * Test case for deleteBusinessProcessesDelete
      *
      * Delete Business Process Tag.
      *
      */
-    public function testBusinessProcessesDelete()
+    public function testDeleteBusinessProcessesDelete()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for businessProcessesDeleteBulk
+     * Test case for deleteBusinessProcessesDeleteBulk
      *
      * Delete Business Process Tags.
      *
      */
-    public function testBusinessProcessesDeleteBulk()
+    public function testDeleteBusinessProcessesDeleteBulk()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for businessProcessesList
-     *
-     * List Business Process Tags.
-     *
-     */
-    public function testBusinessProcessesList()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for businessProcessesShow
-     *
-     * View Business Process Tag.
-     *
-     */
-    public function testBusinessProcessesShow()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for businessProcessesUpdate
-     *
-     * Update Business Process Tag.
-     *
-     */
-    public function testBusinessProcessesUpdate()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for categoriesCreate
-     *
-     * Create Category.
-     *
-     */
-    public function testCategoriesCreate()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for categoriesDelete
+     * Test case for deleteCategoriesDelete
      *
      * Delete Category.
      *
      */
-    public function testCategoriesDelete()
+    public function testDeleteCategoriesDelete()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for categoriesList
-     *
-     * List Categories.
-     *
-     */
-    public function testCategoriesList()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for categoriesShow
-     *
-     * View Category.
-     *
-     */
-    public function testCategoriesShow()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for categoriesUpdate
-     *
-     * Update Category.
-     *
-     */
-    public function testCategoriesUpdate()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for tagsCreate
-     *
-     * Create Tag.
-     *
-     */
-    public function testTagsCreate()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for tagsDelete
+     * Test case for deleteTagsDelete
      *
      * Delete Tag.
      *
      */
-    public function testTagsDelete()
+    public function testDeleteTagsDelete()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for tagsList
-     *
-     * List Tags.
-     *
-     */
-    public function testTagsList()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for tagsShow
-     *
-     * View Tag.
-     *
-     */
-    public function testTagsShow()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for tagsUpdate
-     *
-     * Update Tag.
-     *
-     */
-    public function testTagsUpdate()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for tasksCreate
-     *
-     * Create Task.
-     *
-     */
-    public function testTasksCreate()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for tasksDelete
+     * Test case for deleteTasksDelete
      *
      * Delete Task.
      *
      */
-    public function testTasksDelete()
+    public function testDeleteTasksDelete()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for tasksList
+     * Test case for getBusinessModelDiagramsCommentsList
+     *
+     * List Business Model Diagram Comments.
+     *
+     */
+    public function testGetBusinessModelDiagramsCommentsList()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for getBusinessModelDiagramsList
+     *
+     * List Business Model Diagram.
+     *
+     */
+    public function testGetBusinessModelDiagramsList()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for getBusinessModelDiagramsShow
+     *
+     * View Business Model Diagram.
+     *
+     */
+    public function testGetBusinessModelDiagramsShow()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for getBusinessModelExceptionsList
+     *
+     * List Business Model Exceptions.
+     *
+     */
+    public function testGetBusinessModelExceptionsList()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for getBusinessModelExceptionsShow
+     *
+     * View Business Model Exception.
+     *
+     */
+    public function testGetBusinessModelExceptionsShow()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for getBusinessModelPublicationsList
+     *
+     * List Business Model Publications.
+     *
+     */
+    public function testGetBusinessModelPublicationsList()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for getBusinessModelPublicationsShow
+     *
+     * View Business Model Publication.
+     *
+     */
+    public function testGetBusinessModelPublicationsShow()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for getBusinessModelsCommentsList
+     *
+     * List Business Model Comments.
+     *
+     */
+    public function testGetBusinessModelsCommentsList()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for getBusinessModelsList
+     *
+     * List Business Models.
+     *
+     */
+    public function testGetBusinessModelsList()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for getBusinessModelsShow
+     *
+     * View Business Model.
+     *
+     */
+    public function testGetBusinessModelsShow()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for getBusinessModelsShowRevision
+     *
+     * View Business Model Diagram.
+     *
+     */
+    public function testGetBusinessModelsShowRevision()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for getBusinessModelsShowRevisions
+     *
+     * List Business Model Disgrams.
+     *
+     */
+    public function testGetBusinessModelsShowRevisions()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for getBusinessProcessesList
+     *
+     * List Business Process Tags.
+     *
+     */
+    public function testGetBusinessProcessesList()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for getBusinessProcessesShow
+     *
+     * View Business Process Tag.
+     *
+     */
+    public function testGetBusinessProcessesShow()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for getCategoriesList
+     *
+     * List Categories.
+     *
+     */
+    public function testGetCategoriesList()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for getCategoriesShow
+     *
+     * View Category.
+     *
+     */
+    public function testGetCategoriesShow()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for getTagsList
+     *
+     * List Tags.
+     *
+     */
+    public function testGetTagsList()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for getTagsShow
+     *
+     * View Tag.
+     *
+     */
+    public function testGetTagsShow()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for getTasksList
      *
      * List Tasks.
      *
      */
-    public function testTasksList()
+    public function testGetTasksList()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for tasksShow
+     * Test case for getTasksShow
      *
      * View Task.
      *
      */
-    public function testTasksShow()
+    public function testGetTasksShow()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for tasksUpdate
+     * Test case for postBusinessModelDiagramsCommentsCreate
+     *
+     * Create Business Model Diagram Comment.
+     *
+     */
+    public function testPostBusinessModelDiagramsCommentsCreate()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for postBusinessModelDiagramsCreate
+     *
+     * Create Business Model Diagram.
+     *
+     */
+    public function testPostBusinessModelDiagramsCreate()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for postBusinessModelDiagramsPublish
+     *
+     * Publish Business Model Diagram.
+     *
+     */
+    public function testPostBusinessModelDiagramsPublish()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for postBusinessModelExceptionsCreate
+     *
+     * Create Business Model Exception.
+     *
+     */
+    public function testPostBusinessModelExceptionsCreate()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for postBusinessModelsCreate
+     *
+     * Create Business Model.
+     *
+     */
+    public function testPostBusinessModelsCreate()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for postBusinessModelsPostRevision
+     *
+     * Submit Business Model Diagram.
+     *
+     */
+    public function testPostBusinessModelsPostRevision()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for postBusinessModelsTag
+     *
+     * Tag Business Model.
+     *
+     */
+    public function testPostBusinessModelsTag()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for postBusinessProcessesCreate
+     *
+     * Create Business Process Tag.
+     *
+     */
+    public function testPostBusinessProcessesCreate()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for postCategoriesCreate
+     *
+     * Create Category.
+     *
+     */
+    public function testPostCategoriesCreate()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for postTagsCreate
+     *
+     * Create Tag.
+     *
+     */
+    public function testPostTagsCreate()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for postTasksCreate
+     *
+     * Create Task.
+     *
+     */
+    public function testPostTasksCreate()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for putBusinessModelDiagramsUpdate
+     *
+     * Update Business Model Diagram.
+     *
+     */
+    public function testPutBusinessModelDiagramsUpdate()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for putBusinessModelExceptionsUpdate
+     *
+     * Update Business Model Exception.
+     *
+     */
+    public function testPutBusinessModelExceptionsUpdate()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for putBusinessModelsUpdate
+     *
+     * Update Business Model.
+     *
+     */
+    public function testPutBusinessModelsUpdate()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for putBusinessProcessesUpdate
+     *
+     * Update Business Process Tag.
+     *
+     */
+    public function testPutBusinessProcessesUpdate()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for putCategoriesUpdate
+     *
+     * Update Category.
+     *
+     */
+    public function testPutCategoriesUpdate()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for putTagsUpdate
+     *
+     * Update Tag.
+     *
+     */
+    public function testPutTagsUpdate()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for putTasksUpdate
      *
      * Update Task.
      *
      */
-    public function testTasksUpdate()
+    public function testPutTasksUpdate()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

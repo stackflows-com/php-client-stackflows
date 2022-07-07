@@ -72,252 +72,252 @@ class EnvironmentApiTest extends TestCase
     }
 
     /**
-     * Test case for authBusinessModelDiagramsCommentsCreate
-     *
-     * Create Business Model Diagram Comment.
-     *
-     */
-    public function testAuthBusinessModelDiagramsCommentsCreate()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for authBusinessModelDiagramsCommentsDelete
+     * Test case for deleteEnvironmentBusinessModelDiagramsCommentsDelete
      *
      * Delete Business Model Diagram Comment.
      *
      */
-    public function testAuthBusinessModelDiagramsCommentsDelete()
+    public function testDeleteEnvironmentBusinessModelDiagramsCommentsDelete()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for authBusinessModelDiagramsCommentsList
-     *
-     * List Business Model Diagram Comments.
-     *
-     */
-    public function testAuthBusinessModelDiagramsCommentsList()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for authBusinessModelDiagramsCreate
-     *
-     * Create Business Model Diagram.
-     *
-     */
-    public function testAuthBusinessModelDiagramsCreate()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for authBusinessModelDiagramsDelete
+     * Test case for deleteEnvironmentBusinessModelDiagramsDelete
      *
      * Delete Business Model Diagram.
      *
      */
-    public function testAuthBusinessModelDiagramsDelete()
+    public function testDeleteEnvironmentBusinessModelDiagramsDelete()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for authBusinessModelDiagramsList
-     *
-     * List Business Model Diagram.
-     *
-     */
-    public function testAuthBusinessModelDiagramsList()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for authBusinessModelDiagramsPublish
-     *
-     * Publish Business Model Diagram.
-     *
-     */
-    public function testAuthBusinessModelDiagramsPublish()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for authBusinessModelDiagramsShow
-     *
-     * View Business Model Diagram.
-     *
-     */
-    public function testAuthBusinessModelDiagramsShow()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for authBusinessModelsCommentsList
-     *
-     * List Business Model Comments.
-     *
-     */
-    public function testAuthBusinessModelsCommentsList()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for authBusinessModelsCreate
-     *
-     * Create Business Model.
-     *
-     */
-    public function testAuthBusinessModelsCreate()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for authBusinessModelsDelete
+     * Test case for deleteEnvironmentBusinessModelsDelete
      *
      * Delete Business Model.
      *
      */
-    public function testAuthBusinessModelsDelete()
+    public function testDeleteEnvironmentBusinessModelsDelete()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for authBusinessModelsList
+     * Test case for getEnvironmentBusinessModelDiagramsCommentsList
+     *
+     * List Business Model Diagram Comments.
+     *
+     */
+    public function testGetEnvironmentBusinessModelDiagramsCommentsList()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for getEnvironmentBusinessModelDiagramsList
+     *
+     * List Business Model Diagram.
+     *
+     */
+    public function testGetEnvironmentBusinessModelDiagramsList()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for getEnvironmentBusinessModelDiagramsShow
+     *
+     * View Business Model Diagram.
+     *
+     */
+    public function testGetEnvironmentBusinessModelDiagramsShow()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for getEnvironmentBusinessModelsCommentsList
+     *
+     * List Business Model Comments.
+     *
+     */
+    public function testGetEnvironmentBusinessModelsCommentsList()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for getEnvironmentBusinessModelsList
      *
      * List Business Models.
      *
      */
-    public function testAuthBusinessModelsList()
+    public function testGetEnvironmentBusinessModelsList()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for authBusinessModelsShow
+     * Test case for getEnvironmentBusinessModelsShow
      *
      * View Business Model.
      *
      */
-    public function testAuthBusinessModelsShow()
+    public function testGetEnvironmentBusinessModelsShow()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for authServiceTasksLock
-     *
-     * Lock Service Tasks.
-     *
-     */
-    public function testAuthServiceTasksLock()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for authServiceTasksServe
-     *
-     * Serve Service Task.
-     *
-     */
-    public function testAuthServiceTasksServe()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for authServiceTasksUnlock
-     *
-     * Unlock Service Task.
-     *
-     */
-    public function testAuthServiceTasksUnlock()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for authTaggedBusinessModelsStart
-     *
-     * Starts Business Process Models by Tag.
-     *
-     */
-    public function testAuthTaggedBusinessModelsStart()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for authUserTasksComplete
-     *
-     * Complete User Task.
-     *
-     */
-    public function testAuthUserTasksComplete()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for authUserTasksErrorize
-     *
-     * Errorize User Task.
-     *
-     */
-    public function testAuthUserTasksErrorize()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for authUserTasksEscalate
-     *
-     * Escalate User Task.
-     *
-     */
-    public function testAuthUserTasksEscalate()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for authUserTasksIndex
+     * Test case for getEnvironmentUserTasksIndex
      *
      * List User Tasks.
      *
      */
-    public function testAuthUserTasksIndex()
+    public function testGetEnvironmentUserTasksIndex()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for postEnvironmentBusinessModelDiagramsCommentsCreate
+     *
+     * Create Business Model Diagram Comment.
+     *
+     */
+    public function testPostEnvironmentBusinessModelDiagramsCommentsCreate()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for postEnvironmentBusinessModelDiagramsCreate
+     *
+     * Create Business Model Diagram.
+     *
+     */
+    public function testPostEnvironmentBusinessModelDiagramsCreate()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for postEnvironmentBusinessModelDiagramsPublish
+     *
+     * Publish Business Model Diagram.
+     *
+     */
+    public function testPostEnvironmentBusinessModelDiagramsPublish()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for postEnvironmentBusinessModelsCreate
+     *
+     * Create Business Model.
+     *
+     */
+    public function testPostEnvironmentBusinessModelsCreate()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for postEnvironmentServiceTasksLock
+     *
+     * Lock Service Tasks.
+     *
+     */
+    public function testPostEnvironmentServiceTasksLock()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for postEnvironmentServiceTasksServe
+     *
+     * Serve Service Task.
+     *
+     */
+    public function testPostEnvironmentServiceTasksServe()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for postEnvironmentServiceTasksUnlock
+     *
+     * Unlock Service Task.
+     *
+     */
+    public function testPostEnvironmentServiceTasksUnlock()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for postEnvironmentTaggedBusinessModelsStart
+     *
+     * Starts Business Process Models by Tag.
+     *
+     */
+    public function testPostEnvironmentTaggedBusinessModelsStart()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for postEnvironmentUserTasksComplete
+     *
+     * Complete User Task.
+     *
+     */
+    public function testPostEnvironmentUserTasksComplete()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for postEnvironmentUserTasksErrorize
+     *
+     * Errorize User Task.
+     *
+     */
+    public function testPostEnvironmentUserTasksErrorize()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for postEnvironmentUserTasksEscalate
+     *
+     * Escalate User Task.
+     *
+     */
+    public function testPostEnvironmentUserTasksEscalate()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

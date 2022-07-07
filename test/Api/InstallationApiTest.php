@@ -72,84 +72,24 @@ class InstallationApiTest extends TestCase
     }
 
     /**
-     * Test case for enginesCreate
-     *
-     * Create Engine.
-     *
-     */
-    public function testEnginesCreate()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for enginesDelete
+     * Test case for deleteEnginesDelete
      *
      * Delete Engine.
      *
      */
-    public function testEnginesDelete()
+    public function testDeleteEnginesDelete()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for enginesShow
-     *
-     * View Engine.
-     *
-     */
-    public function testEnginesShow()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for enginesUpdate
-     *
-     * Update Engine.
-     *
-     */
-    public function testEnginesUpdate()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for environmentsCreate
-     *
-     * Create Environment.
-     *
-     */
-    public function testEnvironmentsCreate()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for environmentsDeleteBulk
+     * Test case for deleteEnvironmentsDeleteBulk
      *
      * Delete Environments.
      *
      */
-    public function testEnvironmentsDeleteBulk()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for environmentsList
-     *
-     * List Environments.
-     *
-     */
-    public function testEnvironmentsList()
+    public function testDeleteEnvironmentsDeleteBulk()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -162,6 +102,66 @@ class InstallationApiTest extends TestCase
      *
      */
     public function testGetEngine()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for getEnginesShow
+     *
+     * View Engine.
+     *
+     */
+    public function testGetEnginesShow()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for getEnvironmentsList
+     *
+     * List Environments.
+     *
+     */
+    public function testGetEnvironmentsList()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for postEnginesCreate
+     *
+     * Create Engine.
+     *
+     */
+    public function testPostEnginesCreate()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for postEnvironmentsCreate
+     *
+     * Create Environment.
+     *
+     */
+    public function testPostEnvironmentsCreate()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for putEnginesUpdate
+     *
+     * Update Engine.
+     *
+     */
+    public function testPutEnginesUpdate()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

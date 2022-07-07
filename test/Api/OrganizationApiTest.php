@@ -72,60 +72,60 @@ class OrganizationApiTest extends TestCase
     }
 
     /**
-     * Test case for organizationUnitsCreate
-     *
-     * Create Organzation Unit.
-     *
-     */
-    public function testOrganizationUnitsCreate()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for organizationUnitsDelete
+     * Test case for deleteOrganizationUnitsDelete
      *
      * Delete Organzation Unit.
      *
      */
-    public function testOrganizationUnitsDelete()
+    public function testDeleteOrganizationUnitsDelete()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for organizationUnitsList
+     * Test case for getOrganizationUnitsList
      *
      * List Organzation Units.
      *
      */
-    public function testOrganizationUnitsList()
+    public function testGetOrganizationUnitsList()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for organizationUnitsShow
+     * Test case for getOrganizationUnitsShow
      *
      * View Organzation Unit.
      *
      */
-    public function testOrganizationUnitsShow()
+    public function testGetOrganizationUnitsShow()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for organizationUnitsUpdate
+     * Test case for postOrganizationUnitsCreate
+     *
+     * Create Organzation Unit.
+     *
+     */
+    public function testPostOrganizationUnitsCreate()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for putOrganizationUnitsUpdate
      *
      * Update Organzation Unit.
      *
      */
-    public function testOrganizationUnitsUpdate()
+    public function testPutOrganizationUnitsUpdate()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

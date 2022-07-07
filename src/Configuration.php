@@ -93,7 +93,7 @@ class Configuration
      *
      * @var string
      */
-    protected $host = 'https://stage-backoffice.stackflows.com';
+    protected $host = 'http://localhost:8081';
 
     /**
      * User agent of the HTTP request, set to "OpenAPI-Generator/{version}/PHP" by default
@@ -473,7 +473,7 @@ class Configuration
     {
         return [
             [
-                "url" => "https://stage-backoffice.stackflows.com",
+                "url" => "http://localhost:8081",
                 "description" => "No description provided",
             ]
         ];

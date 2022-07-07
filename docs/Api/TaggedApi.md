@@ -1,16 +1,16 @@
 # Stackflows\Clients\Stackflows\TaggedApi
 
-All URIs are relative to https://stage-backoffice.stackflows.com.
+All URIs are relative to http://localhost:8081.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**taggedBusinessModelsStart()**](TaggedApi.md#taggedBusinessModelsStart) | **POST** /api/v2/tagged/business-models | Starts Business Process Models by Tag
+[**postTaggedBusinessModelsStart()**](TaggedApi.md#postTaggedBusinessModelsStart) | **POST** /api/v2/tagged/business-models | Starts Business Process Models by Tag
 
 
-## `taggedBusinessModelsStart()`
+## `postTaggedBusinessModelsStart()`
 
 ```php
-taggedBusinessModelsStart($taggedBusinessModelsStartRequest, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource
+postTaggedBusinessModelsStart($postTaggedBusinessModelsStartRequest, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource
 ```
 
 Starts Business Process Models by Tag
@@ -30,15 +30,15 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\TaggedApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$taggedBusinessModelsStartRequest = new \Stackflows\Clients\Stackflows\Model\TaggedBusinessModelsStartRequest(); // \Stackflows\Clients\Stackflows\Model\TaggedBusinessModelsStartRequest
+$postTaggedBusinessModelsStartRequest = new \Stackflows\Clients\Stackflows\Model\PostTaggedBusinessModelsStartRequest(); // \Stackflows\Clients\Stackflows\Model\PostTaggedBusinessModelsStartRequest
 $contentType = application/json; // string | 
 $accept = application/json; // string | 
 
 try {
-    $result = $apiInstance->taggedBusinessModelsStart($taggedBusinessModelsStartRequest, $contentType, $accept);
+    $result = $apiInstance->postTaggedBusinessModelsStart($postTaggedBusinessModelsStartRequest, $contentType, $accept);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling TaggedApi->taggedBusinessModelsStart: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling TaggedApi->postTaggedBusinessModelsStart: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -46,7 +46,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **taggedBusinessModelsStartRequest** | [**\Stackflows\Clients\Stackflows\Model\TaggedBusinessModelsStartRequest**](../Model/TaggedBusinessModelsStartRequest.md)|  |
+ **postTaggedBusinessModelsStartRequest** | [**\Stackflows\Clients\Stackflows\Model\PostTaggedBusinessModelsStartRequest**](../Model/PostTaggedBusinessModelsStartRequest.md)|  |
  **contentType** | **string**|  | [optional]
  **accept** | **string**|  | [optional]
 

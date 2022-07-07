@@ -116,11 +116,11 @@ class InstallationApi
     }
 
     /**
-     * Operation enginesCreate
+     * Operation deleteEnginesDelete
      *
-     * Create Engine
+     * Delete Engine
      *
-     * @param  \Stackflows\Clients\Stackflows\Model\EnginesCreateRequest $enginesCreateRequest enginesCreateRequest (required)
+     * @param  string $engine  (required)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
      *
@@ -128,18 +128,18 @@ class InstallationApi
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\EngineResource
      */
-    public function enginesCreate($enginesCreateRequest, $contentType = null, $accept = null)
+    public function deleteEnginesDelete($engine, $contentType = null, $accept = null)
     {
-        list($response) = $this->enginesCreateWithHttpInfo($enginesCreateRequest, $contentType, $accept);
+        list($response) = $this->deleteEnginesDeleteWithHttpInfo($engine, $contentType, $accept);
         return $response;
     }
 
     /**
-     * Operation enginesCreateWithHttpInfo
+     * Operation deleteEnginesDeleteWithHttpInfo
      *
-     * Create Engine
+     * Delete Engine
      *
-     * @param  \Stackflows\Clients\Stackflows\Model\EnginesCreateRequest $enginesCreateRequest (required)
+     * @param  string $engine  (required)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
      *
@@ -147,9 +147,9 @@ class InstallationApi
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\EngineResource, HTTP status code, HTTP response headers (array of strings)
      */
-    public function enginesCreateWithHttpInfo($enginesCreateRequest, $contentType = null, $accept = null)
+    public function deleteEnginesDeleteWithHttpInfo($engine, $contentType = null, $accept = null)
     {
-        $request = $this->enginesCreateRequest($enginesCreateRequest, $contentType, $accept);
+        $request = $this->deleteEnginesDeleteRequest($engine, $contentType, $accept);
 
         try {
             $options = $this->createHttpClientOption();
@@ -236,20 +236,20 @@ class InstallationApi
     }
 
     /**
-     * Operation enginesCreateAsync
+     * Operation deleteEnginesDeleteAsync
      *
-     * Create Engine
+     * Delete Engine
      *
-     * @param  \Stackflows\Clients\Stackflows\Model\EnginesCreateRequest $enginesCreateRequest (required)
+     * @param  string $engine  (required)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function enginesCreateAsync($enginesCreateRequest, $contentType = null, $accept = null)
+    public function deleteEnginesDeleteAsync($engine, $contentType = null, $accept = null)
     {
-        return $this->enginesCreateAsyncWithHttpInfo($enginesCreateRequest, $contentType, $accept)
+        return $this->deleteEnginesDeleteAsyncWithHttpInfo($engine, $contentType, $accept)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -258,21 +258,21 @@ class InstallationApi
     }
 
     /**
-     * Operation enginesCreateAsyncWithHttpInfo
+     * Operation deleteEnginesDeleteAsyncWithHttpInfo
      *
-     * Create Engine
+     * Delete Engine
      *
-     * @param  \Stackflows\Clients\Stackflows\Model\EnginesCreateRequest $enginesCreateRequest (required)
+     * @param  string $engine  (required)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function enginesCreateAsyncWithHttpInfo($enginesCreateRequest, $contentType = null, $accept = null)
+    public function deleteEnginesDeleteAsyncWithHttpInfo($engine, $contentType = null, $accept = null)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\EngineResource';
-        $request = $this->enginesCreateRequest($enginesCreateRequest, $contentType, $accept);
+        $request = $this->deleteEnginesDeleteRequest($engine, $contentType, $accept);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -311,303 +311,7 @@ class InstallationApi
     }
 
     /**
-     * Create request for operation 'enginesCreate'
-     *
-     * @param  \Stackflows\Clients\Stackflows\Model\EnginesCreateRequest $enginesCreateRequest (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function enginesCreateRequest($enginesCreateRequest, $contentType = null, $accept = null)
-    {
-        // verify the required parameter 'enginesCreateRequest' is set
-        if ($enginesCreateRequest === null || (is_array($enginesCreateRequest) && count($enginesCreateRequest) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $enginesCreateRequest when calling enginesCreate'
-            );
-        }
-
-        $resourcePath = '/api/v2/engines';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-        // header params
-        if ($contentType !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
-        }
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
-
-
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                ['application/json']
-            );
-        }
-
-        // for model (json/xml)
-        if (isset($enginesCreateRequest)) {
-            if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($enginesCreateRequest));
-            } else {
-                $httpBody = $enginesCreateRequest;
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'POST',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation enginesDelete
-     *
-     * Delete Engine
-     *
-     * @param  string $engine  (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
-     *
-     * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \Stackflows\Clients\Stackflows\Model\EngineResource
-     */
-    public function enginesDelete($engine, $contentType = null, $accept = null)
-    {
-        list($response) = $this->enginesDeleteWithHttpInfo($engine, $contentType, $accept);
-        return $response;
-    }
-
-    /**
-     * Operation enginesDeleteWithHttpInfo
-     *
-     * Delete Engine
-     *
-     * @param  string $engine  (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
-     *
-     * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \Stackflows\Clients\Stackflows\Model\EngineResource, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function enginesDeleteWithHttpInfo($engine, $contentType = null, $accept = null)
-    {
-        $request = $this->enginesDeleteRequest($engine, $contentType, $accept);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            switch($statusCode) {
-                case 200:
-                    if ('\Stackflows\Clients\Stackflows\Model\EngineResource' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\Stackflows\Clients\Stackflows\Model\EngineResource' !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\EngineResource', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            $returnType = '\Stackflows\Clients\Stackflows\Model\EngineResource';
-            if ($returnType === '\SplFileObject') {
-                $content = $response->getBody(); //stream goes to serializer
-            } else {
-                $content = (string) $response->getBody();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Stackflows\Clients\Stackflows\Model\EngineResource',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation enginesDeleteAsync
-     *
-     * Delete Engine
-     *
-     * @param  string $engine  (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function enginesDeleteAsync($engine, $contentType = null, $accept = null)
-    {
-        return $this->enginesDeleteAsyncWithHttpInfo($engine, $contentType, $accept)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation enginesDeleteAsyncWithHttpInfo
-     *
-     * Delete Engine
-     *
-     * @param  string $engine  (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function enginesDeleteAsyncWithHttpInfo($engine, $contentType = null, $accept = null)
-    {
-        $returnType = '\Stackflows\Clients\Stackflows\Model\EngineResource';
-        $request = $this->enginesDeleteRequest($engine, $contentType, $accept);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'enginesDelete'
+     * Create request for operation 'deleteEnginesDelete'
      *
      * @param  string $engine  (required)
      * @param  string $contentType  (optional)
@@ -616,12 +320,12 @@ class InstallationApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function enginesDeleteRequest($engine, $contentType = null, $accept = null)
+    public function deleteEnginesDeleteRequest($engine, $contentType = null, $accept = null)
     {
         // verify the required parameter 'engine' is set
         if ($engine === null || (is_array($engine) && count($engine) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $engine when calling enginesDelete'
+                'Missing the required parameter $engine when calling deleteEnginesDelete'
             );
         }
 
@@ -710,685 +414,40 @@ class InstallationApi
     }
 
     /**
-     * Operation enginesShow
+     * Operation deleteEnvironmentsDeleteBulk
      *
-     * View Engine
+     * Delete Environments
      *
-     * @param  string $id The ID of the engine. (required)
-     * @param  string $engine ID of an engine (required)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
-     *
-     * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \Stackflows\Clients\Stackflows\Model\EngineResource
-     */
-    public function enginesShow($id, $engine, $contentType = null, $accept = null)
-    {
-        list($response) = $this->enginesShowWithHttpInfo($id, $engine, $contentType, $accept);
-        return $response;
-    }
-
-    /**
-     * Operation enginesShowWithHttpInfo
-     *
-     * View Engine
-     *
-     * @param  string $id The ID of the engine. (required)
-     * @param  string $engine ID of an engine (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
-     *
-     * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \Stackflows\Clients\Stackflows\Model\EngineResource, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function enginesShowWithHttpInfo($id, $engine, $contentType = null, $accept = null)
-    {
-        $request = $this->enginesShowRequest($id, $engine, $contentType, $accept);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            switch($statusCode) {
-                case 200:
-                    if ('\Stackflows\Clients\Stackflows\Model\EngineResource' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\Stackflows\Clients\Stackflows\Model\EngineResource' !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\EngineResource', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            $returnType = '\Stackflows\Clients\Stackflows\Model\EngineResource';
-            if ($returnType === '\SplFileObject') {
-                $content = $response->getBody(); //stream goes to serializer
-            } else {
-                $content = (string) $response->getBody();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Stackflows\Clients\Stackflows\Model\EngineResource',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation enginesShowAsync
-     *
-     * View Engine
-     *
-     * @param  string $id The ID of the engine. (required)
-     * @param  string $engine ID of an engine (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function enginesShowAsync($id, $engine, $contentType = null, $accept = null)
-    {
-        return $this->enginesShowAsyncWithHttpInfo($id, $engine, $contentType, $accept)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation enginesShowAsyncWithHttpInfo
-     *
-     * View Engine
-     *
-     * @param  string $id The ID of the engine. (required)
-     * @param  string $engine ID of an engine (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function enginesShowAsyncWithHttpInfo($id, $engine, $contentType = null, $accept = null)
-    {
-        $returnType = '\Stackflows\Clients\Stackflows\Model\EngineResource';
-        $request = $this->enginesShowRequest($id, $engine, $contentType, $accept);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'enginesShow'
-     *
-     * @param  string $id The ID of the engine. (required)
-     * @param  string $engine ID of an engine (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function enginesShowRequest($id, $engine, $contentType = null, $accept = null)
-    {
-        // verify the required parameter 'id' is set
-        if ($id === null || (is_array($id) && count($id) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling enginesShow'
-            );
-        }
-        // verify the required parameter 'engine' is set
-        if ($engine === null || (is_array($engine) && count($engine) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $engine when calling enginesShow'
-            );
-        }
-
-        $resourcePath = '/api/v2/engines/{id}';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-        // header params
-        if ($contentType !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
-        }
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
-
-        // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($engine !== null) {
-            $resourcePath = str_replace(
-                '{' . 'engine' . '}',
-                ObjectSerializer::toPathValue($engine),
-                $resourcePath
-            );
-        }
-
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation enginesUpdate
-     *
-     * Update Engine
-     *
-     * @param  string $id The ID of the engine. (required)
-     * @param  string $engine ID of an engine (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
-     * @param  \Stackflows\Clients\Stackflows\Model\EnginesUpdateRequest $enginesUpdateRequest enginesUpdateRequest (optional)
-     *
-     * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \Stackflows\Clients\Stackflows\Model\EngineResource
-     */
-    public function enginesUpdate($id, $engine, $contentType = null, $accept = null, $enginesUpdateRequest = null)
-    {
-        list($response) = $this->enginesUpdateWithHttpInfo($id, $engine, $contentType, $accept, $enginesUpdateRequest);
-        return $response;
-    }
-
-    /**
-     * Operation enginesUpdateWithHttpInfo
-     *
-     * Update Engine
-     *
-     * @param  string $id The ID of the engine. (required)
-     * @param  string $engine ID of an engine (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
-     * @param  \Stackflows\Clients\Stackflows\Model\EnginesUpdateRequest $enginesUpdateRequest (optional)
-     *
-     * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \Stackflows\Clients\Stackflows\Model\EngineResource, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function enginesUpdateWithHttpInfo($id, $engine, $contentType = null, $accept = null, $enginesUpdateRequest = null)
-    {
-        $request = $this->enginesUpdateRequest($id, $engine, $contentType, $accept, $enginesUpdateRequest);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            switch($statusCode) {
-                case 200:
-                    if ('\Stackflows\Clients\Stackflows\Model\EngineResource' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\Stackflows\Clients\Stackflows\Model\EngineResource' !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\EngineResource', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            $returnType = '\Stackflows\Clients\Stackflows\Model\EngineResource';
-            if ($returnType === '\SplFileObject') {
-                $content = $response->getBody(); //stream goes to serializer
-            } else {
-                $content = (string) $response->getBody();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Stackflows\Clients\Stackflows\Model\EngineResource',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation enginesUpdateAsync
-     *
-     * Update Engine
-     *
-     * @param  string $id The ID of the engine. (required)
-     * @param  string $engine ID of an engine (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
-     * @param  \Stackflows\Clients\Stackflows\Model\EnginesUpdateRequest $enginesUpdateRequest (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function enginesUpdateAsync($id, $engine, $contentType = null, $accept = null, $enginesUpdateRequest = null)
-    {
-        return $this->enginesUpdateAsyncWithHttpInfo($id, $engine, $contentType, $accept, $enginesUpdateRequest)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation enginesUpdateAsyncWithHttpInfo
-     *
-     * Update Engine
-     *
-     * @param  string $id The ID of the engine. (required)
-     * @param  string $engine ID of an engine (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
-     * @param  \Stackflows\Clients\Stackflows\Model\EnginesUpdateRequest $enginesUpdateRequest (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function enginesUpdateAsyncWithHttpInfo($id, $engine, $contentType = null, $accept = null, $enginesUpdateRequest = null)
-    {
-        $returnType = '\Stackflows\Clients\Stackflows\Model\EngineResource';
-        $request = $this->enginesUpdateRequest($id, $engine, $contentType, $accept, $enginesUpdateRequest);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'enginesUpdate'
-     *
-     * @param  string $id The ID of the engine. (required)
-     * @param  string $engine ID of an engine (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
-     * @param  \Stackflows\Clients\Stackflows\Model\EnginesUpdateRequest $enginesUpdateRequest (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function enginesUpdateRequest($id, $engine, $contentType = null, $accept = null, $enginesUpdateRequest = null)
-    {
-        // verify the required parameter 'id' is set
-        if ($id === null || (is_array($id) && count($id) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling enginesUpdate'
-            );
-        }
-        // verify the required parameter 'engine' is set
-        if ($engine === null || (is_array($engine) && count($engine) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $engine when calling enginesUpdate'
-            );
-        }
-
-        $resourcePath = '/api/v2/engines/{id}';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-        // header params
-        if ($contentType !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
-        }
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
-
-        // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($engine !== null) {
-            $resourcePath = str_replace(
-                '{' . 'engine' . '}',
-                ObjectSerializer::toPathValue($engine),
-                $resourcePath
-            );
-        }
-
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                ['application/json']
-            );
-        }
-
-        // for model (json/xml)
-        if (isset($enginesUpdateRequest)) {
-            if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($enginesUpdateRequest));
-            } else {
-                $httpBody = $enginesUpdateRequest;
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'PUT',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation environmentsCreate
-     *
-     * Create Environment
-     *
-     * @param  \Stackflows\Clients\Stackflows\Model\EnvironmentsCreateRequest $environmentsCreateRequest environmentsCreateRequest (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
+     * @param  \Stackflows\Clients\Stackflows\Model\DeleteEnvironmentsDeleteBulkRequest $deleteEnvironmentsDeleteBulkRequest deleteEnvironmentsDeleteBulkRequest (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\CategoryResource
      */
-    public function environmentsCreate($environmentsCreateRequest, $contentType = null, $accept = null)
+    public function deleteEnvironmentsDeleteBulk($contentType = null, $accept = null, $deleteEnvironmentsDeleteBulkRequest = null)
     {
-        list($response) = $this->environmentsCreateWithHttpInfo($environmentsCreateRequest, $contentType, $accept);
+        list($response) = $this->deleteEnvironmentsDeleteBulkWithHttpInfo($contentType, $accept, $deleteEnvironmentsDeleteBulkRequest);
         return $response;
     }
 
     /**
-     * Operation environmentsCreateWithHttpInfo
+     * Operation deleteEnvironmentsDeleteBulkWithHttpInfo
      *
-     * Create Environment
+     * Delete Environments
      *
-     * @param  \Stackflows\Clients\Stackflows\Model\EnvironmentsCreateRequest $environmentsCreateRequest (required)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
+     * @param  \Stackflows\Clients\Stackflows\Model\DeleteEnvironmentsDeleteBulkRequest $deleteEnvironmentsDeleteBulkRequest (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\CategoryResource, HTTP status code, HTTP response headers (array of strings)
      */
-    public function environmentsCreateWithHttpInfo($environmentsCreateRequest, $contentType = null, $accept = null)
+    public function deleteEnvironmentsDeleteBulkWithHttpInfo($contentType = null, $accept = null, $deleteEnvironmentsDeleteBulkRequest = null)
     {
-        $request = $this->environmentsCreateRequest($environmentsCreateRequest, $contentType, $accept);
+        $request = $this->deleteEnvironmentsDeleteBulkRequest($contentType, $accept, $deleteEnvironmentsDeleteBulkRequest);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1475,20 +534,20 @@ class InstallationApi
     }
 
     /**
-     * Operation environmentsCreateAsync
+     * Operation deleteEnvironmentsDeleteBulkAsync
      *
-     * Create Environment
+     * Delete Environments
      *
-     * @param  \Stackflows\Clients\Stackflows\Model\EnvironmentsCreateRequest $environmentsCreateRequest (required)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
+     * @param  \Stackflows\Clients\Stackflows\Model\DeleteEnvironmentsDeleteBulkRequest $deleteEnvironmentsDeleteBulkRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function environmentsCreateAsync($environmentsCreateRequest, $contentType = null, $accept = null)
+    public function deleteEnvironmentsDeleteBulkAsync($contentType = null, $accept = null, $deleteEnvironmentsDeleteBulkRequest = null)
     {
-        return $this->environmentsCreateAsyncWithHttpInfo($environmentsCreateRequest, $contentType, $accept)
+        return $this->deleteEnvironmentsDeleteBulkAsyncWithHttpInfo($contentType, $accept, $deleteEnvironmentsDeleteBulkRequest)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1497,21 +556,21 @@ class InstallationApi
     }
 
     /**
-     * Operation environmentsCreateAsyncWithHttpInfo
+     * Operation deleteEnvironmentsDeleteBulkAsyncWithHttpInfo
      *
-     * Create Environment
+     * Delete Environments
      *
-     * @param  \Stackflows\Clients\Stackflows\Model\EnvironmentsCreateRequest $environmentsCreateRequest (required)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
+     * @param  \Stackflows\Clients\Stackflows\Model\DeleteEnvironmentsDeleteBulkRequest $deleteEnvironmentsDeleteBulkRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function environmentsCreateAsyncWithHttpInfo($environmentsCreateRequest, $contentType = null, $accept = null)
+    public function deleteEnvironmentsDeleteBulkAsyncWithHttpInfo($contentType = null, $accept = null, $deleteEnvironmentsDeleteBulkRequest = null)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\CategoryResource';
-        $request = $this->environmentsCreateRequest($environmentsCreateRequest, $contentType, $accept);
+        $request = $this->deleteEnvironmentsDeleteBulkRequest($contentType, $accept, $deleteEnvironmentsDeleteBulkRequest);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1550,312 +609,16 @@ class InstallationApi
     }
 
     /**
-     * Create request for operation 'environmentsCreate'
+     * Create request for operation 'deleteEnvironmentsDeleteBulk'
      *
-     * @param  \Stackflows\Clients\Stackflows\Model\EnvironmentsCreateRequest $environmentsCreateRequest (required)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
+     * @param  \Stackflows\Clients\Stackflows\Model\DeleteEnvironmentsDeleteBulkRequest $deleteEnvironmentsDeleteBulkRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function environmentsCreateRequest($environmentsCreateRequest, $contentType = null, $accept = null)
-    {
-        // verify the required parameter 'environmentsCreateRequest' is set
-        if ($environmentsCreateRequest === null || (is_array($environmentsCreateRequest) && count($environmentsCreateRequest) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $environmentsCreateRequest when calling environmentsCreate'
-            );
-        }
-
-        $resourcePath = '/api/v2/environments';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-        // header params
-        if ($contentType !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
-        }
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
-
-
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                ['application/json']
-            );
-        }
-
-        // for model (json/xml)
-        if (isset($environmentsCreateRequest)) {
-            if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($environmentsCreateRequest));
-            } else {
-                $httpBody = $environmentsCreateRequest;
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'POST',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation environmentsDeleteBulk
-     *
-     * Delete Environments
-     *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
-     * @param  \Stackflows\Clients\Stackflows\Model\EnvironmentsDeleteBulkRequest $environmentsDeleteBulkRequest environmentsDeleteBulkRequest (optional)
-     *
-     * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \Stackflows\Clients\Stackflows\Model\CategoryResource
-     */
-    public function environmentsDeleteBulk($contentType = null, $accept = null, $environmentsDeleteBulkRequest = null)
-    {
-        list($response) = $this->environmentsDeleteBulkWithHttpInfo($contentType, $accept, $environmentsDeleteBulkRequest);
-        return $response;
-    }
-
-    /**
-     * Operation environmentsDeleteBulkWithHttpInfo
-     *
-     * Delete Environments
-     *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
-     * @param  \Stackflows\Clients\Stackflows\Model\EnvironmentsDeleteBulkRequest $environmentsDeleteBulkRequest (optional)
-     *
-     * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \Stackflows\Clients\Stackflows\Model\CategoryResource, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function environmentsDeleteBulkWithHttpInfo($contentType = null, $accept = null, $environmentsDeleteBulkRequest = null)
-    {
-        $request = $this->environmentsDeleteBulkRequest($contentType, $accept, $environmentsDeleteBulkRequest);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            switch($statusCode) {
-                case 200:
-                    if ('\Stackflows\Clients\Stackflows\Model\CategoryResource' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\Stackflows\Clients\Stackflows\Model\CategoryResource' !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\CategoryResource', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            $returnType = '\Stackflows\Clients\Stackflows\Model\CategoryResource';
-            if ($returnType === '\SplFileObject') {
-                $content = $response->getBody(); //stream goes to serializer
-            } else {
-                $content = (string) $response->getBody();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Stackflows\Clients\Stackflows\Model\CategoryResource',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation environmentsDeleteBulkAsync
-     *
-     * Delete Environments
-     *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
-     * @param  \Stackflows\Clients\Stackflows\Model\EnvironmentsDeleteBulkRequest $environmentsDeleteBulkRequest (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function environmentsDeleteBulkAsync($contentType = null, $accept = null, $environmentsDeleteBulkRequest = null)
-    {
-        return $this->environmentsDeleteBulkAsyncWithHttpInfo($contentType, $accept, $environmentsDeleteBulkRequest)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation environmentsDeleteBulkAsyncWithHttpInfo
-     *
-     * Delete Environments
-     *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
-     * @param  \Stackflows\Clients\Stackflows\Model\EnvironmentsDeleteBulkRequest $environmentsDeleteBulkRequest (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function environmentsDeleteBulkAsyncWithHttpInfo($contentType = null, $accept = null, $environmentsDeleteBulkRequest = null)
-    {
-        $returnType = '\Stackflows\Clients\Stackflows\Model\CategoryResource';
-        $request = $this->environmentsDeleteBulkRequest($contentType, $accept, $environmentsDeleteBulkRequest);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'environmentsDeleteBulk'
-     *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
-     * @param  \Stackflows\Clients\Stackflows\Model\EnvironmentsDeleteBulkRequest $environmentsDeleteBulkRequest (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function environmentsDeleteBulkRequest($contentType = null, $accept = null, $environmentsDeleteBulkRequest = null)
+    public function deleteEnvironmentsDeleteBulkRequest($contentType = null, $accept = null, $deleteEnvironmentsDeleteBulkRequest = null)
     {
 
         $resourcePath = '/api/v2/environments';
@@ -1889,11 +652,11 @@ class InstallationApi
         }
 
         // for model (json/xml)
-        if (isset($environmentsDeleteBulkRequest)) {
+        if (isset($deleteEnvironmentsDeleteBulkRequest)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($environmentsDeleteBulkRequest));
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($deleteEnvironmentsDeleteBulkRequest));
             } else {
-                $httpBody = $environmentsDeleteBulkRequest;
+                $httpBody = $deleteEnvironmentsDeleteBulkRequest;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -1934,285 +697,6 @@ class InstallationApi
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             'DELETE',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation environmentsList
-     *
-     * List Environments
-     *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
-     *
-     * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \Stackflows\Clients\Stackflows\Model\EnvironmentResource
-     */
-    public function environmentsList($contentType = null, $accept = null)
-    {
-        list($response) = $this->environmentsListWithHttpInfo($contentType, $accept);
-        return $response;
-    }
-
-    /**
-     * Operation environmentsListWithHttpInfo
-     *
-     * List Environments
-     *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
-     *
-     * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \Stackflows\Clients\Stackflows\Model\EnvironmentResource, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function environmentsListWithHttpInfo($contentType = null, $accept = null)
-    {
-        $request = $this->environmentsListRequest($contentType, $accept);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            switch($statusCode) {
-                case 200:
-                    if ('\Stackflows\Clients\Stackflows\Model\EnvironmentResource' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\Stackflows\Clients\Stackflows\Model\EnvironmentResource' !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\EnvironmentResource', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            $returnType = '\Stackflows\Clients\Stackflows\Model\EnvironmentResource';
-            if ($returnType === '\SplFileObject') {
-                $content = $response->getBody(); //stream goes to serializer
-            } else {
-                $content = (string) $response->getBody();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Stackflows\Clients\Stackflows\Model\EnvironmentResource',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation environmentsListAsync
-     *
-     * List Environments
-     *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function environmentsListAsync($contentType = null, $accept = null)
-    {
-        return $this->environmentsListAsyncWithHttpInfo($contentType, $accept)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation environmentsListAsyncWithHttpInfo
-     *
-     * List Environments
-     *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function environmentsListAsyncWithHttpInfo($contentType = null, $accept = null)
-    {
-        $returnType = '\Stackflows\Clients\Stackflows\Model\EnvironmentResource';
-        $request = $this->environmentsListRequest($contentType, $accept);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'environmentsList'
-     *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function environmentsListRequest($contentType = null, $accept = null)
-    {
-
-        $resourcePath = '/api/v2/environments';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-        // header params
-        if ($contentType !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
-        }
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
-
-
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
@@ -2492,6 +976,1522 @@ class InstallationApi
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getEnginesShow
+     *
+     * View Engine
+     *
+     * @param  string $id The ID of the engine. (required)
+     * @param  string $engine ID of an engine (required)
+     * @param  string $contentType  (optional)
+     * @param  string $accept  (optional)
+     *
+     * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Stackflows\Clients\Stackflows\Model\EngineResource
+     */
+    public function getEnginesShow($id, $engine, $contentType = null, $accept = null)
+    {
+        list($response) = $this->getEnginesShowWithHttpInfo($id, $engine, $contentType, $accept);
+        return $response;
+    }
+
+    /**
+     * Operation getEnginesShowWithHttpInfo
+     *
+     * View Engine
+     *
+     * @param  string $id The ID of the engine. (required)
+     * @param  string $engine ID of an engine (required)
+     * @param  string $contentType  (optional)
+     * @param  string $accept  (optional)
+     *
+     * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Stackflows\Clients\Stackflows\Model\EngineResource, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getEnginesShowWithHttpInfo($id, $engine, $contentType = null, $accept = null)
+    {
+        $request = $this->getEnginesShowRequest($id, $engine, $contentType, $accept);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\Stackflows\Clients\Stackflows\Model\EngineResource' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\Stackflows\Clients\Stackflows\Model\EngineResource' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\EngineResource', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\Stackflows\Clients\Stackflows\Model\EngineResource';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Stackflows\Clients\Stackflows\Model\EngineResource',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getEnginesShowAsync
+     *
+     * View Engine
+     *
+     * @param  string $id The ID of the engine. (required)
+     * @param  string $engine ID of an engine (required)
+     * @param  string $contentType  (optional)
+     * @param  string $accept  (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getEnginesShowAsync($id, $engine, $contentType = null, $accept = null)
+    {
+        return $this->getEnginesShowAsyncWithHttpInfo($id, $engine, $contentType, $accept)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getEnginesShowAsyncWithHttpInfo
+     *
+     * View Engine
+     *
+     * @param  string $id The ID of the engine. (required)
+     * @param  string $engine ID of an engine (required)
+     * @param  string $contentType  (optional)
+     * @param  string $accept  (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getEnginesShowAsyncWithHttpInfo($id, $engine, $contentType = null, $accept = null)
+    {
+        $returnType = '\Stackflows\Clients\Stackflows\Model\EngineResource';
+        $request = $this->getEnginesShowRequest($id, $engine, $contentType, $accept);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getEnginesShow'
+     *
+     * @param  string $id The ID of the engine. (required)
+     * @param  string $engine ID of an engine (required)
+     * @param  string $contentType  (optional)
+     * @param  string $accept  (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getEnginesShowRequest($id, $engine, $contentType = null, $accept = null)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null || (is_array($id) && count($id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $id when calling getEnginesShow'
+            );
+        }
+        // verify the required parameter 'engine' is set
+        if ($engine === null || (is_array($engine) && count($engine) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $engine when calling getEnginesShow'
+            );
+        }
+
+        $resourcePath = '/api/v2/engines/{id}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+        // header params
+        if ($contentType !== null) {
+            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
+        }
+        // header params
+        if ($accept !== null) {
+            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
+        }
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'id' . '}',
+                ObjectSerializer::toPathValue($id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($engine !== null) {
+            $resourcePath = str_replace(
+                '{' . 'engine' . '}',
+                ObjectSerializer::toPathValue($engine),
+                $resourcePath
+            );
+        }
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getEnvironmentsList
+     *
+     * List Environments
+     *
+     * @param  string $contentType  (optional)
+     * @param  string $accept  (optional)
+     *
+     * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Stackflows\Clients\Stackflows\Model\EnvironmentResource
+     */
+    public function getEnvironmentsList($contentType = null, $accept = null)
+    {
+        list($response) = $this->getEnvironmentsListWithHttpInfo($contentType, $accept);
+        return $response;
+    }
+
+    /**
+     * Operation getEnvironmentsListWithHttpInfo
+     *
+     * List Environments
+     *
+     * @param  string $contentType  (optional)
+     * @param  string $accept  (optional)
+     *
+     * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Stackflows\Clients\Stackflows\Model\EnvironmentResource, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getEnvironmentsListWithHttpInfo($contentType = null, $accept = null)
+    {
+        $request = $this->getEnvironmentsListRequest($contentType, $accept);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\Stackflows\Clients\Stackflows\Model\EnvironmentResource' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\Stackflows\Clients\Stackflows\Model\EnvironmentResource' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\EnvironmentResource', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\Stackflows\Clients\Stackflows\Model\EnvironmentResource';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Stackflows\Clients\Stackflows\Model\EnvironmentResource',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getEnvironmentsListAsync
+     *
+     * List Environments
+     *
+     * @param  string $contentType  (optional)
+     * @param  string $accept  (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getEnvironmentsListAsync($contentType = null, $accept = null)
+    {
+        return $this->getEnvironmentsListAsyncWithHttpInfo($contentType, $accept)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getEnvironmentsListAsyncWithHttpInfo
+     *
+     * List Environments
+     *
+     * @param  string $contentType  (optional)
+     * @param  string $accept  (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getEnvironmentsListAsyncWithHttpInfo($contentType = null, $accept = null)
+    {
+        $returnType = '\Stackflows\Clients\Stackflows\Model\EnvironmentResource';
+        $request = $this->getEnvironmentsListRequest($contentType, $accept);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getEnvironmentsList'
+     *
+     * @param  string $contentType  (optional)
+     * @param  string $accept  (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getEnvironmentsListRequest($contentType = null, $accept = null)
+    {
+
+        $resourcePath = '/api/v2/environments';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+        // header params
+        if ($contentType !== null) {
+            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
+        }
+        // header params
+        if ($accept !== null) {
+            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
+        }
+
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation postEnginesCreate
+     *
+     * Create Engine
+     *
+     * @param  \Stackflows\Clients\Stackflows\Model\PostEnginesCreateRequest $postEnginesCreateRequest postEnginesCreateRequest (required)
+     * @param  string $contentType  (optional)
+     * @param  string $accept  (optional)
+     *
+     * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Stackflows\Clients\Stackflows\Model\EngineResource
+     */
+    public function postEnginesCreate($postEnginesCreateRequest, $contentType = null, $accept = null)
+    {
+        list($response) = $this->postEnginesCreateWithHttpInfo($postEnginesCreateRequest, $contentType, $accept);
+        return $response;
+    }
+
+    /**
+     * Operation postEnginesCreateWithHttpInfo
+     *
+     * Create Engine
+     *
+     * @param  \Stackflows\Clients\Stackflows\Model\PostEnginesCreateRequest $postEnginesCreateRequest (required)
+     * @param  string $contentType  (optional)
+     * @param  string $accept  (optional)
+     *
+     * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Stackflows\Clients\Stackflows\Model\EngineResource, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function postEnginesCreateWithHttpInfo($postEnginesCreateRequest, $contentType = null, $accept = null)
+    {
+        $request = $this->postEnginesCreateRequest($postEnginesCreateRequest, $contentType, $accept);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\Stackflows\Clients\Stackflows\Model\EngineResource' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\Stackflows\Clients\Stackflows\Model\EngineResource' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\EngineResource', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\Stackflows\Clients\Stackflows\Model\EngineResource';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Stackflows\Clients\Stackflows\Model\EngineResource',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation postEnginesCreateAsync
+     *
+     * Create Engine
+     *
+     * @param  \Stackflows\Clients\Stackflows\Model\PostEnginesCreateRequest $postEnginesCreateRequest (required)
+     * @param  string $contentType  (optional)
+     * @param  string $accept  (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function postEnginesCreateAsync($postEnginesCreateRequest, $contentType = null, $accept = null)
+    {
+        return $this->postEnginesCreateAsyncWithHttpInfo($postEnginesCreateRequest, $contentType, $accept)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation postEnginesCreateAsyncWithHttpInfo
+     *
+     * Create Engine
+     *
+     * @param  \Stackflows\Clients\Stackflows\Model\PostEnginesCreateRequest $postEnginesCreateRequest (required)
+     * @param  string $contentType  (optional)
+     * @param  string $accept  (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function postEnginesCreateAsyncWithHttpInfo($postEnginesCreateRequest, $contentType = null, $accept = null)
+    {
+        $returnType = '\Stackflows\Clients\Stackflows\Model\EngineResource';
+        $request = $this->postEnginesCreateRequest($postEnginesCreateRequest, $contentType, $accept);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'postEnginesCreate'
+     *
+     * @param  \Stackflows\Clients\Stackflows\Model\PostEnginesCreateRequest $postEnginesCreateRequest (required)
+     * @param  string $contentType  (optional)
+     * @param  string $accept  (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function postEnginesCreateRequest($postEnginesCreateRequest, $contentType = null, $accept = null)
+    {
+        // verify the required parameter 'postEnginesCreateRequest' is set
+        if ($postEnginesCreateRequest === null || (is_array($postEnginesCreateRequest) && count($postEnginesCreateRequest) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $postEnginesCreateRequest when calling postEnginesCreate'
+            );
+        }
+
+        $resourcePath = '/api/v2/engines';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+        // header params
+        if ($contentType !== null) {
+            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
+        }
+        // header params
+        if ($accept !== null) {
+            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
+        }
+
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($postEnginesCreateRequest)) {
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($postEnginesCreateRequest));
+            } else {
+                $httpBody = $postEnginesCreateRequest;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation postEnvironmentsCreate
+     *
+     * Create Environment
+     *
+     * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentsCreateRequest $postEnvironmentsCreateRequest postEnvironmentsCreateRequest (required)
+     * @param  string $contentType  (optional)
+     * @param  string $accept  (optional)
+     *
+     * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Stackflows\Clients\Stackflows\Model\CategoryResource
+     */
+    public function postEnvironmentsCreate($postEnvironmentsCreateRequest, $contentType = null, $accept = null)
+    {
+        list($response) = $this->postEnvironmentsCreateWithHttpInfo($postEnvironmentsCreateRequest, $contentType, $accept);
+        return $response;
+    }
+
+    /**
+     * Operation postEnvironmentsCreateWithHttpInfo
+     *
+     * Create Environment
+     *
+     * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentsCreateRequest $postEnvironmentsCreateRequest (required)
+     * @param  string $contentType  (optional)
+     * @param  string $accept  (optional)
+     *
+     * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Stackflows\Clients\Stackflows\Model\CategoryResource, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function postEnvironmentsCreateWithHttpInfo($postEnvironmentsCreateRequest, $contentType = null, $accept = null)
+    {
+        $request = $this->postEnvironmentsCreateRequest($postEnvironmentsCreateRequest, $contentType, $accept);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\Stackflows\Clients\Stackflows\Model\CategoryResource' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\Stackflows\Clients\Stackflows\Model\CategoryResource' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\CategoryResource', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\Stackflows\Clients\Stackflows\Model\CategoryResource';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Stackflows\Clients\Stackflows\Model\CategoryResource',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation postEnvironmentsCreateAsync
+     *
+     * Create Environment
+     *
+     * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentsCreateRequest $postEnvironmentsCreateRequest (required)
+     * @param  string $contentType  (optional)
+     * @param  string $accept  (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function postEnvironmentsCreateAsync($postEnvironmentsCreateRequest, $contentType = null, $accept = null)
+    {
+        return $this->postEnvironmentsCreateAsyncWithHttpInfo($postEnvironmentsCreateRequest, $contentType, $accept)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation postEnvironmentsCreateAsyncWithHttpInfo
+     *
+     * Create Environment
+     *
+     * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentsCreateRequest $postEnvironmentsCreateRequest (required)
+     * @param  string $contentType  (optional)
+     * @param  string $accept  (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function postEnvironmentsCreateAsyncWithHttpInfo($postEnvironmentsCreateRequest, $contentType = null, $accept = null)
+    {
+        $returnType = '\Stackflows\Clients\Stackflows\Model\CategoryResource';
+        $request = $this->postEnvironmentsCreateRequest($postEnvironmentsCreateRequest, $contentType, $accept);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'postEnvironmentsCreate'
+     *
+     * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentsCreateRequest $postEnvironmentsCreateRequest (required)
+     * @param  string $contentType  (optional)
+     * @param  string $accept  (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function postEnvironmentsCreateRequest($postEnvironmentsCreateRequest, $contentType = null, $accept = null)
+    {
+        // verify the required parameter 'postEnvironmentsCreateRequest' is set
+        if ($postEnvironmentsCreateRequest === null || (is_array($postEnvironmentsCreateRequest) && count($postEnvironmentsCreateRequest) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $postEnvironmentsCreateRequest when calling postEnvironmentsCreate'
+            );
+        }
+
+        $resourcePath = '/api/v2/environments';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+        // header params
+        if ($contentType !== null) {
+            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
+        }
+        // header params
+        if ($accept !== null) {
+            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
+        }
+
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($postEnvironmentsCreateRequest)) {
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($postEnvironmentsCreateRequest));
+            } else {
+                $httpBody = $postEnvironmentsCreateRequest;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation putEnginesUpdate
+     *
+     * Update Engine
+     *
+     * @param  string $id The ID of the engine. (required)
+     * @param  string $engine ID of an engine (required)
+     * @param  string $contentType  (optional)
+     * @param  string $accept  (optional)
+     * @param  \Stackflows\Clients\Stackflows\Model\PutEnginesUpdateRequest $putEnginesUpdateRequest putEnginesUpdateRequest (optional)
+     *
+     * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Stackflows\Clients\Stackflows\Model\EngineResource
+     */
+    public function putEnginesUpdate($id, $engine, $contentType = null, $accept = null, $putEnginesUpdateRequest = null)
+    {
+        list($response) = $this->putEnginesUpdateWithHttpInfo($id, $engine, $contentType, $accept, $putEnginesUpdateRequest);
+        return $response;
+    }
+
+    /**
+     * Operation putEnginesUpdateWithHttpInfo
+     *
+     * Update Engine
+     *
+     * @param  string $id The ID of the engine. (required)
+     * @param  string $engine ID of an engine (required)
+     * @param  string $contentType  (optional)
+     * @param  string $accept  (optional)
+     * @param  \Stackflows\Clients\Stackflows\Model\PutEnginesUpdateRequest $putEnginesUpdateRequest (optional)
+     *
+     * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Stackflows\Clients\Stackflows\Model\EngineResource, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function putEnginesUpdateWithHttpInfo($id, $engine, $contentType = null, $accept = null, $putEnginesUpdateRequest = null)
+    {
+        $request = $this->putEnginesUpdateRequest($id, $engine, $contentType, $accept, $putEnginesUpdateRequest);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\Stackflows\Clients\Stackflows\Model\EngineResource' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\Stackflows\Clients\Stackflows\Model\EngineResource' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\EngineResource', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\Stackflows\Clients\Stackflows\Model\EngineResource';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Stackflows\Clients\Stackflows\Model\EngineResource',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation putEnginesUpdateAsync
+     *
+     * Update Engine
+     *
+     * @param  string $id The ID of the engine. (required)
+     * @param  string $engine ID of an engine (required)
+     * @param  string $contentType  (optional)
+     * @param  string $accept  (optional)
+     * @param  \Stackflows\Clients\Stackflows\Model\PutEnginesUpdateRequest $putEnginesUpdateRequest (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function putEnginesUpdateAsync($id, $engine, $contentType = null, $accept = null, $putEnginesUpdateRequest = null)
+    {
+        return $this->putEnginesUpdateAsyncWithHttpInfo($id, $engine, $contentType, $accept, $putEnginesUpdateRequest)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation putEnginesUpdateAsyncWithHttpInfo
+     *
+     * Update Engine
+     *
+     * @param  string $id The ID of the engine. (required)
+     * @param  string $engine ID of an engine (required)
+     * @param  string $contentType  (optional)
+     * @param  string $accept  (optional)
+     * @param  \Stackflows\Clients\Stackflows\Model\PutEnginesUpdateRequest $putEnginesUpdateRequest (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function putEnginesUpdateAsyncWithHttpInfo($id, $engine, $contentType = null, $accept = null, $putEnginesUpdateRequest = null)
+    {
+        $returnType = '\Stackflows\Clients\Stackflows\Model\EngineResource';
+        $request = $this->putEnginesUpdateRequest($id, $engine, $contentType, $accept, $putEnginesUpdateRequest);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'putEnginesUpdate'
+     *
+     * @param  string $id The ID of the engine. (required)
+     * @param  string $engine ID of an engine (required)
+     * @param  string $contentType  (optional)
+     * @param  string $accept  (optional)
+     * @param  \Stackflows\Clients\Stackflows\Model\PutEnginesUpdateRequest $putEnginesUpdateRequest (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function putEnginesUpdateRequest($id, $engine, $contentType = null, $accept = null, $putEnginesUpdateRequest = null)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null || (is_array($id) && count($id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $id when calling putEnginesUpdate'
+            );
+        }
+        // verify the required parameter 'engine' is set
+        if ($engine === null || (is_array($engine) && count($engine) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $engine when calling putEnginesUpdate'
+            );
+        }
+
+        $resourcePath = '/api/v2/engines/{id}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+        // header params
+        if ($contentType !== null) {
+            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
+        }
+        // header params
+        if ($accept !== null) {
+            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
+        }
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'id' . '}',
+                ObjectSerializer::toPathValue($id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($engine !== null) {
+            $resourcePath = str_replace(
+                '{' . 'engine' . '}',
+                ObjectSerializer::toPathValue($engine),
+                $resourcePath
+            );
+        }
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($putEnginesUpdateRequest)) {
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($putEnginesUpdateRequest));
+            } else {
+                $httpBody = $putEnginesUpdateRequest;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'PUT',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody

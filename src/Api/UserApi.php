@@ -116,11 +116,308 @@ class UserApi
     }
 
     /**
-     * Operation authUserMe
+     * Operation deleteUserOrganizationsDelete
      *
-     * Me
+     * Delete Organization
      *
-     * @param  string $includeorganizations Possible includes (optional)
+     * @param  string $organization The ID of an organization. (required)
+     * @param  string $contentType  (optional)
+     * @param  string $accept  (optional)
+     *
+     * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Stackflows\Clients\Stackflows\Model\OrganizationUnitResource
+     */
+    public function deleteUserOrganizationsDelete($organization, $contentType = null, $accept = null)
+    {
+        list($response) = $this->deleteUserOrganizationsDeleteWithHttpInfo($organization, $contentType, $accept);
+        return $response;
+    }
+
+    /**
+     * Operation deleteUserOrganizationsDeleteWithHttpInfo
+     *
+     * Delete Organization
+     *
+     * @param  string $organization The ID of an organization. (required)
+     * @param  string $contentType  (optional)
+     * @param  string $accept  (optional)
+     *
+     * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Stackflows\Clients\Stackflows\Model\OrganizationUnitResource, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function deleteUserOrganizationsDeleteWithHttpInfo($organization, $contentType = null, $accept = null)
+    {
+        $request = $this->deleteUserOrganizationsDeleteRequest($organization, $contentType, $accept);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation deleteUserOrganizationsDeleteAsync
+     *
+     * Delete Organization
+     *
+     * @param  string $organization The ID of an organization. (required)
+     * @param  string $contentType  (optional)
+     * @param  string $accept  (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function deleteUserOrganizationsDeleteAsync($organization, $contentType = null, $accept = null)
+    {
+        return $this->deleteUserOrganizationsDeleteAsyncWithHttpInfo($organization, $contentType, $accept)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation deleteUserOrganizationsDeleteAsyncWithHttpInfo
+     *
+     * Delete Organization
+     *
+     * @param  string $organization The ID of an organization. (required)
+     * @param  string $contentType  (optional)
+     * @param  string $accept  (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function deleteUserOrganizationsDeleteAsyncWithHttpInfo($organization, $contentType = null, $accept = null)
+    {
+        $returnType = '\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource';
+        $request = $this->deleteUserOrganizationsDeleteRequest($organization, $contentType, $accept);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'deleteUserOrganizationsDelete'
+     *
+     * @param  string $organization The ID of an organization. (required)
+     * @param  string $contentType  (optional)
+     * @param  string $accept  (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function deleteUserOrganizationsDeleteRequest($organization, $contentType = null, $accept = null)
+    {
+        // verify the required parameter 'organization' is set
+        if ($organization === null || (is_array($organization) && count($organization) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $organization when calling deleteUserOrganizationsDelete'
+            );
+        }
+
+        $resourcePath = '/api/v2/user/organizations/{organization}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+        // header params
+        if ($contentType !== null) {
+            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
+        }
+        // header params
+        if ($accept !== null) {
+            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
+        }
+
+        // path params
+        if ($organization !== null) {
+            $resourcePath = str_replace(
+                '{' . 'organization' . '}',
+                ObjectSerializer::toPathValue($organization),
+                $resourcePath
+            );
+        }
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'DELETE',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation deleteUserRevoke
+     *
+     * Revoke all tokens
+     *
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
      *
@@ -128,18 +425,17 @@ class UserApi
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\UserResource
      */
-    public function authUserMe($includeorganizations = null, $contentType = null, $accept = null)
+    public function deleteUserRevoke($contentType = null, $accept = null)
     {
-        list($response) = $this->authUserMeWithHttpInfo($includeorganizations, $contentType, $accept);
+        list($response) = $this->deleteUserRevokeWithHttpInfo($contentType, $accept);
         return $response;
     }
 
     /**
-     * Operation authUserMeWithHttpInfo
+     * Operation deleteUserRevokeWithHttpInfo
      *
-     * Me
+     * Revoke all tokens
      *
-     * @param  string $includeorganizations Possible includes (optional)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
      *
@@ -147,9 +443,9 @@ class UserApi
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\UserResource, HTTP status code, HTTP response headers (array of strings)
      */
-    public function authUserMeWithHttpInfo($includeorganizations = null, $contentType = null, $accept = null)
+    public function deleteUserRevokeWithHttpInfo($contentType = null, $accept = null)
     {
-        $request = $this->authUserMeRequest($includeorganizations, $contentType, $accept);
+        $request = $this->deleteUserRevokeRequest($contentType, $accept);
 
         try {
             $options = $this->createHttpClientOption();
@@ -236,20 +532,19 @@ class UserApi
     }
 
     /**
-     * Operation authUserMeAsync
+     * Operation deleteUserRevokeAsync
      *
-     * Me
+     * Revoke all tokens
      *
-     * @param  string $includeorganizations Possible includes (optional)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function authUserMeAsync($includeorganizations = null, $contentType = null, $accept = null)
+    public function deleteUserRevokeAsync($contentType = null, $accept = null)
     {
-        return $this->authUserMeAsyncWithHttpInfo($includeorganizations, $contentType, $accept)
+        return $this->deleteUserRevokeAsyncWithHttpInfo($contentType, $accept)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -258,21 +553,20 @@ class UserApi
     }
 
     /**
-     * Operation authUserMeAsyncWithHttpInfo
+     * Operation deleteUserRevokeAsyncWithHttpInfo
      *
-     * Me
+     * Revoke all tokens
      *
-     * @param  string $includeorganizations Possible includes (optional)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function authUserMeAsyncWithHttpInfo($includeorganizations = null, $contentType = null, $accept = null)
+    public function deleteUserRevokeAsyncWithHttpInfo($contentType = null, $accept = null)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\UserResource';
-        $request = $this->authUserMeRequest($includeorganizations, $contentType, $accept);
+        $request = $this->deleteUserRevokeRequest($contentType, $accept);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -311,7 +605,290 @@ class UserApi
     }
 
     /**
-     * Create request for operation 'authUserMe'
+     * Create request for operation 'deleteUserRevoke'
+     *
+     * @param  string $contentType  (optional)
+     * @param  string $accept  (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function deleteUserRevokeRequest($contentType = null, $accept = null)
+    {
+
+        $resourcePath = '/api/v2/user/tokens';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+        // header params
+        if ($contentType !== null) {
+            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
+        }
+        // header params
+        if ($accept !== null) {
+            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
+        }
+
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'DELETE',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getUserMe
+     *
+     * Me
+     *
+     * @param  string $includeorganizations Possible includes (optional)
+     * @param  string $contentType  (optional)
+     * @param  string $accept  (optional)
+     *
+     * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Stackflows\Clients\Stackflows\Model\UserResource
+     */
+    public function getUserMe($includeorganizations = null, $contentType = null, $accept = null)
+    {
+        list($response) = $this->getUserMeWithHttpInfo($includeorganizations, $contentType, $accept);
+        return $response;
+    }
+
+    /**
+     * Operation getUserMeWithHttpInfo
+     *
+     * Me
+     *
+     * @param  string $includeorganizations Possible includes (optional)
+     * @param  string $contentType  (optional)
+     * @param  string $accept  (optional)
+     *
+     * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Stackflows\Clients\Stackflows\Model\UserResource, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getUserMeWithHttpInfo($includeorganizations = null, $contentType = null, $accept = null)
+    {
+        $request = $this->getUserMeRequest($includeorganizations, $contentType, $accept);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\Stackflows\Clients\Stackflows\Model\UserResource' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\Stackflows\Clients\Stackflows\Model\UserResource' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\UserResource', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\Stackflows\Clients\Stackflows\Model\UserResource';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Stackflows\Clients\Stackflows\Model\UserResource',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getUserMeAsync
+     *
+     * Me
+     *
+     * @param  string $includeorganizations Possible includes (optional)
+     * @param  string $contentType  (optional)
+     * @param  string $accept  (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getUserMeAsync($includeorganizations = null, $contentType = null, $accept = null)
+    {
+        return $this->getUserMeAsyncWithHttpInfo($includeorganizations, $contentType, $accept)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getUserMeAsyncWithHttpInfo
+     *
+     * Me
+     *
+     * @param  string $includeorganizations Possible includes (optional)
+     * @param  string $contentType  (optional)
+     * @param  string $accept  (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getUserMeAsyncWithHttpInfo($includeorganizations = null, $contentType = null, $accept = null)
+    {
+        $returnType = '\Stackflows\Clients\Stackflows\Model\UserResource';
+        $request = $this->getUserMeRequest($includeorganizations, $contentType, $accept);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getUserMe'
      *
      * @param  string $includeorganizations Possible includes (optional)
      * @param  string $contentType  (optional)
@@ -320,10 +897,10 @@ class UserApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function authUserMeRequest($includeorganizations = null, $contentType = null, $accept = null)
+    public function getUserMeRequest($includeorganizations = null, $contentType = null, $accept = null)
     {
 
-        $resourcePath = '/api/v2/auth/user';
+        $resourcePath = '/api/v2/user';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -409,39 +986,38 @@ class UserApi
     }
 
     /**
-     * Operation authUserOrganizationsDelete
+     * Operation getUserOrganizationsList
      *
-     * Delete Organization
+     * List Organizations
      *
-     * @param  string $organization The ID of an organization. (required)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return void
+     * @return \Stackflows\Clients\Stackflows\Model\OrganizationUnitResource
      */
-    public function authUserOrganizationsDelete($organization, $contentType = null, $accept = null)
+    public function getUserOrganizationsList($contentType = null, $accept = null)
     {
-        $this->authUserOrganizationsDeleteWithHttpInfo($organization, $contentType, $accept);
+        list($response) = $this->getUserOrganizationsListWithHttpInfo($contentType, $accept);
+        return $response;
     }
 
     /**
-     * Operation authUserOrganizationsDeleteWithHttpInfo
+     * Operation getUserOrganizationsListWithHttpInfo
      *
-     * Delete Organization
+     * List Organizations
      *
-     * @param  string $organization The ID of an organization. (required)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Stackflows\Clients\Stackflows\Model\OrganizationUnitResource, HTTP status code, HTTP response headers (array of strings)
      */
-    public function authUserOrganizationsDeleteWithHttpInfo($organization, $contentType = null, $accept = null)
+    public function getUserOrganizationsListWithHttpInfo($contentType = null, $accept = null)
     {
-        $request = $this->authUserOrganizationsDeleteRequest($organization, $contentType, $accept);
+        $request = $this->getUserOrganizationsListRequest($contentType, $accept);
 
         try {
             $options = $this->createHttpClientOption();
@@ -478,256 +1054,46 @@ class UserApi
                 );
             }
 
-            return [null, $statusCode, $response->getHeaders()];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation authUserOrganizationsDeleteAsync
-     *
-     * Delete Organization
-     *
-     * @param  string $organization The ID of an organization. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function authUserOrganizationsDeleteAsync($organization, $contentType = null, $accept = null)
-    {
-        return $this->authUserOrganizationsDeleteAsyncWithHttpInfo($organization, $contentType, $accept)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation authUserOrganizationsDeleteAsyncWithHttpInfo
-     *
-     * Delete Organization
-     *
-     * @param  string $organization The ID of an organization. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function authUserOrganizationsDeleteAsyncWithHttpInfo($organization, $contentType = null, $accept = null)
-    {
-        $returnType = '';
-        $request = $this->authUserOrganizationsDeleteRequest($organization, $contentType, $accept);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'authUserOrganizationsDelete'
-     *
-     * @param  string $organization The ID of an organization. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function authUserOrganizationsDeleteRequest($organization, $contentType = null, $accept = null)
-    {
-        // verify the required parameter 'organization' is set
-        if ($organization === null || (is_array($organization) && count($organization) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $organization when calling authUserOrganizationsDelete'
-            );
-        }
-
-        $resourcePath = '/api/v2/auth/user/organizations/{organization}';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-        // header params
-        if ($contentType !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
-        }
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
-
-        // path params
-        if ($organization !== null) {
-            $resourcePath = str_replace(
-                '{' . 'organization' . '}',
-                ObjectSerializer::toPathValue($organization),
-                $resourcePath
-            );
-        }
-
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                []
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                [],
-                []
-            );
-        }
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
+            switch($statusCode) {
+                case 200:
+                    if ('\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource' !== 'string') {
+                            $content = json_decode($content);
+                        }
                     }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
 
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                    return [
+                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
 
+            $returnType = '\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
             } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'DELETE',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation authUserOrganizationsList
-     *
-     * List Organizations
-     *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
-     *
-     * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return void
-     */
-    public function authUserOrganizationsList($contentType = null, $accept = null)
-    {
-        $this->authUserOrganizationsListWithHttpInfo($contentType, $accept);
-    }
-
-    /**
-     * Operation authUserOrganizationsListWithHttpInfo
-     *
-     * List Organizations
-     *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
-     *
-     * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function authUserOrganizationsListWithHttpInfo($contentType = null, $accept = null)
-    {
-        $request = $this->authUserOrganizationsListRequest($contentType, $accept);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
             }
 
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            return [null, $statusCode, $response->getHeaders()];
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
-                case 401:
+                case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Stackflows\Clients\Stackflows\Model\AuthUserTasksIndex401Response',
+                        '\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -738,7 +1104,7 @@ class UserApi
     }
 
     /**
-     * Operation authUserOrganizationsListAsync
+     * Operation getUserOrganizationsListAsync
      *
      * List Organizations
      *
@@ -748,9 +1114,9 @@ class UserApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function authUserOrganizationsListAsync($contentType = null, $accept = null)
+    public function getUserOrganizationsListAsync($contentType = null, $accept = null)
     {
-        return $this->authUserOrganizationsListAsyncWithHttpInfo($contentType, $accept)
+        return $this->getUserOrganizationsListAsyncWithHttpInfo($contentType, $accept)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -759,7 +1125,7 @@ class UserApi
     }
 
     /**
-     * Operation authUserOrganizationsListAsyncWithHttpInfo
+     * Operation getUserOrganizationsListAsyncWithHttpInfo
      *
      * List Organizations
      *
@@ -769,16 +1135,29 @@ class UserApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function authUserOrganizationsListAsyncWithHttpInfo($contentType = null, $accept = null)
+    public function getUserOrganizationsListAsyncWithHttpInfo($contentType = null, $accept = null)
     {
-        $returnType = '';
-        $request = $this->authUserOrganizationsListRequest($contentType, $accept);
+        $returnType = '\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource';
+        $request = $this->getUserOrganizationsListRequest($contentType, $accept);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -798,7 +1177,7 @@ class UserApi
     }
 
     /**
-     * Create request for operation 'authUserOrganizationsList'
+     * Create request for operation 'getUserOrganizationsList'
      *
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
@@ -806,10 +1185,10 @@ class UserApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function authUserOrganizationsListRequest($contentType = null, $accept = null)
+    public function getUserOrganizationsListRequest($contentType = null, $accept = null)
     {
 
-        $resourcePath = '/api/v2/auth/user/organizations';
+        $resourcePath = '/api/v2/user/organizations';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -886,7 +1265,7 @@ class UserApi
     }
 
     /**
-     * Operation authUserOrganizationsShow
+     * Operation getUserOrganizationsShow
      *
      * View Organization
      *
@@ -897,15 +1276,16 @@ class UserApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return void
+     * @return \Stackflows\Clients\Stackflows\Model\OrganizationUnitResource
      */
-    public function authUserOrganizationsShow($id, $organization, $contentType = null, $accept = null)
+    public function getUserOrganizationsShow($id, $organization, $contentType = null, $accept = null)
     {
-        $this->authUserOrganizationsShowWithHttpInfo($id, $organization, $contentType, $accept);
+        list($response) = $this->getUserOrganizationsShowWithHttpInfo($id, $organization, $contentType, $accept);
+        return $response;
     }
 
     /**
-     * Operation authUserOrganizationsShowWithHttpInfo
+     * Operation getUserOrganizationsShowWithHttpInfo
      *
      * View Organization
      *
@@ -916,11 +1296,11 @@ class UserApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Stackflows\Clients\Stackflows\Model\OrganizationUnitResource, HTTP status code, HTTP response headers (array of strings)
      */
-    public function authUserOrganizationsShowWithHttpInfo($id, $organization, $contentType = null, $accept = null)
+    public function getUserOrganizationsShowWithHttpInfo($id, $organization, $contentType = null, $accept = null)
     {
-        $request = $this->authUserOrganizationsShowRequest($id, $organization, $contentType, $accept);
+        $request = $this->getUserOrganizationsShowRequest($id, $organization, $contentType, $accept);
 
         try {
             $options = $this->createHttpClientOption();
@@ -957,14 +1337,46 @@ class UserApi
                 );
             }
 
-            return [null, $statusCode, $response->getHeaders()];
+            switch($statusCode) {
+                case 200:
+                    if ('\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
-                case 401:
+                case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Stackflows\Clients\Stackflows\Model\AuthUserTasksIndex401Response',
+                        '\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -975,7 +1387,7 @@ class UserApi
     }
 
     /**
-     * Operation authUserOrganizationsShowAsync
+     * Operation getUserOrganizationsShowAsync
      *
      * View Organization
      *
@@ -987,9 +1399,9 @@ class UserApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function authUserOrganizationsShowAsync($id, $organization, $contentType = null, $accept = null)
+    public function getUserOrganizationsShowAsync($id, $organization, $contentType = null, $accept = null)
     {
-        return $this->authUserOrganizationsShowAsyncWithHttpInfo($id, $organization, $contentType, $accept)
+        return $this->getUserOrganizationsShowAsyncWithHttpInfo($id, $organization, $contentType, $accept)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -998,7 +1410,7 @@ class UserApi
     }
 
     /**
-     * Operation authUserOrganizationsShowAsyncWithHttpInfo
+     * Operation getUserOrganizationsShowAsyncWithHttpInfo
      *
      * View Organization
      *
@@ -1010,16 +1422,29 @@ class UserApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function authUserOrganizationsShowAsyncWithHttpInfo($id, $organization, $contentType = null, $accept = null)
+    public function getUserOrganizationsShowAsyncWithHttpInfo($id, $organization, $contentType = null, $accept = null)
     {
-        $returnType = '';
-        $request = $this->authUserOrganizationsShowRequest($id, $organization, $contentType, $accept);
+        $returnType = '\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource';
+        $request = $this->getUserOrganizationsShowRequest($id, $organization, $contentType, $accept);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -1039,7 +1464,7 @@ class UserApi
     }
 
     /**
-     * Create request for operation 'authUserOrganizationsShow'
+     * Create request for operation 'getUserOrganizationsShow'
      *
      * @param  string $id The ID of the organization. (required)
      * @param  string $organization The ID of an organization. (required)
@@ -1049,22 +1474,22 @@ class UserApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function authUserOrganizationsShowRequest($id, $organization, $contentType = null, $accept = null)
+    public function getUserOrganizationsShowRequest($id, $organization, $contentType = null, $accept = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling authUserOrganizationsShow'
+                'Missing the required parameter $id when calling getUserOrganizationsShow'
             );
         }
         // verify the required parameter 'organization' is set
         if ($organization === null || (is_array($organization) && count($organization) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $organization when calling authUserOrganizationsShow'
+                'Missing the required parameter $organization when calling getUserOrganizationsShow'
             );
         }
 
-        $resourcePath = '/api/v2/auth/user/organizations/{id}';
+        $resourcePath = '/api/v2/user/organizations/{id}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -1157,39 +1582,40 @@ class UserApi
     }
 
     /**
-     * Operation authUserOrganizationsStore
+     * Operation postUserLogin
      *
-     * Create Organization
+     * Login
      *
-     * @param  \Stackflows\Clients\Stackflows\Model\AuthUserOrganizationsStoreRequest $authUserOrganizationsStoreRequest authUserOrganizationsStoreRequest (required)
+     * @param  \Stackflows\Clients\Stackflows\Model\PostUserLoginRequest $postUserLoginRequest postUserLoginRequest (required)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return void
+     * @return \Stackflows\Clients\Stackflows\Model\UserResource
      */
-    public function authUserOrganizationsStore($authUserOrganizationsStoreRequest, $contentType = null, $accept = null)
+    public function postUserLogin($postUserLoginRequest, $contentType = null, $accept = null)
     {
-        $this->authUserOrganizationsStoreWithHttpInfo($authUserOrganizationsStoreRequest, $contentType, $accept);
+        list($response) = $this->postUserLoginWithHttpInfo($postUserLoginRequest, $contentType, $accept);
+        return $response;
     }
 
     /**
-     * Operation authUserOrganizationsStoreWithHttpInfo
+     * Operation postUserLoginWithHttpInfo
      *
-     * Create Organization
+     * Login
      *
-     * @param  \Stackflows\Clients\Stackflows\Model\AuthUserOrganizationsStoreRequest $authUserOrganizationsStoreRequest (required)
+     * @param  \Stackflows\Clients\Stackflows\Model\PostUserLoginRequest $postUserLoginRequest (required)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Stackflows\Clients\Stackflows\Model\UserResource, HTTP status code, HTTP response headers (array of strings)
      */
-    public function authUserOrganizationsStoreWithHttpInfo($authUserOrganizationsStoreRequest, $contentType = null, $accept = null)
+    public function postUserLoginWithHttpInfo($postUserLoginRequest, $contentType = null, $accept = null)
     {
-        $request = $this->authUserOrganizationsStoreRequest($authUserOrganizationsStoreRequest, $contentType, $accept);
+        $request = $this->postUserLoginRequest($postUserLoginRequest, $contentType, $accept);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1226,30 +1652,70 @@ class UserApi
                 );
             }
 
-            return [null, $statusCode, $response->getHeaders()];
+            switch($statusCode) {
+                case 200:
+                    if ('\Stackflows\Clients\Stackflows\Model\UserResource' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\Stackflows\Clients\Stackflows\Model\UserResource' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\UserResource', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\Stackflows\Clients\Stackflows\Model\UserResource';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Stackflows\Clients\Stackflows\Model\UserResource',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
             }
             throw $e;
         }
     }
 
     /**
-     * Operation authUserOrganizationsStoreAsync
+     * Operation postUserLoginAsync
      *
-     * Create Organization
+     * Login
      *
-     * @param  \Stackflows\Clients\Stackflows\Model\AuthUserOrganizationsStoreRequest $authUserOrganizationsStoreRequest (required)
+     * @param  \Stackflows\Clients\Stackflows\Model\PostUserLoginRequest $postUserLoginRequest (required)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function authUserOrganizationsStoreAsync($authUserOrganizationsStoreRequest, $contentType = null, $accept = null)
+    public function postUserLoginAsync($postUserLoginRequest, $contentType = null, $accept = null)
     {
-        return $this->authUserOrganizationsStoreAsyncWithHttpInfo($authUserOrganizationsStoreRequest, $contentType, $accept)
+        return $this->postUserLoginAsyncWithHttpInfo($postUserLoginRequest, $contentType, $accept)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1258,27 +1724,40 @@ class UserApi
     }
 
     /**
-     * Operation authUserOrganizationsStoreAsyncWithHttpInfo
+     * Operation postUserLoginAsyncWithHttpInfo
      *
-     * Create Organization
+     * Login
      *
-     * @param  \Stackflows\Clients\Stackflows\Model\AuthUserOrganizationsStoreRequest $authUserOrganizationsStoreRequest (required)
+     * @param  \Stackflows\Clients\Stackflows\Model\PostUserLoginRequest $postUserLoginRequest (required)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function authUserOrganizationsStoreAsyncWithHttpInfo($authUserOrganizationsStoreRequest, $contentType = null, $accept = null)
+    public function postUserLoginAsyncWithHttpInfo($postUserLoginRequest, $contentType = null, $accept = null)
     {
-        $returnType = '';
-        $request = $this->authUserOrganizationsStoreRequest($authUserOrganizationsStoreRequest, $contentType, $accept);
+        $returnType = '\Stackflows\Clients\Stackflows\Model\UserResource';
+        $request = $this->postUserLoginRequest($postUserLoginRequest, $contentType, $accept);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -1298,25 +1777,25 @@ class UserApi
     }
 
     /**
-     * Create request for operation 'authUserOrganizationsStore'
+     * Create request for operation 'postUserLogin'
      *
-     * @param  \Stackflows\Clients\Stackflows\Model\AuthUserOrganizationsStoreRequest $authUserOrganizationsStoreRequest (required)
+     * @param  \Stackflows\Clients\Stackflows\Model\PostUserLoginRequest $postUserLoginRequest (required)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function authUserOrganizationsStoreRequest($authUserOrganizationsStoreRequest, $contentType = null, $accept = null)
+    public function postUserLoginRequest($postUserLoginRequest, $contentType = null, $accept = null)
     {
-        // verify the required parameter 'authUserOrganizationsStoreRequest' is set
-        if ($authUserOrganizationsStoreRequest === null || (is_array($authUserOrganizationsStoreRequest) && count($authUserOrganizationsStoreRequest) === 0)) {
+        // verify the required parameter 'postUserLoginRequest' is set
+        if ($postUserLoginRequest === null || (is_array($postUserLoginRequest) && count($postUserLoginRequest) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $authUserOrganizationsStoreRequest when calling authUserOrganizationsStore'
+                'Missing the required parameter $postUserLoginRequest when calling postUserLogin'
             );
         }
 
-        $resourcePath = '/api/v2/auth/user/organizations';
+        $resourcePath = '/api/v2/user/login';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -1337,21 +1816,21 @@ class UserApi
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
-                []
+                ['application/json']
             );
         } else {
             $headers = $this->headerSelector->selectHeaders(
-                [],
+                ['application/json'],
                 ['application/json']
             );
         }
 
         // for model (json/xml)
-        if (isset($authUserOrganizationsStoreRequest)) {
+        if (isset($postUserLoginRequest)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($authUserOrganizationsStoreRequest));
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($postUserLoginRequest));
             } else {
-                $httpBody = $authUserOrganizationsStoreRequest;
+                $httpBody = $postUserLoginRequest;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -1399,43 +1878,631 @@ class UserApi
     }
 
     /**
-     * Operation authUserOrganizationsUpdate
+     * Operation postUserOrganizationsStore
      *
-     * Update Organization
+     * Create Organization
      *
-     * @param  string $id The ID of the organization. (required)
-     * @param  string $organization The ID of an organization. (required)
+     * @param  \Stackflows\Clients\Stackflows\Model\PostUserOrganizationsStoreRequest $postUserOrganizationsStoreRequest postUserOrganizationsStoreRequest (required)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
-     * @param  \Stackflows\Clients\Stackflows\Model\AuthUserOrganizationsUpdateRequest $authUserOrganizationsUpdateRequest authUserOrganizationsUpdateRequest (optional)
+     *
+     * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Stackflows\Clients\Stackflows\Model\OrganizationUnitResource
+     */
+    public function postUserOrganizationsStore($postUserOrganizationsStoreRequest, $contentType = null, $accept = null)
+    {
+        list($response) = $this->postUserOrganizationsStoreWithHttpInfo($postUserOrganizationsStoreRequest, $contentType, $accept);
+        return $response;
+    }
+
+    /**
+     * Operation postUserOrganizationsStoreWithHttpInfo
+     *
+     * Create Organization
+     *
+     * @param  \Stackflows\Clients\Stackflows\Model\PostUserOrganizationsStoreRequest $postUserOrganizationsStoreRequest (required)
+     * @param  string $contentType  (optional)
+     * @param  string $accept  (optional)
+     *
+     * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Stackflows\Clients\Stackflows\Model\OrganizationUnitResource, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function postUserOrganizationsStoreWithHttpInfo($postUserOrganizationsStoreRequest, $contentType = null, $accept = null)
+    {
+        $request = $this->postUserOrganizationsStoreRequest($postUserOrganizationsStoreRequest, $contentType, $accept);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation postUserOrganizationsStoreAsync
+     *
+     * Create Organization
+     *
+     * @param  \Stackflows\Clients\Stackflows\Model\PostUserOrganizationsStoreRequest $postUserOrganizationsStoreRequest (required)
+     * @param  string $contentType  (optional)
+     * @param  string $accept  (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function postUserOrganizationsStoreAsync($postUserOrganizationsStoreRequest, $contentType = null, $accept = null)
+    {
+        return $this->postUserOrganizationsStoreAsyncWithHttpInfo($postUserOrganizationsStoreRequest, $contentType, $accept)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation postUserOrganizationsStoreAsyncWithHttpInfo
+     *
+     * Create Organization
+     *
+     * @param  \Stackflows\Clients\Stackflows\Model\PostUserOrganizationsStoreRequest $postUserOrganizationsStoreRequest (required)
+     * @param  string $contentType  (optional)
+     * @param  string $accept  (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function postUserOrganizationsStoreAsyncWithHttpInfo($postUserOrganizationsStoreRequest, $contentType = null, $accept = null)
+    {
+        $returnType = '\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource';
+        $request = $this->postUserOrganizationsStoreRequest($postUserOrganizationsStoreRequest, $contentType, $accept);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'postUserOrganizationsStore'
+     *
+     * @param  \Stackflows\Clients\Stackflows\Model\PostUserOrganizationsStoreRequest $postUserOrganizationsStoreRequest (required)
+     * @param  string $contentType  (optional)
+     * @param  string $accept  (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function postUserOrganizationsStoreRequest($postUserOrganizationsStoreRequest, $contentType = null, $accept = null)
+    {
+        // verify the required parameter 'postUserOrganizationsStoreRequest' is set
+        if ($postUserOrganizationsStoreRequest === null || (is_array($postUserOrganizationsStoreRequest) && count($postUserOrganizationsStoreRequest) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $postUserOrganizationsStoreRequest when calling postUserOrganizationsStore'
+            );
+        }
+
+        $resourcePath = '/api/v2/user/organizations';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+        // header params
+        if ($contentType !== null) {
+            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
+        }
+        // header params
+        if ($accept !== null) {
+            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
+        }
+
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($postUserOrganizationsStoreRequest)) {
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($postUserOrganizationsStoreRequest));
+            } else {
+                $httpBody = $postUserOrganizationsStoreRequest;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation postUserRegister
+     *
+     * Register
+     *
+     * @param  \Stackflows\Clients\Stackflows\Model\PostUserRegisterRequest $postUserRegisterRequest postUserRegisterRequest (required)
+     * @param  string $contentType  (optional)
+     * @param  string $accept  (optional)
+     *
+     * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Stackflows\Clients\Stackflows\Model\UserResource
+     */
+    public function postUserRegister($postUserRegisterRequest, $contentType = null, $accept = null)
+    {
+        list($response) = $this->postUserRegisterWithHttpInfo($postUserRegisterRequest, $contentType, $accept);
+        return $response;
+    }
+
+    /**
+     * Operation postUserRegisterWithHttpInfo
+     *
+     * Register
+     *
+     * @param  \Stackflows\Clients\Stackflows\Model\PostUserRegisterRequest $postUserRegisterRequest (required)
+     * @param  string $contentType  (optional)
+     * @param  string $accept  (optional)
+     *
+     * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Stackflows\Clients\Stackflows\Model\UserResource, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function postUserRegisterWithHttpInfo($postUserRegisterRequest, $contentType = null, $accept = null)
+    {
+        $request = $this->postUserRegisterRequest($postUserRegisterRequest, $contentType, $accept);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\Stackflows\Clients\Stackflows\Model\UserResource' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\Stackflows\Clients\Stackflows\Model\UserResource' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\UserResource', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\Stackflows\Clients\Stackflows\Model\UserResource';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Stackflows\Clients\Stackflows\Model\UserResource',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation postUserRegisterAsync
+     *
+     * Register
+     *
+     * @param  \Stackflows\Clients\Stackflows\Model\PostUserRegisterRequest $postUserRegisterRequest (required)
+     * @param  string $contentType  (optional)
+     * @param  string $accept  (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function postUserRegisterAsync($postUserRegisterRequest, $contentType = null, $accept = null)
+    {
+        return $this->postUserRegisterAsyncWithHttpInfo($postUserRegisterRequest, $contentType, $accept)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation postUserRegisterAsyncWithHttpInfo
+     *
+     * Register
+     *
+     * @param  \Stackflows\Clients\Stackflows\Model\PostUserRegisterRequest $postUserRegisterRequest (required)
+     * @param  string $contentType  (optional)
+     * @param  string $accept  (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function postUserRegisterAsyncWithHttpInfo($postUserRegisterRequest, $contentType = null, $accept = null)
+    {
+        $returnType = '\Stackflows\Clients\Stackflows\Model\UserResource';
+        $request = $this->postUserRegisterRequest($postUserRegisterRequest, $contentType, $accept);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'postUserRegister'
+     *
+     * @param  \Stackflows\Clients\Stackflows\Model\PostUserRegisterRequest $postUserRegisterRequest (required)
+     * @param  string $contentType  (optional)
+     * @param  string $accept  (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function postUserRegisterRequest($postUserRegisterRequest, $contentType = null, $accept = null)
+    {
+        // verify the required parameter 'postUserRegisterRequest' is set
+        if ($postUserRegisterRequest === null || (is_array($postUserRegisterRequest) && count($postUserRegisterRequest) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $postUserRegisterRequest when calling postUserRegister'
+            );
+        }
+
+        $resourcePath = '/api/v2/user/register';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+        // header params
+        if ($contentType !== null) {
+            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
+        }
+        // header params
+        if ($accept !== null) {
+            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
+        }
+
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($postUserRegisterRequest)) {
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($postUserRegisterRequest));
+            } else {
+                $httpBody = $postUserRegisterRequest;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation postUserResetPassword
+     *
+     * Restore password
+     *
+     * @param  \Stackflows\Clients\Stackflows\Model\PostUserResetPasswordRequest $postUserResetPasswordRequest postUserResetPasswordRequest (required)
+     * @param  string $contentType  (optional)
+     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function authUserOrganizationsUpdate($id, $organization, $contentType = null, $accept = null, $authUserOrganizationsUpdateRequest = null)
+    public function postUserResetPassword($postUserResetPasswordRequest, $contentType = null, $accept = null)
     {
-        $this->authUserOrganizationsUpdateWithHttpInfo($id, $organization, $contentType, $accept, $authUserOrganizationsUpdateRequest);
+        $this->postUserResetPasswordWithHttpInfo($postUserResetPasswordRequest, $contentType, $accept);
     }
 
     /**
-     * Operation authUserOrganizationsUpdateWithHttpInfo
+     * Operation postUserResetPasswordWithHttpInfo
      *
-     * Update Organization
+     * Restore password
      *
-     * @param  string $id The ID of the organization. (required)
-     * @param  string $organization The ID of an organization. (required)
+     * @param  \Stackflows\Clients\Stackflows\Model\PostUserResetPasswordRequest $postUserResetPasswordRequest (required)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
-     * @param  \Stackflows\Clients\Stackflows\Model\AuthUserOrganizationsUpdateRequest $authUserOrganizationsUpdateRequest (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function authUserOrganizationsUpdateWithHttpInfo($id, $organization, $contentType = null, $accept = null, $authUserOrganizationsUpdateRequest = null)
+    public function postUserResetPasswordWithHttpInfo($postUserResetPasswordRequest, $contentType = null, $accept = null)
     {
-        $request = $this->authUserOrganizationsUpdateRequest($id, $organization, $contentType, $accept, $authUserOrganizationsUpdateRequest);
+        $request = $this->postUserResetPasswordRequest($postUserResetPasswordRequest, $contentType, $accept);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1482,22 +2549,20 @@ class UserApi
     }
 
     /**
-     * Operation authUserOrganizationsUpdateAsync
+     * Operation postUserResetPasswordAsync
      *
-     * Update Organization
+     * Restore password
      *
-     * @param  string $id The ID of the organization. (required)
-     * @param  string $organization The ID of an organization. (required)
+     * @param  \Stackflows\Clients\Stackflows\Model\PostUserResetPasswordRequest $postUserResetPasswordRequest (required)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
-     * @param  \Stackflows\Clients\Stackflows\Model\AuthUserOrganizationsUpdateRequest $authUserOrganizationsUpdateRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function authUserOrganizationsUpdateAsync($id, $organization, $contentType = null, $accept = null, $authUserOrganizationsUpdateRequest = null)
+    public function postUserResetPasswordAsync($postUserResetPasswordRequest, $contentType = null, $accept = null)
     {
-        return $this->authUserOrganizationsUpdateAsyncWithHttpInfo($id, $organization, $contentType, $accept, $authUserOrganizationsUpdateRequest)
+        return $this->postUserResetPasswordAsyncWithHttpInfo($postUserResetPasswordRequest, $contentType, $accept)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1506,23 +2571,21 @@ class UserApi
     }
 
     /**
-     * Operation authUserOrganizationsUpdateAsyncWithHttpInfo
+     * Operation postUserResetPasswordAsyncWithHttpInfo
      *
-     * Update Organization
+     * Restore password
      *
-     * @param  string $id The ID of the organization. (required)
-     * @param  string $organization The ID of an organization. (required)
+     * @param  \Stackflows\Clients\Stackflows\Model\PostUserResetPasswordRequest $postUserResetPasswordRequest (required)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
-     * @param  \Stackflows\Clients\Stackflows\Model\AuthUserOrganizationsUpdateRequest $authUserOrganizationsUpdateRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function authUserOrganizationsUpdateAsyncWithHttpInfo($id, $organization, $contentType = null, $accept = null, $authUserOrganizationsUpdateRequest = null)
+    public function postUserResetPasswordAsyncWithHttpInfo($postUserResetPasswordRequest, $contentType = null, $accept = null)
     {
         $returnType = '';
-        $request = $this->authUserOrganizationsUpdateRequest($id, $organization, $contentType, $accept, $authUserOrganizationsUpdateRequest);
+        $request = $this->postUserResetPasswordRequest($postUserResetPasswordRequest, $contentType, $accept);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1548,33 +2611,337 @@ class UserApi
     }
 
     /**
-     * Create request for operation 'authUserOrganizationsUpdate'
+     * Create request for operation 'postUserResetPassword'
+     *
+     * @param  \Stackflows\Clients\Stackflows\Model\PostUserResetPasswordRequest $postUserResetPasswordRequest (required)
+     * @param  string $contentType  (optional)
+     * @param  string $accept  (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function postUserResetPasswordRequest($postUserResetPasswordRequest, $contentType = null, $accept = null)
+    {
+        // verify the required parameter 'postUserResetPasswordRequest' is set
+        if ($postUserResetPasswordRequest === null || (is_array($postUserResetPasswordRequest) && count($postUserResetPasswordRequest) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $postUserResetPasswordRequest when calling postUserResetPassword'
+            );
+        }
+
+        $resourcePath = '/api/v2/user/reset-password';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+        // header params
+        if ($contentType !== null) {
+            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
+        }
+        // header params
+        if ($accept !== null) {
+            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
+        }
+
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                []
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                [],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($postUserResetPasswordRequest)) {
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($postUserResetPasswordRequest));
+            } else {
+                $httpBody = $postUserResetPasswordRequest;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation putUserOrganizationsUpdate
+     *
+     * Update Organization
      *
      * @param  string $id The ID of the organization. (required)
      * @param  string $organization The ID of an organization. (required)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
-     * @param  \Stackflows\Clients\Stackflows\Model\AuthUserOrganizationsUpdateRequest $authUserOrganizationsUpdateRequest (optional)
+     * @param  \Stackflows\Clients\Stackflows\Model\PutUserOrganizationsUpdateRequest $putUserOrganizationsUpdateRequest putUserOrganizationsUpdateRequest (optional)
+     *
+     * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Stackflows\Clients\Stackflows\Model\OrganizationUnitResource
+     */
+    public function putUserOrganizationsUpdate($id, $organization, $contentType = null, $accept = null, $putUserOrganizationsUpdateRequest = null)
+    {
+        list($response) = $this->putUserOrganizationsUpdateWithHttpInfo($id, $organization, $contentType, $accept, $putUserOrganizationsUpdateRequest);
+        return $response;
+    }
+
+    /**
+     * Operation putUserOrganizationsUpdateWithHttpInfo
+     *
+     * Update Organization
+     *
+     * @param  string $id The ID of the organization. (required)
+     * @param  string $organization The ID of an organization. (required)
+     * @param  string $contentType  (optional)
+     * @param  string $accept  (optional)
+     * @param  \Stackflows\Clients\Stackflows\Model\PutUserOrganizationsUpdateRequest $putUserOrganizationsUpdateRequest (optional)
+     *
+     * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Stackflows\Clients\Stackflows\Model\OrganizationUnitResource, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function putUserOrganizationsUpdateWithHttpInfo($id, $organization, $contentType = null, $accept = null, $putUserOrganizationsUpdateRequest = null)
+    {
+        $request = $this->putUserOrganizationsUpdateRequest($id, $organization, $contentType, $accept, $putUserOrganizationsUpdateRequest);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation putUserOrganizationsUpdateAsync
+     *
+     * Update Organization
+     *
+     * @param  string $id The ID of the organization. (required)
+     * @param  string $organization The ID of an organization. (required)
+     * @param  string $contentType  (optional)
+     * @param  string $accept  (optional)
+     * @param  \Stackflows\Clients\Stackflows\Model\PutUserOrganizationsUpdateRequest $putUserOrganizationsUpdateRequest (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function putUserOrganizationsUpdateAsync($id, $organization, $contentType = null, $accept = null, $putUserOrganizationsUpdateRequest = null)
+    {
+        return $this->putUserOrganizationsUpdateAsyncWithHttpInfo($id, $organization, $contentType, $accept, $putUserOrganizationsUpdateRequest)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation putUserOrganizationsUpdateAsyncWithHttpInfo
+     *
+     * Update Organization
+     *
+     * @param  string $id The ID of the organization. (required)
+     * @param  string $organization The ID of an organization. (required)
+     * @param  string $contentType  (optional)
+     * @param  string $accept  (optional)
+     * @param  \Stackflows\Clients\Stackflows\Model\PutUserOrganizationsUpdateRequest $putUserOrganizationsUpdateRequest (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function putUserOrganizationsUpdateAsyncWithHttpInfo($id, $organization, $contentType = null, $accept = null, $putUserOrganizationsUpdateRequest = null)
+    {
+        $returnType = '\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource';
+        $request = $this->putUserOrganizationsUpdateRequest($id, $organization, $contentType, $accept, $putUserOrganizationsUpdateRequest);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'putUserOrganizationsUpdate'
+     *
+     * @param  string $id The ID of the organization. (required)
+     * @param  string $organization The ID of an organization. (required)
+     * @param  string $contentType  (optional)
+     * @param  string $accept  (optional)
+     * @param  \Stackflows\Clients\Stackflows\Model\PutUserOrganizationsUpdateRequest $putUserOrganizationsUpdateRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function authUserOrganizationsUpdateRequest($id, $organization, $contentType = null, $accept = null, $authUserOrganizationsUpdateRequest = null)
+    public function putUserOrganizationsUpdateRequest($id, $organization, $contentType = null, $accept = null, $putUserOrganizationsUpdateRequest = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling authUserOrganizationsUpdate'
+                'Missing the required parameter $id when calling putUserOrganizationsUpdate'
             );
         }
         // verify the required parameter 'organization' is set
         if ($organization === null || (is_array($organization) && count($organization) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $organization when calling authUserOrganizationsUpdate'
+                'Missing the required parameter $organization when calling putUserOrganizationsUpdate'
             );
         }
 
-        $resourcePath = '/api/v2/auth/user/organizations/{id}';
+        $resourcePath = '/api/v2/user/organizations/{id}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -1611,21 +2978,21 @@ class UserApi
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
-                []
+                ['application/json']
             );
         } else {
             $headers = $this->headerSelector->selectHeaders(
-                [],
+                ['application/json'],
                 ['application/json']
             );
         }
 
         // for model (json/xml)
-        if (isset($authUserOrganizationsUpdateRequest)) {
+        if (isset($putUserOrganizationsUpdateRequest)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($authUserOrganizationsUpdateRequest));
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($putUserOrganizationsUpdateRequest));
             } else {
-                $httpBody = $authUserOrganizationsUpdateRequest;
+                $httpBody = $putUserOrganizationsUpdateRequest;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -1673,38 +3040,40 @@ class UserApi
     }
 
     /**
-     * Operation authUserRevoke
+     * Operation putUserUpdate
      *
-     * Revoke all tokens
+     * Update
      *
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
+     * @param  \Stackflows\Clients\Stackflows\Model\PutUserUpdateRequest $putUserUpdateRequest putUserUpdateRequest (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\UserResource
      */
-    public function authUserRevoke($contentType = null, $accept = null)
+    public function putUserUpdate($contentType = null, $accept = null, $putUserUpdateRequest = null)
     {
-        list($response) = $this->authUserRevokeWithHttpInfo($contentType, $accept);
+        list($response) = $this->putUserUpdateWithHttpInfo($contentType, $accept, $putUserUpdateRequest);
         return $response;
     }
 
     /**
-     * Operation authUserRevokeWithHttpInfo
+     * Operation putUserUpdateWithHttpInfo
      *
-     * Revoke all tokens
+     * Update
      *
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
+     * @param  \Stackflows\Clients\Stackflows\Model\PutUserUpdateRequest $putUserUpdateRequest (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\UserResource, HTTP status code, HTTP response headers (array of strings)
      */
-    public function authUserRevokeWithHttpInfo($contentType = null, $accept = null)
+    public function putUserUpdateWithHttpInfo($contentType = null, $accept = null, $putUserUpdateRequest = null)
     {
-        $request = $this->authUserRevokeRequest($contentType, $accept);
+        $request = $this->putUserUpdateRequest($contentType, $accept, $putUserUpdateRequest);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1791,19 +3160,20 @@ class UserApi
     }
 
     /**
-     * Operation authUserRevokeAsync
+     * Operation putUserUpdateAsync
      *
-     * Revoke all tokens
+     * Update
      *
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
+     * @param  \Stackflows\Clients\Stackflows\Model\PutUserUpdateRequest $putUserUpdateRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function authUserRevokeAsync($contentType = null, $accept = null)
+    public function putUserUpdateAsync($contentType = null, $accept = null, $putUserUpdateRequest = null)
     {
-        return $this->authUserRevokeAsyncWithHttpInfo($contentType, $accept)
+        return $this->putUserUpdateAsyncWithHttpInfo($contentType, $accept, $putUserUpdateRequest)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1812,20 +3182,21 @@ class UserApi
     }
 
     /**
-     * Operation authUserRevokeAsyncWithHttpInfo
+     * Operation putUserUpdateAsyncWithHttpInfo
      *
-     * Revoke all tokens
+     * Update
      *
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
+     * @param  \Stackflows\Clients\Stackflows\Model\PutUserUpdateRequest $putUserUpdateRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function authUserRevokeAsyncWithHttpInfo($contentType = null, $accept = null)
+    public function putUserUpdateAsyncWithHttpInfo($contentType = null, $accept = null, $putUserUpdateRequest = null)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\UserResource';
-        $request = $this->authUserRevokeRequest($contentType, $accept);
+        $request = $this->putUserUpdateRequest($contentType, $accept, $putUserUpdateRequest);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1864,302 +3235,19 @@ class UserApi
     }
 
     /**
-     * Create request for operation 'authUserRevoke'
+     * Create request for operation 'putUserUpdate'
      *
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
+     * @param  \Stackflows\Clients\Stackflows\Model\PutUserUpdateRequest $putUserUpdateRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function authUserRevokeRequest($contentType = null, $accept = null)
+    public function putUserUpdateRequest($contentType = null, $accept = null, $putUserUpdateRequest = null)
     {
 
-        $resourcePath = '/api/v2/auth/user/tokens';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-        // header params
-        if ($contentType !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
-        }
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
-
-
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'DELETE',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation authUserUpdate
-     *
-     * Update
-     *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
-     * @param  \Stackflows\Clients\Stackflows\Model\AuthUserUpdateRequest $authUserUpdateRequest authUserUpdateRequest (optional)
-     *
-     * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \Stackflows\Clients\Stackflows\Model\UserResource
-     */
-    public function authUserUpdate($contentType = null, $accept = null, $authUserUpdateRequest = null)
-    {
-        list($response) = $this->authUserUpdateWithHttpInfo($contentType, $accept, $authUserUpdateRequest);
-        return $response;
-    }
-
-    /**
-     * Operation authUserUpdateWithHttpInfo
-     *
-     * Update
-     *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
-     * @param  \Stackflows\Clients\Stackflows\Model\AuthUserUpdateRequest $authUserUpdateRequest (optional)
-     *
-     * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \Stackflows\Clients\Stackflows\Model\UserResource, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function authUserUpdateWithHttpInfo($contentType = null, $accept = null, $authUserUpdateRequest = null)
-    {
-        $request = $this->authUserUpdateRequest($contentType, $accept, $authUserUpdateRequest);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            switch($statusCode) {
-                case 200:
-                    if ('\Stackflows\Clients\Stackflows\Model\UserResource' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\Stackflows\Clients\Stackflows\Model\UserResource' !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\UserResource', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            $returnType = '\Stackflows\Clients\Stackflows\Model\UserResource';
-            if ($returnType === '\SplFileObject') {
-                $content = $response->getBody(); //stream goes to serializer
-            } else {
-                $content = (string) $response->getBody();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Stackflows\Clients\Stackflows\Model\UserResource',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation authUserUpdateAsync
-     *
-     * Update
-     *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
-     * @param  \Stackflows\Clients\Stackflows\Model\AuthUserUpdateRequest $authUserUpdateRequest (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function authUserUpdateAsync($contentType = null, $accept = null, $authUserUpdateRequest = null)
-    {
-        return $this->authUserUpdateAsyncWithHttpInfo($contentType, $accept, $authUserUpdateRequest)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation authUserUpdateAsyncWithHttpInfo
-     *
-     * Update
-     *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
-     * @param  \Stackflows\Clients\Stackflows\Model\AuthUserUpdateRequest $authUserUpdateRequest (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function authUserUpdateAsyncWithHttpInfo($contentType = null, $accept = null, $authUserUpdateRequest = null)
-    {
-        $returnType = '\Stackflows\Clients\Stackflows\Model\UserResource';
-        $request = $this->authUserUpdateRequest($contentType, $accept, $authUserUpdateRequest);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'authUserUpdate'
-     *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
-     * @param  \Stackflows\Clients\Stackflows\Model\AuthUserUpdateRequest $authUserUpdateRequest (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function authUserUpdateRequest($contentType = null, $accept = null, $authUserUpdateRequest = null)
-    {
-
-        $resourcePath = '/api/v2/auth/user';
+        $resourcePath = '/api/v2/user';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -2190,11 +3278,11 @@ class UserApi
         }
 
         // for model (json/xml)
-        if (isset($authUserUpdateRequest)) {
+        if (isset($putUserUpdateRequest)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($authUserUpdateRequest));
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($putUserUpdateRequest));
             } else {
-                $httpBody = $authUserUpdateRequest;
+                $httpBody = $putUserUpdateRequest;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
