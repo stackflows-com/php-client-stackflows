@@ -13,7 +13,7 @@ Method | HTTP request | Description
 [**getEnvironmentBusinessModelsCommentsList()**](EnvironmentApi.md#getEnvironmentBusinessModelsCommentsList) | **GET** /api/v2/environment/business-models/{model}/comments | List Business Model Comments
 [**getEnvironmentBusinessModelsList()**](EnvironmentApi.md#getEnvironmentBusinessModelsList) | **GET** /api/v2/environment/business-models | List Business Models
 [**getEnvironmentBusinessModelsShow()**](EnvironmentApi.md#getEnvironmentBusinessModelsShow) | **GET** /api/v2/environment/business-models/{model} | View Business Model
-[**getEnvironmentUserTasksIndex()**](EnvironmentApi.md#getEnvironmentUserTasksIndex) | **GET** /api/v2/environment/user-tasks | List User Tasks
+[**getEnvironmentUserTasksList()**](EnvironmentApi.md#getEnvironmentUserTasksList) | **GET** /api/v2/environment/user-tasks | List User Tasks
 [**postEnvironmentBusinessModelDiagramsCommentsCreate()**](EnvironmentApi.md#postEnvironmentBusinessModelDiagramsCommentsCreate) | **POST** /api/v2/environment/business-model-diagrams/{diagram}/comments | Create Business Model Diagram Comment
 [**postEnvironmentBusinessModelDiagramsCreate()**](EnvironmentApi.md#postEnvironmentBusinessModelDiagramsCreate) | **POST** /api/v2/environment/business-model-diagrams | Create Business Model Diagram
 [**postEnvironmentBusinessModelDiagramsPublish()**](EnvironmentApi.md#postEnvironmentBusinessModelDiagramsPublish) | **POST** /api/v2/environment/business-model-diagrams/{diagram}/publish | Publish Business Model Diagram
@@ -353,7 +353,7 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\EnvironmentApi(
     new GuzzleHttp\Client()
 );
 $diagram = 03b764f0-fc1f-11ec-9893-6df708406f80; // string | 
-$includesnapshotsdeploysdeploysStatistics = eligendi; // string | Possible includes
+$includesnapshotsdeploysdeploysStatistics = beatae; // string | Possible includes
 $contentType = application/json; // string | 
 $accept = application/json; // string | 
 
@@ -476,15 +476,15 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\EnvironmentApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$includeownercompanycategorytagscommentsCounttagsCountdiagrams = doloremque; // string | Possible includes
-$filterWithAnyTagstestTaganotherTestTag = sapiente; // string | Will return models that has any of specified tags
-$filterWithoutAnyTags1 = qui; // string | Will return list of all models that has no tags at all
-$filterAutocompletetes = illum; // string | Retrieve list that has \"tes\" at the start of their name
-$filterSearchtes = ut; // string | Retrieve list that has \"tes\" in their name
-$filterCategories12 = possimus; // string | Filter by specific categories
+$includeownercompanycategorytagscommentsCounttagsCountdiagrams = omnis; // string | Possible includes
+$filterWithAnyTagstestTaganotherTestTag = vel; // string | Will return models that has any of specified tags
+$filterWithoutAnyTags1 = voluptatem; // string | Will return list of all models that has no tags at all
+$filterAutocompletetes = ipsum; // string | Retrieve list that has \"tes\" at the start of their name
+$filterSearchtes = quo; // string | Retrieve list that has \"tes\" in their name
+$filterCategories12 = ab; // string | Filter by specific categories
 $filterUncategorized = true; // bool | List only uncategorized process models.
 $filterSubscribable = true; // bool | List only subscribable process models.
-$sortnameCreatedAtUpdatedAt = qui; // string | Sorting example
+$sortnameCreatedAtUpdatedAt = porro; // string | Sorting example
 $contentType = application/json; // string | 
 $accept = application/json; // string | 
 
@@ -553,7 +553,7 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\EnvironmentApi(
     new GuzzleHttp\Client()
 );
 $model = 06a4ad30-f87d-11ec-ba01-1558c1387592; // string | 
-$includeownercompanycategorytagscommentsCounttagsCountdiagrams = aut; // string | Possible includes
+$includeownercompanycategorytagscommentsCounttagsCountdiagrams = ab; // string | Possible includes
 $contentType = application/json; // string | 
 $accept = application/json; // string | 
 
@@ -591,10 +591,10 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `getEnvironmentUserTasksIndex()`
+## `getEnvironmentUserTasksList()`
 
 ```php
-getEnvironmentUserTasksIndex($contentType, $accept): \Stackflows\Clients\Stackflows\Model\UserTaskTypeResource[]
+getEnvironmentUserTasksList($contentType, $accept): \Stackflows\Clients\Stackflows\Model\UserTaskTypeResource[]
 ```
 
 List User Tasks
@@ -618,10 +618,10 @@ $contentType = application/json; // string |
 $accept = application/json; // string | 
 
 try {
-    $result = $apiInstance->getEnvironmentUserTasksIndex($contentType, $accept);
+    $result = $apiInstance->getEnvironmentUserTasksList($contentType, $accept);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling EnvironmentApi->getEnvironmentUserTasksIndex: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling EnvironmentApi->getEnvironmentUserTasksList: ', $e->getMessage(), PHP_EOL;
 }
 ```
 

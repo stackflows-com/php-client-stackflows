@@ -216,7 +216,7 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\InstallationApi(
     new GuzzleHttp\Client()
 );
 $id = 4241dbd0-fd0b-11ec-a738-470c54c64da4; // string | The ID of the engine.
-$engine = repellendus; // string | ID of an engine
+$engine = velit; // string | ID of an engine
 $contentType = application/json; // string | 
 $accept = application/json; // string | 
 
@@ -456,7 +456,7 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\InstallationApi(
     new GuzzleHttp\Client()
 );
 $id = 4241dbd0-fd0b-11ec-a738-470c54c64da4; // string | The ID of the engine.
-$engine = repellendus; // string | ID of an engine
+$engine = velit; // string | ID of an engine
 $contentType = application/json; // string | 
 $accept = application/json; // string | 
 $putEnginesUpdateRequest = new \Stackflows\Clients\Stackflows\Model\PutEnginesUpdateRequest(); // \Stackflows\Clients\Stackflows\Model\PutEnginesUpdateRequest

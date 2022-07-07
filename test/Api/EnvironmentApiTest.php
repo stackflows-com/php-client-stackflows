@@ -180,12 +180,12 @@ class EnvironmentApiTest extends TestCase
     }
 
     /**
-     * Test case for getEnvironmentUserTasksIndex
+     * Test case for getEnvironmentUserTasksList
      *
      * List User Tasks.
      *
      */
-    public function testGetEnvironmentUserTasksIndex()
+    public function testGetEnvironmentUserTasksList()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

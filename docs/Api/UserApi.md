@@ -158,7 +158,7 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\UserApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$includeorganizations = sunt; // string | Possible includes
+$includeorganizations = nam; // string | Possible includes
 $contentType = application/json; // string | 
 $accept = application/json; // string | 
 

@@ -83,7 +83,7 @@ Class | Method | HTTP request | Description
 *EnvironmentApi* | [**getEnvironmentBusinessModelsCommentsList**](docs/Api/EnvironmentApi.md#getenvironmentbusinessmodelscommentslist) | **GET** /api/v2/environment/business-models/{model}/comments | List Business Model Comments
 *EnvironmentApi* | [**getEnvironmentBusinessModelsList**](docs/Api/EnvironmentApi.md#getenvironmentbusinessmodelslist) | **GET** /api/v2/environment/business-models | List Business Models
 *EnvironmentApi* | [**getEnvironmentBusinessModelsShow**](docs/Api/EnvironmentApi.md#getenvironmentbusinessmodelsshow) | **GET** /api/v2/environment/business-models/{model} | View Business Model
-*EnvironmentApi* | [**getEnvironmentUserTasksIndex**](docs/Api/EnvironmentApi.md#getenvironmentusertasksindex) | **GET** /api/v2/environment/user-tasks | List User Tasks
+*EnvironmentApi* | [**getEnvironmentUserTasksList**](docs/Api/EnvironmentApi.md#getenvironmentusertaskslist) | **GET** /api/v2/environment/user-tasks | List User Tasks
 *EnvironmentApi* | [**postEnvironmentBusinessModelDiagramsCommentsCreate**](docs/Api/EnvironmentApi.md#postenvironmentbusinessmodeldiagramscommentscreate) | **POST** /api/v2/environment/business-model-diagrams/{diagram}/comments | Create Business Model Diagram Comment
 *EnvironmentApi* | [**postEnvironmentBusinessModelDiagramsCreate**](docs/Api/EnvironmentApi.md#postenvironmentbusinessmodeldiagramscreate) | **POST** /api/v2/environment/business-model-diagrams | Create Business Model Diagram
 *EnvironmentApi* | [**postEnvironmentBusinessModelDiagramsPublish**](docs/Api/EnvironmentApi.md#postenvironmentbusinessmodeldiagramspublish) | **POST** /api/v2/environment/business-model-diagrams/{diagram}/publish | Publish Business Model Diagram

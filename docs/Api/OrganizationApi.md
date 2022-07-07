@@ -34,7 +34,7 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OrganizationApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$organizationUnit = in; // string | 
+$organizationUnit = ut; // string | 
 $contentType = application/json; // string | 
 $accept = application/json; // string | 
 
@@ -94,8 +94,8 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OrganizationApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$filterRoot1 = ut; // string | Retrieve only root nodes
-$includechildren = ipsa; // string | Load children
+$filterRoot1 = aspernatur; // string | Retrieve only root nodes
+$includechildren = provident; // string | Load children
 $contentType = application/json; // string | 
 $accept = application/json; // string | 
 
@@ -156,7 +156,7 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OrganizationApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$organizationUnit = in; // string | 
+$organizationUnit = ut; // string | 
 $contentType = application/json; // string | 
 $accept = application/json; // string | 
 
@@ -276,7 +276,7 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OrganizationApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$organizationUnit = in; // string | 
+$organizationUnit = ut; // string | 
 $contentType = application/json; // string | 
 $accept = application/json; // string | 
 $putOrganizationUnitsUpdateRequest = new \Stackflows\Clients\Stackflows\Model\PutOrganizationUnitsUpdateRequest(); // \Stackflows\Clients\Stackflows\Model\PutOrganizationUnitsUpdateRequest

@@ -2961,7 +2961,7 @@ class EnvironmentApi
     }
 
     /**
-     * Operation getEnvironmentUserTasksIndex
+     * Operation getEnvironmentUserTasksList
      *
      * List User Tasks
      *
@@ -2972,14 +2972,14 @@ class EnvironmentApi
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\UserTaskTypeResource[]
      */
-    public function getEnvironmentUserTasksIndex($contentType = null, $accept = null)
+    public function getEnvironmentUserTasksList($contentType = null, $accept = null)
     {
-        list($response) = $this->getEnvironmentUserTasksIndexWithHttpInfo($contentType, $accept);
+        list($response) = $this->getEnvironmentUserTasksListWithHttpInfo($contentType, $accept);
         return $response;
     }
 
     /**
-     * Operation getEnvironmentUserTasksIndexWithHttpInfo
+     * Operation getEnvironmentUserTasksListWithHttpInfo
      *
      * List User Tasks
      *
@@ -2990,9 +2990,9 @@ class EnvironmentApi
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\UserTaskTypeResource[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getEnvironmentUserTasksIndexWithHttpInfo($contentType = null, $accept = null)
+    public function getEnvironmentUserTasksListWithHttpInfo($contentType = null, $accept = null)
     {
-        $request = $this->getEnvironmentUserTasksIndexRequest($contentType, $accept);
+        $request = $this->getEnvironmentUserTasksListRequest($contentType, $accept);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3079,7 +3079,7 @@ class EnvironmentApi
     }
 
     /**
-     * Operation getEnvironmentUserTasksIndexAsync
+     * Operation getEnvironmentUserTasksListAsync
      *
      * List User Tasks
      *
@@ -3089,9 +3089,9 @@ class EnvironmentApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getEnvironmentUserTasksIndexAsync($contentType = null, $accept = null)
+    public function getEnvironmentUserTasksListAsync($contentType = null, $accept = null)
     {
-        return $this->getEnvironmentUserTasksIndexAsyncWithHttpInfo($contentType, $accept)
+        return $this->getEnvironmentUserTasksListAsyncWithHttpInfo($contentType, $accept)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3100,7 +3100,7 @@ class EnvironmentApi
     }
 
     /**
-     * Operation getEnvironmentUserTasksIndexAsyncWithHttpInfo
+     * Operation getEnvironmentUserTasksListAsyncWithHttpInfo
      *
      * List User Tasks
      *
@@ -3110,10 +3110,10 @@ class EnvironmentApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getEnvironmentUserTasksIndexAsyncWithHttpInfo($contentType = null, $accept = null)
+    public function getEnvironmentUserTasksListAsyncWithHttpInfo($contentType = null, $accept = null)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\UserTaskTypeResource[]';
-        $request = $this->getEnvironmentUserTasksIndexRequest($contentType, $accept);
+        $request = $this->getEnvironmentUserTasksListRequest($contentType, $accept);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3152,7 +3152,7 @@ class EnvironmentApi
     }
 
     /**
-     * Create request for operation 'getEnvironmentUserTasksIndex'
+     * Create request for operation 'getEnvironmentUserTasksList'
      *
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
@@ -3160,7 +3160,7 @@ class EnvironmentApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getEnvironmentUserTasksIndexRequest($contentType = null, $accept = null)
+    public function getEnvironmentUserTasksListRequest($contentType = null, $accept = null)
     {
 
         $resourcePath = '/api/v2/environment/user-tasks';
