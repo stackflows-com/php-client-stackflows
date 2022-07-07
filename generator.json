@@ -1,7 +1,10 @@
 {
-  "composerPackageName": "stackflows/php-client-stackflows",
+  "groupId": "com.my.company",
+  "artifactId": "MyClient",
+  "artifactVersion": "1.2.0",
+  "composerPackageName": "stackflows/php-client",
   "invokerPackage": "Stackflows\\Clients\\Stackflows",
-  "packageName": "Stackflows REST API Client",
+  "packageName": "Stackflows PHP Client",
   "variableNamingConvention": "camelCase",
   "sortParamsByRequiredFlag": true,
   "srcBasePath": "src"

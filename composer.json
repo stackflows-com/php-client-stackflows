@@ -1,5 +1,6 @@
 {
-    "name": "stackflows/php-client-stackflows",
+    "name": "stackflows-com/php-client-stackflows",
+    "version": "1.2.0",
     "description": "Pagination query params are as follows: page[size]=10&page[number]=1",
     "keywords": [
         "openapitools",
