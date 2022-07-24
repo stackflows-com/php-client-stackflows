@@ -89,9 +89,9 @@ class PostEnvironmentTaggedBusinessModelsStartRequestTest extends TestCase
     }
 
     /**
-     * Test attribute "variables"
+     * Test attribute "submission"
      */
-    public function testPropertyVariables()
+    public function testPropertySubmission()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

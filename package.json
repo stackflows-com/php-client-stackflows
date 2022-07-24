@@ -5,6 +5,6 @@
   "scripts": {
     "generator": "./node_modules/.bin/openapi-generator-cli",
     "download": "wget https://backoffice.stackflows.com/docs.openapi -O openapi.yaml",
-    "generate": "rm -R ./docs ./src ./test && npm run generator -- generate -i ./openapi.yaml -g php -o ./ -c ./generator.json --git-user-id stackflows-com --git-repo-id php-client-stackflows"
+    "generate": "rm -R ./docs ./src ./test || npm run generator -- generate -i ./openapi.yaml -g php -o ./ -c ./generator.json --git-user-id stackflows-com --git-repo-id php-client-stackflows"
   }
 }

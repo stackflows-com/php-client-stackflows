@@ -10,7 +10,7 @@ Method | HTTP request | Description
 ## `postTaggedBusinessModelsStart()`
 
 ```php
-postTaggedBusinessModelsStart($postTaggedBusinessModelsStartRequest, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource[]
+postTaggedBusinessModelsStart($postTaggedBusinessModelsStartRequest, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\BusinessProcessModelModel[]
 ```
 
 Starts Business Process Models by Tag
@@ -52,7 +52,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource[]**](../Model/BusinessBaseModelResource.md)
+[**\Stackflows\Clients\Stackflows\Model\BusinessProcessModelModel[]**](../Model/BusinessProcessModelModel.md)
 
 ### Authorization
 

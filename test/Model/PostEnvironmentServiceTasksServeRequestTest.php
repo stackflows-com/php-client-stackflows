@@ -80,36 +80,18 @@ class PostEnvironmentServiceTasksServeRequestTest extends TestCase
     }
 
     /**
-     * Test attribute "taskId"
+     * Test attribute "lock"
      */
-    public function testPropertyTaskId()
+    public function testPropertyLock()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "workerId"
+     * Test attribute "submission"
      */
-    public function testPropertyWorkerId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "tenantId"
-     */
-    public function testPropertyTenantId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "variables"
-     */
-    public function testPropertyVariables()
+    public function testPropertySubmission()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

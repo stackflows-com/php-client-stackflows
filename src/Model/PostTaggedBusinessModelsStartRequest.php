@@ -58,7 +58,7 @@ class PostTaggedBusinessModelsStartRequest implements ModelInterface, ArrayAcces
       */
     protected static $openAPITypes = [
         'tags' => 'string[]',
-        'variables' => 'string[]'
+        'submission' => 'string'
     ];
 
     /**
@@ -70,7 +70,7 @@ class PostTaggedBusinessModelsStartRequest implements ModelInterface, ArrayAcces
       */
     protected static $openAPIFormats = [
         'tags' => null,
-        'variables' => null
+        'submission' => null
     ];
 
     /**
@@ -101,7 +101,7 @@ class PostTaggedBusinessModelsStartRequest implements ModelInterface, ArrayAcces
      */
     protected static $attributeMap = [
         'tags' => 'tags',
-        'variables' => 'variables'
+        'submission' => 'submission'
     ];
 
     /**
@@ -111,7 +111,7 @@ class PostTaggedBusinessModelsStartRequest implements ModelInterface, ArrayAcces
      */
     protected static $setters = [
         'tags' => 'setTags',
-        'variables' => 'setVariables'
+        'submission' => 'setSubmission'
     ];
 
     /**
@@ -121,7 +121,7 @@ class PostTaggedBusinessModelsStartRequest implements ModelInterface, ArrayAcces
      */
     protected static $getters = [
         'tags' => 'getTags',
-        'variables' => 'getVariables'
+        'submission' => 'getSubmission'
     ];
 
     /**
@@ -182,7 +182,7 @@ class PostTaggedBusinessModelsStartRequest implements ModelInterface, ArrayAcces
     public function __construct(array $data = null)
     {
         $this->container['tags'] = $data['tags'] ?? null;
-        $this->container['variables'] = $data['variables'] ?? null;
+        $this->container['submission'] = $data['submission'] ?? null;
     }
 
     /**
@@ -237,25 +237,25 @@ class PostTaggedBusinessModelsStartRequest implements ModelInterface, ArrayAcces
     }
 
     /**
-     * Gets variables
+     * Gets submission
      *
-     * @return string[]|null
+     * @return string|null
      */
-    public function getVariables()
+    public function getSubmission()
     {
-        return $this->container['variables'];
+        return $this->container['submission'];
     }
 
     /**
-     * Sets variables
+     * Sets submission
      *
-     * @param string[]|null $variables 
+     * @param string|null $submission 
      *
      * @return self
      */
-    public function setVariables($variables)
+    public function setSubmission($submission)
     {
-        $this->container['variables'] = $variables;
+        $this->container['submission'] = $submission;
 
         return $this;
     }

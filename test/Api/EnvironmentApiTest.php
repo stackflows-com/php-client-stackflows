@@ -240,6 +240,30 @@ class EnvironmentApiTest extends TestCase
     }
 
     /**
+     * Test case for postEnvironmentEventsMessage
+     *
+     * Send Message.
+     *
+     */
+    public function testPostEnvironmentEventsMessage()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for postEnvironmentEventsSignal
+     *
+     * Send Message.
+     *
+     */
+    public function testPostEnvironmentEventsSignal()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for postEnvironmentServiceTasksLock
      *
      * Lock Service Tasks.

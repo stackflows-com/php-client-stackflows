@@ -57,10 +57,8 @@ class PostEnvironmentServiceTasksServeRequest implements ModelInterface, ArrayAc
       * @var string[]
       */
     protected static $openAPITypes = [
-        'taskId' => 'string',
-        'workerId' => 'string',
-        'tenantId' => 'string',
-        'variables' => 'string'
+        'lock' => 'string',
+        'submission' => 'string[]'
     ];
 
     /**
@@ -71,10 +69,8 @@ class PostEnvironmentServiceTasksServeRequest implements ModelInterface, ArrayAc
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'taskId' => null,
-        'workerId' => null,
-        'tenantId' => null,
-        'variables' => null
+        'lock' => null,
+        'submission' => null
     ];
 
     /**
@@ -104,10 +100,8 @@ class PostEnvironmentServiceTasksServeRequest implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $attributeMap = [
-        'taskId' => 'taskId',
-        'workerId' => 'workerId',
-        'tenantId' => 'tenantId',
-        'variables' => 'variables'
+        'lock' => 'lock',
+        'submission' => 'submission'
     ];
 
     /**
@@ -116,10 +110,8 @@ class PostEnvironmentServiceTasksServeRequest implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $setters = [
-        'taskId' => 'setTaskId',
-        'workerId' => 'setWorkerId',
-        'tenantId' => 'setTenantId',
-        'variables' => 'setVariables'
+        'lock' => 'setLock',
+        'submission' => 'setSubmission'
     ];
 
     /**
@@ -128,10 +120,8 @@ class PostEnvironmentServiceTasksServeRequest implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $getters = [
-        'taskId' => 'getTaskId',
-        'workerId' => 'getWorkerId',
-        'tenantId' => 'getTenantId',
-        'variables' => 'getVariables'
+        'lock' => 'getLock',
+        'submission' => 'getSubmission'
     ];
 
     /**
@@ -191,10 +181,8 @@ class PostEnvironmentServiceTasksServeRequest implements ModelInterface, ArrayAc
      */
     public function __construct(array $data = null)
     {
-        $this->container['taskId'] = $data['taskId'] ?? null;
-        $this->container['workerId'] = $data['workerId'] ?? null;
-        $this->container['tenantId'] = $data['tenantId'] ?? null;
-        $this->container['variables'] = $data['variables'] ?? null;
+        $this->container['lock'] = $data['lock'] ?? null;
+        $this->container['submission'] = $data['submission'] ?? null;
     }
 
     /**
@@ -206,17 +194,8 @@ class PostEnvironmentServiceTasksServeRequest implements ModelInterface, ArrayAc
     {
         $invalidProperties = [];
 
-        if ($this->container['taskId'] === null) {
-            $invalidProperties[] = "'taskId' can't be null";
-        }
-        if ($this->container['workerId'] === null) {
-            $invalidProperties[] = "'workerId' can't be null";
-        }
-        if ($this->container['tenantId'] === null) {
-            $invalidProperties[] = "'tenantId' can't be null";
-        }
-        if ($this->container['variables'] === null) {
-            $invalidProperties[] = "'variables' can't be null";
+        if ($this->container['lock'] === null) {
+            $invalidProperties[] = "'lock' can't be null";
         }
         return $invalidProperties;
     }
@@ -234,97 +213,49 @@ class PostEnvironmentServiceTasksServeRequest implements ModelInterface, ArrayAc
 
 
     /**
-     * Gets taskId
+     * Gets lock
      *
      * @return string
      */
-    public function getTaskId()
+    public function getLock()
     {
-        return $this->container['taskId'];
+        return $this->container['lock'];
     }
 
     /**
-     * Sets taskId
+     * Sets lock
      *
-     * @param string $taskId 
+     * @param string $lock 
      *
      * @return self
      */
-    public function setTaskId($taskId)
+    public function setLock($lock)
     {
-        $this->container['taskId'] = $taskId;
+        $this->container['lock'] = $lock;
 
         return $this;
     }
 
     /**
-     * Gets workerId
+     * Gets submission
      *
-     * @return string
+     * @return string[]|null
      */
-    public function getWorkerId()
+    public function getSubmission()
     {
-        return $this->container['workerId'];
+        return $this->container['submission'];
     }
 
     /**
-     * Sets workerId
+     * Sets submission
      *
-     * @param string $workerId 
+     * @param string[]|null $submission 
      *
      * @return self
      */
-    public function setWorkerId($workerId)
+    public function setSubmission($submission)
     {
-        $this->container['workerId'] = $workerId;
-
-        return $this;
-    }
-
-    /**
-     * Gets tenantId
-     *
-     * @return string
-     */
-    public function getTenantId()
-    {
-        return $this->container['tenantId'];
-    }
-
-    /**
-     * Sets tenantId
-     *
-     * @param string $tenantId 
-     *
-     * @return self
-     */
-    public function setTenantId($tenantId)
-    {
-        $this->container['tenantId'] = $tenantId;
-
-        return $this;
-    }
-
-    /**
-     * Gets variables
-     *
-     * @return string
-     */
-    public function getVariables()
-    {
-        return $this->container['variables'];
-    }
-
-    /**
-     * Sets variables
-     *
-     * @param string $variables 
-     *
-     * @return self
-     */
-    public function setVariables($variables)
-    {
-        $this->container['variables'] = $variables;
+        $this->container['submission'] = $submission;
 
         return $this;
     }

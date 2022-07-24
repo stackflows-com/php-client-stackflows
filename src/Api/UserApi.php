@@ -120,17 +120,18 @@ class UserApi
      *
      * Delete Organization
      *
+     * @param  string $organizationId The ID of the organization. (required)
      * @param  string $organization The ID of an organization. (required)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Stackflows\Clients\Stackflows\Model\OrganizationUnitResource
+     * @return \Stackflows\Clients\Stackflows\Model\OrganizationUnitModel
      */
-    public function deleteUserOrganizations($organization, $contentType = null, $accept = null)
+    public function deleteUserOrganizations($organizationId, $organization, $contentType = null, $accept = null)
     {
-        list($response) = $this->deleteUserOrganizationsWithHttpInfo($organization, $contentType, $accept);
+        list($response) = $this->deleteUserOrganizationsWithHttpInfo($organizationId, $organization, $contentType, $accept);
         return $response;
     }
 
@@ -139,17 +140,18 @@ class UserApi
      *
      * Delete Organization
      *
+     * @param  string $organizationId The ID of the organization. (required)
      * @param  string $organization The ID of an organization. (required)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Stackflows\Clients\Stackflows\Model\OrganizationUnitResource, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Stackflows\Clients\Stackflows\Model\OrganizationUnitModel, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteUserOrganizationsWithHttpInfo($organization, $contentType = null, $accept = null)
+    public function deleteUserOrganizationsWithHttpInfo($organizationId, $organization, $contentType = null, $accept = null)
     {
-        $request = $this->deleteUserOrganizationsRequest($organization, $contentType, $accept);
+        $request = $this->deleteUserOrganizationsRequest($organizationId, $organization, $contentType, $accept);
 
         try {
             $options = $this->createHttpClientOption();
@@ -188,23 +190,23 @@ class UserApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource' === '\SplFileObject') {
+                    if ('\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource' !== 'string') {
+                        if ('\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource', []),
+                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource';
+            $returnType = '\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -225,7 +227,7 @@ class UserApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource',
+                        '\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -240,6 +242,7 @@ class UserApi
      *
      * Delete Organization
      *
+     * @param  string $organizationId The ID of the organization. (required)
      * @param  string $organization The ID of an organization. (required)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
@@ -247,9 +250,9 @@ class UserApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteUserOrganizationsAsync($organization, $contentType = null, $accept = null)
+    public function deleteUserOrganizationsAsync($organizationId, $organization, $contentType = null, $accept = null)
     {
-        return $this->deleteUserOrganizationsAsyncWithHttpInfo($organization, $contentType, $accept)
+        return $this->deleteUserOrganizationsAsyncWithHttpInfo($organizationId, $organization, $contentType, $accept)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -262,6 +265,7 @@ class UserApi
      *
      * Delete Organization
      *
+     * @param  string $organizationId The ID of the organization. (required)
      * @param  string $organization The ID of an organization. (required)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
@@ -269,10 +273,10 @@ class UserApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteUserOrganizationsAsyncWithHttpInfo($organization, $contentType = null, $accept = null)
+    public function deleteUserOrganizationsAsyncWithHttpInfo($organizationId, $organization, $contentType = null, $accept = null)
     {
-        $returnType = '\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource';
-        $request = $this->deleteUserOrganizationsRequest($organization, $contentType, $accept);
+        $returnType = '\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel';
+        $request = $this->deleteUserOrganizationsRequest($organizationId, $organization, $contentType, $accept);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -313,6 +317,7 @@ class UserApi
     /**
      * Create request for operation 'deleteUserOrganizations'
      *
+     * @param  string $organizationId The ID of the organization. (required)
      * @param  string $organization The ID of an organization. (required)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
@@ -320,8 +325,14 @@ class UserApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deleteUserOrganizationsRequest($organization, $contentType = null, $accept = null)
+    public function deleteUserOrganizationsRequest($organizationId, $organization, $contentType = null, $accept = null)
     {
+        // verify the required parameter 'organizationId' is set
+        if ($organizationId === null || (is_array($organizationId) && count($organizationId) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $organizationId when calling deleteUserOrganizations'
+            );
+        }
         // verify the required parameter 'organization' is set
         if ($organization === null || (is_array($organization) && count($organization) === 0)) {
             throw new \InvalidArgumentException(
@@ -329,7 +340,7 @@ class UserApi
             );
         }
 
-        $resourcePath = '/api/v2/user/organizations/{organization}';
+        $resourcePath = '/api/v2/user/organizations/{organization_id}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -346,6 +357,14 @@ class UserApi
             $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
         }
 
+        // path params
+        if ($organizationId !== null) {
+            $resourcePath = str_replace(
+                '{' . 'organization_id' . '}',
+                ObjectSerializer::toPathValue($organizationId),
+                $resourcePath
+            );
+        }
         // path params
         if ($organization !== null) {
             $resourcePath = str_replace(
@@ -423,7 +442,7 @@ class UserApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Stackflows\Clients\Stackflows\Model\UserResource
+     * @return \Stackflows\Clients\Stackflows\Model\UserModel
      */
     public function deleteUserRevoke($contentType = null, $accept = null)
     {
@@ -441,7 +460,7 @@ class UserApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Stackflows\Clients\Stackflows\Model\UserResource, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Stackflows\Clients\Stackflows\Model\UserModel, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteUserRevokeWithHttpInfo($contentType = null, $accept = null)
     {
@@ -484,23 +503,23 @@ class UserApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Stackflows\Clients\Stackflows\Model\UserResource' === '\SplFileObject') {
+                    if ('\Stackflows\Clients\Stackflows\Model\UserModel' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Stackflows\Clients\Stackflows\Model\UserResource' !== 'string') {
+                        if ('\Stackflows\Clients\Stackflows\Model\UserModel' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\UserResource', []),
+                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\UserModel', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Stackflows\Clients\Stackflows\Model\UserResource';
+            $returnType = '\Stackflows\Clients\Stackflows\Model\UserModel';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -521,7 +540,7 @@ class UserApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Stackflows\Clients\Stackflows\Model\UserResource',
+                        '\Stackflows\Clients\Stackflows\Model\UserModel',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -565,7 +584,7 @@ class UserApi
      */
     public function deleteUserRevokeAsyncWithHttpInfo($contentType = null, $accept = null)
     {
-        $returnType = '\Stackflows\Clients\Stackflows\Model\UserResource';
+        $returnType = '\Stackflows\Clients\Stackflows\Model\UserModel';
         $request = $this->deleteUserRevokeRequest($contentType, $accept);
 
         return $this->client
@@ -703,7 +722,7 @@ class UserApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Stackflows\Clients\Stackflows\Model\UserResource
+     * @return \Stackflows\Clients\Stackflows\Model\UserModel
      */
     public function getUserMe($includeorganizations = null, $contentType = null, $accept = null)
     {
@@ -722,7 +741,7 @@ class UserApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Stackflows\Clients\Stackflows\Model\UserResource, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Stackflows\Clients\Stackflows\Model\UserModel, HTTP status code, HTTP response headers (array of strings)
      */
     public function getUserMeWithHttpInfo($includeorganizations = null, $contentType = null, $accept = null)
     {
@@ -765,23 +784,23 @@ class UserApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Stackflows\Clients\Stackflows\Model\UserResource' === '\SplFileObject') {
+                    if ('\Stackflows\Clients\Stackflows\Model\UserModel' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Stackflows\Clients\Stackflows\Model\UserResource' !== 'string') {
+                        if ('\Stackflows\Clients\Stackflows\Model\UserModel' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\UserResource', []),
+                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\UserModel', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Stackflows\Clients\Stackflows\Model\UserResource';
+            $returnType = '\Stackflows\Clients\Stackflows\Model\UserModel';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -802,7 +821,7 @@ class UserApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Stackflows\Clients\Stackflows\Model\UserResource',
+                        '\Stackflows\Clients\Stackflows\Model\UserModel',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -848,7 +867,7 @@ class UserApi
      */
     public function getUserMeAsyncWithHttpInfo($includeorganizations = null, $contentType = null, $accept = null)
     {
-        $returnType = '\Stackflows\Clients\Stackflows\Model\UserResource';
+        $returnType = '\Stackflows\Clients\Stackflows\Model\UserModel';
         $request = $this->getUserMeRequest($includeorganizations, $contentType, $accept);
 
         return $this->client
@@ -995,7 +1014,7 @@ class UserApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Stackflows\Clients\Stackflows\Model\OrganizationUnitResource[]
+     * @return \Stackflows\Clients\Stackflows\Model\OrganizationUnitModel[]
      */
     public function getUserOrganizationsList($contentType = null, $accept = null)
     {
@@ -1013,7 +1032,7 @@ class UserApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Stackflows\Clients\Stackflows\Model\OrganizationUnitResource[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Stackflows\Clients\Stackflows\Model\OrganizationUnitModel[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getUserOrganizationsListWithHttpInfo($contentType = null, $accept = null)
     {
@@ -1056,23 +1075,23 @@ class UserApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource[]' === '\SplFileObject') {
+                    if ('\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource[]' !== 'string') {
+                        if ('\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel[]' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource[]', []),
+                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource[]';
+            $returnType = '\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1093,7 +1112,7 @@ class UserApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource[]',
+                        '\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1137,7 +1156,7 @@ class UserApi
      */
     public function getUserOrganizationsListAsyncWithHttpInfo($contentType = null, $accept = null)
     {
-        $returnType = '\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource[]';
+        $returnType = '\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel[]';
         $request = $this->getUserOrganizationsListRequest($contentType, $accept);
 
         return $this->client
@@ -1276,7 +1295,7 @@ class UserApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Stackflows\Clients\Stackflows\Model\OrganizationUnitResource
+     * @return \Stackflows\Clients\Stackflows\Model\OrganizationUnitModel
      */
     public function getUserOrganizationsShow($id, $organization, $contentType = null, $accept = null)
     {
@@ -1296,7 +1315,7 @@ class UserApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Stackflows\Clients\Stackflows\Model\OrganizationUnitResource, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Stackflows\Clients\Stackflows\Model\OrganizationUnitModel, HTTP status code, HTTP response headers (array of strings)
      */
     public function getUserOrganizationsShowWithHttpInfo($id, $organization, $contentType = null, $accept = null)
     {
@@ -1339,23 +1358,23 @@ class UserApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource' === '\SplFileObject') {
+                    if ('\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource' !== 'string') {
+                        if ('\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource', []),
+                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource';
+            $returnType = '\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1376,7 +1395,7 @@ class UserApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource',
+                        '\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1424,7 +1443,7 @@ class UserApi
      */
     public function getUserOrganizationsShowAsyncWithHttpInfo($id, $organization, $contentType = null, $accept = null)
     {
-        $returnType = '\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource';
+        $returnType = '\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel';
         $request = $this->getUserOrganizationsShowRequest($id, $organization, $contentType, $accept);
 
         return $this->client
@@ -1592,7 +1611,7 @@ class UserApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Stackflows\Clients\Stackflows\Model\UserResource
+     * @return \Stackflows\Clients\Stackflows\Model\UserModel
      */
     public function postUserLogin($postUserLoginRequest, $contentType = null, $accept = null)
     {
@@ -1611,7 +1630,7 @@ class UserApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Stackflows\Clients\Stackflows\Model\UserResource, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Stackflows\Clients\Stackflows\Model\UserModel, HTTP status code, HTTP response headers (array of strings)
      */
     public function postUserLoginWithHttpInfo($postUserLoginRequest, $contentType = null, $accept = null)
     {
@@ -1654,23 +1673,23 @@ class UserApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Stackflows\Clients\Stackflows\Model\UserResource' === '\SplFileObject') {
+                    if ('\Stackflows\Clients\Stackflows\Model\UserModel' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Stackflows\Clients\Stackflows\Model\UserResource' !== 'string') {
+                        if ('\Stackflows\Clients\Stackflows\Model\UserModel' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\UserResource', []),
+                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\UserModel', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Stackflows\Clients\Stackflows\Model\UserResource';
+            $returnType = '\Stackflows\Clients\Stackflows\Model\UserModel';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1691,7 +1710,7 @@ class UserApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Stackflows\Clients\Stackflows\Model\UserResource',
+                        '\Stackflows\Clients\Stackflows\Model\UserModel',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1737,7 +1756,7 @@ class UserApi
      */
     public function postUserLoginAsyncWithHttpInfo($postUserLoginRequest, $contentType = null, $accept = null)
     {
-        $returnType = '\Stackflows\Clients\Stackflows\Model\UserResource';
+        $returnType = '\Stackflows\Clients\Stackflows\Model\UserModel';
         $request = $this->postUserLoginRequest($postUserLoginRequest, $contentType, $accept);
 
         return $this->client
@@ -1888,7 +1907,7 @@ class UserApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Stackflows\Clients\Stackflows\Model\OrganizationUnitResource
+     * @return \Stackflows\Clients\Stackflows\Model\OrganizationUnitModel
      */
     public function postUserOrganizationsStore($postUserOrganizationsStoreRequest, $contentType = null, $accept = null)
     {
@@ -1907,7 +1926,7 @@ class UserApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Stackflows\Clients\Stackflows\Model\OrganizationUnitResource, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Stackflows\Clients\Stackflows\Model\OrganizationUnitModel, HTTP status code, HTTP response headers (array of strings)
      */
     public function postUserOrganizationsStoreWithHttpInfo($postUserOrganizationsStoreRequest, $contentType = null, $accept = null)
     {
@@ -1950,23 +1969,23 @@ class UserApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource' === '\SplFileObject') {
+                    if ('\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource' !== 'string') {
+                        if ('\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource', []),
+                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource';
+            $returnType = '\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1987,7 +2006,7 @@ class UserApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource',
+                        '\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2033,7 +2052,7 @@ class UserApi
      */
     public function postUserOrganizationsStoreAsyncWithHttpInfo($postUserOrganizationsStoreRequest, $contentType = null, $accept = null)
     {
-        $returnType = '\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource';
+        $returnType = '\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel';
         $request = $this->postUserOrganizationsStoreRequest($postUserOrganizationsStoreRequest, $contentType, $accept);
 
         return $this->client
@@ -2184,7 +2203,7 @@ class UserApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Stackflows\Clients\Stackflows\Model\UserResource
+     * @return \Stackflows\Clients\Stackflows\Model\UserModel
      */
     public function postUserRegister($postUserRegisterRequest, $contentType = null, $accept = null)
     {
@@ -2203,7 +2222,7 @@ class UserApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Stackflows\Clients\Stackflows\Model\UserResource, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Stackflows\Clients\Stackflows\Model\UserModel, HTTP status code, HTTP response headers (array of strings)
      */
     public function postUserRegisterWithHttpInfo($postUserRegisterRequest, $contentType = null, $accept = null)
     {
@@ -2246,23 +2265,23 @@ class UserApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Stackflows\Clients\Stackflows\Model\UserResource' === '\SplFileObject') {
+                    if ('\Stackflows\Clients\Stackflows\Model\UserModel' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Stackflows\Clients\Stackflows\Model\UserResource' !== 'string') {
+                        if ('\Stackflows\Clients\Stackflows\Model\UserModel' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\UserResource', []),
+                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\UserModel', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Stackflows\Clients\Stackflows\Model\UserResource';
+            $returnType = '\Stackflows\Clients\Stackflows\Model\UserModel';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -2283,7 +2302,7 @@ class UserApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Stackflows\Clients\Stackflows\Model\UserResource',
+                        '\Stackflows\Clients\Stackflows\Model\UserModel',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2329,7 +2348,7 @@ class UserApi
      */
     public function postUserRegisterAsyncWithHttpInfo($postUserRegisterRequest, $contentType = null, $accept = null)
     {
-        $returnType = '\Stackflows\Clients\Stackflows\Model\UserResource';
+        $returnType = '\Stackflows\Clients\Stackflows\Model\UserModel';
         $request = $this->postUserRegisterRequest($postUserRegisterRequest, $contentType, $accept);
 
         return $this->client
@@ -2724,7 +2743,7 @@ class UserApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Stackflows\Clients\Stackflows\Model\OrganizationUnitResource
+     * @return \Stackflows\Clients\Stackflows\Model\OrganizationUnitModel
      */
     public function putUserOrganizationsUpdate($id, $organization, $contentType = null, $accept = null, $putUserOrganizationsUpdateRequest = null)
     {
@@ -2745,7 +2764,7 @@ class UserApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Stackflows\Clients\Stackflows\Model\OrganizationUnitResource, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Stackflows\Clients\Stackflows\Model\OrganizationUnitModel, HTTP status code, HTTP response headers (array of strings)
      */
     public function putUserOrganizationsUpdateWithHttpInfo($id, $organization, $contentType = null, $accept = null, $putUserOrganizationsUpdateRequest = null)
     {
@@ -2788,23 +2807,23 @@ class UserApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource' === '\SplFileObject') {
+                    if ('\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource' !== 'string') {
+                        if ('\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource', []),
+                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource';
+            $returnType = '\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -2825,7 +2844,7 @@ class UserApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource',
+                        '\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2875,7 +2894,7 @@ class UserApi
      */
     public function putUserOrganizationsUpdateAsyncWithHttpInfo($id, $organization, $contentType = null, $accept = null, $putUserOrganizationsUpdateRequest = null)
     {
-        $returnType = '\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource';
+        $returnType = '\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel';
         $request = $this->putUserOrganizationsUpdateRequest($id, $organization, $contentType, $accept, $putUserOrganizationsUpdateRequest);
 
         return $this->client
@@ -3050,7 +3069,7 @@ class UserApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Stackflows\Clients\Stackflows\Model\UserResource
+     * @return \Stackflows\Clients\Stackflows\Model\UserModel
      */
     public function putUserUpdate($contentType = null, $accept = null, $putUserUpdateRequest = null)
     {
@@ -3069,7 +3088,7 @@ class UserApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Stackflows\Clients\Stackflows\Model\UserResource, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Stackflows\Clients\Stackflows\Model\UserModel, HTTP status code, HTTP response headers (array of strings)
      */
     public function putUserUpdateWithHttpInfo($contentType = null, $accept = null, $putUserUpdateRequest = null)
     {
@@ -3112,23 +3131,23 @@ class UserApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Stackflows\Clients\Stackflows\Model\UserResource' === '\SplFileObject') {
+                    if ('\Stackflows\Clients\Stackflows\Model\UserModel' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Stackflows\Clients\Stackflows\Model\UserResource' !== 'string') {
+                        if ('\Stackflows\Clients\Stackflows\Model\UserModel' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\UserResource', []),
+                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\UserModel', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Stackflows\Clients\Stackflows\Model\UserResource';
+            $returnType = '\Stackflows\Clients\Stackflows\Model\UserModel';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -3149,7 +3168,7 @@ class UserApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Stackflows\Clients\Stackflows\Model\UserResource',
+                        '\Stackflows\Clients\Stackflows\Model\UserModel',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3195,7 +3214,7 @@ class UserApi
      */
     public function putUserUpdateAsyncWithHttpInfo($contentType = null, $accept = null, $putUserUpdateRequest = null)
     {
-        $returnType = '\Stackflows\Clients\Stackflows\Model\UserResource';
+        $returnType = '\Stackflows\Clients\Stackflows\Model\UserModel';
         $request = $this->putUserUpdateRequest($contentType, $accept, $putUserUpdateRequest);
 
         return $this->client

@@ -326,7 +326,7 @@ class OperationsApiTest extends TestCase
     /**
      * Test case for getBusinessModelsShowRevisions
      *
-     * List Business Model Disgrams.
+     * List Business Model Diagrams.
      *
      */
     public function testGetBusinessModelsShowRevisions()

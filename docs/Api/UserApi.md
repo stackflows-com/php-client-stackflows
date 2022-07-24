@@ -4,7 +4,7 @@ All URIs are relative to http://localhost:8081.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteUserOrganizations()**](UserApi.md#deleteUserOrganizations) | **DELETE** /api/v2/user/organizations/{organization} | Delete Organization
+[**deleteUserOrganizations()**](UserApi.md#deleteUserOrganizations) | **DELETE** /api/v2/user/organizations/{organization_id} | Delete Organization
 [**deleteUserRevoke()**](UserApi.md#deleteUserRevoke) | **DELETE** /api/v2/user/tokens | Revoke all tokens
 [**getUserMe()**](UserApi.md#getUserMe) | **GET** /api/v2/user | Me
 [**getUserOrganizationsList()**](UserApi.md#getUserOrganizationsList) | **GET** /api/v2/user/organizations | List Organizations
@@ -20,7 +20,7 @@ Method | HTTP request | Description
 ## `deleteUserOrganizations()`
 
 ```php
-deleteUserOrganizations($organization, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\OrganizationUnitResource
+deleteUserOrganizations($organizationId, $organization, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\OrganizationUnitModel
 ```
 
 Delete Organization
@@ -40,12 +40,13 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\UserApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
+$organizationId = impedit; // string | The ID of the organization.
 $organization = 3688e6c0-1a56-11ec-8366; // string | The ID of an organization.
 $contentType = application/json; // string | 
 $accept = application/json; // string | 
 
 try {
-    $result = $apiInstance->deleteUserOrganizations($organization, $contentType, $accept);
+    $result = $apiInstance->deleteUserOrganizations($organizationId, $organization, $contentType, $accept);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UserApi->deleteUserOrganizations: ', $e->getMessage(), PHP_EOL;
@@ -56,13 +57,14 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| The ID of the organization. |
  **organization** | **string**| The ID of an organization. |
  **contentType** | **string**|  | [optional]
  **accept** | **string**|  | [optional]
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource**](../Model/OrganizationUnitResource.md)
+[**\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel**](../Model/OrganizationUnitModel.md)
 
 ### Authorization
 
@@ -80,7 +82,7 @@ No authorization required
 ## `deleteUserRevoke()`
 
 ```php
-deleteUserRevoke($contentType, $accept): \Stackflows\Clients\Stackflows\Model\UserResource
+deleteUserRevoke($contentType, $accept): \Stackflows\Clients\Stackflows\Model\UserModel
 ```
 
 Revoke all tokens
@@ -120,7 +122,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\UserResource**](../Model/UserResource.md)
+[**\Stackflows\Clients\Stackflows\Model\UserModel**](../Model/UserModel.md)
 
 ### Authorization
 
@@ -138,7 +140,7 @@ No authorization required
 ## `getUserMe()`
 
 ```php
-getUserMe($includeorganizations, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\UserResource
+getUserMe($includeorganizations, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\UserModel
 ```
 
 Me
@@ -158,7 +160,7 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\UserApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$includeorganizations = nam; // string | Possible includes
+$includeorganizations = est; // string | Possible includes
 $contentType = application/json; // string | 
 $accept = application/json; // string | 
 
@@ -180,7 +182,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\UserResource**](../Model/UserResource.md)
+[**\Stackflows\Clients\Stackflows\Model\UserModel**](../Model/UserModel.md)
 
 ### Authorization
 
@@ -198,7 +200,7 @@ No authorization required
 ## `getUserOrganizationsList()`
 
 ```php
-getUserOrganizationsList($contentType, $accept): \Stackflows\Clients\Stackflows\Model\OrganizationUnitResource[]
+getUserOrganizationsList($contentType, $accept): \Stackflows\Clients\Stackflows\Model\OrganizationUnitModel[]
 ```
 
 List Organizations
@@ -238,7 +240,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource[]**](../Model/OrganizationUnitResource.md)
+[**\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel[]**](../Model/OrganizationUnitModel.md)
 
 ### Authorization
 
@@ -256,7 +258,7 @@ No authorization required
 ## `getUserOrganizationsShow()`
 
 ```php
-getUserOrganizationsShow($id, $organization, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\OrganizationUnitResource
+getUserOrganizationsShow($id, $organization, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\OrganizationUnitModel
 ```
 
 View Organization
@@ -276,7 +278,7 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\UserApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = 0d72cff0-e3ce-11ec-bd65-3fa8778c56e2; // string | The ID of the organization.
+$id = 05316710-0ac8-11ed-a9c9-1748e8abe9ab; // string | The ID of the organization.
 $organization = 3688e6c0-1a56-11ec-8366; // string | The ID of an organization.
 $contentType = application/json; // string | 
 $accept = application/json; // string | 
@@ -300,7 +302,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource**](../Model/OrganizationUnitResource.md)
+[**\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel**](../Model/OrganizationUnitModel.md)
 
 ### Authorization
 
@@ -318,7 +320,7 @@ No authorization required
 ## `postUserLogin()`
 
 ```php
-postUserLogin($postUserLoginRequest, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\UserResource
+postUserLogin($postUserLoginRequest, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\UserModel
 ```
 
 Login
@@ -360,7 +362,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\UserResource**](../Model/UserResource.md)
+[**\Stackflows\Clients\Stackflows\Model\UserModel**](../Model/UserModel.md)
 
 ### Authorization
 
@@ -378,7 +380,7 @@ No authorization required
 ## `postUserOrganizationsStore()`
 
 ```php
-postUserOrganizationsStore($postUserOrganizationsStoreRequest, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\OrganizationUnitResource
+postUserOrganizationsStore($postUserOrganizationsStoreRequest, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\OrganizationUnitModel
 ```
 
 Create Organization
@@ -420,7 +422,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource**](../Model/OrganizationUnitResource.md)
+[**\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel**](../Model/OrganizationUnitModel.md)
 
 ### Authorization
 
@@ -438,7 +440,7 @@ No authorization required
 ## `postUserRegister()`
 
 ```php
-postUserRegister($postUserRegisterRequest, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\UserResource
+postUserRegister($postUserRegisterRequest, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\UserModel
 ```
 
 Register
@@ -480,7 +482,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\UserResource**](../Model/UserResource.md)
+[**\Stackflows\Clients\Stackflows\Model\UserModel**](../Model/UserModel.md)
 
 ### Authorization
 
@@ -557,7 +559,7 @@ No authorization required
 ## `putUserOrganizationsUpdate()`
 
 ```php
-putUserOrganizationsUpdate($id, $organization, $contentType, $accept, $putUserOrganizationsUpdateRequest): \Stackflows\Clients\Stackflows\Model\OrganizationUnitResource
+putUserOrganizationsUpdate($id, $organization, $contentType, $accept, $putUserOrganizationsUpdateRequest): \Stackflows\Clients\Stackflows\Model\OrganizationUnitModel
 ```
 
 Update Organization
@@ -577,7 +579,7 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\UserApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = 0d72cff0-e3ce-11ec-bd65-3fa8778c56e2; // string | The ID of the organization.
+$id = 05316710-0ac8-11ed-a9c9-1748e8abe9ab; // string | The ID of the organization.
 $organization = 3688e6c0-1a56-11ec-8366; // string | The ID of an organization.
 $contentType = application/json; // string | 
 $accept = application/json; // string | 
@@ -603,7 +605,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\OrganizationUnitResource**](../Model/OrganizationUnitResource.md)
+[**\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel**](../Model/OrganizationUnitModel.md)
 
 ### Authorization
 
@@ -621,7 +623,7 @@ No authorization required
 ## `putUserUpdate()`
 
 ```php
-putUserUpdate($contentType, $accept, $putUserUpdateRequest): \Stackflows\Clients\Stackflows\Model\UserResource
+putUserUpdate($contentType, $accept, $putUserUpdateRequest): \Stackflows\Clients\Stackflows\Model\UserModel
 ```
 
 Update
@@ -663,7 +665,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\UserResource**](../Model/UserResource.md)
+[**\Stackflows\Clients\Stackflows\Model\UserModel**](../Model/UserModel.md)
 
 ### Authorization
 

@@ -120,17 +120,17 @@ class EnvironmentApi
      *
      * Delete Business Model Diagram
      *
-     * @param  string $diagram  (required)
+     * @param  string $diagramId The ID of the diagram. (required)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource
+     * @return \Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel
      */
-    public function deleteEnvironmentBusinessModelDiagrams($diagram, $contentType = null, $accept = null)
+    public function deleteEnvironmentBusinessModelDiagrams($diagramId, $contentType = null, $accept = null)
     {
-        list($response) = $this->deleteEnvironmentBusinessModelDiagramsWithHttpInfo($diagram, $contentType, $accept);
+        list($response) = $this->deleteEnvironmentBusinessModelDiagramsWithHttpInfo($diagramId, $contentType, $accept);
         return $response;
     }
 
@@ -139,17 +139,17 @@ class EnvironmentApi
      *
      * Delete Business Model Diagram
      *
-     * @param  string $diagram  (required)
+     * @param  string $diagramId The ID of the diagram. (required)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteEnvironmentBusinessModelDiagramsWithHttpInfo($diagram, $contentType = null, $accept = null)
+    public function deleteEnvironmentBusinessModelDiagramsWithHttpInfo($diagramId, $contentType = null, $accept = null)
     {
-        $request = $this->deleteEnvironmentBusinessModelDiagramsRequest($diagram, $contentType, $accept);
+        $request = $this->deleteEnvironmentBusinessModelDiagramsRequest($diagramId, $contentType, $accept);
 
         try {
             $options = $this->createHttpClientOption();
@@ -188,23 +188,23 @@ class EnvironmentApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource' === '\SplFileObject') {
+                    if ('\Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource' !== 'string') {
+                        if ('\Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource', []),
+                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource';
+            $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -225,7 +225,7 @@ class EnvironmentApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource',
+                        '\Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -240,16 +240,16 @@ class EnvironmentApi
      *
      * Delete Business Model Diagram
      *
-     * @param  string $diagram  (required)
+     * @param  string $diagramId The ID of the diagram. (required)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteEnvironmentBusinessModelDiagramsAsync($diagram, $contentType = null, $accept = null)
+    public function deleteEnvironmentBusinessModelDiagramsAsync($diagramId, $contentType = null, $accept = null)
     {
-        return $this->deleteEnvironmentBusinessModelDiagramsAsyncWithHttpInfo($diagram, $contentType, $accept)
+        return $this->deleteEnvironmentBusinessModelDiagramsAsyncWithHttpInfo($diagramId, $contentType, $accept)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -262,17 +262,17 @@ class EnvironmentApi
      *
      * Delete Business Model Diagram
      *
-     * @param  string $diagram  (required)
+     * @param  string $diagramId The ID of the diagram. (required)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteEnvironmentBusinessModelDiagramsAsyncWithHttpInfo($diagram, $contentType = null, $accept = null)
+    public function deleteEnvironmentBusinessModelDiagramsAsyncWithHttpInfo($diagramId, $contentType = null, $accept = null)
     {
-        $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource';
-        $request = $this->deleteEnvironmentBusinessModelDiagramsRequest($diagram, $contentType, $accept);
+        $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel';
+        $request = $this->deleteEnvironmentBusinessModelDiagramsRequest($diagramId, $contentType, $accept);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -313,23 +313,23 @@ class EnvironmentApi
     /**
      * Create request for operation 'deleteEnvironmentBusinessModelDiagrams'
      *
-     * @param  string $diagram  (required)
+     * @param  string $diagramId The ID of the diagram. (required)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deleteEnvironmentBusinessModelDiagramsRequest($diagram, $contentType = null, $accept = null)
+    public function deleteEnvironmentBusinessModelDiagramsRequest($diagramId, $contentType = null, $accept = null)
     {
-        // verify the required parameter 'diagram' is set
-        if ($diagram === null || (is_array($diagram) && count($diagram) === 0)) {
+        // verify the required parameter 'diagramId' is set
+        if ($diagramId === null || (is_array($diagramId) && count($diagramId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $diagram when calling deleteEnvironmentBusinessModelDiagrams'
+                'Missing the required parameter $diagramId when calling deleteEnvironmentBusinessModelDiagrams'
             );
         }
 
-        $resourcePath = '/api/v2/environment/business-model-diagrams/{diagram}';
+        $resourcePath = '/api/v2/environment/business-model-diagrams/{diagram_id}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -347,10 +347,10 @@ class EnvironmentApi
         }
 
         // path params
-        if ($diagram !== null) {
+        if ($diagramId !== null) {
             $resourcePath = str_replace(
-                '{' . 'diagram' . '}',
-                ObjectSerializer::toPathValue($diagram),
+                '{' . 'diagram_id' . '}',
+                ObjectSerializer::toPathValue($diagramId),
                 $resourcePath
             );
         }
@@ -418,6 +418,8 @@ class EnvironmentApi
      *
      * Delete Business Model Diagram Comment
      *
+     * @param  string $diagramId The ID of the diagram. (required)
+     * @param  int $commentId The ID of the comment. (required)
      * @param  string $diagram The ID of an diagram. (required)
      * @param  string $comment The ID of an comment. (required)
      * @param  string $contentType  (optional)
@@ -425,11 +427,11 @@ class EnvironmentApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Stackflows\Clients\Stackflows\Model\CommentResource
+     * @return \Stackflows\Clients\Stackflows\Model\CommentModel
      */
-    public function deleteEnvironmentBusinessModelDiagramsComments($diagram, $comment, $contentType = null, $accept = null)
+    public function deleteEnvironmentBusinessModelDiagramsComments($diagramId, $commentId, $diagram, $comment, $contentType = null, $accept = null)
     {
-        list($response) = $this->deleteEnvironmentBusinessModelDiagramsCommentsWithHttpInfo($diagram, $comment, $contentType, $accept);
+        list($response) = $this->deleteEnvironmentBusinessModelDiagramsCommentsWithHttpInfo($diagramId, $commentId, $diagram, $comment, $contentType, $accept);
         return $response;
     }
 
@@ -438,6 +440,8 @@ class EnvironmentApi
      *
      * Delete Business Model Diagram Comment
      *
+     * @param  string $diagramId The ID of the diagram. (required)
+     * @param  int $commentId The ID of the comment. (required)
      * @param  string $diagram The ID of an diagram. (required)
      * @param  string $comment The ID of an comment. (required)
      * @param  string $contentType  (optional)
@@ -445,11 +449,11 @@ class EnvironmentApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Stackflows\Clients\Stackflows\Model\CommentResource, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Stackflows\Clients\Stackflows\Model\CommentModel, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteEnvironmentBusinessModelDiagramsCommentsWithHttpInfo($diagram, $comment, $contentType = null, $accept = null)
+    public function deleteEnvironmentBusinessModelDiagramsCommentsWithHttpInfo($diagramId, $commentId, $diagram, $comment, $contentType = null, $accept = null)
     {
-        $request = $this->deleteEnvironmentBusinessModelDiagramsCommentsRequest($diagram, $comment, $contentType, $accept);
+        $request = $this->deleteEnvironmentBusinessModelDiagramsCommentsRequest($diagramId, $commentId, $diagram, $comment, $contentType, $accept);
 
         try {
             $options = $this->createHttpClientOption();
@@ -488,23 +492,23 @@ class EnvironmentApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Stackflows\Clients\Stackflows\Model\CommentResource' === '\SplFileObject') {
+                    if ('\Stackflows\Clients\Stackflows\Model\CommentModel' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Stackflows\Clients\Stackflows\Model\CommentResource' !== 'string') {
+                        if ('\Stackflows\Clients\Stackflows\Model\CommentModel' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\CommentResource', []),
+                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\CommentModel', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Stackflows\Clients\Stackflows\Model\CommentResource';
+            $returnType = '\Stackflows\Clients\Stackflows\Model\CommentModel';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -525,7 +529,7 @@ class EnvironmentApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Stackflows\Clients\Stackflows\Model\CommentResource',
+                        '\Stackflows\Clients\Stackflows\Model\CommentModel',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -540,6 +544,8 @@ class EnvironmentApi
      *
      * Delete Business Model Diagram Comment
      *
+     * @param  string $diagramId The ID of the diagram. (required)
+     * @param  int $commentId The ID of the comment. (required)
      * @param  string $diagram The ID of an diagram. (required)
      * @param  string $comment The ID of an comment. (required)
      * @param  string $contentType  (optional)
@@ -548,9 +554,9 @@ class EnvironmentApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteEnvironmentBusinessModelDiagramsCommentsAsync($diagram, $comment, $contentType = null, $accept = null)
+    public function deleteEnvironmentBusinessModelDiagramsCommentsAsync($diagramId, $commentId, $diagram, $comment, $contentType = null, $accept = null)
     {
-        return $this->deleteEnvironmentBusinessModelDiagramsCommentsAsyncWithHttpInfo($diagram, $comment, $contentType, $accept)
+        return $this->deleteEnvironmentBusinessModelDiagramsCommentsAsyncWithHttpInfo($diagramId, $commentId, $diagram, $comment, $contentType, $accept)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -563,6 +569,8 @@ class EnvironmentApi
      *
      * Delete Business Model Diagram Comment
      *
+     * @param  string $diagramId The ID of the diagram. (required)
+     * @param  int $commentId The ID of the comment. (required)
      * @param  string $diagram The ID of an diagram. (required)
      * @param  string $comment The ID of an comment. (required)
      * @param  string $contentType  (optional)
@@ -571,10 +579,10 @@ class EnvironmentApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteEnvironmentBusinessModelDiagramsCommentsAsyncWithHttpInfo($diagram, $comment, $contentType = null, $accept = null)
+    public function deleteEnvironmentBusinessModelDiagramsCommentsAsyncWithHttpInfo($diagramId, $commentId, $diagram, $comment, $contentType = null, $accept = null)
     {
-        $returnType = '\Stackflows\Clients\Stackflows\Model\CommentResource';
-        $request = $this->deleteEnvironmentBusinessModelDiagramsCommentsRequest($diagram, $comment, $contentType, $accept);
+        $returnType = '\Stackflows\Clients\Stackflows\Model\CommentModel';
+        $request = $this->deleteEnvironmentBusinessModelDiagramsCommentsRequest($diagramId, $commentId, $diagram, $comment, $contentType, $accept);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -615,6 +623,8 @@ class EnvironmentApi
     /**
      * Create request for operation 'deleteEnvironmentBusinessModelDiagramsComments'
      *
+     * @param  string $diagramId The ID of the diagram. (required)
+     * @param  int $commentId The ID of the comment. (required)
      * @param  string $diagram The ID of an diagram. (required)
      * @param  string $comment The ID of an comment. (required)
      * @param  string $contentType  (optional)
@@ -623,8 +633,20 @@ class EnvironmentApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deleteEnvironmentBusinessModelDiagramsCommentsRequest($diagram, $comment, $contentType = null, $accept = null)
+    public function deleteEnvironmentBusinessModelDiagramsCommentsRequest($diagramId, $commentId, $diagram, $comment, $contentType = null, $accept = null)
     {
+        // verify the required parameter 'diagramId' is set
+        if ($diagramId === null || (is_array($diagramId) && count($diagramId) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $diagramId when calling deleteEnvironmentBusinessModelDiagramsComments'
+            );
+        }
+        // verify the required parameter 'commentId' is set
+        if ($commentId === null || (is_array($commentId) && count($commentId) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $commentId when calling deleteEnvironmentBusinessModelDiagramsComments'
+            );
+        }
         // verify the required parameter 'diagram' is set
         if ($diagram === null || (is_array($diagram) && count($diagram) === 0)) {
             throw new \InvalidArgumentException(
@@ -638,7 +660,7 @@ class EnvironmentApi
             );
         }
 
-        $resourcePath = '/api/v2/environment/business-model-diagrams/{diagram}/comments/{comment}';
+        $resourcePath = '/api/v2/environment/business-model-diagrams/{diagram_id}/comments/{comment_id}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -655,6 +677,22 @@ class EnvironmentApi
             $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
         }
 
+        // path params
+        if ($diagramId !== null) {
+            $resourcePath = str_replace(
+                '{' . 'diagram_id' . '}',
+                ObjectSerializer::toPathValue($diagramId),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($commentId !== null) {
+            $resourcePath = str_replace(
+                '{' . 'comment_id' . '}',
+                ObjectSerializer::toPathValue($commentId),
+                $resourcePath
+            );
+        }
         // path params
         if ($diagram !== null) {
             $resourcePath = str_replace(
@@ -735,17 +773,17 @@ class EnvironmentApi
      *
      * Delete Business Model
      *
-     * @param  string $model  (required)
+     * @param  string $modelId The ID of the model. (required)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource
+     * @return \Stackflows\Clients\Stackflows\Model\BusinessBaseModelModel
      */
-    public function deleteEnvironmentBusinessModels($model, $contentType = null, $accept = null)
+    public function deleteEnvironmentBusinessModels($modelId, $contentType = null, $accept = null)
     {
-        list($response) = $this->deleteEnvironmentBusinessModelsWithHttpInfo($model, $contentType, $accept);
+        list($response) = $this->deleteEnvironmentBusinessModelsWithHttpInfo($modelId, $contentType, $accept);
         return $response;
     }
 
@@ -754,17 +792,17 @@ class EnvironmentApi
      *
      * Delete Business Model
      *
-     * @param  string $model  (required)
+     * @param  string $modelId The ID of the model. (required)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Stackflows\Clients\Stackflows\Model\BusinessBaseModelModel, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteEnvironmentBusinessModelsWithHttpInfo($model, $contentType = null, $accept = null)
+    public function deleteEnvironmentBusinessModelsWithHttpInfo($modelId, $contentType = null, $accept = null)
     {
-        $request = $this->deleteEnvironmentBusinessModelsRequest($model, $contentType, $accept);
+        $request = $this->deleteEnvironmentBusinessModelsRequest($modelId, $contentType, $accept);
 
         try {
             $options = $this->createHttpClientOption();
@@ -803,23 +841,23 @@ class EnvironmentApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource' === '\SplFileObject') {
+                    if ('\Stackflows\Clients\Stackflows\Model\BusinessBaseModelModel' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource' !== 'string') {
+                        if ('\Stackflows\Clients\Stackflows\Model\BusinessBaseModelModel' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource', []),
+                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelModel', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource';
+            $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelModel';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -840,7 +878,7 @@ class EnvironmentApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource',
+                        '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelModel',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -855,16 +893,16 @@ class EnvironmentApi
      *
      * Delete Business Model
      *
-     * @param  string $model  (required)
+     * @param  string $modelId The ID of the model. (required)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteEnvironmentBusinessModelsAsync($model, $contentType = null, $accept = null)
+    public function deleteEnvironmentBusinessModelsAsync($modelId, $contentType = null, $accept = null)
     {
-        return $this->deleteEnvironmentBusinessModelsAsyncWithHttpInfo($model, $contentType, $accept)
+        return $this->deleteEnvironmentBusinessModelsAsyncWithHttpInfo($modelId, $contentType, $accept)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -877,17 +915,17 @@ class EnvironmentApi
      *
      * Delete Business Model
      *
-     * @param  string $model  (required)
+     * @param  string $modelId The ID of the model. (required)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteEnvironmentBusinessModelsAsyncWithHttpInfo($model, $contentType = null, $accept = null)
+    public function deleteEnvironmentBusinessModelsAsyncWithHttpInfo($modelId, $contentType = null, $accept = null)
     {
-        $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource';
-        $request = $this->deleteEnvironmentBusinessModelsRequest($model, $contentType, $accept);
+        $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelModel';
+        $request = $this->deleteEnvironmentBusinessModelsRequest($modelId, $contentType, $accept);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -928,23 +966,23 @@ class EnvironmentApi
     /**
      * Create request for operation 'deleteEnvironmentBusinessModels'
      *
-     * @param  string $model  (required)
+     * @param  string $modelId The ID of the model. (required)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deleteEnvironmentBusinessModelsRequest($model, $contentType = null, $accept = null)
+    public function deleteEnvironmentBusinessModelsRequest($modelId, $contentType = null, $accept = null)
     {
-        // verify the required parameter 'model' is set
-        if ($model === null || (is_array($model) && count($model) === 0)) {
+        // verify the required parameter 'modelId' is set
+        if ($modelId === null || (is_array($modelId) && count($modelId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $model when calling deleteEnvironmentBusinessModels'
+                'Missing the required parameter $modelId when calling deleteEnvironmentBusinessModels'
             );
         }
 
-        $resourcePath = '/api/v2/environment/business-models/{model}';
+        $resourcePath = '/api/v2/environment/business-models/{model_id}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -962,10 +1000,10 @@ class EnvironmentApi
         }
 
         // path params
-        if ($model !== null) {
+        if ($modelId !== null) {
             $resourcePath = str_replace(
-                '{' . 'model' . '}',
-                ObjectSerializer::toPathValue($model),
+                '{' . 'model_id' . '}',
+                ObjectSerializer::toPathValue($modelId),
                 $resourcePath
             );
         }
@@ -1033,18 +1071,18 @@ class EnvironmentApi
      *
      * List Business Model Diagram Comments
      *
-     * @param  string $diagram  (required)
+     * @param  string $diagramId The ID of the diagram. (required)
      * @param  string $include Specify a list of includes. (optional)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Stackflows\Clients\Stackflows\Model\CommentResource[]
+     * @return \Stackflows\Clients\Stackflows\Model\CommentModel[]
      */
-    public function getEnvironmentBusinessModelDiagramsCommentsList($diagram, $include = null, $contentType = null, $accept = null)
+    public function getEnvironmentBusinessModelDiagramsCommentsList($diagramId, $include = null, $contentType = null, $accept = null)
     {
-        list($response) = $this->getEnvironmentBusinessModelDiagramsCommentsListWithHttpInfo($diagram, $include, $contentType, $accept);
+        list($response) = $this->getEnvironmentBusinessModelDiagramsCommentsListWithHttpInfo($diagramId, $include, $contentType, $accept);
         return $response;
     }
 
@@ -1053,18 +1091,18 @@ class EnvironmentApi
      *
      * List Business Model Diagram Comments
      *
-     * @param  string $diagram  (required)
+     * @param  string $diagramId The ID of the diagram. (required)
      * @param  string $include Specify a list of includes. (optional)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Stackflows\Clients\Stackflows\Model\CommentResource[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Stackflows\Clients\Stackflows\Model\CommentModel[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getEnvironmentBusinessModelDiagramsCommentsListWithHttpInfo($diagram, $include = null, $contentType = null, $accept = null)
+    public function getEnvironmentBusinessModelDiagramsCommentsListWithHttpInfo($diagramId, $include = null, $contentType = null, $accept = null)
     {
-        $request = $this->getEnvironmentBusinessModelDiagramsCommentsListRequest($diagram, $include, $contentType, $accept);
+        $request = $this->getEnvironmentBusinessModelDiagramsCommentsListRequest($diagramId, $include, $contentType, $accept);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1103,23 +1141,23 @@ class EnvironmentApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Stackflows\Clients\Stackflows\Model\CommentResource[]' === '\SplFileObject') {
+                    if ('\Stackflows\Clients\Stackflows\Model\CommentModel[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Stackflows\Clients\Stackflows\Model\CommentResource[]' !== 'string') {
+                        if ('\Stackflows\Clients\Stackflows\Model\CommentModel[]' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\CommentResource[]', []),
+                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\CommentModel[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Stackflows\Clients\Stackflows\Model\CommentResource[]';
+            $returnType = '\Stackflows\Clients\Stackflows\Model\CommentModel[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1140,7 +1178,7 @@ class EnvironmentApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Stackflows\Clients\Stackflows\Model\CommentResource[]',
+                        '\Stackflows\Clients\Stackflows\Model\CommentModel[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1155,7 +1193,7 @@ class EnvironmentApi
      *
      * List Business Model Diagram Comments
      *
-     * @param  string $diagram  (required)
+     * @param  string $diagramId The ID of the diagram. (required)
      * @param  string $include Specify a list of includes. (optional)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
@@ -1163,9 +1201,9 @@ class EnvironmentApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getEnvironmentBusinessModelDiagramsCommentsListAsync($diagram, $include = null, $contentType = null, $accept = null)
+    public function getEnvironmentBusinessModelDiagramsCommentsListAsync($diagramId, $include = null, $contentType = null, $accept = null)
     {
-        return $this->getEnvironmentBusinessModelDiagramsCommentsListAsyncWithHttpInfo($diagram, $include, $contentType, $accept)
+        return $this->getEnvironmentBusinessModelDiagramsCommentsListAsyncWithHttpInfo($diagramId, $include, $contentType, $accept)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1178,7 +1216,7 @@ class EnvironmentApi
      *
      * List Business Model Diagram Comments
      *
-     * @param  string $diagram  (required)
+     * @param  string $diagramId The ID of the diagram. (required)
      * @param  string $include Specify a list of includes. (optional)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
@@ -1186,10 +1224,10 @@ class EnvironmentApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getEnvironmentBusinessModelDiagramsCommentsListAsyncWithHttpInfo($diagram, $include = null, $contentType = null, $accept = null)
+    public function getEnvironmentBusinessModelDiagramsCommentsListAsyncWithHttpInfo($diagramId, $include = null, $contentType = null, $accept = null)
     {
-        $returnType = '\Stackflows\Clients\Stackflows\Model\CommentResource[]';
-        $request = $this->getEnvironmentBusinessModelDiagramsCommentsListRequest($diagram, $include, $contentType, $accept);
+        $returnType = '\Stackflows\Clients\Stackflows\Model\CommentModel[]';
+        $request = $this->getEnvironmentBusinessModelDiagramsCommentsListRequest($diagramId, $include, $contentType, $accept);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1230,7 +1268,7 @@ class EnvironmentApi
     /**
      * Create request for operation 'getEnvironmentBusinessModelDiagramsCommentsList'
      *
-     * @param  string $diagram  (required)
+     * @param  string $diagramId The ID of the diagram. (required)
      * @param  string $include Specify a list of includes. (optional)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
@@ -1238,16 +1276,16 @@ class EnvironmentApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getEnvironmentBusinessModelDiagramsCommentsListRequest($diagram, $include = null, $contentType = null, $accept = null)
+    public function getEnvironmentBusinessModelDiagramsCommentsListRequest($diagramId, $include = null, $contentType = null, $accept = null)
     {
-        // verify the required parameter 'diagram' is set
-        if ($diagram === null || (is_array($diagram) && count($diagram) === 0)) {
+        // verify the required parameter 'diagramId' is set
+        if ($diagramId === null || (is_array($diagramId) && count($diagramId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $diagram when calling getEnvironmentBusinessModelDiagramsCommentsList'
+                'Missing the required parameter $diagramId when calling getEnvironmentBusinessModelDiagramsCommentsList'
             );
         }
 
-        $resourcePath = '/api/v2/environment/business-model-diagrams/{diagram}/comments';
+        $resourcePath = '/api/v2/environment/business-model-diagrams/{diagram_id}/comments';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -1274,10 +1312,10 @@ class EnvironmentApi
         }
 
         // path params
-        if ($diagram !== null) {
+        if ($diagramId !== null) {
             $resourcePath = str_replace(
-                '{' . 'diagram' . '}',
-                ObjectSerializer::toPathValue($diagram),
+                '{' . 'diagram_id' . '}',
+                ObjectSerializer::toPathValue($diagramId),
                 $resourcePath
             );
         }
@@ -1350,7 +1388,7 @@ class EnvironmentApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource[]
+     * @return \Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel[]
      */
     public function getEnvironmentBusinessModelDiagramsList($contentType = null, $accept = null)
     {
@@ -1368,7 +1406,7 @@ class EnvironmentApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getEnvironmentBusinessModelDiagramsListWithHttpInfo($contentType = null, $accept = null)
     {
@@ -1411,23 +1449,23 @@ class EnvironmentApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource[]' === '\SplFileObject') {
+                    if ('\Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource[]' !== 'string') {
+                        if ('\Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel[]' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource[]', []),
+                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource[]';
+            $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1448,7 +1486,7 @@ class EnvironmentApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource[]',
+                        '\Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1492,7 +1530,7 @@ class EnvironmentApi
      */
     public function getEnvironmentBusinessModelDiagramsListAsyncWithHttpInfo($contentType = null, $accept = null)
     {
-        $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource[]';
+        $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel[]';
         $request = $this->getEnvironmentBusinessModelDiagramsListRequest($contentType, $accept);
 
         return $this->client
@@ -1624,18 +1662,18 @@ class EnvironmentApi
      *
      * View Business Model Diagram
      *
-     * @param  string $diagram  (required)
+     * @param  string $diagramId The ID of the diagram. (required)
      * @param  string $includesnapshotsdeploysdeploysStatistics Possible includes (optional)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource
+     * @return \Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel
      */
-    public function getEnvironmentBusinessModelDiagramsShow($diagram, $includesnapshotsdeploysdeploysStatistics = null, $contentType = null, $accept = null)
+    public function getEnvironmentBusinessModelDiagramsShow($diagramId, $includesnapshotsdeploysdeploysStatistics = null, $contentType = null, $accept = null)
     {
-        list($response) = $this->getEnvironmentBusinessModelDiagramsShowWithHttpInfo($diagram, $includesnapshotsdeploysdeploysStatistics, $contentType, $accept);
+        list($response) = $this->getEnvironmentBusinessModelDiagramsShowWithHttpInfo($diagramId, $includesnapshotsdeploysdeploysStatistics, $contentType, $accept);
         return $response;
     }
 
@@ -1644,18 +1682,18 @@ class EnvironmentApi
      *
      * View Business Model Diagram
      *
-     * @param  string $diagram  (required)
+     * @param  string $diagramId The ID of the diagram. (required)
      * @param  string $includesnapshotsdeploysdeploysStatistics Possible includes (optional)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getEnvironmentBusinessModelDiagramsShowWithHttpInfo($diagram, $includesnapshotsdeploysdeploysStatistics = null, $contentType = null, $accept = null)
+    public function getEnvironmentBusinessModelDiagramsShowWithHttpInfo($diagramId, $includesnapshotsdeploysdeploysStatistics = null, $contentType = null, $accept = null)
     {
-        $request = $this->getEnvironmentBusinessModelDiagramsShowRequest($diagram, $includesnapshotsdeploysdeploysStatistics, $contentType, $accept);
+        $request = $this->getEnvironmentBusinessModelDiagramsShowRequest($diagramId, $includesnapshotsdeploysdeploysStatistics, $contentType, $accept);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1694,23 +1732,23 @@ class EnvironmentApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource' === '\SplFileObject') {
+                    if ('\Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource' !== 'string') {
+                        if ('\Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource', []),
+                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource';
+            $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1731,7 +1769,7 @@ class EnvironmentApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource',
+                        '\Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1746,7 +1784,7 @@ class EnvironmentApi
      *
      * View Business Model Diagram
      *
-     * @param  string $diagram  (required)
+     * @param  string $diagramId The ID of the diagram. (required)
      * @param  string $includesnapshotsdeploysdeploysStatistics Possible includes (optional)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
@@ -1754,9 +1792,9 @@ class EnvironmentApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getEnvironmentBusinessModelDiagramsShowAsync($diagram, $includesnapshotsdeploysdeploysStatistics = null, $contentType = null, $accept = null)
+    public function getEnvironmentBusinessModelDiagramsShowAsync($diagramId, $includesnapshotsdeploysdeploysStatistics = null, $contentType = null, $accept = null)
     {
-        return $this->getEnvironmentBusinessModelDiagramsShowAsyncWithHttpInfo($diagram, $includesnapshotsdeploysdeploysStatistics, $contentType, $accept)
+        return $this->getEnvironmentBusinessModelDiagramsShowAsyncWithHttpInfo($diagramId, $includesnapshotsdeploysdeploysStatistics, $contentType, $accept)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1769,7 +1807,7 @@ class EnvironmentApi
      *
      * View Business Model Diagram
      *
-     * @param  string $diagram  (required)
+     * @param  string $diagramId The ID of the diagram. (required)
      * @param  string $includesnapshotsdeploysdeploysStatistics Possible includes (optional)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
@@ -1777,10 +1815,10 @@ class EnvironmentApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getEnvironmentBusinessModelDiagramsShowAsyncWithHttpInfo($diagram, $includesnapshotsdeploysdeploysStatistics = null, $contentType = null, $accept = null)
+    public function getEnvironmentBusinessModelDiagramsShowAsyncWithHttpInfo($diagramId, $includesnapshotsdeploysdeploysStatistics = null, $contentType = null, $accept = null)
     {
-        $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource';
-        $request = $this->getEnvironmentBusinessModelDiagramsShowRequest($diagram, $includesnapshotsdeploysdeploysStatistics, $contentType, $accept);
+        $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel';
+        $request = $this->getEnvironmentBusinessModelDiagramsShowRequest($diagramId, $includesnapshotsdeploysdeploysStatistics, $contentType, $accept);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1821,7 +1859,7 @@ class EnvironmentApi
     /**
      * Create request for operation 'getEnvironmentBusinessModelDiagramsShow'
      *
-     * @param  string $diagram  (required)
+     * @param  string $diagramId The ID of the diagram. (required)
      * @param  string $includesnapshotsdeploysdeploysStatistics Possible includes (optional)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
@@ -1829,16 +1867,16 @@ class EnvironmentApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getEnvironmentBusinessModelDiagramsShowRequest($diagram, $includesnapshotsdeploysdeploysStatistics = null, $contentType = null, $accept = null)
+    public function getEnvironmentBusinessModelDiagramsShowRequest($diagramId, $includesnapshotsdeploysdeploysStatistics = null, $contentType = null, $accept = null)
     {
-        // verify the required parameter 'diagram' is set
-        if ($diagram === null || (is_array($diagram) && count($diagram) === 0)) {
+        // verify the required parameter 'diagramId' is set
+        if ($diagramId === null || (is_array($diagramId) && count($diagramId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $diagram when calling getEnvironmentBusinessModelDiagramsShow'
+                'Missing the required parameter $diagramId when calling getEnvironmentBusinessModelDiagramsShow'
             );
         }
 
-        $resourcePath = '/api/v2/environment/business-model-diagrams/{diagram}';
+        $resourcePath = '/api/v2/environment/business-model-diagrams/{diagram_id}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -1865,10 +1903,10 @@ class EnvironmentApi
         }
 
         // path params
-        if ($diagram !== null) {
+        if ($diagramId !== null) {
             $resourcePath = str_replace(
-                '{' . 'diagram' . '}',
-                ObjectSerializer::toPathValue($diagram),
+                '{' . 'diagram_id' . '}',
+                ObjectSerializer::toPathValue($diagramId),
                 $resourcePath
             );
         }
@@ -1936,18 +1974,18 @@ class EnvironmentApi
      *
      * List Business Model Comments
      *
-     * @param  string $model  (required)
+     * @param  string $modelId The ID of the model. (required)
      * @param  string $include Specify a list of includes. (optional)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Stackflows\Clients\Stackflows\Model\CommentResource[]
+     * @return \Stackflows\Clients\Stackflows\Model\CommentModel[]
      */
-    public function getEnvironmentBusinessModelsCommentsList($model, $include = null, $contentType = null, $accept = null)
+    public function getEnvironmentBusinessModelsCommentsList($modelId, $include = null, $contentType = null, $accept = null)
     {
-        list($response) = $this->getEnvironmentBusinessModelsCommentsListWithHttpInfo($model, $include, $contentType, $accept);
+        list($response) = $this->getEnvironmentBusinessModelsCommentsListWithHttpInfo($modelId, $include, $contentType, $accept);
         return $response;
     }
 
@@ -1956,18 +1994,18 @@ class EnvironmentApi
      *
      * List Business Model Comments
      *
-     * @param  string $model  (required)
+     * @param  string $modelId The ID of the model. (required)
      * @param  string $include Specify a list of includes. (optional)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Stackflows\Clients\Stackflows\Model\CommentResource[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Stackflows\Clients\Stackflows\Model\CommentModel[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getEnvironmentBusinessModelsCommentsListWithHttpInfo($model, $include = null, $contentType = null, $accept = null)
+    public function getEnvironmentBusinessModelsCommentsListWithHttpInfo($modelId, $include = null, $contentType = null, $accept = null)
     {
-        $request = $this->getEnvironmentBusinessModelsCommentsListRequest($model, $include, $contentType, $accept);
+        $request = $this->getEnvironmentBusinessModelsCommentsListRequest($modelId, $include, $contentType, $accept);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2006,23 +2044,23 @@ class EnvironmentApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Stackflows\Clients\Stackflows\Model\CommentResource[]' === '\SplFileObject') {
+                    if ('\Stackflows\Clients\Stackflows\Model\CommentModel[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Stackflows\Clients\Stackflows\Model\CommentResource[]' !== 'string') {
+                        if ('\Stackflows\Clients\Stackflows\Model\CommentModel[]' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\CommentResource[]', []),
+                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\CommentModel[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Stackflows\Clients\Stackflows\Model\CommentResource[]';
+            $returnType = '\Stackflows\Clients\Stackflows\Model\CommentModel[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -2043,7 +2081,7 @@ class EnvironmentApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Stackflows\Clients\Stackflows\Model\CommentResource[]',
+                        '\Stackflows\Clients\Stackflows\Model\CommentModel[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2058,7 +2096,7 @@ class EnvironmentApi
      *
      * List Business Model Comments
      *
-     * @param  string $model  (required)
+     * @param  string $modelId The ID of the model. (required)
      * @param  string $include Specify a list of includes. (optional)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
@@ -2066,9 +2104,9 @@ class EnvironmentApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getEnvironmentBusinessModelsCommentsListAsync($model, $include = null, $contentType = null, $accept = null)
+    public function getEnvironmentBusinessModelsCommentsListAsync($modelId, $include = null, $contentType = null, $accept = null)
     {
-        return $this->getEnvironmentBusinessModelsCommentsListAsyncWithHttpInfo($model, $include, $contentType, $accept)
+        return $this->getEnvironmentBusinessModelsCommentsListAsyncWithHttpInfo($modelId, $include, $contentType, $accept)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2081,7 +2119,7 @@ class EnvironmentApi
      *
      * List Business Model Comments
      *
-     * @param  string $model  (required)
+     * @param  string $modelId The ID of the model. (required)
      * @param  string $include Specify a list of includes. (optional)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
@@ -2089,10 +2127,10 @@ class EnvironmentApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getEnvironmentBusinessModelsCommentsListAsyncWithHttpInfo($model, $include = null, $contentType = null, $accept = null)
+    public function getEnvironmentBusinessModelsCommentsListAsyncWithHttpInfo($modelId, $include = null, $contentType = null, $accept = null)
     {
-        $returnType = '\Stackflows\Clients\Stackflows\Model\CommentResource[]';
-        $request = $this->getEnvironmentBusinessModelsCommentsListRequest($model, $include, $contentType, $accept);
+        $returnType = '\Stackflows\Clients\Stackflows\Model\CommentModel[]';
+        $request = $this->getEnvironmentBusinessModelsCommentsListRequest($modelId, $include, $contentType, $accept);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2133,7 +2171,7 @@ class EnvironmentApi
     /**
      * Create request for operation 'getEnvironmentBusinessModelsCommentsList'
      *
-     * @param  string $model  (required)
+     * @param  string $modelId The ID of the model. (required)
      * @param  string $include Specify a list of includes. (optional)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
@@ -2141,16 +2179,16 @@ class EnvironmentApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getEnvironmentBusinessModelsCommentsListRequest($model, $include = null, $contentType = null, $accept = null)
+    public function getEnvironmentBusinessModelsCommentsListRequest($modelId, $include = null, $contentType = null, $accept = null)
     {
-        // verify the required parameter 'model' is set
-        if ($model === null || (is_array($model) && count($model) === 0)) {
+        // verify the required parameter 'modelId' is set
+        if ($modelId === null || (is_array($modelId) && count($modelId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $model when calling getEnvironmentBusinessModelsCommentsList'
+                'Missing the required parameter $modelId when calling getEnvironmentBusinessModelsCommentsList'
             );
         }
 
-        $resourcePath = '/api/v2/environment/business-models/{model}/comments';
+        $resourcePath = '/api/v2/environment/business-models/{model_id}/comments';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -2177,10 +2215,10 @@ class EnvironmentApi
         }
 
         // path params
-        if ($model !== null) {
+        if ($modelId !== null) {
             $resourcePath = str_replace(
-                '{' . 'model' . '}',
-                ObjectSerializer::toPathValue($model),
+                '{' . 'model_id' . '}',
+                ObjectSerializer::toPathValue($modelId),
                 $resourcePath
             );
         }
@@ -2248,25 +2286,26 @@ class EnvironmentApi
      *
      * List Business Models
      *
-     * @param  string $includeownercompanycategorytagscommentsCounttagsCountdiagrams Possible includes (optional)
-     * @param  string $filterWithAnyTagstestTaganotherTestTag Will return models that has any of specified tags (optional)
-     * @param  string $filterWithoutAnyTags1 Will return list of all models that has no tags at all (optional)
-     * @param  string $filterAutocompletetes Retrieve list that has \&quot;tes\&quot; at the start of their name (optional)
-     * @param  string $filterSearchtes Retrieve list that has \&quot;tes\&quot; in their name (optional)
-     * @param  string $filterCategories12 Filter by specific categories (optional)
-     * @param  bool $filterUncategorized List only uncategorized process models. (optional)
+     * @param  string $include Possible includes. (optional)
+     * @param  string $filterWithAnyTags Will return models that has any of specified tags. (optional)
+     * @param  bool $filterWithoutAnyTags Will return list of all models that has no tags at all. (optional)
+     * @param  string $filterAutocomplete Retrieve list that has \&quot;tes\&quot; at the start of their name. (optional)
+     * @param  string $filterSearch Retrieve list that has \&quot;tes\&quot; in their name. (optional)
+     * @param  string $filterCategories Filter by specific categories. (optional)
+     * @param  string $filterType Filter by specific type. Example process,decision (optional)
+     * @param  bool $filterUncategorized boolean List only uncategorized process models. (optional)
      * @param  bool $filterSubscribable List only subscribable process models. (optional)
-     * @param  string $sortnameCreatedAtUpdatedAt Sorting example (optional)
+     * @param  string $sort Sorting by specified criteria. (optional)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource[]
+     * @return \Stackflows\Clients\Stackflows\Model\BusinessBaseModelModel[]
      */
-    public function getEnvironmentBusinessModelsList($includeownercompanycategorytagscommentsCounttagsCountdiagrams = null, $filterWithAnyTagstestTaganotherTestTag = null, $filterWithoutAnyTags1 = null, $filterAutocompletetes = null, $filterSearchtes = null, $filterCategories12 = null, $filterUncategorized = null, $filterSubscribable = null, $sortnameCreatedAtUpdatedAt = null, $contentType = null, $accept = null)
+    public function getEnvironmentBusinessModelsList($include = null, $filterWithAnyTags = null, $filterWithoutAnyTags = null, $filterAutocomplete = null, $filterSearch = null, $filterCategories = null, $filterType = null, $filterUncategorized = null, $filterSubscribable = null, $sort = null, $contentType = null, $accept = null)
     {
-        list($response) = $this->getEnvironmentBusinessModelsListWithHttpInfo($includeownercompanycategorytagscommentsCounttagsCountdiagrams, $filterWithAnyTagstestTaganotherTestTag, $filterWithoutAnyTags1, $filterAutocompletetes, $filterSearchtes, $filterCategories12, $filterUncategorized, $filterSubscribable, $sortnameCreatedAtUpdatedAt, $contentType, $accept);
+        list($response) = $this->getEnvironmentBusinessModelsListWithHttpInfo($include, $filterWithAnyTags, $filterWithoutAnyTags, $filterAutocomplete, $filterSearch, $filterCategories, $filterType, $filterUncategorized, $filterSubscribable, $sort, $contentType, $accept);
         return $response;
     }
 
@@ -2275,25 +2314,26 @@ class EnvironmentApi
      *
      * List Business Models
      *
-     * @param  string $includeownercompanycategorytagscommentsCounttagsCountdiagrams Possible includes (optional)
-     * @param  string $filterWithAnyTagstestTaganotherTestTag Will return models that has any of specified tags (optional)
-     * @param  string $filterWithoutAnyTags1 Will return list of all models that has no tags at all (optional)
-     * @param  string $filterAutocompletetes Retrieve list that has \&quot;tes\&quot; at the start of their name (optional)
-     * @param  string $filterSearchtes Retrieve list that has \&quot;tes\&quot; in their name (optional)
-     * @param  string $filterCategories12 Filter by specific categories (optional)
-     * @param  bool $filterUncategorized List only uncategorized process models. (optional)
+     * @param  string $include Possible includes. (optional)
+     * @param  string $filterWithAnyTags Will return models that has any of specified tags. (optional)
+     * @param  bool $filterWithoutAnyTags Will return list of all models that has no tags at all. (optional)
+     * @param  string $filterAutocomplete Retrieve list that has \&quot;tes\&quot; at the start of their name. (optional)
+     * @param  string $filterSearch Retrieve list that has \&quot;tes\&quot; in their name. (optional)
+     * @param  string $filterCategories Filter by specific categories. (optional)
+     * @param  string $filterType Filter by specific type. Example process,decision (optional)
+     * @param  bool $filterUncategorized boolean List only uncategorized process models. (optional)
      * @param  bool $filterSubscribable List only subscribable process models. (optional)
-     * @param  string $sortnameCreatedAtUpdatedAt Sorting example (optional)
+     * @param  string $sort Sorting by specified criteria. (optional)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Stackflows\Clients\Stackflows\Model\BusinessBaseModelModel[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getEnvironmentBusinessModelsListWithHttpInfo($includeownercompanycategorytagscommentsCounttagsCountdiagrams = null, $filterWithAnyTagstestTaganotherTestTag = null, $filterWithoutAnyTags1 = null, $filterAutocompletetes = null, $filterSearchtes = null, $filterCategories12 = null, $filterUncategorized = null, $filterSubscribable = null, $sortnameCreatedAtUpdatedAt = null, $contentType = null, $accept = null)
+    public function getEnvironmentBusinessModelsListWithHttpInfo($include = null, $filterWithAnyTags = null, $filterWithoutAnyTags = null, $filterAutocomplete = null, $filterSearch = null, $filterCategories = null, $filterType = null, $filterUncategorized = null, $filterSubscribable = null, $sort = null, $contentType = null, $accept = null)
     {
-        $request = $this->getEnvironmentBusinessModelsListRequest($includeownercompanycategorytagscommentsCounttagsCountdiagrams, $filterWithAnyTagstestTaganotherTestTag, $filterWithoutAnyTags1, $filterAutocompletetes, $filterSearchtes, $filterCategories12, $filterUncategorized, $filterSubscribable, $sortnameCreatedAtUpdatedAt, $contentType, $accept);
+        $request = $this->getEnvironmentBusinessModelsListRequest($include, $filterWithAnyTags, $filterWithoutAnyTags, $filterAutocomplete, $filterSearch, $filterCategories, $filterType, $filterUncategorized, $filterSubscribable, $sort, $contentType, $accept);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2332,23 +2372,23 @@ class EnvironmentApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource[]' === '\SplFileObject') {
+                    if ('\Stackflows\Clients\Stackflows\Model\BusinessBaseModelModel[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource[]' !== 'string') {
+                        if ('\Stackflows\Clients\Stackflows\Model\BusinessBaseModelModel[]' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource[]', []),
+                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelModel[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource[]';
+            $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelModel[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -2369,7 +2409,7 @@ class EnvironmentApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource[]',
+                        '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelModel[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2384,24 +2424,25 @@ class EnvironmentApi
      *
      * List Business Models
      *
-     * @param  string $includeownercompanycategorytagscommentsCounttagsCountdiagrams Possible includes (optional)
-     * @param  string $filterWithAnyTagstestTaganotherTestTag Will return models that has any of specified tags (optional)
-     * @param  string $filterWithoutAnyTags1 Will return list of all models that has no tags at all (optional)
-     * @param  string $filterAutocompletetes Retrieve list that has \&quot;tes\&quot; at the start of their name (optional)
-     * @param  string $filterSearchtes Retrieve list that has \&quot;tes\&quot; in their name (optional)
-     * @param  string $filterCategories12 Filter by specific categories (optional)
-     * @param  bool $filterUncategorized List only uncategorized process models. (optional)
+     * @param  string $include Possible includes. (optional)
+     * @param  string $filterWithAnyTags Will return models that has any of specified tags. (optional)
+     * @param  bool $filterWithoutAnyTags Will return list of all models that has no tags at all. (optional)
+     * @param  string $filterAutocomplete Retrieve list that has \&quot;tes\&quot; at the start of their name. (optional)
+     * @param  string $filterSearch Retrieve list that has \&quot;tes\&quot; in their name. (optional)
+     * @param  string $filterCategories Filter by specific categories. (optional)
+     * @param  string $filterType Filter by specific type. Example process,decision (optional)
+     * @param  bool $filterUncategorized boolean List only uncategorized process models. (optional)
      * @param  bool $filterSubscribable List only subscribable process models. (optional)
-     * @param  string $sortnameCreatedAtUpdatedAt Sorting example (optional)
+     * @param  string $sort Sorting by specified criteria. (optional)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getEnvironmentBusinessModelsListAsync($includeownercompanycategorytagscommentsCounttagsCountdiagrams = null, $filterWithAnyTagstestTaganotherTestTag = null, $filterWithoutAnyTags1 = null, $filterAutocompletetes = null, $filterSearchtes = null, $filterCategories12 = null, $filterUncategorized = null, $filterSubscribable = null, $sortnameCreatedAtUpdatedAt = null, $contentType = null, $accept = null)
+    public function getEnvironmentBusinessModelsListAsync($include = null, $filterWithAnyTags = null, $filterWithoutAnyTags = null, $filterAutocomplete = null, $filterSearch = null, $filterCategories = null, $filterType = null, $filterUncategorized = null, $filterSubscribable = null, $sort = null, $contentType = null, $accept = null)
     {
-        return $this->getEnvironmentBusinessModelsListAsyncWithHttpInfo($includeownercompanycategorytagscommentsCounttagsCountdiagrams, $filterWithAnyTagstestTaganotherTestTag, $filterWithoutAnyTags1, $filterAutocompletetes, $filterSearchtes, $filterCategories12, $filterUncategorized, $filterSubscribable, $sortnameCreatedAtUpdatedAt, $contentType, $accept)
+        return $this->getEnvironmentBusinessModelsListAsyncWithHttpInfo($include, $filterWithAnyTags, $filterWithoutAnyTags, $filterAutocomplete, $filterSearch, $filterCategories, $filterType, $filterUncategorized, $filterSubscribable, $sort, $contentType, $accept)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2414,25 +2455,26 @@ class EnvironmentApi
      *
      * List Business Models
      *
-     * @param  string $includeownercompanycategorytagscommentsCounttagsCountdiagrams Possible includes (optional)
-     * @param  string $filterWithAnyTagstestTaganotherTestTag Will return models that has any of specified tags (optional)
-     * @param  string $filterWithoutAnyTags1 Will return list of all models that has no tags at all (optional)
-     * @param  string $filterAutocompletetes Retrieve list that has \&quot;tes\&quot; at the start of their name (optional)
-     * @param  string $filterSearchtes Retrieve list that has \&quot;tes\&quot; in their name (optional)
-     * @param  string $filterCategories12 Filter by specific categories (optional)
-     * @param  bool $filterUncategorized List only uncategorized process models. (optional)
+     * @param  string $include Possible includes. (optional)
+     * @param  string $filterWithAnyTags Will return models that has any of specified tags. (optional)
+     * @param  bool $filterWithoutAnyTags Will return list of all models that has no tags at all. (optional)
+     * @param  string $filterAutocomplete Retrieve list that has \&quot;tes\&quot; at the start of their name. (optional)
+     * @param  string $filterSearch Retrieve list that has \&quot;tes\&quot; in their name. (optional)
+     * @param  string $filterCategories Filter by specific categories. (optional)
+     * @param  string $filterType Filter by specific type. Example process,decision (optional)
+     * @param  bool $filterUncategorized boolean List only uncategorized process models. (optional)
      * @param  bool $filterSubscribable List only subscribable process models. (optional)
-     * @param  string $sortnameCreatedAtUpdatedAt Sorting example (optional)
+     * @param  string $sort Sorting by specified criteria. (optional)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getEnvironmentBusinessModelsListAsyncWithHttpInfo($includeownercompanycategorytagscommentsCounttagsCountdiagrams = null, $filterWithAnyTagstestTaganotherTestTag = null, $filterWithoutAnyTags1 = null, $filterAutocompletetes = null, $filterSearchtes = null, $filterCategories12 = null, $filterUncategorized = null, $filterSubscribable = null, $sortnameCreatedAtUpdatedAt = null, $contentType = null, $accept = null)
+    public function getEnvironmentBusinessModelsListAsyncWithHttpInfo($include = null, $filterWithAnyTags = null, $filterWithoutAnyTags = null, $filterAutocomplete = null, $filterSearch = null, $filterCategories = null, $filterType = null, $filterUncategorized = null, $filterSubscribable = null, $sort = null, $contentType = null, $accept = null)
     {
-        $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource[]';
-        $request = $this->getEnvironmentBusinessModelsListRequest($includeownercompanycategorytagscommentsCounttagsCountdiagrams, $filterWithAnyTagstestTaganotherTestTag, $filterWithoutAnyTags1, $filterAutocompletetes, $filterSearchtes, $filterCategories12, $filterUncategorized, $filterSubscribable, $sortnameCreatedAtUpdatedAt, $contentType, $accept);
+        $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelModel[]';
+        $request = $this->getEnvironmentBusinessModelsListRequest($include, $filterWithAnyTags, $filterWithoutAnyTags, $filterAutocomplete, $filterSearch, $filterCategories, $filterType, $filterUncategorized, $filterSubscribable, $sort, $contentType, $accept);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2473,22 +2515,23 @@ class EnvironmentApi
     /**
      * Create request for operation 'getEnvironmentBusinessModelsList'
      *
-     * @param  string $includeownercompanycategorytagscommentsCounttagsCountdiagrams Possible includes (optional)
-     * @param  string $filterWithAnyTagstestTaganotherTestTag Will return models that has any of specified tags (optional)
-     * @param  string $filterWithoutAnyTags1 Will return list of all models that has no tags at all (optional)
-     * @param  string $filterAutocompletetes Retrieve list that has \&quot;tes\&quot; at the start of their name (optional)
-     * @param  string $filterSearchtes Retrieve list that has \&quot;tes\&quot; in their name (optional)
-     * @param  string $filterCategories12 Filter by specific categories (optional)
-     * @param  bool $filterUncategorized List only uncategorized process models. (optional)
+     * @param  string $include Possible includes. (optional)
+     * @param  string $filterWithAnyTags Will return models that has any of specified tags. (optional)
+     * @param  bool $filterWithoutAnyTags Will return list of all models that has no tags at all. (optional)
+     * @param  string $filterAutocomplete Retrieve list that has \&quot;tes\&quot; at the start of their name. (optional)
+     * @param  string $filterSearch Retrieve list that has \&quot;tes\&quot; in their name. (optional)
+     * @param  string $filterCategories Filter by specific categories. (optional)
+     * @param  string $filterType Filter by specific type. Example process,decision (optional)
+     * @param  bool $filterUncategorized boolean List only uncategorized process models. (optional)
      * @param  bool $filterSubscribable List only subscribable process models. (optional)
-     * @param  string $sortnameCreatedAtUpdatedAt Sorting example (optional)
+     * @param  string $sort Sorting by specified criteria. (optional)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getEnvironmentBusinessModelsListRequest($includeownercompanycategorytagscommentsCounttagsCountdiagrams = null, $filterWithAnyTagstestTaganotherTestTag = null, $filterWithoutAnyTags1 = null, $filterAutocompletetes = null, $filterSearchtes = null, $filterCategories12 = null, $filterUncategorized = null, $filterSubscribable = null, $sortnameCreatedAtUpdatedAt = null, $contentType = null, $accept = null)
+    public function getEnvironmentBusinessModelsListRequest($include = null, $filterWithAnyTags = null, $filterWithoutAnyTags = null, $filterAutocomplete = null, $filterSearch = null, $filterCategories = null, $filterType = null, $filterUncategorized = null, $filterSubscribable = null, $sort = null, $contentType = null, $accept = null)
     {
 
         $resourcePath = '/api/v2/environment/business-models';
@@ -2500,8 +2543,8 @@ class EnvironmentApi
 
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $includeownercompanycategorytagscommentsCounttagsCountdiagrams,
-            'include&#x3D;owner,company,category,tags,comments-count,tags-count,diagrams', // param base name
+            $include,
+            'include', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -2509,8 +2552,8 @@ class EnvironmentApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $filterWithAnyTagstestTaganotherTestTag,
-            'filter[with-any-tags][]&#x3D;test-tag,another-test-tag', // param base name
+            $filterWithAnyTags,
+            'filter[with-any-tags]', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -2518,8 +2561,17 @@ class EnvironmentApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $filterWithoutAnyTags1,
-            'filter[without-any-tags]&#x3D;1', // param base name
+            $filterWithoutAnyTags,
+            'filter[without-any-tags]', // param base name
+            'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $filterAutocomplete,
+            'filter[autocomplete]', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -2527,8 +2579,8 @@ class EnvironmentApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $filterAutocompletetes,
-            'filter[autocomplete]&#x3D;tes', // param base name
+            $filterSearch,
+            'filter[search]', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -2536,8 +2588,8 @@ class EnvironmentApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $filterSearchtes,
-            'filter[search]&#x3D;tes', // param base name
+            $filterCategories,
+            'filter[categories]', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -2545,8 +2597,8 @@ class EnvironmentApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $filterCategories12,
-            'filter[categories][]&#x3D;1,2', // param base name
+            $filterType,
+            'filter[type]', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -2572,8 +2624,8 @@ class EnvironmentApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $sortnameCreatedAtUpdatedAt,
-            'sort&#x3D;name,-created_at,-updated_at', // param base name
+            $sort,
+            'sort', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -2653,18 +2705,18 @@ class EnvironmentApi
      *
      * View Business Model
      *
-     * @param  string $model  (required)
+     * @param  string $modelId The ID of the model. (required)
      * @param  string $includeownercompanycategorytagscommentsCounttagsCountdiagrams Possible includes (optional)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource
+     * @return \Stackflows\Clients\Stackflows\Model\BusinessBaseModelModel
      */
-    public function getEnvironmentBusinessModelsShow($model, $includeownercompanycategorytagscommentsCounttagsCountdiagrams = null, $contentType = null, $accept = null)
+    public function getEnvironmentBusinessModelsShow($modelId, $includeownercompanycategorytagscommentsCounttagsCountdiagrams = null, $contentType = null, $accept = null)
     {
-        list($response) = $this->getEnvironmentBusinessModelsShowWithHttpInfo($model, $includeownercompanycategorytagscommentsCounttagsCountdiagrams, $contentType, $accept);
+        list($response) = $this->getEnvironmentBusinessModelsShowWithHttpInfo($modelId, $includeownercompanycategorytagscommentsCounttagsCountdiagrams, $contentType, $accept);
         return $response;
     }
 
@@ -2673,18 +2725,18 @@ class EnvironmentApi
      *
      * View Business Model
      *
-     * @param  string $model  (required)
+     * @param  string $modelId The ID of the model. (required)
      * @param  string $includeownercompanycategorytagscommentsCounttagsCountdiagrams Possible includes (optional)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Stackflows\Clients\Stackflows\Model\BusinessBaseModelModel, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getEnvironmentBusinessModelsShowWithHttpInfo($model, $includeownercompanycategorytagscommentsCounttagsCountdiagrams = null, $contentType = null, $accept = null)
+    public function getEnvironmentBusinessModelsShowWithHttpInfo($modelId, $includeownercompanycategorytagscommentsCounttagsCountdiagrams = null, $contentType = null, $accept = null)
     {
-        $request = $this->getEnvironmentBusinessModelsShowRequest($model, $includeownercompanycategorytagscommentsCounttagsCountdiagrams, $contentType, $accept);
+        $request = $this->getEnvironmentBusinessModelsShowRequest($modelId, $includeownercompanycategorytagscommentsCounttagsCountdiagrams, $contentType, $accept);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2723,23 +2775,23 @@ class EnvironmentApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource' === '\SplFileObject') {
+                    if ('\Stackflows\Clients\Stackflows\Model\BusinessBaseModelModel' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource' !== 'string') {
+                        if ('\Stackflows\Clients\Stackflows\Model\BusinessBaseModelModel' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource', []),
+                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelModel', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource';
+            $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelModel';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -2760,7 +2812,7 @@ class EnvironmentApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource',
+                        '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelModel',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2775,7 +2827,7 @@ class EnvironmentApi
      *
      * View Business Model
      *
-     * @param  string $model  (required)
+     * @param  string $modelId The ID of the model. (required)
      * @param  string $includeownercompanycategorytagscommentsCounttagsCountdiagrams Possible includes (optional)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
@@ -2783,9 +2835,9 @@ class EnvironmentApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getEnvironmentBusinessModelsShowAsync($model, $includeownercompanycategorytagscommentsCounttagsCountdiagrams = null, $contentType = null, $accept = null)
+    public function getEnvironmentBusinessModelsShowAsync($modelId, $includeownercompanycategorytagscommentsCounttagsCountdiagrams = null, $contentType = null, $accept = null)
     {
-        return $this->getEnvironmentBusinessModelsShowAsyncWithHttpInfo($model, $includeownercompanycategorytagscommentsCounttagsCountdiagrams, $contentType, $accept)
+        return $this->getEnvironmentBusinessModelsShowAsyncWithHttpInfo($modelId, $includeownercompanycategorytagscommentsCounttagsCountdiagrams, $contentType, $accept)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2798,7 +2850,7 @@ class EnvironmentApi
      *
      * View Business Model
      *
-     * @param  string $model  (required)
+     * @param  string $modelId The ID of the model. (required)
      * @param  string $includeownercompanycategorytagscommentsCounttagsCountdiagrams Possible includes (optional)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
@@ -2806,10 +2858,10 @@ class EnvironmentApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getEnvironmentBusinessModelsShowAsyncWithHttpInfo($model, $includeownercompanycategorytagscommentsCounttagsCountdiagrams = null, $contentType = null, $accept = null)
+    public function getEnvironmentBusinessModelsShowAsyncWithHttpInfo($modelId, $includeownercompanycategorytagscommentsCounttagsCountdiagrams = null, $contentType = null, $accept = null)
     {
-        $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource';
-        $request = $this->getEnvironmentBusinessModelsShowRequest($model, $includeownercompanycategorytagscommentsCounttagsCountdiagrams, $contentType, $accept);
+        $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelModel';
+        $request = $this->getEnvironmentBusinessModelsShowRequest($modelId, $includeownercompanycategorytagscommentsCounttagsCountdiagrams, $contentType, $accept);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2850,7 +2902,7 @@ class EnvironmentApi
     /**
      * Create request for operation 'getEnvironmentBusinessModelsShow'
      *
-     * @param  string $model  (required)
+     * @param  string $modelId The ID of the model. (required)
      * @param  string $includeownercompanycategorytagscommentsCounttagsCountdiagrams Possible includes (optional)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
@@ -2858,16 +2910,16 @@ class EnvironmentApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getEnvironmentBusinessModelsShowRequest($model, $includeownercompanycategorytagscommentsCounttagsCountdiagrams = null, $contentType = null, $accept = null)
+    public function getEnvironmentBusinessModelsShowRequest($modelId, $includeownercompanycategorytagscommentsCounttagsCountdiagrams = null, $contentType = null, $accept = null)
     {
-        // verify the required parameter 'model' is set
-        if ($model === null || (is_array($model) && count($model) === 0)) {
+        // verify the required parameter 'modelId' is set
+        if ($modelId === null || (is_array($modelId) && count($modelId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $model when calling getEnvironmentBusinessModelsShow'
+                'Missing the required parameter $modelId when calling getEnvironmentBusinessModelsShow'
             );
         }
 
-        $resourcePath = '/api/v2/environment/business-models/{model}';
+        $resourcePath = '/api/v2/environment/business-models/{model_id}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -2894,10 +2946,10 @@ class EnvironmentApi
         }
 
         // path params
-        if ($model !== null) {
+        if ($modelId !== null) {
             $resourcePath = str_replace(
-                '{' . 'model' . '}',
-                ObjectSerializer::toPathValue($model),
+                '{' . 'model_id' . '}',
+                ObjectSerializer::toPathValue($modelId),
                 $resourcePath
             );
         }
@@ -2970,7 +3022,7 @@ class EnvironmentApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Stackflows\Clients\Stackflows\Model\UserTaskTypeResource[]
+     * @return \Stackflows\Clients\Stackflows\Model\UserTaskType[]
      */
     public function getEnvironmentUserTasksList($contentType = null, $accept = null)
     {
@@ -2988,7 +3040,7 @@ class EnvironmentApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Stackflows\Clients\Stackflows\Model\UserTaskTypeResource[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Stackflows\Clients\Stackflows\Model\UserTaskType[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getEnvironmentUserTasksListWithHttpInfo($contentType = null, $accept = null)
     {
@@ -3031,23 +3083,23 @@ class EnvironmentApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Stackflows\Clients\Stackflows\Model\UserTaskTypeResource[]' === '\SplFileObject') {
+                    if ('\Stackflows\Clients\Stackflows\Model\UserTaskType[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Stackflows\Clients\Stackflows\Model\UserTaskTypeResource[]' !== 'string') {
+                        if ('\Stackflows\Clients\Stackflows\Model\UserTaskType[]' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\UserTaskTypeResource[]', []),
+                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\UserTaskType[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Stackflows\Clients\Stackflows\Model\UserTaskTypeResource[]';
+            $returnType = '\Stackflows\Clients\Stackflows\Model\UserTaskType[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -3068,7 +3120,7 @@ class EnvironmentApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Stackflows\Clients\Stackflows\Model\UserTaskTypeResource[]',
+                        '\Stackflows\Clients\Stackflows\Model\UserTaskType[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3112,7 +3164,7 @@ class EnvironmentApi
      */
     public function getEnvironmentUserTasksListAsyncWithHttpInfo($contentType = null, $accept = null)
     {
-        $returnType = '\Stackflows\Clients\Stackflows\Model\UserTaskTypeResource[]';
+        $returnType = '\Stackflows\Clients\Stackflows\Model\UserTaskType[]';
         $request = $this->getEnvironmentUserTasksListRequest($contentType, $accept);
 
         return $this->client
@@ -3244,18 +3296,18 @@ class EnvironmentApi
      *
      * Create Business Model Diagram Comment
      *
-     * @param  string $diagram  (required)
+     * @param  string $diagramId The ID of the diagram. (required)
      * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentBusinessModelDiagramsCommentsCreateRequest $postEnvironmentBusinessModelDiagramsCommentsCreateRequest postEnvironmentBusinessModelDiagramsCommentsCreateRequest (required)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Stackflows\Clients\Stackflows\Model\CommentResource
+     * @return \Stackflows\Clients\Stackflows\Model\CommentModel
      */
-    public function postEnvironmentBusinessModelDiagramsCommentsCreate($diagram, $postEnvironmentBusinessModelDiagramsCommentsCreateRequest, $contentType = null, $accept = null)
+    public function postEnvironmentBusinessModelDiagramsCommentsCreate($diagramId, $postEnvironmentBusinessModelDiagramsCommentsCreateRequest, $contentType = null, $accept = null)
     {
-        list($response) = $this->postEnvironmentBusinessModelDiagramsCommentsCreateWithHttpInfo($diagram, $postEnvironmentBusinessModelDiagramsCommentsCreateRequest, $contentType, $accept);
+        list($response) = $this->postEnvironmentBusinessModelDiagramsCommentsCreateWithHttpInfo($diagramId, $postEnvironmentBusinessModelDiagramsCommentsCreateRequest, $contentType, $accept);
         return $response;
     }
 
@@ -3264,18 +3316,18 @@ class EnvironmentApi
      *
      * Create Business Model Diagram Comment
      *
-     * @param  string $diagram  (required)
+     * @param  string $diagramId The ID of the diagram. (required)
      * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentBusinessModelDiagramsCommentsCreateRequest $postEnvironmentBusinessModelDiagramsCommentsCreateRequest (required)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Stackflows\Clients\Stackflows\Model\CommentResource, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Stackflows\Clients\Stackflows\Model\CommentModel, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postEnvironmentBusinessModelDiagramsCommentsCreateWithHttpInfo($diagram, $postEnvironmentBusinessModelDiagramsCommentsCreateRequest, $contentType = null, $accept = null)
+    public function postEnvironmentBusinessModelDiagramsCommentsCreateWithHttpInfo($diagramId, $postEnvironmentBusinessModelDiagramsCommentsCreateRequest, $contentType = null, $accept = null)
     {
-        $request = $this->postEnvironmentBusinessModelDiagramsCommentsCreateRequest($diagram, $postEnvironmentBusinessModelDiagramsCommentsCreateRequest, $contentType, $accept);
+        $request = $this->postEnvironmentBusinessModelDiagramsCommentsCreateRequest($diagramId, $postEnvironmentBusinessModelDiagramsCommentsCreateRequest, $contentType, $accept);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3314,23 +3366,23 @@ class EnvironmentApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Stackflows\Clients\Stackflows\Model\CommentResource' === '\SplFileObject') {
+                    if ('\Stackflows\Clients\Stackflows\Model\CommentModel' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Stackflows\Clients\Stackflows\Model\CommentResource' !== 'string') {
+                        if ('\Stackflows\Clients\Stackflows\Model\CommentModel' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\CommentResource', []),
+                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\CommentModel', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Stackflows\Clients\Stackflows\Model\CommentResource';
+            $returnType = '\Stackflows\Clients\Stackflows\Model\CommentModel';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -3351,7 +3403,7 @@ class EnvironmentApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Stackflows\Clients\Stackflows\Model\CommentResource',
+                        '\Stackflows\Clients\Stackflows\Model\CommentModel',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3366,7 +3418,7 @@ class EnvironmentApi
      *
      * Create Business Model Diagram Comment
      *
-     * @param  string $diagram  (required)
+     * @param  string $diagramId The ID of the diagram. (required)
      * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentBusinessModelDiagramsCommentsCreateRequest $postEnvironmentBusinessModelDiagramsCommentsCreateRequest (required)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
@@ -3374,9 +3426,9 @@ class EnvironmentApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postEnvironmentBusinessModelDiagramsCommentsCreateAsync($diagram, $postEnvironmentBusinessModelDiagramsCommentsCreateRequest, $contentType = null, $accept = null)
+    public function postEnvironmentBusinessModelDiagramsCommentsCreateAsync($diagramId, $postEnvironmentBusinessModelDiagramsCommentsCreateRequest, $contentType = null, $accept = null)
     {
-        return $this->postEnvironmentBusinessModelDiagramsCommentsCreateAsyncWithHttpInfo($diagram, $postEnvironmentBusinessModelDiagramsCommentsCreateRequest, $contentType, $accept)
+        return $this->postEnvironmentBusinessModelDiagramsCommentsCreateAsyncWithHttpInfo($diagramId, $postEnvironmentBusinessModelDiagramsCommentsCreateRequest, $contentType, $accept)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3389,7 +3441,7 @@ class EnvironmentApi
      *
      * Create Business Model Diagram Comment
      *
-     * @param  string $diagram  (required)
+     * @param  string $diagramId The ID of the diagram. (required)
      * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentBusinessModelDiagramsCommentsCreateRequest $postEnvironmentBusinessModelDiagramsCommentsCreateRequest (required)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
@@ -3397,10 +3449,10 @@ class EnvironmentApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postEnvironmentBusinessModelDiagramsCommentsCreateAsyncWithHttpInfo($diagram, $postEnvironmentBusinessModelDiagramsCommentsCreateRequest, $contentType = null, $accept = null)
+    public function postEnvironmentBusinessModelDiagramsCommentsCreateAsyncWithHttpInfo($diagramId, $postEnvironmentBusinessModelDiagramsCommentsCreateRequest, $contentType = null, $accept = null)
     {
-        $returnType = '\Stackflows\Clients\Stackflows\Model\CommentResource';
-        $request = $this->postEnvironmentBusinessModelDiagramsCommentsCreateRequest($diagram, $postEnvironmentBusinessModelDiagramsCommentsCreateRequest, $contentType, $accept);
+        $returnType = '\Stackflows\Clients\Stackflows\Model\CommentModel';
+        $request = $this->postEnvironmentBusinessModelDiagramsCommentsCreateRequest($diagramId, $postEnvironmentBusinessModelDiagramsCommentsCreateRequest, $contentType, $accept);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3441,7 +3493,7 @@ class EnvironmentApi
     /**
      * Create request for operation 'postEnvironmentBusinessModelDiagramsCommentsCreate'
      *
-     * @param  string $diagram  (required)
+     * @param  string $diagramId The ID of the diagram. (required)
      * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentBusinessModelDiagramsCommentsCreateRequest $postEnvironmentBusinessModelDiagramsCommentsCreateRequest (required)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
@@ -3449,12 +3501,12 @@ class EnvironmentApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function postEnvironmentBusinessModelDiagramsCommentsCreateRequest($diagram, $postEnvironmentBusinessModelDiagramsCommentsCreateRequest, $contentType = null, $accept = null)
+    public function postEnvironmentBusinessModelDiagramsCommentsCreateRequest($diagramId, $postEnvironmentBusinessModelDiagramsCommentsCreateRequest, $contentType = null, $accept = null)
     {
-        // verify the required parameter 'diagram' is set
-        if ($diagram === null || (is_array($diagram) && count($diagram) === 0)) {
+        // verify the required parameter 'diagramId' is set
+        if ($diagramId === null || (is_array($diagramId) && count($diagramId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $diagram when calling postEnvironmentBusinessModelDiagramsCommentsCreate'
+                'Missing the required parameter $diagramId when calling postEnvironmentBusinessModelDiagramsCommentsCreate'
             );
         }
         // verify the required parameter 'postEnvironmentBusinessModelDiagramsCommentsCreateRequest' is set
@@ -3464,7 +3516,7 @@ class EnvironmentApi
             );
         }
 
-        $resourcePath = '/api/v2/environment/business-model-diagrams/{diagram}/comments';
+        $resourcePath = '/api/v2/environment/business-model-diagrams/{diagram_id}/comments';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -3482,10 +3534,10 @@ class EnvironmentApi
         }
 
         // path params
-        if ($diagram !== null) {
+        if ($diagramId !== null) {
             $resourcePath = str_replace(
-                '{' . 'diagram' . '}',
-                ObjectSerializer::toPathValue($diagram),
+                '{' . 'diagram_id' . '}',
+                ObjectSerializer::toPathValue($diagramId),
                 $resourcePath
             );
         }
@@ -3567,7 +3619,7 @@ class EnvironmentApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource
+     * @return \Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel
      */
     public function postEnvironmentBusinessModelDiagramsCreate($xml, $businessModelId, $contentType = null, $accept = null, $snapshot = null)
     {
@@ -3588,7 +3640,7 @@ class EnvironmentApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel, HTTP status code, HTTP response headers (array of strings)
      */
     public function postEnvironmentBusinessModelDiagramsCreateWithHttpInfo($xml, $businessModelId, $contentType = null, $accept = null, $snapshot = null)
     {
@@ -3631,23 +3683,23 @@ class EnvironmentApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource' === '\SplFileObject') {
+                    if ('\Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource' !== 'string') {
+                        if ('\Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource', []),
+                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource';
+            $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -3668,7 +3720,7 @@ class EnvironmentApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource',
+                        '\Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3718,7 +3770,7 @@ class EnvironmentApi
      */
     public function postEnvironmentBusinessModelDiagramsCreateAsyncWithHttpInfo($xml, $businessModelId, $contentType = null, $accept = null, $snapshot = null)
     {
-        $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource';
+        $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel';
         $request = $this->postEnvironmentBusinessModelDiagramsCreateRequest($xml, $businessModelId, $contentType, $accept, $snapshot);
 
         return $this->client
@@ -3885,18 +3937,18 @@ class EnvironmentApi
      *
      * Publish Business Model Diagram
      *
-     * @param  string $diagram  (required)
+     * @param  string $diagramId The ID of the diagram. (required)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
      * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentBusinessModelDiagramsPublishRequest $postEnvironmentBusinessModelDiagramsPublishRequest postEnvironmentBusinessModelDiagramsPublishRequest (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource
+     * @return \Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel
      */
-    public function postEnvironmentBusinessModelDiagramsPublish($diagram, $contentType = null, $accept = null, $postEnvironmentBusinessModelDiagramsPublishRequest = null)
+    public function postEnvironmentBusinessModelDiagramsPublish($diagramId, $contentType = null, $accept = null, $postEnvironmentBusinessModelDiagramsPublishRequest = null)
     {
-        list($response) = $this->postEnvironmentBusinessModelDiagramsPublishWithHttpInfo($diagram, $contentType, $accept, $postEnvironmentBusinessModelDiagramsPublishRequest);
+        list($response) = $this->postEnvironmentBusinessModelDiagramsPublishWithHttpInfo($diagramId, $contentType, $accept, $postEnvironmentBusinessModelDiagramsPublishRequest);
         return $response;
     }
 
@@ -3905,18 +3957,18 @@ class EnvironmentApi
      *
      * Publish Business Model Diagram
      *
-     * @param  string $diagram  (required)
+     * @param  string $diagramId The ID of the diagram. (required)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
      * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentBusinessModelDiagramsPublishRequest $postEnvironmentBusinessModelDiagramsPublishRequest (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postEnvironmentBusinessModelDiagramsPublishWithHttpInfo($diagram, $contentType = null, $accept = null, $postEnvironmentBusinessModelDiagramsPublishRequest = null)
+    public function postEnvironmentBusinessModelDiagramsPublishWithHttpInfo($diagramId, $contentType = null, $accept = null, $postEnvironmentBusinessModelDiagramsPublishRequest = null)
     {
-        $request = $this->postEnvironmentBusinessModelDiagramsPublishRequest($diagram, $contentType, $accept, $postEnvironmentBusinessModelDiagramsPublishRequest);
+        $request = $this->postEnvironmentBusinessModelDiagramsPublishRequest($diagramId, $contentType, $accept, $postEnvironmentBusinessModelDiagramsPublishRequest);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3955,23 +4007,23 @@ class EnvironmentApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource' === '\SplFileObject') {
+                    if ('\Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource' !== 'string') {
+                        if ('\Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource', []),
+                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource';
+            $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -3992,7 +4044,7 @@ class EnvironmentApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource',
+                        '\Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4007,7 +4059,7 @@ class EnvironmentApi
      *
      * Publish Business Model Diagram
      *
-     * @param  string $diagram  (required)
+     * @param  string $diagramId The ID of the diagram. (required)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
      * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentBusinessModelDiagramsPublishRequest $postEnvironmentBusinessModelDiagramsPublishRequest (optional)
@@ -4015,9 +4067,9 @@ class EnvironmentApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postEnvironmentBusinessModelDiagramsPublishAsync($diagram, $contentType = null, $accept = null, $postEnvironmentBusinessModelDiagramsPublishRequest = null)
+    public function postEnvironmentBusinessModelDiagramsPublishAsync($diagramId, $contentType = null, $accept = null, $postEnvironmentBusinessModelDiagramsPublishRequest = null)
     {
-        return $this->postEnvironmentBusinessModelDiagramsPublishAsyncWithHttpInfo($diagram, $contentType, $accept, $postEnvironmentBusinessModelDiagramsPublishRequest)
+        return $this->postEnvironmentBusinessModelDiagramsPublishAsyncWithHttpInfo($diagramId, $contentType, $accept, $postEnvironmentBusinessModelDiagramsPublishRequest)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4030,7 +4082,7 @@ class EnvironmentApi
      *
      * Publish Business Model Diagram
      *
-     * @param  string $diagram  (required)
+     * @param  string $diagramId The ID of the diagram. (required)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
      * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentBusinessModelDiagramsPublishRequest $postEnvironmentBusinessModelDiagramsPublishRequest (optional)
@@ -4038,10 +4090,10 @@ class EnvironmentApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postEnvironmentBusinessModelDiagramsPublishAsyncWithHttpInfo($diagram, $contentType = null, $accept = null, $postEnvironmentBusinessModelDiagramsPublishRequest = null)
+    public function postEnvironmentBusinessModelDiagramsPublishAsyncWithHttpInfo($diagramId, $contentType = null, $accept = null, $postEnvironmentBusinessModelDiagramsPublishRequest = null)
     {
-        $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramResource';
-        $request = $this->postEnvironmentBusinessModelDiagramsPublishRequest($diagram, $contentType, $accept, $postEnvironmentBusinessModelDiagramsPublishRequest);
+        $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel';
+        $request = $this->postEnvironmentBusinessModelDiagramsPublishRequest($diagramId, $contentType, $accept, $postEnvironmentBusinessModelDiagramsPublishRequest);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4082,7 +4134,7 @@ class EnvironmentApi
     /**
      * Create request for operation 'postEnvironmentBusinessModelDiagramsPublish'
      *
-     * @param  string $diagram  (required)
+     * @param  string $diagramId The ID of the diagram. (required)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
      * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentBusinessModelDiagramsPublishRequest $postEnvironmentBusinessModelDiagramsPublishRequest (optional)
@@ -4090,16 +4142,16 @@ class EnvironmentApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function postEnvironmentBusinessModelDiagramsPublishRequest($diagram, $contentType = null, $accept = null, $postEnvironmentBusinessModelDiagramsPublishRequest = null)
+    public function postEnvironmentBusinessModelDiagramsPublishRequest($diagramId, $contentType = null, $accept = null, $postEnvironmentBusinessModelDiagramsPublishRequest = null)
     {
-        // verify the required parameter 'diagram' is set
-        if ($diagram === null || (is_array($diagram) && count($diagram) === 0)) {
+        // verify the required parameter 'diagramId' is set
+        if ($diagramId === null || (is_array($diagramId) && count($diagramId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $diagram when calling postEnvironmentBusinessModelDiagramsPublish'
+                'Missing the required parameter $diagramId when calling postEnvironmentBusinessModelDiagramsPublish'
             );
         }
 
-        $resourcePath = '/api/v2/environment/business-model-diagrams/{diagram}/publish';
+        $resourcePath = '/api/v2/environment/business-model-diagrams/{diagram_id}/publish';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -4117,10 +4169,10 @@ class EnvironmentApi
         }
 
         // path params
-        if ($diagram !== null) {
+        if ($diagramId !== null) {
             $resourcePath = str_replace(
-                '{' . 'diagram' . '}',
-                ObjectSerializer::toPathValue($diagram),
+                '{' . 'diagram_id' . '}',
+                ObjectSerializer::toPathValue($diagramId),
                 $resourcePath
             );
         }
@@ -4200,7 +4252,7 @@ class EnvironmentApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource
+     * @return \Stackflows\Clients\Stackflows\Model\BusinessBaseModelModel
      */
     public function postEnvironmentBusinessModelsCreate($postEnvironmentBusinessModelsCreateRequest, $contentType = null, $accept = null)
     {
@@ -4219,7 +4271,7 @@ class EnvironmentApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Stackflows\Clients\Stackflows\Model\BusinessBaseModelModel, HTTP status code, HTTP response headers (array of strings)
      */
     public function postEnvironmentBusinessModelsCreateWithHttpInfo($postEnvironmentBusinessModelsCreateRequest, $contentType = null, $accept = null)
     {
@@ -4262,23 +4314,23 @@ class EnvironmentApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource' === '\SplFileObject') {
+                    if ('\Stackflows\Clients\Stackflows\Model\BusinessBaseModelModel' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource' !== 'string') {
+                        if ('\Stackflows\Clients\Stackflows\Model\BusinessBaseModelModel' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource', []),
+                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelModel', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource';
+            $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelModel';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -4299,7 +4351,7 @@ class EnvironmentApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource',
+                        '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelModel',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4345,7 +4397,7 @@ class EnvironmentApi
      */
     public function postEnvironmentBusinessModelsCreateAsyncWithHttpInfo($postEnvironmentBusinessModelsCreateRequest, $contentType = null, $accept = null)
     {
-        $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource';
+        $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelModel';
         $request = $this->postEnvironmentBusinessModelsCreateRequest($postEnvironmentBusinessModelsCreateRequest, $contentType, $accept);
 
         return $this->client
@@ -4486,6 +4538,598 @@ class EnvironmentApi
     }
 
     /**
+     * Operation postEnvironmentEventsMessage
+     *
+     * Send Message
+     *
+     * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentEventsMessageRequest $postEnvironmentEventsMessageRequest postEnvironmentEventsMessageRequest (required)
+     * @param  string $contentType  (optional)
+     * @param  string $accept  (optional)
+     *
+     * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Stackflows\Clients\Stackflows\Model\EventType
+     */
+    public function postEnvironmentEventsMessage($postEnvironmentEventsMessageRequest, $contentType = null, $accept = null)
+    {
+        list($response) = $this->postEnvironmentEventsMessageWithHttpInfo($postEnvironmentEventsMessageRequest, $contentType, $accept);
+        return $response;
+    }
+
+    /**
+     * Operation postEnvironmentEventsMessageWithHttpInfo
+     *
+     * Send Message
+     *
+     * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentEventsMessageRequest $postEnvironmentEventsMessageRequest (required)
+     * @param  string $contentType  (optional)
+     * @param  string $accept  (optional)
+     *
+     * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Stackflows\Clients\Stackflows\Model\EventType, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function postEnvironmentEventsMessageWithHttpInfo($postEnvironmentEventsMessageRequest, $contentType = null, $accept = null)
+    {
+        $request = $this->postEnvironmentEventsMessageRequest($postEnvironmentEventsMessageRequest, $contentType, $accept);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\Stackflows\Clients\Stackflows\Model\EventType' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\Stackflows\Clients\Stackflows\Model\EventType' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\EventType', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\Stackflows\Clients\Stackflows\Model\EventType';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Stackflows\Clients\Stackflows\Model\EventType',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation postEnvironmentEventsMessageAsync
+     *
+     * Send Message
+     *
+     * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentEventsMessageRequest $postEnvironmentEventsMessageRequest (required)
+     * @param  string $contentType  (optional)
+     * @param  string $accept  (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function postEnvironmentEventsMessageAsync($postEnvironmentEventsMessageRequest, $contentType = null, $accept = null)
+    {
+        return $this->postEnvironmentEventsMessageAsyncWithHttpInfo($postEnvironmentEventsMessageRequest, $contentType, $accept)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation postEnvironmentEventsMessageAsyncWithHttpInfo
+     *
+     * Send Message
+     *
+     * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentEventsMessageRequest $postEnvironmentEventsMessageRequest (required)
+     * @param  string $contentType  (optional)
+     * @param  string $accept  (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function postEnvironmentEventsMessageAsyncWithHttpInfo($postEnvironmentEventsMessageRequest, $contentType = null, $accept = null)
+    {
+        $returnType = '\Stackflows\Clients\Stackflows\Model\EventType';
+        $request = $this->postEnvironmentEventsMessageRequest($postEnvironmentEventsMessageRequest, $contentType, $accept);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'postEnvironmentEventsMessage'
+     *
+     * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentEventsMessageRequest $postEnvironmentEventsMessageRequest (required)
+     * @param  string $contentType  (optional)
+     * @param  string $accept  (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function postEnvironmentEventsMessageRequest($postEnvironmentEventsMessageRequest, $contentType = null, $accept = null)
+    {
+        // verify the required parameter 'postEnvironmentEventsMessageRequest' is set
+        if ($postEnvironmentEventsMessageRequest === null || (is_array($postEnvironmentEventsMessageRequest) && count($postEnvironmentEventsMessageRequest) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $postEnvironmentEventsMessageRequest when calling postEnvironmentEventsMessage'
+            );
+        }
+
+        $resourcePath = '/api/v2/environment/events/message';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+        // header params
+        if ($contentType !== null) {
+            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
+        }
+        // header params
+        if ($accept !== null) {
+            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
+        }
+
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($postEnvironmentEventsMessageRequest)) {
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($postEnvironmentEventsMessageRequest));
+            } else {
+                $httpBody = $postEnvironmentEventsMessageRequest;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation postEnvironmentEventsSignal
+     *
+     * Send Message
+     *
+     * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentEventsSignalRequest $postEnvironmentEventsSignalRequest postEnvironmentEventsSignalRequest (required)
+     * @param  string $contentType  (optional)
+     * @param  string $accept  (optional)
+     *
+     * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Stackflows\Clients\Stackflows\Model\EventType
+     */
+    public function postEnvironmentEventsSignal($postEnvironmentEventsSignalRequest, $contentType = null, $accept = null)
+    {
+        list($response) = $this->postEnvironmentEventsSignalWithHttpInfo($postEnvironmentEventsSignalRequest, $contentType, $accept);
+        return $response;
+    }
+
+    /**
+     * Operation postEnvironmentEventsSignalWithHttpInfo
+     *
+     * Send Message
+     *
+     * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentEventsSignalRequest $postEnvironmentEventsSignalRequest (required)
+     * @param  string $contentType  (optional)
+     * @param  string $accept  (optional)
+     *
+     * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Stackflows\Clients\Stackflows\Model\EventType, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function postEnvironmentEventsSignalWithHttpInfo($postEnvironmentEventsSignalRequest, $contentType = null, $accept = null)
+    {
+        $request = $this->postEnvironmentEventsSignalRequest($postEnvironmentEventsSignalRequest, $contentType, $accept);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\Stackflows\Clients\Stackflows\Model\EventType' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\Stackflows\Clients\Stackflows\Model\EventType' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\EventType', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\Stackflows\Clients\Stackflows\Model\EventType';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Stackflows\Clients\Stackflows\Model\EventType',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation postEnvironmentEventsSignalAsync
+     *
+     * Send Message
+     *
+     * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentEventsSignalRequest $postEnvironmentEventsSignalRequest (required)
+     * @param  string $contentType  (optional)
+     * @param  string $accept  (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function postEnvironmentEventsSignalAsync($postEnvironmentEventsSignalRequest, $contentType = null, $accept = null)
+    {
+        return $this->postEnvironmentEventsSignalAsyncWithHttpInfo($postEnvironmentEventsSignalRequest, $contentType, $accept)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation postEnvironmentEventsSignalAsyncWithHttpInfo
+     *
+     * Send Message
+     *
+     * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentEventsSignalRequest $postEnvironmentEventsSignalRequest (required)
+     * @param  string $contentType  (optional)
+     * @param  string $accept  (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function postEnvironmentEventsSignalAsyncWithHttpInfo($postEnvironmentEventsSignalRequest, $contentType = null, $accept = null)
+    {
+        $returnType = '\Stackflows\Clients\Stackflows\Model\EventType';
+        $request = $this->postEnvironmentEventsSignalRequest($postEnvironmentEventsSignalRequest, $contentType, $accept);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'postEnvironmentEventsSignal'
+     *
+     * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentEventsSignalRequest $postEnvironmentEventsSignalRequest (required)
+     * @param  string $contentType  (optional)
+     * @param  string $accept  (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function postEnvironmentEventsSignalRequest($postEnvironmentEventsSignalRequest, $contentType = null, $accept = null)
+    {
+        // verify the required parameter 'postEnvironmentEventsSignalRequest' is set
+        if ($postEnvironmentEventsSignalRequest === null || (is_array($postEnvironmentEventsSignalRequest) && count($postEnvironmentEventsSignalRequest) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $postEnvironmentEventsSignalRequest when calling postEnvironmentEventsSignal'
+            );
+        }
+
+        $resourcePath = '/api/v2/environment/events/signal';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+        // header params
+        if ($contentType !== null) {
+            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
+        }
+        // header params
+        if ($accept !== null) {
+            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
+        }
+
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($postEnvironmentEventsSignalRequest)) {
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($postEnvironmentEventsSignalRequest));
+            } else {
+                $httpBody = $postEnvironmentEventsSignalRequest;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation postEnvironmentServiceTasksLock
      *
      * Lock Service Tasks
@@ -4496,7 +5140,7 @@ class EnvironmentApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Stackflows\Clients\Stackflows\Model\ServiceTaskTypeResource[]
+     * @return \Stackflows\Clients\Stackflows\Model\ServiceTaskType[]
      */
     public function postEnvironmentServiceTasksLock($postEnvironmentServiceTasksLockRequest, $contentType = null, $accept = null)
     {
@@ -4515,7 +5159,7 @@ class EnvironmentApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Stackflows\Clients\Stackflows\Model\ServiceTaskTypeResource[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Stackflows\Clients\Stackflows\Model\ServiceTaskType[], HTTP status code, HTTP response headers (array of strings)
      */
     public function postEnvironmentServiceTasksLockWithHttpInfo($postEnvironmentServiceTasksLockRequest, $contentType = null, $accept = null)
     {
@@ -4558,23 +5202,23 @@ class EnvironmentApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Stackflows\Clients\Stackflows\Model\ServiceTaskTypeResource[]' === '\SplFileObject') {
+                    if ('\Stackflows\Clients\Stackflows\Model\ServiceTaskType[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Stackflows\Clients\Stackflows\Model\ServiceTaskTypeResource[]' !== 'string') {
+                        if ('\Stackflows\Clients\Stackflows\Model\ServiceTaskType[]' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\ServiceTaskTypeResource[]', []),
+                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\ServiceTaskType[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Stackflows\Clients\Stackflows\Model\ServiceTaskTypeResource[]';
+            $returnType = '\Stackflows\Clients\Stackflows\Model\ServiceTaskType[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -4595,7 +5239,7 @@ class EnvironmentApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Stackflows\Clients\Stackflows\Model\ServiceTaskTypeResource[]',
+                        '\Stackflows\Clients\Stackflows\Model\ServiceTaskType[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4641,7 +5285,7 @@ class EnvironmentApi
      */
     public function postEnvironmentServiceTasksLockAsyncWithHttpInfo($postEnvironmentServiceTasksLockRequest, $contentType = null, $accept = null)
     {
-        $returnType = '\Stackflows\Clients\Stackflows\Model\ServiceTaskTypeResource[]';
+        $returnType = '\Stackflows\Clients\Stackflows\Model\ServiceTaskType[]';
         $request = $this->postEnvironmentServiceTasksLockRequest($postEnvironmentServiceTasksLockRequest, $contentType, $accept);
 
         return $this->client
@@ -4793,7 +5437,7 @@ class EnvironmentApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Stackflows\Clients\Stackflows\Model\ServiceTaskTypeResource
+     * @return \Stackflows\Clients\Stackflows\Model\ServiceTaskType
      */
     public function postEnvironmentServiceTasksServe($reference, $postEnvironmentServiceTasksServeRequest, $contentType = null, $accept = null)
     {
@@ -4813,7 +5457,7 @@ class EnvironmentApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Stackflows\Clients\Stackflows\Model\ServiceTaskTypeResource, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Stackflows\Clients\Stackflows\Model\ServiceTaskType, HTTP status code, HTTP response headers (array of strings)
      */
     public function postEnvironmentServiceTasksServeWithHttpInfo($reference, $postEnvironmentServiceTasksServeRequest, $contentType = null, $accept = null)
     {
@@ -4856,23 +5500,23 @@ class EnvironmentApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Stackflows\Clients\Stackflows\Model\ServiceTaskTypeResource' === '\SplFileObject') {
+                    if ('\Stackflows\Clients\Stackflows\Model\ServiceTaskType' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Stackflows\Clients\Stackflows\Model\ServiceTaskTypeResource' !== 'string') {
+                        if ('\Stackflows\Clients\Stackflows\Model\ServiceTaskType' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\ServiceTaskTypeResource', []),
+                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\ServiceTaskType', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Stackflows\Clients\Stackflows\Model\ServiceTaskTypeResource';
+            $returnType = '\Stackflows\Clients\Stackflows\Model\ServiceTaskType';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -4893,7 +5537,7 @@ class EnvironmentApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Stackflows\Clients\Stackflows\Model\ServiceTaskTypeResource',
+                        '\Stackflows\Clients\Stackflows\Model\ServiceTaskType',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4941,7 +5585,7 @@ class EnvironmentApi
      */
     public function postEnvironmentServiceTasksServeAsyncWithHttpInfo($reference, $postEnvironmentServiceTasksServeRequest, $contentType = null, $accept = null)
     {
-        $returnType = '\Stackflows\Clients\Stackflows\Model\ServiceTaskTypeResource';
+        $returnType = '\Stackflows\Clients\Stackflows\Model\ServiceTaskType';
         $request = $this->postEnvironmentServiceTasksServeRequest($reference, $postEnvironmentServiceTasksServeRequest, $contentType, $accept);
 
         return $this->client
@@ -5102,17 +5746,16 @@ class EnvironmentApi
      * Unlock Service Task
      *
      * @param  string $reference The reference of a service task. (required)
-     * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentServiceTasksUnlockRequest $postEnvironmentServiceTasksUnlockRequest postEnvironmentServiceTasksUnlockRequest (required)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Stackflows\Clients\Stackflows\Model\ServiceTaskTypeResource
+     * @return \Stackflows\Clients\Stackflows\Model\ServiceTaskType
      */
-    public function postEnvironmentServiceTasksUnlock($reference, $postEnvironmentServiceTasksUnlockRequest, $contentType = null, $accept = null)
+    public function postEnvironmentServiceTasksUnlock($reference, $contentType = null, $accept = null)
     {
-        list($response) = $this->postEnvironmentServiceTasksUnlockWithHttpInfo($reference, $postEnvironmentServiceTasksUnlockRequest, $contentType, $accept);
+        list($response) = $this->postEnvironmentServiceTasksUnlockWithHttpInfo($reference, $contentType, $accept);
         return $response;
     }
 
@@ -5122,17 +5765,16 @@ class EnvironmentApi
      * Unlock Service Task
      *
      * @param  string $reference The reference of a service task. (required)
-     * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentServiceTasksUnlockRequest $postEnvironmentServiceTasksUnlockRequest (required)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Stackflows\Clients\Stackflows\Model\ServiceTaskTypeResource, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Stackflows\Clients\Stackflows\Model\ServiceTaskType, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postEnvironmentServiceTasksUnlockWithHttpInfo($reference, $postEnvironmentServiceTasksUnlockRequest, $contentType = null, $accept = null)
+    public function postEnvironmentServiceTasksUnlockWithHttpInfo($reference, $contentType = null, $accept = null)
     {
-        $request = $this->postEnvironmentServiceTasksUnlockRequest($reference, $postEnvironmentServiceTasksUnlockRequest, $contentType, $accept);
+        $request = $this->postEnvironmentServiceTasksUnlockRequest($reference, $contentType, $accept);
 
         try {
             $options = $this->createHttpClientOption();
@@ -5171,23 +5813,23 @@ class EnvironmentApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Stackflows\Clients\Stackflows\Model\ServiceTaskTypeResource' === '\SplFileObject') {
+                    if ('\Stackflows\Clients\Stackflows\Model\ServiceTaskType' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Stackflows\Clients\Stackflows\Model\ServiceTaskTypeResource' !== 'string') {
+                        if ('\Stackflows\Clients\Stackflows\Model\ServiceTaskType' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\ServiceTaskTypeResource', []),
+                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\ServiceTaskType', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Stackflows\Clients\Stackflows\Model\ServiceTaskTypeResource';
+            $returnType = '\Stackflows\Clients\Stackflows\Model\ServiceTaskType';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -5208,7 +5850,7 @@ class EnvironmentApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Stackflows\Clients\Stackflows\Model\ServiceTaskTypeResource',
+                        '\Stackflows\Clients\Stackflows\Model\ServiceTaskType',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5224,16 +5866,15 @@ class EnvironmentApi
      * Unlock Service Task
      *
      * @param  string $reference The reference of a service task. (required)
-     * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentServiceTasksUnlockRequest $postEnvironmentServiceTasksUnlockRequest (required)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postEnvironmentServiceTasksUnlockAsync($reference, $postEnvironmentServiceTasksUnlockRequest, $contentType = null, $accept = null)
+    public function postEnvironmentServiceTasksUnlockAsync($reference, $contentType = null, $accept = null)
     {
-        return $this->postEnvironmentServiceTasksUnlockAsyncWithHttpInfo($reference, $postEnvironmentServiceTasksUnlockRequest, $contentType, $accept)
+        return $this->postEnvironmentServiceTasksUnlockAsyncWithHttpInfo($reference, $contentType, $accept)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -5247,17 +5888,16 @@ class EnvironmentApi
      * Unlock Service Task
      *
      * @param  string $reference The reference of a service task. (required)
-     * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentServiceTasksUnlockRequest $postEnvironmentServiceTasksUnlockRequest (required)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postEnvironmentServiceTasksUnlockAsyncWithHttpInfo($reference, $postEnvironmentServiceTasksUnlockRequest, $contentType = null, $accept = null)
+    public function postEnvironmentServiceTasksUnlockAsyncWithHttpInfo($reference, $contentType = null, $accept = null)
     {
-        $returnType = '\Stackflows\Clients\Stackflows\Model\ServiceTaskTypeResource';
-        $request = $this->postEnvironmentServiceTasksUnlockRequest($reference, $postEnvironmentServiceTasksUnlockRequest, $contentType, $accept);
+        $returnType = '\Stackflows\Clients\Stackflows\Model\ServiceTaskType';
+        $request = $this->postEnvironmentServiceTasksUnlockRequest($reference, $contentType, $accept);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -5299,25 +5939,18 @@ class EnvironmentApi
      * Create request for operation 'postEnvironmentServiceTasksUnlock'
      *
      * @param  string $reference The reference of a service task. (required)
-     * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentServiceTasksUnlockRequest $postEnvironmentServiceTasksUnlockRequest (required)
      * @param  string $contentType  (optional)
      * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function postEnvironmentServiceTasksUnlockRequest($reference, $postEnvironmentServiceTasksUnlockRequest, $contentType = null, $accept = null)
+    public function postEnvironmentServiceTasksUnlockRequest($reference, $contentType = null, $accept = null)
     {
         // verify the required parameter 'reference' is set
         if ($reference === null || (is_array($reference) && count($reference) === 0)) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $reference when calling postEnvironmentServiceTasksUnlock'
-            );
-        }
-        // verify the required parameter 'postEnvironmentServiceTasksUnlockRequest' is set
-        if ($postEnvironmentServiceTasksUnlockRequest === null || (is_array($postEnvironmentServiceTasksUnlockRequest) && count($postEnvironmentServiceTasksUnlockRequest) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $postEnvironmentServiceTasksUnlockRequest when calling postEnvironmentServiceTasksUnlock'
             );
         }
 
@@ -5355,18 +5988,12 @@ class EnvironmentApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json'],
-                ['application/json']
+                []
             );
         }
 
         // for model (json/xml)
-        if (isset($postEnvironmentServiceTasksUnlockRequest)) {
-            if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($postEnvironmentServiceTasksUnlockRequest));
-            } else {
-                $httpBody = $postEnvironmentServiceTasksUnlockRequest;
-            }
-        } elseif (count($formParams) > 0) {
+        if (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
@@ -5422,7 +6049,7 @@ class EnvironmentApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource[]
+     * @return \Stackflows\Clients\Stackflows\Model\BusinessProcessModelModel[]
      */
     public function postEnvironmentTaggedBusinessModelsStart($postEnvironmentTaggedBusinessModelsStartRequest, $contentType = null, $accept = null)
     {
@@ -5441,7 +6068,7 @@ class EnvironmentApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Stackflows\Clients\Stackflows\Model\BusinessProcessModelModel[], HTTP status code, HTTP response headers (array of strings)
      */
     public function postEnvironmentTaggedBusinessModelsStartWithHttpInfo($postEnvironmentTaggedBusinessModelsStartRequest, $contentType = null, $accept = null)
     {
@@ -5484,23 +6111,23 @@ class EnvironmentApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource[]' === '\SplFileObject') {
+                    if ('\Stackflows\Clients\Stackflows\Model\BusinessProcessModelModel[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource[]' !== 'string') {
+                        if ('\Stackflows\Clients\Stackflows\Model\BusinessProcessModelModel[]' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource[]', []),
+                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\BusinessProcessModelModel[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource[]';
+            $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessProcessModelModel[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -5521,7 +6148,7 @@ class EnvironmentApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource[]',
+                        '\Stackflows\Clients\Stackflows\Model\BusinessProcessModelModel[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5567,7 +6194,7 @@ class EnvironmentApi
      */
     public function postEnvironmentTaggedBusinessModelsStartAsyncWithHttpInfo($postEnvironmentTaggedBusinessModelsStartRequest, $contentType = null, $accept = null)
     {
-        $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelResource[]';
+        $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessProcessModelModel[]';
         $request = $this->postEnvironmentTaggedBusinessModelsStartRequest($postEnvironmentTaggedBusinessModelsStartRequest, $contentType, $accept);
 
         return $this->client
@@ -5718,7 +6345,7 @@ class EnvironmentApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Stackflows\Clients\Stackflows\Model\UserTaskTypeResource
+     * @return \Stackflows\Clients\Stackflows\Model\UserTaskType
      */
     public function postEnvironmentUserTasksComplete($id, $contentType = null, $accept = null)
     {
@@ -5737,7 +6364,7 @@ class EnvironmentApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Stackflows\Clients\Stackflows\Model\UserTaskTypeResource, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Stackflows\Clients\Stackflows\Model\UserTaskType, HTTP status code, HTTP response headers (array of strings)
      */
     public function postEnvironmentUserTasksCompleteWithHttpInfo($id, $contentType = null, $accept = null)
     {
@@ -5780,23 +6407,23 @@ class EnvironmentApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Stackflows\Clients\Stackflows\Model\UserTaskTypeResource' === '\SplFileObject') {
+                    if ('\Stackflows\Clients\Stackflows\Model\UserTaskType' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Stackflows\Clients\Stackflows\Model\UserTaskTypeResource' !== 'string') {
+                        if ('\Stackflows\Clients\Stackflows\Model\UserTaskType' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\UserTaskTypeResource', []),
+                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\UserTaskType', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Stackflows\Clients\Stackflows\Model\UserTaskTypeResource';
+            $returnType = '\Stackflows\Clients\Stackflows\Model\UserTaskType';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -5817,7 +6444,7 @@ class EnvironmentApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Stackflows\Clients\Stackflows\Model\UserTaskTypeResource',
+                        '\Stackflows\Clients\Stackflows\Model\UserTaskType',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5863,7 +6490,7 @@ class EnvironmentApi
      */
     public function postEnvironmentUserTasksCompleteAsyncWithHttpInfo($id, $contentType = null, $accept = null)
     {
-        $returnType = '\Stackflows\Clients\Stackflows\Model\UserTaskTypeResource';
+        $returnType = '\Stackflows\Clients\Stackflows\Model\UserTaskType';
         $request = $this->postEnvironmentUserTasksCompleteRequest($id, $contentType, $accept);
 
         return $this->client
@@ -6278,7 +6905,7 @@ class EnvironmentApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Stackflows\Clients\Stackflows\Model\UserTaskTypeResource
+     * @return \Stackflows\Clients\Stackflows\Model\UserTaskType
      */
     public function postEnvironmentUserTasksEscalate($id, $postEnvironmentUserTasksEscalateRequest, $contentType = null, $accept = null)
     {
@@ -6298,7 +6925,7 @@ class EnvironmentApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Stackflows\Clients\Stackflows\Model\UserTaskTypeResource, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Stackflows\Clients\Stackflows\Model\UserTaskType, HTTP status code, HTTP response headers (array of strings)
      */
     public function postEnvironmentUserTasksEscalateWithHttpInfo($id, $postEnvironmentUserTasksEscalateRequest, $contentType = null, $accept = null)
     {
@@ -6341,23 +6968,23 @@ class EnvironmentApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Stackflows\Clients\Stackflows\Model\UserTaskTypeResource' === '\SplFileObject') {
+                    if ('\Stackflows\Clients\Stackflows\Model\UserTaskType' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Stackflows\Clients\Stackflows\Model\UserTaskTypeResource' !== 'string') {
+                        if ('\Stackflows\Clients\Stackflows\Model\UserTaskType' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\UserTaskTypeResource', []),
+                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\UserTaskType', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Stackflows\Clients\Stackflows\Model\UserTaskTypeResource';
+            $returnType = '\Stackflows\Clients\Stackflows\Model\UserTaskType';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -6378,7 +7005,7 @@ class EnvironmentApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Stackflows\Clients\Stackflows\Model\UserTaskTypeResource',
+                        '\Stackflows\Clients\Stackflows\Model\UserTaskType',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6426,7 +7053,7 @@ class EnvironmentApi
      */
     public function postEnvironmentUserTasksEscalateAsyncWithHttpInfo($id, $postEnvironmentUserTasksEscalateRequest, $contentType = null, $accept = null)
     {
-        $returnType = '\Stackflows\Clients\Stackflows\Model\UserTaskTypeResource';
+        $returnType = '\Stackflows\Clients\Stackflows\Model\UserTaskType';
         $request = $this->postEnvironmentUserTasksEscalateRequest($id, $postEnvironmentUserTasksEscalateRequest, $contentType, $accept);
 
         return $this->client

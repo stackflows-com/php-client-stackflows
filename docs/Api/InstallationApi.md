@@ -4,7 +4,7 @@ All URIs are relative to http://localhost:8081.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteEngines()**](InstallationApi.md#deleteEngines) | **DELETE** /api/v2/engines/{engine} | Delete Engine
+[**deleteEngines()**](InstallationApi.md#deleteEngines) | **DELETE** /api/v2/engines/{engine_id} | Delete Engine
 [**deleteEnvironmentsDeleteBulk()**](InstallationApi.md#deleteEnvironmentsDeleteBulk) | **DELETE** /api/v2/environments | Delete Environments
 [**getEngine()**](InstallationApi.md#getEngine) | **GET** /api/v2/engines | List Engines
 [**getEnginesShow()**](InstallationApi.md#getEnginesShow) | **GET** /api/v2/engines/{id} | View Engine
@@ -17,7 +17,7 @@ Method | HTTP request | Description
 ## `deleteEngines()`
 
 ```php
-deleteEngines($engine, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\EngineResource
+deleteEngines($engineId, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\EngineModel
 ```
 
 Delete Engine
@@ -37,12 +37,12 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\InstallationApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$engine = 4241dbd0-fd0b-11ec-a738-470c54c64da4; // string | 
+$engineId = voluptas; // string | The ID of the engine.
 $contentType = application/json; // string | 
 $accept = application/json; // string | 
 
 try {
-    $result = $apiInstance->deleteEngines($engine, $contentType, $accept);
+    $result = $apiInstance->deleteEngines($engineId, $contentType, $accept);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InstallationApi->deleteEngines: ', $e->getMessage(), PHP_EOL;
@@ -53,13 +53,13 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **engine** | **string**|  |
+ **engineId** | **string**| The ID of the engine. |
  **contentType** | **string**|  | [optional]
  **accept** | **string**|  | [optional]
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\EngineResource**](../Model/EngineResource.md)
+[**\Stackflows\Clients\Stackflows\Model\EngineModel**](../Model/EngineModel.md)
 
 ### Authorization
 
@@ -77,7 +77,7 @@ No authorization required
 ## `deleteEnvironmentsDeleteBulk()`
 
 ```php
-deleteEnvironmentsDeleteBulk($contentType, $accept, $deleteEnvironmentsDeleteBulkRequest): \Stackflows\Clients\Stackflows\Model\CategoryResource[]
+deleteEnvironmentsDeleteBulk($contentType, $accept, $deleteEnvironmentsDeleteBulkRequest): \Stackflows\Clients\Stackflows\Model\CategoryModel[]
 ```
 
 Delete Environments
@@ -119,7 +119,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\CategoryResource[]**](../Model/CategoryResource.md)
+[**\Stackflows\Clients\Stackflows\Model\CategoryModel[]**](../Model/CategoryModel.md)
 
 ### Authorization
 
@@ -137,7 +137,7 @@ No authorization required
 ## `getEngine()`
 
 ```php
-getEngine($contentType, $accept): \Stackflows\Clients\Stackflows\Model\EngineResource[]
+getEngine($contentType, $accept): \Stackflows\Clients\Stackflows\Model\EngineModel[]
 ```
 
 List Engines
@@ -177,7 +177,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\EngineResource[]**](../Model/EngineResource.md)
+[**\Stackflows\Clients\Stackflows\Model\EngineModel[]**](../Model/EngineModel.md)
 
 ### Authorization
 
@@ -195,7 +195,7 @@ No authorization required
 ## `getEnginesShow()`
 
 ```php
-getEnginesShow($id, $engine, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\EngineResource
+getEnginesShow($id, $engine, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\EngineModel
 ```
 
 View Engine
@@ -215,8 +215,8 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\InstallationApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = 4241dbd0-fd0b-11ec-a738-470c54c64da4; // string | The ID of the engine.
-$engine = velit; // string | ID of an engine
+$id = 05347dc0-0ac8-11ed-8fd5-eb1eaa90123d; // string | The ID of the engine.
+$engine = quisquam; // string | ID of an engine
 $contentType = application/json; // string | 
 $accept = application/json; // string | 
 
@@ -239,7 +239,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\EngineResource**](../Model/EngineResource.md)
+[**\Stackflows\Clients\Stackflows\Model\EngineModel**](../Model/EngineModel.md)
 
 ### Authorization
 
@@ -257,7 +257,7 @@ No authorization required
 ## `getEnvironmentsList()`
 
 ```php
-getEnvironmentsList($contentType, $accept): \Stackflows\Clients\Stackflows\Model\EnvironmentResource[]
+getEnvironmentsList($contentType, $accept): \Stackflows\Clients\Stackflows\Model\EnvironmentModel[]
 ```
 
 List Environments
@@ -297,7 +297,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\EnvironmentResource[]**](../Model/EnvironmentResource.md)
+[**\Stackflows\Clients\Stackflows\Model\EnvironmentModel[]**](../Model/EnvironmentModel.md)
 
 ### Authorization
 
@@ -315,7 +315,7 @@ No authorization required
 ## `postEnginesCreate()`
 
 ```php
-postEnginesCreate($postEnginesCreateRequest, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\EngineResource
+postEnginesCreate($postEnginesCreateRequest, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\EngineModel
 ```
 
 Create Engine
@@ -357,7 +357,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\EngineResource**](../Model/EngineResource.md)
+[**\Stackflows\Clients\Stackflows\Model\EngineModel**](../Model/EngineModel.md)
 
 ### Authorization
 
@@ -375,7 +375,7 @@ No authorization required
 ## `postEnvironmentsCreate()`
 
 ```php
-postEnvironmentsCreate($postEnvironmentsCreateRequest, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\CategoryResource
+postEnvironmentsCreate($postEnvironmentsCreateRequest, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\CategoryModel
 ```
 
 Create Environment
@@ -417,7 +417,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\CategoryResource**](../Model/CategoryResource.md)
+[**\Stackflows\Clients\Stackflows\Model\CategoryModel**](../Model/CategoryModel.md)
 
 ### Authorization
 
@@ -435,7 +435,7 @@ No authorization required
 ## `putEnginesUpdate()`
 
 ```php
-putEnginesUpdate($id, $engine, $contentType, $accept, $putEnginesUpdateRequest): \Stackflows\Clients\Stackflows\Model\EngineResource
+putEnginesUpdate($id, $engine, $contentType, $accept, $putEnginesUpdateRequest): \Stackflows\Clients\Stackflows\Model\EngineModel
 ```
 
 Update Engine
@@ -455,8 +455,8 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\InstallationApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = 4241dbd0-fd0b-11ec-a738-470c54c64da4; // string | The ID of the engine.
-$engine = velit; // string | ID of an engine
+$id = 05347dc0-0ac8-11ed-8fd5-eb1eaa90123d; // string | The ID of the engine.
+$engine = quisquam; // string | ID of an engine
 $contentType = application/json; // string | 
 $accept = application/json; // string | 
 $putEnginesUpdateRequest = new \Stackflows\Clients\Stackflows\Model\PutEnginesUpdateRequest(); // \Stackflows\Clients\Stackflows\Model\PutEnginesUpdateRequest
@@ -481,7 +481,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\EngineResource**](../Model/EngineResource.md)
+[**\Stackflows\Clients\Stackflows\Model\EngineModel**](../Model/EngineModel.md)
 
 ### Authorization
 
