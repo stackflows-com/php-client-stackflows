@@ -14,7 +14,7 @@ Method | HTTP request | Description
 ## `deleteOrganizationUnits()`
 
 ```php
-deleteOrganizationUnits($organizationUnitId, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\OrganizationUnitModel
+deleteOrganizationUnits($organizationUnitId): \Stackflows\Clients\Stackflows\Model\OrganizationUnitModel
 ```
 
 Delete Organzation Unit
@@ -34,12 +34,10 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OrganizationApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$organizationUnitId = possimus; // string | The ID of the organizationUnit.
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
+$organizationUnitId = voluptas; // string | The ID of the organizationUnit.
 
 try {
-    $result = $apiInstance->deleteOrganizationUnits($organizationUnitId, $contentType, $accept);
+    $result = $apiInstance->deleteOrganizationUnits($organizationUnitId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrganizationApi->deleteOrganizationUnits: ', $e->getMessage(), PHP_EOL;
@@ -51,8 +49,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationUnitId** | **string**| The ID of the organizationUnit. |
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
 
 ### Return type
 
@@ -74,7 +70,7 @@ No authorization required
 ## `getOrganizationUnitsList()`
 
 ```php
-getOrganizationUnitsList($filterRoot1, $includechildren, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\OrganizationUnitModel[]
+getOrganizationUnitsList($filterRoot1, $includechildren): \Stackflows\Clients\Stackflows\Model\OrganizationUnitModel[]
 ```
 
 List Organzation Units
@@ -94,13 +90,11 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OrganizationApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$filterRoot1 = et; // string | Retrieve only root nodes
-$includechildren = minima; // string | Load children
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
+$filterRoot1 = debitis; // string | Retrieve only root nodes
+$includechildren = voluptate; // string | Load children
 
 try {
-    $result = $apiInstance->getOrganizationUnitsList($filterRoot1, $includechildren, $contentType, $accept);
+    $result = $apiInstance->getOrganizationUnitsList($filterRoot1, $includechildren);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrganizationApi->getOrganizationUnitsList: ', $e->getMessage(), PHP_EOL;
@@ -113,8 +107,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filterRoot1** | **string**| Retrieve only root nodes | [optional]
  **includechildren** | **string**| Load children | [optional]
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
 
 ### Return type
 
@@ -136,7 +128,7 @@ No authorization required
 ## `getOrganizationUnitsShow()`
 
 ```php
-getOrganizationUnitsShow($organizationUnitId, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\OrganizationUnitModel
+getOrganizationUnitsShow($organizationUnitId): \Stackflows\Clients\Stackflows\Model\OrganizationUnitModel
 ```
 
 View Organzation Unit
@@ -156,12 +148,10 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OrganizationApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$organizationUnitId = possimus; // string | The ID of the organizationUnit.
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
+$organizationUnitId = voluptas; // string | The ID of the organizationUnit.
 
 try {
-    $result = $apiInstance->getOrganizationUnitsShow($organizationUnitId, $contentType, $accept);
+    $result = $apiInstance->getOrganizationUnitsShow($organizationUnitId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrganizationApi->getOrganizationUnitsShow: ', $e->getMessage(), PHP_EOL;
@@ -173,8 +163,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationUnitId** | **string**| The ID of the organizationUnit. |
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
 
 ### Return type
 
@@ -196,7 +184,7 @@ No authorization required
 ## `postOrganizationUnitsCreate()`
 
 ```php
-postOrganizationUnitsCreate($postOrganizationUnitsCreateRequest, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\OrganizationUnitModel
+postOrganizationUnitsCreate($postOrganizationUnitsCreateRequest): \Stackflows\Clients\Stackflows\Model\OrganizationUnitModel
 ```
 
 Create Organzation Unit
@@ -217,11 +205,9 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OrganizationApi(
     new GuzzleHttp\Client()
 );
 $postOrganizationUnitsCreateRequest = new \Stackflows\Clients\Stackflows\Model\PostOrganizationUnitsCreateRequest(); // \Stackflows\Clients\Stackflows\Model\PostOrganizationUnitsCreateRequest
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
 
 try {
-    $result = $apiInstance->postOrganizationUnitsCreate($postOrganizationUnitsCreateRequest, $contentType, $accept);
+    $result = $apiInstance->postOrganizationUnitsCreate($postOrganizationUnitsCreateRequest);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrganizationApi->postOrganizationUnitsCreate: ', $e->getMessage(), PHP_EOL;
@@ -233,8 +219,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **postOrganizationUnitsCreateRequest** | [**\Stackflows\Clients\Stackflows\Model\PostOrganizationUnitsCreateRequest**](../Model/PostOrganizationUnitsCreateRequest.md)|  |
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
 
 ### Return type
 
@@ -256,7 +240,7 @@ No authorization required
 ## `putOrganizationUnitsUpdate()`
 
 ```php
-putOrganizationUnitsUpdate($organizationUnitId, $contentType, $accept, $putOrganizationUnitsUpdateRequest): \Stackflows\Clients\Stackflows\Model\OrganizationUnitModel
+putOrganizationUnitsUpdate($organizationUnitId, $putOrganizationUnitsUpdateRequest): \Stackflows\Clients\Stackflows\Model\OrganizationUnitModel
 ```
 
 Update Organzation Unit
@@ -276,13 +260,11 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OrganizationApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$organizationUnitId = possimus; // string | The ID of the organizationUnit.
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
+$organizationUnitId = voluptas; // string | The ID of the organizationUnit.
 $putOrganizationUnitsUpdateRequest = new \Stackflows\Clients\Stackflows\Model\PutOrganizationUnitsUpdateRequest(); // \Stackflows\Clients\Stackflows\Model\PutOrganizationUnitsUpdateRequest
 
 try {
-    $result = $apiInstance->putOrganizationUnitsUpdate($organizationUnitId, $contentType, $accept, $putOrganizationUnitsUpdateRequest);
+    $result = $apiInstance->putOrganizationUnitsUpdate($organizationUnitId, $putOrganizationUnitsUpdateRequest);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrganizationApi->putOrganizationUnitsUpdate: ', $e->getMessage(), PHP_EOL;
@@ -294,8 +276,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationUnitId** | **string**| The ID of the organizationUnit. |
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
  **putOrganizationUnitsUpdateRequest** | [**\Stackflows\Clients\Stackflows\Model\PutOrganizationUnitsUpdateRequest**](../Model/PutOrganizationUnitsUpdateRequest.md)|  | [optional]
 
 ### Return type

@@ -7,5 +7,7 @@
   "packageName": "Stackflows PHP Client",
   "variableNamingConvention": "camelCase",
   "sortParamsByRequiredFlag": true,
+  "prependFormOrBodyParameters": false,
+  "useOptional": true,
   "srcBasePath": "src"
 }

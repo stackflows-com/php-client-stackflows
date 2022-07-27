@@ -192,6 +192,18 @@ class EnvironmentApiTest extends TestCase
     }
 
     /**
+     * Test case for getEnvironmentUserTasksView
+     *
+     * View User Task.
+     *
+     */
+    public function testGetEnvironmentUserTasksView()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for postEnvironmentBusinessModelDiagramsCommentsCreate
      *
      * Create Business Model Diagram Comment.

@@ -121,16 +121,14 @@ class InstallationApi
      * Delete Engine
      *
      * @param  string $engineId The ID of the engine. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\EngineModel
      */
-    public function deleteEngines($engineId, $contentType = null, $accept = null)
+    public function deleteEngines($engineId)
     {
-        list($response) = $this->deleteEnginesWithHttpInfo($engineId, $contentType, $accept);
+        list($response) = $this->deleteEnginesWithHttpInfo($engineId);
         return $response;
     }
 
@@ -140,16 +138,14 @@ class InstallationApi
      * Delete Engine
      *
      * @param  string $engineId The ID of the engine. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\EngineModel, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteEnginesWithHttpInfo($engineId, $contentType = null, $accept = null)
+    public function deleteEnginesWithHttpInfo($engineId)
     {
-        $request = $this->deleteEnginesRequest($engineId, $contentType, $accept);
+        $request = $this->deleteEnginesRequest($engineId);
 
         try {
             $options = $this->createHttpClientOption();
@@ -241,15 +237,13 @@ class InstallationApi
      * Delete Engine
      *
      * @param  string $engineId The ID of the engine. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteEnginesAsync($engineId, $contentType = null, $accept = null)
+    public function deleteEnginesAsync($engineId)
     {
-        return $this->deleteEnginesAsyncWithHttpInfo($engineId, $contentType, $accept)
+        return $this->deleteEnginesAsyncWithHttpInfo($engineId)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -263,16 +257,14 @@ class InstallationApi
      * Delete Engine
      *
      * @param  string $engineId The ID of the engine. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteEnginesAsyncWithHttpInfo($engineId, $contentType = null, $accept = null)
+    public function deleteEnginesAsyncWithHttpInfo($engineId)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\EngineModel';
-        $request = $this->deleteEnginesRequest($engineId, $contentType, $accept);
+        $request = $this->deleteEnginesRequest($engineId);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -314,13 +306,11 @@ class InstallationApi
      * Create request for operation 'deleteEngines'
      *
      * @param  string $engineId The ID of the engine. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deleteEnginesRequest($engineId, $contentType = null, $accept = null)
+    public function deleteEnginesRequest($engineId)
     {
         // verify the required parameter 'engineId' is set
         if ($engineId === null || (is_array($engineId) && count($engineId) === 0)) {
@@ -337,14 +327,6 @@ class InstallationApi
         $multipart = false;
 
 
-        // header params
-        if ($contentType !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
-        }
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
         // path params
         if ($engineId !== null) {
@@ -418,17 +400,15 @@ class InstallationApi
      *
      * Delete Environments
      *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      * @param  \Stackflows\Clients\Stackflows\Model\DeleteEnvironmentsDeleteBulkRequest $deleteEnvironmentsDeleteBulkRequest deleteEnvironmentsDeleteBulkRequest (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\CategoryModel[]
      */
-    public function deleteEnvironmentsDeleteBulk($contentType = null, $accept = null, $deleteEnvironmentsDeleteBulkRequest = null)
+    public function deleteEnvironmentsDeleteBulk($deleteEnvironmentsDeleteBulkRequest = null)
     {
-        list($response) = $this->deleteEnvironmentsDeleteBulkWithHttpInfo($contentType, $accept, $deleteEnvironmentsDeleteBulkRequest);
+        list($response) = $this->deleteEnvironmentsDeleteBulkWithHttpInfo($deleteEnvironmentsDeleteBulkRequest);
         return $response;
     }
 
@@ -437,17 +417,15 @@ class InstallationApi
      *
      * Delete Environments
      *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      * @param  \Stackflows\Clients\Stackflows\Model\DeleteEnvironmentsDeleteBulkRequest $deleteEnvironmentsDeleteBulkRequest (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\CategoryModel[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteEnvironmentsDeleteBulkWithHttpInfo($contentType = null, $accept = null, $deleteEnvironmentsDeleteBulkRequest = null)
+    public function deleteEnvironmentsDeleteBulkWithHttpInfo($deleteEnvironmentsDeleteBulkRequest = null)
     {
-        $request = $this->deleteEnvironmentsDeleteBulkRequest($contentType, $accept, $deleteEnvironmentsDeleteBulkRequest);
+        $request = $this->deleteEnvironmentsDeleteBulkRequest($deleteEnvironmentsDeleteBulkRequest);
 
         try {
             $options = $this->createHttpClientOption();
@@ -538,16 +516,14 @@ class InstallationApi
      *
      * Delete Environments
      *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      * @param  \Stackflows\Clients\Stackflows\Model\DeleteEnvironmentsDeleteBulkRequest $deleteEnvironmentsDeleteBulkRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteEnvironmentsDeleteBulkAsync($contentType = null, $accept = null, $deleteEnvironmentsDeleteBulkRequest = null)
+    public function deleteEnvironmentsDeleteBulkAsync($deleteEnvironmentsDeleteBulkRequest = null)
     {
-        return $this->deleteEnvironmentsDeleteBulkAsyncWithHttpInfo($contentType, $accept, $deleteEnvironmentsDeleteBulkRequest)
+        return $this->deleteEnvironmentsDeleteBulkAsyncWithHttpInfo($deleteEnvironmentsDeleteBulkRequest)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -560,17 +536,15 @@ class InstallationApi
      *
      * Delete Environments
      *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      * @param  \Stackflows\Clients\Stackflows\Model\DeleteEnvironmentsDeleteBulkRequest $deleteEnvironmentsDeleteBulkRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteEnvironmentsDeleteBulkAsyncWithHttpInfo($contentType = null, $accept = null, $deleteEnvironmentsDeleteBulkRequest = null)
+    public function deleteEnvironmentsDeleteBulkAsyncWithHttpInfo($deleteEnvironmentsDeleteBulkRequest = null)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\CategoryModel[]';
-        $request = $this->deleteEnvironmentsDeleteBulkRequest($contentType, $accept, $deleteEnvironmentsDeleteBulkRequest);
+        $request = $this->deleteEnvironmentsDeleteBulkRequest($deleteEnvironmentsDeleteBulkRequest);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -611,14 +585,12 @@ class InstallationApi
     /**
      * Create request for operation 'deleteEnvironmentsDeleteBulk'
      *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      * @param  \Stackflows\Clients\Stackflows\Model\DeleteEnvironmentsDeleteBulkRequest $deleteEnvironmentsDeleteBulkRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deleteEnvironmentsDeleteBulkRequest($contentType = null, $accept = null, $deleteEnvironmentsDeleteBulkRequest = null)
+    public function deleteEnvironmentsDeleteBulkRequest($deleteEnvironmentsDeleteBulkRequest = null)
     {
 
         $resourcePath = '/api/v2/environments';
@@ -629,14 +601,6 @@ class InstallationApi
         $multipart = false;
 
 
-        // header params
-        if ($contentType !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
-        }
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
 
 
@@ -708,16 +672,14 @@ class InstallationApi
      *
      * List Engines
      *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\EngineModel[]
      */
-    public function getEngine($contentType = null, $accept = null)
+    public function getEngine()
     {
-        list($response) = $this->getEngineWithHttpInfo($contentType, $accept);
+        list($response) = $this->getEngineWithHttpInfo();
         return $response;
     }
 
@@ -726,16 +688,14 @@ class InstallationApi
      *
      * List Engines
      *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\EngineModel[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getEngineWithHttpInfo($contentType = null, $accept = null)
+    public function getEngineWithHttpInfo()
     {
-        $request = $this->getEngineRequest($contentType, $accept);
+        $request = $this->getEngineRequest();
 
         try {
             $options = $this->createHttpClientOption();
@@ -826,15 +786,13 @@ class InstallationApi
      *
      * List Engines
      *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getEngineAsync($contentType = null, $accept = null)
+    public function getEngineAsync()
     {
-        return $this->getEngineAsyncWithHttpInfo($contentType, $accept)
+        return $this->getEngineAsyncWithHttpInfo()
             ->then(
                 function ($response) {
                     return $response[0];
@@ -847,16 +805,14 @@ class InstallationApi
      *
      * List Engines
      *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getEngineAsyncWithHttpInfo($contentType = null, $accept = null)
+    public function getEngineAsyncWithHttpInfo()
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\EngineModel[]';
-        $request = $this->getEngineRequest($contentType, $accept);
+        $request = $this->getEngineRequest();
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -897,13 +853,11 @@ class InstallationApi
     /**
      * Create request for operation 'getEngine'
      *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getEngineRequest($contentType = null, $accept = null)
+    public function getEngineRequest()
     {
 
         $resourcePath = '/api/v2/engines';
@@ -914,14 +868,6 @@ class InstallationApi
         $multipart = false;
 
 
-        // header params
-        if ($contentType !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
-        }
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
 
 
@@ -989,16 +935,14 @@ class InstallationApi
      *
      * @param  string $id The ID of the engine. (required)
      * @param  string $engine ID of an engine (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\EngineModel
      */
-    public function getEnginesShow($id, $engine, $contentType = null, $accept = null)
+    public function getEnginesShow($id, $engine)
     {
-        list($response) = $this->getEnginesShowWithHttpInfo($id, $engine, $contentType, $accept);
+        list($response) = $this->getEnginesShowWithHttpInfo($id, $engine);
         return $response;
     }
 
@@ -1009,16 +953,14 @@ class InstallationApi
      *
      * @param  string $id The ID of the engine. (required)
      * @param  string $engine ID of an engine (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\EngineModel, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getEnginesShowWithHttpInfo($id, $engine, $contentType = null, $accept = null)
+    public function getEnginesShowWithHttpInfo($id, $engine)
     {
-        $request = $this->getEnginesShowRequest($id, $engine, $contentType, $accept);
+        $request = $this->getEnginesShowRequest($id, $engine);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1111,15 +1053,13 @@ class InstallationApi
      *
      * @param  string $id The ID of the engine. (required)
      * @param  string $engine ID of an engine (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getEnginesShowAsync($id, $engine, $contentType = null, $accept = null)
+    public function getEnginesShowAsync($id, $engine)
     {
-        return $this->getEnginesShowAsyncWithHttpInfo($id, $engine, $contentType, $accept)
+        return $this->getEnginesShowAsyncWithHttpInfo($id, $engine)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1134,16 +1074,14 @@ class InstallationApi
      *
      * @param  string $id The ID of the engine. (required)
      * @param  string $engine ID of an engine (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getEnginesShowAsyncWithHttpInfo($id, $engine, $contentType = null, $accept = null)
+    public function getEnginesShowAsyncWithHttpInfo($id, $engine)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\EngineModel';
-        $request = $this->getEnginesShowRequest($id, $engine, $contentType, $accept);
+        $request = $this->getEnginesShowRequest($id, $engine);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1186,13 +1124,11 @@ class InstallationApi
      *
      * @param  string $id The ID of the engine. (required)
      * @param  string $engine ID of an engine (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getEnginesShowRequest($id, $engine, $contentType = null, $accept = null)
+    public function getEnginesShowRequest($id, $engine)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -1215,14 +1151,6 @@ class InstallationApi
         $multipart = false;
 
 
-        // header params
-        if ($contentType !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
-        }
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
         // path params
         if ($id !== null) {
@@ -1304,16 +1232,14 @@ class InstallationApi
      *
      * List Environments
      *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\EnvironmentModel[]
      */
-    public function getEnvironmentsList($contentType = null, $accept = null)
+    public function getEnvironmentsList()
     {
-        list($response) = $this->getEnvironmentsListWithHttpInfo($contentType, $accept);
+        list($response) = $this->getEnvironmentsListWithHttpInfo();
         return $response;
     }
 
@@ -1322,16 +1248,14 @@ class InstallationApi
      *
      * List Environments
      *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\EnvironmentModel[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getEnvironmentsListWithHttpInfo($contentType = null, $accept = null)
+    public function getEnvironmentsListWithHttpInfo()
     {
-        $request = $this->getEnvironmentsListRequest($contentType, $accept);
+        $request = $this->getEnvironmentsListRequest();
 
         try {
             $options = $this->createHttpClientOption();
@@ -1422,15 +1346,13 @@ class InstallationApi
      *
      * List Environments
      *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getEnvironmentsListAsync($contentType = null, $accept = null)
+    public function getEnvironmentsListAsync()
     {
-        return $this->getEnvironmentsListAsyncWithHttpInfo($contentType, $accept)
+        return $this->getEnvironmentsListAsyncWithHttpInfo()
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1443,16 +1365,14 @@ class InstallationApi
      *
      * List Environments
      *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getEnvironmentsListAsyncWithHttpInfo($contentType = null, $accept = null)
+    public function getEnvironmentsListAsyncWithHttpInfo()
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\EnvironmentModel[]';
-        $request = $this->getEnvironmentsListRequest($contentType, $accept);
+        $request = $this->getEnvironmentsListRequest();
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1493,13 +1413,11 @@ class InstallationApi
     /**
      * Create request for operation 'getEnvironmentsList'
      *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getEnvironmentsListRequest($contentType = null, $accept = null)
+    public function getEnvironmentsListRequest()
     {
 
         $resourcePath = '/api/v2/environments';
@@ -1510,14 +1428,6 @@ class InstallationApi
         $multipart = false;
 
 
-        // header params
-        if ($contentType !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
-        }
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
 
 
@@ -1584,16 +1494,14 @@ class InstallationApi
      * Create Engine
      *
      * @param  \Stackflows\Clients\Stackflows\Model\PostEnginesCreateRequest $postEnginesCreateRequest postEnginesCreateRequest (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\EngineModel
      */
-    public function postEnginesCreate($postEnginesCreateRequest, $contentType = null, $accept = null)
+    public function postEnginesCreate($postEnginesCreateRequest)
     {
-        list($response) = $this->postEnginesCreateWithHttpInfo($postEnginesCreateRequest, $contentType, $accept);
+        list($response) = $this->postEnginesCreateWithHttpInfo($postEnginesCreateRequest);
         return $response;
     }
 
@@ -1603,16 +1511,14 @@ class InstallationApi
      * Create Engine
      *
      * @param  \Stackflows\Clients\Stackflows\Model\PostEnginesCreateRequest $postEnginesCreateRequest (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\EngineModel, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postEnginesCreateWithHttpInfo($postEnginesCreateRequest, $contentType = null, $accept = null)
+    public function postEnginesCreateWithHttpInfo($postEnginesCreateRequest)
     {
-        $request = $this->postEnginesCreateRequest($postEnginesCreateRequest, $contentType, $accept);
+        $request = $this->postEnginesCreateRequest($postEnginesCreateRequest);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1704,15 +1610,13 @@ class InstallationApi
      * Create Engine
      *
      * @param  \Stackflows\Clients\Stackflows\Model\PostEnginesCreateRequest $postEnginesCreateRequest (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postEnginesCreateAsync($postEnginesCreateRequest, $contentType = null, $accept = null)
+    public function postEnginesCreateAsync($postEnginesCreateRequest)
     {
-        return $this->postEnginesCreateAsyncWithHttpInfo($postEnginesCreateRequest, $contentType, $accept)
+        return $this->postEnginesCreateAsyncWithHttpInfo($postEnginesCreateRequest)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1726,16 +1630,14 @@ class InstallationApi
      * Create Engine
      *
      * @param  \Stackflows\Clients\Stackflows\Model\PostEnginesCreateRequest $postEnginesCreateRequest (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postEnginesCreateAsyncWithHttpInfo($postEnginesCreateRequest, $contentType = null, $accept = null)
+    public function postEnginesCreateAsyncWithHttpInfo($postEnginesCreateRequest)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\EngineModel';
-        $request = $this->postEnginesCreateRequest($postEnginesCreateRequest, $contentType, $accept);
+        $request = $this->postEnginesCreateRequest($postEnginesCreateRequest);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1777,13 +1679,11 @@ class InstallationApi
      * Create request for operation 'postEnginesCreate'
      *
      * @param  \Stackflows\Clients\Stackflows\Model\PostEnginesCreateRequest $postEnginesCreateRequest (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function postEnginesCreateRequest($postEnginesCreateRequest, $contentType = null, $accept = null)
+    public function postEnginesCreateRequest($postEnginesCreateRequest)
     {
         // verify the required parameter 'postEnginesCreateRequest' is set
         if ($postEnginesCreateRequest === null || (is_array($postEnginesCreateRequest) && count($postEnginesCreateRequest) === 0)) {
@@ -1800,14 +1700,6 @@ class InstallationApi
         $multipart = false;
 
 
-        // header params
-        if ($contentType !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
-        }
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
 
 
@@ -1880,16 +1772,14 @@ class InstallationApi
      * Create Environment
      *
      * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentsCreateRequest $postEnvironmentsCreateRequest postEnvironmentsCreateRequest (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\CategoryModel
      */
-    public function postEnvironmentsCreate($postEnvironmentsCreateRequest, $contentType = null, $accept = null)
+    public function postEnvironmentsCreate($postEnvironmentsCreateRequest)
     {
-        list($response) = $this->postEnvironmentsCreateWithHttpInfo($postEnvironmentsCreateRequest, $contentType, $accept);
+        list($response) = $this->postEnvironmentsCreateWithHttpInfo($postEnvironmentsCreateRequest);
         return $response;
     }
 
@@ -1899,16 +1789,14 @@ class InstallationApi
      * Create Environment
      *
      * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentsCreateRequest $postEnvironmentsCreateRequest (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\CategoryModel, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postEnvironmentsCreateWithHttpInfo($postEnvironmentsCreateRequest, $contentType = null, $accept = null)
+    public function postEnvironmentsCreateWithHttpInfo($postEnvironmentsCreateRequest)
     {
-        $request = $this->postEnvironmentsCreateRequest($postEnvironmentsCreateRequest, $contentType, $accept);
+        $request = $this->postEnvironmentsCreateRequest($postEnvironmentsCreateRequest);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2000,15 +1888,13 @@ class InstallationApi
      * Create Environment
      *
      * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentsCreateRequest $postEnvironmentsCreateRequest (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postEnvironmentsCreateAsync($postEnvironmentsCreateRequest, $contentType = null, $accept = null)
+    public function postEnvironmentsCreateAsync($postEnvironmentsCreateRequest)
     {
-        return $this->postEnvironmentsCreateAsyncWithHttpInfo($postEnvironmentsCreateRequest, $contentType, $accept)
+        return $this->postEnvironmentsCreateAsyncWithHttpInfo($postEnvironmentsCreateRequest)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2022,16 +1908,14 @@ class InstallationApi
      * Create Environment
      *
      * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentsCreateRequest $postEnvironmentsCreateRequest (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postEnvironmentsCreateAsyncWithHttpInfo($postEnvironmentsCreateRequest, $contentType = null, $accept = null)
+    public function postEnvironmentsCreateAsyncWithHttpInfo($postEnvironmentsCreateRequest)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\CategoryModel';
-        $request = $this->postEnvironmentsCreateRequest($postEnvironmentsCreateRequest, $contentType, $accept);
+        $request = $this->postEnvironmentsCreateRequest($postEnvironmentsCreateRequest);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2073,13 +1957,11 @@ class InstallationApi
      * Create request for operation 'postEnvironmentsCreate'
      *
      * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentsCreateRequest $postEnvironmentsCreateRequest (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function postEnvironmentsCreateRequest($postEnvironmentsCreateRequest, $contentType = null, $accept = null)
+    public function postEnvironmentsCreateRequest($postEnvironmentsCreateRequest)
     {
         // verify the required parameter 'postEnvironmentsCreateRequest' is set
         if ($postEnvironmentsCreateRequest === null || (is_array($postEnvironmentsCreateRequest) && count($postEnvironmentsCreateRequest) === 0)) {
@@ -2096,14 +1978,6 @@ class InstallationApi
         $multipart = false;
 
 
-        // header params
-        if ($contentType !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
-        }
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
 
 
@@ -2177,17 +2051,15 @@ class InstallationApi
      *
      * @param  string $id The ID of the engine. (required)
      * @param  string $engine ID of an engine (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      * @param  \Stackflows\Clients\Stackflows\Model\PutEnginesUpdateRequest $putEnginesUpdateRequest putEnginesUpdateRequest (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\EngineModel
      */
-    public function putEnginesUpdate($id, $engine, $contentType = null, $accept = null, $putEnginesUpdateRequest = null)
+    public function putEnginesUpdate($id, $engine, $putEnginesUpdateRequest = null)
     {
-        list($response) = $this->putEnginesUpdateWithHttpInfo($id, $engine, $contentType, $accept, $putEnginesUpdateRequest);
+        list($response) = $this->putEnginesUpdateWithHttpInfo($id, $engine, $putEnginesUpdateRequest);
         return $response;
     }
 
@@ -2198,17 +2070,15 @@ class InstallationApi
      *
      * @param  string $id The ID of the engine. (required)
      * @param  string $engine ID of an engine (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      * @param  \Stackflows\Clients\Stackflows\Model\PutEnginesUpdateRequest $putEnginesUpdateRequest (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\EngineModel, HTTP status code, HTTP response headers (array of strings)
      */
-    public function putEnginesUpdateWithHttpInfo($id, $engine, $contentType = null, $accept = null, $putEnginesUpdateRequest = null)
+    public function putEnginesUpdateWithHttpInfo($id, $engine, $putEnginesUpdateRequest = null)
     {
-        $request = $this->putEnginesUpdateRequest($id, $engine, $contentType, $accept, $putEnginesUpdateRequest);
+        $request = $this->putEnginesUpdateRequest($id, $engine, $putEnginesUpdateRequest);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2301,16 +2171,14 @@ class InstallationApi
      *
      * @param  string $id The ID of the engine. (required)
      * @param  string $engine ID of an engine (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      * @param  \Stackflows\Clients\Stackflows\Model\PutEnginesUpdateRequest $putEnginesUpdateRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putEnginesUpdateAsync($id, $engine, $contentType = null, $accept = null, $putEnginesUpdateRequest = null)
+    public function putEnginesUpdateAsync($id, $engine, $putEnginesUpdateRequest = null)
     {
-        return $this->putEnginesUpdateAsyncWithHttpInfo($id, $engine, $contentType, $accept, $putEnginesUpdateRequest)
+        return $this->putEnginesUpdateAsyncWithHttpInfo($id, $engine, $putEnginesUpdateRequest)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2325,17 +2193,15 @@ class InstallationApi
      *
      * @param  string $id The ID of the engine. (required)
      * @param  string $engine ID of an engine (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      * @param  \Stackflows\Clients\Stackflows\Model\PutEnginesUpdateRequest $putEnginesUpdateRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putEnginesUpdateAsyncWithHttpInfo($id, $engine, $contentType = null, $accept = null, $putEnginesUpdateRequest = null)
+    public function putEnginesUpdateAsyncWithHttpInfo($id, $engine, $putEnginesUpdateRequest = null)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\EngineModel';
-        $request = $this->putEnginesUpdateRequest($id, $engine, $contentType, $accept, $putEnginesUpdateRequest);
+        $request = $this->putEnginesUpdateRequest($id, $engine, $putEnginesUpdateRequest);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2378,14 +2244,12 @@ class InstallationApi
      *
      * @param  string $id The ID of the engine. (required)
      * @param  string $engine ID of an engine (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      * @param  \Stackflows\Clients\Stackflows\Model\PutEnginesUpdateRequest $putEnginesUpdateRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function putEnginesUpdateRequest($id, $engine, $contentType = null, $accept = null, $putEnginesUpdateRequest = null)
+    public function putEnginesUpdateRequest($id, $engine, $putEnginesUpdateRequest = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -2408,14 +2272,6 @@ class InstallationApi
         $multipart = false;
 
 
-        // header params
-        if ($contentType !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
-        }
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
         // path params
         if ($id !== null) {

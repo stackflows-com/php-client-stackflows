@@ -20,7 +20,7 @@ Method | HTTP request | Description
 ## `deleteUserOrganizations()`
 
 ```php
-deleteUserOrganizations($organizationId, $organization, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\OrganizationUnitModel
+deleteUserOrganizations($organizationId, $organization): \Stackflows\Clients\Stackflows\Model\OrganizationUnitModel
 ```
 
 Delete Organization
@@ -40,13 +40,11 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\UserApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$organizationId = impedit; // string | The ID of the organization.
+$organizationId = 05316710-0ac8-11ed-a9c9-1748e8abe9ab; // string | The ID of the organization.
 $organization = 3688e6c0-1a56-11ec-8366; // string | The ID of an organization.
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
 
 try {
-    $result = $apiInstance->deleteUserOrganizations($organizationId, $organization, $contentType, $accept);
+    $result = $apiInstance->deleteUserOrganizations($organizationId, $organization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UserApi->deleteUserOrganizations: ', $e->getMessage(), PHP_EOL;
@@ -59,8 +57,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **string**| The ID of the organization. |
  **organization** | **string**| The ID of an organization. |
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
 
 ### Return type
 
@@ -82,7 +78,7 @@ No authorization required
 ## `deleteUserRevoke()`
 
 ```php
-deleteUserRevoke($contentType, $accept): \Stackflows\Clients\Stackflows\Model\UserModel
+deleteUserRevoke(): \Stackflows\Clients\Stackflows\Model\UserModel
 ```
 
 Revoke all tokens
@@ -102,11 +98,9 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\UserApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
 
 try {
-    $result = $apiInstance->deleteUserRevoke($contentType, $accept);
+    $result = $apiInstance->deleteUserRevoke();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UserApi->deleteUserRevoke: ', $e->getMessage(), PHP_EOL;
@@ -115,10 +109,7 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -140,7 +131,7 @@ No authorization required
 ## `getUserMe()`
 
 ```php
-getUserMe($includeorganizations, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\UserModel
+getUserMe($includeorganizations): \Stackflows\Clients\Stackflows\Model\UserModel
 ```
 
 Me
@@ -160,12 +151,10 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\UserApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$includeorganizations = est; // string | Possible includes
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
+$includeorganizations = beatae; // string | Possible includes
 
 try {
-    $result = $apiInstance->getUserMe($includeorganizations, $contentType, $accept);
+    $result = $apiInstance->getUserMe($includeorganizations);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UserApi->getUserMe: ', $e->getMessage(), PHP_EOL;
@@ -177,8 +166,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **includeorganizations** | **string**| Possible includes | [optional]
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
 
 ### Return type
 
@@ -200,7 +187,7 @@ No authorization required
 ## `getUserOrganizationsList()`
 
 ```php
-getUserOrganizationsList($contentType, $accept): \Stackflows\Clients\Stackflows\Model\OrganizationUnitModel[]
+getUserOrganizationsList(): \Stackflows\Clients\Stackflows\Model\OrganizationUnitModel[]
 ```
 
 List Organizations
@@ -220,11 +207,9 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\UserApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
 
 try {
-    $result = $apiInstance->getUserOrganizationsList($contentType, $accept);
+    $result = $apiInstance->getUserOrganizationsList();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UserApi->getUserOrganizationsList: ', $e->getMessage(), PHP_EOL;
@@ -233,10 +218,7 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -258,7 +240,7 @@ No authorization required
 ## `getUserOrganizationsShow()`
 
 ```php
-getUserOrganizationsShow($id, $organization, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\OrganizationUnitModel
+getUserOrganizationsShow($id, $organization): \Stackflows\Clients\Stackflows\Model\OrganizationUnitModel
 ```
 
 View Organization
@@ -280,11 +262,9 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\UserApi(
 );
 $id = 05316710-0ac8-11ed-a9c9-1748e8abe9ab; // string | The ID of the organization.
 $organization = 3688e6c0-1a56-11ec-8366; // string | The ID of an organization.
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
 
 try {
-    $result = $apiInstance->getUserOrganizationsShow($id, $organization, $contentType, $accept);
+    $result = $apiInstance->getUserOrganizationsShow($id, $organization);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UserApi->getUserOrganizationsShow: ', $e->getMessage(), PHP_EOL;
@@ -297,8 +277,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| The ID of the organization. |
  **organization** | **string**| The ID of an organization. |
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
 
 ### Return type
 
@@ -320,7 +298,7 @@ No authorization required
 ## `postUserLogin()`
 
 ```php
-postUserLogin($postUserLoginRequest, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\UserModel
+postUserLogin($postUserLoginRequest): \Stackflows\Clients\Stackflows\Model\UserModel
 ```
 
 Login
@@ -341,11 +319,9 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\UserApi(
     new GuzzleHttp\Client()
 );
 $postUserLoginRequest = new \Stackflows\Clients\Stackflows\Model\PostUserLoginRequest(); // \Stackflows\Clients\Stackflows\Model\PostUserLoginRequest
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
 
 try {
-    $result = $apiInstance->postUserLogin($postUserLoginRequest, $contentType, $accept);
+    $result = $apiInstance->postUserLogin($postUserLoginRequest);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UserApi->postUserLogin: ', $e->getMessage(), PHP_EOL;
@@ -357,8 +333,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **postUserLoginRequest** | [**\Stackflows\Clients\Stackflows\Model\PostUserLoginRequest**](../Model/PostUserLoginRequest.md)|  |
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
 
 ### Return type
 
@@ -380,7 +354,7 @@ No authorization required
 ## `postUserOrganizationsStore()`
 
 ```php
-postUserOrganizationsStore($postUserOrganizationsStoreRequest, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\OrganizationUnitModel
+postUserOrganizationsStore($postUserOrganizationsStoreRequest): \Stackflows\Clients\Stackflows\Model\OrganizationUnitModel
 ```
 
 Create Organization
@@ -401,11 +375,9 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\UserApi(
     new GuzzleHttp\Client()
 );
 $postUserOrganizationsStoreRequest = new \Stackflows\Clients\Stackflows\Model\PostUserOrganizationsStoreRequest(); // \Stackflows\Clients\Stackflows\Model\PostUserOrganizationsStoreRequest
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
 
 try {
-    $result = $apiInstance->postUserOrganizationsStore($postUserOrganizationsStoreRequest, $contentType, $accept);
+    $result = $apiInstance->postUserOrganizationsStore($postUserOrganizationsStoreRequest);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UserApi->postUserOrganizationsStore: ', $e->getMessage(), PHP_EOL;
@@ -417,8 +389,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **postUserOrganizationsStoreRequest** | [**\Stackflows\Clients\Stackflows\Model\PostUserOrganizationsStoreRequest**](../Model/PostUserOrganizationsStoreRequest.md)|  |
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
 
 ### Return type
 
@@ -440,7 +410,7 @@ No authorization required
 ## `postUserRegister()`
 
 ```php
-postUserRegister($postUserRegisterRequest, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\UserModel
+postUserRegister($postUserRegisterRequest): \Stackflows\Clients\Stackflows\Model\UserModel
 ```
 
 Register
@@ -461,11 +431,9 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\UserApi(
     new GuzzleHttp\Client()
 );
 $postUserRegisterRequest = new \Stackflows\Clients\Stackflows\Model\PostUserRegisterRequest(); // \Stackflows\Clients\Stackflows\Model\PostUserRegisterRequest
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
 
 try {
-    $result = $apiInstance->postUserRegister($postUserRegisterRequest, $contentType, $accept);
+    $result = $apiInstance->postUserRegister($postUserRegisterRequest);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UserApi->postUserRegister: ', $e->getMessage(), PHP_EOL;
@@ -477,8 +445,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **postUserRegisterRequest** | [**\Stackflows\Clients\Stackflows\Model\PostUserRegisterRequest**](../Model/PostUserRegisterRequest.md)|  |
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
 
 ### Return type
 
@@ -500,7 +466,7 @@ No authorization required
 ## `postUserResetPassword()`
 
 ```php
-postUserResetPassword($postUserResetPasswordRequest, $contentType, $accept)
+postUserResetPassword($postUserResetPasswordRequest)
 ```
 
 Restore password
@@ -521,11 +487,9 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\UserApi(
     new GuzzleHttp\Client()
 );
 $postUserResetPasswordRequest = new \Stackflows\Clients\Stackflows\Model\PostUserResetPasswordRequest(); // \Stackflows\Clients\Stackflows\Model\PostUserResetPasswordRequest
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
 
 try {
-    $apiInstance->postUserResetPassword($postUserResetPasswordRequest, $contentType, $accept);
+    $apiInstance->postUserResetPassword($postUserResetPasswordRequest);
 } catch (Exception $e) {
     echo 'Exception when calling UserApi->postUserResetPassword: ', $e->getMessage(), PHP_EOL;
 }
@@ -536,8 +500,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **postUserResetPasswordRequest** | [**\Stackflows\Clients\Stackflows\Model\PostUserResetPasswordRequest**](../Model/PostUserResetPasswordRequest.md)|  |
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
 
 ### Return type
 
@@ -559,7 +521,7 @@ No authorization required
 ## `putUserOrganizationsUpdate()`
 
 ```php
-putUserOrganizationsUpdate($id, $organization, $contentType, $accept, $putUserOrganizationsUpdateRequest): \Stackflows\Clients\Stackflows\Model\OrganizationUnitModel
+putUserOrganizationsUpdate($id, $organization, $putUserOrganizationsUpdateRequest): \Stackflows\Clients\Stackflows\Model\OrganizationUnitModel
 ```
 
 Update Organization
@@ -581,12 +543,10 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\UserApi(
 );
 $id = 05316710-0ac8-11ed-a9c9-1748e8abe9ab; // string | The ID of the organization.
 $organization = 3688e6c0-1a56-11ec-8366; // string | The ID of an organization.
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
 $putUserOrganizationsUpdateRequest = new \Stackflows\Clients\Stackflows\Model\PutUserOrganizationsUpdateRequest(); // \Stackflows\Clients\Stackflows\Model\PutUserOrganizationsUpdateRequest
 
 try {
-    $result = $apiInstance->putUserOrganizationsUpdate($id, $organization, $contentType, $accept, $putUserOrganizationsUpdateRequest);
+    $result = $apiInstance->putUserOrganizationsUpdate($id, $organization, $putUserOrganizationsUpdateRequest);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UserApi->putUserOrganizationsUpdate: ', $e->getMessage(), PHP_EOL;
@@ -599,8 +559,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| The ID of the organization. |
  **organization** | **string**| The ID of an organization. |
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
  **putUserOrganizationsUpdateRequest** | [**\Stackflows\Clients\Stackflows\Model\PutUserOrganizationsUpdateRequest**](../Model/PutUserOrganizationsUpdateRequest.md)|  | [optional]
 
 ### Return type
@@ -623,7 +581,7 @@ No authorization required
 ## `putUserUpdate()`
 
 ```php
-putUserUpdate($contentType, $accept, $putUserUpdateRequest): \Stackflows\Clients\Stackflows\Model\UserModel
+putUserUpdate($putUserUpdateRequest): \Stackflows\Clients\Stackflows\Model\UserModel
 ```
 
 Update
@@ -643,12 +601,10 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\UserApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
 $putUserUpdateRequest = new \Stackflows\Clients\Stackflows\Model\PutUserUpdateRequest(); // \Stackflows\Clients\Stackflows\Model\PutUserUpdateRequest
 
 try {
-    $result = $apiInstance->putUserUpdate($contentType, $accept, $putUserUpdateRequest);
+    $result = $apiInstance->putUserUpdate($putUserUpdateRequest);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UserApi->putUserUpdate: ', $e->getMessage(), PHP_EOL;
@@ -659,8 +615,6 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
  **putUserUpdateRequest** | [**\Stackflows\Clients\Stackflows\Model\PutUserUpdateRequest**](../Model/PutUserUpdateRequest.md)|  | [optional]
 
 ### Return type

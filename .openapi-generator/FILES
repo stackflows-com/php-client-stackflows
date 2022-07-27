@@ -42,6 +42,7 @@ docs/Model/PostEnvironmentEventsMessageRequest.md
 docs/Model/PostEnvironmentEventsSignalRequest.md
 docs/Model/PostEnvironmentServiceTasksLockRequest.md
 docs/Model/PostEnvironmentServiceTasksServeRequest.md
+docs/Model/PostEnvironmentServiceTasksUnlockRequest.md
 docs/Model/PostEnvironmentTaggedBusinessModelsStartRequest.md
 docs/Model/PostEnvironmentUserTasksErrorizeRequest.md
 docs/Model/PostEnvironmentUserTasksEscalateRequest.md
@@ -116,6 +117,7 @@ src/Model/PostEnvironmentEventsMessageRequest.php
 src/Model/PostEnvironmentEventsSignalRequest.php
 src/Model/PostEnvironmentServiceTasksLockRequest.php
 src/Model/PostEnvironmentServiceTasksServeRequest.php
+src/Model/PostEnvironmentServiceTasksUnlockRequest.php
 src/Model/PostEnvironmentTaggedBusinessModelsStartRequest.php
 src/Model/PostEnvironmentUserTasksErrorizeRequest.php
 src/Model/PostEnvironmentUserTasksEscalateRequest.php
@@ -185,6 +187,7 @@ test/Model/PostEnvironmentEventsMessageRequestTest.php
 test/Model/PostEnvironmentEventsSignalRequestTest.php
 test/Model/PostEnvironmentServiceTasksLockRequestTest.php
 test/Model/PostEnvironmentServiceTasksServeRequestTest.php
+test/Model/PostEnvironmentServiceTasksUnlockRequestTest.php
 test/Model/PostEnvironmentTaggedBusinessModelsStartRequestTest.php
 test/Model/PostEnvironmentUserTasksErrorizeRequestTest.php
 test/Model/PostEnvironmentUserTasksEscalateRequestTest.php

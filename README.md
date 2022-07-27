@@ -55,12 +55,10 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\EnvironmentApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$diagramId = laborum; // string | The ID of the diagram.
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
+$diagramId = 139b5820-048d-11ed-a920-d9cc122fb2b1; // string | The ID of the diagram.
 
 try {
-    $result = $apiInstance->deleteEnvironmentBusinessModelDiagrams($diagramId, $contentType, $accept);
+    $result = $apiInstance->deleteEnvironmentBusinessModelDiagrams($diagramId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling EnvironmentApi->deleteEnvironmentBusinessModelDiagrams: ', $e->getMessage(), PHP_EOL;
@@ -84,6 +82,7 @@ Class | Method | HTTP request | Description
 *EnvironmentApi* | [**getEnvironmentBusinessModelsList**](docs/Api/EnvironmentApi.md#getenvironmentbusinessmodelslist) | **GET** /api/v2/environment/business-models | List Business Models
 *EnvironmentApi* | [**getEnvironmentBusinessModelsShow**](docs/Api/EnvironmentApi.md#getenvironmentbusinessmodelsshow) | **GET** /api/v2/environment/business-models/{model_id} | View Business Model
 *EnvironmentApi* | [**getEnvironmentUserTasksList**](docs/Api/EnvironmentApi.md#getenvironmentusertaskslist) | **GET** /api/v2/environment/user-tasks | List User Tasks
+*EnvironmentApi* | [**getEnvironmentUserTasksView**](docs/Api/EnvironmentApi.md#getenvironmentusertasksview) | **GET** /api/v2/environment/user-tasks/{id} | View User Task
 *EnvironmentApi* | [**postEnvironmentBusinessModelDiagramsCommentsCreate**](docs/Api/EnvironmentApi.md#postenvironmentbusinessmodeldiagramscommentscreate) | **POST** /api/v2/environment/business-model-diagrams/{diagram_id}/comments | Create Business Model Diagram Comment
 *EnvironmentApi* | [**postEnvironmentBusinessModelDiagramsCreate**](docs/Api/EnvironmentApi.md#postenvironmentbusinessmodeldiagramscreate) | **POST** /api/v2/environment/business-model-diagrams | Create Business Model Diagram
 *EnvironmentApi* | [**postEnvironmentBusinessModelDiagramsPublish**](docs/Api/EnvironmentApi.md#postenvironmentbusinessmodeldiagramspublish) | **POST** /api/v2/environment/business-model-diagrams/{diagram_id}/publish | Publish Business Model Diagram
@@ -207,6 +206,7 @@ Class | Method | HTTP request | Description
 - [PostEnvironmentEventsSignalRequest](docs/Model/PostEnvironmentEventsSignalRequest.md)
 - [PostEnvironmentServiceTasksLockRequest](docs/Model/PostEnvironmentServiceTasksLockRequest.md)
 - [PostEnvironmentServiceTasksServeRequest](docs/Model/PostEnvironmentServiceTasksServeRequest.md)
+- [PostEnvironmentServiceTasksUnlockRequest](docs/Model/PostEnvironmentServiceTasksUnlockRequest.md)
 - [PostEnvironmentTaggedBusinessModelsStartRequest](docs/Model/PostEnvironmentTaggedBusinessModelsStartRequest.md)
 - [PostEnvironmentUserTasksErrorizeRequest](docs/Model/PostEnvironmentUserTasksErrorizeRequest.md)
 - [PostEnvironmentUserTasksEscalateRequest](docs/Model/PostEnvironmentUserTasksEscalateRequest.md)

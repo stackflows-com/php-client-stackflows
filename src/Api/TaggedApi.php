@@ -121,16 +121,14 @@ class TaggedApi
      * Starts Business Process Models by Tag
      *
      * @param  \Stackflows\Clients\Stackflows\Model\PostTaggedBusinessModelsStartRequest $postTaggedBusinessModelsStartRequest postTaggedBusinessModelsStartRequest (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\BusinessProcessModelModel[]
      */
-    public function postTaggedBusinessModelsStart($postTaggedBusinessModelsStartRequest, $contentType = null, $accept = null)
+    public function postTaggedBusinessModelsStart($postTaggedBusinessModelsStartRequest)
     {
-        list($response) = $this->postTaggedBusinessModelsStartWithHttpInfo($postTaggedBusinessModelsStartRequest, $contentType, $accept);
+        list($response) = $this->postTaggedBusinessModelsStartWithHttpInfo($postTaggedBusinessModelsStartRequest);
         return $response;
     }
 
@@ -140,16 +138,14 @@ class TaggedApi
      * Starts Business Process Models by Tag
      *
      * @param  \Stackflows\Clients\Stackflows\Model\PostTaggedBusinessModelsStartRequest $postTaggedBusinessModelsStartRequest (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\BusinessProcessModelModel[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function postTaggedBusinessModelsStartWithHttpInfo($postTaggedBusinessModelsStartRequest, $contentType = null, $accept = null)
+    public function postTaggedBusinessModelsStartWithHttpInfo($postTaggedBusinessModelsStartRequest)
     {
-        $request = $this->postTaggedBusinessModelsStartRequest($postTaggedBusinessModelsStartRequest, $contentType, $accept);
+        $request = $this->postTaggedBusinessModelsStartRequest($postTaggedBusinessModelsStartRequest);
 
         try {
             $options = $this->createHttpClientOption();
@@ -241,15 +237,13 @@ class TaggedApi
      * Starts Business Process Models by Tag
      *
      * @param  \Stackflows\Clients\Stackflows\Model\PostTaggedBusinessModelsStartRequest $postTaggedBusinessModelsStartRequest (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postTaggedBusinessModelsStartAsync($postTaggedBusinessModelsStartRequest, $contentType = null, $accept = null)
+    public function postTaggedBusinessModelsStartAsync($postTaggedBusinessModelsStartRequest)
     {
-        return $this->postTaggedBusinessModelsStartAsyncWithHttpInfo($postTaggedBusinessModelsStartRequest, $contentType, $accept)
+        return $this->postTaggedBusinessModelsStartAsyncWithHttpInfo($postTaggedBusinessModelsStartRequest)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -263,16 +257,14 @@ class TaggedApi
      * Starts Business Process Models by Tag
      *
      * @param  \Stackflows\Clients\Stackflows\Model\PostTaggedBusinessModelsStartRequest $postTaggedBusinessModelsStartRequest (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postTaggedBusinessModelsStartAsyncWithHttpInfo($postTaggedBusinessModelsStartRequest, $contentType = null, $accept = null)
+    public function postTaggedBusinessModelsStartAsyncWithHttpInfo($postTaggedBusinessModelsStartRequest)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessProcessModelModel[]';
-        $request = $this->postTaggedBusinessModelsStartRequest($postTaggedBusinessModelsStartRequest, $contentType, $accept);
+        $request = $this->postTaggedBusinessModelsStartRequest($postTaggedBusinessModelsStartRequest);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -314,13 +306,11 @@ class TaggedApi
      * Create request for operation 'postTaggedBusinessModelsStart'
      *
      * @param  \Stackflows\Clients\Stackflows\Model\PostTaggedBusinessModelsStartRequest $postTaggedBusinessModelsStartRequest (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function postTaggedBusinessModelsStartRequest($postTaggedBusinessModelsStartRequest, $contentType = null, $accept = null)
+    public function postTaggedBusinessModelsStartRequest($postTaggedBusinessModelsStartRequest)
     {
         // verify the required parameter 'postTaggedBusinessModelsStartRequest' is set
         if ($postTaggedBusinessModelsStartRequest === null || (is_array($postTaggedBusinessModelsStartRequest) && count($postTaggedBusinessModelsStartRequest) === 0)) {
@@ -337,14 +327,6 @@ class TaggedApi
         $multipart = false;
 
 
-        // header params
-        if ($contentType !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
-        }
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
 
 

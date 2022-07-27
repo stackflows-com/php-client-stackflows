@@ -122,16 +122,14 @@ class UserApi
      *
      * @param  string $organizationId The ID of the organization. (required)
      * @param  string $organization The ID of an organization. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\OrganizationUnitModel
      */
-    public function deleteUserOrganizations($organizationId, $organization, $contentType = null, $accept = null)
+    public function deleteUserOrganizations($organizationId, $organization)
     {
-        list($response) = $this->deleteUserOrganizationsWithHttpInfo($organizationId, $organization, $contentType, $accept);
+        list($response) = $this->deleteUserOrganizationsWithHttpInfo($organizationId, $organization);
         return $response;
     }
 
@@ -142,16 +140,14 @@ class UserApi
      *
      * @param  string $organizationId The ID of the organization. (required)
      * @param  string $organization The ID of an organization. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\OrganizationUnitModel, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteUserOrganizationsWithHttpInfo($organizationId, $organization, $contentType = null, $accept = null)
+    public function deleteUserOrganizationsWithHttpInfo($organizationId, $organization)
     {
-        $request = $this->deleteUserOrganizationsRequest($organizationId, $organization, $contentType, $accept);
+        $request = $this->deleteUserOrganizationsRequest($organizationId, $organization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -244,15 +240,13 @@ class UserApi
      *
      * @param  string $organizationId The ID of the organization. (required)
      * @param  string $organization The ID of an organization. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteUserOrganizationsAsync($organizationId, $organization, $contentType = null, $accept = null)
+    public function deleteUserOrganizationsAsync($organizationId, $organization)
     {
-        return $this->deleteUserOrganizationsAsyncWithHttpInfo($organizationId, $organization, $contentType, $accept)
+        return $this->deleteUserOrganizationsAsyncWithHttpInfo($organizationId, $organization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -267,16 +261,14 @@ class UserApi
      *
      * @param  string $organizationId The ID of the organization. (required)
      * @param  string $organization The ID of an organization. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteUserOrganizationsAsyncWithHttpInfo($organizationId, $organization, $contentType = null, $accept = null)
+    public function deleteUserOrganizationsAsyncWithHttpInfo($organizationId, $organization)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel';
-        $request = $this->deleteUserOrganizationsRequest($organizationId, $organization, $contentType, $accept);
+        $request = $this->deleteUserOrganizationsRequest($organizationId, $organization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -319,13 +311,11 @@ class UserApi
      *
      * @param  string $organizationId The ID of the organization. (required)
      * @param  string $organization The ID of an organization. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deleteUserOrganizationsRequest($organizationId, $organization, $contentType = null, $accept = null)
+    public function deleteUserOrganizationsRequest($organizationId, $organization)
     {
         // verify the required parameter 'organizationId' is set
         if ($organizationId === null || (is_array($organizationId) && count($organizationId) === 0)) {
@@ -348,14 +338,6 @@ class UserApi
         $multipart = false;
 
 
-        // header params
-        if ($contentType !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
-        }
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
         // path params
         if ($organizationId !== null) {
@@ -437,16 +419,14 @@ class UserApi
      *
      * Revoke all tokens
      *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\UserModel
      */
-    public function deleteUserRevoke($contentType = null, $accept = null)
+    public function deleteUserRevoke()
     {
-        list($response) = $this->deleteUserRevokeWithHttpInfo($contentType, $accept);
+        list($response) = $this->deleteUserRevokeWithHttpInfo();
         return $response;
     }
 
@@ -455,16 +435,14 @@ class UserApi
      *
      * Revoke all tokens
      *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\UserModel, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteUserRevokeWithHttpInfo($contentType = null, $accept = null)
+    public function deleteUserRevokeWithHttpInfo()
     {
-        $request = $this->deleteUserRevokeRequest($contentType, $accept);
+        $request = $this->deleteUserRevokeRequest();
 
         try {
             $options = $this->createHttpClientOption();
@@ -555,15 +533,13 @@ class UserApi
      *
      * Revoke all tokens
      *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteUserRevokeAsync($contentType = null, $accept = null)
+    public function deleteUserRevokeAsync()
     {
-        return $this->deleteUserRevokeAsyncWithHttpInfo($contentType, $accept)
+        return $this->deleteUserRevokeAsyncWithHttpInfo()
             ->then(
                 function ($response) {
                     return $response[0];
@@ -576,16 +552,14 @@ class UserApi
      *
      * Revoke all tokens
      *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteUserRevokeAsyncWithHttpInfo($contentType = null, $accept = null)
+    public function deleteUserRevokeAsyncWithHttpInfo()
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\UserModel';
-        $request = $this->deleteUserRevokeRequest($contentType, $accept);
+        $request = $this->deleteUserRevokeRequest();
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -626,13 +600,11 @@ class UserApi
     /**
      * Create request for operation 'deleteUserRevoke'
      *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deleteUserRevokeRequest($contentType = null, $accept = null)
+    public function deleteUserRevokeRequest()
     {
 
         $resourcePath = '/api/v2/user/tokens';
@@ -643,14 +615,6 @@ class UserApi
         $multipart = false;
 
 
-        // header params
-        if ($contentType !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
-        }
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
 
 
@@ -717,16 +681,14 @@ class UserApi
      * Me
      *
      * @param  string $includeorganizations Possible includes (optional)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\UserModel
      */
-    public function getUserMe($includeorganizations = null, $contentType = null, $accept = null)
+    public function getUserMe($includeorganizations = null)
     {
-        list($response) = $this->getUserMeWithHttpInfo($includeorganizations, $contentType, $accept);
+        list($response) = $this->getUserMeWithHttpInfo($includeorganizations);
         return $response;
     }
 
@@ -736,16 +698,14 @@ class UserApi
      * Me
      *
      * @param  string $includeorganizations Possible includes (optional)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\UserModel, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getUserMeWithHttpInfo($includeorganizations = null, $contentType = null, $accept = null)
+    public function getUserMeWithHttpInfo($includeorganizations = null)
     {
-        $request = $this->getUserMeRequest($includeorganizations, $contentType, $accept);
+        $request = $this->getUserMeRequest($includeorganizations);
 
         try {
             $options = $this->createHttpClientOption();
@@ -837,15 +797,13 @@ class UserApi
      * Me
      *
      * @param  string $includeorganizations Possible includes (optional)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getUserMeAsync($includeorganizations = null, $contentType = null, $accept = null)
+    public function getUserMeAsync($includeorganizations = null)
     {
-        return $this->getUserMeAsyncWithHttpInfo($includeorganizations, $contentType, $accept)
+        return $this->getUserMeAsyncWithHttpInfo($includeorganizations)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -859,16 +817,14 @@ class UserApi
      * Me
      *
      * @param  string $includeorganizations Possible includes (optional)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getUserMeAsyncWithHttpInfo($includeorganizations = null, $contentType = null, $accept = null)
+    public function getUserMeAsyncWithHttpInfo($includeorganizations = null)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\UserModel';
-        $request = $this->getUserMeRequest($includeorganizations, $contentType, $accept);
+        $request = $this->getUserMeRequest($includeorganizations);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -910,13 +866,11 @@ class UserApi
      * Create request for operation 'getUserMe'
      *
      * @param  string $includeorganizations Possible includes (optional)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getUserMeRequest($includeorganizations = null, $contentType = null, $accept = null)
+    public function getUserMeRequest($includeorganizations = null)
     {
 
         $resourcePath = '/api/v2/user';
@@ -936,14 +890,6 @@ class UserApi
             false // required
         ) ?? []);
 
-        // header params
-        if ($contentType !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
-        }
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
 
 
@@ -1009,16 +955,14 @@ class UserApi
      *
      * List Organizations
      *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\OrganizationUnitModel[]
      */
-    public function getUserOrganizationsList($contentType = null, $accept = null)
+    public function getUserOrganizationsList()
     {
-        list($response) = $this->getUserOrganizationsListWithHttpInfo($contentType, $accept);
+        list($response) = $this->getUserOrganizationsListWithHttpInfo();
         return $response;
     }
 
@@ -1027,16 +971,14 @@ class UserApi
      *
      * List Organizations
      *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\OrganizationUnitModel[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getUserOrganizationsListWithHttpInfo($contentType = null, $accept = null)
+    public function getUserOrganizationsListWithHttpInfo()
     {
-        $request = $this->getUserOrganizationsListRequest($contentType, $accept);
+        $request = $this->getUserOrganizationsListRequest();
 
         try {
             $options = $this->createHttpClientOption();
@@ -1127,15 +1069,13 @@ class UserApi
      *
      * List Organizations
      *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getUserOrganizationsListAsync($contentType = null, $accept = null)
+    public function getUserOrganizationsListAsync()
     {
-        return $this->getUserOrganizationsListAsyncWithHttpInfo($contentType, $accept)
+        return $this->getUserOrganizationsListAsyncWithHttpInfo()
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1148,16 +1088,14 @@ class UserApi
      *
      * List Organizations
      *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getUserOrganizationsListAsyncWithHttpInfo($contentType = null, $accept = null)
+    public function getUserOrganizationsListAsyncWithHttpInfo()
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel[]';
-        $request = $this->getUserOrganizationsListRequest($contentType, $accept);
+        $request = $this->getUserOrganizationsListRequest();
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1198,13 +1136,11 @@ class UserApi
     /**
      * Create request for operation 'getUserOrganizationsList'
      *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getUserOrganizationsListRequest($contentType = null, $accept = null)
+    public function getUserOrganizationsListRequest()
     {
 
         $resourcePath = '/api/v2/user/organizations';
@@ -1215,14 +1151,6 @@ class UserApi
         $multipart = false;
 
 
-        // header params
-        if ($contentType !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
-        }
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
 
 
@@ -1290,16 +1218,14 @@ class UserApi
      *
      * @param  string $id The ID of the organization. (required)
      * @param  string $organization The ID of an organization. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\OrganizationUnitModel
      */
-    public function getUserOrganizationsShow($id, $organization, $contentType = null, $accept = null)
+    public function getUserOrganizationsShow($id, $organization)
     {
-        list($response) = $this->getUserOrganizationsShowWithHttpInfo($id, $organization, $contentType, $accept);
+        list($response) = $this->getUserOrganizationsShowWithHttpInfo($id, $organization);
         return $response;
     }
 
@@ -1310,16 +1236,14 @@ class UserApi
      *
      * @param  string $id The ID of the organization. (required)
      * @param  string $organization The ID of an organization. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\OrganizationUnitModel, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getUserOrganizationsShowWithHttpInfo($id, $organization, $contentType = null, $accept = null)
+    public function getUserOrganizationsShowWithHttpInfo($id, $organization)
     {
-        $request = $this->getUserOrganizationsShowRequest($id, $organization, $contentType, $accept);
+        $request = $this->getUserOrganizationsShowRequest($id, $organization);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1412,15 +1336,13 @@ class UserApi
      *
      * @param  string $id The ID of the organization. (required)
      * @param  string $organization The ID of an organization. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getUserOrganizationsShowAsync($id, $organization, $contentType = null, $accept = null)
+    public function getUserOrganizationsShowAsync($id, $organization)
     {
-        return $this->getUserOrganizationsShowAsyncWithHttpInfo($id, $organization, $contentType, $accept)
+        return $this->getUserOrganizationsShowAsyncWithHttpInfo($id, $organization)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1435,16 +1357,14 @@ class UserApi
      *
      * @param  string $id The ID of the organization. (required)
      * @param  string $organization The ID of an organization. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getUserOrganizationsShowAsyncWithHttpInfo($id, $organization, $contentType = null, $accept = null)
+    public function getUserOrganizationsShowAsyncWithHttpInfo($id, $organization)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel';
-        $request = $this->getUserOrganizationsShowRequest($id, $organization, $contentType, $accept);
+        $request = $this->getUserOrganizationsShowRequest($id, $organization);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1487,13 +1407,11 @@ class UserApi
      *
      * @param  string $id The ID of the organization. (required)
      * @param  string $organization The ID of an organization. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getUserOrganizationsShowRequest($id, $organization, $contentType = null, $accept = null)
+    public function getUserOrganizationsShowRequest($id, $organization)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -1516,14 +1434,6 @@ class UserApi
         $multipart = false;
 
 
-        // header params
-        if ($contentType !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
-        }
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
         // path params
         if ($id !== null) {
@@ -1606,16 +1516,14 @@ class UserApi
      * Login
      *
      * @param  \Stackflows\Clients\Stackflows\Model\PostUserLoginRequest $postUserLoginRequest postUserLoginRequest (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\UserModel
      */
-    public function postUserLogin($postUserLoginRequest, $contentType = null, $accept = null)
+    public function postUserLogin($postUserLoginRequest)
     {
-        list($response) = $this->postUserLoginWithHttpInfo($postUserLoginRequest, $contentType, $accept);
+        list($response) = $this->postUserLoginWithHttpInfo($postUserLoginRequest);
         return $response;
     }
 
@@ -1625,16 +1533,14 @@ class UserApi
      * Login
      *
      * @param  \Stackflows\Clients\Stackflows\Model\PostUserLoginRequest $postUserLoginRequest (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\UserModel, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postUserLoginWithHttpInfo($postUserLoginRequest, $contentType = null, $accept = null)
+    public function postUserLoginWithHttpInfo($postUserLoginRequest)
     {
-        $request = $this->postUserLoginRequest($postUserLoginRequest, $contentType, $accept);
+        $request = $this->postUserLoginRequest($postUserLoginRequest);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1726,15 +1632,13 @@ class UserApi
      * Login
      *
      * @param  \Stackflows\Clients\Stackflows\Model\PostUserLoginRequest $postUserLoginRequest (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postUserLoginAsync($postUserLoginRequest, $contentType = null, $accept = null)
+    public function postUserLoginAsync($postUserLoginRequest)
     {
-        return $this->postUserLoginAsyncWithHttpInfo($postUserLoginRequest, $contentType, $accept)
+        return $this->postUserLoginAsyncWithHttpInfo($postUserLoginRequest)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1748,16 +1652,14 @@ class UserApi
      * Login
      *
      * @param  \Stackflows\Clients\Stackflows\Model\PostUserLoginRequest $postUserLoginRequest (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postUserLoginAsyncWithHttpInfo($postUserLoginRequest, $contentType = null, $accept = null)
+    public function postUserLoginAsyncWithHttpInfo($postUserLoginRequest)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\UserModel';
-        $request = $this->postUserLoginRequest($postUserLoginRequest, $contentType, $accept);
+        $request = $this->postUserLoginRequest($postUserLoginRequest);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1799,13 +1701,11 @@ class UserApi
      * Create request for operation 'postUserLogin'
      *
      * @param  \Stackflows\Clients\Stackflows\Model\PostUserLoginRequest $postUserLoginRequest (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function postUserLoginRequest($postUserLoginRequest, $contentType = null, $accept = null)
+    public function postUserLoginRequest($postUserLoginRequest)
     {
         // verify the required parameter 'postUserLoginRequest' is set
         if ($postUserLoginRequest === null || (is_array($postUserLoginRequest) && count($postUserLoginRequest) === 0)) {
@@ -1822,14 +1722,6 @@ class UserApi
         $multipart = false;
 
 
-        // header params
-        if ($contentType !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
-        }
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
 
 
@@ -1902,16 +1794,14 @@ class UserApi
      * Create Organization
      *
      * @param  \Stackflows\Clients\Stackflows\Model\PostUserOrganizationsStoreRequest $postUserOrganizationsStoreRequest postUserOrganizationsStoreRequest (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\OrganizationUnitModel
      */
-    public function postUserOrganizationsStore($postUserOrganizationsStoreRequest, $contentType = null, $accept = null)
+    public function postUserOrganizationsStore($postUserOrganizationsStoreRequest)
     {
-        list($response) = $this->postUserOrganizationsStoreWithHttpInfo($postUserOrganizationsStoreRequest, $contentType, $accept);
+        list($response) = $this->postUserOrganizationsStoreWithHttpInfo($postUserOrganizationsStoreRequest);
         return $response;
     }
 
@@ -1921,16 +1811,14 @@ class UserApi
      * Create Organization
      *
      * @param  \Stackflows\Clients\Stackflows\Model\PostUserOrganizationsStoreRequest $postUserOrganizationsStoreRequest (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\OrganizationUnitModel, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postUserOrganizationsStoreWithHttpInfo($postUserOrganizationsStoreRequest, $contentType = null, $accept = null)
+    public function postUserOrganizationsStoreWithHttpInfo($postUserOrganizationsStoreRequest)
     {
-        $request = $this->postUserOrganizationsStoreRequest($postUserOrganizationsStoreRequest, $contentType, $accept);
+        $request = $this->postUserOrganizationsStoreRequest($postUserOrganizationsStoreRequest);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2022,15 +1910,13 @@ class UserApi
      * Create Organization
      *
      * @param  \Stackflows\Clients\Stackflows\Model\PostUserOrganizationsStoreRequest $postUserOrganizationsStoreRequest (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postUserOrganizationsStoreAsync($postUserOrganizationsStoreRequest, $contentType = null, $accept = null)
+    public function postUserOrganizationsStoreAsync($postUserOrganizationsStoreRequest)
     {
-        return $this->postUserOrganizationsStoreAsyncWithHttpInfo($postUserOrganizationsStoreRequest, $contentType, $accept)
+        return $this->postUserOrganizationsStoreAsyncWithHttpInfo($postUserOrganizationsStoreRequest)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2044,16 +1930,14 @@ class UserApi
      * Create Organization
      *
      * @param  \Stackflows\Clients\Stackflows\Model\PostUserOrganizationsStoreRequest $postUserOrganizationsStoreRequest (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postUserOrganizationsStoreAsyncWithHttpInfo($postUserOrganizationsStoreRequest, $contentType = null, $accept = null)
+    public function postUserOrganizationsStoreAsyncWithHttpInfo($postUserOrganizationsStoreRequest)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel';
-        $request = $this->postUserOrganizationsStoreRequest($postUserOrganizationsStoreRequest, $contentType, $accept);
+        $request = $this->postUserOrganizationsStoreRequest($postUserOrganizationsStoreRequest);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2095,13 +1979,11 @@ class UserApi
      * Create request for operation 'postUserOrganizationsStore'
      *
      * @param  \Stackflows\Clients\Stackflows\Model\PostUserOrganizationsStoreRequest $postUserOrganizationsStoreRequest (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function postUserOrganizationsStoreRequest($postUserOrganizationsStoreRequest, $contentType = null, $accept = null)
+    public function postUserOrganizationsStoreRequest($postUserOrganizationsStoreRequest)
     {
         // verify the required parameter 'postUserOrganizationsStoreRequest' is set
         if ($postUserOrganizationsStoreRequest === null || (is_array($postUserOrganizationsStoreRequest) && count($postUserOrganizationsStoreRequest) === 0)) {
@@ -2118,14 +2000,6 @@ class UserApi
         $multipart = false;
 
 
-        // header params
-        if ($contentType !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
-        }
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
 
 
@@ -2198,16 +2072,14 @@ class UserApi
      * Register
      *
      * @param  \Stackflows\Clients\Stackflows\Model\PostUserRegisterRequest $postUserRegisterRequest postUserRegisterRequest (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\UserModel
      */
-    public function postUserRegister($postUserRegisterRequest, $contentType = null, $accept = null)
+    public function postUserRegister($postUserRegisterRequest)
     {
-        list($response) = $this->postUserRegisterWithHttpInfo($postUserRegisterRequest, $contentType, $accept);
+        list($response) = $this->postUserRegisterWithHttpInfo($postUserRegisterRequest);
         return $response;
     }
 
@@ -2217,16 +2089,14 @@ class UserApi
      * Register
      *
      * @param  \Stackflows\Clients\Stackflows\Model\PostUserRegisterRequest $postUserRegisterRequest (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\UserModel, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postUserRegisterWithHttpInfo($postUserRegisterRequest, $contentType = null, $accept = null)
+    public function postUserRegisterWithHttpInfo($postUserRegisterRequest)
     {
-        $request = $this->postUserRegisterRequest($postUserRegisterRequest, $contentType, $accept);
+        $request = $this->postUserRegisterRequest($postUserRegisterRequest);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2318,15 +2188,13 @@ class UserApi
      * Register
      *
      * @param  \Stackflows\Clients\Stackflows\Model\PostUserRegisterRequest $postUserRegisterRequest (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postUserRegisterAsync($postUserRegisterRequest, $contentType = null, $accept = null)
+    public function postUserRegisterAsync($postUserRegisterRequest)
     {
-        return $this->postUserRegisterAsyncWithHttpInfo($postUserRegisterRequest, $contentType, $accept)
+        return $this->postUserRegisterAsyncWithHttpInfo($postUserRegisterRequest)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2340,16 +2208,14 @@ class UserApi
      * Register
      *
      * @param  \Stackflows\Clients\Stackflows\Model\PostUserRegisterRequest $postUserRegisterRequest (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postUserRegisterAsyncWithHttpInfo($postUserRegisterRequest, $contentType = null, $accept = null)
+    public function postUserRegisterAsyncWithHttpInfo($postUserRegisterRequest)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\UserModel';
-        $request = $this->postUserRegisterRequest($postUserRegisterRequest, $contentType, $accept);
+        $request = $this->postUserRegisterRequest($postUserRegisterRequest);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2391,13 +2257,11 @@ class UserApi
      * Create request for operation 'postUserRegister'
      *
      * @param  \Stackflows\Clients\Stackflows\Model\PostUserRegisterRequest $postUserRegisterRequest (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function postUserRegisterRequest($postUserRegisterRequest, $contentType = null, $accept = null)
+    public function postUserRegisterRequest($postUserRegisterRequest)
     {
         // verify the required parameter 'postUserRegisterRequest' is set
         if ($postUserRegisterRequest === null || (is_array($postUserRegisterRequest) && count($postUserRegisterRequest) === 0)) {
@@ -2414,14 +2278,6 @@ class UserApi
         $multipart = false;
 
 
-        // header params
-        if ($contentType !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
-        }
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
 
 
@@ -2494,16 +2350,14 @@ class UserApi
      * Restore password
      *
      * @param  \Stackflows\Clients\Stackflows\Model\PostUserResetPasswordRequest $postUserResetPasswordRequest postUserResetPasswordRequest (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function postUserResetPassword($postUserResetPasswordRequest, $contentType = null, $accept = null)
+    public function postUserResetPassword($postUserResetPasswordRequest)
     {
-        $this->postUserResetPasswordWithHttpInfo($postUserResetPasswordRequest, $contentType, $accept);
+        $this->postUserResetPasswordWithHttpInfo($postUserResetPasswordRequest);
     }
 
     /**
@@ -2512,16 +2366,14 @@ class UserApi
      * Restore password
      *
      * @param  \Stackflows\Clients\Stackflows\Model\PostUserResetPasswordRequest $postUserResetPasswordRequest (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postUserResetPasswordWithHttpInfo($postUserResetPasswordRequest, $contentType = null, $accept = null)
+    public function postUserResetPasswordWithHttpInfo($postUserResetPasswordRequest)
     {
-        $request = $this->postUserResetPasswordRequest($postUserResetPasswordRequest, $contentType, $accept);
+        $request = $this->postUserResetPasswordRequest($postUserResetPasswordRequest);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2573,15 +2425,13 @@ class UserApi
      * Restore password
      *
      * @param  \Stackflows\Clients\Stackflows\Model\PostUserResetPasswordRequest $postUserResetPasswordRequest (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postUserResetPasswordAsync($postUserResetPasswordRequest, $contentType = null, $accept = null)
+    public function postUserResetPasswordAsync($postUserResetPasswordRequest)
     {
-        return $this->postUserResetPasswordAsyncWithHttpInfo($postUserResetPasswordRequest, $contentType, $accept)
+        return $this->postUserResetPasswordAsyncWithHttpInfo($postUserResetPasswordRequest)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2595,16 +2445,14 @@ class UserApi
      * Restore password
      *
      * @param  \Stackflows\Clients\Stackflows\Model\PostUserResetPasswordRequest $postUserResetPasswordRequest (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postUserResetPasswordAsyncWithHttpInfo($postUserResetPasswordRequest, $contentType = null, $accept = null)
+    public function postUserResetPasswordAsyncWithHttpInfo($postUserResetPasswordRequest)
     {
         $returnType = '';
-        $request = $this->postUserResetPasswordRequest($postUserResetPasswordRequest, $contentType, $accept);
+        $request = $this->postUserResetPasswordRequest($postUserResetPasswordRequest);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2633,13 +2481,11 @@ class UserApi
      * Create request for operation 'postUserResetPassword'
      *
      * @param  \Stackflows\Clients\Stackflows\Model\PostUserResetPasswordRequest $postUserResetPasswordRequest (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function postUserResetPasswordRequest($postUserResetPasswordRequest, $contentType = null, $accept = null)
+    public function postUserResetPasswordRequest($postUserResetPasswordRequest)
     {
         // verify the required parameter 'postUserResetPasswordRequest' is set
         if ($postUserResetPasswordRequest === null || (is_array($postUserResetPasswordRequest) && count($postUserResetPasswordRequest) === 0)) {
@@ -2656,14 +2502,6 @@ class UserApi
         $multipart = false;
 
 
-        // header params
-        if ($contentType !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
-        }
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
 
 
@@ -2737,17 +2575,15 @@ class UserApi
      *
      * @param  string $id The ID of the organization. (required)
      * @param  string $organization The ID of an organization. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      * @param  \Stackflows\Clients\Stackflows\Model\PutUserOrganizationsUpdateRequest $putUserOrganizationsUpdateRequest putUserOrganizationsUpdateRequest (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\OrganizationUnitModel
      */
-    public function putUserOrganizationsUpdate($id, $organization, $contentType = null, $accept = null, $putUserOrganizationsUpdateRequest = null)
+    public function putUserOrganizationsUpdate($id, $organization, $putUserOrganizationsUpdateRequest = null)
     {
-        list($response) = $this->putUserOrganizationsUpdateWithHttpInfo($id, $organization, $contentType, $accept, $putUserOrganizationsUpdateRequest);
+        list($response) = $this->putUserOrganizationsUpdateWithHttpInfo($id, $organization, $putUserOrganizationsUpdateRequest);
         return $response;
     }
 
@@ -2758,17 +2594,15 @@ class UserApi
      *
      * @param  string $id The ID of the organization. (required)
      * @param  string $organization The ID of an organization. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      * @param  \Stackflows\Clients\Stackflows\Model\PutUserOrganizationsUpdateRequest $putUserOrganizationsUpdateRequest (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\OrganizationUnitModel, HTTP status code, HTTP response headers (array of strings)
      */
-    public function putUserOrganizationsUpdateWithHttpInfo($id, $organization, $contentType = null, $accept = null, $putUserOrganizationsUpdateRequest = null)
+    public function putUserOrganizationsUpdateWithHttpInfo($id, $organization, $putUserOrganizationsUpdateRequest = null)
     {
-        $request = $this->putUserOrganizationsUpdateRequest($id, $organization, $contentType, $accept, $putUserOrganizationsUpdateRequest);
+        $request = $this->putUserOrganizationsUpdateRequest($id, $organization, $putUserOrganizationsUpdateRequest);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2861,16 +2695,14 @@ class UserApi
      *
      * @param  string $id The ID of the organization. (required)
      * @param  string $organization The ID of an organization. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      * @param  \Stackflows\Clients\Stackflows\Model\PutUserOrganizationsUpdateRequest $putUserOrganizationsUpdateRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putUserOrganizationsUpdateAsync($id, $organization, $contentType = null, $accept = null, $putUserOrganizationsUpdateRequest = null)
+    public function putUserOrganizationsUpdateAsync($id, $organization, $putUserOrganizationsUpdateRequest = null)
     {
-        return $this->putUserOrganizationsUpdateAsyncWithHttpInfo($id, $organization, $contentType, $accept, $putUserOrganizationsUpdateRequest)
+        return $this->putUserOrganizationsUpdateAsyncWithHttpInfo($id, $organization, $putUserOrganizationsUpdateRequest)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2885,17 +2717,15 @@ class UserApi
      *
      * @param  string $id The ID of the organization. (required)
      * @param  string $organization The ID of an organization. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      * @param  \Stackflows\Clients\Stackflows\Model\PutUserOrganizationsUpdateRequest $putUserOrganizationsUpdateRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putUserOrganizationsUpdateAsyncWithHttpInfo($id, $organization, $contentType = null, $accept = null, $putUserOrganizationsUpdateRequest = null)
+    public function putUserOrganizationsUpdateAsyncWithHttpInfo($id, $organization, $putUserOrganizationsUpdateRequest = null)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel';
-        $request = $this->putUserOrganizationsUpdateRequest($id, $organization, $contentType, $accept, $putUserOrganizationsUpdateRequest);
+        $request = $this->putUserOrganizationsUpdateRequest($id, $organization, $putUserOrganizationsUpdateRequest);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2938,14 +2768,12 @@ class UserApi
      *
      * @param  string $id The ID of the organization. (required)
      * @param  string $organization The ID of an organization. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      * @param  \Stackflows\Clients\Stackflows\Model\PutUserOrganizationsUpdateRequest $putUserOrganizationsUpdateRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function putUserOrganizationsUpdateRequest($id, $organization, $contentType = null, $accept = null, $putUserOrganizationsUpdateRequest = null)
+    public function putUserOrganizationsUpdateRequest($id, $organization, $putUserOrganizationsUpdateRequest = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -2968,14 +2796,6 @@ class UserApi
         $multipart = false;
 
 
-        // header params
-        if ($contentType !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
-        }
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
         // path params
         if ($id !== null) {
@@ -3063,17 +2883,15 @@ class UserApi
      *
      * Update
      *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      * @param  \Stackflows\Clients\Stackflows\Model\PutUserUpdateRequest $putUserUpdateRequest putUserUpdateRequest (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\UserModel
      */
-    public function putUserUpdate($contentType = null, $accept = null, $putUserUpdateRequest = null)
+    public function putUserUpdate($putUserUpdateRequest = null)
     {
-        list($response) = $this->putUserUpdateWithHttpInfo($contentType, $accept, $putUserUpdateRequest);
+        list($response) = $this->putUserUpdateWithHttpInfo($putUserUpdateRequest);
         return $response;
     }
 
@@ -3082,17 +2900,15 @@ class UserApi
      *
      * Update
      *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      * @param  \Stackflows\Clients\Stackflows\Model\PutUserUpdateRequest $putUserUpdateRequest (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\UserModel, HTTP status code, HTTP response headers (array of strings)
      */
-    public function putUserUpdateWithHttpInfo($contentType = null, $accept = null, $putUserUpdateRequest = null)
+    public function putUserUpdateWithHttpInfo($putUserUpdateRequest = null)
     {
-        $request = $this->putUserUpdateRequest($contentType, $accept, $putUserUpdateRequest);
+        $request = $this->putUserUpdateRequest($putUserUpdateRequest);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3183,16 +2999,14 @@ class UserApi
      *
      * Update
      *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      * @param  \Stackflows\Clients\Stackflows\Model\PutUserUpdateRequest $putUserUpdateRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putUserUpdateAsync($contentType = null, $accept = null, $putUserUpdateRequest = null)
+    public function putUserUpdateAsync($putUserUpdateRequest = null)
     {
-        return $this->putUserUpdateAsyncWithHttpInfo($contentType, $accept, $putUserUpdateRequest)
+        return $this->putUserUpdateAsyncWithHttpInfo($putUserUpdateRequest)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3205,17 +3019,15 @@ class UserApi
      *
      * Update
      *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      * @param  \Stackflows\Clients\Stackflows\Model\PutUserUpdateRequest $putUserUpdateRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putUserUpdateAsyncWithHttpInfo($contentType = null, $accept = null, $putUserUpdateRequest = null)
+    public function putUserUpdateAsyncWithHttpInfo($putUserUpdateRequest = null)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\UserModel';
-        $request = $this->putUserUpdateRequest($contentType, $accept, $putUserUpdateRequest);
+        $request = $this->putUserUpdateRequest($putUserUpdateRequest);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3256,14 +3068,12 @@ class UserApi
     /**
      * Create request for operation 'putUserUpdate'
      *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      * @param  \Stackflows\Clients\Stackflows\Model\PutUserUpdateRequest $putUserUpdateRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function putUserUpdateRequest($contentType = null, $accept = null, $putUserUpdateRequest = null)
+    public function putUserUpdateRequest($putUserUpdateRequest = null)
     {
 
         $resourcePath = '/api/v2/user';
@@ -3274,14 +3084,6 @@ class UserApi
         $multipart = false;
 
 
-        // header params
-        if ($contentType !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
-        }
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
 
 

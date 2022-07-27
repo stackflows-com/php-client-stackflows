@@ -17,7 +17,7 @@ Method | HTTP request | Description
 ## `deleteEngines()`
 
 ```php
-deleteEngines($engineId, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\EngineModel
+deleteEngines($engineId): \Stackflows\Clients\Stackflows\Model\EngineModel
 ```
 
 Delete Engine
@@ -37,12 +37,10 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\InstallationApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$engineId = voluptas; // string | The ID of the engine.
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
+$engineId = 9d49d5f0-b566-11ec-979c-d3bcedb7b4c1; // string | The ID of the engine.
 
 try {
-    $result = $apiInstance->deleteEngines($engineId, $contentType, $accept);
+    $result = $apiInstance->deleteEngines($engineId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InstallationApi->deleteEngines: ', $e->getMessage(), PHP_EOL;
@@ -54,8 +52,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **engineId** | **string**| The ID of the engine. |
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
 
 ### Return type
 
@@ -77,7 +73,7 @@ No authorization required
 ## `deleteEnvironmentsDeleteBulk()`
 
 ```php
-deleteEnvironmentsDeleteBulk($contentType, $accept, $deleteEnvironmentsDeleteBulkRequest): \Stackflows\Clients\Stackflows\Model\CategoryModel[]
+deleteEnvironmentsDeleteBulk($deleteEnvironmentsDeleteBulkRequest): \Stackflows\Clients\Stackflows\Model\CategoryModel[]
 ```
 
 Delete Environments
@@ -97,12 +93,10 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\InstallationApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
 $deleteEnvironmentsDeleteBulkRequest = new \Stackflows\Clients\Stackflows\Model\DeleteEnvironmentsDeleteBulkRequest(); // \Stackflows\Clients\Stackflows\Model\DeleteEnvironmentsDeleteBulkRequest
 
 try {
-    $result = $apiInstance->deleteEnvironmentsDeleteBulk($contentType, $accept, $deleteEnvironmentsDeleteBulkRequest);
+    $result = $apiInstance->deleteEnvironmentsDeleteBulk($deleteEnvironmentsDeleteBulkRequest);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InstallationApi->deleteEnvironmentsDeleteBulk: ', $e->getMessage(), PHP_EOL;
@@ -113,8 +107,6 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
  **deleteEnvironmentsDeleteBulkRequest** | [**\Stackflows\Clients\Stackflows\Model\DeleteEnvironmentsDeleteBulkRequest**](../Model/DeleteEnvironmentsDeleteBulkRequest.md)|  | [optional]
 
 ### Return type
@@ -137,7 +129,7 @@ No authorization required
 ## `getEngine()`
 
 ```php
-getEngine($contentType, $accept): \Stackflows\Clients\Stackflows\Model\EngineModel[]
+getEngine(): \Stackflows\Clients\Stackflows\Model\EngineModel[]
 ```
 
 List Engines
@@ -157,11 +149,9 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\InstallationApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
 
 try {
-    $result = $apiInstance->getEngine($contentType, $accept);
+    $result = $apiInstance->getEngine();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InstallationApi->getEngine: ', $e->getMessage(), PHP_EOL;
@@ -170,10 +160,7 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -195,7 +182,7 @@ No authorization required
 ## `getEnginesShow()`
 
 ```php
-getEnginesShow($id, $engine, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\EngineModel
+getEnginesShow($id, $engine): \Stackflows\Clients\Stackflows\Model\EngineModel
 ```
 
 View Engine
@@ -215,13 +202,11 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\InstallationApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = 05347dc0-0ac8-11ed-8fd5-eb1eaa90123d; // string | The ID of the engine.
-$engine = quisquam; // string | ID of an engine
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
+$id = 9d49d5f0-b566-11ec-979c-d3bcedb7b4c1; // string | The ID of the engine.
+$engine = sunt; // string | ID of an engine
 
 try {
-    $result = $apiInstance->getEnginesShow($id, $engine, $contentType, $accept);
+    $result = $apiInstance->getEnginesShow($id, $engine);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InstallationApi->getEnginesShow: ', $e->getMessage(), PHP_EOL;
@@ -234,8 +219,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| The ID of the engine. |
  **engine** | **string**| ID of an engine |
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
 
 ### Return type
 
@@ -257,7 +240,7 @@ No authorization required
 ## `getEnvironmentsList()`
 
 ```php
-getEnvironmentsList($contentType, $accept): \Stackflows\Clients\Stackflows\Model\EnvironmentModel[]
+getEnvironmentsList(): \Stackflows\Clients\Stackflows\Model\EnvironmentModel[]
 ```
 
 List Environments
@@ -277,11 +260,9 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\InstallationApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
 
 try {
-    $result = $apiInstance->getEnvironmentsList($contentType, $accept);
+    $result = $apiInstance->getEnvironmentsList();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InstallationApi->getEnvironmentsList: ', $e->getMessage(), PHP_EOL;
@@ -290,10 +271,7 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -315,7 +293,7 @@ No authorization required
 ## `postEnginesCreate()`
 
 ```php
-postEnginesCreate($postEnginesCreateRequest, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\EngineModel
+postEnginesCreate($postEnginesCreateRequest): \Stackflows\Clients\Stackflows\Model\EngineModel
 ```
 
 Create Engine
@@ -336,11 +314,9 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\InstallationApi(
     new GuzzleHttp\Client()
 );
 $postEnginesCreateRequest = new \Stackflows\Clients\Stackflows\Model\PostEnginesCreateRequest(); // \Stackflows\Clients\Stackflows\Model\PostEnginesCreateRequest
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
 
 try {
-    $result = $apiInstance->postEnginesCreate($postEnginesCreateRequest, $contentType, $accept);
+    $result = $apiInstance->postEnginesCreate($postEnginesCreateRequest);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InstallationApi->postEnginesCreate: ', $e->getMessage(), PHP_EOL;
@@ -352,8 +328,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **postEnginesCreateRequest** | [**\Stackflows\Clients\Stackflows\Model\PostEnginesCreateRequest**](../Model/PostEnginesCreateRequest.md)|  |
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
 
 ### Return type
 
@@ -375,7 +349,7 @@ No authorization required
 ## `postEnvironmentsCreate()`
 
 ```php
-postEnvironmentsCreate($postEnvironmentsCreateRequest, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\CategoryModel
+postEnvironmentsCreate($postEnvironmentsCreateRequest): \Stackflows\Clients\Stackflows\Model\CategoryModel
 ```
 
 Create Environment
@@ -396,11 +370,9 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\InstallationApi(
     new GuzzleHttp\Client()
 );
 $postEnvironmentsCreateRequest = new \Stackflows\Clients\Stackflows\Model\PostEnvironmentsCreateRequest(); // \Stackflows\Clients\Stackflows\Model\PostEnvironmentsCreateRequest
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
 
 try {
-    $result = $apiInstance->postEnvironmentsCreate($postEnvironmentsCreateRequest, $contentType, $accept);
+    $result = $apiInstance->postEnvironmentsCreate($postEnvironmentsCreateRequest);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InstallationApi->postEnvironmentsCreate: ', $e->getMessage(), PHP_EOL;
@@ -412,8 +384,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **postEnvironmentsCreateRequest** | [**\Stackflows\Clients\Stackflows\Model\PostEnvironmentsCreateRequest**](../Model/PostEnvironmentsCreateRequest.md)|  |
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
 
 ### Return type
 
@@ -435,7 +405,7 @@ No authorization required
 ## `putEnginesUpdate()`
 
 ```php
-putEnginesUpdate($id, $engine, $contentType, $accept, $putEnginesUpdateRequest): \Stackflows\Clients\Stackflows\Model\EngineModel
+putEnginesUpdate($id, $engine, $putEnginesUpdateRequest): \Stackflows\Clients\Stackflows\Model\EngineModel
 ```
 
 Update Engine
@@ -455,14 +425,12 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\InstallationApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = 05347dc0-0ac8-11ed-8fd5-eb1eaa90123d; // string | The ID of the engine.
-$engine = quisquam; // string | ID of an engine
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
+$id = 9d49d5f0-b566-11ec-979c-d3bcedb7b4c1; // string | The ID of the engine.
+$engine = sunt; // string | ID of an engine
 $putEnginesUpdateRequest = new \Stackflows\Clients\Stackflows\Model\PutEnginesUpdateRequest(); // \Stackflows\Clients\Stackflows\Model\PutEnginesUpdateRequest
 
 try {
-    $result = $apiInstance->putEnginesUpdate($id, $engine, $contentType, $accept, $putEnginesUpdateRequest);
+    $result = $apiInstance->putEnginesUpdate($id, $engine, $putEnginesUpdateRequest);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InstallationApi->putEnginesUpdate: ', $e->getMessage(), PHP_EOL;
@@ -475,8 +443,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| The ID of the engine. |
  **engine** | **string**| ID of an engine |
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
  **putEnginesUpdateRequest** | [**\Stackflows\Clients\Stackflows\Model\PutEnginesUpdateRequest**](../Model/PutEnginesUpdateRequest.md)|  | [optional]
 
 ### Return type

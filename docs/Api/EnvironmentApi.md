@@ -14,6 +14,7 @@ Method | HTTP request | Description
 [**getEnvironmentBusinessModelsList()**](EnvironmentApi.md#getEnvironmentBusinessModelsList) | **GET** /api/v2/environment/business-models | List Business Models
 [**getEnvironmentBusinessModelsShow()**](EnvironmentApi.md#getEnvironmentBusinessModelsShow) | **GET** /api/v2/environment/business-models/{model_id} | View Business Model
 [**getEnvironmentUserTasksList()**](EnvironmentApi.md#getEnvironmentUserTasksList) | **GET** /api/v2/environment/user-tasks | List User Tasks
+[**getEnvironmentUserTasksView()**](EnvironmentApi.md#getEnvironmentUserTasksView) | **GET** /api/v2/environment/user-tasks/{id} | View User Task
 [**postEnvironmentBusinessModelDiagramsCommentsCreate()**](EnvironmentApi.md#postEnvironmentBusinessModelDiagramsCommentsCreate) | **POST** /api/v2/environment/business-model-diagrams/{diagram_id}/comments | Create Business Model Diagram Comment
 [**postEnvironmentBusinessModelDiagramsCreate()**](EnvironmentApi.md#postEnvironmentBusinessModelDiagramsCreate) | **POST** /api/v2/environment/business-model-diagrams | Create Business Model Diagram
 [**postEnvironmentBusinessModelDiagramsPublish()**](EnvironmentApi.md#postEnvironmentBusinessModelDiagramsPublish) | **POST** /api/v2/environment/business-model-diagrams/{diagram_id}/publish | Publish Business Model Diagram
@@ -32,7 +33,7 @@ Method | HTTP request | Description
 ## `deleteEnvironmentBusinessModelDiagrams()`
 
 ```php
-deleteEnvironmentBusinessModelDiagrams($diagramId, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel
+deleteEnvironmentBusinessModelDiagrams($diagramId): \Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel
 ```
 
 Delete Business Model Diagram
@@ -52,12 +53,10 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\EnvironmentApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$diagramId = laborum; // string | The ID of the diagram.
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
+$diagramId = 139b5820-048d-11ed-a920-d9cc122fb2b1; // string | The ID of the diagram.
 
 try {
-    $result = $apiInstance->deleteEnvironmentBusinessModelDiagrams($diagramId, $contentType, $accept);
+    $result = $apiInstance->deleteEnvironmentBusinessModelDiagrams($diagramId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling EnvironmentApi->deleteEnvironmentBusinessModelDiagrams: ', $e->getMessage(), PHP_EOL;
@@ -69,8 +68,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **diagramId** | **string**| The ID of the diagram. |
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
 
 ### Return type
 
@@ -92,7 +89,7 @@ No authorization required
 ## `deleteEnvironmentBusinessModelDiagramsComments()`
 
 ```php
-deleteEnvironmentBusinessModelDiagramsComments($diagramId, $commentId, $diagram, $comment, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\CommentModel
+deleteEnvironmentBusinessModelDiagramsComments($diagramId, $commentId, $diagram, $comment): \Stackflows\Clients\Stackflows\Model\CommentModel
 ```
 
 Delete Business Model Diagram Comment
@@ -112,15 +109,13 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\EnvironmentApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$diagramId = tempora; // string | The ID of the diagram.
-$commentId = 15; // int | The ID of the comment.
+$diagramId = 139b5820-048d-11ed-a920-d9cc122fb2b1; // string | The ID of the diagram.
+$commentId = 1; // int | The ID of the comment.
 $diagram = 3688e6c0-1a56-11ec-8366; // string | The ID of an diagram.
 $comment = 3688e6c0-1a56-11ec-8366; // string | The ID of an comment.
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
 
 try {
-    $result = $apiInstance->deleteEnvironmentBusinessModelDiagramsComments($diagramId, $commentId, $diagram, $comment, $contentType, $accept);
+    $result = $apiInstance->deleteEnvironmentBusinessModelDiagramsComments($diagramId, $commentId, $diagram, $comment);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling EnvironmentApi->deleteEnvironmentBusinessModelDiagramsComments: ', $e->getMessage(), PHP_EOL;
@@ -135,8 +130,6 @@ Name | Type | Description  | Notes
  **commentId** | **int**| The ID of the comment. |
  **diagram** | **string**| The ID of an diagram. |
  **comment** | **string**| The ID of an comment. |
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
 
 ### Return type
 
@@ -158,7 +151,7 @@ No authorization required
 ## `deleteEnvironmentBusinessModels()`
 
 ```php
-deleteEnvironmentBusinessModels($modelId, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\BusinessBaseModelModel
+deleteEnvironmentBusinessModels($modelId): \Stackflows\Clients\Stackflows\Model\BusinessBaseModelModel
 ```
 
 Delete Business Model
@@ -178,12 +171,10 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\EnvironmentApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$modelId = nihil; // string | The ID of the model.
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
+$modelId = 1244a4d0-03f6-11ed-8757-598213407c67; // string | The ID of the model.
 
 try {
-    $result = $apiInstance->deleteEnvironmentBusinessModels($modelId, $contentType, $accept);
+    $result = $apiInstance->deleteEnvironmentBusinessModels($modelId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling EnvironmentApi->deleteEnvironmentBusinessModels: ', $e->getMessage(), PHP_EOL;
@@ -195,8 +186,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **modelId** | **string**| The ID of the model. |
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
 
 ### Return type
 
@@ -218,7 +207,7 @@ No authorization required
 ## `getEnvironmentBusinessModelDiagramsCommentsList()`
 
 ```php
-getEnvironmentBusinessModelDiagramsCommentsList($diagramId, $include, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\CommentModel[]
+getEnvironmentBusinessModelDiagramsCommentsList($diagramId, $include): \Stackflows\Clients\Stackflows\Model\CommentModel[]
 ```
 
 List Business Model Diagram Comments
@@ -238,13 +227,11 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\EnvironmentApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$diagramId = blanditiis; // string | The ID of the diagram.
+$diagramId = 139b5820-048d-11ed-a920-d9cc122fb2b1; // string | The ID of the diagram.
 $include = commenter; // string | Specify a list of includes.
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
 
 try {
-    $result = $apiInstance->getEnvironmentBusinessModelDiagramsCommentsList($diagramId, $include, $contentType, $accept);
+    $result = $apiInstance->getEnvironmentBusinessModelDiagramsCommentsList($diagramId, $include);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling EnvironmentApi->getEnvironmentBusinessModelDiagramsCommentsList: ', $e->getMessage(), PHP_EOL;
@@ -257,8 +244,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **diagramId** | **string**| The ID of the diagram. |
  **include** | **string**| Specify a list of includes. | [optional]
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
 
 ### Return type
 
@@ -280,7 +265,7 @@ No authorization required
 ## `getEnvironmentBusinessModelDiagramsList()`
 
 ```php
-getEnvironmentBusinessModelDiagramsList($contentType, $accept): \Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel[]
+getEnvironmentBusinessModelDiagramsList(): \Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel[]
 ```
 
 List Business Model Diagram
@@ -300,11 +285,9 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\EnvironmentApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
 
 try {
-    $result = $apiInstance->getEnvironmentBusinessModelDiagramsList($contentType, $accept);
+    $result = $apiInstance->getEnvironmentBusinessModelDiagramsList();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling EnvironmentApi->getEnvironmentBusinessModelDiagramsList: ', $e->getMessage(), PHP_EOL;
@@ -313,10 +296,7 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -338,7 +318,7 @@ No authorization required
 ## `getEnvironmentBusinessModelDiagramsShow()`
 
 ```php
-getEnvironmentBusinessModelDiagramsShow($diagramId, $includesnapshotsdeploysdeploysStatistics, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel
+getEnvironmentBusinessModelDiagramsShow($diagramId, $includesnapshotsdeploysdeploysStatistics): \Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel
 ```
 
 View Business Model Diagram
@@ -358,13 +338,11 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\EnvironmentApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$diagramId = laborum; // string | The ID of the diagram.
-$includesnapshotsdeploysdeploysStatistics = qui; // string | Possible includes
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
+$diagramId = 139b5820-048d-11ed-a920-d9cc122fb2b1; // string | The ID of the diagram.
+$includesnapshotsdeploysdeploysStatistics = corrupti; // string | Possible includes
 
 try {
-    $result = $apiInstance->getEnvironmentBusinessModelDiagramsShow($diagramId, $includesnapshotsdeploysdeploysStatistics, $contentType, $accept);
+    $result = $apiInstance->getEnvironmentBusinessModelDiagramsShow($diagramId, $includesnapshotsdeploysdeploysStatistics);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling EnvironmentApi->getEnvironmentBusinessModelDiagramsShow: ', $e->getMessage(), PHP_EOL;
@@ -377,8 +355,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **diagramId** | **string**| The ID of the diagram. |
  **includesnapshotsdeploysdeploysStatistics** | **string**| Possible includes | [optional]
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
 
 ### Return type
 
@@ -400,7 +376,7 @@ No authorization required
 ## `getEnvironmentBusinessModelsCommentsList()`
 
 ```php
-getEnvironmentBusinessModelsCommentsList($modelId, $include, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\CommentModel[]
+getEnvironmentBusinessModelsCommentsList($modelId, $include): \Stackflows\Clients\Stackflows\Model\CommentModel[]
 ```
 
 List Business Model Comments
@@ -420,13 +396,11 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\EnvironmentApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$modelId = inventore; // string | The ID of the model.
+$modelId = 1244a4d0-03f6-11ed-8757-598213407c67; // string | The ID of the model.
 $include = commenter; // string | Specify a list of includes.
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
 
 try {
-    $result = $apiInstance->getEnvironmentBusinessModelsCommentsList($modelId, $include, $contentType, $accept);
+    $result = $apiInstance->getEnvironmentBusinessModelsCommentsList($modelId, $include);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling EnvironmentApi->getEnvironmentBusinessModelsCommentsList: ', $e->getMessage(), PHP_EOL;
@@ -439,8 +413,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **modelId** | **string**| The ID of the model. |
  **include** | **string**| Specify a list of includes. | [optional]
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
 
 ### Return type
 
@@ -462,7 +434,7 @@ No authorization required
 ## `getEnvironmentBusinessModelsList()`
 
 ```php
-getEnvironmentBusinessModelsList($include, $filterWithAnyTags, $filterWithoutAnyTags, $filterAutocomplete, $filterSearch, $filterCategories, $filterType, $filterUncategorized, $filterSubscribable, $sort, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\BusinessBaseModelModel[]
+getEnvironmentBusinessModelsList($include, $filterWithAnyTags, $filterWithoutAnyTags, $filterAutocomplete, $filterSearch, $filterCategories, $filterType, $filterUncategorized, $filterSubscribable, $sort): \Stackflows\Clients\Stackflows\Model\BusinessBaseModelModel[]
 ```
 
 List Business Models
@@ -488,15 +460,13 @@ $filterWithoutAnyTags = true; // bool | Will return list of all models that has 
 $filterAutocomplete = tes; // string | Retrieve list that has \"tes\" at the start of their name.
 $filterSearch = tes; // string | Retrieve list that has \"tes\" in their name.
 $filterCategories = 1,2; // string | Filter by specific categories.
-$filterType = voluptatem; // string | Filter by specific type. Example process,decision
+$filterType = rem; // string | Filter by specific type. Example process,decision
 $filterUncategorized = true; // bool | boolean List only uncategorized process models.
 $filterSubscribable = true; // bool | List only subscribable process models.
 $sort = name,-created_at,-updated_at; // string | Sorting by specified criteria.
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
 
 try {
-    $result = $apiInstance->getEnvironmentBusinessModelsList($include, $filterWithAnyTags, $filterWithoutAnyTags, $filterAutocomplete, $filterSearch, $filterCategories, $filterType, $filterUncategorized, $filterSubscribable, $sort, $contentType, $accept);
+    $result = $apiInstance->getEnvironmentBusinessModelsList($include, $filterWithAnyTags, $filterWithoutAnyTags, $filterAutocomplete, $filterSearch, $filterCategories, $filterType, $filterUncategorized, $filterSubscribable, $sort);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling EnvironmentApi->getEnvironmentBusinessModelsList: ', $e->getMessage(), PHP_EOL;
@@ -517,8 +487,6 @@ Name | Type | Description  | Notes
  **filterUncategorized** | **bool**| boolean List only uncategorized process models. | [optional]
  **filterSubscribable** | **bool**| List only subscribable process models. | [optional]
  **sort** | **string**| Sorting by specified criteria. | [optional]
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
 
 ### Return type
 
@@ -540,7 +508,7 @@ No authorization required
 ## `getEnvironmentBusinessModelsShow()`
 
 ```php
-getEnvironmentBusinessModelsShow($modelId, $includeownercompanycategorytagscommentsCounttagsCountdiagrams, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\BusinessBaseModelModel
+getEnvironmentBusinessModelsShow($modelId, $includeownercompanycategorytagscommentsCounttagsCountdiagrams): \Stackflows\Clients\Stackflows\Model\BusinessBaseModelModel
 ```
 
 View Business Model
@@ -560,13 +528,11 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\EnvironmentApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$modelId = nihil; // string | The ID of the model.
-$includeownercompanycategorytagscommentsCounttagsCountdiagrams = odit; // string | Possible includes
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
+$modelId = 1244a4d0-03f6-11ed-8757-598213407c67; // string | The ID of the model.
+$includeownercompanycategorytagscommentsCounttagsCountdiagrams = quisquam; // string | Possible includes
 
 try {
-    $result = $apiInstance->getEnvironmentBusinessModelsShow($modelId, $includeownercompanycategorytagscommentsCounttagsCountdiagrams, $contentType, $accept);
+    $result = $apiInstance->getEnvironmentBusinessModelsShow($modelId, $includeownercompanycategorytagscommentsCounttagsCountdiagrams);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling EnvironmentApi->getEnvironmentBusinessModelsShow: ', $e->getMessage(), PHP_EOL;
@@ -579,8 +545,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **modelId** | **string**| The ID of the model. |
  **includeownercompanycategorytagscommentsCounttagsCountdiagrams** | **string**| Possible includes | [optional]
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
 
 ### Return type
 
@@ -602,7 +566,7 @@ No authorization required
 ## `getEnvironmentUserTasksList()`
 
 ```php
-getEnvironmentUserTasksList($contentType, $accept): \Stackflows\Clients\Stackflows\Model\UserTaskType[]
+getEnvironmentUserTasksList(): \Stackflows\Clients\Stackflows\Model\UserTaskType[]
 ```
 
 List User Tasks
@@ -622,11 +586,9 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\EnvironmentApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
 
 try {
-    $result = $apiInstance->getEnvironmentUserTasksList($contentType, $accept);
+    $result = $apiInstance->getEnvironmentUserTasksList();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling EnvironmentApi->getEnvironmentUserTasksList: ', $e->getMessage(), PHP_EOL;
@@ -635,10 +597,7 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -657,10 +616,66 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getEnvironmentUserTasksView()`
+
+```php
+getEnvironmentUserTasksView($id): \Stackflows\Clients\Stackflows\Model\UserTaskType
+```
+
+View User Task
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new Stackflows\Clients\Stackflows\Api\EnvironmentApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$id = 32489ac2-800a-11ec-1234-0242ac120002; // string | The id of the task.
+
+try {
+    $result = $apiInstance->getEnvironmentUserTasksView($id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling EnvironmentApi->getEnvironmentUserTasksView: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| The id of the task. |
+
+### Return type
+
+[**\Stackflows\Clients\Stackflows\Model\UserTaskType**](../Model/UserTaskType.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `postEnvironmentBusinessModelDiagramsCommentsCreate()`
 
 ```php
-postEnvironmentBusinessModelDiagramsCommentsCreate($diagramId, $postEnvironmentBusinessModelDiagramsCommentsCreateRequest, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\CommentModel
+postEnvironmentBusinessModelDiagramsCommentsCreate($diagramId, $postEnvironmentBusinessModelDiagramsCommentsCreateRequest): \Stackflows\Clients\Stackflows\Model\CommentModel
 ```
 
 Create Business Model Diagram Comment
@@ -680,13 +695,11 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\EnvironmentApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$diagramId = blanditiis; // string | The ID of the diagram.
+$diagramId = 139b5820-048d-11ed-a920-d9cc122fb2b1; // string | The ID of the diagram.
 $postEnvironmentBusinessModelDiagramsCommentsCreateRequest = new \Stackflows\Clients\Stackflows\Model\PostEnvironmentBusinessModelDiagramsCommentsCreateRequest(); // \Stackflows\Clients\Stackflows\Model\PostEnvironmentBusinessModelDiagramsCommentsCreateRequest
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
 
 try {
-    $result = $apiInstance->postEnvironmentBusinessModelDiagramsCommentsCreate($diagramId, $postEnvironmentBusinessModelDiagramsCommentsCreateRequest, $contentType, $accept);
+    $result = $apiInstance->postEnvironmentBusinessModelDiagramsCommentsCreate($diagramId, $postEnvironmentBusinessModelDiagramsCommentsCreateRequest);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling EnvironmentApi->postEnvironmentBusinessModelDiagramsCommentsCreate: ', $e->getMessage(), PHP_EOL;
@@ -699,8 +712,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **diagramId** | **string**| The ID of the diagram. |
  **postEnvironmentBusinessModelDiagramsCommentsCreateRequest** | [**\Stackflows\Clients\Stackflows\Model\PostEnvironmentBusinessModelDiagramsCommentsCreateRequest**](../Model/PostEnvironmentBusinessModelDiagramsCommentsCreateRequest.md)|  |
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
 
 ### Return type
 
@@ -722,7 +733,7 @@ No authorization required
 ## `postEnvironmentBusinessModelDiagramsCreate()`
 
 ```php
-postEnvironmentBusinessModelDiagramsCreate($xml, $businessModelId, $contentType, $accept, $snapshot): \Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel
+postEnvironmentBusinessModelDiagramsCreate($xml, $businessModelId, $snapshot): \Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel
 ```
 
 Create Business Model Diagram
@@ -744,12 +755,10 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\EnvironmentApi(
 );
 $xml = 'xml_example'; // string | 
 $businessModelId = 'businessModelId_example'; // string | 
-$contentType = multipart/form-data; // string | 
-$accept = application/json; // string | 
 $snapshot = "/path/to/file.txt"; // \SplFileObject | of the process diagram
 
 try {
-    $result = $apiInstance->postEnvironmentBusinessModelDiagramsCreate($xml, $businessModelId, $contentType, $accept, $snapshot);
+    $result = $apiInstance->postEnvironmentBusinessModelDiagramsCreate($xml, $businessModelId, $snapshot);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling EnvironmentApi->postEnvironmentBusinessModelDiagramsCreate: ', $e->getMessage(), PHP_EOL;
@@ -762,8 +771,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xml** | **string**|  |
  **businessModelId** | **string**|  |
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
  **snapshot** | **\SplFileObject****\SplFileObject**| of the process diagram | [optional]
 
 ### Return type
@@ -786,7 +793,7 @@ No authorization required
 ## `postEnvironmentBusinessModelDiagramsPublish()`
 
 ```php
-postEnvironmentBusinessModelDiagramsPublish($diagramId, $contentType, $accept, $postEnvironmentBusinessModelDiagramsPublishRequest): \Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel
+postEnvironmentBusinessModelDiagramsPublish($diagramId, $postEnvironmentBusinessModelDiagramsPublishRequest): \Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel
 ```
 
 Publish Business Model Diagram
@@ -806,13 +813,11 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\EnvironmentApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$diagramId = quia; // string | The ID of the diagram.
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
+$diagramId = 139b5820-048d-11ed-a920-d9cc122fb2b1; // string | The ID of the diagram.
 $postEnvironmentBusinessModelDiagramsPublishRequest = new \Stackflows\Clients\Stackflows\Model\PostEnvironmentBusinessModelDiagramsPublishRequest(); // \Stackflows\Clients\Stackflows\Model\PostEnvironmentBusinessModelDiagramsPublishRequest
 
 try {
-    $result = $apiInstance->postEnvironmentBusinessModelDiagramsPublish($diagramId, $contentType, $accept, $postEnvironmentBusinessModelDiagramsPublishRequest);
+    $result = $apiInstance->postEnvironmentBusinessModelDiagramsPublish($diagramId, $postEnvironmentBusinessModelDiagramsPublishRequest);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling EnvironmentApi->postEnvironmentBusinessModelDiagramsPublish: ', $e->getMessage(), PHP_EOL;
@@ -824,8 +829,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **diagramId** | **string**| The ID of the diagram. |
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
  **postEnvironmentBusinessModelDiagramsPublishRequest** | [**\Stackflows\Clients\Stackflows\Model\PostEnvironmentBusinessModelDiagramsPublishRequest**](../Model/PostEnvironmentBusinessModelDiagramsPublishRequest.md)|  | [optional]
 
 ### Return type
@@ -848,7 +851,7 @@ No authorization required
 ## `postEnvironmentBusinessModelsCreate()`
 
 ```php
-postEnvironmentBusinessModelsCreate($postEnvironmentBusinessModelsCreateRequest, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\BusinessBaseModelModel
+postEnvironmentBusinessModelsCreate($postEnvironmentBusinessModelsCreateRequest): \Stackflows\Clients\Stackflows\Model\BusinessBaseModelModel
 ```
 
 Create Business Model
@@ -869,11 +872,9 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\EnvironmentApi(
     new GuzzleHttp\Client()
 );
 $postEnvironmentBusinessModelsCreateRequest = new \Stackflows\Clients\Stackflows\Model\PostEnvironmentBusinessModelsCreateRequest(); // \Stackflows\Clients\Stackflows\Model\PostEnvironmentBusinessModelsCreateRequest
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
 
 try {
-    $result = $apiInstance->postEnvironmentBusinessModelsCreate($postEnvironmentBusinessModelsCreateRequest, $contentType, $accept);
+    $result = $apiInstance->postEnvironmentBusinessModelsCreate($postEnvironmentBusinessModelsCreateRequest);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling EnvironmentApi->postEnvironmentBusinessModelsCreate: ', $e->getMessage(), PHP_EOL;
@@ -885,8 +886,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **postEnvironmentBusinessModelsCreateRequest** | [**\Stackflows\Clients\Stackflows\Model\PostEnvironmentBusinessModelsCreateRequest**](../Model/PostEnvironmentBusinessModelsCreateRequest.md)|  |
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
 
 ### Return type
 
@@ -908,7 +907,7 @@ No authorization required
 ## `postEnvironmentEventsMessage()`
 
 ```php
-postEnvironmentEventsMessage($postEnvironmentEventsMessageRequest, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\EventType
+postEnvironmentEventsMessage($postEnvironmentEventsMessageRequest): \Stackflows\Clients\Stackflows\Model\EventType
 ```
 
 Send Message
@@ -929,11 +928,9 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\EnvironmentApi(
     new GuzzleHttp\Client()
 );
 $postEnvironmentEventsMessageRequest = new \Stackflows\Clients\Stackflows\Model\PostEnvironmentEventsMessageRequest(); // \Stackflows\Clients\Stackflows\Model\PostEnvironmentEventsMessageRequest
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
 
 try {
-    $result = $apiInstance->postEnvironmentEventsMessage($postEnvironmentEventsMessageRequest, $contentType, $accept);
+    $result = $apiInstance->postEnvironmentEventsMessage($postEnvironmentEventsMessageRequest);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling EnvironmentApi->postEnvironmentEventsMessage: ', $e->getMessage(), PHP_EOL;
@@ -945,8 +942,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **postEnvironmentEventsMessageRequest** | [**\Stackflows\Clients\Stackflows\Model\PostEnvironmentEventsMessageRequest**](../Model/PostEnvironmentEventsMessageRequest.md)|  |
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
 
 ### Return type
 
@@ -968,7 +963,7 @@ No authorization required
 ## `postEnvironmentEventsSignal()`
 
 ```php
-postEnvironmentEventsSignal($postEnvironmentEventsSignalRequest, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\EventType
+postEnvironmentEventsSignal($postEnvironmentEventsSignalRequest): \Stackflows\Clients\Stackflows\Model\EventType
 ```
 
 Send Message
@@ -989,11 +984,9 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\EnvironmentApi(
     new GuzzleHttp\Client()
 );
 $postEnvironmentEventsSignalRequest = new \Stackflows\Clients\Stackflows\Model\PostEnvironmentEventsSignalRequest(); // \Stackflows\Clients\Stackflows\Model\PostEnvironmentEventsSignalRequest
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
 
 try {
-    $result = $apiInstance->postEnvironmentEventsSignal($postEnvironmentEventsSignalRequest, $contentType, $accept);
+    $result = $apiInstance->postEnvironmentEventsSignal($postEnvironmentEventsSignalRequest);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling EnvironmentApi->postEnvironmentEventsSignal: ', $e->getMessage(), PHP_EOL;
@@ -1005,8 +998,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **postEnvironmentEventsSignalRequest** | [**\Stackflows\Clients\Stackflows\Model\PostEnvironmentEventsSignalRequest**](../Model/PostEnvironmentEventsSignalRequest.md)|  |
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
 
 ### Return type
 
@@ -1028,7 +1019,7 @@ No authorization required
 ## `postEnvironmentServiceTasksLock()`
 
 ```php
-postEnvironmentServiceTasksLock($postEnvironmentServiceTasksLockRequest, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\ServiceTaskType[]
+postEnvironmentServiceTasksLock($postEnvironmentServiceTasksLockRequest): \Stackflows\Clients\Stackflows\Model\ServiceTaskType[]
 ```
 
 Lock Service Tasks
@@ -1049,11 +1040,9 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\EnvironmentApi(
     new GuzzleHttp\Client()
 );
 $postEnvironmentServiceTasksLockRequest = new \Stackflows\Clients\Stackflows\Model\PostEnvironmentServiceTasksLockRequest(); // \Stackflows\Clients\Stackflows\Model\PostEnvironmentServiceTasksLockRequest
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
 
 try {
-    $result = $apiInstance->postEnvironmentServiceTasksLock($postEnvironmentServiceTasksLockRequest, $contentType, $accept);
+    $result = $apiInstance->postEnvironmentServiceTasksLock($postEnvironmentServiceTasksLockRequest);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling EnvironmentApi->postEnvironmentServiceTasksLock: ', $e->getMessage(), PHP_EOL;
@@ -1065,8 +1054,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **postEnvironmentServiceTasksLockRequest** | [**\Stackflows\Clients\Stackflows\Model\PostEnvironmentServiceTasksLockRequest**](../Model/PostEnvironmentServiceTasksLockRequest.md)|  |
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
 
 ### Return type
 
@@ -1088,7 +1075,7 @@ No authorization required
 ## `postEnvironmentServiceTasksServe()`
 
 ```php
-postEnvironmentServiceTasksServe($reference, $postEnvironmentServiceTasksServeRequest, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\ServiceTaskType
+postEnvironmentServiceTasksServe($reference, $postEnvironmentServiceTasksServeRequest): \Stackflows\Clients\Stackflows\Model\ServiceTaskType
 ```
 
 Serve Service Task
@@ -1110,11 +1097,9 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\EnvironmentApi(
 );
 $reference = 3688e6c0-1a56-11ec-8366; // string | The reference of a service task.
 $postEnvironmentServiceTasksServeRequest = new \Stackflows\Clients\Stackflows\Model\PostEnvironmentServiceTasksServeRequest(); // \Stackflows\Clients\Stackflows\Model\PostEnvironmentServiceTasksServeRequest
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
 
 try {
-    $result = $apiInstance->postEnvironmentServiceTasksServe($reference, $postEnvironmentServiceTasksServeRequest, $contentType, $accept);
+    $result = $apiInstance->postEnvironmentServiceTasksServe($reference, $postEnvironmentServiceTasksServeRequest);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling EnvironmentApi->postEnvironmentServiceTasksServe: ', $e->getMessage(), PHP_EOL;
@@ -1127,8 +1112,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **reference** | **string**| The reference of a service task. |
  **postEnvironmentServiceTasksServeRequest** | [**\Stackflows\Clients\Stackflows\Model\PostEnvironmentServiceTasksServeRequest**](../Model/PostEnvironmentServiceTasksServeRequest.md)|  |
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
 
 ### Return type
 
@@ -1150,7 +1133,7 @@ No authorization required
 ## `postEnvironmentServiceTasksUnlock()`
 
 ```php
-postEnvironmentServiceTasksUnlock($reference, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\ServiceTaskType
+postEnvironmentServiceTasksUnlock($reference, $postEnvironmentServiceTasksUnlockRequest): \Stackflows\Clients\Stackflows\Model\ServiceTaskType
 ```
 
 Unlock Service Task
@@ -1171,11 +1154,10 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\EnvironmentApi(
     new GuzzleHttp\Client()
 );
 $reference = 3688e6c0-1a56-11ec-8366; // string | The reference of a service task.
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
+$postEnvironmentServiceTasksUnlockRequest = new \Stackflows\Clients\Stackflows\Model\PostEnvironmentServiceTasksUnlockRequest(); // \Stackflows\Clients\Stackflows\Model\PostEnvironmentServiceTasksUnlockRequest
 
 try {
-    $result = $apiInstance->postEnvironmentServiceTasksUnlock($reference, $contentType, $accept);
+    $result = $apiInstance->postEnvironmentServiceTasksUnlock($reference, $postEnvironmentServiceTasksUnlockRequest);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling EnvironmentApi->postEnvironmentServiceTasksUnlock: ', $e->getMessage(), PHP_EOL;
@@ -1187,8 +1169,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **reference** | **string**| The reference of a service task. |
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
+ **postEnvironmentServiceTasksUnlockRequest** | [**\Stackflows\Clients\Stackflows\Model\PostEnvironmentServiceTasksUnlockRequest**](../Model/PostEnvironmentServiceTasksUnlockRequest.md)|  |
 
 ### Return type
 
@@ -1200,7 +1181,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
@@ -1210,7 +1191,7 @@ No authorization required
 ## `postEnvironmentTaggedBusinessModelsStart()`
 
 ```php
-postEnvironmentTaggedBusinessModelsStart($postEnvironmentTaggedBusinessModelsStartRequest, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\BusinessProcessModelModel[]
+postEnvironmentTaggedBusinessModelsStart($postEnvironmentTaggedBusinessModelsStartRequest): \Stackflows\Clients\Stackflows\Model\BusinessProcessModelModel[]
 ```
 
 Starts Business Process Models by Tag
@@ -1231,11 +1212,9 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\EnvironmentApi(
     new GuzzleHttp\Client()
 );
 $postEnvironmentTaggedBusinessModelsStartRequest = new \Stackflows\Clients\Stackflows\Model\PostEnvironmentTaggedBusinessModelsStartRequest(); // \Stackflows\Clients\Stackflows\Model\PostEnvironmentTaggedBusinessModelsStartRequest
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
 
 try {
-    $result = $apiInstance->postEnvironmentTaggedBusinessModelsStart($postEnvironmentTaggedBusinessModelsStartRequest, $contentType, $accept);
+    $result = $apiInstance->postEnvironmentTaggedBusinessModelsStart($postEnvironmentTaggedBusinessModelsStartRequest);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling EnvironmentApi->postEnvironmentTaggedBusinessModelsStart: ', $e->getMessage(), PHP_EOL;
@@ -1247,8 +1226,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **postEnvironmentTaggedBusinessModelsStartRequest** | [**\Stackflows\Clients\Stackflows\Model\PostEnvironmentTaggedBusinessModelsStartRequest**](../Model/PostEnvironmentTaggedBusinessModelsStartRequest.md)|  |
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
 
 ### Return type
 
@@ -1270,7 +1247,7 @@ No authorization required
 ## `postEnvironmentUserTasksComplete()`
 
 ```php
-postEnvironmentUserTasksComplete($id, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\UserTaskType
+postEnvironmentUserTasksComplete($id): \Stackflows\Clients\Stackflows\Model\UserTaskType
 ```
 
 Complete User Task
@@ -1291,11 +1268,9 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\EnvironmentApi(
     new GuzzleHttp\Client()
 );
 $id = 32489ac2-800a-11ec-1234-0242ac120002; // string | The id of the task.
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
 
 try {
-    $result = $apiInstance->postEnvironmentUserTasksComplete($id, $contentType, $accept);
+    $result = $apiInstance->postEnvironmentUserTasksComplete($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling EnvironmentApi->postEnvironmentUserTasksComplete: ', $e->getMessage(), PHP_EOL;
@@ -1307,8 +1282,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| The id of the task. |
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
 
 ### Return type
 
@@ -1330,7 +1303,7 @@ No authorization required
 ## `postEnvironmentUserTasksErrorize()`
 
 ```php
-postEnvironmentUserTasksErrorize($id, $postEnvironmentUserTasksErrorizeRequest, $contentType, $accept)
+postEnvironmentUserTasksErrorize($id, $postEnvironmentUserTasksErrorizeRequest)
 ```
 
 Errorize User Task
@@ -1352,11 +1325,9 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\EnvironmentApi(
 );
 $id = 3688e6c0-1a56-11ec-8366-4de337119e3a; // string | The id of the task.
 $postEnvironmentUserTasksErrorizeRequest = new \Stackflows\Clients\Stackflows\Model\PostEnvironmentUserTasksErrorizeRequest(); // \Stackflows\Clients\Stackflows\Model\PostEnvironmentUserTasksErrorizeRequest
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
 
 try {
-    $apiInstance->postEnvironmentUserTasksErrorize($id, $postEnvironmentUserTasksErrorizeRequest, $contentType, $accept);
+    $apiInstance->postEnvironmentUserTasksErrorize($id, $postEnvironmentUserTasksErrorizeRequest);
 } catch (Exception $e) {
     echo 'Exception when calling EnvironmentApi->postEnvironmentUserTasksErrorize: ', $e->getMessage(), PHP_EOL;
 }
@@ -1368,8 +1339,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| The id of the task. |
  **postEnvironmentUserTasksErrorizeRequest** | [**\Stackflows\Clients\Stackflows\Model\PostEnvironmentUserTasksErrorizeRequest**](../Model/PostEnvironmentUserTasksErrorizeRequest.md)|  |
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
 
 ### Return type
 
@@ -1391,7 +1360,7 @@ No authorization required
 ## `postEnvironmentUserTasksEscalate()`
 
 ```php
-postEnvironmentUserTasksEscalate($id, $postEnvironmentUserTasksEscalateRequest, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\UserTaskType
+postEnvironmentUserTasksEscalate($id, $postEnvironmentUserTasksEscalateRequest): \Stackflows\Clients\Stackflows\Model\UserTaskType
 ```
 
 Escalate User Task
@@ -1413,11 +1382,9 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\EnvironmentApi(
 );
 $id = 3688e6c0-1a56-11ec-8366-4de337119e3a; // string | The id of the task.
 $postEnvironmentUserTasksEscalateRequest = new \Stackflows\Clients\Stackflows\Model\PostEnvironmentUserTasksEscalateRequest(); // \Stackflows\Clients\Stackflows\Model\PostEnvironmentUserTasksEscalateRequest
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
 
 try {
-    $result = $apiInstance->postEnvironmentUserTasksEscalate($id, $postEnvironmentUserTasksEscalateRequest, $contentType, $accept);
+    $result = $apiInstance->postEnvironmentUserTasksEscalate($id, $postEnvironmentUserTasksEscalateRequest);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling EnvironmentApi->postEnvironmentUserTasksEscalate: ', $e->getMessage(), PHP_EOL;
@@ -1430,8 +1397,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| The id of the task. |
  **postEnvironmentUserTasksEscalateRequest** | [**\Stackflows\Clients\Stackflows\Model\PostEnvironmentUserTasksEscalateRequest**](../Model/PostEnvironmentUserTasksEscalateRequest.md)|  |
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
 
 ### Return type
 

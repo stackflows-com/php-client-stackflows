@@ -121,16 +121,14 @@ class OperationsApi
      * Delete Business Model Diagram
      *
      * @param  string $diagramId The ID of the diagram. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel
      */
-    public function deleteBusinessModelDiagrams($diagramId, $contentType = null, $accept = null)
+    public function deleteBusinessModelDiagrams($diagramId)
     {
-        list($response) = $this->deleteBusinessModelDiagramsWithHttpInfo($diagramId, $contentType, $accept);
+        list($response) = $this->deleteBusinessModelDiagramsWithHttpInfo($diagramId);
         return $response;
     }
 
@@ -140,16 +138,14 @@ class OperationsApi
      * Delete Business Model Diagram
      *
      * @param  string $diagramId The ID of the diagram. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteBusinessModelDiagramsWithHttpInfo($diagramId, $contentType = null, $accept = null)
+    public function deleteBusinessModelDiagramsWithHttpInfo($diagramId)
     {
-        $request = $this->deleteBusinessModelDiagramsRequest($diagramId, $contentType, $accept);
+        $request = $this->deleteBusinessModelDiagramsRequest($diagramId);
 
         try {
             $options = $this->createHttpClientOption();
@@ -241,15 +237,13 @@ class OperationsApi
      * Delete Business Model Diagram
      *
      * @param  string $diagramId The ID of the diagram. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteBusinessModelDiagramsAsync($diagramId, $contentType = null, $accept = null)
+    public function deleteBusinessModelDiagramsAsync($diagramId)
     {
-        return $this->deleteBusinessModelDiagramsAsyncWithHttpInfo($diagramId, $contentType, $accept)
+        return $this->deleteBusinessModelDiagramsAsyncWithHttpInfo($diagramId)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -263,16 +257,14 @@ class OperationsApi
      * Delete Business Model Diagram
      *
      * @param  string $diagramId The ID of the diagram. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteBusinessModelDiagramsAsyncWithHttpInfo($diagramId, $contentType = null, $accept = null)
+    public function deleteBusinessModelDiagramsAsyncWithHttpInfo($diagramId)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel';
-        $request = $this->deleteBusinessModelDiagramsRequest($diagramId, $contentType, $accept);
+        $request = $this->deleteBusinessModelDiagramsRequest($diagramId);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -314,13 +306,11 @@ class OperationsApi
      * Create request for operation 'deleteBusinessModelDiagrams'
      *
      * @param  string $diagramId The ID of the diagram. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deleteBusinessModelDiagramsRequest($diagramId, $contentType = null, $accept = null)
+    public function deleteBusinessModelDiagramsRequest($diagramId)
     {
         // verify the required parameter 'diagramId' is set
         if ($diagramId === null || (is_array($diagramId) && count($diagramId) === 0)) {
@@ -337,14 +327,6 @@ class OperationsApi
         $multipart = false;
 
 
-        // header params
-        if ($contentType !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
-        }
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
         // path params
         if ($diagramId !== null) {
@@ -422,16 +404,14 @@ class OperationsApi
      * @param  int $commentId The ID of the comment. (required)
      * @param  string $diagram The ID of an diagram. (required)
      * @param  string $comment The ID of an comment. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\CommentModel
      */
-    public function deleteBusinessModelDiagramsComments($diagramId, $commentId, $diagram, $comment, $contentType = null, $accept = null)
+    public function deleteBusinessModelDiagramsComments($diagramId, $commentId, $diagram, $comment)
     {
-        list($response) = $this->deleteBusinessModelDiagramsCommentsWithHttpInfo($diagramId, $commentId, $diagram, $comment, $contentType, $accept);
+        list($response) = $this->deleteBusinessModelDiagramsCommentsWithHttpInfo($diagramId, $commentId, $diagram, $comment);
         return $response;
     }
 
@@ -444,16 +424,14 @@ class OperationsApi
      * @param  int $commentId The ID of the comment. (required)
      * @param  string $diagram The ID of an diagram. (required)
      * @param  string $comment The ID of an comment. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\CommentModel, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteBusinessModelDiagramsCommentsWithHttpInfo($diagramId, $commentId, $diagram, $comment, $contentType = null, $accept = null)
+    public function deleteBusinessModelDiagramsCommentsWithHttpInfo($diagramId, $commentId, $diagram, $comment)
     {
-        $request = $this->deleteBusinessModelDiagramsCommentsRequest($diagramId, $commentId, $diagram, $comment, $contentType, $accept);
+        $request = $this->deleteBusinessModelDiagramsCommentsRequest($diagramId, $commentId, $diagram, $comment);
 
         try {
             $options = $this->createHttpClientOption();
@@ -548,15 +526,13 @@ class OperationsApi
      * @param  int $commentId The ID of the comment. (required)
      * @param  string $diagram The ID of an diagram. (required)
      * @param  string $comment The ID of an comment. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteBusinessModelDiagramsCommentsAsync($diagramId, $commentId, $diagram, $comment, $contentType = null, $accept = null)
+    public function deleteBusinessModelDiagramsCommentsAsync($diagramId, $commentId, $diagram, $comment)
     {
-        return $this->deleteBusinessModelDiagramsCommentsAsyncWithHttpInfo($diagramId, $commentId, $diagram, $comment, $contentType, $accept)
+        return $this->deleteBusinessModelDiagramsCommentsAsyncWithHttpInfo($diagramId, $commentId, $diagram, $comment)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -573,16 +549,14 @@ class OperationsApi
      * @param  int $commentId The ID of the comment. (required)
      * @param  string $diagram The ID of an diagram. (required)
      * @param  string $comment The ID of an comment. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteBusinessModelDiagramsCommentsAsyncWithHttpInfo($diagramId, $commentId, $diagram, $comment, $contentType = null, $accept = null)
+    public function deleteBusinessModelDiagramsCommentsAsyncWithHttpInfo($diagramId, $commentId, $diagram, $comment)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\CommentModel';
-        $request = $this->deleteBusinessModelDiagramsCommentsRequest($diagramId, $commentId, $diagram, $comment, $contentType, $accept);
+        $request = $this->deleteBusinessModelDiagramsCommentsRequest($diagramId, $commentId, $diagram, $comment);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -627,13 +601,11 @@ class OperationsApi
      * @param  int $commentId The ID of the comment. (required)
      * @param  string $diagram The ID of an diagram. (required)
      * @param  string $comment The ID of an comment. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deleteBusinessModelDiagramsCommentsRequest($diagramId, $commentId, $diagram, $comment, $contentType = null, $accept = null)
+    public function deleteBusinessModelDiagramsCommentsRequest($diagramId, $commentId, $diagram, $comment)
     {
         // verify the required parameter 'diagramId' is set
         if ($diagramId === null || (is_array($diagramId) && count($diagramId) === 0)) {
@@ -668,14 +640,6 @@ class OperationsApi
         $multipart = false;
 
 
-        // header params
-        if ($contentType !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
-        }
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
         // path params
         if ($diagramId !== null) {
@@ -774,16 +738,14 @@ class OperationsApi
      * Delete Business Model Exception
      *
      * @param  string $exceptionId The ID of the exception. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\BusinessBaseModelExceptionModel
      */
-    public function deleteBusinessModelExceptions($exceptionId, $contentType = null, $accept = null)
+    public function deleteBusinessModelExceptions($exceptionId)
     {
-        list($response) = $this->deleteBusinessModelExceptionsWithHttpInfo($exceptionId, $contentType, $accept);
+        list($response) = $this->deleteBusinessModelExceptionsWithHttpInfo($exceptionId);
         return $response;
     }
 
@@ -793,16 +755,14 @@ class OperationsApi
      * Delete Business Model Exception
      *
      * @param  string $exceptionId The ID of the exception. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\BusinessBaseModelExceptionModel, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteBusinessModelExceptionsWithHttpInfo($exceptionId, $contentType = null, $accept = null)
+    public function deleteBusinessModelExceptionsWithHttpInfo($exceptionId)
     {
-        $request = $this->deleteBusinessModelExceptionsRequest($exceptionId, $contentType, $accept);
+        $request = $this->deleteBusinessModelExceptionsRequest($exceptionId);
 
         try {
             $options = $this->createHttpClientOption();
@@ -894,15 +854,13 @@ class OperationsApi
      * Delete Business Model Exception
      *
      * @param  string $exceptionId The ID of the exception. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteBusinessModelExceptionsAsync($exceptionId, $contentType = null, $accept = null)
+    public function deleteBusinessModelExceptionsAsync($exceptionId)
     {
-        return $this->deleteBusinessModelExceptionsAsyncWithHttpInfo($exceptionId, $contentType, $accept)
+        return $this->deleteBusinessModelExceptionsAsyncWithHttpInfo($exceptionId)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -916,16 +874,14 @@ class OperationsApi
      * Delete Business Model Exception
      *
      * @param  string $exceptionId The ID of the exception. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteBusinessModelExceptionsAsyncWithHttpInfo($exceptionId, $contentType = null, $accept = null)
+    public function deleteBusinessModelExceptionsAsyncWithHttpInfo($exceptionId)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelExceptionModel';
-        $request = $this->deleteBusinessModelExceptionsRequest($exceptionId, $contentType, $accept);
+        $request = $this->deleteBusinessModelExceptionsRequest($exceptionId);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -967,13 +923,11 @@ class OperationsApi
      * Create request for operation 'deleteBusinessModelExceptions'
      *
      * @param  string $exceptionId The ID of the exception. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deleteBusinessModelExceptionsRequest($exceptionId, $contentType = null, $accept = null)
+    public function deleteBusinessModelExceptionsRequest($exceptionId)
     {
         // verify the required parameter 'exceptionId' is set
         if ($exceptionId === null || (is_array($exceptionId) && count($exceptionId) === 0)) {
@@ -990,14 +944,6 @@ class OperationsApi
         $multipart = false;
 
 
-        // header params
-        if ($contentType !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
-        }
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
         // path params
         if ($exceptionId !== null) {
@@ -1072,16 +1018,14 @@ class OperationsApi
      * Delete Business Model
      *
      * @param  string $modelId The ID of the model. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\BusinessBaseModelModel
      */
-    public function deleteBusinessModels($modelId, $contentType = null, $accept = null)
+    public function deleteBusinessModels($modelId)
     {
-        list($response) = $this->deleteBusinessModelsWithHttpInfo($modelId, $contentType, $accept);
+        list($response) = $this->deleteBusinessModelsWithHttpInfo($modelId);
         return $response;
     }
 
@@ -1091,16 +1035,14 @@ class OperationsApi
      * Delete Business Model
      *
      * @param  string $modelId The ID of the model. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\BusinessBaseModelModel, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteBusinessModelsWithHttpInfo($modelId, $contentType = null, $accept = null)
+    public function deleteBusinessModelsWithHttpInfo($modelId)
     {
-        $request = $this->deleteBusinessModelsRequest($modelId, $contentType, $accept);
+        $request = $this->deleteBusinessModelsRequest($modelId);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1192,15 +1134,13 @@ class OperationsApi
      * Delete Business Model
      *
      * @param  string $modelId The ID of the model. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteBusinessModelsAsync($modelId, $contentType = null, $accept = null)
+    public function deleteBusinessModelsAsync($modelId)
     {
-        return $this->deleteBusinessModelsAsyncWithHttpInfo($modelId, $contentType, $accept)
+        return $this->deleteBusinessModelsAsyncWithHttpInfo($modelId)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1214,16 +1154,14 @@ class OperationsApi
      * Delete Business Model
      *
      * @param  string $modelId The ID of the model. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteBusinessModelsAsyncWithHttpInfo($modelId, $contentType = null, $accept = null)
+    public function deleteBusinessModelsAsyncWithHttpInfo($modelId)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelModel';
-        $request = $this->deleteBusinessModelsRequest($modelId, $contentType, $accept);
+        $request = $this->deleteBusinessModelsRequest($modelId);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1265,13 +1203,11 @@ class OperationsApi
      * Create request for operation 'deleteBusinessModels'
      *
      * @param  string $modelId The ID of the model. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deleteBusinessModelsRequest($modelId, $contentType = null, $accept = null)
+    public function deleteBusinessModelsRequest($modelId)
     {
         // verify the required parameter 'modelId' is set
         if ($modelId === null || (is_array($modelId) && count($modelId) === 0)) {
@@ -1288,14 +1224,6 @@ class OperationsApi
         $multipart = false;
 
 
-        // header params
-        if ($contentType !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
-        }
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
         // path params
         if ($modelId !== null) {
@@ -1369,17 +1297,15 @@ class OperationsApi
      *
      * Delete Business Models
      *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      * @param  \Stackflows\Clients\Stackflows\Model\DeleteBusinessModelsDeleteBulkRequest $deleteBusinessModelsDeleteBulkRequest deleteBusinessModelsDeleteBulkRequest (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\BusinessBaseModelModel
      */
-    public function deleteBusinessModelsDeleteBulk($contentType = null, $accept = null, $deleteBusinessModelsDeleteBulkRequest = null)
+    public function deleteBusinessModelsDeleteBulk($deleteBusinessModelsDeleteBulkRequest = null)
     {
-        list($response) = $this->deleteBusinessModelsDeleteBulkWithHttpInfo($contentType, $accept, $deleteBusinessModelsDeleteBulkRequest);
+        list($response) = $this->deleteBusinessModelsDeleteBulkWithHttpInfo($deleteBusinessModelsDeleteBulkRequest);
         return $response;
     }
 
@@ -1388,17 +1314,15 @@ class OperationsApi
      *
      * Delete Business Models
      *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      * @param  \Stackflows\Clients\Stackflows\Model\DeleteBusinessModelsDeleteBulkRequest $deleteBusinessModelsDeleteBulkRequest (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\BusinessBaseModelModel, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteBusinessModelsDeleteBulkWithHttpInfo($contentType = null, $accept = null, $deleteBusinessModelsDeleteBulkRequest = null)
+    public function deleteBusinessModelsDeleteBulkWithHttpInfo($deleteBusinessModelsDeleteBulkRequest = null)
     {
-        $request = $this->deleteBusinessModelsDeleteBulkRequest($contentType, $accept, $deleteBusinessModelsDeleteBulkRequest);
+        $request = $this->deleteBusinessModelsDeleteBulkRequest($deleteBusinessModelsDeleteBulkRequest);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1489,16 +1413,14 @@ class OperationsApi
      *
      * Delete Business Models
      *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      * @param  \Stackflows\Clients\Stackflows\Model\DeleteBusinessModelsDeleteBulkRequest $deleteBusinessModelsDeleteBulkRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteBusinessModelsDeleteBulkAsync($contentType = null, $accept = null, $deleteBusinessModelsDeleteBulkRequest = null)
+    public function deleteBusinessModelsDeleteBulkAsync($deleteBusinessModelsDeleteBulkRequest = null)
     {
-        return $this->deleteBusinessModelsDeleteBulkAsyncWithHttpInfo($contentType, $accept, $deleteBusinessModelsDeleteBulkRequest)
+        return $this->deleteBusinessModelsDeleteBulkAsyncWithHttpInfo($deleteBusinessModelsDeleteBulkRequest)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1511,17 +1433,15 @@ class OperationsApi
      *
      * Delete Business Models
      *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      * @param  \Stackflows\Clients\Stackflows\Model\DeleteBusinessModelsDeleteBulkRequest $deleteBusinessModelsDeleteBulkRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteBusinessModelsDeleteBulkAsyncWithHttpInfo($contentType = null, $accept = null, $deleteBusinessModelsDeleteBulkRequest = null)
+    public function deleteBusinessModelsDeleteBulkAsyncWithHttpInfo($deleteBusinessModelsDeleteBulkRequest = null)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelModel';
-        $request = $this->deleteBusinessModelsDeleteBulkRequest($contentType, $accept, $deleteBusinessModelsDeleteBulkRequest);
+        $request = $this->deleteBusinessModelsDeleteBulkRequest($deleteBusinessModelsDeleteBulkRequest);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1562,14 +1482,12 @@ class OperationsApi
     /**
      * Create request for operation 'deleteBusinessModelsDeleteBulk'
      *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      * @param  \Stackflows\Clients\Stackflows\Model\DeleteBusinessModelsDeleteBulkRequest $deleteBusinessModelsDeleteBulkRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deleteBusinessModelsDeleteBulkRequest($contentType = null, $accept = null, $deleteBusinessModelsDeleteBulkRequest = null)
+    public function deleteBusinessModelsDeleteBulkRequest($deleteBusinessModelsDeleteBulkRequest = null)
     {
 
         $resourcePath = '/api/v2/business-models';
@@ -1580,14 +1498,6 @@ class OperationsApi
         $multipart = false;
 
 
-        // header params
-        if ($contentType !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
-        }
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
 
 
@@ -1659,17 +1569,15 @@ class OperationsApi
      *
      * Delete Business Process Tag
      *
-     * @param  string $tagId The ID of the tag. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
+     * @param  int $tagId The ID of the tag. (required)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\TagModel
      */
-    public function deleteBusinessProcesses($tagId, $contentType = null, $accept = null)
+    public function deleteBusinessProcesses($tagId)
     {
-        list($response) = $this->deleteBusinessProcessesWithHttpInfo($tagId, $contentType, $accept);
+        list($response) = $this->deleteBusinessProcessesWithHttpInfo($tagId);
         return $response;
     }
 
@@ -1678,17 +1586,15 @@ class OperationsApi
      *
      * Delete Business Process Tag
      *
-     * @param  string $tagId The ID of the tag. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
+     * @param  int $tagId The ID of the tag. (required)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\TagModel, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteBusinessProcessesWithHttpInfo($tagId, $contentType = null, $accept = null)
+    public function deleteBusinessProcessesWithHttpInfo($tagId)
     {
-        $request = $this->deleteBusinessProcessesRequest($tagId, $contentType, $accept);
+        $request = $this->deleteBusinessProcessesRequest($tagId);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1779,16 +1685,14 @@ class OperationsApi
      *
      * Delete Business Process Tag
      *
-     * @param  string $tagId The ID of the tag. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
+     * @param  int $tagId The ID of the tag. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteBusinessProcessesAsync($tagId, $contentType = null, $accept = null)
+    public function deleteBusinessProcessesAsync($tagId)
     {
-        return $this->deleteBusinessProcessesAsyncWithHttpInfo($tagId, $contentType, $accept)
+        return $this->deleteBusinessProcessesAsyncWithHttpInfo($tagId)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1801,17 +1705,15 @@ class OperationsApi
      *
      * Delete Business Process Tag
      *
-     * @param  string $tagId The ID of the tag. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
+     * @param  int $tagId The ID of the tag. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteBusinessProcessesAsyncWithHttpInfo($tagId, $contentType = null, $accept = null)
+    public function deleteBusinessProcessesAsyncWithHttpInfo($tagId)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\TagModel';
-        $request = $this->deleteBusinessProcessesRequest($tagId, $contentType, $accept);
+        $request = $this->deleteBusinessProcessesRequest($tagId);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1852,14 +1754,12 @@ class OperationsApi
     /**
      * Create request for operation 'deleteBusinessProcesses'
      *
-     * @param  string $tagId The ID of the tag. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
+     * @param  int $tagId The ID of the tag. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deleteBusinessProcessesRequest($tagId, $contentType = null, $accept = null)
+    public function deleteBusinessProcessesRequest($tagId)
     {
         // verify the required parameter 'tagId' is set
         if ($tagId === null || (is_array($tagId) && count($tagId) === 0)) {
@@ -1876,14 +1776,6 @@ class OperationsApi
         $multipart = false;
 
 
-        // header params
-        if ($contentType !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
-        }
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
         // path params
         if ($tagId !== null) {
@@ -1957,17 +1849,15 @@ class OperationsApi
      *
      * Delete Business Process Tags
      *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      * @param  \Stackflows\Clients\Stackflows\Model\DeleteBusinessProcessesDeleteBulkRequest $deleteBusinessProcessesDeleteBulkRequest deleteBusinessProcessesDeleteBulkRequest (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\TagModel[]
      */
-    public function deleteBusinessProcessesDeleteBulk($contentType = null, $accept = null, $deleteBusinessProcessesDeleteBulkRequest = null)
+    public function deleteBusinessProcessesDeleteBulk($deleteBusinessProcessesDeleteBulkRequest = null)
     {
-        list($response) = $this->deleteBusinessProcessesDeleteBulkWithHttpInfo($contentType, $accept, $deleteBusinessProcessesDeleteBulkRequest);
+        list($response) = $this->deleteBusinessProcessesDeleteBulkWithHttpInfo($deleteBusinessProcessesDeleteBulkRequest);
         return $response;
     }
 
@@ -1976,17 +1866,15 @@ class OperationsApi
      *
      * Delete Business Process Tags
      *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      * @param  \Stackflows\Clients\Stackflows\Model\DeleteBusinessProcessesDeleteBulkRequest $deleteBusinessProcessesDeleteBulkRequest (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\TagModel[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteBusinessProcessesDeleteBulkWithHttpInfo($contentType = null, $accept = null, $deleteBusinessProcessesDeleteBulkRequest = null)
+    public function deleteBusinessProcessesDeleteBulkWithHttpInfo($deleteBusinessProcessesDeleteBulkRequest = null)
     {
-        $request = $this->deleteBusinessProcessesDeleteBulkRequest($contentType, $accept, $deleteBusinessProcessesDeleteBulkRequest);
+        $request = $this->deleteBusinessProcessesDeleteBulkRequest($deleteBusinessProcessesDeleteBulkRequest);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2077,16 +1965,14 @@ class OperationsApi
      *
      * Delete Business Process Tags
      *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      * @param  \Stackflows\Clients\Stackflows\Model\DeleteBusinessProcessesDeleteBulkRequest $deleteBusinessProcessesDeleteBulkRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteBusinessProcessesDeleteBulkAsync($contentType = null, $accept = null, $deleteBusinessProcessesDeleteBulkRequest = null)
+    public function deleteBusinessProcessesDeleteBulkAsync($deleteBusinessProcessesDeleteBulkRequest = null)
     {
-        return $this->deleteBusinessProcessesDeleteBulkAsyncWithHttpInfo($contentType, $accept, $deleteBusinessProcessesDeleteBulkRequest)
+        return $this->deleteBusinessProcessesDeleteBulkAsyncWithHttpInfo($deleteBusinessProcessesDeleteBulkRequest)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2099,17 +1985,15 @@ class OperationsApi
      *
      * Delete Business Process Tags
      *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      * @param  \Stackflows\Clients\Stackflows\Model\DeleteBusinessProcessesDeleteBulkRequest $deleteBusinessProcessesDeleteBulkRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteBusinessProcessesDeleteBulkAsyncWithHttpInfo($contentType = null, $accept = null, $deleteBusinessProcessesDeleteBulkRequest = null)
+    public function deleteBusinessProcessesDeleteBulkAsyncWithHttpInfo($deleteBusinessProcessesDeleteBulkRequest = null)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\TagModel[]';
-        $request = $this->deleteBusinessProcessesDeleteBulkRequest($contentType, $accept, $deleteBusinessProcessesDeleteBulkRequest);
+        $request = $this->deleteBusinessProcessesDeleteBulkRequest($deleteBusinessProcessesDeleteBulkRequest);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2150,14 +2034,12 @@ class OperationsApi
     /**
      * Create request for operation 'deleteBusinessProcessesDeleteBulk'
      *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      * @param  \Stackflows\Clients\Stackflows\Model\DeleteBusinessProcessesDeleteBulkRequest $deleteBusinessProcessesDeleteBulkRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deleteBusinessProcessesDeleteBulkRequest($contentType = null, $accept = null, $deleteBusinessProcessesDeleteBulkRequest = null)
+    public function deleteBusinessProcessesDeleteBulkRequest($deleteBusinessProcessesDeleteBulkRequest = null)
     {
 
         $resourcePath = '/api/v2/business-processes';
@@ -2168,14 +2050,6 @@ class OperationsApi
         $multipart = false;
 
 
-        // header params
-        if ($contentType !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
-        }
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
 
 
@@ -2248,16 +2122,14 @@ class OperationsApi
      * Delete Category
      *
      * @param  int $categoryId The ID of the category. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\CategoryModel
      */
-    public function deleteCategories($categoryId, $contentType = null, $accept = null)
+    public function deleteCategories($categoryId)
     {
-        list($response) = $this->deleteCategoriesWithHttpInfo($categoryId, $contentType, $accept);
+        list($response) = $this->deleteCategoriesWithHttpInfo($categoryId);
         return $response;
     }
 
@@ -2267,16 +2139,14 @@ class OperationsApi
      * Delete Category
      *
      * @param  int $categoryId The ID of the category. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\CategoryModel, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteCategoriesWithHttpInfo($categoryId, $contentType = null, $accept = null)
+    public function deleteCategoriesWithHttpInfo($categoryId)
     {
-        $request = $this->deleteCategoriesRequest($categoryId, $contentType, $accept);
+        $request = $this->deleteCategoriesRequest($categoryId);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2368,15 +2238,13 @@ class OperationsApi
      * Delete Category
      *
      * @param  int $categoryId The ID of the category. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteCategoriesAsync($categoryId, $contentType = null, $accept = null)
+    public function deleteCategoriesAsync($categoryId)
     {
-        return $this->deleteCategoriesAsyncWithHttpInfo($categoryId, $contentType, $accept)
+        return $this->deleteCategoriesAsyncWithHttpInfo($categoryId)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2390,16 +2258,14 @@ class OperationsApi
      * Delete Category
      *
      * @param  int $categoryId The ID of the category. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteCategoriesAsyncWithHttpInfo($categoryId, $contentType = null, $accept = null)
+    public function deleteCategoriesAsyncWithHttpInfo($categoryId)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\CategoryModel';
-        $request = $this->deleteCategoriesRequest($categoryId, $contentType, $accept);
+        $request = $this->deleteCategoriesRequest($categoryId);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2441,13 +2307,11 @@ class OperationsApi
      * Create request for operation 'deleteCategories'
      *
      * @param  int $categoryId The ID of the category. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deleteCategoriesRequest($categoryId, $contentType = null, $accept = null)
+    public function deleteCategoriesRequest($categoryId)
     {
         // verify the required parameter 'categoryId' is set
         if ($categoryId === null || (is_array($categoryId) && count($categoryId) === 0)) {
@@ -2464,14 +2328,6 @@ class OperationsApi
         $multipart = false;
 
 
-        // header params
-        if ($contentType !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
-        }
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
         // path params
         if ($categoryId !== null) {
@@ -2546,16 +2402,14 @@ class OperationsApi
      * Delete Tag
      *
      * @param  int $tagId The ID of the tag. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\TagModel
      */
-    public function deleteTags($tagId, $contentType = null, $accept = null)
+    public function deleteTags($tagId)
     {
-        list($response) = $this->deleteTagsWithHttpInfo($tagId, $contentType, $accept);
+        list($response) = $this->deleteTagsWithHttpInfo($tagId);
         return $response;
     }
 
@@ -2565,16 +2419,14 @@ class OperationsApi
      * Delete Tag
      *
      * @param  int $tagId The ID of the tag. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\TagModel, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteTagsWithHttpInfo($tagId, $contentType = null, $accept = null)
+    public function deleteTagsWithHttpInfo($tagId)
     {
-        $request = $this->deleteTagsRequest($tagId, $contentType, $accept);
+        $request = $this->deleteTagsRequest($tagId);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2666,15 +2518,13 @@ class OperationsApi
      * Delete Tag
      *
      * @param  int $tagId The ID of the tag. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteTagsAsync($tagId, $contentType = null, $accept = null)
+    public function deleteTagsAsync($tagId)
     {
-        return $this->deleteTagsAsyncWithHttpInfo($tagId, $contentType, $accept)
+        return $this->deleteTagsAsyncWithHttpInfo($tagId)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2688,16 +2538,14 @@ class OperationsApi
      * Delete Tag
      *
      * @param  int $tagId The ID of the tag. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteTagsAsyncWithHttpInfo($tagId, $contentType = null, $accept = null)
+    public function deleteTagsAsyncWithHttpInfo($tagId)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\TagModel';
-        $request = $this->deleteTagsRequest($tagId, $contentType, $accept);
+        $request = $this->deleteTagsRequest($tagId);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2739,13 +2587,11 @@ class OperationsApi
      * Create request for operation 'deleteTags'
      *
      * @param  int $tagId The ID of the tag. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deleteTagsRequest($tagId, $contentType = null, $accept = null)
+    public function deleteTagsRequest($tagId)
     {
         // verify the required parameter 'tagId' is set
         if ($tagId === null || (is_array($tagId) && count($tagId) === 0)) {
@@ -2762,14 +2608,6 @@ class OperationsApi
         $multipart = false;
 
 
-        // header params
-        if ($contentType !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
-        }
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
         // path params
         if ($tagId !== null) {
@@ -2844,16 +2682,14 @@ class OperationsApi
      * Delete Task
      *
      * @param  string $taskId The ID of the task. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\TaskModel
      */
-    public function deleteTasks($taskId, $contentType = null, $accept = null)
+    public function deleteTasks($taskId)
     {
-        list($response) = $this->deleteTasksWithHttpInfo($taskId, $contentType, $accept);
+        list($response) = $this->deleteTasksWithHttpInfo($taskId);
         return $response;
     }
 
@@ -2863,16 +2699,14 @@ class OperationsApi
      * Delete Task
      *
      * @param  string $taskId The ID of the task. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\TaskModel, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteTasksWithHttpInfo($taskId, $contentType = null, $accept = null)
+    public function deleteTasksWithHttpInfo($taskId)
     {
-        $request = $this->deleteTasksRequest($taskId, $contentType, $accept);
+        $request = $this->deleteTasksRequest($taskId);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2964,15 +2798,13 @@ class OperationsApi
      * Delete Task
      *
      * @param  string $taskId The ID of the task. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteTasksAsync($taskId, $contentType = null, $accept = null)
+    public function deleteTasksAsync($taskId)
     {
-        return $this->deleteTasksAsyncWithHttpInfo($taskId, $contentType, $accept)
+        return $this->deleteTasksAsyncWithHttpInfo($taskId)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2986,16 +2818,14 @@ class OperationsApi
      * Delete Task
      *
      * @param  string $taskId The ID of the task. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteTasksAsyncWithHttpInfo($taskId, $contentType = null, $accept = null)
+    public function deleteTasksAsyncWithHttpInfo($taskId)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\TaskModel';
-        $request = $this->deleteTasksRequest($taskId, $contentType, $accept);
+        $request = $this->deleteTasksRequest($taskId);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3037,13 +2867,11 @@ class OperationsApi
      * Create request for operation 'deleteTasks'
      *
      * @param  string $taskId The ID of the task. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deleteTasksRequest($taskId, $contentType = null, $accept = null)
+    public function deleteTasksRequest($taskId)
     {
         // verify the required parameter 'taskId' is set
         if ($taskId === null || (is_array($taskId) && count($taskId) === 0)) {
@@ -3060,14 +2888,6 @@ class OperationsApi
         $multipart = false;
 
 
-        // header params
-        if ($contentType !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
-        }
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
         // path params
         if ($taskId !== null) {
@@ -3143,16 +2963,14 @@ class OperationsApi
      *
      * @param  string $diagramId The ID of the diagram. (required)
      * @param  string $include Specify a list of includes. (optional)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\CommentModel[]
      */
-    public function getBusinessModelDiagramsCommentsList($diagramId, $include = null, $contentType = null, $accept = null)
+    public function getBusinessModelDiagramsCommentsList($diagramId, $include = null)
     {
-        list($response) = $this->getBusinessModelDiagramsCommentsListWithHttpInfo($diagramId, $include, $contentType, $accept);
+        list($response) = $this->getBusinessModelDiagramsCommentsListWithHttpInfo($diagramId, $include);
         return $response;
     }
 
@@ -3163,16 +2981,14 @@ class OperationsApi
      *
      * @param  string $diagramId The ID of the diagram. (required)
      * @param  string $include Specify a list of includes. (optional)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\CommentModel[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getBusinessModelDiagramsCommentsListWithHttpInfo($diagramId, $include = null, $contentType = null, $accept = null)
+    public function getBusinessModelDiagramsCommentsListWithHttpInfo($diagramId, $include = null)
     {
-        $request = $this->getBusinessModelDiagramsCommentsListRequest($diagramId, $include, $contentType, $accept);
+        $request = $this->getBusinessModelDiagramsCommentsListRequest($diagramId, $include);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3265,15 +3081,13 @@ class OperationsApi
      *
      * @param  string $diagramId The ID of the diagram. (required)
      * @param  string $include Specify a list of includes. (optional)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getBusinessModelDiagramsCommentsListAsync($diagramId, $include = null, $contentType = null, $accept = null)
+    public function getBusinessModelDiagramsCommentsListAsync($diagramId, $include = null)
     {
-        return $this->getBusinessModelDiagramsCommentsListAsyncWithHttpInfo($diagramId, $include, $contentType, $accept)
+        return $this->getBusinessModelDiagramsCommentsListAsyncWithHttpInfo($diagramId, $include)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3288,16 +3102,14 @@ class OperationsApi
      *
      * @param  string $diagramId The ID of the diagram. (required)
      * @param  string $include Specify a list of includes. (optional)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getBusinessModelDiagramsCommentsListAsyncWithHttpInfo($diagramId, $include = null, $contentType = null, $accept = null)
+    public function getBusinessModelDiagramsCommentsListAsyncWithHttpInfo($diagramId, $include = null)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\CommentModel[]';
-        $request = $this->getBusinessModelDiagramsCommentsListRequest($diagramId, $include, $contentType, $accept);
+        $request = $this->getBusinessModelDiagramsCommentsListRequest($diagramId, $include);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3340,13 +3152,11 @@ class OperationsApi
      *
      * @param  string $diagramId The ID of the diagram. (required)
      * @param  string $include Specify a list of includes. (optional)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getBusinessModelDiagramsCommentsListRequest($diagramId, $include = null, $contentType = null, $accept = null)
+    public function getBusinessModelDiagramsCommentsListRequest($diagramId, $include = null)
     {
         // verify the required parameter 'diagramId' is set
         if ($diagramId === null || (is_array($diagramId) && count($diagramId) === 0)) {
@@ -3372,14 +3182,6 @@ class OperationsApi
             false // required
         ) ?? []);
 
-        // header params
-        if ($contentType !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
-        }
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
         // path params
         if ($diagramId !== null) {
@@ -3453,16 +3255,14 @@ class OperationsApi
      *
      * List Business Model Diagram
      *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel[]
      */
-    public function getBusinessModelDiagramsList($contentType = null, $accept = null)
+    public function getBusinessModelDiagramsList()
     {
-        list($response) = $this->getBusinessModelDiagramsListWithHttpInfo($contentType, $accept);
+        list($response) = $this->getBusinessModelDiagramsListWithHttpInfo();
         return $response;
     }
 
@@ -3471,16 +3271,14 @@ class OperationsApi
      *
      * List Business Model Diagram
      *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getBusinessModelDiagramsListWithHttpInfo($contentType = null, $accept = null)
+    public function getBusinessModelDiagramsListWithHttpInfo()
     {
-        $request = $this->getBusinessModelDiagramsListRequest($contentType, $accept);
+        $request = $this->getBusinessModelDiagramsListRequest();
 
         try {
             $options = $this->createHttpClientOption();
@@ -3571,15 +3369,13 @@ class OperationsApi
      *
      * List Business Model Diagram
      *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getBusinessModelDiagramsListAsync($contentType = null, $accept = null)
+    public function getBusinessModelDiagramsListAsync()
     {
-        return $this->getBusinessModelDiagramsListAsyncWithHttpInfo($contentType, $accept)
+        return $this->getBusinessModelDiagramsListAsyncWithHttpInfo()
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3592,16 +3388,14 @@ class OperationsApi
      *
      * List Business Model Diagram
      *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getBusinessModelDiagramsListAsyncWithHttpInfo($contentType = null, $accept = null)
+    public function getBusinessModelDiagramsListAsyncWithHttpInfo()
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel[]';
-        $request = $this->getBusinessModelDiagramsListRequest($contentType, $accept);
+        $request = $this->getBusinessModelDiagramsListRequest();
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3642,13 +3436,11 @@ class OperationsApi
     /**
      * Create request for operation 'getBusinessModelDiagramsList'
      *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getBusinessModelDiagramsListRequest($contentType = null, $accept = null)
+    public function getBusinessModelDiagramsListRequest()
     {
 
         $resourcePath = '/api/v2/business-model-diagrams';
@@ -3659,14 +3451,6 @@ class OperationsApi
         $multipart = false;
 
 
-        // header params
-        if ($contentType !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
-        }
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
 
 
@@ -3734,16 +3518,14 @@ class OperationsApi
      *
      * @param  string $diagramId The ID of the diagram. (required)
      * @param  string $includesnapshotsdeploysdeploysStatistics Possible includes (optional)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel
      */
-    public function getBusinessModelDiagramsShow($diagramId, $includesnapshotsdeploysdeploysStatistics = null, $contentType = null, $accept = null)
+    public function getBusinessModelDiagramsShow($diagramId, $includesnapshotsdeploysdeploysStatistics = null)
     {
-        list($response) = $this->getBusinessModelDiagramsShowWithHttpInfo($diagramId, $includesnapshotsdeploysdeploysStatistics, $contentType, $accept);
+        list($response) = $this->getBusinessModelDiagramsShowWithHttpInfo($diagramId, $includesnapshotsdeploysdeploysStatistics);
         return $response;
     }
 
@@ -3754,16 +3536,14 @@ class OperationsApi
      *
      * @param  string $diagramId The ID of the diagram. (required)
      * @param  string $includesnapshotsdeploysdeploysStatistics Possible includes (optional)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getBusinessModelDiagramsShowWithHttpInfo($diagramId, $includesnapshotsdeploysdeploysStatistics = null, $contentType = null, $accept = null)
+    public function getBusinessModelDiagramsShowWithHttpInfo($diagramId, $includesnapshotsdeploysdeploysStatistics = null)
     {
-        $request = $this->getBusinessModelDiagramsShowRequest($diagramId, $includesnapshotsdeploysdeploysStatistics, $contentType, $accept);
+        $request = $this->getBusinessModelDiagramsShowRequest($diagramId, $includesnapshotsdeploysdeploysStatistics);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3856,15 +3636,13 @@ class OperationsApi
      *
      * @param  string $diagramId The ID of the diagram. (required)
      * @param  string $includesnapshotsdeploysdeploysStatistics Possible includes (optional)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getBusinessModelDiagramsShowAsync($diagramId, $includesnapshotsdeploysdeploysStatistics = null, $contentType = null, $accept = null)
+    public function getBusinessModelDiagramsShowAsync($diagramId, $includesnapshotsdeploysdeploysStatistics = null)
     {
-        return $this->getBusinessModelDiagramsShowAsyncWithHttpInfo($diagramId, $includesnapshotsdeploysdeploysStatistics, $contentType, $accept)
+        return $this->getBusinessModelDiagramsShowAsyncWithHttpInfo($diagramId, $includesnapshotsdeploysdeploysStatistics)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3879,16 +3657,14 @@ class OperationsApi
      *
      * @param  string $diagramId The ID of the diagram. (required)
      * @param  string $includesnapshotsdeploysdeploysStatistics Possible includes (optional)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getBusinessModelDiagramsShowAsyncWithHttpInfo($diagramId, $includesnapshotsdeploysdeploysStatistics = null, $contentType = null, $accept = null)
+    public function getBusinessModelDiagramsShowAsyncWithHttpInfo($diagramId, $includesnapshotsdeploysdeploysStatistics = null)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel';
-        $request = $this->getBusinessModelDiagramsShowRequest($diagramId, $includesnapshotsdeploysdeploysStatistics, $contentType, $accept);
+        $request = $this->getBusinessModelDiagramsShowRequest($diagramId, $includesnapshotsdeploysdeploysStatistics);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3931,13 +3707,11 @@ class OperationsApi
      *
      * @param  string $diagramId The ID of the diagram. (required)
      * @param  string $includesnapshotsdeploysdeploysStatistics Possible includes (optional)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getBusinessModelDiagramsShowRequest($diagramId, $includesnapshotsdeploysdeploysStatistics = null, $contentType = null, $accept = null)
+    public function getBusinessModelDiagramsShowRequest($diagramId, $includesnapshotsdeploysdeploysStatistics = null)
     {
         // verify the required parameter 'diagramId' is set
         if ($diagramId === null || (is_array($diagramId) && count($diagramId) === 0)) {
@@ -3963,14 +3737,6 @@ class OperationsApi
             false // required
         ) ?? []);
 
-        // header params
-        if ($contentType !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
-        }
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
         // path params
         if ($diagramId !== null) {
@@ -4044,16 +3810,14 @@ class OperationsApi
      *
      * List Business Model Exceptions
      *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\BusinessBaseModelExceptionModel[]
      */
-    public function getBusinessModelExceptionsList($contentType = null, $accept = null)
+    public function getBusinessModelExceptionsList()
     {
-        list($response) = $this->getBusinessModelExceptionsListWithHttpInfo($contentType, $accept);
+        list($response) = $this->getBusinessModelExceptionsListWithHttpInfo();
         return $response;
     }
 
@@ -4062,16 +3826,14 @@ class OperationsApi
      *
      * List Business Model Exceptions
      *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\BusinessBaseModelExceptionModel[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getBusinessModelExceptionsListWithHttpInfo($contentType = null, $accept = null)
+    public function getBusinessModelExceptionsListWithHttpInfo()
     {
-        $request = $this->getBusinessModelExceptionsListRequest($contentType, $accept);
+        $request = $this->getBusinessModelExceptionsListRequest();
 
         try {
             $options = $this->createHttpClientOption();
@@ -4162,15 +3924,13 @@ class OperationsApi
      *
      * List Business Model Exceptions
      *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getBusinessModelExceptionsListAsync($contentType = null, $accept = null)
+    public function getBusinessModelExceptionsListAsync()
     {
-        return $this->getBusinessModelExceptionsListAsyncWithHttpInfo($contentType, $accept)
+        return $this->getBusinessModelExceptionsListAsyncWithHttpInfo()
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4183,16 +3943,14 @@ class OperationsApi
      *
      * List Business Model Exceptions
      *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getBusinessModelExceptionsListAsyncWithHttpInfo($contentType = null, $accept = null)
+    public function getBusinessModelExceptionsListAsyncWithHttpInfo()
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelExceptionModel[]';
-        $request = $this->getBusinessModelExceptionsListRequest($contentType, $accept);
+        $request = $this->getBusinessModelExceptionsListRequest();
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4233,13 +3991,11 @@ class OperationsApi
     /**
      * Create request for operation 'getBusinessModelExceptionsList'
      *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getBusinessModelExceptionsListRequest($contentType = null, $accept = null)
+    public function getBusinessModelExceptionsListRequest()
     {
 
         $resourcePath = '/api/v2/business-model-exceptions';
@@ -4250,14 +4006,6 @@ class OperationsApi
         $multipart = false;
 
 
-        // header params
-        if ($contentType !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
-        }
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
 
 
@@ -4324,16 +4072,14 @@ class OperationsApi
      * View Business Model Exception
      *
      * @param  string $exceptionId The ID of the exception. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\BusinessBaseModelExceptionModel
      */
-    public function getBusinessModelExceptionsShow($exceptionId, $contentType = null, $accept = null)
+    public function getBusinessModelExceptionsShow($exceptionId)
     {
-        list($response) = $this->getBusinessModelExceptionsShowWithHttpInfo($exceptionId, $contentType, $accept);
+        list($response) = $this->getBusinessModelExceptionsShowWithHttpInfo($exceptionId);
         return $response;
     }
 
@@ -4343,16 +4089,14 @@ class OperationsApi
      * View Business Model Exception
      *
      * @param  string $exceptionId The ID of the exception. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\BusinessBaseModelExceptionModel, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getBusinessModelExceptionsShowWithHttpInfo($exceptionId, $contentType = null, $accept = null)
+    public function getBusinessModelExceptionsShowWithHttpInfo($exceptionId)
     {
-        $request = $this->getBusinessModelExceptionsShowRequest($exceptionId, $contentType, $accept);
+        $request = $this->getBusinessModelExceptionsShowRequest($exceptionId);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4444,15 +4188,13 @@ class OperationsApi
      * View Business Model Exception
      *
      * @param  string $exceptionId The ID of the exception. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getBusinessModelExceptionsShowAsync($exceptionId, $contentType = null, $accept = null)
+    public function getBusinessModelExceptionsShowAsync($exceptionId)
     {
-        return $this->getBusinessModelExceptionsShowAsyncWithHttpInfo($exceptionId, $contentType, $accept)
+        return $this->getBusinessModelExceptionsShowAsyncWithHttpInfo($exceptionId)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4466,16 +4208,14 @@ class OperationsApi
      * View Business Model Exception
      *
      * @param  string $exceptionId The ID of the exception. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getBusinessModelExceptionsShowAsyncWithHttpInfo($exceptionId, $contentType = null, $accept = null)
+    public function getBusinessModelExceptionsShowAsyncWithHttpInfo($exceptionId)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelExceptionModel';
-        $request = $this->getBusinessModelExceptionsShowRequest($exceptionId, $contentType, $accept);
+        $request = $this->getBusinessModelExceptionsShowRequest($exceptionId);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4517,13 +4257,11 @@ class OperationsApi
      * Create request for operation 'getBusinessModelExceptionsShow'
      *
      * @param  string $exceptionId The ID of the exception. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getBusinessModelExceptionsShowRequest($exceptionId, $contentType = null, $accept = null)
+    public function getBusinessModelExceptionsShowRequest($exceptionId)
     {
         // verify the required parameter 'exceptionId' is set
         if ($exceptionId === null || (is_array($exceptionId) && count($exceptionId) === 0)) {
@@ -4540,14 +4278,6 @@ class OperationsApi
         $multipart = false;
 
 
-        // header params
-        if ($contentType !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
-        }
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
         // path params
         if ($exceptionId !== null) {
@@ -4621,16 +4351,14 @@ class OperationsApi
      *
      * List Business Model Publications
      *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\BusinessProcessModelPublicationModel[]
      */
-    public function getBusinessModelPublicationsList($contentType = null, $accept = null)
+    public function getBusinessModelPublicationsList()
     {
-        list($response) = $this->getBusinessModelPublicationsListWithHttpInfo($contentType, $accept);
+        list($response) = $this->getBusinessModelPublicationsListWithHttpInfo();
         return $response;
     }
 
@@ -4639,16 +4367,14 @@ class OperationsApi
      *
      * List Business Model Publications
      *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\BusinessProcessModelPublicationModel[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getBusinessModelPublicationsListWithHttpInfo($contentType = null, $accept = null)
+    public function getBusinessModelPublicationsListWithHttpInfo()
     {
-        $request = $this->getBusinessModelPublicationsListRequest($contentType, $accept);
+        $request = $this->getBusinessModelPublicationsListRequest();
 
         try {
             $options = $this->createHttpClientOption();
@@ -4739,15 +4465,13 @@ class OperationsApi
      *
      * List Business Model Publications
      *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getBusinessModelPublicationsListAsync($contentType = null, $accept = null)
+    public function getBusinessModelPublicationsListAsync()
     {
-        return $this->getBusinessModelPublicationsListAsyncWithHttpInfo($contentType, $accept)
+        return $this->getBusinessModelPublicationsListAsyncWithHttpInfo()
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4760,16 +4484,14 @@ class OperationsApi
      *
      * List Business Model Publications
      *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getBusinessModelPublicationsListAsyncWithHttpInfo($contentType = null, $accept = null)
+    public function getBusinessModelPublicationsListAsyncWithHttpInfo()
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessProcessModelPublicationModel[]';
-        $request = $this->getBusinessModelPublicationsListRequest($contentType, $accept);
+        $request = $this->getBusinessModelPublicationsListRequest();
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4810,13 +4532,11 @@ class OperationsApi
     /**
      * Create request for operation 'getBusinessModelPublicationsList'
      *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getBusinessModelPublicationsListRequest($contentType = null, $accept = null)
+    public function getBusinessModelPublicationsListRequest()
     {
 
         $resourcePath = '/api/v2/business-model-publications';
@@ -4827,14 +4547,6 @@ class OperationsApi
         $multipart = false;
 
 
-        // header params
-        if ($contentType !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
-        }
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
 
 
@@ -4902,16 +4614,14 @@ class OperationsApi
      *
      * @param  string $publicationId The ID of the publication. (required)
      * @param  string $appendstatisticsoutliers Possible appends (optional)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\BusinessProcessModelPublicationModel
      */
-    public function getBusinessModelPublicationsShow($publicationId, $appendstatisticsoutliers = null, $contentType = null, $accept = null)
+    public function getBusinessModelPublicationsShow($publicationId, $appendstatisticsoutliers = null)
     {
-        list($response) = $this->getBusinessModelPublicationsShowWithHttpInfo($publicationId, $appendstatisticsoutliers, $contentType, $accept);
+        list($response) = $this->getBusinessModelPublicationsShowWithHttpInfo($publicationId, $appendstatisticsoutliers);
         return $response;
     }
 
@@ -4922,16 +4632,14 @@ class OperationsApi
      *
      * @param  string $publicationId The ID of the publication. (required)
      * @param  string $appendstatisticsoutliers Possible appends (optional)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\BusinessProcessModelPublicationModel, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getBusinessModelPublicationsShowWithHttpInfo($publicationId, $appendstatisticsoutliers = null, $contentType = null, $accept = null)
+    public function getBusinessModelPublicationsShowWithHttpInfo($publicationId, $appendstatisticsoutliers = null)
     {
-        $request = $this->getBusinessModelPublicationsShowRequest($publicationId, $appendstatisticsoutliers, $contentType, $accept);
+        $request = $this->getBusinessModelPublicationsShowRequest($publicationId, $appendstatisticsoutliers);
 
         try {
             $options = $this->createHttpClientOption();
@@ -5024,15 +4732,13 @@ class OperationsApi
      *
      * @param  string $publicationId The ID of the publication. (required)
      * @param  string $appendstatisticsoutliers Possible appends (optional)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getBusinessModelPublicationsShowAsync($publicationId, $appendstatisticsoutliers = null, $contentType = null, $accept = null)
+    public function getBusinessModelPublicationsShowAsync($publicationId, $appendstatisticsoutliers = null)
     {
-        return $this->getBusinessModelPublicationsShowAsyncWithHttpInfo($publicationId, $appendstatisticsoutliers, $contentType, $accept)
+        return $this->getBusinessModelPublicationsShowAsyncWithHttpInfo($publicationId, $appendstatisticsoutliers)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -5047,16 +4753,14 @@ class OperationsApi
      *
      * @param  string $publicationId The ID of the publication. (required)
      * @param  string $appendstatisticsoutliers Possible appends (optional)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getBusinessModelPublicationsShowAsyncWithHttpInfo($publicationId, $appendstatisticsoutliers = null, $contentType = null, $accept = null)
+    public function getBusinessModelPublicationsShowAsyncWithHttpInfo($publicationId, $appendstatisticsoutliers = null)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessProcessModelPublicationModel';
-        $request = $this->getBusinessModelPublicationsShowRequest($publicationId, $appendstatisticsoutliers, $contentType, $accept);
+        $request = $this->getBusinessModelPublicationsShowRequest($publicationId, $appendstatisticsoutliers);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -5099,13 +4803,11 @@ class OperationsApi
      *
      * @param  string $publicationId The ID of the publication. (required)
      * @param  string $appendstatisticsoutliers Possible appends (optional)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getBusinessModelPublicationsShowRequest($publicationId, $appendstatisticsoutliers = null, $contentType = null, $accept = null)
+    public function getBusinessModelPublicationsShowRequest($publicationId, $appendstatisticsoutliers = null)
     {
         // verify the required parameter 'publicationId' is set
         if ($publicationId === null || (is_array($publicationId) && count($publicationId) === 0)) {
@@ -5131,14 +4833,6 @@ class OperationsApi
             false // required
         ) ?? []);
 
-        // header params
-        if ($contentType !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
-        }
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
         // path params
         if ($publicationId !== null) {
@@ -5214,16 +4908,14 @@ class OperationsApi
      *
      * @param  string $modelId The ID of the model. (required)
      * @param  string $include Specify a list of includes. (optional)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\CommentModel[]
      */
-    public function getBusinessModelsCommentsList($modelId, $include = null, $contentType = null, $accept = null)
+    public function getBusinessModelsCommentsList($modelId, $include = null)
     {
-        list($response) = $this->getBusinessModelsCommentsListWithHttpInfo($modelId, $include, $contentType, $accept);
+        list($response) = $this->getBusinessModelsCommentsListWithHttpInfo($modelId, $include);
         return $response;
     }
 
@@ -5234,16 +4926,14 @@ class OperationsApi
      *
      * @param  string $modelId The ID of the model. (required)
      * @param  string $include Specify a list of includes. (optional)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\CommentModel[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getBusinessModelsCommentsListWithHttpInfo($modelId, $include = null, $contentType = null, $accept = null)
+    public function getBusinessModelsCommentsListWithHttpInfo($modelId, $include = null)
     {
-        $request = $this->getBusinessModelsCommentsListRequest($modelId, $include, $contentType, $accept);
+        $request = $this->getBusinessModelsCommentsListRequest($modelId, $include);
 
         try {
             $options = $this->createHttpClientOption();
@@ -5336,15 +5026,13 @@ class OperationsApi
      *
      * @param  string $modelId The ID of the model. (required)
      * @param  string $include Specify a list of includes. (optional)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getBusinessModelsCommentsListAsync($modelId, $include = null, $contentType = null, $accept = null)
+    public function getBusinessModelsCommentsListAsync($modelId, $include = null)
     {
-        return $this->getBusinessModelsCommentsListAsyncWithHttpInfo($modelId, $include, $contentType, $accept)
+        return $this->getBusinessModelsCommentsListAsyncWithHttpInfo($modelId, $include)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -5359,16 +5047,14 @@ class OperationsApi
      *
      * @param  string $modelId The ID of the model. (required)
      * @param  string $include Specify a list of includes. (optional)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getBusinessModelsCommentsListAsyncWithHttpInfo($modelId, $include = null, $contentType = null, $accept = null)
+    public function getBusinessModelsCommentsListAsyncWithHttpInfo($modelId, $include = null)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\CommentModel[]';
-        $request = $this->getBusinessModelsCommentsListRequest($modelId, $include, $contentType, $accept);
+        $request = $this->getBusinessModelsCommentsListRequest($modelId, $include);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -5411,13 +5097,11 @@ class OperationsApi
      *
      * @param  string $modelId The ID of the model. (required)
      * @param  string $include Specify a list of includes. (optional)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getBusinessModelsCommentsListRequest($modelId, $include = null, $contentType = null, $accept = null)
+    public function getBusinessModelsCommentsListRequest($modelId, $include = null)
     {
         // verify the required parameter 'modelId' is set
         if ($modelId === null || (is_array($modelId) && count($modelId) === 0)) {
@@ -5443,14 +5127,6 @@ class OperationsApi
             false // required
         ) ?? []);
 
-        // header params
-        if ($contentType !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
-        }
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
         // path params
         if ($modelId !== null) {
@@ -5534,16 +5210,14 @@ class OperationsApi
      * @param  bool $filterUncategorized boolean List only uncategorized process models. (optional)
      * @param  bool $filterSubscribable List only subscribable process models. (optional)
      * @param  string $sort Sorting by specified criteria. (optional)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\BusinessBaseModelModel[]
      */
-    public function getBusinessModelsList($include = null, $filterWithAnyTags = null, $filterWithoutAnyTags = null, $filterAutocomplete = null, $filterSearch = null, $filterCategories = null, $filterType = null, $filterUncategorized = null, $filterSubscribable = null, $sort = null, $contentType = null, $accept = null)
+    public function getBusinessModelsList($include = null, $filterWithAnyTags = null, $filterWithoutAnyTags = null, $filterAutocomplete = null, $filterSearch = null, $filterCategories = null, $filterType = null, $filterUncategorized = null, $filterSubscribable = null, $sort = null)
     {
-        list($response) = $this->getBusinessModelsListWithHttpInfo($include, $filterWithAnyTags, $filterWithoutAnyTags, $filterAutocomplete, $filterSearch, $filterCategories, $filterType, $filterUncategorized, $filterSubscribable, $sort, $contentType, $accept);
+        list($response) = $this->getBusinessModelsListWithHttpInfo($include, $filterWithAnyTags, $filterWithoutAnyTags, $filterAutocomplete, $filterSearch, $filterCategories, $filterType, $filterUncategorized, $filterSubscribable, $sort);
         return $response;
     }
 
@@ -5562,16 +5236,14 @@ class OperationsApi
      * @param  bool $filterUncategorized boolean List only uncategorized process models. (optional)
      * @param  bool $filterSubscribable List only subscribable process models. (optional)
      * @param  string $sort Sorting by specified criteria. (optional)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\BusinessBaseModelModel[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getBusinessModelsListWithHttpInfo($include = null, $filterWithAnyTags = null, $filterWithoutAnyTags = null, $filterAutocomplete = null, $filterSearch = null, $filterCategories = null, $filterType = null, $filterUncategorized = null, $filterSubscribable = null, $sort = null, $contentType = null, $accept = null)
+    public function getBusinessModelsListWithHttpInfo($include = null, $filterWithAnyTags = null, $filterWithoutAnyTags = null, $filterAutocomplete = null, $filterSearch = null, $filterCategories = null, $filterType = null, $filterUncategorized = null, $filterSubscribable = null, $sort = null)
     {
-        $request = $this->getBusinessModelsListRequest($include, $filterWithAnyTags, $filterWithoutAnyTags, $filterAutocomplete, $filterSearch, $filterCategories, $filterType, $filterUncategorized, $filterSubscribable, $sort, $contentType, $accept);
+        $request = $this->getBusinessModelsListRequest($include, $filterWithAnyTags, $filterWithoutAnyTags, $filterAutocomplete, $filterSearch, $filterCategories, $filterType, $filterUncategorized, $filterSubscribable, $sort);
 
         try {
             $options = $this->createHttpClientOption();
@@ -5672,15 +5344,13 @@ class OperationsApi
      * @param  bool $filterUncategorized boolean List only uncategorized process models. (optional)
      * @param  bool $filterSubscribable List only subscribable process models. (optional)
      * @param  string $sort Sorting by specified criteria. (optional)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getBusinessModelsListAsync($include = null, $filterWithAnyTags = null, $filterWithoutAnyTags = null, $filterAutocomplete = null, $filterSearch = null, $filterCategories = null, $filterType = null, $filterUncategorized = null, $filterSubscribable = null, $sort = null, $contentType = null, $accept = null)
+    public function getBusinessModelsListAsync($include = null, $filterWithAnyTags = null, $filterWithoutAnyTags = null, $filterAutocomplete = null, $filterSearch = null, $filterCategories = null, $filterType = null, $filterUncategorized = null, $filterSubscribable = null, $sort = null)
     {
-        return $this->getBusinessModelsListAsyncWithHttpInfo($include, $filterWithAnyTags, $filterWithoutAnyTags, $filterAutocomplete, $filterSearch, $filterCategories, $filterType, $filterUncategorized, $filterSubscribable, $sort, $contentType, $accept)
+        return $this->getBusinessModelsListAsyncWithHttpInfo($include, $filterWithAnyTags, $filterWithoutAnyTags, $filterAutocomplete, $filterSearch, $filterCategories, $filterType, $filterUncategorized, $filterSubscribable, $sort)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -5703,16 +5373,14 @@ class OperationsApi
      * @param  bool $filterUncategorized boolean List only uncategorized process models. (optional)
      * @param  bool $filterSubscribable List only subscribable process models. (optional)
      * @param  string $sort Sorting by specified criteria. (optional)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getBusinessModelsListAsyncWithHttpInfo($include = null, $filterWithAnyTags = null, $filterWithoutAnyTags = null, $filterAutocomplete = null, $filterSearch = null, $filterCategories = null, $filterType = null, $filterUncategorized = null, $filterSubscribable = null, $sort = null, $contentType = null, $accept = null)
+    public function getBusinessModelsListAsyncWithHttpInfo($include = null, $filterWithAnyTags = null, $filterWithoutAnyTags = null, $filterAutocomplete = null, $filterSearch = null, $filterCategories = null, $filterType = null, $filterUncategorized = null, $filterSubscribable = null, $sort = null)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelModel[]';
-        $request = $this->getBusinessModelsListRequest($include, $filterWithAnyTags, $filterWithoutAnyTags, $filterAutocomplete, $filterSearch, $filterCategories, $filterType, $filterUncategorized, $filterSubscribable, $sort, $contentType, $accept);
+        $request = $this->getBusinessModelsListRequest($include, $filterWithAnyTags, $filterWithoutAnyTags, $filterAutocomplete, $filterSearch, $filterCategories, $filterType, $filterUncategorized, $filterSubscribable, $sort);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -5763,13 +5431,11 @@ class OperationsApi
      * @param  bool $filterUncategorized boolean List only uncategorized process models. (optional)
      * @param  bool $filterSubscribable List only subscribable process models. (optional)
      * @param  string $sort Sorting by specified criteria. (optional)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getBusinessModelsListRequest($include = null, $filterWithAnyTags = null, $filterWithoutAnyTags = null, $filterAutocomplete = null, $filterSearch = null, $filterCategories = null, $filterType = null, $filterUncategorized = null, $filterSubscribable = null, $sort = null, $contentType = null, $accept = null)
+    public function getBusinessModelsListRequest($include = null, $filterWithAnyTags = null, $filterWithoutAnyTags = null, $filterAutocomplete = null, $filterSearch = null, $filterCategories = null, $filterType = null, $filterUncategorized = null, $filterSubscribable = null, $sort = null)
     {
 
         $resourcePath = '/api/v2/business-models';
@@ -5870,14 +5536,6 @@ class OperationsApi
             false // required
         ) ?? []);
 
-        // header params
-        if ($contentType !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
-        }
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
 
 
@@ -5945,16 +5603,14 @@ class OperationsApi
      *
      * @param  string $modelId The ID of the model. (required)
      * @param  string $includeownercompanycategorytagscommentsCounttagsCountdiagrams Possible includes (optional)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\BusinessBaseModelModel
      */
-    public function getBusinessModelsShow($modelId, $includeownercompanycategorytagscommentsCounttagsCountdiagrams = null, $contentType = null, $accept = null)
+    public function getBusinessModelsShow($modelId, $includeownercompanycategorytagscommentsCounttagsCountdiagrams = null)
     {
-        list($response) = $this->getBusinessModelsShowWithHttpInfo($modelId, $includeownercompanycategorytagscommentsCounttagsCountdiagrams, $contentType, $accept);
+        list($response) = $this->getBusinessModelsShowWithHttpInfo($modelId, $includeownercompanycategorytagscommentsCounttagsCountdiagrams);
         return $response;
     }
 
@@ -5965,16 +5621,14 @@ class OperationsApi
      *
      * @param  string $modelId The ID of the model. (required)
      * @param  string $includeownercompanycategorytagscommentsCounttagsCountdiagrams Possible includes (optional)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\BusinessBaseModelModel, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getBusinessModelsShowWithHttpInfo($modelId, $includeownercompanycategorytagscommentsCounttagsCountdiagrams = null, $contentType = null, $accept = null)
+    public function getBusinessModelsShowWithHttpInfo($modelId, $includeownercompanycategorytagscommentsCounttagsCountdiagrams = null)
     {
-        $request = $this->getBusinessModelsShowRequest($modelId, $includeownercompanycategorytagscommentsCounttagsCountdiagrams, $contentType, $accept);
+        $request = $this->getBusinessModelsShowRequest($modelId, $includeownercompanycategorytagscommentsCounttagsCountdiagrams);
 
         try {
             $options = $this->createHttpClientOption();
@@ -6067,15 +5721,13 @@ class OperationsApi
      *
      * @param  string $modelId The ID of the model. (required)
      * @param  string $includeownercompanycategorytagscommentsCounttagsCountdiagrams Possible includes (optional)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getBusinessModelsShowAsync($modelId, $includeownercompanycategorytagscommentsCounttagsCountdiagrams = null, $contentType = null, $accept = null)
+    public function getBusinessModelsShowAsync($modelId, $includeownercompanycategorytagscommentsCounttagsCountdiagrams = null)
     {
-        return $this->getBusinessModelsShowAsyncWithHttpInfo($modelId, $includeownercompanycategorytagscommentsCounttagsCountdiagrams, $contentType, $accept)
+        return $this->getBusinessModelsShowAsyncWithHttpInfo($modelId, $includeownercompanycategorytagscommentsCounttagsCountdiagrams)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -6090,16 +5742,14 @@ class OperationsApi
      *
      * @param  string $modelId The ID of the model. (required)
      * @param  string $includeownercompanycategorytagscommentsCounttagsCountdiagrams Possible includes (optional)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getBusinessModelsShowAsyncWithHttpInfo($modelId, $includeownercompanycategorytagscommentsCounttagsCountdiagrams = null, $contentType = null, $accept = null)
+    public function getBusinessModelsShowAsyncWithHttpInfo($modelId, $includeownercompanycategorytagscommentsCounttagsCountdiagrams = null)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelModel';
-        $request = $this->getBusinessModelsShowRequest($modelId, $includeownercompanycategorytagscommentsCounttagsCountdiagrams, $contentType, $accept);
+        $request = $this->getBusinessModelsShowRequest($modelId, $includeownercompanycategorytagscommentsCounttagsCountdiagrams);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -6142,13 +5792,11 @@ class OperationsApi
      *
      * @param  string $modelId The ID of the model. (required)
      * @param  string $includeownercompanycategorytagscommentsCounttagsCountdiagrams Possible includes (optional)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getBusinessModelsShowRequest($modelId, $includeownercompanycategorytagscommentsCounttagsCountdiagrams = null, $contentType = null, $accept = null)
+    public function getBusinessModelsShowRequest($modelId, $includeownercompanycategorytagscommentsCounttagsCountdiagrams = null)
     {
         // verify the required parameter 'modelId' is set
         if ($modelId === null || (is_array($modelId) && count($modelId) === 0)) {
@@ -6174,14 +5822,6 @@ class OperationsApi
             false // required
         ) ?? []);
 
-        // header params
-        if ($contentType !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
-        }
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
         // path params
         if ($modelId !== null) {
@@ -6257,16 +5897,14 @@ class OperationsApi
      *
      * @param  string $modelId The ID of the model. (required)
      * @param  string $revision  (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramModel
      */
-    public function getBusinessModelsShowRevision($modelId, $revision, $contentType = null, $accept = null)
+    public function getBusinessModelsShowRevision($modelId, $revision)
     {
-        list($response) = $this->getBusinessModelsShowRevisionWithHttpInfo($modelId, $revision, $contentType, $accept);
+        list($response) = $this->getBusinessModelsShowRevisionWithHttpInfo($modelId, $revision);
         return $response;
     }
 
@@ -6277,16 +5915,14 @@ class OperationsApi
      *
      * @param  string $modelId The ID of the model. (required)
      * @param  string $revision  (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramModel, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getBusinessModelsShowRevisionWithHttpInfo($modelId, $revision, $contentType = null, $accept = null)
+    public function getBusinessModelsShowRevisionWithHttpInfo($modelId, $revision)
     {
-        $request = $this->getBusinessModelsShowRevisionRequest($modelId, $revision, $contentType, $accept);
+        $request = $this->getBusinessModelsShowRevisionRequest($modelId, $revision);
 
         try {
             $options = $this->createHttpClientOption();
@@ -6379,15 +6015,13 @@ class OperationsApi
      *
      * @param  string $modelId The ID of the model. (required)
      * @param  string $revision  (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getBusinessModelsShowRevisionAsync($modelId, $revision, $contentType = null, $accept = null)
+    public function getBusinessModelsShowRevisionAsync($modelId, $revision)
     {
-        return $this->getBusinessModelsShowRevisionAsyncWithHttpInfo($modelId, $revision, $contentType, $accept)
+        return $this->getBusinessModelsShowRevisionAsyncWithHttpInfo($modelId, $revision)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -6402,16 +6036,14 @@ class OperationsApi
      *
      * @param  string $modelId The ID of the model. (required)
      * @param  string $revision  (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getBusinessModelsShowRevisionAsyncWithHttpInfo($modelId, $revision, $contentType = null, $accept = null)
+    public function getBusinessModelsShowRevisionAsyncWithHttpInfo($modelId, $revision)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramModel';
-        $request = $this->getBusinessModelsShowRevisionRequest($modelId, $revision, $contentType, $accept);
+        $request = $this->getBusinessModelsShowRevisionRequest($modelId, $revision);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -6454,13 +6086,11 @@ class OperationsApi
      *
      * @param  string $modelId The ID of the model. (required)
      * @param  string $revision  (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getBusinessModelsShowRevisionRequest($modelId, $revision, $contentType = null, $accept = null)
+    public function getBusinessModelsShowRevisionRequest($modelId, $revision)
     {
         // verify the required parameter 'modelId' is set
         if ($modelId === null || (is_array($modelId) && count($modelId) === 0)) {
@@ -6483,14 +6113,6 @@ class OperationsApi
         $multipart = false;
 
 
-        // header params
-        if ($contentType !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
-        }
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
         // path params
         if ($modelId !== null) {
@@ -6573,16 +6195,14 @@ class OperationsApi
      * List Business Model Diagrams
      *
      * @param  string $modelId The ID of the model. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramModel[]
      */
-    public function getBusinessModelsShowRevisions($modelId, $contentType = null, $accept = null)
+    public function getBusinessModelsShowRevisions($modelId)
     {
-        list($response) = $this->getBusinessModelsShowRevisionsWithHttpInfo($modelId, $contentType, $accept);
+        list($response) = $this->getBusinessModelsShowRevisionsWithHttpInfo($modelId);
         return $response;
     }
 
@@ -6592,16 +6212,14 @@ class OperationsApi
      * List Business Model Diagrams
      *
      * @param  string $modelId The ID of the model. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramModel[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getBusinessModelsShowRevisionsWithHttpInfo($modelId, $contentType = null, $accept = null)
+    public function getBusinessModelsShowRevisionsWithHttpInfo($modelId)
     {
-        $request = $this->getBusinessModelsShowRevisionsRequest($modelId, $contentType, $accept);
+        $request = $this->getBusinessModelsShowRevisionsRequest($modelId);
 
         try {
             $options = $this->createHttpClientOption();
@@ -6693,15 +6311,13 @@ class OperationsApi
      * List Business Model Diagrams
      *
      * @param  string $modelId The ID of the model. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getBusinessModelsShowRevisionsAsync($modelId, $contentType = null, $accept = null)
+    public function getBusinessModelsShowRevisionsAsync($modelId)
     {
-        return $this->getBusinessModelsShowRevisionsAsyncWithHttpInfo($modelId, $contentType, $accept)
+        return $this->getBusinessModelsShowRevisionsAsyncWithHttpInfo($modelId)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -6715,16 +6331,14 @@ class OperationsApi
      * List Business Model Diagrams
      *
      * @param  string $modelId The ID of the model. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getBusinessModelsShowRevisionsAsyncWithHttpInfo($modelId, $contentType = null, $accept = null)
+    public function getBusinessModelsShowRevisionsAsyncWithHttpInfo($modelId)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramModel[]';
-        $request = $this->getBusinessModelsShowRevisionsRequest($modelId, $contentType, $accept);
+        $request = $this->getBusinessModelsShowRevisionsRequest($modelId);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -6766,13 +6380,11 @@ class OperationsApi
      * Create request for operation 'getBusinessModelsShowRevisions'
      *
      * @param  string $modelId The ID of the model. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getBusinessModelsShowRevisionsRequest($modelId, $contentType = null, $accept = null)
+    public function getBusinessModelsShowRevisionsRequest($modelId)
     {
         // verify the required parameter 'modelId' is set
         if ($modelId === null || (is_array($modelId) && count($modelId) === 0)) {
@@ -6789,14 +6401,6 @@ class OperationsApi
         $multipart = false;
 
 
-        // header params
-        if ($contentType !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
-        }
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
         // path params
         if ($modelId !== null) {
@@ -6875,16 +6479,14 @@ class OperationsApi
      * @param  string $filterAutocompletetes Retrieve list that has \&quot;tes\&quot; at the start of their name (optional)
      * @param  string $filterSearchtes Retrieve list that has \&quot;tes\&quot; in their name (optional)
      * @param  string $sortnameCreatedAtUpdatedAt Sorting example (optional)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\TagModel[]
      */
-    public function getBusinessProcessesList($includeprocessModels = null, $includeprocessModelsCount = null, $filterAutocompletetes = null, $filterSearchtes = null, $sortnameCreatedAtUpdatedAt = null, $contentType = null, $accept = null)
+    public function getBusinessProcessesList($includeprocessModels = null, $includeprocessModelsCount = null, $filterAutocompletetes = null, $filterSearchtes = null, $sortnameCreatedAtUpdatedAt = null)
     {
-        list($response) = $this->getBusinessProcessesListWithHttpInfo($includeprocessModels, $includeprocessModelsCount, $filterAutocompletetes, $filterSearchtes, $sortnameCreatedAtUpdatedAt, $contentType, $accept);
+        list($response) = $this->getBusinessProcessesListWithHttpInfo($includeprocessModels, $includeprocessModelsCount, $filterAutocompletetes, $filterSearchtes, $sortnameCreatedAtUpdatedAt);
         return $response;
     }
 
@@ -6898,16 +6500,14 @@ class OperationsApi
      * @param  string $filterAutocompletetes Retrieve list that has \&quot;tes\&quot; at the start of their name (optional)
      * @param  string $filterSearchtes Retrieve list that has \&quot;tes\&quot; in their name (optional)
      * @param  string $sortnameCreatedAtUpdatedAt Sorting example (optional)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\TagModel[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getBusinessProcessesListWithHttpInfo($includeprocessModels = null, $includeprocessModelsCount = null, $filterAutocompletetes = null, $filterSearchtes = null, $sortnameCreatedAtUpdatedAt = null, $contentType = null, $accept = null)
+    public function getBusinessProcessesListWithHttpInfo($includeprocessModels = null, $includeprocessModelsCount = null, $filterAutocompletetes = null, $filterSearchtes = null, $sortnameCreatedAtUpdatedAt = null)
     {
-        $request = $this->getBusinessProcessesListRequest($includeprocessModels, $includeprocessModelsCount, $filterAutocompletetes, $filterSearchtes, $sortnameCreatedAtUpdatedAt, $contentType, $accept);
+        $request = $this->getBusinessProcessesListRequest($includeprocessModels, $includeprocessModelsCount, $filterAutocompletetes, $filterSearchtes, $sortnameCreatedAtUpdatedAt);
 
         try {
             $options = $this->createHttpClientOption();
@@ -7003,15 +6603,13 @@ class OperationsApi
      * @param  string $filterAutocompletetes Retrieve list that has \&quot;tes\&quot; at the start of their name (optional)
      * @param  string $filterSearchtes Retrieve list that has \&quot;tes\&quot; in their name (optional)
      * @param  string $sortnameCreatedAtUpdatedAt Sorting example (optional)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getBusinessProcessesListAsync($includeprocessModels = null, $includeprocessModelsCount = null, $filterAutocompletetes = null, $filterSearchtes = null, $sortnameCreatedAtUpdatedAt = null, $contentType = null, $accept = null)
+    public function getBusinessProcessesListAsync($includeprocessModels = null, $includeprocessModelsCount = null, $filterAutocompletetes = null, $filterSearchtes = null, $sortnameCreatedAtUpdatedAt = null)
     {
-        return $this->getBusinessProcessesListAsyncWithHttpInfo($includeprocessModels, $includeprocessModelsCount, $filterAutocompletetes, $filterSearchtes, $sortnameCreatedAtUpdatedAt, $contentType, $accept)
+        return $this->getBusinessProcessesListAsyncWithHttpInfo($includeprocessModels, $includeprocessModelsCount, $filterAutocompletetes, $filterSearchtes, $sortnameCreatedAtUpdatedAt)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -7029,16 +6627,14 @@ class OperationsApi
      * @param  string $filterAutocompletetes Retrieve list that has \&quot;tes\&quot; at the start of their name (optional)
      * @param  string $filterSearchtes Retrieve list that has \&quot;tes\&quot; in their name (optional)
      * @param  string $sortnameCreatedAtUpdatedAt Sorting example (optional)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getBusinessProcessesListAsyncWithHttpInfo($includeprocessModels = null, $includeprocessModelsCount = null, $filterAutocompletetes = null, $filterSearchtes = null, $sortnameCreatedAtUpdatedAt = null, $contentType = null, $accept = null)
+    public function getBusinessProcessesListAsyncWithHttpInfo($includeprocessModels = null, $includeprocessModelsCount = null, $filterAutocompletetes = null, $filterSearchtes = null, $sortnameCreatedAtUpdatedAt = null)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\TagModel[]';
-        $request = $this->getBusinessProcessesListRequest($includeprocessModels, $includeprocessModelsCount, $filterAutocompletetes, $filterSearchtes, $sortnameCreatedAtUpdatedAt, $contentType, $accept);
+        $request = $this->getBusinessProcessesListRequest($includeprocessModels, $includeprocessModelsCount, $filterAutocompletetes, $filterSearchtes, $sortnameCreatedAtUpdatedAt);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -7084,13 +6680,11 @@ class OperationsApi
      * @param  string $filterAutocompletetes Retrieve list that has \&quot;tes\&quot; at the start of their name (optional)
      * @param  string $filterSearchtes Retrieve list that has \&quot;tes\&quot; in their name (optional)
      * @param  string $sortnameCreatedAtUpdatedAt Sorting example (optional)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getBusinessProcessesListRequest($includeprocessModels = null, $includeprocessModelsCount = null, $filterAutocompletetes = null, $filterSearchtes = null, $sortnameCreatedAtUpdatedAt = null, $contentType = null, $accept = null)
+    public function getBusinessProcessesListRequest($includeprocessModels = null, $includeprocessModelsCount = null, $filterAutocompletetes = null, $filterSearchtes = null, $sortnameCreatedAtUpdatedAt = null)
     {
 
         $resourcePath = '/api/v2/business-processes';
@@ -7146,14 +6740,6 @@ class OperationsApi
             false // required
         ) ?? []);
 
-        // header params
-        if ($contentType !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
-        }
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
 
 
@@ -7219,19 +6805,17 @@ class OperationsApi
      *
      * View Business Process Tag
      *
-     * @param  string $tagId The ID of the tag. (required)
+     * @param  int $tagId The ID of the tag. (required)
      * @param  string $includeprocessModels Will add process models to the response (optional)
      * @param  int $includeprocessModelsCount Will add process models count to the response (optional)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\TagModel
      */
-    public function getBusinessProcessesShow($tagId, $includeprocessModels = null, $includeprocessModelsCount = null, $contentType = null, $accept = null)
+    public function getBusinessProcessesShow($tagId, $includeprocessModels = null, $includeprocessModelsCount = null)
     {
-        list($response) = $this->getBusinessProcessesShowWithHttpInfo($tagId, $includeprocessModels, $includeprocessModelsCount, $contentType, $accept);
+        list($response) = $this->getBusinessProcessesShowWithHttpInfo($tagId, $includeprocessModels, $includeprocessModelsCount);
         return $response;
     }
 
@@ -7240,19 +6824,17 @@ class OperationsApi
      *
      * View Business Process Tag
      *
-     * @param  string $tagId The ID of the tag. (required)
+     * @param  int $tagId The ID of the tag. (required)
      * @param  string $includeprocessModels Will add process models to the response (optional)
      * @param  int $includeprocessModelsCount Will add process models count to the response (optional)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\TagModel, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getBusinessProcessesShowWithHttpInfo($tagId, $includeprocessModels = null, $includeprocessModelsCount = null, $contentType = null, $accept = null)
+    public function getBusinessProcessesShowWithHttpInfo($tagId, $includeprocessModels = null, $includeprocessModelsCount = null)
     {
-        $request = $this->getBusinessProcessesShowRequest($tagId, $includeprocessModels, $includeprocessModelsCount, $contentType, $accept);
+        $request = $this->getBusinessProcessesShowRequest($tagId, $includeprocessModels, $includeprocessModelsCount);
 
         try {
             $options = $this->createHttpClientOption();
@@ -7343,18 +6925,16 @@ class OperationsApi
      *
      * View Business Process Tag
      *
-     * @param  string $tagId The ID of the tag. (required)
+     * @param  int $tagId The ID of the tag. (required)
      * @param  string $includeprocessModels Will add process models to the response (optional)
      * @param  int $includeprocessModelsCount Will add process models count to the response (optional)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getBusinessProcessesShowAsync($tagId, $includeprocessModels = null, $includeprocessModelsCount = null, $contentType = null, $accept = null)
+    public function getBusinessProcessesShowAsync($tagId, $includeprocessModels = null, $includeprocessModelsCount = null)
     {
-        return $this->getBusinessProcessesShowAsyncWithHttpInfo($tagId, $includeprocessModels, $includeprocessModelsCount, $contentType, $accept)
+        return $this->getBusinessProcessesShowAsyncWithHttpInfo($tagId, $includeprocessModels, $includeprocessModelsCount)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -7367,19 +6947,17 @@ class OperationsApi
      *
      * View Business Process Tag
      *
-     * @param  string $tagId The ID of the tag. (required)
+     * @param  int $tagId The ID of the tag. (required)
      * @param  string $includeprocessModels Will add process models to the response (optional)
      * @param  int $includeprocessModelsCount Will add process models count to the response (optional)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getBusinessProcessesShowAsyncWithHttpInfo($tagId, $includeprocessModels = null, $includeprocessModelsCount = null, $contentType = null, $accept = null)
+    public function getBusinessProcessesShowAsyncWithHttpInfo($tagId, $includeprocessModels = null, $includeprocessModelsCount = null)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\TagModel';
-        $request = $this->getBusinessProcessesShowRequest($tagId, $includeprocessModels, $includeprocessModelsCount, $contentType, $accept);
+        $request = $this->getBusinessProcessesShowRequest($tagId, $includeprocessModels, $includeprocessModelsCount);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -7420,16 +6998,14 @@ class OperationsApi
     /**
      * Create request for operation 'getBusinessProcessesShow'
      *
-     * @param  string $tagId The ID of the tag. (required)
+     * @param  int $tagId The ID of the tag. (required)
      * @param  string $includeprocessModels Will add process models to the response (optional)
      * @param  int $includeprocessModelsCount Will add process models count to the response (optional)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getBusinessProcessesShowRequest($tagId, $includeprocessModels = null, $includeprocessModelsCount = null, $contentType = null, $accept = null)
+    public function getBusinessProcessesShowRequest($tagId, $includeprocessModels = null, $includeprocessModelsCount = null)
     {
         // verify the required parameter 'tagId' is set
         if ($tagId === null || (is_array($tagId) && count($tagId) === 0)) {
@@ -7464,14 +7040,6 @@ class OperationsApi
             false // required
         ) ?? []);
 
-        // header params
-        if ($contentType !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
-        }
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
         // path params
         if ($tagId !== null) {
@@ -7553,16 +7121,14 @@ class OperationsApi
      * @param  string $include Includes relations. (optional)
      * @param  string $filterSearchBusinessModels Search categories that has models based on specified keyword. (optional)
      * @param  string $sort Sort by specific field. (optional)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\CategoryModel[]
      */
-    public function getCategoriesList($filterRoot = null, $filterSiblings = null, $filterAutocomplete = null, $filterSearch = null, $fieldsBusinessProcessLatestDiagram = null, $include = null, $filterSearchBusinessModels = null, $sort = null, $contentType = null, $accept = null)
+    public function getCategoriesList($filterRoot = null, $filterSiblings = null, $filterAutocomplete = null, $filterSearch = null, $fieldsBusinessProcessLatestDiagram = null, $include = null, $filterSearchBusinessModels = null, $sort = null)
     {
-        list($response) = $this->getCategoriesListWithHttpInfo($filterRoot, $filterSiblings, $filterAutocomplete, $filterSearch, $fieldsBusinessProcessLatestDiagram, $include, $filterSearchBusinessModels, $sort, $contentType, $accept);
+        list($response) = $this->getCategoriesListWithHttpInfo($filterRoot, $filterSiblings, $filterAutocomplete, $filterSearch, $fieldsBusinessProcessLatestDiagram, $include, $filterSearchBusinessModels, $sort);
         return $response;
     }
 
@@ -7579,16 +7145,14 @@ class OperationsApi
      * @param  string $include Includes relations. (optional)
      * @param  string $filterSearchBusinessModels Search categories that has models based on specified keyword. (optional)
      * @param  string $sort Sort by specific field. (optional)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\CategoryModel[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getCategoriesListWithHttpInfo($filterRoot = null, $filterSiblings = null, $filterAutocomplete = null, $filterSearch = null, $fieldsBusinessProcessLatestDiagram = null, $include = null, $filterSearchBusinessModels = null, $sort = null, $contentType = null, $accept = null)
+    public function getCategoriesListWithHttpInfo($filterRoot = null, $filterSiblings = null, $filterAutocomplete = null, $filterSearch = null, $fieldsBusinessProcessLatestDiagram = null, $include = null, $filterSearchBusinessModels = null, $sort = null)
     {
-        $request = $this->getCategoriesListRequest($filterRoot, $filterSiblings, $filterAutocomplete, $filterSearch, $fieldsBusinessProcessLatestDiagram, $include, $filterSearchBusinessModels, $sort, $contentType, $accept);
+        $request = $this->getCategoriesListRequest($filterRoot, $filterSiblings, $filterAutocomplete, $filterSearch, $fieldsBusinessProcessLatestDiagram, $include, $filterSearchBusinessModels, $sort);
 
         try {
             $options = $this->createHttpClientOption();
@@ -7687,15 +7251,13 @@ class OperationsApi
      * @param  string $include Includes relations. (optional)
      * @param  string $filterSearchBusinessModels Search categories that has models based on specified keyword. (optional)
      * @param  string $sort Sort by specific field. (optional)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getCategoriesListAsync($filterRoot = null, $filterSiblings = null, $filterAutocomplete = null, $filterSearch = null, $fieldsBusinessProcessLatestDiagram = null, $include = null, $filterSearchBusinessModels = null, $sort = null, $contentType = null, $accept = null)
+    public function getCategoriesListAsync($filterRoot = null, $filterSiblings = null, $filterAutocomplete = null, $filterSearch = null, $fieldsBusinessProcessLatestDiagram = null, $include = null, $filterSearchBusinessModels = null, $sort = null)
     {
-        return $this->getCategoriesListAsyncWithHttpInfo($filterRoot, $filterSiblings, $filterAutocomplete, $filterSearch, $fieldsBusinessProcessLatestDiagram, $include, $filterSearchBusinessModels, $sort, $contentType, $accept)
+        return $this->getCategoriesListAsyncWithHttpInfo($filterRoot, $filterSiblings, $filterAutocomplete, $filterSearch, $fieldsBusinessProcessLatestDiagram, $include, $filterSearchBusinessModels, $sort)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -7716,16 +7278,14 @@ class OperationsApi
      * @param  string $include Includes relations. (optional)
      * @param  string $filterSearchBusinessModels Search categories that has models based on specified keyword. (optional)
      * @param  string $sort Sort by specific field. (optional)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getCategoriesListAsyncWithHttpInfo($filterRoot = null, $filterSiblings = null, $filterAutocomplete = null, $filterSearch = null, $fieldsBusinessProcessLatestDiagram = null, $include = null, $filterSearchBusinessModels = null, $sort = null, $contentType = null, $accept = null)
+    public function getCategoriesListAsyncWithHttpInfo($filterRoot = null, $filterSiblings = null, $filterAutocomplete = null, $filterSearch = null, $fieldsBusinessProcessLatestDiagram = null, $include = null, $filterSearchBusinessModels = null, $sort = null)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\CategoryModel[]';
-        $request = $this->getCategoriesListRequest($filterRoot, $filterSiblings, $filterAutocomplete, $filterSearch, $fieldsBusinessProcessLatestDiagram, $include, $filterSearchBusinessModels, $sort, $contentType, $accept);
+        $request = $this->getCategoriesListRequest($filterRoot, $filterSiblings, $filterAutocomplete, $filterSearch, $fieldsBusinessProcessLatestDiagram, $include, $filterSearchBusinessModels, $sort);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -7774,13 +7334,11 @@ class OperationsApi
      * @param  string $include Includes relations. (optional)
      * @param  string $filterSearchBusinessModels Search categories that has models based on specified keyword. (optional)
      * @param  string $sort Sort by specific field. (optional)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getCategoriesListRequest($filterRoot = null, $filterSiblings = null, $filterAutocomplete = null, $filterSearch = null, $fieldsBusinessProcessLatestDiagram = null, $include = null, $filterSearchBusinessModels = null, $sort = null, $contentType = null, $accept = null)
+    public function getCategoriesListRequest($filterRoot = null, $filterSiblings = null, $filterAutocomplete = null, $filterSearch = null, $fieldsBusinessProcessLatestDiagram = null, $include = null, $filterSearchBusinessModels = null, $sort = null)
     {
 
         $resourcePath = '/api/v2/categories';
@@ -7863,14 +7421,6 @@ class OperationsApi
             false // required
         ) ?? []);
 
-        // header params
-        if ($contentType !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
-        }
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
 
 
@@ -7937,16 +7487,14 @@ class OperationsApi
      * View Category
      *
      * @param  int $id The ID of the category. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\CategoryModel
      */
-    public function getCategoriesShow($id, $contentType = null, $accept = null)
+    public function getCategoriesShow($id)
     {
-        list($response) = $this->getCategoriesShowWithHttpInfo($id, $contentType, $accept);
+        list($response) = $this->getCategoriesShowWithHttpInfo($id);
         return $response;
     }
 
@@ -7956,16 +7504,14 @@ class OperationsApi
      * View Category
      *
      * @param  int $id The ID of the category. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\CategoryModel, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getCategoriesShowWithHttpInfo($id, $contentType = null, $accept = null)
+    public function getCategoriesShowWithHttpInfo($id)
     {
-        $request = $this->getCategoriesShowRequest($id, $contentType, $accept);
+        $request = $this->getCategoriesShowRequest($id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -8057,15 +7603,13 @@ class OperationsApi
      * View Category
      *
      * @param  int $id The ID of the category. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getCategoriesShowAsync($id, $contentType = null, $accept = null)
+    public function getCategoriesShowAsync($id)
     {
-        return $this->getCategoriesShowAsyncWithHttpInfo($id, $contentType, $accept)
+        return $this->getCategoriesShowAsyncWithHttpInfo($id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -8079,16 +7623,14 @@ class OperationsApi
      * View Category
      *
      * @param  int $id The ID of the category. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getCategoriesShowAsyncWithHttpInfo($id, $contentType = null, $accept = null)
+    public function getCategoriesShowAsyncWithHttpInfo($id)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\CategoryModel';
-        $request = $this->getCategoriesShowRequest($id, $contentType, $accept);
+        $request = $this->getCategoriesShowRequest($id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -8130,13 +7672,11 @@ class OperationsApi
      * Create request for operation 'getCategoriesShow'
      *
      * @param  int $id The ID of the category. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getCategoriesShowRequest($id, $contentType = null, $accept = null)
+    public function getCategoriesShowRequest($id)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -8153,14 +7693,6 @@ class OperationsApi
         $multipart = false;
 
 
-        // header params
-        if ($contentType !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
-        }
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
         // path params
         if ($id !== null) {
@@ -8234,16 +7766,14 @@ class OperationsApi
      *
      * List Tags
      *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\TagModel[]
      */
-    public function getTagsList($contentType = null, $accept = null)
+    public function getTagsList()
     {
-        list($response) = $this->getTagsListWithHttpInfo($contentType, $accept);
+        list($response) = $this->getTagsListWithHttpInfo();
         return $response;
     }
 
@@ -8252,16 +7782,14 @@ class OperationsApi
      *
      * List Tags
      *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\TagModel[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getTagsListWithHttpInfo($contentType = null, $accept = null)
+    public function getTagsListWithHttpInfo()
     {
-        $request = $this->getTagsListRequest($contentType, $accept);
+        $request = $this->getTagsListRequest();
 
         try {
             $options = $this->createHttpClientOption();
@@ -8352,15 +7880,13 @@ class OperationsApi
      *
      * List Tags
      *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getTagsListAsync($contentType = null, $accept = null)
+    public function getTagsListAsync()
     {
-        return $this->getTagsListAsyncWithHttpInfo($contentType, $accept)
+        return $this->getTagsListAsyncWithHttpInfo()
             ->then(
                 function ($response) {
                     return $response[0];
@@ -8373,16 +7899,14 @@ class OperationsApi
      *
      * List Tags
      *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getTagsListAsyncWithHttpInfo($contentType = null, $accept = null)
+    public function getTagsListAsyncWithHttpInfo()
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\TagModel[]';
-        $request = $this->getTagsListRequest($contentType, $accept);
+        $request = $this->getTagsListRequest();
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -8423,13 +7947,11 @@ class OperationsApi
     /**
      * Create request for operation 'getTagsList'
      *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getTagsListRequest($contentType = null, $accept = null)
+    public function getTagsListRequest()
     {
 
         $resourcePath = '/api/v2/tags';
@@ -8440,14 +7962,6 @@ class OperationsApi
         $multipart = false;
 
 
-        // header params
-        if ($contentType !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
-        }
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
 
 
@@ -8514,16 +8028,14 @@ class OperationsApi
      * View Tag
      *
      * @param  int $id The ID of the tag. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\TagModel
      */
-    public function getTagsShow($id, $contentType = null, $accept = null)
+    public function getTagsShow($id)
     {
-        list($response) = $this->getTagsShowWithHttpInfo($id, $contentType, $accept);
+        list($response) = $this->getTagsShowWithHttpInfo($id);
         return $response;
     }
 
@@ -8533,16 +8045,14 @@ class OperationsApi
      * View Tag
      *
      * @param  int $id The ID of the tag. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\TagModel, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getTagsShowWithHttpInfo($id, $contentType = null, $accept = null)
+    public function getTagsShowWithHttpInfo($id)
     {
-        $request = $this->getTagsShowRequest($id, $contentType, $accept);
+        $request = $this->getTagsShowRequest($id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -8634,15 +8144,13 @@ class OperationsApi
      * View Tag
      *
      * @param  int $id The ID of the tag. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getTagsShowAsync($id, $contentType = null, $accept = null)
+    public function getTagsShowAsync($id)
     {
-        return $this->getTagsShowAsyncWithHttpInfo($id, $contentType, $accept)
+        return $this->getTagsShowAsyncWithHttpInfo($id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -8656,16 +8164,14 @@ class OperationsApi
      * View Tag
      *
      * @param  int $id The ID of the tag. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getTagsShowAsyncWithHttpInfo($id, $contentType = null, $accept = null)
+    public function getTagsShowAsyncWithHttpInfo($id)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\TagModel';
-        $request = $this->getTagsShowRequest($id, $contentType, $accept);
+        $request = $this->getTagsShowRequest($id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -8707,13 +8213,11 @@ class OperationsApi
      * Create request for operation 'getTagsShow'
      *
      * @param  int $id The ID of the tag. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getTagsShowRequest($id, $contentType = null, $accept = null)
+    public function getTagsShowRequest($id)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -8730,14 +8234,6 @@ class OperationsApi
         $multipart = false;
 
 
-        // header params
-        if ($contentType !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
-        }
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
         // path params
         if ($id !== null) {
@@ -8811,16 +8307,14 @@ class OperationsApi
      *
      * List Tasks
      *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\TaskModel[]
      */
-    public function getTasksList($contentType = null, $accept = null)
+    public function getTasksList()
     {
-        list($response) = $this->getTasksListWithHttpInfo($contentType, $accept);
+        list($response) = $this->getTasksListWithHttpInfo();
         return $response;
     }
 
@@ -8829,16 +8323,14 @@ class OperationsApi
      *
      * List Tasks
      *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\TaskModel[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getTasksListWithHttpInfo($contentType = null, $accept = null)
+    public function getTasksListWithHttpInfo()
     {
-        $request = $this->getTasksListRequest($contentType, $accept);
+        $request = $this->getTasksListRequest();
 
         try {
             $options = $this->createHttpClientOption();
@@ -8929,15 +8421,13 @@ class OperationsApi
      *
      * List Tasks
      *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getTasksListAsync($contentType = null, $accept = null)
+    public function getTasksListAsync()
     {
-        return $this->getTasksListAsyncWithHttpInfo($contentType, $accept)
+        return $this->getTasksListAsyncWithHttpInfo()
             ->then(
                 function ($response) {
                     return $response[0];
@@ -8950,16 +8440,14 @@ class OperationsApi
      *
      * List Tasks
      *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getTasksListAsyncWithHttpInfo($contentType = null, $accept = null)
+    public function getTasksListAsyncWithHttpInfo()
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\TaskModel[]';
-        $request = $this->getTasksListRequest($contentType, $accept);
+        $request = $this->getTasksListRequest();
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -9000,13 +8488,11 @@ class OperationsApi
     /**
      * Create request for operation 'getTasksList'
      *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getTasksListRequest($contentType = null, $accept = null)
+    public function getTasksListRequest()
     {
 
         $resourcePath = '/api/v2/tasks';
@@ -9017,14 +8503,6 @@ class OperationsApi
         $multipart = false;
 
 
-        // header params
-        if ($contentType !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
-        }
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
 
 
@@ -9091,16 +8569,14 @@ class OperationsApi
      * View Task
      *
      * @param  string $id The ID of the task. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\TaskModel
      */
-    public function getTasksShow($id, $contentType = null, $accept = null)
+    public function getTasksShow($id)
     {
-        list($response) = $this->getTasksShowWithHttpInfo($id, $contentType, $accept);
+        list($response) = $this->getTasksShowWithHttpInfo($id);
         return $response;
     }
 
@@ -9110,16 +8586,14 @@ class OperationsApi
      * View Task
      *
      * @param  string $id The ID of the task. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\TaskModel, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getTasksShowWithHttpInfo($id, $contentType = null, $accept = null)
+    public function getTasksShowWithHttpInfo($id)
     {
-        $request = $this->getTasksShowRequest($id, $contentType, $accept);
+        $request = $this->getTasksShowRequest($id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -9211,15 +8685,13 @@ class OperationsApi
      * View Task
      *
      * @param  string $id The ID of the task. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getTasksShowAsync($id, $contentType = null, $accept = null)
+    public function getTasksShowAsync($id)
     {
-        return $this->getTasksShowAsyncWithHttpInfo($id, $contentType, $accept)
+        return $this->getTasksShowAsyncWithHttpInfo($id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -9233,16 +8705,14 @@ class OperationsApi
      * View Task
      *
      * @param  string $id The ID of the task. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getTasksShowAsyncWithHttpInfo($id, $contentType = null, $accept = null)
+    public function getTasksShowAsyncWithHttpInfo($id)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\TaskModel';
-        $request = $this->getTasksShowRequest($id, $contentType, $accept);
+        $request = $this->getTasksShowRequest($id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -9284,13 +8754,11 @@ class OperationsApi
      * Create request for operation 'getTasksShow'
      *
      * @param  string $id The ID of the task. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getTasksShowRequest($id, $contentType = null, $accept = null)
+    public function getTasksShowRequest($id)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -9307,14 +8775,6 @@ class OperationsApi
         $multipart = false;
 
 
-        // header params
-        if ($contentType !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
-        }
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
         // path params
         if ($id !== null) {
@@ -9390,16 +8850,14 @@ class OperationsApi
      *
      * @param  string $diagramId The ID of the diagram. (required)
      * @param  \Stackflows\Clients\Stackflows\Model\PostBusinessModelDiagramsCommentsCreateRequest $postBusinessModelDiagramsCommentsCreateRequest postBusinessModelDiagramsCommentsCreateRequest (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\CommentModel
      */
-    public function postBusinessModelDiagramsCommentsCreate($diagramId, $postBusinessModelDiagramsCommentsCreateRequest, $contentType = null, $accept = null)
+    public function postBusinessModelDiagramsCommentsCreate($diagramId, $postBusinessModelDiagramsCommentsCreateRequest)
     {
-        list($response) = $this->postBusinessModelDiagramsCommentsCreateWithHttpInfo($diagramId, $postBusinessModelDiagramsCommentsCreateRequest, $contentType, $accept);
+        list($response) = $this->postBusinessModelDiagramsCommentsCreateWithHttpInfo($diagramId, $postBusinessModelDiagramsCommentsCreateRequest);
         return $response;
     }
 
@@ -9410,16 +8868,14 @@ class OperationsApi
      *
      * @param  string $diagramId The ID of the diagram. (required)
      * @param  \Stackflows\Clients\Stackflows\Model\PostBusinessModelDiagramsCommentsCreateRequest $postBusinessModelDiagramsCommentsCreateRequest (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\CommentModel, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postBusinessModelDiagramsCommentsCreateWithHttpInfo($diagramId, $postBusinessModelDiagramsCommentsCreateRequest, $contentType = null, $accept = null)
+    public function postBusinessModelDiagramsCommentsCreateWithHttpInfo($diagramId, $postBusinessModelDiagramsCommentsCreateRequest)
     {
-        $request = $this->postBusinessModelDiagramsCommentsCreateRequest($diagramId, $postBusinessModelDiagramsCommentsCreateRequest, $contentType, $accept);
+        $request = $this->postBusinessModelDiagramsCommentsCreateRequest($diagramId, $postBusinessModelDiagramsCommentsCreateRequest);
 
         try {
             $options = $this->createHttpClientOption();
@@ -9512,15 +8968,13 @@ class OperationsApi
      *
      * @param  string $diagramId The ID of the diagram. (required)
      * @param  \Stackflows\Clients\Stackflows\Model\PostBusinessModelDiagramsCommentsCreateRequest $postBusinessModelDiagramsCommentsCreateRequest (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postBusinessModelDiagramsCommentsCreateAsync($diagramId, $postBusinessModelDiagramsCommentsCreateRequest, $contentType = null, $accept = null)
+    public function postBusinessModelDiagramsCommentsCreateAsync($diagramId, $postBusinessModelDiagramsCommentsCreateRequest)
     {
-        return $this->postBusinessModelDiagramsCommentsCreateAsyncWithHttpInfo($diagramId, $postBusinessModelDiagramsCommentsCreateRequest, $contentType, $accept)
+        return $this->postBusinessModelDiagramsCommentsCreateAsyncWithHttpInfo($diagramId, $postBusinessModelDiagramsCommentsCreateRequest)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -9535,16 +8989,14 @@ class OperationsApi
      *
      * @param  string $diagramId The ID of the diagram. (required)
      * @param  \Stackflows\Clients\Stackflows\Model\PostBusinessModelDiagramsCommentsCreateRequest $postBusinessModelDiagramsCommentsCreateRequest (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postBusinessModelDiagramsCommentsCreateAsyncWithHttpInfo($diagramId, $postBusinessModelDiagramsCommentsCreateRequest, $contentType = null, $accept = null)
+    public function postBusinessModelDiagramsCommentsCreateAsyncWithHttpInfo($diagramId, $postBusinessModelDiagramsCommentsCreateRequest)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\CommentModel';
-        $request = $this->postBusinessModelDiagramsCommentsCreateRequest($diagramId, $postBusinessModelDiagramsCommentsCreateRequest, $contentType, $accept);
+        $request = $this->postBusinessModelDiagramsCommentsCreateRequest($diagramId, $postBusinessModelDiagramsCommentsCreateRequest);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -9587,13 +9039,11 @@ class OperationsApi
      *
      * @param  string $diagramId The ID of the diagram. (required)
      * @param  \Stackflows\Clients\Stackflows\Model\PostBusinessModelDiagramsCommentsCreateRequest $postBusinessModelDiagramsCommentsCreateRequest (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function postBusinessModelDiagramsCommentsCreateRequest($diagramId, $postBusinessModelDiagramsCommentsCreateRequest, $contentType = null, $accept = null)
+    public function postBusinessModelDiagramsCommentsCreateRequest($diagramId, $postBusinessModelDiagramsCommentsCreateRequest)
     {
         // verify the required parameter 'diagramId' is set
         if ($diagramId === null || (is_array($diagramId) && count($diagramId) === 0)) {
@@ -9616,14 +9066,6 @@ class OperationsApi
         $multipart = false;
 
 
-        // header params
-        if ($contentType !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
-        }
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
         // path params
         if ($diagramId !== null) {
@@ -9705,17 +9147,15 @@ class OperationsApi
      *
      * @param  string $xml  (required)
      * @param  string $businessModelId  (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      * @param  \SplFileObject $snapshot of the process diagram (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel
      */
-    public function postBusinessModelDiagramsCreate($xml, $businessModelId, $contentType = null, $accept = null, $snapshot = null)
+    public function postBusinessModelDiagramsCreate($xml, $businessModelId, $snapshot = null)
     {
-        list($response) = $this->postBusinessModelDiagramsCreateWithHttpInfo($xml, $businessModelId, $contentType, $accept, $snapshot);
+        list($response) = $this->postBusinessModelDiagramsCreateWithHttpInfo($xml, $businessModelId, $snapshot);
         return $response;
     }
 
@@ -9726,17 +9166,15 @@ class OperationsApi
      *
      * @param  string $xml  (required)
      * @param  string $businessModelId  (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      * @param  \SplFileObject $snapshot of the process diagram (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postBusinessModelDiagramsCreateWithHttpInfo($xml, $businessModelId, $contentType = null, $accept = null, $snapshot = null)
+    public function postBusinessModelDiagramsCreateWithHttpInfo($xml, $businessModelId, $snapshot = null)
     {
-        $request = $this->postBusinessModelDiagramsCreateRequest($xml, $businessModelId, $contentType, $accept, $snapshot);
+        $request = $this->postBusinessModelDiagramsCreateRequest($xml, $businessModelId, $snapshot);
 
         try {
             $options = $this->createHttpClientOption();
@@ -9829,16 +9267,14 @@ class OperationsApi
      *
      * @param  string $xml  (required)
      * @param  string $businessModelId  (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      * @param  \SplFileObject $snapshot of the process diagram (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postBusinessModelDiagramsCreateAsync($xml, $businessModelId, $contentType = null, $accept = null, $snapshot = null)
+    public function postBusinessModelDiagramsCreateAsync($xml, $businessModelId, $snapshot = null)
     {
-        return $this->postBusinessModelDiagramsCreateAsyncWithHttpInfo($xml, $businessModelId, $contentType, $accept, $snapshot)
+        return $this->postBusinessModelDiagramsCreateAsyncWithHttpInfo($xml, $businessModelId, $snapshot)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -9853,17 +9289,15 @@ class OperationsApi
      *
      * @param  string $xml  (required)
      * @param  string $businessModelId  (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      * @param  \SplFileObject $snapshot of the process diagram (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postBusinessModelDiagramsCreateAsyncWithHttpInfo($xml, $businessModelId, $contentType = null, $accept = null, $snapshot = null)
+    public function postBusinessModelDiagramsCreateAsyncWithHttpInfo($xml, $businessModelId, $snapshot = null)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel';
-        $request = $this->postBusinessModelDiagramsCreateRequest($xml, $businessModelId, $contentType, $accept, $snapshot);
+        $request = $this->postBusinessModelDiagramsCreateRequest($xml, $businessModelId, $snapshot);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -9906,14 +9340,12 @@ class OperationsApi
      *
      * @param  string $xml  (required)
      * @param  string $businessModelId  (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      * @param  \SplFileObject $snapshot of the process diagram (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function postBusinessModelDiagramsCreateRequest($xml, $businessModelId, $contentType = null, $accept = null, $snapshot = null)
+    public function postBusinessModelDiagramsCreateRequest($xml, $businessModelId, $snapshot = null)
     {
         // verify the required parameter 'xml' is set
         if ($xml === null || (is_array($xml) && count($xml) === 0)) {
@@ -9936,14 +9368,6 @@ class OperationsApi
         $multipart = false;
 
 
-        // header params
-        if ($contentType !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
-        }
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
 
         // form params
@@ -10030,17 +9454,15 @@ class OperationsApi
      * Publish Business Model Diagram
      *
      * @param  string $diagramId The ID of the diagram. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentBusinessModelDiagramsPublishRequest $postEnvironmentBusinessModelDiagramsPublishRequest postEnvironmentBusinessModelDiagramsPublishRequest (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel
      */
-    public function postBusinessModelDiagramsPublish($diagramId, $contentType = null, $accept = null, $postEnvironmentBusinessModelDiagramsPublishRequest = null)
+    public function postBusinessModelDiagramsPublish($diagramId, $postEnvironmentBusinessModelDiagramsPublishRequest = null)
     {
-        list($response) = $this->postBusinessModelDiagramsPublishWithHttpInfo($diagramId, $contentType, $accept, $postEnvironmentBusinessModelDiagramsPublishRequest);
+        list($response) = $this->postBusinessModelDiagramsPublishWithHttpInfo($diagramId, $postEnvironmentBusinessModelDiagramsPublishRequest);
         return $response;
     }
 
@@ -10050,17 +9472,15 @@ class OperationsApi
      * Publish Business Model Diagram
      *
      * @param  string $diagramId The ID of the diagram. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentBusinessModelDiagramsPublishRequest $postEnvironmentBusinessModelDiagramsPublishRequest (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postBusinessModelDiagramsPublishWithHttpInfo($diagramId, $contentType = null, $accept = null, $postEnvironmentBusinessModelDiagramsPublishRequest = null)
+    public function postBusinessModelDiagramsPublishWithHttpInfo($diagramId, $postEnvironmentBusinessModelDiagramsPublishRequest = null)
     {
-        $request = $this->postBusinessModelDiagramsPublishRequest($diagramId, $contentType, $accept, $postEnvironmentBusinessModelDiagramsPublishRequest);
+        $request = $this->postBusinessModelDiagramsPublishRequest($diagramId, $postEnvironmentBusinessModelDiagramsPublishRequest);
 
         try {
             $options = $this->createHttpClientOption();
@@ -10152,16 +9572,14 @@ class OperationsApi
      * Publish Business Model Diagram
      *
      * @param  string $diagramId The ID of the diagram. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentBusinessModelDiagramsPublishRequest $postEnvironmentBusinessModelDiagramsPublishRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postBusinessModelDiagramsPublishAsync($diagramId, $contentType = null, $accept = null, $postEnvironmentBusinessModelDiagramsPublishRequest = null)
+    public function postBusinessModelDiagramsPublishAsync($diagramId, $postEnvironmentBusinessModelDiagramsPublishRequest = null)
     {
-        return $this->postBusinessModelDiagramsPublishAsyncWithHttpInfo($diagramId, $contentType, $accept, $postEnvironmentBusinessModelDiagramsPublishRequest)
+        return $this->postBusinessModelDiagramsPublishAsyncWithHttpInfo($diagramId, $postEnvironmentBusinessModelDiagramsPublishRequest)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -10175,17 +9593,15 @@ class OperationsApi
      * Publish Business Model Diagram
      *
      * @param  string $diagramId The ID of the diagram. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentBusinessModelDiagramsPublishRequest $postEnvironmentBusinessModelDiagramsPublishRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postBusinessModelDiagramsPublishAsyncWithHttpInfo($diagramId, $contentType = null, $accept = null, $postEnvironmentBusinessModelDiagramsPublishRequest = null)
+    public function postBusinessModelDiagramsPublishAsyncWithHttpInfo($diagramId, $postEnvironmentBusinessModelDiagramsPublishRequest = null)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel';
-        $request = $this->postBusinessModelDiagramsPublishRequest($diagramId, $contentType, $accept, $postEnvironmentBusinessModelDiagramsPublishRequest);
+        $request = $this->postBusinessModelDiagramsPublishRequest($diagramId, $postEnvironmentBusinessModelDiagramsPublishRequest);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -10227,14 +9643,12 @@ class OperationsApi
      * Create request for operation 'postBusinessModelDiagramsPublish'
      *
      * @param  string $diagramId The ID of the diagram. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentBusinessModelDiagramsPublishRequest $postEnvironmentBusinessModelDiagramsPublishRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function postBusinessModelDiagramsPublishRequest($diagramId, $contentType = null, $accept = null, $postEnvironmentBusinessModelDiagramsPublishRequest = null)
+    public function postBusinessModelDiagramsPublishRequest($diagramId, $postEnvironmentBusinessModelDiagramsPublishRequest = null)
     {
         // verify the required parameter 'diagramId' is set
         if ($diagramId === null || (is_array($diagramId) && count($diagramId) === 0)) {
@@ -10251,14 +9665,6 @@ class OperationsApi
         $multipart = false;
 
 
-        // header params
-        if ($contentType !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
-        }
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
         // path params
         if ($diagramId !== null) {
@@ -10339,16 +9745,14 @@ class OperationsApi
      * Create Business Model Exception
      *
      * @param  \Stackflows\Clients\Stackflows\Model\PostBusinessModelExceptionsCreateRequest $postBusinessModelExceptionsCreateRequest postBusinessModelExceptionsCreateRequest (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\BusinessBaseModelExceptionModel
      */
-    public function postBusinessModelExceptionsCreate($postBusinessModelExceptionsCreateRequest, $contentType = null, $accept = null)
+    public function postBusinessModelExceptionsCreate($postBusinessModelExceptionsCreateRequest)
     {
-        list($response) = $this->postBusinessModelExceptionsCreateWithHttpInfo($postBusinessModelExceptionsCreateRequest, $contentType, $accept);
+        list($response) = $this->postBusinessModelExceptionsCreateWithHttpInfo($postBusinessModelExceptionsCreateRequest);
         return $response;
     }
 
@@ -10358,16 +9762,14 @@ class OperationsApi
      * Create Business Model Exception
      *
      * @param  \Stackflows\Clients\Stackflows\Model\PostBusinessModelExceptionsCreateRequest $postBusinessModelExceptionsCreateRequest (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\BusinessBaseModelExceptionModel, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postBusinessModelExceptionsCreateWithHttpInfo($postBusinessModelExceptionsCreateRequest, $contentType = null, $accept = null)
+    public function postBusinessModelExceptionsCreateWithHttpInfo($postBusinessModelExceptionsCreateRequest)
     {
-        $request = $this->postBusinessModelExceptionsCreateRequest($postBusinessModelExceptionsCreateRequest, $contentType, $accept);
+        $request = $this->postBusinessModelExceptionsCreateRequest($postBusinessModelExceptionsCreateRequest);
 
         try {
             $options = $this->createHttpClientOption();
@@ -10459,15 +9861,13 @@ class OperationsApi
      * Create Business Model Exception
      *
      * @param  \Stackflows\Clients\Stackflows\Model\PostBusinessModelExceptionsCreateRequest $postBusinessModelExceptionsCreateRequest (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postBusinessModelExceptionsCreateAsync($postBusinessModelExceptionsCreateRequest, $contentType = null, $accept = null)
+    public function postBusinessModelExceptionsCreateAsync($postBusinessModelExceptionsCreateRequest)
     {
-        return $this->postBusinessModelExceptionsCreateAsyncWithHttpInfo($postBusinessModelExceptionsCreateRequest, $contentType, $accept)
+        return $this->postBusinessModelExceptionsCreateAsyncWithHttpInfo($postBusinessModelExceptionsCreateRequest)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -10481,16 +9881,14 @@ class OperationsApi
      * Create Business Model Exception
      *
      * @param  \Stackflows\Clients\Stackflows\Model\PostBusinessModelExceptionsCreateRequest $postBusinessModelExceptionsCreateRequest (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postBusinessModelExceptionsCreateAsyncWithHttpInfo($postBusinessModelExceptionsCreateRequest, $contentType = null, $accept = null)
+    public function postBusinessModelExceptionsCreateAsyncWithHttpInfo($postBusinessModelExceptionsCreateRequest)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelExceptionModel';
-        $request = $this->postBusinessModelExceptionsCreateRequest($postBusinessModelExceptionsCreateRequest, $contentType, $accept);
+        $request = $this->postBusinessModelExceptionsCreateRequest($postBusinessModelExceptionsCreateRequest);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -10532,13 +9930,11 @@ class OperationsApi
      * Create request for operation 'postBusinessModelExceptionsCreate'
      *
      * @param  \Stackflows\Clients\Stackflows\Model\PostBusinessModelExceptionsCreateRequest $postBusinessModelExceptionsCreateRequest (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function postBusinessModelExceptionsCreateRequest($postBusinessModelExceptionsCreateRequest, $contentType = null, $accept = null)
+    public function postBusinessModelExceptionsCreateRequest($postBusinessModelExceptionsCreateRequest)
     {
         // verify the required parameter 'postBusinessModelExceptionsCreateRequest' is set
         if ($postBusinessModelExceptionsCreateRequest === null || (is_array($postBusinessModelExceptionsCreateRequest) && count($postBusinessModelExceptionsCreateRequest) === 0)) {
@@ -10555,14 +9951,6 @@ class OperationsApi
         $multipart = false;
 
 
-        // header params
-        if ($contentType !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
-        }
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
 
 
@@ -10635,16 +10023,14 @@ class OperationsApi
      * Create Business Model
      *
      * @param  \Stackflows\Clients\Stackflows\Model\PostBusinessModelsCreateRequest $postBusinessModelsCreateRequest postBusinessModelsCreateRequest (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\BusinessBaseModelModel
      */
-    public function postBusinessModelsCreate($postBusinessModelsCreateRequest, $contentType = null, $accept = null)
+    public function postBusinessModelsCreate($postBusinessModelsCreateRequest)
     {
-        list($response) = $this->postBusinessModelsCreateWithHttpInfo($postBusinessModelsCreateRequest, $contentType, $accept);
+        list($response) = $this->postBusinessModelsCreateWithHttpInfo($postBusinessModelsCreateRequest);
         return $response;
     }
 
@@ -10654,16 +10040,14 @@ class OperationsApi
      * Create Business Model
      *
      * @param  \Stackflows\Clients\Stackflows\Model\PostBusinessModelsCreateRequest $postBusinessModelsCreateRequest (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\BusinessBaseModelModel, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postBusinessModelsCreateWithHttpInfo($postBusinessModelsCreateRequest, $contentType = null, $accept = null)
+    public function postBusinessModelsCreateWithHttpInfo($postBusinessModelsCreateRequest)
     {
-        $request = $this->postBusinessModelsCreateRequest($postBusinessModelsCreateRequest, $contentType, $accept);
+        $request = $this->postBusinessModelsCreateRequest($postBusinessModelsCreateRequest);
 
         try {
             $options = $this->createHttpClientOption();
@@ -10755,15 +10139,13 @@ class OperationsApi
      * Create Business Model
      *
      * @param  \Stackflows\Clients\Stackflows\Model\PostBusinessModelsCreateRequest $postBusinessModelsCreateRequest (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postBusinessModelsCreateAsync($postBusinessModelsCreateRequest, $contentType = null, $accept = null)
+    public function postBusinessModelsCreateAsync($postBusinessModelsCreateRequest)
     {
-        return $this->postBusinessModelsCreateAsyncWithHttpInfo($postBusinessModelsCreateRequest, $contentType, $accept)
+        return $this->postBusinessModelsCreateAsyncWithHttpInfo($postBusinessModelsCreateRequest)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -10777,16 +10159,14 @@ class OperationsApi
      * Create Business Model
      *
      * @param  \Stackflows\Clients\Stackflows\Model\PostBusinessModelsCreateRequest $postBusinessModelsCreateRequest (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postBusinessModelsCreateAsyncWithHttpInfo($postBusinessModelsCreateRequest, $contentType = null, $accept = null)
+    public function postBusinessModelsCreateAsyncWithHttpInfo($postBusinessModelsCreateRequest)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelModel';
-        $request = $this->postBusinessModelsCreateRequest($postBusinessModelsCreateRequest, $contentType, $accept);
+        $request = $this->postBusinessModelsCreateRequest($postBusinessModelsCreateRequest);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -10828,13 +10208,11 @@ class OperationsApi
      * Create request for operation 'postBusinessModelsCreate'
      *
      * @param  \Stackflows\Clients\Stackflows\Model\PostBusinessModelsCreateRequest $postBusinessModelsCreateRequest (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function postBusinessModelsCreateRequest($postBusinessModelsCreateRequest, $contentType = null, $accept = null)
+    public function postBusinessModelsCreateRequest($postBusinessModelsCreateRequest)
     {
         // verify the required parameter 'postBusinessModelsCreateRequest' is set
         if ($postBusinessModelsCreateRequest === null || (is_array($postBusinessModelsCreateRequest) && count($postBusinessModelsCreateRequest) === 0)) {
@@ -10851,14 +10229,6 @@ class OperationsApi
         $multipart = false;
 
 
-        // header params
-        if ($contentType !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
-        }
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
 
 
@@ -10932,17 +10302,15 @@ class OperationsApi
      *
      * @param  string $modelId The ID of the model. (required)
      * @param  string $xml An xml of a diagram. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      * @param  \SplFileObject $snapshot A snapshot image of a diagram (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramModel
      */
-    public function postBusinessModelsPostRevision($modelId, $xml, $contentType = null, $accept = null, $snapshot = null)
+    public function postBusinessModelsPostRevision($modelId, $xml, $snapshot = null)
     {
-        list($response) = $this->postBusinessModelsPostRevisionWithHttpInfo($modelId, $xml, $contentType, $accept, $snapshot);
+        list($response) = $this->postBusinessModelsPostRevisionWithHttpInfo($modelId, $xml, $snapshot);
         return $response;
     }
 
@@ -10953,17 +10321,15 @@ class OperationsApi
      *
      * @param  string $modelId The ID of the model. (required)
      * @param  string $xml An xml of a diagram. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      * @param  \SplFileObject $snapshot A snapshot image of a diagram (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramModel, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postBusinessModelsPostRevisionWithHttpInfo($modelId, $xml, $contentType = null, $accept = null, $snapshot = null)
+    public function postBusinessModelsPostRevisionWithHttpInfo($modelId, $xml, $snapshot = null)
     {
-        $request = $this->postBusinessModelsPostRevisionRequest($modelId, $xml, $contentType, $accept, $snapshot);
+        $request = $this->postBusinessModelsPostRevisionRequest($modelId, $xml, $snapshot);
 
         try {
             $options = $this->createHttpClientOption();
@@ -11056,16 +10422,14 @@ class OperationsApi
      *
      * @param  string $modelId The ID of the model. (required)
      * @param  string $xml An xml of a diagram. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      * @param  \SplFileObject $snapshot A snapshot image of a diagram (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postBusinessModelsPostRevisionAsync($modelId, $xml, $contentType = null, $accept = null, $snapshot = null)
+    public function postBusinessModelsPostRevisionAsync($modelId, $xml, $snapshot = null)
     {
-        return $this->postBusinessModelsPostRevisionAsyncWithHttpInfo($modelId, $xml, $contentType, $accept, $snapshot)
+        return $this->postBusinessModelsPostRevisionAsyncWithHttpInfo($modelId, $xml, $snapshot)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -11080,17 +10444,15 @@ class OperationsApi
      *
      * @param  string $modelId The ID of the model. (required)
      * @param  string $xml An xml of a diagram. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      * @param  \SplFileObject $snapshot A snapshot image of a diagram (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postBusinessModelsPostRevisionAsyncWithHttpInfo($modelId, $xml, $contentType = null, $accept = null, $snapshot = null)
+    public function postBusinessModelsPostRevisionAsyncWithHttpInfo($modelId, $xml, $snapshot = null)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramModel';
-        $request = $this->postBusinessModelsPostRevisionRequest($modelId, $xml, $contentType, $accept, $snapshot);
+        $request = $this->postBusinessModelsPostRevisionRequest($modelId, $xml, $snapshot);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -11133,14 +10495,12 @@ class OperationsApi
      *
      * @param  string $modelId The ID of the model. (required)
      * @param  string $xml An xml of a diagram. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      * @param  \SplFileObject $snapshot A snapshot image of a diagram (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function postBusinessModelsPostRevisionRequest($modelId, $xml, $contentType = null, $accept = null, $snapshot = null)
+    public function postBusinessModelsPostRevisionRequest($modelId, $xml, $snapshot = null)
     {
         // verify the required parameter 'modelId' is set
         if ($modelId === null || (is_array($modelId) && count($modelId) === 0)) {
@@ -11163,14 +10523,6 @@ class OperationsApi
         $multipart = false;
 
 
-        // header params
-        if ($contentType !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
-        }
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
         // path params
         if ($modelId !== null) {
@@ -11261,17 +10613,15 @@ class OperationsApi
      * Tag Business Model
      *
      * @param  string $taggableId The ID of the taggable. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      * @param  \Stackflows\Clients\Stackflows\Model\PostBusinessModelsTagRequest $postBusinessModelsTagRequest postBusinessModelsTagRequest (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\TagModel
      */
-    public function postBusinessModelsTag($taggableId, $contentType = null, $accept = null, $postBusinessModelsTagRequest = null)
+    public function postBusinessModelsTag($taggableId, $postBusinessModelsTagRequest = null)
     {
-        list($response) = $this->postBusinessModelsTagWithHttpInfo($taggableId, $contentType, $accept, $postBusinessModelsTagRequest);
+        list($response) = $this->postBusinessModelsTagWithHttpInfo($taggableId, $postBusinessModelsTagRequest);
         return $response;
     }
 
@@ -11281,17 +10631,15 @@ class OperationsApi
      * Tag Business Model
      *
      * @param  string $taggableId The ID of the taggable. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      * @param  \Stackflows\Clients\Stackflows\Model\PostBusinessModelsTagRequest $postBusinessModelsTagRequest (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\TagModel, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postBusinessModelsTagWithHttpInfo($taggableId, $contentType = null, $accept = null, $postBusinessModelsTagRequest = null)
+    public function postBusinessModelsTagWithHttpInfo($taggableId, $postBusinessModelsTagRequest = null)
     {
-        $request = $this->postBusinessModelsTagRequest($taggableId, $contentType, $accept, $postBusinessModelsTagRequest);
+        $request = $this->postBusinessModelsTagRequest($taggableId, $postBusinessModelsTagRequest);
 
         try {
             $options = $this->createHttpClientOption();
@@ -11383,16 +10731,14 @@ class OperationsApi
      * Tag Business Model
      *
      * @param  string $taggableId The ID of the taggable. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      * @param  \Stackflows\Clients\Stackflows\Model\PostBusinessModelsTagRequest $postBusinessModelsTagRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postBusinessModelsTagAsync($taggableId, $contentType = null, $accept = null, $postBusinessModelsTagRequest = null)
+    public function postBusinessModelsTagAsync($taggableId, $postBusinessModelsTagRequest = null)
     {
-        return $this->postBusinessModelsTagAsyncWithHttpInfo($taggableId, $contentType, $accept, $postBusinessModelsTagRequest)
+        return $this->postBusinessModelsTagAsyncWithHttpInfo($taggableId, $postBusinessModelsTagRequest)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -11406,17 +10752,15 @@ class OperationsApi
      * Tag Business Model
      *
      * @param  string $taggableId The ID of the taggable. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      * @param  \Stackflows\Clients\Stackflows\Model\PostBusinessModelsTagRequest $postBusinessModelsTagRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postBusinessModelsTagAsyncWithHttpInfo($taggableId, $contentType = null, $accept = null, $postBusinessModelsTagRequest = null)
+    public function postBusinessModelsTagAsyncWithHttpInfo($taggableId, $postBusinessModelsTagRequest = null)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\TagModel';
-        $request = $this->postBusinessModelsTagRequest($taggableId, $contentType, $accept, $postBusinessModelsTagRequest);
+        $request = $this->postBusinessModelsTagRequest($taggableId, $postBusinessModelsTagRequest);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -11458,14 +10802,12 @@ class OperationsApi
      * Create request for operation 'postBusinessModelsTag'
      *
      * @param  string $taggableId The ID of the taggable. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      * @param  \Stackflows\Clients\Stackflows\Model\PostBusinessModelsTagRequest $postBusinessModelsTagRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function postBusinessModelsTagRequest($taggableId, $contentType = null, $accept = null, $postBusinessModelsTagRequest = null)
+    public function postBusinessModelsTagRequest($taggableId, $postBusinessModelsTagRequest = null)
     {
         // verify the required parameter 'taggableId' is set
         if ($taggableId === null || (is_array($taggableId) && count($taggableId) === 0)) {
@@ -11482,14 +10824,6 @@ class OperationsApi
         $multipart = false;
 
 
-        // header params
-        if ($contentType !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
-        }
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
         // path params
         if ($taggableId !== null) {
@@ -11569,17 +10903,15 @@ class OperationsApi
      *
      * Create Business Process Tag
      *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      * @param  \Stackflows\Clients\Stackflows\Model\PostBusinessProcessesCreateRequest $postBusinessProcessesCreateRequest postBusinessProcessesCreateRequest (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\TagModel
      */
-    public function postBusinessProcessesCreate($contentType = null, $accept = null, $postBusinessProcessesCreateRequest = null)
+    public function postBusinessProcessesCreate($postBusinessProcessesCreateRequest = null)
     {
-        list($response) = $this->postBusinessProcessesCreateWithHttpInfo($contentType, $accept, $postBusinessProcessesCreateRequest);
+        list($response) = $this->postBusinessProcessesCreateWithHttpInfo($postBusinessProcessesCreateRequest);
         return $response;
     }
 
@@ -11588,17 +10920,15 @@ class OperationsApi
      *
      * Create Business Process Tag
      *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      * @param  \Stackflows\Clients\Stackflows\Model\PostBusinessProcessesCreateRequest $postBusinessProcessesCreateRequest (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\TagModel, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postBusinessProcessesCreateWithHttpInfo($contentType = null, $accept = null, $postBusinessProcessesCreateRequest = null)
+    public function postBusinessProcessesCreateWithHttpInfo($postBusinessProcessesCreateRequest = null)
     {
-        $request = $this->postBusinessProcessesCreateRequest($contentType, $accept, $postBusinessProcessesCreateRequest);
+        $request = $this->postBusinessProcessesCreateRequest($postBusinessProcessesCreateRequest);
 
         try {
             $options = $this->createHttpClientOption();
@@ -11689,16 +11019,14 @@ class OperationsApi
      *
      * Create Business Process Tag
      *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      * @param  \Stackflows\Clients\Stackflows\Model\PostBusinessProcessesCreateRequest $postBusinessProcessesCreateRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postBusinessProcessesCreateAsync($contentType = null, $accept = null, $postBusinessProcessesCreateRequest = null)
+    public function postBusinessProcessesCreateAsync($postBusinessProcessesCreateRequest = null)
     {
-        return $this->postBusinessProcessesCreateAsyncWithHttpInfo($contentType, $accept, $postBusinessProcessesCreateRequest)
+        return $this->postBusinessProcessesCreateAsyncWithHttpInfo($postBusinessProcessesCreateRequest)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -11711,17 +11039,15 @@ class OperationsApi
      *
      * Create Business Process Tag
      *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      * @param  \Stackflows\Clients\Stackflows\Model\PostBusinessProcessesCreateRequest $postBusinessProcessesCreateRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postBusinessProcessesCreateAsyncWithHttpInfo($contentType = null, $accept = null, $postBusinessProcessesCreateRequest = null)
+    public function postBusinessProcessesCreateAsyncWithHttpInfo($postBusinessProcessesCreateRequest = null)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\TagModel';
-        $request = $this->postBusinessProcessesCreateRequest($contentType, $accept, $postBusinessProcessesCreateRequest);
+        $request = $this->postBusinessProcessesCreateRequest($postBusinessProcessesCreateRequest);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -11762,14 +11088,12 @@ class OperationsApi
     /**
      * Create request for operation 'postBusinessProcessesCreate'
      *
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      * @param  \Stackflows\Clients\Stackflows\Model\PostBusinessProcessesCreateRequest $postBusinessProcessesCreateRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function postBusinessProcessesCreateRequest($contentType = null, $accept = null, $postBusinessProcessesCreateRequest = null)
+    public function postBusinessProcessesCreateRequest($postBusinessProcessesCreateRequest = null)
     {
 
         $resourcePath = '/api/v2/business-processes';
@@ -11780,14 +11104,6 @@ class OperationsApi
         $multipart = false;
 
 
-        // header params
-        if ($contentType !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
-        }
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
 
 
@@ -11860,16 +11176,14 @@ class OperationsApi
      * Create Category
      *
      * @param  \Stackflows\Clients\Stackflows\Model\PostCategoriesCreateRequest $postCategoriesCreateRequest postCategoriesCreateRequest (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\CategoryModel
      */
-    public function postCategoriesCreate($postCategoriesCreateRequest, $contentType = null, $accept = null)
+    public function postCategoriesCreate($postCategoriesCreateRequest)
     {
-        list($response) = $this->postCategoriesCreateWithHttpInfo($postCategoriesCreateRequest, $contentType, $accept);
+        list($response) = $this->postCategoriesCreateWithHttpInfo($postCategoriesCreateRequest);
         return $response;
     }
 
@@ -11879,16 +11193,14 @@ class OperationsApi
      * Create Category
      *
      * @param  \Stackflows\Clients\Stackflows\Model\PostCategoriesCreateRequest $postCategoriesCreateRequest (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\CategoryModel, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postCategoriesCreateWithHttpInfo($postCategoriesCreateRequest, $contentType = null, $accept = null)
+    public function postCategoriesCreateWithHttpInfo($postCategoriesCreateRequest)
     {
-        $request = $this->postCategoriesCreateRequest($postCategoriesCreateRequest, $contentType, $accept);
+        $request = $this->postCategoriesCreateRequest($postCategoriesCreateRequest);
 
         try {
             $options = $this->createHttpClientOption();
@@ -11980,15 +11292,13 @@ class OperationsApi
      * Create Category
      *
      * @param  \Stackflows\Clients\Stackflows\Model\PostCategoriesCreateRequest $postCategoriesCreateRequest (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postCategoriesCreateAsync($postCategoriesCreateRequest, $contentType = null, $accept = null)
+    public function postCategoriesCreateAsync($postCategoriesCreateRequest)
     {
-        return $this->postCategoriesCreateAsyncWithHttpInfo($postCategoriesCreateRequest, $contentType, $accept)
+        return $this->postCategoriesCreateAsyncWithHttpInfo($postCategoriesCreateRequest)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -12002,16 +11312,14 @@ class OperationsApi
      * Create Category
      *
      * @param  \Stackflows\Clients\Stackflows\Model\PostCategoriesCreateRequest $postCategoriesCreateRequest (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postCategoriesCreateAsyncWithHttpInfo($postCategoriesCreateRequest, $contentType = null, $accept = null)
+    public function postCategoriesCreateAsyncWithHttpInfo($postCategoriesCreateRequest)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\CategoryModel';
-        $request = $this->postCategoriesCreateRequest($postCategoriesCreateRequest, $contentType, $accept);
+        $request = $this->postCategoriesCreateRequest($postCategoriesCreateRequest);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -12053,13 +11361,11 @@ class OperationsApi
      * Create request for operation 'postCategoriesCreate'
      *
      * @param  \Stackflows\Clients\Stackflows\Model\PostCategoriesCreateRequest $postCategoriesCreateRequest (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function postCategoriesCreateRequest($postCategoriesCreateRequest, $contentType = null, $accept = null)
+    public function postCategoriesCreateRequest($postCategoriesCreateRequest)
     {
         // verify the required parameter 'postCategoriesCreateRequest' is set
         if ($postCategoriesCreateRequest === null || (is_array($postCategoriesCreateRequest) && count($postCategoriesCreateRequest) === 0)) {
@@ -12076,14 +11382,6 @@ class OperationsApi
         $multipart = false;
 
 
-        // header params
-        if ($contentType !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
-        }
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
 
 
@@ -12156,16 +11454,14 @@ class OperationsApi
      * Create Tag
      *
      * @param  \Stackflows\Clients\Stackflows\Model\PostTagsCreateRequest $postTagsCreateRequest postTagsCreateRequest (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\TagModel
      */
-    public function postTagsCreate($postTagsCreateRequest, $contentType = null, $accept = null)
+    public function postTagsCreate($postTagsCreateRequest)
     {
-        list($response) = $this->postTagsCreateWithHttpInfo($postTagsCreateRequest, $contentType, $accept);
+        list($response) = $this->postTagsCreateWithHttpInfo($postTagsCreateRequest);
         return $response;
     }
 
@@ -12175,16 +11471,14 @@ class OperationsApi
      * Create Tag
      *
      * @param  \Stackflows\Clients\Stackflows\Model\PostTagsCreateRequest $postTagsCreateRequest (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\TagModel, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postTagsCreateWithHttpInfo($postTagsCreateRequest, $contentType = null, $accept = null)
+    public function postTagsCreateWithHttpInfo($postTagsCreateRequest)
     {
-        $request = $this->postTagsCreateRequest($postTagsCreateRequest, $contentType, $accept);
+        $request = $this->postTagsCreateRequest($postTagsCreateRequest);
 
         try {
             $options = $this->createHttpClientOption();
@@ -12276,15 +11570,13 @@ class OperationsApi
      * Create Tag
      *
      * @param  \Stackflows\Clients\Stackflows\Model\PostTagsCreateRequest $postTagsCreateRequest (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postTagsCreateAsync($postTagsCreateRequest, $contentType = null, $accept = null)
+    public function postTagsCreateAsync($postTagsCreateRequest)
     {
-        return $this->postTagsCreateAsyncWithHttpInfo($postTagsCreateRequest, $contentType, $accept)
+        return $this->postTagsCreateAsyncWithHttpInfo($postTagsCreateRequest)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -12298,16 +11590,14 @@ class OperationsApi
      * Create Tag
      *
      * @param  \Stackflows\Clients\Stackflows\Model\PostTagsCreateRequest $postTagsCreateRequest (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postTagsCreateAsyncWithHttpInfo($postTagsCreateRequest, $contentType = null, $accept = null)
+    public function postTagsCreateAsyncWithHttpInfo($postTagsCreateRequest)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\TagModel';
-        $request = $this->postTagsCreateRequest($postTagsCreateRequest, $contentType, $accept);
+        $request = $this->postTagsCreateRequest($postTagsCreateRequest);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -12349,13 +11639,11 @@ class OperationsApi
      * Create request for operation 'postTagsCreate'
      *
      * @param  \Stackflows\Clients\Stackflows\Model\PostTagsCreateRequest $postTagsCreateRequest (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function postTagsCreateRequest($postTagsCreateRequest, $contentType = null, $accept = null)
+    public function postTagsCreateRequest($postTagsCreateRequest)
     {
         // verify the required parameter 'postTagsCreateRequest' is set
         if ($postTagsCreateRequest === null || (is_array($postTagsCreateRequest) && count($postTagsCreateRequest) === 0)) {
@@ -12372,14 +11660,6 @@ class OperationsApi
         $multipart = false;
 
 
-        // header params
-        if ($contentType !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
-        }
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
 
 
@@ -12452,16 +11732,14 @@ class OperationsApi
      * Create Task
      *
      * @param  \Stackflows\Clients\Stackflows\Model\PostTasksCreateRequest $postTasksCreateRequest postTasksCreateRequest (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\TaskModel
      */
-    public function postTasksCreate($postTasksCreateRequest, $contentType = null, $accept = null)
+    public function postTasksCreate($postTasksCreateRequest)
     {
-        list($response) = $this->postTasksCreateWithHttpInfo($postTasksCreateRequest, $contentType, $accept);
+        list($response) = $this->postTasksCreateWithHttpInfo($postTasksCreateRequest);
         return $response;
     }
 
@@ -12471,16 +11749,14 @@ class OperationsApi
      * Create Task
      *
      * @param  \Stackflows\Clients\Stackflows\Model\PostTasksCreateRequest $postTasksCreateRequest (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\TaskModel, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postTasksCreateWithHttpInfo($postTasksCreateRequest, $contentType = null, $accept = null)
+    public function postTasksCreateWithHttpInfo($postTasksCreateRequest)
     {
-        $request = $this->postTasksCreateRequest($postTasksCreateRequest, $contentType, $accept);
+        $request = $this->postTasksCreateRequest($postTasksCreateRequest);
 
         try {
             $options = $this->createHttpClientOption();
@@ -12572,15 +11848,13 @@ class OperationsApi
      * Create Task
      *
      * @param  \Stackflows\Clients\Stackflows\Model\PostTasksCreateRequest $postTasksCreateRequest (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postTasksCreateAsync($postTasksCreateRequest, $contentType = null, $accept = null)
+    public function postTasksCreateAsync($postTasksCreateRequest)
     {
-        return $this->postTasksCreateAsyncWithHttpInfo($postTasksCreateRequest, $contentType, $accept)
+        return $this->postTasksCreateAsyncWithHttpInfo($postTasksCreateRequest)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -12594,16 +11868,14 @@ class OperationsApi
      * Create Task
      *
      * @param  \Stackflows\Clients\Stackflows\Model\PostTasksCreateRequest $postTasksCreateRequest (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postTasksCreateAsyncWithHttpInfo($postTasksCreateRequest, $contentType = null, $accept = null)
+    public function postTasksCreateAsyncWithHttpInfo($postTasksCreateRequest)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\TaskModel';
-        $request = $this->postTasksCreateRequest($postTasksCreateRequest, $contentType, $accept);
+        $request = $this->postTasksCreateRequest($postTasksCreateRequest);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -12645,13 +11917,11 @@ class OperationsApi
      * Create request for operation 'postTasksCreate'
      *
      * @param  \Stackflows\Clients\Stackflows\Model\PostTasksCreateRequest $postTasksCreateRequest (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function postTasksCreateRequest($postTasksCreateRequest, $contentType = null, $accept = null)
+    public function postTasksCreateRequest($postTasksCreateRequest)
     {
         // verify the required parameter 'postTasksCreateRequest' is set
         if ($postTasksCreateRequest === null || (is_array($postTasksCreateRequest) && count($postTasksCreateRequest) === 0)) {
@@ -12668,14 +11938,6 @@ class OperationsApi
         $multipart = false;
 
 
-        // header params
-        if ($contentType !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
-        }
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
 
 
@@ -12749,17 +12011,15 @@ class OperationsApi
      *
      * @param  string $diagramId The ID of the diagram. (required)
      * @param  string $xml  (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      * @param  \SplFileObject $snapshot Snapshot of the process diagram (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel
      */
-    public function putBusinessModelDiagramsUpdate($diagramId, $xml, $contentType = null, $accept = null, $snapshot = null)
+    public function putBusinessModelDiagramsUpdate($diagramId, $xml, $snapshot = null)
     {
-        list($response) = $this->putBusinessModelDiagramsUpdateWithHttpInfo($diagramId, $xml, $contentType, $accept, $snapshot);
+        list($response) = $this->putBusinessModelDiagramsUpdateWithHttpInfo($diagramId, $xml, $snapshot);
         return $response;
     }
 
@@ -12770,17 +12030,15 @@ class OperationsApi
      *
      * @param  string $diagramId The ID of the diagram. (required)
      * @param  string $xml  (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      * @param  \SplFileObject $snapshot Snapshot of the process diagram (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel, HTTP status code, HTTP response headers (array of strings)
      */
-    public function putBusinessModelDiagramsUpdateWithHttpInfo($diagramId, $xml, $contentType = null, $accept = null, $snapshot = null)
+    public function putBusinessModelDiagramsUpdateWithHttpInfo($diagramId, $xml, $snapshot = null)
     {
-        $request = $this->putBusinessModelDiagramsUpdateRequest($diagramId, $xml, $contentType, $accept, $snapshot);
+        $request = $this->putBusinessModelDiagramsUpdateRequest($diagramId, $xml, $snapshot);
 
         try {
             $options = $this->createHttpClientOption();
@@ -12873,16 +12131,14 @@ class OperationsApi
      *
      * @param  string $diagramId The ID of the diagram. (required)
      * @param  string $xml  (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      * @param  \SplFileObject $snapshot Snapshot of the process diagram (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putBusinessModelDiagramsUpdateAsync($diagramId, $xml, $contentType = null, $accept = null, $snapshot = null)
+    public function putBusinessModelDiagramsUpdateAsync($diagramId, $xml, $snapshot = null)
     {
-        return $this->putBusinessModelDiagramsUpdateAsyncWithHttpInfo($diagramId, $xml, $contentType, $accept, $snapshot)
+        return $this->putBusinessModelDiagramsUpdateAsyncWithHttpInfo($diagramId, $xml, $snapshot)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -12897,17 +12153,15 @@ class OperationsApi
      *
      * @param  string $diagramId The ID of the diagram. (required)
      * @param  string $xml  (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      * @param  \SplFileObject $snapshot Snapshot of the process diagram (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putBusinessModelDiagramsUpdateAsyncWithHttpInfo($diagramId, $xml, $contentType = null, $accept = null, $snapshot = null)
+    public function putBusinessModelDiagramsUpdateAsyncWithHttpInfo($diagramId, $xml, $snapshot = null)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel';
-        $request = $this->putBusinessModelDiagramsUpdateRequest($diagramId, $xml, $contentType, $accept, $snapshot);
+        $request = $this->putBusinessModelDiagramsUpdateRequest($diagramId, $xml, $snapshot);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -12950,14 +12204,12 @@ class OperationsApi
      *
      * @param  string $diagramId The ID of the diagram. (required)
      * @param  string $xml  (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      * @param  \SplFileObject $snapshot Snapshot of the process diagram (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function putBusinessModelDiagramsUpdateRequest($diagramId, $xml, $contentType = null, $accept = null, $snapshot = null)
+    public function putBusinessModelDiagramsUpdateRequest($diagramId, $xml, $snapshot = null)
     {
         // verify the required parameter 'diagramId' is set
         if ($diagramId === null || (is_array($diagramId) && count($diagramId) === 0)) {
@@ -12980,14 +12232,6 @@ class OperationsApi
         $multipart = false;
 
 
-        // header params
-        if ($contentType !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
-        }
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
         // path params
         if ($diagramId !== null) {
@@ -13079,16 +12323,14 @@ class OperationsApi
      *
      * @param  string $exceptionId The ID of the exception. (required)
      * @param  \Stackflows\Clients\Stackflows\Model\PutBusinessModelExceptionsUpdateRequest $putBusinessModelExceptionsUpdateRequest putBusinessModelExceptionsUpdateRequest (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\BusinessBaseModelExceptionModel
      */
-    public function putBusinessModelExceptionsUpdate($exceptionId, $putBusinessModelExceptionsUpdateRequest, $contentType = null, $accept = null)
+    public function putBusinessModelExceptionsUpdate($exceptionId, $putBusinessModelExceptionsUpdateRequest)
     {
-        list($response) = $this->putBusinessModelExceptionsUpdateWithHttpInfo($exceptionId, $putBusinessModelExceptionsUpdateRequest, $contentType, $accept);
+        list($response) = $this->putBusinessModelExceptionsUpdateWithHttpInfo($exceptionId, $putBusinessModelExceptionsUpdateRequest);
         return $response;
     }
 
@@ -13099,16 +12341,14 @@ class OperationsApi
      *
      * @param  string $exceptionId The ID of the exception. (required)
      * @param  \Stackflows\Clients\Stackflows\Model\PutBusinessModelExceptionsUpdateRequest $putBusinessModelExceptionsUpdateRequest (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\BusinessBaseModelExceptionModel, HTTP status code, HTTP response headers (array of strings)
      */
-    public function putBusinessModelExceptionsUpdateWithHttpInfo($exceptionId, $putBusinessModelExceptionsUpdateRequest, $contentType = null, $accept = null)
+    public function putBusinessModelExceptionsUpdateWithHttpInfo($exceptionId, $putBusinessModelExceptionsUpdateRequest)
     {
-        $request = $this->putBusinessModelExceptionsUpdateRequest($exceptionId, $putBusinessModelExceptionsUpdateRequest, $contentType, $accept);
+        $request = $this->putBusinessModelExceptionsUpdateRequest($exceptionId, $putBusinessModelExceptionsUpdateRequest);
 
         try {
             $options = $this->createHttpClientOption();
@@ -13201,15 +12441,13 @@ class OperationsApi
      *
      * @param  string $exceptionId The ID of the exception. (required)
      * @param  \Stackflows\Clients\Stackflows\Model\PutBusinessModelExceptionsUpdateRequest $putBusinessModelExceptionsUpdateRequest (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putBusinessModelExceptionsUpdateAsync($exceptionId, $putBusinessModelExceptionsUpdateRequest, $contentType = null, $accept = null)
+    public function putBusinessModelExceptionsUpdateAsync($exceptionId, $putBusinessModelExceptionsUpdateRequest)
     {
-        return $this->putBusinessModelExceptionsUpdateAsyncWithHttpInfo($exceptionId, $putBusinessModelExceptionsUpdateRequest, $contentType, $accept)
+        return $this->putBusinessModelExceptionsUpdateAsyncWithHttpInfo($exceptionId, $putBusinessModelExceptionsUpdateRequest)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -13224,16 +12462,14 @@ class OperationsApi
      *
      * @param  string $exceptionId The ID of the exception. (required)
      * @param  \Stackflows\Clients\Stackflows\Model\PutBusinessModelExceptionsUpdateRequest $putBusinessModelExceptionsUpdateRequest (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putBusinessModelExceptionsUpdateAsyncWithHttpInfo($exceptionId, $putBusinessModelExceptionsUpdateRequest, $contentType = null, $accept = null)
+    public function putBusinessModelExceptionsUpdateAsyncWithHttpInfo($exceptionId, $putBusinessModelExceptionsUpdateRequest)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelExceptionModel';
-        $request = $this->putBusinessModelExceptionsUpdateRequest($exceptionId, $putBusinessModelExceptionsUpdateRequest, $contentType, $accept);
+        $request = $this->putBusinessModelExceptionsUpdateRequest($exceptionId, $putBusinessModelExceptionsUpdateRequest);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -13276,13 +12512,11 @@ class OperationsApi
      *
      * @param  string $exceptionId The ID of the exception. (required)
      * @param  \Stackflows\Clients\Stackflows\Model\PutBusinessModelExceptionsUpdateRequest $putBusinessModelExceptionsUpdateRequest (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function putBusinessModelExceptionsUpdateRequest($exceptionId, $putBusinessModelExceptionsUpdateRequest, $contentType = null, $accept = null)
+    public function putBusinessModelExceptionsUpdateRequest($exceptionId, $putBusinessModelExceptionsUpdateRequest)
     {
         // verify the required parameter 'exceptionId' is set
         if ($exceptionId === null || (is_array($exceptionId) && count($exceptionId) === 0)) {
@@ -13305,14 +12539,6 @@ class OperationsApi
         $multipart = false;
 
 
-        // header params
-        if ($contentType !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
-        }
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
         // path params
         if ($exceptionId !== null) {
@@ -13393,17 +12619,15 @@ class OperationsApi
      * Update Business Model
      *
      * @param  string $modelId The ID of the model. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      * @param  \Stackflows\Clients\Stackflows\Model\PutBusinessModelsUpdateRequest $putBusinessModelsUpdateRequest putBusinessModelsUpdateRequest (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\BusinessBaseModelModel
      */
-    public function putBusinessModelsUpdate($modelId, $contentType = null, $accept = null, $putBusinessModelsUpdateRequest = null)
+    public function putBusinessModelsUpdate($modelId, $putBusinessModelsUpdateRequest = null)
     {
-        list($response) = $this->putBusinessModelsUpdateWithHttpInfo($modelId, $contentType, $accept, $putBusinessModelsUpdateRequest);
+        list($response) = $this->putBusinessModelsUpdateWithHttpInfo($modelId, $putBusinessModelsUpdateRequest);
         return $response;
     }
 
@@ -13413,17 +12637,15 @@ class OperationsApi
      * Update Business Model
      *
      * @param  string $modelId The ID of the model. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      * @param  \Stackflows\Clients\Stackflows\Model\PutBusinessModelsUpdateRequest $putBusinessModelsUpdateRequest (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\BusinessBaseModelModel, HTTP status code, HTTP response headers (array of strings)
      */
-    public function putBusinessModelsUpdateWithHttpInfo($modelId, $contentType = null, $accept = null, $putBusinessModelsUpdateRequest = null)
+    public function putBusinessModelsUpdateWithHttpInfo($modelId, $putBusinessModelsUpdateRequest = null)
     {
-        $request = $this->putBusinessModelsUpdateRequest($modelId, $contentType, $accept, $putBusinessModelsUpdateRequest);
+        $request = $this->putBusinessModelsUpdateRequest($modelId, $putBusinessModelsUpdateRequest);
 
         try {
             $options = $this->createHttpClientOption();
@@ -13515,16 +12737,14 @@ class OperationsApi
      * Update Business Model
      *
      * @param  string $modelId The ID of the model. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      * @param  \Stackflows\Clients\Stackflows\Model\PutBusinessModelsUpdateRequest $putBusinessModelsUpdateRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putBusinessModelsUpdateAsync($modelId, $contentType = null, $accept = null, $putBusinessModelsUpdateRequest = null)
+    public function putBusinessModelsUpdateAsync($modelId, $putBusinessModelsUpdateRequest = null)
     {
-        return $this->putBusinessModelsUpdateAsyncWithHttpInfo($modelId, $contentType, $accept, $putBusinessModelsUpdateRequest)
+        return $this->putBusinessModelsUpdateAsyncWithHttpInfo($modelId, $putBusinessModelsUpdateRequest)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -13538,17 +12758,15 @@ class OperationsApi
      * Update Business Model
      *
      * @param  string $modelId The ID of the model. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      * @param  \Stackflows\Clients\Stackflows\Model\PutBusinessModelsUpdateRequest $putBusinessModelsUpdateRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putBusinessModelsUpdateAsyncWithHttpInfo($modelId, $contentType = null, $accept = null, $putBusinessModelsUpdateRequest = null)
+    public function putBusinessModelsUpdateAsyncWithHttpInfo($modelId, $putBusinessModelsUpdateRequest = null)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelModel';
-        $request = $this->putBusinessModelsUpdateRequest($modelId, $contentType, $accept, $putBusinessModelsUpdateRequest);
+        $request = $this->putBusinessModelsUpdateRequest($modelId, $putBusinessModelsUpdateRequest);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -13590,14 +12808,12 @@ class OperationsApi
      * Create request for operation 'putBusinessModelsUpdate'
      *
      * @param  string $modelId The ID of the model. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      * @param  \Stackflows\Clients\Stackflows\Model\PutBusinessModelsUpdateRequest $putBusinessModelsUpdateRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function putBusinessModelsUpdateRequest($modelId, $contentType = null, $accept = null, $putBusinessModelsUpdateRequest = null)
+    public function putBusinessModelsUpdateRequest($modelId, $putBusinessModelsUpdateRequest = null)
     {
         // verify the required parameter 'modelId' is set
         if ($modelId === null || (is_array($modelId) && count($modelId) === 0)) {
@@ -13614,14 +12830,6 @@ class OperationsApi
         $multipart = false;
 
 
-        // header params
-        if ($contentType !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
-        }
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
         // path params
         if ($modelId !== null) {
@@ -13701,18 +12909,16 @@ class OperationsApi
      *
      * Update Business Process Tag
      *
-     * @param  string $tagId The ID of the tag. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
+     * @param  int $tagId The ID of the tag. (required)
      * @param  \Stackflows\Clients\Stackflows\Model\PutBusinessProcessesUpdateRequest $putBusinessProcessesUpdateRequest putBusinessProcessesUpdateRequest (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\TagModel
      */
-    public function putBusinessProcessesUpdate($tagId, $contentType = null, $accept = null, $putBusinessProcessesUpdateRequest = null)
+    public function putBusinessProcessesUpdate($tagId, $putBusinessProcessesUpdateRequest = null)
     {
-        list($response) = $this->putBusinessProcessesUpdateWithHttpInfo($tagId, $contentType, $accept, $putBusinessProcessesUpdateRequest);
+        list($response) = $this->putBusinessProcessesUpdateWithHttpInfo($tagId, $putBusinessProcessesUpdateRequest);
         return $response;
     }
 
@@ -13721,18 +12927,16 @@ class OperationsApi
      *
      * Update Business Process Tag
      *
-     * @param  string $tagId The ID of the tag. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
+     * @param  int $tagId The ID of the tag. (required)
      * @param  \Stackflows\Clients\Stackflows\Model\PutBusinessProcessesUpdateRequest $putBusinessProcessesUpdateRequest (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\TagModel, HTTP status code, HTTP response headers (array of strings)
      */
-    public function putBusinessProcessesUpdateWithHttpInfo($tagId, $contentType = null, $accept = null, $putBusinessProcessesUpdateRequest = null)
+    public function putBusinessProcessesUpdateWithHttpInfo($tagId, $putBusinessProcessesUpdateRequest = null)
     {
-        $request = $this->putBusinessProcessesUpdateRequest($tagId, $contentType, $accept, $putBusinessProcessesUpdateRequest);
+        $request = $this->putBusinessProcessesUpdateRequest($tagId, $putBusinessProcessesUpdateRequest);
 
         try {
             $options = $this->createHttpClientOption();
@@ -13823,17 +13027,15 @@ class OperationsApi
      *
      * Update Business Process Tag
      *
-     * @param  string $tagId The ID of the tag. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
+     * @param  int $tagId The ID of the tag. (required)
      * @param  \Stackflows\Clients\Stackflows\Model\PutBusinessProcessesUpdateRequest $putBusinessProcessesUpdateRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putBusinessProcessesUpdateAsync($tagId, $contentType = null, $accept = null, $putBusinessProcessesUpdateRequest = null)
+    public function putBusinessProcessesUpdateAsync($tagId, $putBusinessProcessesUpdateRequest = null)
     {
-        return $this->putBusinessProcessesUpdateAsyncWithHttpInfo($tagId, $contentType, $accept, $putBusinessProcessesUpdateRequest)
+        return $this->putBusinessProcessesUpdateAsyncWithHttpInfo($tagId, $putBusinessProcessesUpdateRequest)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -13846,18 +13048,16 @@ class OperationsApi
      *
      * Update Business Process Tag
      *
-     * @param  string $tagId The ID of the tag. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
+     * @param  int $tagId The ID of the tag. (required)
      * @param  \Stackflows\Clients\Stackflows\Model\PutBusinessProcessesUpdateRequest $putBusinessProcessesUpdateRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putBusinessProcessesUpdateAsyncWithHttpInfo($tagId, $contentType = null, $accept = null, $putBusinessProcessesUpdateRequest = null)
+    public function putBusinessProcessesUpdateAsyncWithHttpInfo($tagId, $putBusinessProcessesUpdateRequest = null)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\TagModel';
-        $request = $this->putBusinessProcessesUpdateRequest($tagId, $contentType, $accept, $putBusinessProcessesUpdateRequest);
+        $request = $this->putBusinessProcessesUpdateRequest($tagId, $putBusinessProcessesUpdateRequest);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -13898,15 +13098,13 @@ class OperationsApi
     /**
      * Create request for operation 'putBusinessProcessesUpdate'
      *
-     * @param  string $tagId The ID of the tag. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
+     * @param  int $tagId The ID of the tag. (required)
      * @param  \Stackflows\Clients\Stackflows\Model\PutBusinessProcessesUpdateRequest $putBusinessProcessesUpdateRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function putBusinessProcessesUpdateRequest($tagId, $contentType = null, $accept = null, $putBusinessProcessesUpdateRequest = null)
+    public function putBusinessProcessesUpdateRequest($tagId, $putBusinessProcessesUpdateRequest = null)
     {
         // verify the required parameter 'tagId' is set
         if ($tagId === null || (is_array($tagId) && count($tagId) === 0)) {
@@ -13923,14 +13121,6 @@ class OperationsApi
         $multipart = false;
 
 
-        // header params
-        if ($contentType !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
-        }
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
         // path params
         if ($tagId !== null) {
@@ -14011,17 +13201,15 @@ class OperationsApi
      * Update Category
      *
      * @param  int $id The ID of the category. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      * @param  \Stackflows\Clients\Stackflows\Model\PutCategoriesUpdateRequest $putCategoriesUpdateRequest putCategoriesUpdateRequest (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\CategoryModel
      */
-    public function putCategoriesUpdate($id, $contentType = null, $accept = null, $putCategoriesUpdateRequest = null)
+    public function putCategoriesUpdate($id, $putCategoriesUpdateRequest = null)
     {
-        list($response) = $this->putCategoriesUpdateWithHttpInfo($id, $contentType, $accept, $putCategoriesUpdateRequest);
+        list($response) = $this->putCategoriesUpdateWithHttpInfo($id, $putCategoriesUpdateRequest);
         return $response;
     }
 
@@ -14031,17 +13219,15 @@ class OperationsApi
      * Update Category
      *
      * @param  int $id The ID of the category. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      * @param  \Stackflows\Clients\Stackflows\Model\PutCategoriesUpdateRequest $putCategoriesUpdateRequest (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\CategoryModel, HTTP status code, HTTP response headers (array of strings)
      */
-    public function putCategoriesUpdateWithHttpInfo($id, $contentType = null, $accept = null, $putCategoriesUpdateRequest = null)
+    public function putCategoriesUpdateWithHttpInfo($id, $putCategoriesUpdateRequest = null)
     {
-        $request = $this->putCategoriesUpdateRequest($id, $contentType, $accept, $putCategoriesUpdateRequest);
+        $request = $this->putCategoriesUpdateRequest($id, $putCategoriesUpdateRequest);
 
         try {
             $options = $this->createHttpClientOption();
@@ -14133,16 +13319,14 @@ class OperationsApi
      * Update Category
      *
      * @param  int $id The ID of the category. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      * @param  \Stackflows\Clients\Stackflows\Model\PutCategoriesUpdateRequest $putCategoriesUpdateRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putCategoriesUpdateAsync($id, $contentType = null, $accept = null, $putCategoriesUpdateRequest = null)
+    public function putCategoriesUpdateAsync($id, $putCategoriesUpdateRequest = null)
     {
-        return $this->putCategoriesUpdateAsyncWithHttpInfo($id, $contentType, $accept, $putCategoriesUpdateRequest)
+        return $this->putCategoriesUpdateAsyncWithHttpInfo($id, $putCategoriesUpdateRequest)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -14156,17 +13340,15 @@ class OperationsApi
      * Update Category
      *
      * @param  int $id The ID of the category. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      * @param  \Stackflows\Clients\Stackflows\Model\PutCategoriesUpdateRequest $putCategoriesUpdateRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putCategoriesUpdateAsyncWithHttpInfo($id, $contentType = null, $accept = null, $putCategoriesUpdateRequest = null)
+    public function putCategoriesUpdateAsyncWithHttpInfo($id, $putCategoriesUpdateRequest = null)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\CategoryModel';
-        $request = $this->putCategoriesUpdateRequest($id, $contentType, $accept, $putCategoriesUpdateRequest);
+        $request = $this->putCategoriesUpdateRequest($id, $putCategoriesUpdateRequest);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -14208,14 +13390,12 @@ class OperationsApi
      * Create request for operation 'putCategoriesUpdate'
      *
      * @param  int $id The ID of the category. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      * @param  \Stackflows\Clients\Stackflows\Model\PutCategoriesUpdateRequest $putCategoriesUpdateRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function putCategoriesUpdateRequest($id, $contentType = null, $accept = null, $putCategoriesUpdateRequest = null)
+    public function putCategoriesUpdateRequest($id, $putCategoriesUpdateRequest = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -14232,14 +13412,6 @@ class OperationsApi
         $multipart = false;
 
 
-        // header params
-        if ($contentType !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
-        }
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
         // path params
         if ($id !== null) {
@@ -14321,16 +13493,14 @@ class OperationsApi
      *
      * @param  int $id The ID of the tag. (required)
      * @param  \Stackflows\Clients\Stackflows\Model\PutTagsUpdateRequest $putTagsUpdateRequest putTagsUpdateRequest (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\TagModel
      */
-    public function putTagsUpdate($id, $putTagsUpdateRequest, $contentType = null, $accept = null)
+    public function putTagsUpdate($id, $putTagsUpdateRequest)
     {
-        list($response) = $this->putTagsUpdateWithHttpInfo($id, $putTagsUpdateRequest, $contentType, $accept);
+        list($response) = $this->putTagsUpdateWithHttpInfo($id, $putTagsUpdateRequest);
         return $response;
     }
 
@@ -14341,16 +13511,14 @@ class OperationsApi
      *
      * @param  int $id The ID of the tag. (required)
      * @param  \Stackflows\Clients\Stackflows\Model\PutTagsUpdateRequest $putTagsUpdateRequest (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\TagModel, HTTP status code, HTTP response headers (array of strings)
      */
-    public function putTagsUpdateWithHttpInfo($id, $putTagsUpdateRequest, $contentType = null, $accept = null)
+    public function putTagsUpdateWithHttpInfo($id, $putTagsUpdateRequest)
     {
-        $request = $this->putTagsUpdateRequest($id, $putTagsUpdateRequest, $contentType, $accept);
+        $request = $this->putTagsUpdateRequest($id, $putTagsUpdateRequest);
 
         try {
             $options = $this->createHttpClientOption();
@@ -14443,15 +13611,13 @@ class OperationsApi
      *
      * @param  int $id The ID of the tag. (required)
      * @param  \Stackflows\Clients\Stackflows\Model\PutTagsUpdateRequest $putTagsUpdateRequest (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putTagsUpdateAsync($id, $putTagsUpdateRequest, $contentType = null, $accept = null)
+    public function putTagsUpdateAsync($id, $putTagsUpdateRequest)
     {
-        return $this->putTagsUpdateAsyncWithHttpInfo($id, $putTagsUpdateRequest, $contentType, $accept)
+        return $this->putTagsUpdateAsyncWithHttpInfo($id, $putTagsUpdateRequest)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -14466,16 +13632,14 @@ class OperationsApi
      *
      * @param  int $id The ID of the tag. (required)
      * @param  \Stackflows\Clients\Stackflows\Model\PutTagsUpdateRequest $putTagsUpdateRequest (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putTagsUpdateAsyncWithHttpInfo($id, $putTagsUpdateRequest, $contentType = null, $accept = null)
+    public function putTagsUpdateAsyncWithHttpInfo($id, $putTagsUpdateRequest)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\TagModel';
-        $request = $this->putTagsUpdateRequest($id, $putTagsUpdateRequest, $contentType, $accept);
+        $request = $this->putTagsUpdateRequest($id, $putTagsUpdateRequest);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -14518,13 +13682,11 @@ class OperationsApi
      *
      * @param  int $id The ID of the tag. (required)
      * @param  \Stackflows\Clients\Stackflows\Model\PutTagsUpdateRequest $putTagsUpdateRequest (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function putTagsUpdateRequest($id, $putTagsUpdateRequest, $contentType = null, $accept = null)
+    public function putTagsUpdateRequest($id, $putTagsUpdateRequest)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -14547,14 +13709,6 @@ class OperationsApi
         $multipart = false;
 
 
-        // header params
-        if ($contentType !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
-        }
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
         // path params
         if ($id !== null) {
@@ -14635,17 +13789,15 @@ class OperationsApi
      * Update Task
      *
      * @param  string $id The ID of the task. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      * @param  \Stackflows\Clients\Stackflows\Model\PutTasksUpdateRequest $putTasksUpdateRequest putTasksUpdateRequest (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\TaskModel
      */
-    public function putTasksUpdate($id, $contentType = null, $accept = null, $putTasksUpdateRequest = null)
+    public function putTasksUpdate($id, $putTasksUpdateRequest = null)
     {
-        list($response) = $this->putTasksUpdateWithHttpInfo($id, $contentType, $accept, $putTasksUpdateRequest);
+        list($response) = $this->putTasksUpdateWithHttpInfo($id, $putTasksUpdateRequest);
         return $response;
     }
 
@@ -14655,17 +13807,15 @@ class OperationsApi
      * Update Task
      *
      * @param  string $id The ID of the task. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      * @param  \Stackflows\Clients\Stackflows\Model\PutTasksUpdateRequest $putTasksUpdateRequest (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\TaskModel, HTTP status code, HTTP response headers (array of strings)
      */
-    public function putTasksUpdateWithHttpInfo($id, $contentType = null, $accept = null, $putTasksUpdateRequest = null)
+    public function putTasksUpdateWithHttpInfo($id, $putTasksUpdateRequest = null)
     {
-        $request = $this->putTasksUpdateRequest($id, $contentType, $accept, $putTasksUpdateRequest);
+        $request = $this->putTasksUpdateRequest($id, $putTasksUpdateRequest);
 
         try {
             $options = $this->createHttpClientOption();
@@ -14757,16 +13907,14 @@ class OperationsApi
      * Update Task
      *
      * @param  string $id The ID of the task. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      * @param  \Stackflows\Clients\Stackflows\Model\PutTasksUpdateRequest $putTasksUpdateRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putTasksUpdateAsync($id, $contentType = null, $accept = null, $putTasksUpdateRequest = null)
+    public function putTasksUpdateAsync($id, $putTasksUpdateRequest = null)
     {
-        return $this->putTasksUpdateAsyncWithHttpInfo($id, $contentType, $accept, $putTasksUpdateRequest)
+        return $this->putTasksUpdateAsyncWithHttpInfo($id, $putTasksUpdateRequest)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -14780,17 +13928,15 @@ class OperationsApi
      * Update Task
      *
      * @param  string $id The ID of the task. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      * @param  \Stackflows\Clients\Stackflows\Model\PutTasksUpdateRequest $putTasksUpdateRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putTasksUpdateAsyncWithHttpInfo($id, $contentType = null, $accept = null, $putTasksUpdateRequest = null)
+    public function putTasksUpdateAsyncWithHttpInfo($id, $putTasksUpdateRequest = null)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\TaskModel';
-        $request = $this->putTasksUpdateRequest($id, $contentType, $accept, $putTasksUpdateRequest);
+        $request = $this->putTasksUpdateRequest($id, $putTasksUpdateRequest);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -14832,14 +13978,12 @@ class OperationsApi
      * Create request for operation 'putTasksUpdate'
      *
      * @param  string $id The ID of the task. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      * @param  \Stackflows\Clients\Stackflows\Model\PutTasksUpdateRequest $putTasksUpdateRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function putTasksUpdateRequest($id, $contentType = null, $accept = null, $putTasksUpdateRequest = null)
+    public function putTasksUpdateRequest($id, $putTasksUpdateRequest = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -14856,14 +14000,6 @@ class OperationsApi
         $multipart = false;
 
 
-        // header params
-        if ($contentType !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
-        }
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
         // path params
         if ($id !== null) {

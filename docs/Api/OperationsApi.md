@@ -57,7 +57,7 @@ Method | HTTP request | Description
 ## `deleteBusinessModelDiagrams()`
 
 ```php
-deleteBusinessModelDiagrams($diagramId, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel
+deleteBusinessModelDiagrams($diagramId): \Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel
 ```
 
 Delete Business Model Diagram
@@ -77,12 +77,10 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$diagramId = non; // string | The ID of the diagram.
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
+$diagramId = 139b5820-048d-11ed-a920-d9cc122fb2b1; // string | The ID of the diagram.
 
 try {
-    $result = $apiInstance->deleteBusinessModelDiagrams($diagramId, $contentType, $accept);
+    $result = $apiInstance->deleteBusinessModelDiagrams($diagramId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OperationsApi->deleteBusinessModelDiagrams: ', $e->getMessage(), PHP_EOL;
@@ -94,8 +92,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **diagramId** | **string**| The ID of the diagram. |
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
 
 ### Return type
 
@@ -117,7 +113,7 @@ No authorization required
 ## `deleteBusinessModelDiagramsComments()`
 
 ```php
-deleteBusinessModelDiagramsComments($diagramId, $commentId, $diagram, $comment, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\CommentModel
+deleteBusinessModelDiagramsComments($diagramId, $commentId, $diagram, $comment): \Stackflows\Clients\Stackflows\Model\CommentModel
 ```
 
 Delete Business Model Diagram Comment
@@ -137,15 +133,13 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$diagramId = non; // string | The ID of the diagram.
-$commentId = 16; // int | The ID of the comment.
+$diagramId = 139b5820-048d-11ed-a920-d9cc122fb2b1; // string | The ID of the diagram.
+$commentId = 1; // int | The ID of the comment.
 $diagram = 3688e6c0-1a56-11ec-8366; // string | The ID of an diagram.
 $comment = 3688e6c0-1a56-11ec-8366; // string | The ID of an comment.
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
 
 try {
-    $result = $apiInstance->deleteBusinessModelDiagramsComments($diagramId, $commentId, $diagram, $comment, $contentType, $accept);
+    $result = $apiInstance->deleteBusinessModelDiagramsComments($diagramId, $commentId, $diagram, $comment);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OperationsApi->deleteBusinessModelDiagramsComments: ', $e->getMessage(), PHP_EOL;
@@ -160,8 +154,6 @@ Name | Type | Description  | Notes
  **commentId** | **int**| The ID of the comment. |
  **diagram** | **string**| The ID of an diagram. |
  **comment** | **string**| The ID of an comment. |
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
 
 ### Return type
 
@@ -183,7 +175,7 @@ No authorization required
 ## `deleteBusinessModelExceptions()`
 
 ```php
-deleteBusinessModelExceptions($exceptionId, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\BusinessBaseModelExceptionModel
+deleteBusinessModelExceptions($exceptionId): \Stackflows\Clients\Stackflows\Model\BusinessBaseModelExceptionModel
 ```
 
 Delete Business Model Exception
@@ -203,12 +195,10 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$exceptionId = et; // string | The ID of the exception.
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
+$exceptionId = ipsa; // string | The ID of the exception.
 
 try {
-    $result = $apiInstance->deleteBusinessModelExceptions($exceptionId, $contentType, $accept);
+    $result = $apiInstance->deleteBusinessModelExceptions($exceptionId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OperationsApi->deleteBusinessModelExceptions: ', $e->getMessage(), PHP_EOL;
@@ -220,8 +210,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **exceptionId** | **string**| The ID of the exception. |
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
 
 ### Return type
 
@@ -243,7 +231,7 @@ No authorization required
 ## `deleteBusinessModels()`
 
 ```php
-deleteBusinessModels($modelId, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\BusinessBaseModelModel
+deleteBusinessModels($modelId): \Stackflows\Clients\Stackflows\Model\BusinessBaseModelModel
 ```
 
 Delete Business Model
@@ -263,12 +251,10 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$modelId = rerum; // string | The ID of the model.
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
+$modelId = 1244a4d0-03f6-11ed-8757-598213407c67; // string | The ID of the model.
 
 try {
-    $result = $apiInstance->deleteBusinessModels($modelId, $contentType, $accept);
+    $result = $apiInstance->deleteBusinessModels($modelId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OperationsApi->deleteBusinessModels: ', $e->getMessage(), PHP_EOL;
@@ -280,8 +266,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **modelId** | **string**| The ID of the model. |
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
 
 ### Return type
 
@@ -303,7 +287,7 @@ No authorization required
 ## `deleteBusinessModelsDeleteBulk()`
 
 ```php
-deleteBusinessModelsDeleteBulk($contentType, $accept, $deleteBusinessModelsDeleteBulkRequest): \Stackflows\Clients\Stackflows\Model\BusinessBaseModelModel
+deleteBusinessModelsDeleteBulk($deleteBusinessModelsDeleteBulkRequest): \Stackflows\Clients\Stackflows\Model\BusinessBaseModelModel
 ```
 
 Delete Business Models
@@ -323,12 +307,10 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
 $deleteBusinessModelsDeleteBulkRequest = new \Stackflows\Clients\Stackflows\Model\DeleteBusinessModelsDeleteBulkRequest(); // \Stackflows\Clients\Stackflows\Model\DeleteBusinessModelsDeleteBulkRequest
 
 try {
-    $result = $apiInstance->deleteBusinessModelsDeleteBulk($contentType, $accept, $deleteBusinessModelsDeleteBulkRequest);
+    $result = $apiInstance->deleteBusinessModelsDeleteBulk($deleteBusinessModelsDeleteBulkRequest);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OperationsApi->deleteBusinessModelsDeleteBulk: ', $e->getMessage(), PHP_EOL;
@@ -339,8 +321,6 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
  **deleteBusinessModelsDeleteBulkRequest** | [**\Stackflows\Clients\Stackflows\Model\DeleteBusinessModelsDeleteBulkRequest**](../Model/DeleteBusinessModelsDeleteBulkRequest.md)|  | [optional]
 
 ### Return type
@@ -363,7 +343,7 @@ No authorization required
 ## `deleteBusinessProcesses()`
 
 ```php
-deleteBusinessProcesses($tagId, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\TagModel
+deleteBusinessProcesses($tagId): \Stackflows\Clients\Stackflows\Model\TagModel
 ```
 
 Delete Business Process Tag
@@ -383,12 +363,10 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$tagId = omnis; // string | The ID of the tag.
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
+$tagId = 3; // int | The ID of the tag.
 
 try {
-    $result = $apiInstance->deleteBusinessProcesses($tagId, $contentType, $accept);
+    $result = $apiInstance->deleteBusinessProcesses($tagId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OperationsApi->deleteBusinessProcesses: ', $e->getMessage(), PHP_EOL;
@@ -399,9 +377,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tagId** | **string**| The ID of the tag. |
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
+ **tagId** | **int**| The ID of the tag. |
 
 ### Return type
 
@@ -423,7 +399,7 @@ No authorization required
 ## `deleteBusinessProcessesDeleteBulk()`
 
 ```php
-deleteBusinessProcessesDeleteBulk($contentType, $accept, $deleteBusinessProcessesDeleteBulkRequest): \Stackflows\Clients\Stackflows\Model\TagModel[]
+deleteBusinessProcessesDeleteBulk($deleteBusinessProcessesDeleteBulkRequest): \Stackflows\Clients\Stackflows\Model\TagModel[]
 ```
 
 Delete Business Process Tags
@@ -443,12 +419,10 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
 $deleteBusinessProcessesDeleteBulkRequest = new \Stackflows\Clients\Stackflows\Model\DeleteBusinessProcessesDeleteBulkRequest(); // \Stackflows\Clients\Stackflows\Model\DeleteBusinessProcessesDeleteBulkRequest
 
 try {
-    $result = $apiInstance->deleteBusinessProcessesDeleteBulk($contentType, $accept, $deleteBusinessProcessesDeleteBulkRequest);
+    $result = $apiInstance->deleteBusinessProcessesDeleteBulk($deleteBusinessProcessesDeleteBulkRequest);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OperationsApi->deleteBusinessProcessesDeleteBulk: ', $e->getMessage(), PHP_EOL;
@@ -459,8 +433,6 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
  **deleteBusinessProcessesDeleteBulkRequest** | [**\Stackflows\Clients\Stackflows\Model\DeleteBusinessProcessesDeleteBulkRequest**](../Model/DeleteBusinessProcessesDeleteBulkRequest.md)|  | [optional]
 
 ### Return type
@@ -483,7 +455,7 @@ No authorization required
 ## `deleteCategories()`
 
 ```php
-deleteCategories($categoryId, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\CategoryModel
+deleteCategories($categoryId): \Stackflows\Clients\Stackflows\Model\CategoryModel
 ```
 
 Delete Category
@@ -503,12 +475,10 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$categoryId = 5; // int | The ID of the category.
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
+$categoryId = 1; // int | The ID of the category.
 
 try {
-    $result = $apiInstance->deleteCategories($categoryId, $contentType, $accept);
+    $result = $apiInstance->deleteCategories($categoryId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OperationsApi->deleteCategories: ', $e->getMessage(), PHP_EOL;
@@ -520,8 +490,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **categoryId** | **int**| The ID of the category. |
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
 
 ### Return type
 
@@ -543,7 +511,7 @@ No authorization required
 ## `deleteTags()`
 
 ```php
-deleteTags($tagId, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\TagModel
+deleteTags($tagId): \Stackflows\Clients\Stackflows\Model\TagModel
 ```
 
 Delete Tag
@@ -563,12 +531,10 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$tagId = 10; // int | The ID of the tag.
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
+$tagId = 3; // int | The ID of the tag.
 
 try {
-    $result = $apiInstance->deleteTags($tagId, $contentType, $accept);
+    $result = $apiInstance->deleteTags($tagId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OperationsApi->deleteTags: ', $e->getMessage(), PHP_EOL;
@@ -580,8 +546,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tagId** | **int**| The ID of the tag. |
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
 
 ### Return type
 
@@ -603,7 +567,7 @@ No authorization required
 ## `deleteTasks()`
 
 ```php
-deleteTasks($taskId, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\TaskModel
+deleteTasks($taskId): \Stackflows\Clients\Stackflows\Model\TaskModel
 ```
 
 Delete Task
@@ -623,12 +587,10 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$taskId = et; // string | The ID of the task.
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
+$taskId = 4c854360-00e9-11ed-8a17-0910c50463b0; // string | The ID of the task.
 
 try {
-    $result = $apiInstance->deleteTasks($taskId, $contentType, $accept);
+    $result = $apiInstance->deleteTasks($taskId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OperationsApi->deleteTasks: ', $e->getMessage(), PHP_EOL;
@@ -640,8 +602,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **taskId** | **string**| The ID of the task. |
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
 
 ### Return type
 
@@ -663,7 +623,7 @@ No authorization required
 ## `getBusinessModelDiagramsCommentsList()`
 
 ```php
-getBusinessModelDiagramsCommentsList($diagramId, $include, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\CommentModel[]
+getBusinessModelDiagramsCommentsList($diagramId, $include): \Stackflows\Clients\Stackflows\Model\CommentModel[]
 ```
 
 List Business Model Diagram Comments
@@ -683,13 +643,11 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$diagramId = velit; // string | The ID of the diagram.
+$diagramId = 139b5820-048d-11ed-a920-d9cc122fb2b1; // string | The ID of the diagram.
 $include = commenter; // string | Specify a list of includes.
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
 
 try {
-    $result = $apiInstance->getBusinessModelDiagramsCommentsList($diagramId, $include, $contentType, $accept);
+    $result = $apiInstance->getBusinessModelDiagramsCommentsList($diagramId, $include);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OperationsApi->getBusinessModelDiagramsCommentsList: ', $e->getMessage(), PHP_EOL;
@@ -702,8 +660,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **diagramId** | **string**| The ID of the diagram. |
  **include** | **string**| Specify a list of includes. | [optional]
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
 
 ### Return type
 
@@ -725,7 +681,7 @@ No authorization required
 ## `getBusinessModelDiagramsList()`
 
 ```php
-getBusinessModelDiagramsList($contentType, $accept): \Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel[]
+getBusinessModelDiagramsList(): \Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel[]
 ```
 
 List Business Model Diagram
@@ -745,11 +701,9 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
 
 try {
-    $result = $apiInstance->getBusinessModelDiagramsList($contentType, $accept);
+    $result = $apiInstance->getBusinessModelDiagramsList();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OperationsApi->getBusinessModelDiagramsList: ', $e->getMessage(), PHP_EOL;
@@ -758,10 +712,7 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -783,7 +734,7 @@ No authorization required
 ## `getBusinessModelDiagramsShow()`
 
 ```php
-getBusinessModelDiagramsShow($diagramId, $includesnapshotsdeploysdeploysStatistics, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel
+getBusinessModelDiagramsShow($diagramId, $includesnapshotsdeploysdeploysStatistics): \Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel
 ```
 
 View Business Model Diagram
@@ -803,13 +754,11 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$diagramId = non; // string | The ID of the diagram.
-$includesnapshotsdeploysdeploysStatistics = quaerat; // string | Possible includes
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
+$diagramId = 139b5820-048d-11ed-a920-d9cc122fb2b1; // string | The ID of the diagram.
+$includesnapshotsdeploysdeploysStatistics = aut; // string | Possible includes
 
 try {
-    $result = $apiInstance->getBusinessModelDiagramsShow($diagramId, $includesnapshotsdeploysdeploysStatistics, $contentType, $accept);
+    $result = $apiInstance->getBusinessModelDiagramsShow($diagramId, $includesnapshotsdeploysdeploysStatistics);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OperationsApi->getBusinessModelDiagramsShow: ', $e->getMessage(), PHP_EOL;
@@ -822,8 +771,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **diagramId** | **string**| The ID of the diagram. |
  **includesnapshotsdeploysdeploysStatistics** | **string**| Possible includes | [optional]
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
 
 ### Return type
 
@@ -845,7 +792,7 @@ No authorization required
 ## `getBusinessModelExceptionsList()`
 
 ```php
-getBusinessModelExceptionsList($contentType, $accept): \Stackflows\Clients\Stackflows\Model\BusinessBaseModelExceptionModel[]
+getBusinessModelExceptionsList(): \Stackflows\Clients\Stackflows\Model\BusinessBaseModelExceptionModel[]
 ```
 
 List Business Model Exceptions
@@ -865,11 +812,9 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
 
 try {
-    $result = $apiInstance->getBusinessModelExceptionsList($contentType, $accept);
+    $result = $apiInstance->getBusinessModelExceptionsList();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OperationsApi->getBusinessModelExceptionsList: ', $e->getMessage(), PHP_EOL;
@@ -878,10 +823,7 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -903,7 +845,7 @@ No authorization required
 ## `getBusinessModelExceptionsShow()`
 
 ```php
-getBusinessModelExceptionsShow($exceptionId, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\BusinessBaseModelExceptionModel
+getBusinessModelExceptionsShow($exceptionId): \Stackflows\Clients\Stackflows\Model\BusinessBaseModelExceptionModel
 ```
 
 View Business Model Exception
@@ -923,12 +865,10 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$exceptionId = et; // string | The ID of the exception.
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
+$exceptionId = ipsa; // string | The ID of the exception.
 
 try {
-    $result = $apiInstance->getBusinessModelExceptionsShow($exceptionId, $contentType, $accept);
+    $result = $apiInstance->getBusinessModelExceptionsShow($exceptionId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OperationsApi->getBusinessModelExceptionsShow: ', $e->getMessage(), PHP_EOL;
@@ -940,8 +880,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **exceptionId** | **string**| The ID of the exception. |
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
 
 ### Return type
 
@@ -963,7 +901,7 @@ No authorization required
 ## `getBusinessModelPublicationsList()`
 
 ```php
-getBusinessModelPublicationsList($contentType, $accept): \Stackflows\Clients\Stackflows\Model\BusinessProcessModelPublicationModel[]
+getBusinessModelPublicationsList(): \Stackflows\Clients\Stackflows\Model\BusinessProcessModelPublicationModel[]
 ```
 
 List Business Model Publications
@@ -983,11 +921,9 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
 
 try {
-    $result = $apiInstance->getBusinessModelPublicationsList($contentType, $accept);
+    $result = $apiInstance->getBusinessModelPublicationsList();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OperationsApi->getBusinessModelPublicationsList: ', $e->getMessage(), PHP_EOL;
@@ -996,10 +932,7 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -1021,7 +954,7 @@ No authorization required
 ## `getBusinessModelPublicationsShow()`
 
 ```php
-getBusinessModelPublicationsShow($publicationId, $appendstatisticsoutliers, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\BusinessProcessModelPublicationModel
+getBusinessModelPublicationsShow($publicationId, $appendstatisticsoutliers): \Stackflows\Clients\Stackflows\Model\BusinessProcessModelPublicationModel
 ```
 
 View Business Model Publication
@@ -1041,13 +974,11 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$publicationId = officiis; // string | The ID of the publication.
-$appendstatisticsoutliers = deserunt; // string | Possible appends
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
+$publicationId = 04d74000-0489-11ed-b709-39eaa3b47ce0; // string | The ID of the publication.
+$appendstatisticsoutliers = cum; // string | Possible appends
 
 try {
-    $result = $apiInstance->getBusinessModelPublicationsShow($publicationId, $appendstatisticsoutliers, $contentType, $accept);
+    $result = $apiInstance->getBusinessModelPublicationsShow($publicationId, $appendstatisticsoutliers);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OperationsApi->getBusinessModelPublicationsShow: ', $e->getMessage(), PHP_EOL;
@@ -1060,8 +991,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **publicationId** | **string**| The ID of the publication. |
  **appendstatisticsoutliers** | **string**| Possible appends | [optional]
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
 
 ### Return type
 
@@ -1083,7 +1012,7 @@ No authorization required
 ## `getBusinessModelsCommentsList()`
 
 ```php
-getBusinessModelsCommentsList($modelId, $include, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\CommentModel[]
+getBusinessModelsCommentsList($modelId, $include): \Stackflows\Clients\Stackflows\Model\CommentModel[]
 ```
 
 List Business Model Comments
@@ -1103,13 +1032,11 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$modelId = porro; // string | The ID of the model.
+$modelId = 1244a4d0-03f6-11ed-8757-598213407c67; // string | The ID of the model.
 $include = commenter; // string | Specify a list of includes.
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
 
 try {
-    $result = $apiInstance->getBusinessModelsCommentsList($modelId, $include, $contentType, $accept);
+    $result = $apiInstance->getBusinessModelsCommentsList($modelId, $include);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OperationsApi->getBusinessModelsCommentsList: ', $e->getMessage(), PHP_EOL;
@@ -1122,8 +1049,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **modelId** | **string**| The ID of the model. |
  **include** | **string**| Specify a list of includes. | [optional]
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
 
 ### Return type
 
@@ -1145,7 +1070,7 @@ No authorization required
 ## `getBusinessModelsList()`
 
 ```php
-getBusinessModelsList($include, $filterWithAnyTags, $filterWithoutAnyTags, $filterAutocomplete, $filterSearch, $filterCategories, $filterType, $filterUncategorized, $filterSubscribable, $sort, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\BusinessBaseModelModel[]
+getBusinessModelsList($include, $filterWithAnyTags, $filterWithoutAnyTags, $filterAutocomplete, $filterSearch, $filterCategories, $filterType, $filterUncategorized, $filterSubscribable, $sort): \Stackflows\Clients\Stackflows\Model\BusinessBaseModelModel[]
 ```
 
 List Business Models
@@ -1171,15 +1096,13 @@ $filterWithoutAnyTags = true; // bool | Will return list of all models that has 
 $filterAutocomplete = tes; // string | Retrieve list that has \"tes\" at the start of their name.
 $filterSearch = tes; // string | Retrieve list that has \"tes\" in their name.
 $filterCategories = 1,2; // string | Filter by specific categories.
-$filterType = est; // string | Filter by specific type. Example process,decision
+$filterType = repellat; // string | Filter by specific type. Example process,decision
 $filterUncategorized = true; // bool | boolean List only uncategorized process models.
 $filterSubscribable = true; // bool | List only subscribable process models.
 $sort = name,-created_at,-updated_at; // string | Sorting by specified criteria.
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
 
 try {
-    $result = $apiInstance->getBusinessModelsList($include, $filterWithAnyTags, $filterWithoutAnyTags, $filterAutocomplete, $filterSearch, $filterCategories, $filterType, $filterUncategorized, $filterSubscribable, $sort, $contentType, $accept);
+    $result = $apiInstance->getBusinessModelsList($include, $filterWithAnyTags, $filterWithoutAnyTags, $filterAutocomplete, $filterSearch, $filterCategories, $filterType, $filterUncategorized, $filterSubscribable, $sort);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OperationsApi->getBusinessModelsList: ', $e->getMessage(), PHP_EOL;
@@ -1200,8 +1123,6 @@ Name | Type | Description  | Notes
  **filterUncategorized** | **bool**| boolean List only uncategorized process models. | [optional]
  **filterSubscribable** | **bool**| List only subscribable process models. | [optional]
  **sort** | **string**| Sorting by specified criteria. | [optional]
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
 
 ### Return type
 
@@ -1223,7 +1144,7 @@ No authorization required
 ## `getBusinessModelsShow()`
 
 ```php
-getBusinessModelsShow($modelId, $includeownercompanycategorytagscommentsCounttagsCountdiagrams, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\BusinessBaseModelModel
+getBusinessModelsShow($modelId, $includeownercompanycategorytagscommentsCounttagsCountdiagrams): \Stackflows\Clients\Stackflows\Model\BusinessBaseModelModel
 ```
 
 View Business Model
@@ -1243,13 +1164,11 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$modelId = rerum; // string | The ID of the model.
-$includeownercompanycategorytagscommentsCounttagsCountdiagrams = architecto; // string | Possible includes
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
+$modelId = 1244a4d0-03f6-11ed-8757-598213407c67; // string | The ID of the model.
+$includeownercompanycategorytagscommentsCounttagsCountdiagrams = sunt; // string | Possible includes
 
 try {
-    $result = $apiInstance->getBusinessModelsShow($modelId, $includeownercompanycategorytagscommentsCounttagsCountdiagrams, $contentType, $accept);
+    $result = $apiInstance->getBusinessModelsShow($modelId, $includeownercompanycategorytagscommentsCounttagsCountdiagrams);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OperationsApi->getBusinessModelsShow: ', $e->getMessage(), PHP_EOL;
@@ -1262,8 +1181,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **modelId** | **string**| The ID of the model. |
  **includeownercompanycategorytagscommentsCounttagsCountdiagrams** | **string**| Possible includes | [optional]
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
 
 ### Return type
 
@@ -1285,7 +1202,7 @@ No authorization required
 ## `getBusinessModelsShowRevision()`
 
 ```php
-getBusinessModelsShowRevision($modelId, $revision, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramModel
+getBusinessModelsShowRevision($modelId, $revision): \Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramModel
 ```
 
 View Business Model Diagram
@@ -1305,13 +1222,11 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$modelId = in; // string | The ID of the model.
-$revision = ad; // string | 
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
+$modelId = 1244a4d0-03f6-11ed-8757-598213407c67; // string | The ID of the model.
+$revision = aspernatur; // string | 
 
 try {
-    $result = $apiInstance->getBusinessModelsShowRevision($modelId, $revision, $contentType, $accept);
+    $result = $apiInstance->getBusinessModelsShowRevision($modelId, $revision);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OperationsApi->getBusinessModelsShowRevision: ', $e->getMessage(), PHP_EOL;
@@ -1324,8 +1239,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **modelId** | **string**| The ID of the model. |
  **revision** | **string**|  |
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
 
 ### Return type
 
@@ -1347,7 +1260,7 @@ No authorization required
 ## `getBusinessModelsShowRevisions()`
 
 ```php
-getBusinessModelsShowRevisions($modelId, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramModel[]
+getBusinessModelsShowRevisions($modelId): \Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramModel[]
 ```
 
 List Business Model Diagrams
@@ -1367,12 +1280,10 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$modelId = dolorum; // string | The ID of the model.
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
+$modelId = 1244a4d0-03f6-11ed-8757-598213407c67; // string | The ID of the model.
 
 try {
-    $result = $apiInstance->getBusinessModelsShowRevisions($modelId, $contentType, $accept);
+    $result = $apiInstance->getBusinessModelsShowRevisions($modelId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OperationsApi->getBusinessModelsShowRevisions: ', $e->getMessage(), PHP_EOL;
@@ -1384,8 +1295,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **modelId** | **string**| The ID of the model. |
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
 
 ### Return type
 
@@ -1407,7 +1316,7 @@ No authorization required
 ## `getBusinessProcessesList()`
 
 ```php
-getBusinessProcessesList($includeprocessModels, $includeprocessModelsCount, $filterAutocompletetes, $filterSearchtes, $sortnameCreatedAtUpdatedAt, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\TagModel[]
+getBusinessProcessesList($includeprocessModels, $includeprocessModelsCount, $filterAutocompletetes, $filterSearchtes, $sortnameCreatedAtUpdatedAt): \Stackflows\Clients\Stackflows\Model\TagModel[]
 ```
 
 List Business Process Tags
@@ -1427,16 +1336,14 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$includeprocessModels = laudantium; // string | Will add process models to the response
-$includeprocessModelsCount = 4; // int | Will add process models count to the response
-$filterAutocompletetes = porro; // string | Retrieve list that has \"tes\" at the start of their name
-$filterSearchtes = repellendus; // string | Retrieve list that has \"tes\" in their name
-$sortnameCreatedAtUpdatedAt = qui; // string | Sorting example
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
+$includeprocessModels = laborum; // string | Will add process models to the response
+$includeprocessModelsCount = 3; // int | Will add process models count to the response
+$filterAutocompletetes = est; // string | Retrieve list that has \"tes\" at the start of their name
+$filterSearchtes = ab; // string | Retrieve list that has \"tes\" in their name
+$sortnameCreatedAtUpdatedAt = dolorem; // string | Sorting example
 
 try {
-    $result = $apiInstance->getBusinessProcessesList($includeprocessModels, $includeprocessModelsCount, $filterAutocompletetes, $filterSearchtes, $sortnameCreatedAtUpdatedAt, $contentType, $accept);
+    $result = $apiInstance->getBusinessProcessesList($includeprocessModels, $includeprocessModelsCount, $filterAutocompletetes, $filterSearchtes, $sortnameCreatedAtUpdatedAt);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OperationsApi->getBusinessProcessesList: ', $e->getMessage(), PHP_EOL;
@@ -1452,8 +1359,6 @@ Name | Type | Description  | Notes
  **filterAutocompletetes** | **string**| Retrieve list that has \&quot;tes\&quot; at the start of their name | [optional]
  **filterSearchtes** | **string**| Retrieve list that has \&quot;tes\&quot; in their name | [optional]
  **sortnameCreatedAtUpdatedAt** | **string**| Sorting example | [optional]
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
 
 ### Return type
 
@@ -1475,7 +1380,7 @@ No authorization required
 ## `getBusinessProcessesShow()`
 
 ```php
-getBusinessProcessesShow($tagId, $includeprocessModels, $includeprocessModelsCount, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\TagModel
+getBusinessProcessesShow($tagId, $includeprocessModels, $includeprocessModelsCount): \Stackflows\Clients\Stackflows\Model\TagModel
 ```
 
 View Business Process Tag
@@ -1495,14 +1400,12 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$tagId = omnis; // string | The ID of the tag.
-$includeprocessModels = ut; // string | Will add process models to the response
-$includeprocessModelsCount = 4; // int | Will add process models count to the response
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
+$tagId = 3; // int | The ID of the tag.
+$includeprocessModels = magni; // string | Will add process models to the response
+$includeprocessModelsCount = 7; // int | Will add process models count to the response
 
 try {
-    $result = $apiInstance->getBusinessProcessesShow($tagId, $includeprocessModels, $includeprocessModelsCount, $contentType, $accept);
+    $result = $apiInstance->getBusinessProcessesShow($tagId, $includeprocessModels, $includeprocessModelsCount);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OperationsApi->getBusinessProcessesShow: ', $e->getMessage(), PHP_EOL;
@@ -1513,11 +1416,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tagId** | **string**| The ID of the tag. |
+ **tagId** | **int**| The ID of the tag. |
  **includeprocessModels** | **string**| Will add process models to the response | [optional]
  **includeprocessModelsCount** | **int**| Will add process models count to the response | [optional]
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
 
 ### Return type
 
@@ -1539,7 +1440,7 @@ No authorization required
 ## `getCategoriesList()`
 
 ```php
-getCategoriesList($filterRoot, $filterSiblings, $filterAutocomplete, $filterSearch, $fieldsBusinessProcessLatestDiagram, $include, $filterSearchBusinessModels, $sort, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\CategoryModel[]
+getCategoriesList($filterRoot, $filterSiblings, $filterAutocomplete, $filterSearch, $fieldsBusinessProcessLatestDiagram, $include, $filterSearchBusinessModels, $sort): \Stackflows\Clients\Stackflows\Model\CategoryModel[]
 ```
 
 List Categories
@@ -1567,11 +1468,9 @@ $fieldsBusinessProcessLatestDiagram = snapshot; // string | Include fields from 
 $include = children,business-models,business-models.comments-count,business-models.owner,business-models.latest-diagram; // string | Includes relations.
 $filterSearchBusinessModels = Some model; // string | Search categories that has models based on specified keyword.
 $sort = name,-created_at,-updated_at Sorting example; // string | Sort by specific field.
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
 
 try {
-    $result = $apiInstance->getCategoriesList($filterRoot, $filterSiblings, $filterAutocomplete, $filterSearch, $fieldsBusinessProcessLatestDiagram, $include, $filterSearchBusinessModels, $sort, $contentType, $accept);
+    $result = $apiInstance->getCategoriesList($filterRoot, $filterSiblings, $filterAutocomplete, $filterSearch, $fieldsBusinessProcessLatestDiagram, $include, $filterSearchBusinessModels, $sort);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OperationsApi->getCategoriesList: ', $e->getMessage(), PHP_EOL;
@@ -1590,8 +1489,6 @@ Name | Type | Description  | Notes
  **include** | **string**| Includes relations. | [optional]
  **filterSearchBusinessModels** | **string**| Search categories that has models based on specified keyword. | [optional]
  **sort** | **string**| Sort by specific field. | [optional]
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
 
 ### Return type
 
@@ -1613,7 +1510,7 @@ No authorization required
 ## `getCategoriesShow()`
 
 ```php
-getCategoriesShow($id, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\CategoryModel
+getCategoriesShow($id): \Stackflows\Clients\Stackflows\Model\CategoryModel
 ```
 
 View Category
@@ -1634,11 +1531,9 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     new GuzzleHttp\Client()
 );
 $id = 1; // int | The ID of the category.
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
 
 try {
-    $result = $apiInstance->getCategoriesShow($id, $contentType, $accept);
+    $result = $apiInstance->getCategoriesShow($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OperationsApi->getCategoriesShow: ', $e->getMessage(), PHP_EOL;
@@ -1650,8 +1545,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The ID of the category. |
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
 
 ### Return type
 
@@ -1673,7 +1566,7 @@ No authorization required
 ## `getTagsList()`
 
 ```php
-getTagsList($contentType, $accept): \Stackflows\Clients\Stackflows\Model\TagModel[]
+getTagsList(): \Stackflows\Clients\Stackflows\Model\TagModel[]
 ```
 
 List Tags
@@ -1693,11 +1586,9 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
 
 try {
-    $result = $apiInstance->getTagsList($contentType, $accept);
+    $result = $apiInstance->getTagsList();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OperationsApi->getTagsList: ', $e->getMessage(), PHP_EOL;
@@ -1706,10 +1597,7 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -1731,7 +1619,7 @@ No authorization required
 ## `getTagsShow()`
 
 ```php
-getTagsShow($id, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\TagModel
+getTagsShow($id): \Stackflows\Clients\Stackflows\Model\TagModel
 ```
 
 View Tag
@@ -1752,11 +1640,9 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     new GuzzleHttp\Client()
 );
 $id = 3; // int | The ID of the tag.
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
 
 try {
-    $result = $apiInstance->getTagsShow($id, $contentType, $accept);
+    $result = $apiInstance->getTagsShow($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OperationsApi->getTagsShow: ', $e->getMessage(), PHP_EOL;
@@ -1768,8 +1654,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The ID of the tag. |
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
 
 ### Return type
 
@@ -1791,7 +1675,7 @@ No authorization required
 ## `getTasksList()`
 
 ```php
-getTasksList($contentType, $accept): \Stackflows\Clients\Stackflows\Model\TaskModel[]
+getTasksList(): \Stackflows\Clients\Stackflows\Model\TaskModel[]
 ```
 
 List Tasks
@@ -1811,11 +1695,9 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
 
 try {
-    $result = $apiInstance->getTasksList($contentType, $accept);
+    $result = $apiInstance->getTasksList();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OperationsApi->getTasksList: ', $e->getMessage(), PHP_EOL;
@@ -1824,10 +1706,7 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -1849,7 +1728,7 @@ No authorization required
 ## `getTasksShow()`
 
 ```php
-getTasksShow($id, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\TaskModel
+getTasksShow($id): \Stackflows\Clients\Stackflows\Model\TaskModel
 ```
 
 View Task
@@ -1870,11 +1749,9 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     new GuzzleHttp\Client()
 );
 $id = 4c854360-00e9-11ed-8a17-0910c50463b0; // string | The ID of the task.
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
 
 try {
-    $result = $apiInstance->getTasksShow($id, $contentType, $accept);
+    $result = $apiInstance->getTasksShow($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OperationsApi->getTasksShow: ', $e->getMessage(), PHP_EOL;
@@ -1886,8 +1763,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| The ID of the task. |
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
 
 ### Return type
 
@@ -1909,7 +1784,7 @@ No authorization required
 ## `postBusinessModelDiagramsCommentsCreate()`
 
 ```php
-postBusinessModelDiagramsCommentsCreate($diagramId, $postBusinessModelDiagramsCommentsCreateRequest, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\CommentModel
+postBusinessModelDiagramsCommentsCreate($diagramId, $postBusinessModelDiagramsCommentsCreateRequest): \Stackflows\Clients\Stackflows\Model\CommentModel
 ```
 
 Create Business Model Diagram Comment
@@ -1929,13 +1804,11 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$diagramId = velit; // string | The ID of the diagram.
+$diagramId = 139b5820-048d-11ed-a920-d9cc122fb2b1; // string | The ID of the diagram.
 $postBusinessModelDiagramsCommentsCreateRequest = new \Stackflows\Clients\Stackflows\Model\PostBusinessModelDiagramsCommentsCreateRequest(); // \Stackflows\Clients\Stackflows\Model\PostBusinessModelDiagramsCommentsCreateRequest
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
 
 try {
-    $result = $apiInstance->postBusinessModelDiagramsCommentsCreate($diagramId, $postBusinessModelDiagramsCommentsCreateRequest, $contentType, $accept);
+    $result = $apiInstance->postBusinessModelDiagramsCommentsCreate($diagramId, $postBusinessModelDiagramsCommentsCreateRequest);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OperationsApi->postBusinessModelDiagramsCommentsCreate: ', $e->getMessage(), PHP_EOL;
@@ -1948,8 +1821,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **diagramId** | **string**| The ID of the diagram. |
  **postBusinessModelDiagramsCommentsCreateRequest** | [**\Stackflows\Clients\Stackflows\Model\PostBusinessModelDiagramsCommentsCreateRequest**](../Model/PostBusinessModelDiagramsCommentsCreateRequest.md)|  |
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
 
 ### Return type
 
@@ -1971,7 +1842,7 @@ No authorization required
 ## `postBusinessModelDiagramsCreate()`
 
 ```php
-postBusinessModelDiagramsCreate($xml, $businessModelId, $contentType, $accept, $snapshot): \Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel
+postBusinessModelDiagramsCreate($xml, $businessModelId, $snapshot): \Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel
 ```
 
 Create Business Model Diagram
@@ -1993,12 +1864,10 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
 );
 $xml = 'xml_example'; // string | 
 $businessModelId = 'businessModelId_example'; // string | 
-$contentType = multipart/form-data; // string | 
-$accept = application/json; // string | 
 $snapshot = "/path/to/file.txt"; // \SplFileObject | of the process diagram
 
 try {
-    $result = $apiInstance->postBusinessModelDiagramsCreate($xml, $businessModelId, $contentType, $accept, $snapshot);
+    $result = $apiInstance->postBusinessModelDiagramsCreate($xml, $businessModelId, $snapshot);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OperationsApi->postBusinessModelDiagramsCreate: ', $e->getMessage(), PHP_EOL;
@@ -2011,8 +1880,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xml** | **string**|  |
  **businessModelId** | **string**|  |
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
  **snapshot** | **\SplFileObject****\SplFileObject**| of the process diagram | [optional]
 
 ### Return type
@@ -2035,7 +1902,7 @@ No authorization required
 ## `postBusinessModelDiagramsPublish()`
 
 ```php
-postBusinessModelDiagramsPublish($diagramId, $contentType, $accept, $postEnvironmentBusinessModelDiagramsPublishRequest): \Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel
+postBusinessModelDiagramsPublish($diagramId, $postEnvironmentBusinessModelDiagramsPublishRequest): \Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel
 ```
 
 Publish Business Model Diagram
@@ -2055,13 +1922,11 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$diagramId = vero; // string | The ID of the diagram.
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
+$diagramId = 139b5820-048d-11ed-a920-d9cc122fb2b1; // string | The ID of the diagram.
 $postEnvironmentBusinessModelDiagramsPublishRequest = new \Stackflows\Clients\Stackflows\Model\PostEnvironmentBusinessModelDiagramsPublishRequest(); // \Stackflows\Clients\Stackflows\Model\PostEnvironmentBusinessModelDiagramsPublishRequest
 
 try {
-    $result = $apiInstance->postBusinessModelDiagramsPublish($diagramId, $contentType, $accept, $postEnvironmentBusinessModelDiagramsPublishRequest);
+    $result = $apiInstance->postBusinessModelDiagramsPublish($diagramId, $postEnvironmentBusinessModelDiagramsPublishRequest);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OperationsApi->postBusinessModelDiagramsPublish: ', $e->getMessage(), PHP_EOL;
@@ -2073,8 +1938,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **diagramId** | **string**| The ID of the diagram. |
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
  **postEnvironmentBusinessModelDiagramsPublishRequest** | [**\Stackflows\Clients\Stackflows\Model\PostEnvironmentBusinessModelDiagramsPublishRequest**](../Model/PostEnvironmentBusinessModelDiagramsPublishRequest.md)|  | [optional]
 
 ### Return type
@@ -2097,7 +1960,7 @@ No authorization required
 ## `postBusinessModelExceptionsCreate()`
 
 ```php
-postBusinessModelExceptionsCreate($postBusinessModelExceptionsCreateRequest, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\BusinessBaseModelExceptionModel
+postBusinessModelExceptionsCreate($postBusinessModelExceptionsCreateRequest): \Stackflows\Clients\Stackflows\Model\BusinessBaseModelExceptionModel
 ```
 
 Create Business Model Exception
@@ -2118,11 +1981,9 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     new GuzzleHttp\Client()
 );
 $postBusinessModelExceptionsCreateRequest = new \Stackflows\Clients\Stackflows\Model\PostBusinessModelExceptionsCreateRequest(); // \Stackflows\Clients\Stackflows\Model\PostBusinessModelExceptionsCreateRequest
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
 
 try {
-    $result = $apiInstance->postBusinessModelExceptionsCreate($postBusinessModelExceptionsCreateRequest, $contentType, $accept);
+    $result = $apiInstance->postBusinessModelExceptionsCreate($postBusinessModelExceptionsCreateRequest);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OperationsApi->postBusinessModelExceptionsCreate: ', $e->getMessage(), PHP_EOL;
@@ -2134,8 +1995,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **postBusinessModelExceptionsCreateRequest** | [**\Stackflows\Clients\Stackflows\Model\PostBusinessModelExceptionsCreateRequest**](../Model/PostBusinessModelExceptionsCreateRequest.md)|  |
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
 
 ### Return type
 
@@ -2157,7 +2016,7 @@ No authorization required
 ## `postBusinessModelsCreate()`
 
 ```php
-postBusinessModelsCreate($postBusinessModelsCreateRequest, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\BusinessBaseModelModel
+postBusinessModelsCreate($postBusinessModelsCreateRequest): \Stackflows\Clients\Stackflows\Model\BusinessBaseModelModel
 ```
 
 Create Business Model
@@ -2178,11 +2037,9 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     new GuzzleHttp\Client()
 );
 $postBusinessModelsCreateRequest = new \Stackflows\Clients\Stackflows\Model\PostBusinessModelsCreateRequest(); // \Stackflows\Clients\Stackflows\Model\PostBusinessModelsCreateRequest
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
 
 try {
-    $result = $apiInstance->postBusinessModelsCreate($postBusinessModelsCreateRequest, $contentType, $accept);
+    $result = $apiInstance->postBusinessModelsCreate($postBusinessModelsCreateRequest);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OperationsApi->postBusinessModelsCreate: ', $e->getMessage(), PHP_EOL;
@@ -2194,8 +2051,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **postBusinessModelsCreateRequest** | [**\Stackflows\Clients\Stackflows\Model\PostBusinessModelsCreateRequest**](../Model/PostBusinessModelsCreateRequest.md)|  |
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
 
 ### Return type
 
@@ -2217,7 +2072,7 @@ No authorization required
 ## `postBusinessModelsPostRevision()`
 
 ```php
-postBusinessModelsPostRevision($modelId, $xml, $contentType, $accept, $snapshot): \Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramModel
+postBusinessModelsPostRevision($modelId, $xml, $snapshot): \Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramModel
 ```
 
 Submit Business Model Diagram
@@ -2237,14 +2092,12 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$modelId = dolorum; // string | The ID of the model.
+$modelId = 1244a4d0-03f6-11ed-8757-598213407c67; // string | The ID of the model.
 $xml = 'xml_example'; // string | An xml of a diagram.
-$contentType = multipart/form-data; // string | 
-$accept = application/json; // string | 
 $snapshot = "/path/to/file.txt"; // \SplFileObject | A snapshot image of a diagram
 
 try {
-    $result = $apiInstance->postBusinessModelsPostRevision($modelId, $xml, $contentType, $accept, $snapshot);
+    $result = $apiInstance->postBusinessModelsPostRevision($modelId, $xml, $snapshot);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OperationsApi->postBusinessModelsPostRevision: ', $e->getMessage(), PHP_EOL;
@@ -2257,8 +2110,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **modelId** | **string**| The ID of the model. |
  **xml** | **string**| An xml of a diagram. |
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
  **snapshot** | **\SplFileObject****\SplFileObject**| A snapshot image of a diagram | [optional]
 
 ### Return type
@@ -2281,7 +2132,7 @@ No authorization required
 ## `postBusinessModelsTag()`
 
 ```php
-postBusinessModelsTag($taggableId, $contentType, $accept, $postBusinessModelsTagRequest): \Stackflows\Clients\Stackflows\Model\TagModel
+postBusinessModelsTag($taggableId, $postBusinessModelsTagRequest): \Stackflows\Clients\Stackflows\Model\TagModel
 ```
 
 Tag Business Model
@@ -2301,13 +2152,11 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$taggableId = accusantium; // string | The ID of the taggable.
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
+$taggableId = 1244a4d0-03f6-11ed-8757-598213407c67; // string | The ID of the taggable.
 $postBusinessModelsTagRequest = new \Stackflows\Clients\Stackflows\Model\PostBusinessModelsTagRequest(); // \Stackflows\Clients\Stackflows\Model\PostBusinessModelsTagRequest
 
 try {
-    $result = $apiInstance->postBusinessModelsTag($taggableId, $contentType, $accept, $postBusinessModelsTagRequest);
+    $result = $apiInstance->postBusinessModelsTag($taggableId, $postBusinessModelsTagRequest);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OperationsApi->postBusinessModelsTag: ', $e->getMessage(), PHP_EOL;
@@ -2319,8 +2168,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **taggableId** | **string**| The ID of the taggable. |
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
  **postBusinessModelsTagRequest** | [**\Stackflows\Clients\Stackflows\Model\PostBusinessModelsTagRequest**](../Model/PostBusinessModelsTagRequest.md)|  | [optional]
 
 ### Return type
@@ -2343,7 +2190,7 @@ No authorization required
 ## `postBusinessProcessesCreate()`
 
 ```php
-postBusinessProcessesCreate($contentType, $accept, $postBusinessProcessesCreateRequest): \Stackflows\Clients\Stackflows\Model\TagModel
+postBusinessProcessesCreate($postBusinessProcessesCreateRequest): \Stackflows\Clients\Stackflows\Model\TagModel
 ```
 
 Create Business Process Tag
@@ -2363,12 +2210,10 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
 $postBusinessProcessesCreateRequest = new \Stackflows\Clients\Stackflows\Model\PostBusinessProcessesCreateRequest(); // \Stackflows\Clients\Stackflows\Model\PostBusinessProcessesCreateRequest
 
 try {
-    $result = $apiInstance->postBusinessProcessesCreate($contentType, $accept, $postBusinessProcessesCreateRequest);
+    $result = $apiInstance->postBusinessProcessesCreate($postBusinessProcessesCreateRequest);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OperationsApi->postBusinessProcessesCreate: ', $e->getMessage(), PHP_EOL;
@@ -2379,8 +2224,6 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
  **postBusinessProcessesCreateRequest** | [**\Stackflows\Clients\Stackflows\Model\PostBusinessProcessesCreateRequest**](../Model/PostBusinessProcessesCreateRequest.md)|  | [optional]
 
 ### Return type
@@ -2403,7 +2246,7 @@ No authorization required
 ## `postCategoriesCreate()`
 
 ```php
-postCategoriesCreate($postCategoriesCreateRequest, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\CategoryModel
+postCategoriesCreate($postCategoriesCreateRequest): \Stackflows\Clients\Stackflows\Model\CategoryModel
 ```
 
 Create Category
@@ -2424,11 +2267,9 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     new GuzzleHttp\Client()
 );
 $postCategoriesCreateRequest = new \Stackflows\Clients\Stackflows\Model\PostCategoriesCreateRequest(); // \Stackflows\Clients\Stackflows\Model\PostCategoriesCreateRequest
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
 
 try {
-    $result = $apiInstance->postCategoriesCreate($postCategoriesCreateRequest, $contentType, $accept);
+    $result = $apiInstance->postCategoriesCreate($postCategoriesCreateRequest);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OperationsApi->postCategoriesCreate: ', $e->getMessage(), PHP_EOL;
@@ -2440,8 +2281,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **postCategoriesCreateRequest** | [**\Stackflows\Clients\Stackflows\Model\PostCategoriesCreateRequest**](../Model/PostCategoriesCreateRequest.md)|  |
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
 
 ### Return type
 
@@ -2463,7 +2302,7 @@ No authorization required
 ## `postTagsCreate()`
 
 ```php
-postTagsCreate($postTagsCreateRequest, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\TagModel
+postTagsCreate($postTagsCreateRequest): \Stackflows\Clients\Stackflows\Model\TagModel
 ```
 
 Create Tag
@@ -2484,11 +2323,9 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     new GuzzleHttp\Client()
 );
 $postTagsCreateRequest = new \Stackflows\Clients\Stackflows\Model\PostTagsCreateRequest(); // \Stackflows\Clients\Stackflows\Model\PostTagsCreateRequest
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
 
 try {
-    $result = $apiInstance->postTagsCreate($postTagsCreateRequest, $contentType, $accept);
+    $result = $apiInstance->postTagsCreate($postTagsCreateRequest);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OperationsApi->postTagsCreate: ', $e->getMessage(), PHP_EOL;
@@ -2500,8 +2337,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **postTagsCreateRequest** | [**\Stackflows\Clients\Stackflows\Model\PostTagsCreateRequest**](../Model/PostTagsCreateRequest.md)|  |
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
 
 ### Return type
 
@@ -2523,7 +2358,7 @@ No authorization required
 ## `postTasksCreate()`
 
 ```php
-postTasksCreate($postTasksCreateRequest, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\TaskModel
+postTasksCreate($postTasksCreateRequest): \Stackflows\Clients\Stackflows\Model\TaskModel
 ```
 
 Create Task
@@ -2544,11 +2379,9 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     new GuzzleHttp\Client()
 );
 $postTasksCreateRequest = new \Stackflows\Clients\Stackflows\Model\PostTasksCreateRequest(); // \Stackflows\Clients\Stackflows\Model\PostTasksCreateRequest
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
 
 try {
-    $result = $apiInstance->postTasksCreate($postTasksCreateRequest, $contentType, $accept);
+    $result = $apiInstance->postTasksCreate($postTasksCreateRequest);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OperationsApi->postTasksCreate: ', $e->getMessage(), PHP_EOL;
@@ -2560,8 +2393,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **postTasksCreateRequest** | [**\Stackflows\Clients\Stackflows\Model\PostTasksCreateRequest**](../Model/PostTasksCreateRequest.md)|  |
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
 
 ### Return type
 
@@ -2583,7 +2414,7 @@ No authorization required
 ## `putBusinessModelDiagramsUpdate()`
 
 ```php
-putBusinessModelDiagramsUpdate($diagramId, $xml, $contentType, $accept, $snapshot): \Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel
+putBusinessModelDiagramsUpdate($diagramId, $xml, $snapshot): \Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel
 ```
 
 Update Business Model Diagram
@@ -2603,14 +2434,12 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$diagramId = non; // string | The ID of the diagram.
+$diagramId = 139b5820-048d-11ed-a920-d9cc122fb2b1; // string | The ID of the diagram.
 $xml = 'xml_example'; // string | 
-$contentType = multipart/form-data; // string | 
-$accept = application/json; // string | 
 $snapshot = "/path/to/file.txt"; // \SplFileObject | Snapshot of the process diagram
 
 try {
-    $result = $apiInstance->putBusinessModelDiagramsUpdate($diagramId, $xml, $contentType, $accept, $snapshot);
+    $result = $apiInstance->putBusinessModelDiagramsUpdate($diagramId, $xml, $snapshot);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OperationsApi->putBusinessModelDiagramsUpdate: ', $e->getMessage(), PHP_EOL;
@@ -2623,8 +2452,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **diagramId** | **string**| The ID of the diagram. |
  **xml** | **string**|  |
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
  **snapshot** | **\SplFileObject****\SplFileObject**| Snapshot of the process diagram | [optional]
 
 ### Return type
@@ -2647,7 +2474,7 @@ No authorization required
 ## `putBusinessModelExceptionsUpdate()`
 
 ```php
-putBusinessModelExceptionsUpdate($exceptionId, $putBusinessModelExceptionsUpdateRequest, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\BusinessBaseModelExceptionModel
+putBusinessModelExceptionsUpdate($exceptionId, $putBusinessModelExceptionsUpdateRequest): \Stackflows\Clients\Stackflows\Model\BusinessBaseModelExceptionModel
 ```
 
 Update Business Model Exception
@@ -2667,13 +2494,11 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$exceptionId = et; // string | The ID of the exception.
+$exceptionId = ipsa; // string | The ID of the exception.
 $putBusinessModelExceptionsUpdateRequest = new \Stackflows\Clients\Stackflows\Model\PutBusinessModelExceptionsUpdateRequest(); // \Stackflows\Clients\Stackflows\Model\PutBusinessModelExceptionsUpdateRequest
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
 
 try {
-    $result = $apiInstance->putBusinessModelExceptionsUpdate($exceptionId, $putBusinessModelExceptionsUpdateRequest, $contentType, $accept);
+    $result = $apiInstance->putBusinessModelExceptionsUpdate($exceptionId, $putBusinessModelExceptionsUpdateRequest);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OperationsApi->putBusinessModelExceptionsUpdate: ', $e->getMessage(), PHP_EOL;
@@ -2686,8 +2511,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **exceptionId** | **string**| The ID of the exception. |
  **putBusinessModelExceptionsUpdateRequest** | [**\Stackflows\Clients\Stackflows\Model\PutBusinessModelExceptionsUpdateRequest**](../Model/PutBusinessModelExceptionsUpdateRequest.md)|  |
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
 
 ### Return type
 
@@ -2709,7 +2532,7 @@ No authorization required
 ## `putBusinessModelsUpdate()`
 
 ```php
-putBusinessModelsUpdate($modelId, $contentType, $accept, $putBusinessModelsUpdateRequest): \Stackflows\Clients\Stackflows\Model\BusinessBaseModelModel
+putBusinessModelsUpdate($modelId, $putBusinessModelsUpdateRequest): \Stackflows\Clients\Stackflows\Model\BusinessBaseModelModel
 ```
 
 Update Business Model
@@ -2729,13 +2552,11 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$modelId = rerum; // string | The ID of the model.
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
+$modelId = 1244a4d0-03f6-11ed-8757-598213407c67; // string | The ID of the model.
 $putBusinessModelsUpdateRequest = new \Stackflows\Clients\Stackflows\Model\PutBusinessModelsUpdateRequest(); // \Stackflows\Clients\Stackflows\Model\PutBusinessModelsUpdateRequest
 
 try {
-    $result = $apiInstance->putBusinessModelsUpdate($modelId, $contentType, $accept, $putBusinessModelsUpdateRequest);
+    $result = $apiInstance->putBusinessModelsUpdate($modelId, $putBusinessModelsUpdateRequest);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OperationsApi->putBusinessModelsUpdate: ', $e->getMessage(), PHP_EOL;
@@ -2747,8 +2568,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **modelId** | **string**| The ID of the model. |
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
  **putBusinessModelsUpdateRequest** | [**\Stackflows\Clients\Stackflows\Model\PutBusinessModelsUpdateRequest**](../Model/PutBusinessModelsUpdateRequest.md)|  | [optional]
 
 ### Return type
@@ -2771,7 +2590,7 @@ No authorization required
 ## `putBusinessProcessesUpdate()`
 
 ```php
-putBusinessProcessesUpdate($tagId, $contentType, $accept, $putBusinessProcessesUpdateRequest): \Stackflows\Clients\Stackflows\Model\TagModel
+putBusinessProcessesUpdate($tagId, $putBusinessProcessesUpdateRequest): \Stackflows\Clients\Stackflows\Model\TagModel
 ```
 
 Update Business Process Tag
@@ -2791,13 +2610,11 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$tagId = omnis; // string | The ID of the tag.
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
+$tagId = 3; // int | The ID of the tag.
 $putBusinessProcessesUpdateRequest = new \Stackflows\Clients\Stackflows\Model\PutBusinessProcessesUpdateRequest(); // \Stackflows\Clients\Stackflows\Model\PutBusinessProcessesUpdateRequest
 
 try {
-    $result = $apiInstance->putBusinessProcessesUpdate($tagId, $contentType, $accept, $putBusinessProcessesUpdateRequest);
+    $result = $apiInstance->putBusinessProcessesUpdate($tagId, $putBusinessProcessesUpdateRequest);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OperationsApi->putBusinessProcessesUpdate: ', $e->getMessage(), PHP_EOL;
@@ -2808,9 +2625,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tagId** | **string**| The ID of the tag. |
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
+ **tagId** | **int**| The ID of the tag. |
  **putBusinessProcessesUpdateRequest** | [**\Stackflows\Clients\Stackflows\Model\PutBusinessProcessesUpdateRequest**](../Model/PutBusinessProcessesUpdateRequest.md)|  | [optional]
 
 ### Return type
@@ -2833,7 +2648,7 @@ No authorization required
 ## `putCategoriesUpdate()`
 
 ```php
-putCategoriesUpdate($id, $contentType, $accept, $putCategoriesUpdateRequest): \Stackflows\Clients\Stackflows\Model\CategoryModel
+putCategoriesUpdate($id, $putCategoriesUpdateRequest): \Stackflows\Clients\Stackflows\Model\CategoryModel
 ```
 
 Update Category
@@ -2854,12 +2669,10 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     new GuzzleHttp\Client()
 );
 $id = 1; // int | The ID of the category.
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
 $putCategoriesUpdateRequest = new \Stackflows\Clients\Stackflows\Model\PutCategoriesUpdateRequest(); // \Stackflows\Clients\Stackflows\Model\PutCategoriesUpdateRequest
 
 try {
-    $result = $apiInstance->putCategoriesUpdate($id, $contentType, $accept, $putCategoriesUpdateRequest);
+    $result = $apiInstance->putCategoriesUpdate($id, $putCategoriesUpdateRequest);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OperationsApi->putCategoriesUpdate: ', $e->getMessage(), PHP_EOL;
@@ -2871,8 +2684,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The ID of the category. |
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
  **putCategoriesUpdateRequest** | [**\Stackflows\Clients\Stackflows\Model\PutCategoriesUpdateRequest**](../Model/PutCategoriesUpdateRequest.md)|  | [optional]
 
 ### Return type
@@ -2895,7 +2706,7 @@ No authorization required
 ## `putTagsUpdate()`
 
 ```php
-putTagsUpdate($id, $putTagsUpdateRequest, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\TagModel
+putTagsUpdate($id, $putTagsUpdateRequest): \Stackflows\Clients\Stackflows\Model\TagModel
 ```
 
 Update Tag
@@ -2917,11 +2728,9 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
 );
 $id = 3; // int | The ID of the tag.
 $putTagsUpdateRequest = new \Stackflows\Clients\Stackflows\Model\PutTagsUpdateRequest(); // \Stackflows\Clients\Stackflows\Model\PutTagsUpdateRequest
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
 
 try {
-    $result = $apiInstance->putTagsUpdate($id, $putTagsUpdateRequest, $contentType, $accept);
+    $result = $apiInstance->putTagsUpdate($id, $putTagsUpdateRequest);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OperationsApi->putTagsUpdate: ', $e->getMessage(), PHP_EOL;
@@ -2934,8 +2743,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The ID of the tag. |
  **putTagsUpdateRequest** | [**\Stackflows\Clients\Stackflows\Model\PutTagsUpdateRequest**](../Model/PutTagsUpdateRequest.md)|  |
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
 
 ### Return type
 
@@ -2957,7 +2764,7 @@ No authorization required
 ## `putTasksUpdate()`
 
 ```php
-putTasksUpdate($id, $contentType, $accept, $putTasksUpdateRequest): \Stackflows\Clients\Stackflows\Model\TaskModel
+putTasksUpdate($id, $putTasksUpdateRequest): \Stackflows\Clients\Stackflows\Model\TaskModel
 ```
 
 Update Task
@@ -2978,12 +2785,10 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     new GuzzleHttp\Client()
 );
 $id = 4c854360-00e9-11ed-8a17-0910c50463b0; // string | The ID of the task.
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
 $putTasksUpdateRequest = new \Stackflows\Clients\Stackflows\Model\PutTasksUpdateRequest(); // \Stackflows\Clients\Stackflows\Model\PutTasksUpdateRequest
 
 try {
-    $result = $apiInstance->putTasksUpdate($id, $contentType, $accept, $putTasksUpdateRequest);
+    $result = $apiInstance->putTasksUpdate($id, $putTasksUpdateRequest);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OperationsApi->putTasksUpdate: ', $e->getMessage(), PHP_EOL;
@@ -2995,8 +2800,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| The ID of the task. |
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
  **putTasksUpdateRequest** | [**\Stackflows\Clients\Stackflows\Model\PutTasksUpdateRequest**](../Model/PutTasksUpdateRequest.md)|  | [optional]
 
 ### Return type

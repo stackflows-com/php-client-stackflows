@@ -121,16 +121,14 @@ class OrganizationApi
      * Delete Organzation Unit
      *
      * @param  string $organizationUnitId The ID of the organizationUnit. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\OrganizationUnitModel
      */
-    public function deleteOrganizationUnits($organizationUnitId, $contentType = null, $accept = null)
+    public function deleteOrganizationUnits($organizationUnitId)
     {
-        list($response) = $this->deleteOrganizationUnitsWithHttpInfo($organizationUnitId, $contentType, $accept);
+        list($response) = $this->deleteOrganizationUnitsWithHttpInfo($organizationUnitId);
         return $response;
     }
 
@@ -140,16 +138,14 @@ class OrganizationApi
      * Delete Organzation Unit
      *
      * @param  string $organizationUnitId The ID of the organizationUnit. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\OrganizationUnitModel, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteOrganizationUnitsWithHttpInfo($organizationUnitId, $contentType = null, $accept = null)
+    public function deleteOrganizationUnitsWithHttpInfo($organizationUnitId)
     {
-        $request = $this->deleteOrganizationUnitsRequest($organizationUnitId, $contentType, $accept);
+        $request = $this->deleteOrganizationUnitsRequest($organizationUnitId);
 
         try {
             $options = $this->createHttpClientOption();
@@ -241,15 +237,13 @@ class OrganizationApi
      * Delete Organzation Unit
      *
      * @param  string $organizationUnitId The ID of the organizationUnit. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteOrganizationUnitsAsync($organizationUnitId, $contentType = null, $accept = null)
+    public function deleteOrganizationUnitsAsync($organizationUnitId)
     {
-        return $this->deleteOrganizationUnitsAsyncWithHttpInfo($organizationUnitId, $contentType, $accept)
+        return $this->deleteOrganizationUnitsAsyncWithHttpInfo($organizationUnitId)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -263,16 +257,14 @@ class OrganizationApi
      * Delete Organzation Unit
      *
      * @param  string $organizationUnitId The ID of the organizationUnit. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteOrganizationUnitsAsyncWithHttpInfo($organizationUnitId, $contentType = null, $accept = null)
+    public function deleteOrganizationUnitsAsyncWithHttpInfo($organizationUnitId)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel';
-        $request = $this->deleteOrganizationUnitsRequest($organizationUnitId, $contentType, $accept);
+        $request = $this->deleteOrganizationUnitsRequest($organizationUnitId);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -314,13 +306,11 @@ class OrganizationApi
      * Create request for operation 'deleteOrganizationUnits'
      *
      * @param  string $organizationUnitId The ID of the organizationUnit. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deleteOrganizationUnitsRequest($organizationUnitId, $contentType = null, $accept = null)
+    public function deleteOrganizationUnitsRequest($organizationUnitId)
     {
         // verify the required parameter 'organizationUnitId' is set
         if ($organizationUnitId === null || (is_array($organizationUnitId) && count($organizationUnitId) === 0)) {
@@ -337,14 +327,6 @@ class OrganizationApi
         $multipart = false;
 
 
-        // header params
-        if ($contentType !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
-        }
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
         // path params
         if ($organizationUnitId !== null) {
@@ -420,16 +402,14 @@ class OrganizationApi
      *
      * @param  string $filterRoot1 Retrieve only root nodes (optional)
      * @param  string $includechildren Load children (optional)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\OrganizationUnitModel[]
      */
-    public function getOrganizationUnitsList($filterRoot1 = null, $includechildren = null, $contentType = null, $accept = null)
+    public function getOrganizationUnitsList($filterRoot1 = null, $includechildren = null)
     {
-        list($response) = $this->getOrganizationUnitsListWithHttpInfo($filterRoot1, $includechildren, $contentType, $accept);
+        list($response) = $this->getOrganizationUnitsListWithHttpInfo($filterRoot1, $includechildren);
         return $response;
     }
 
@@ -440,16 +420,14 @@ class OrganizationApi
      *
      * @param  string $filterRoot1 Retrieve only root nodes (optional)
      * @param  string $includechildren Load children (optional)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\OrganizationUnitModel[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getOrganizationUnitsListWithHttpInfo($filterRoot1 = null, $includechildren = null, $contentType = null, $accept = null)
+    public function getOrganizationUnitsListWithHttpInfo($filterRoot1 = null, $includechildren = null)
     {
-        $request = $this->getOrganizationUnitsListRequest($filterRoot1, $includechildren, $contentType, $accept);
+        $request = $this->getOrganizationUnitsListRequest($filterRoot1, $includechildren);
 
         try {
             $options = $this->createHttpClientOption();
@@ -542,15 +520,13 @@ class OrganizationApi
      *
      * @param  string $filterRoot1 Retrieve only root nodes (optional)
      * @param  string $includechildren Load children (optional)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getOrganizationUnitsListAsync($filterRoot1 = null, $includechildren = null, $contentType = null, $accept = null)
+    public function getOrganizationUnitsListAsync($filterRoot1 = null, $includechildren = null)
     {
-        return $this->getOrganizationUnitsListAsyncWithHttpInfo($filterRoot1, $includechildren, $contentType, $accept)
+        return $this->getOrganizationUnitsListAsyncWithHttpInfo($filterRoot1, $includechildren)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -565,16 +541,14 @@ class OrganizationApi
      *
      * @param  string $filterRoot1 Retrieve only root nodes (optional)
      * @param  string $includechildren Load children (optional)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getOrganizationUnitsListAsyncWithHttpInfo($filterRoot1 = null, $includechildren = null, $contentType = null, $accept = null)
+    public function getOrganizationUnitsListAsyncWithHttpInfo($filterRoot1 = null, $includechildren = null)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel[]';
-        $request = $this->getOrganizationUnitsListRequest($filterRoot1, $includechildren, $contentType, $accept);
+        $request = $this->getOrganizationUnitsListRequest($filterRoot1, $includechildren);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -617,13 +591,11 @@ class OrganizationApi
      *
      * @param  string $filterRoot1 Retrieve only root nodes (optional)
      * @param  string $includechildren Load children (optional)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getOrganizationUnitsListRequest($filterRoot1 = null, $includechildren = null, $contentType = null, $accept = null)
+    public function getOrganizationUnitsListRequest($filterRoot1 = null, $includechildren = null)
     {
 
         $resourcePath = '/api/v2/organization-units';
@@ -652,14 +624,6 @@ class OrganizationApi
             false // required
         ) ?? []);
 
-        // header params
-        if ($contentType !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
-        }
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
 
 
@@ -726,16 +690,14 @@ class OrganizationApi
      * View Organzation Unit
      *
      * @param  string $organizationUnitId The ID of the organizationUnit. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\OrganizationUnitModel
      */
-    public function getOrganizationUnitsShow($organizationUnitId, $contentType = null, $accept = null)
+    public function getOrganizationUnitsShow($organizationUnitId)
     {
-        list($response) = $this->getOrganizationUnitsShowWithHttpInfo($organizationUnitId, $contentType, $accept);
+        list($response) = $this->getOrganizationUnitsShowWithHttpInfo($organizationUnitId);
         return $response;
     }
 
@@ -745,16 +707,14 @@ class OrganizationApi
      * View Organzation Unit
      *
      * @param  string $organizationUnitId The ID of the organizationUnit. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\OrganizationUnitModel, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getOrganizationUnitsShowWithHttpInfo($organizationUnitId, $contentType = null, $accept = null)
+    public function getOrganizationUnitsShowWithHttpInfo($organizationUnitId)
     {
-        $request = $this->getOrganizationUnitsShowRequest($organizationUnitId, $contentType, $accept);
+        $request = $this->getOrganizationUnitsShowRequest($organizationUnitId);
 
         try {
             $options = $this->createHttpClientOption();
@@ -846,15 +806,13 @@ class OrganizationApi
      * View Organzation Unit
      *
      * @param  string $organizationUnitId The ID of the organizationUnit. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getOrganizationUnitsShowAsync($organizationUnitId, $contentType = null, $accept = null)
+    public function getOrganizationUnitsShowAsync($organizationUnitId)
     {
-        return $this->getOrganizationUnitsShowAsyncWithHttpInfo($organizationUnitId, $contentType, $accept)
+        return $this->getOrganizationUnitsShowAsyncWithHttpInfo($organizationUnitId)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -868,16 +826,14 @@ class OrganizationApi
      * View Organzation Unit
      *
      * @param  string $organizationUnitId The ID of the organizationUnit. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getOrganizationUnitsShowAsyncWithHttpInfo($organizationUnitId, $contentType = null, $accept = null)
+    public function getOrganizationUnitsShowAsyncWithHttpInfo($organizationUnitId)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel';
-        $request = $this->getOrganizationUnitsShowRequest($organizationUnitId, $contentType, $accept);
+        $request = $this->getOrganizationUnitsShowRequest($organizationUnitId);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -919,13 +875,11 @@ class OrganizationApi
      * Create request for operation 'getOrganizationUnitsShow'
      *
      * @param  string $organizationUnitId The ID of the organizationUnit. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getOrganizationUnitsShowRequest($organizationUnitId, $contentType = null, $accept = null)
+    public function getOrganizationUnitsShowRequest($organizationUnitId)
     {
         // verify the required parameter 'organizationUnitId' is set
         if ($organizationUnitId === null || (is_array($organizationUnitId) && count($organizationUnitId) === 0)) {
@@ -942,14 +896,6 @@ class OrganizationApi
         $multipart = false;
 
 
-        // header params
-        if ($contentType !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
-        }
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
         // path params
         if ($organizationUnitId !== null) {
@@ -1024,16 +970,14 @@ class OrganizationApi
      * Create Organzation Unit
      *
      * @param  \Stackflows\Clients\Stackflows\Model\PostOrganizationUnitsCreateRequest $postOrganizationUnitsCreateRequest postOrganizationUnitsCreateRequest (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\OrganizationUnitModel
      */
-    public function postOrganizationUnitsCreate($postOrganizationUnitsCreateRequest, $contentType = null, $accept = null)
+    public function postOrganizationUnitsCreate($postOrganizationUnitsCreateRequest)
     {
-        list($response) = $this->postOrganizationUnitsCreateWithHttpInfo($postOrganizationUnitsCreateRequest, $contentType, $accept);
+        list($response) = $this->postOrganizationUnitsCreateWithHttpInfo($postOrganizationUnitsCreateRequest);
         return $response;
     }
 
@@ -1043,16 +987,14 @@ class OrganizationApi
      * Create Organzation Unit
      *
      * @param  \Stackflows\Clients\Stackflows\Model\PostOrganizationUnitsCreateRequest $postOrganizationUnitsCreateRequest (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\OrganizationUnitModel, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postOrganizationUnitsCreateWithHttpInfo($postOrganizationUnitsCreateRequest, $contentType = null, $accept = null)
+    public function postOrganizationUnitsCreateWithHttpInfo($postOrganizationUnitsCreateRequest)
     {
-        $request = $this->postOrganizationUnitsCreateRequest($postOrganizationUnitsCreateRequest, $contentType, $accept);
+        $request = $this->postOrganizationUnitsCreateRequest($postOrganizationUnitsCreateRequest);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1144,15 +1086,13 @@ class OrganizationApi
      * Create Organzation Unit
      *
      * @param  \Stackflows\Clients\Stackflows\Model\PostOrganizationUnitsCreateRequest $postOrganizationUnitsCreateRequest (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postOrganizationUnitsCreateAsync($postOrganizationUnitsCreateRequest, $contentType = null, $accept = null)
+    public function postOrganizationUnitsCreateAsync($postOrganizationUnitsCreateRequest)
     {
-        return $this->postOrganizationUnitsCreateAsyncWithHttpInfo($postOrganizationUnitsCreateRequest, $contentType, $accept)
+        return $this->postOrganizationUnitsCreateAsyncWithHttpInfo($postOrganizationUnitsCreateRequest)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1166,16 +1106,14 @@ class OrganizationApi
      * Create Organzation Unit
      *
      * @param  \Stackflows\Clients\Stackflows\Model\PostOrganizationUnitsCreateRequest $postOrganizationUnitsCreateRequest (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postOrganizationUnitsCreateAsyncWithHttpInfo($postOrganizationUnitsCreateRequest, $contentType = null, $accept = null)
+    public function postOrganizationUnitsCreateAsyncWithHttpInfo($postOrganizationUnitsCreateRequest)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel';
-        $request = $this->postOrganizationUnitsCreateRequest($postOrganizationUnitsCreateRequest, $contentType, $accept);
+        $request = $this->postOrganizationUnitsCreateRequest($postOrganizationUnitsCreateRequest);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1217,13 +1155,11 @@ class OrganizationApi
      * Create request for operation 'postOrganizationUnitsCreate'
      *
      * @param  \Stackflows\Clients\Stackflows\Model\PostOrganizationUnitsCreateRequest $postOrganizationUnitsCreateRequest (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function postOrganizationUnitsCreateRequest($postOrganizationUnitsCreateRequest, $contentType = null, $accept = null)
+    public function postOrganizationUnitsCreateRequest($postOrganizationUnitsCreateRequest)
     {
         // verify the required parameter 'postOrganizationUnitsCreateRequest' is set
         if ($postOrganizationUnitsCreateRequest === null || (is_array($postOrganizationUnitsCreateRequest) && count($postOrganizationUnitsCreateRequest) === 0)) {
@@ -1240,14 +1176,6 @@ class OrganizationApi
         $multipart = false;
 
 
-        // header params
-        if ($contentType !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
-        }
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
 
 
@@ -1320,17 +1248,15 @@ class OrganizationApi
      * Update Organzation Unit
      *
      * @param  string $organizationUnitId The ID of the organizationUnit. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      * @param  \Stackflows\Clients\Stackflows\Model\PutOrganizationUnitsUpdateRequest $putOrganizationUnitsUpdateRequest putOrganizationUnitsUpdateRequest (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\OrganizationUnitModel
      */
-    public function putOrganizationUnitsUpdate($organizationUnitId, $contentType = null, $accept = null, $putOrganizationUnitsUpdateRequest = null)
+    public function putOrganizationUnitsUpdate($organizationUnitId, $putOrganizationUnitsUpdateRequest = null)
     {
-        list($response) = $this->putOrganizationUnitsUpdateWithHttpInfo($organizationUnitId, $contentType, $accept, $putOrganizationUnitsUpdateRequest);
+        list($response) = $this->putOrganizationUnitsUpdateWithHttpInfo($organizationUnitId, $putOrganizationUnitsUpdateRequest);
         return $response;
     }
 
@@ -1340,17 +1266,15 @@ class OrganizationApi
      * Update Organzation Unit
      *
      * @param  string $organizationUnitId The ID of the organizationUnit. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      * @param  \Stackflows\Clients\Stackflows\Model\PutOrganizationUnitsUpdateRequest $putOrganizationUnitsUpdateRequest (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\OrganizationUnitModel, HTTP status code, HTTP response headers (array of strings)
      */
-    public function putOrganizationUnitsUpdateWithHttpInfo($organizationUnitId, $contentType = null, $accept = null, $putOrganizationUnitsUpdateRequest = null)
+    public function putOrganizationUnitsUpdateWithHttpInfo($organizationUnitId, $putOrganizationUnitsUpdateRequest = null)
     {
-        $request = $this->putOrganizationUnitsUpdateRequest($organizationUnitId, $contentType, $accept, $putOrganizationUnitsUpdateRequest);
+        $request = $this->putOrganizationUnitsUpdateRequest($organizationUnitId, $putOrganizationUnitsUpdateRequest);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1442,16 +1366,14 @@ class OrganizationApi
      * Update Organzation Unit
      *
      * @param  string $organizationUnitId The ID of the organizationUnit. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      * @param  \Stackflows\Clients\Stackflows\Model\PutOrganizationUnitsUpdateRequest $putOrganizationUnitsUpdateRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putOrganizationUnitsUpdateAsync($organizationUnitId, $contentType = null, $accept = null, $putOrganizationUnitsUpdateRequest = null)
+    public function putOrganizationUnitsUpdateAsync($organizationUnitId, $putOrganizationUnitsUpdateRequest = null)
     {
-        return $this->putOrganizationUnitsUpdateAsyncWithHttpInfo($organizationUnitId, $contentType, $accept, $putOrganizationUnitsUpdateRequest)
+        return $this->putOrganizationUnitsUpdateAsyncWithHttpInfo($organizationUnitId, $putOrganizationUnitsUpdateRequest)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1465,17 +1387,15 @@ class OrganizationApi
      * Update Organzation Unit
      *
      * @param  string $organizationUnitId The ID of the organizationUnit. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      * @param  \Stackflows\Clients\Stackflows\Model\PutOrganizationUnitsUpdateRequest $putOrganizationUnitsUpdateRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putOrganizationUnitsUpdateAsyncWithHttpInfo($organizationUnitId, $contentType = null, $accept = null, $putOrganizationUnitsUpdateRequest = null)
+    public function putOrganizationUnitsUpdateAsyncWithHttpInfo($organizationUnitId, $putOrganizationUnitsUpdateRequest = null)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel';
-        $request = $this->putOrganizationUnitsUpdateRequest($organizationUnitId, $contentType, $accept, $putOrganizationUnitsUpdateRequest);
+        $request = $this->putOrganizationUnitsUpdateRequest($organizationUnitId, $putOrganizationUnitsUpdateRequest);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1517,14 +1437,12 @@ class OrganizationApi
      * Create request for operation 'putOrganizationUnitsUpdate'
      *
      * @param  string $organizationUnitId The ID of the organizationUnit. (required)
-     * @param  string $contentType  (optional)
-     * @param  string $accept  (optional)
      * @param  \Stackflows\Clients\Stackflows\Model\PutOrganizationUnitsUpdateRequest $putOrganizationUnitsUpdateRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function putOrganizationUnitsUpdateRequest($organizationUnitId, $contentType = null, $accept = null, $putOrganizationUnitsUpdateRequest = null)
+    public function putOrganizationUnitsUpdateRequest($organizationUnitId, $putOrganizationUnitsUpdateRequest = null)
     {
         // verify the required parameter 'organizationUnitId' is set
         if ($organizationUnitId === null || (is_array($organizationUnitId) && count($organizationUnitId) === 0)) {
@@ -1541,14 +1459,6 @@ class OrganizationApi
         $multipart = false;
 
 
-        // header params
-        if ($contentType !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
-        }
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
         // path params
         if ($organizationUnitId !== null) {

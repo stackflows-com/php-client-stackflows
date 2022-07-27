@@ -10,7 +10,7 @@ Method | HTTP request | Description
 ## `postTaggedBusinessModelsStart()`
 
 ```php
-postTaggedBusinessModelsStart($postTaggedBusinessModelsStartRequest, $contentType, $accept): \Stackflows\Clients\Stackflows\Model\BusinessProcessModelModel[]
+postTaggedBusinessModelsStart($postTaggedBusinessModelsStartRequest): \Stackflows\Clients\Stackflows\Model\BusinessProcessModelModel[]
 ```
 
 Starts Business Process Models by Tag
@@ -31,11 +31,9 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\TaggedApi(
     new GuzzleHttp\Client()
 );
 $postTaggedBusinessModelsStartRequest = new \Stackflows\Clients\Stackflows\Model\PostTaggedBusinessModelsStartRequest(); // \Stackflows\Clients\Stackflows\Model\PostTaggedBusinessModelsStartRequest
-$contentType = application/json; // string | 
-$accept = application/json; // string | 
 
 try {
-    $result = $apiInstance->postTaggedBusinessModelsStart($postTaggedBusinessModelsStartRequest, $contentType, $accept);
+    $result = $apiInstance->postTaggedBusinessModelsStart($postTaggedBusinessModelsStartRequest);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TaggedApi->postTaggedBusinessModelsStart: ', $e->getMessage(), PHP_EOL;
@@ -47,8 +45,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **postTaggedBusinessModelsStartRequest** | [**\Stackflows\Clients\Stackflows\Model\PostTaggedBusinessModelsStartRequest**](../Model/PostTaggedBusinessModelsStartRequest.md)|  |
- **contentType** | **string**|  | [optional]
- **accept** | **string**|  | [optional]
 
 ### Return type
 
