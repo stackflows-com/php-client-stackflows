@@ -124,7 +124,7 @@ class OrganizationApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Stackflows\Clients\Stackflows\Model\OrganizationUnitModel
+     * @return \Stackflows\Clients\Stackflows\Model\DeleteOrganzationUnitResponse
      */
     public function deleteOrganizationUnits($organizationUnitId)
     {
@@ -141,7 +141,7 @@ class OrganizationApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Stackflows\Clients\Stackflows\Model\OrganizationUnitModel, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Stackflows\Clients\Stackflows\Model\DeleteOrganzationUnitResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteOrganizationUnitsWithHttpInfo($organizationUnitId)
     {
@@ -184,23 +184,23 @@ class OrganizationApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel' === '\SplFileObject') {
+                    if ('\Stackflows\Clients\Stackflows\Model\DeleteOrganzationUnitResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel' !== 'string') {
+                        if ('\Stackflows\Clients\Stackflows\Model\DeleteOrganzationUnitResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel', []),
+                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\DeleteOrganzationUnitResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel';
+            $returnType = '\Stackflows\Clients\Stackflows\Model\DeleteOrganzationUnitResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -221,7 +221,7 @@ class OrganizationApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel',
+                        '\Stackflows\Clients\Stackflows\Model\DeleteOrganzationUnitResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -263,7 +263,7 @@ class OrganizationApi
      */
     public function deleteOrganizationUnitsAsyncWithHttpInfo($organizationUnitId)
     {
-        $returnType = '\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel';
+        $returnType = '\Stackflows\Clients\Stackflows\Model\DeleteOrganzationUnitResponse';
         $request = $this->deleteOrganizationUnitsRequest($organizationUnitId);
 
         return $this->client
@@ -374,6 +374,10 @@ class OrganizationApi
             }
         }
 
+        // this endpoint requires Bearer authentication (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -405,7 +409,7 @@ class OrganizationApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Stackflows\Clients\Stackflows\Model\OrganizationUnitModel[]
+     * @return \Stackflows\Clients\Stackflows\Model\ListOrganzationUnitsResponse
      */
     public function getOrganizationUnitsList($filterRoot1 = null, $includechildren = null)
     {
@@ -423,7 +427,7 @@ class OrganizationApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Stackflows\Clients\Stackflows\Model\OrganizationUnitModel[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Stackflows\Clients\Stackflows\Model\ListOrganzationUnitsResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getOrganizationUnitsListWithHttpInfo($filterRoot1 = null, $includechildren = null)
     {
@@ -466,23 +470,23 @@ class OrganizationApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel[]' === '\SplFileObject') {
+                    if ('\Stackflows\Clients\Stackflows\Model\ListOrganzationUnitsResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel[]' !== 'string') {
+                        if ('\Stackflows\Clients\Stackflows\Model\ListOrganzationUnitsResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel[]', []),
+                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\ListOrganzationUnitsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel[]';
+            $returnType = '\Stackflows\Clients\Stackflows\Model\ListOrganzationUnitsResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -503,7 +507,7 @@ class OrganizationApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel[]',
+                        '\Stackflows\Clients\Stackflows\Model\ListOrganzationUnitsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -547,7 +551,7 @@ class OrganizationApi
      */
     public function getOrganizationUnitsListAsyncWithHttpInfo($filterRoot1 = null, $includechildren = null)
     {
-        $returnType = '\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel[]';
+        $returnType = '\Stackflows\Clients\Stackflows\Model\ListOrganzationUnitsResponse';
         $request = $this->getOrganizationUnitsListRequest($filterRoot1, $includechildren);
 
         return $this->client
@@ -663,6 +667,10 @@ class OrganizationApi
             }
         }
 
+        // this endpoint requires Bearer authentication (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -693,7 +701,7 @@ class OrganizationApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Stackflows\Clients\Stackflows\Model\OrganizationUnitModel
+     * @return \Stackflows\Clients\Stackflows\Model\ViewOrganzationUnitResponse
      */
     public function getOrganizationUnitsShow($organizationUnitId)
     {
@@ -710,7 +718,7 @@ class OrganizationApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Stackflows\Clients\Stackflows\Model\OrganizationUnitModel, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Stackflows\Clients\Stackflows\Model\ViewOrganzationUnitResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getOrganizationUnitsShowWithHttpInfo($organizationUnitId)
     {
@@ -753,23 +761,23 @@ class OrganizationApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel' === '\SplFileObject') {
+                    if ('\Stackflows\Clients\Stackflows\Model\ViewOrganzationUnitResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel' !== 'string') {
+                        if ('\Stackflows\Clients\Stackflows\Model\ViewOrganzationUnitResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel', []),
+                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\ViewOrganzationUnitResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel';
+            $returnType = '\Stackflows\Clients\Stackflows\Model\ViewOrganzationUnitResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -790,7 +798,7 @@ class OrganizationApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel',
+                        '\Stackflows\Clients\Stackflows\Model\ViewOrganzationUnitResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -832,7 +840,7 @@ class OrganizationApi
      */
     public function getOrganizationUnitsShowAsyncWithHttpInfo($organizationUnitId)
     {
-        $returnType = '\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel';
+        $returnType = '\Stackflows\Clients\Stackflows\Model\ViewOrganzationUnitResponse';
         $request = $this->getOrganizationUnitsShowRequest($organizationUnitId);
 
         return $this->client
@@ -943,6 +951,10 @@ class OrganizationApi
             }
         }
 
+        // this endpoint requires Bearer authentication (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -973,7 +985,7 @@ class OrganizationApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Stackflows\Clients\Stackflows\Model\OrganizationUnitModel
+     * @return \Stackflows\Clients\Stackflows\Model\CreateOrganzationUnitResponse
      */
     public function postOrganizationUnitsCreate($postOrganizationUnitsCreateRequest)
     {
@@ -990,7 +1002,7 @@ class OrganizationApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Stackflows\Clients\Stackflows\Model\OrganizationUnitModel, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Stackflows\Clients\Stackflows\Model\CreateOrganzationUnitResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function postOrganizationUnitsCreateWithHttpInfo($postOrganizationUnitsCreateRequest)
     {
@@ -1033,23 +1045,23 @@ class OrganizationApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel' === '\SplFileObject') {
+                    if ('\Stackflows\Clients\Stackflows\Model\CreateOrganzationUnitResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel' !== 'string') {
+                        if ('\Stackflows\Clients\Stackflows\Model\CreateOrganzationUnitResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel', []),
+                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\CreateOrganzationUnitResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel';
+            $returnType = '\Stackflows\Clients\Stackflows\Model\CreateOrganzationUnitResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1070,7 +1082,7 @@ class OrganizationApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel',
+                        '\Stackflows\Clients\Stackflows\Model\CreateOrganzationUnitResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1112,7 +1124,7 @@ class OrganizationApi
      */
     public function postOrganizationUnitsCreateAsyncWithHttpInfo($postOrganizationUnitsCreateRequest)
     {
-        $returnType = '\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel';
+        $returnType = '\Stackflows\Clients\Stackflows\Model\CreateOrganzationUnitResponse';
         $request = $this->postOrganizationUnitsCreateRequest($postOrganizationUnitsCreateRequest);
 
         return $this->client
@@ -1221,6 +1233,10 @@ class OrganizationApi
             }
         }
 
+        // this endpoint requires Bearer authentication (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -1252,7 +1268,7 @@ class OrganizationApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Stackflows\Clients\Stackflows\Model\OrganizationUnitModel
+     * @return \Stackflows\Clients\Stackflows\Model\UpdateOrganzationUnitResponse
      */
     public function putOrganizationUnitsUpdate($organizationUnitId, $putOrganizationUnitsUpdateRequest = null)
     {
@@ -1270,7 +1286,7 @@ class OrganizationApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Stackflows\Clients\Stackflows\Model\OrganizationUnitModel, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Stackflows\Clients\Stackflows\Model\UpdateOrganzationUnitResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function putOrganizationUnitsUpdateWithHttpInfo($organizationUnitId, $putOrganizationUnitsUpdateRequest = null)
     {
@@ -1313,23 +1329,23 @@ class OrganizationApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel' === '\SplFileObject') {
+                    if ('\Stackflows\Clients\Stackflows\Model\UpdateOrganzationUnitResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel' !== 'string') {
+                        if ('\Stackflows\Clients\Stackflows\Model\UpdateOrganzationUnitResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel', []),
+                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\UpdateOrganzationUnitResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel';
+            $returnType = '\Stackflows\Clients\Stackflows\Model\UpdateOrganzationUnitResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1350,7 +1366,7 @@ class OrganizationApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel',
+                        '\Stackflows\Clients\Stackflows\Model\UpdateOrganzationUnitResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1394,7 +1410,7 @@ class OrganizationApi
      */
     public function putOrganizationUnitsUpdateAsyncWithHttpInfo($organizationUnitId, $putOrganizationUnitsUpdateRequest = null)
     {
-        $returnType = '\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel';
+        $returnType = '\Stackflows\Clients\Stackflows\Model\UpdateOrganzationUnitResponse';
         $request = $this->putOrganizationUnitsUpdateRequest($organizationUnitId, $putOrganizationUnitsUpdateRequest);
 
         return $this->client
@@ -1512,6 +1528,10 @@ class OrganizationApi
             }
         }
 
+        // this endpoint requires Bearer authentication (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {

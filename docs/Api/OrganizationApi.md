@@ -14,7 +14,7 @@ Method | HTTP request | Description
 ## `deleteOrganizationUnits()`
 
 ```php
-deleteOrganizationUnits($organizationUnitId): \Stackflows\Clients\Stackflows\Model\OrganizationUnitModel
+deleteOrganizationUnits($organizationUnitId): \Stackflows\Clients\Stackflows\Model\DeleteOrganzationUnitResponse
 ```
 
 Delete Organzation Unit
@@ -28,13 +28,17 @@ Delete Organzation Unit
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer authorization: default
+$config = Stackflows\Clients\Stackflows\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Stackflows\Clients\Stackflows\Api\OrganizationApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
-$organizationUnitId = voluptas; // string | The ID of the organizationUnit.
+$organizationUnitId = dolorum; // string | The ID of the organizationUnit.
 
 try {
     $result = $apiInstance->deleteOrganizationUnits($organizationUnitId);
@@ -52,11 +56,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel**](../Model/OrganizationUnitModel.md)
+[**\Stackflows\Clients\Stackflows\Model\DeleteOrganzationUnitResponse**](../Model/DeleteOrganzationUnitResponse.md)
 
 ### Authorization
 
-No authorization required
+[default](../../README.md#default)
 
 ### HTTP request headers
 
@@ -70,7 +74,7 @@ No authorization required
 ## `getOrganizationUnitsList()`
 
 ```php
-getOrganizationUnitsList($filterRoot1, $includechildren): \Stackflows\Clients\Stackflows\Model\OrganizationUnitModel[]
+getOrganizationUnitsList($filterRoot1, $includechildren): \Stackflows\Clients\Stackflows\Model\ListOrganzationUnitsResponse
 ```
 
 List Organzation Units
@@ -84,14 +88,18 @@ List Organzation Units
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer authorization: default
+$config = Stackflows\Clients\Stackflows\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Stackflows\Clients\Stackflows\Api\OrganizationApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
-$filterRoot1 = debitis; // string | Retrieve only root nodes
-$includechildren = voluptate; // string | Load children
+$filterRoot1 = unde; // string | Retrieve only root nodes
+$includechildren = et; // string | Load children
 
 try {
     $result = $apiInstance->getOrganizationUnitsList($filterRoot1, $includechildren);
@@ -110,11 +118,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel[]**](../Model/OrganizationUnitModel.md)
+[**\Stackflows\Clients\Stackflows\Model\ListOrganzationUnitsResponse**](../Model/ListOrganzationUnitsResponse.md)
 
 ### Authorization
 
-No authorization required
+[default](../../README.md#default)
 
 ### HTTP request headers
 
@@ -128,7 +136,7 @@ No authorization required
 ## `getOrganizationUnitsShow()`
 
 ```php
-getOrganizationUnitsShow($organizationUnitId): \Stackflows\Clients\Stackflows\Model\OrganizationUnitModel
+getOrganizationUnitsShow($organizationUnitId): \Stackflows\Clients\Stackflows\Model\ViewOrganzationUnitResponse
 ```
 
 View Organzation Unit
@@ -142,13 +150,17 @@ View Organzation Unit
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer authorization: default
+$config = Stackflows\Clients\Stackflows\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Stackflows\Clients\Stackflows\Api\OrganizationApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
-$organizationUnitId = voluptas; // string | The ID of the organizationUnit.
+$organizationUnitId = dolorum; // string | The ID of the organizationUnit.
 
 try {
     $result = $apiInstance->getOrganizationUnitsShow($organizationUnitId);
@@ -166,11 +178,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel**](../Model/OrganizationUnitModel.md)
+[**\Stackflows\Clients\Stackflows\Model\ViewOrganzationUnitResponse**](../Model/ViewOrganzationUnitResponse.md)
 
 ### Authorization
 
-No authorization required
+[default](../../README.md#default)
 
 ### HTTP request headers
 
@@ -184,7 +196,7 @@ No authorization required
 ## `postOrganizationUnitsCreate()`
 
 ```php
-postOrganizationUnitsCreate($postOrganizationUnitsCreateRequest): \Stackflows\Clients\Stackflows\Model\OrganizationUnitModel
+postOrganizationUnitsCreate($postOrganizationUnitsCreateRequest): \Stackflows\Clients\Stackflows\Model\CreateOrganzationUnitResponse
 ```
 
 Create Organzation Unit
@@ -198,11 +210,15 @@ Create Organzation Unit
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer authorization: default
+$config = Stackflows\Clients\Stackflows\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Stackflows\Clients\Stackflows\Api\OrganizationApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $postOrganizationUnitsCreateRequest = new \Stackflows\Clients\Stackflows\Model\PostOrganizationUnitsCreateRequest(); // \Stackflows\Clients\Stackflows\Model\PostOrganizationUnitsCreateRequest
 
@@ -222,11 +238,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel**](../Model/OrganizationUnitModel.md)
+[**\Stackflows\Clients\Stackflows\Model\CreateOrganzationUnitResponse**](../Model/CreateOrganzationUnitResponse.md)
 
 ### Authorization
 
-No authorization required
+[default](../../README.md#default)
 
 ### HTTP request headers
 
@@ -240,7 +256,7 @@ No authorization required
 ## `putOrganizationUnitsUpdate()`
 
 ```php
-putOrganizationUnitsUpdate($organizationUnitId, $putOrganizationUnitsUpdateRequest): \Stackflows\Clients\Stackflows\Model\OrganizationUnitModel
+putOrganizationUnitsUpdate($organizationUnitId, $putOrganizationUnitsUpdateRequest): \Stackflows\Clients\Stackflows\Model\UpdateOrganzationUnitResponse
 ```
 
 Update Organzation Unit
@@ -254,13 +270,17 @@ Update Organzation Unit
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer authorization: default
+$config = Stackflows\Clients\Stackflows\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Stackflows\Clients\Stackflows\Api\OrganizationApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
-$organizationUnitId = voluptas; // string | The ID of the organizationUnit.
+$organizationUnitId = dolorum; // string | The ID of the organizationUnit.
 $putOrganizationUnitsUpdateRequest = new \Stackflows\Clients\Stackflows\Model\PutOrganizationUnitsUpdateRequest(); // \Stackflows\Clients\Stackflows\Model\PutOrganizationUnitsUpdateRequest
 
 try {
@@ -280,11 +300,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel**](../Model/OrganizationUnitModel.md)
+[**\Stackflows\Clients\Stackflows\Model\UpdateOrganzationUnitResponse**](../Model/UpdateOrganzationUnitResponse.md)
 
 ### Authorization
 
-No authorization required
+[default](../../README.md#default)
 
 ### HTTP request headers
 

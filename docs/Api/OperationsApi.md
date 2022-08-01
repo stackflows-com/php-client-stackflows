@@ -57,7 +57,7 @@ Method | HTTP request | Description
 ## `deleteBusinessModelDiagrams()`
 
 ```php
-deleteBusinessModelDiagrams($diagramId): \Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel
+deleteBusinessModelDiagrams($diagramId): \Stackflows\Clients\Stackflows\Model\DeleteBusinessModelDiagramResponse
 ```
 
 Delete Business Model Diagram
@@ -71,11 +71,15 @@ Delete Business Model Diagram
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer authorization: default
+$config = Stackflows\Clients\Stackflows\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $diagramId = 139b5820-048d-11ed-a920-d9cc122fb2b1; // string | The ID of the diagram.
 
@@ -95,11 +99,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel**](../Model/BusinessProcessModelDiagramModel.md)
+[**\Stackflows\Clients\Stackflows\Model\DeleteBusinessModelDiagramResponse**](../Model/DeleteBusinessModelDiagramResponse.md)
 
 ### Authorization
 
-No authorization required
+[default](../../README.md#default)
 
 ### HTTP request headers
 
@@ -113,7 +117,7 @@ No authorization required
 ## `deleteBusinessModelDiagramsComments()`
 
 ```php
-deleteBusinessModelDiagramsComments($diagramId, $commentId, $diagram, $comment): \Stackflows\Clients\Stackflows\Model\CommentModel
+deleteBusinessModelDiagramsComments($diagramId, $commentId, $diagram, $comment): \Stackflows\Clients\Stackflows\Model\DeleteBusinessModelDiagramCommentResponse
 ```
 
 Delete Business Model Diagram Comment
@@ -127,11 +131,15 @@ Delete Business Model Diagram Comment
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer authorization: default
+$config = Stackflows\Clients\Stackflows\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $diagramId = 139b5820-048d-11ed-a920-d9cc122fb2b1; // string | The ID of the diagram.
 $commentId = 1; // int | The ID of the comment.
@@ -157,11 +165,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\CommentModel**](../Model/CommentModel.md)
+[**\Stackflows\Clients\Stackflows\Model\DeleteBusinessModelDiagramCommentResponse**](../Model/DeleteBusinessModelDiagramCommentResponse.md)
 
 ### Authorization
 
-No authorization required
+[default](../../README.md#default)
 
 ### HTTP request headers
 
@@ -175,7 +183,7 @@ No authorization required
 ## `deleteBusinessModelExceptions()`
 
 ```php
-deleteBusinessModelExceptions($exceptionId): \Stackflows\Clients\Stackflows\Model\BusinessBaseModelExceptionModel
+deleteBusinessModelExceptions($exceptionId): \Stackflows\Clients\Stackflows\Model\DeleteBusinessModelExceptionResponse
 ```
 
 Delete Business Model Exception
@@ -189,13 +197,17 @@ Delete Business Model Exception
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer authorization: default
+$config = Stackflows\Clients\Stackflows\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
-$exceptionId = ipsa; // string | The ID of the exception.
+$exceptionId = ab; // string | The ID of the exception.
 
 try {
     $result = $apiInstance->deleteBusinessModelExceptions($exceptionId);
@@ -213,11 +225,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\BusinessBaseModelExceptionModel**](../Model/BusinessBaseModelExceptionModel.md)
+[**\Stackflows\Clients\Stackflows\Model\DeleteBusinessModelExceptionResponse**](../Model/DeleteBusinessModelExceptionResponse.md)
 
 ### Authorization
 
-No authorization required
+[default](../../README.md#default)
 
 ### HTTP request headers
 
@@ -231,7 +243,7 @@ No authorization required
 ## `deleteBusinessModels()`
 
 ```php
-deleteBusinessModels($modelId): \Stackflows\Clients\Stackflows\Model\BusinessBaseModelModel
+deleteBusinessModels($modelId): \Stackflows\Clients\Stackflows\Model\DeleteBusinessModelResponse
 ```
 
 Delete Business Model
@@ -245,11 +257,15 @@ Delete Business Model
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer authorization: default
+$config = Stackflows\Clients\Stackflows\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $modelId = 1244a4d0-03f6-11ed-8757-598213407c67; // string | The ID of the model.
 
@@ -269,11 +285,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\BusinessBaseModelModel**](../Model/BusinessBaseModelModel.md)
+[**\Stackflows\Clients\Stackflows\Model\DeleteBusinessModelResponse**](../Model/DeleteBusinessModelResponse.md)
 
 ### Authorization
 
-No authorization required
+[default](../../README.md#default)
 
 ### HTTP request headers
 
@@ -287,7 +303,7 @@ No authorization required
 ## `deleteBusinessModelsDeleteBulk()`
 
 ```php
-deleteBusinessModelsDeleteBulk($deleteBusinessModelsDeleteBulkRequest): \Stackflows\Clients\Stackflows\Model\BusinessBaseModelModel
+deleteBusinessModelsDeleteBulk($deleteBusinessModelsDeleteBulkRequest): \Stackflows\Clients\Stackflows\Model\DeleteBusinessModelsResponse
 ```
 
 Delete Business Models
@@ -301,11 +317,15 @@ Delete Business Models
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer authorization: default
+$config = Stackflows\Clients\Stackflows\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $deleteBusinessModelsDeleteBulkRequest = new \Stackflows\Clients\Stackflows\Model\DeleteBusinessModelsDeleteBulkRequest(); // \Stackflows\Clients\Stackflows\Model\DeleteBusinessModelsDeleteBulkRequest
 
@@ -325,11 +345,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\BusinessBaseModelModel**](../Model/BusinessBaseModelModel.md)
+[**\Stackflows\Clients\Stackflows\Model\DeleteBusinessModelsResponse**](../Model/DeleteBusinessModelsResponse.md)
 
 ### Authorization
 
-No authorization required
+[default](../../README.md#default)
 
 ### HTTP request headers
 
@@ -343,7 +363,7 @@ No authorization required
 ## `deleteBusinessProcesses()`
 
 ```php
-deleteBusinessProcesses($tagId): \Stackflows\Clients\Stackflows\Model\TagModel
+deleteBusinessProcesses($tagId): \Stackflows\Clients\Stackflows\Model\DeleteBusinessProcessTagResponse
 ```
 
 Delete Business Process Tag
@@ -357,11 +377,15 @@ Delete Business Process Tag
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer authorization: default
+$config = Stackflows\Clients\Stackflows\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $tagId = 3; // int | The ID of the tag.
 
@@ -381,11 +405,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\TagModel**](../Model/TagModel.md)
+[**\Stackflows\Clients\Stackflows\Model\DeleteBusinessProcessTagResponse**](../Model/DeleteBusinessProcessTagResponse.md)
 
 ### Authorization
 
-No authorization required
+[default](../../README.md#default)
 
 ### HTTP request headers
 
@@ -399,7 +423,7 @@ No authorization required
 ## `deleteBusinessProcessesDeleteBulk()`
 
 ```php
-deleteBusinessProcessesDeleteBulk($deleteBusinessProcessesDeleteBulkRequest): \Stackflows\Clients\Stackflows\Model\TagModel[]
+deleteBusinessProcessesDeleteBulk($deleteBusinessProcessesDeleteBulkRequest): \Stackflows\Clients\Stackflows\Model\DeleteBusinessProcessTagsResponse
 ```
 
 Delete Business Process Tags
@@ -413,11 +437,15 @@ Delete Business Process Tags
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer authorization: default
+$config = Stackflows\Clients\Stackflows\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $deleteBusinessProcessesDeleteBulkRequest = new \Stackflows\Clients\Stackflows\Model\DeleteBusinessProcessesDeleteBulkRequest(); // \Stackflows\Clients\Stackflows\Model\DeleteBusinessProcessesDeleteBulkRequest
 
@@ -437,11 +465,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\TagModel[]**](../Model/TagModel.md)
+[**\Stackflows\Clients\Stackflows\Model\DeleteBusinessProcessTagsResponse**](../Model/DeleteBusinessProcessTagsResponse.md)
 
 ### Authorization
 
-No authorization required
+[default](../../README.md#default)
 
 ### HTTP request headers
 
@@ -455,7 +483,7 @@ No authorization required
 ## `deleteCategories()`
 
 ```php
-deleteCategories($categoryId): \Stackflows\Clients\Stackflows\Model\CategoryModel
+deleteCategories($categoryId): \Stackflows\Clients\Stackflows\Model\DeleteCategoryResponse
 ```
 
 Delete Category
@@ -469,11 +497,15 @@ Delete Category
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer authorization: default
+$config = Stackflows\Clients\Stackflows\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $categoryId = 1; // int | The ID of the category.
 
@@ -493,11 +525,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\CategoryModel**](../Model/CategoryModel.md)
+[**\Stackflows\Clients\Stackflows\Model\DeleteCategoryResponse**](../Model/DeleteCategoryResponse.md)
 
 ### Authorization
 
-No authorization required
+[default](../../README.md#default)
 
 ### HTTP request headers
 
@@ -511,7 +543,7 @@ No authorization required
 ## `deleteTags()`
 
 ```php
-deleteTags($tagId): \Stackflows\Clients\Stackflows\Model\TagModel
+deleteTags($tagId): \Stackflows\Clients\Stackflows\Model\DeleteTagResponse
 ```
 
 Delete Tag
@@ -525,11 +557,15 @@ Delete Tag
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer authorization: default
+$config = Stackflows\Clients\Stackflows\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $tagId = 3; // int | The ID of the tag.
 
@@ -549,11 +585,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\TagModel**](../Model/TagModel.md)
+[**\Stackflows\Clients\Stackflows\Model\DeleteTagResponse**](../Model/DeleteTagResponse.md)
 
 ### Authorization
 
-No authorization required
+[default](../../README.md#default)
 
 ### HTTP request headers
 
@@ -567,7 +603,7 @@ No authorization required
 ## `deleteTasks()`
 
 ```php
-deleteTasks($taskId): \Stackflows\Clients\Stackflows\Model\TaskModel
+deleteTasks($taskId): \Stackflows\Clients\Stackflows\Model\DeleteTaskResponse
 ```
 
 Delete Task
@@ -581,11 +617,15 @@ Delete Task
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer authorization: default
+$config = Stackflows\Clients\Stackflows\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $taskId = 4c854360-00e9-11ed-8a17-0910c50463b0; // string | The ID of the task.
 
@@ -605,11 +645,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\TaskModel**](../Model/TaskModel.md)
+[**\Stackflows\Clients\Stackflows\Model\DeleteTaskResponse**](../Model/DeleteTaskResponse.md)
 
 ### Authorization
 
-No authorization required
+[default](../../README.md#default)
 
 ### HTTP request headers
 
@@ -623,7 +663,7 @@ No authorization required
 ## `getBusinessModelDiagramsCommentsList()`
 
 ```php
-getBusinessModelDiagramsCommentsList($diagramId, $include): \Stackflows\Clients\Stackflows\Model\CommentModel[]
+getBusinessModelDiagramsCommentsList($diagramId, $include): \Stackflows\Clients\Stackflows\Model\ListBusinessModelDiagramCommentsResponse
 ```
 
 List Business Model Diagram Comments
@@ -637,11 +677,15 @@ List Business Model Diagram Comments
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer authorization: default
+$config = Stackflows\Clients\Stackflows\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $diagramId = 139b5820-048d-11ed-a920-d9cc122fb2b1; // string | The ID of the diagram.
 $include = commenter; // string | Specify a list of includes.
@@ -663,11 +707,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\CommentModel[]**](../Model/CommentModel.md)
+[**\Stackflows\Clients\Stackflows\Model\ListBusinessModelDiagramCommentsResponse**](../Model/ListBusinessModelDiagramCommentsResponse.md)
 
 ### Authorization
 
-No authorization required
+[default](../../README.md#default)
 
 ### HTTP request headers
 
@@ -681,7 +725,7 @@ No authorization required
 ## `getBusinessModelDiagramsList()`
 
 ```php
-getBusinessModelDiagramsList(): \Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel[]
+getBusinessModelDiagramsList(): \Stackflows\Clients\Stackflows\Model\ListBusinessModelDiagramResponse
 ```
 
 List Business Model Diagram
@@ -695,11 +739,15 @@ List Business Model Diagram
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer authorization: default
+$config = Stackflows\Clients\Stackflows\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 
 try {
@@ -716,11 +764,11 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel[]**](../Model/BusinessProcessModelDiagramModel.md)
+[**\Stackflows\Clients\Stackflows\Model\ListBusinessModelDiagramResponse**](../Model/ListBusinessModelDiagramResponse.md)
 
 ### Authorization
 
-No authorization required
+[default](../../README.md#default)
 
 ### HTTP request headers
 
@@ -734,7 +782,7 @@ No authorization required
 ## `getBusinessModelDiagramsShow()`
 
 ```php
-getBusinessModelDiagramsShow($diagramId, $includesnapshotsdeploysdeploysStatistics): \Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel
+getBusinessModelDiagramsShow($diagramId, $includesnapshotsdeploysdeploysStatistics): \Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse1
 ```
 
 View Business Model Diagram
@@ -748,14 +796,18 @@ View Business Model Diagram
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer authorization: default
+$config = Stackflows\Clients\Stackflows\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $diagramId = 139b5820-048d-11ed-a920-d9cc122fb2b1; // string | The ID of the diagram.
-$includesnapshotsdeploysdeploysStatistics = aut; // string | Possible includes
+$includesnapshotsdeploysdeploysStatistics = earum; // string | Possible includes
 
 try {
     $result = $apiInstance->getBusinessModelDiagramsShow($diagramId, $includesnapshotsdeploysdeploysStatistics);
@@ -774,11 +826,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel**](../Model/BusinessProcessModelDiagramModel.md)
+[**\Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse1**](../Model/ViewBusinessModelDiagramResponse1.md)
 
 ### Authorization
 
-No authorization required
+[default](../../README.md#default)
 
 ### HTTP request headers
 
@@ -792,7 +844,7 @@ No authorization required
 ## `getBusinessModelExceptionsList()`
 
 ```php
-getBusinessModelExceptionsList(): \Stackflows\Clients\Stackflows\Model\BusinessBaseModelExceptionModel[]
+getBusinessModelExceptionsList(): \Stackflows\Clients\Stackflows\Model\ListBusinessModelExceptionsResponse
 ```
 
 List Business Model Exceptions
@@ -806,11 +858,15 @@ List Business Model Exceptions
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer authorization: default
+$config = Stackflows\Clients\Stackflows\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 
 try {
@@ -827,11 +883,11 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\BusinessBaseModelExceptionModel[]**](../Model/BusinessBaseModelExceptionModel.md)
+[**\Stackflows\Clients\Stackflows\Model\ListBusinessModelExceptionsResponse**](../Model/ListBusinessModelExceptionsResponse.md)
 
 ### Authorization
 
-No authorization required
+[default](../../README.md#default)
 
 ### HTTP request headers
 
@@ -845,7 +901,7 @@ No authorization required
 ## `getBusinessModelExceptionsShow()`
 
 ```php
-getBusinessModelExceptionsShow($exceptionId): \Stackflows\Clients\Stackflows\Model\BusinessBaseModelExceptionModel
+getBusinessModelExceptionsShow($exceptionId): \Stackflows\Clients\Stackflows\Model\ViewBusinessModelExceptionResponse
 ```
 
 View Business Model Exception
@@ -859,13 +915,17 @@ View Business Model Exception
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer authorization: default
+$config = Stackflows\Clients\Stackflows\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
-$exceptionId = ipsa; // string | The ID of the exception.
+$exceptionId = ab; // string | The ID of the exception.
 
 try {
     $result = $apiInstance->getBusinessModelExceptionsShow($exceptionId);
@@ -883,11 +943,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\BusinessBaseModelExceptionModel**](../Model/BusinessBaseModelExceptionModel.md)
+[**\Stackflows\Clients\Stackflows\Model\ViewBusinessModelExceptionResponse**](../Model/ViewBusinessModelExceptionResponse.md)
 
 ### Authorization
 
-No authorization required
+[default](../../README.md#default)
 
 ### HTTP request headers
 
@@ -901,7 +961,7 @@ No authorization required
 ## `getBusinessModelPublicationsList()`
 
 ```php
-getBusinessModelPublicationsList(): \Stackflows\Clients\Stackflows\Model\BusinessProcessModelPublicationModel[]
+getBusinessModelPublicationsList(): \Stackflows\Clients\Stackflows\Model\ListBusinessModelPublicationsResponse
 ```
 
 List Business Model Publications
@@ -915,11 +975,15 @@ List Business Model Publications
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer authorization: default
+$config = Stackflows\Clients\Stackflows\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 
 try {
@@ -936,11 +1000,11 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\BusinessProcessModelPublicationModel[]**](../Model/BusinessProcessModelPublicationModel.md)
+[**\Stackflows\Clients\Stackflows\Model\ListBusinessModelPublicationsResponse**](../Model/ListBusinessModelPublicationsResponse.md)
 
 ### Authorization
 
-No authorization required
+[default](../../README.md#default)
 
 ### HTTP request headers
 
@@ -954,7 +1018,7 @@ No authorization required
 ## `getBusinessModelPublicationsShow()`
 
 ```php
-getBusinessModelPublicationsShow($publicationId, $appendstatisticsoutliers): \Stackflows\Clients\Stackflows\Model\BusinessProcessModelPublicationModel
+getBusinessModelPublicationsShow($publicationId, $appendstatisticsoutliers): \Stackflows\Clients\Stackflows\Model\ViewBusinessModelPublicationResponse
 ```
 
 View Business Model Publication
@@ -968,14 +1032,18 @@ View Business Model Publication
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer authorization: default
+$config = Stackflows\Clients\Stackflows\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $publicationId = 04d74000-0489-11ed-b709-39eaa3b47ce0; // string | The ID of the publication.
-$appendstatisticsoutliers = cum; // string | Possible appends
+$appendstatisticsoutliers = exercitationem; // string | Possible appends
 
 try {
     $result = $apiInstance->getBusinessModelPublicationsShow($publicationId, $appendstatisticsoutliers);
@@ -994,11 +1062,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\BusinessProcessModelPublicationModel**](../Model/BusinessProcessModelPublicationModel.md)
+[**\Stackflows\Clients\Stackflows\Model\ViewBusinessModelPublicationResponse**](../Model/ViewBusinessModelPublicationResponse.md)
 
 ### Authorization
 
-No authorization required
+[default](../../README.md#default)
 
 ### HTTP request headers
 
@@ -1012,7 +1080,7 @@ No authorization required
 ## `getBusinessModelsCommentsList()`
 
 ```php
-getBusinessModelsCommentsList($modelId, $include): \Stackflows\Clients\Stackflows\Model\CommentModel[]
+getBusinessModelsCommentsList($modelId, $include): \Stackflows\Clients\Stackflows\Model\ListBusinessModelCommentsResponse
 ```
 
 List Business Model Comments
@@ -1026,11 +1094,15 @@ List Business Model Comments
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer authorization: default
+$config = Stackflows\Clients\Stackflows\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $modelId = 1244a4d0-03f6-11ed-8757-598213407c67; // string | The ID of the model.
 $include = commenter; // string | Specify a list of includes.
@@ -1052,11 +1124,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\CommentModel[]**](../Model/CommentModel.md)
+[**\Stackflows\Clients\Stackflows\Model\ListBusinessModelCommentsResponse**](../Model/ListBusinessModelCommentsResponse.md)
 
 ### Authorization
 
-No authorization required
+[default](../../README.md#default)
 
 ### HTTP request headers
 
@@ -1070,7 +1142,7 @@ No authorization required
 ## `getBusinessModelsList()`
 
 ```php
-getBusinessModelsList($include, $filterWithAnyTags, $filterWithoutAnyTags, $filterAutocomplete, $filterSearch, $filterCategories, $filterType, $filterUncategorized, $filterSubscribable, $sort): \Stackflows\Clients\Stackflows\Model\BusinessBaseModelModel[]
+getBusinessModelsList($include, $filterWithAnyTags, $filterWithoutAnyTags, $filterAutocomplete, $filterSearch, $filterCategories, $filterType, $filterUncategorized, $filterSubscribable, $sort): \Stackflows\Clients\Stackflows\Model\ListBusinessModelsResponse
 ```
 
 List Business Models
@@ -1084,11 +1156,15 @@ List Business Models
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer authorization: default
+$config = Stackflows\Clients\Stackflows\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $include = owner,company,category,tags,comments-count,tags-count,diagrams; // string | Possible includes.
 $filterWithAnyTags = test-tag,another-test-tag; // string | Will return models that has any of specified tags.
@@ -1096,7 +1172,7 @@ $filterWithoutAnyTags = true; // bool | Will return list of all models that has 
 $filterAutocomplete = tes; // string | Retrieve list that has \"tes\" at the start of their name.
 $filterSearch = tes; // string | Retrieve list that has \"tes\" in their name.
 $filterCategories = 1,2; // string | Filter by specific categories.
-$filterType = repellat; // string | Filter by specific type. Example process,decision
+$filterType = non; // string | Filter by specific type. Example process,decision
 $filterUncategorized = true; // bool | boolean List only uncategorized process models.
 $filterSubscribable = true; // bool | List only subscribable process models.
 $sort = name,-created_at,-updated_at; // string | Sorting by specified criteria.
@@ -1126,11 +1202,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\BusinessBaseModelModel[]**](../Model/BusinessBaseModelModel.md)
+[**\Stackflows\Clients\Stackflows\Model\ListBusinessModelsResponse**](../Model/ListBusinessModelsResponse.md)
 
 ### Authorization
 
-No authorization required
+[default](../../README.md#default)
 
 ### HTTP request headers
 
@@ -1144,7 +1220,7 @@ No authorization required
 ## `getBusinessModelsShow()`
 
 ```php
-getBusinessModelsShow($modelId, $includeownercompanycategorytagscommentsCounttagsCountdiagrams): \Stackflows\Clients\Stackflows\Model\BusinessBaseModelModel
+getBusinessModelsShow($modelId, $includeownercompanycategorytagscommentsCounttagsCountdiagrams): \Stackflows\Clients\Stackflows\Model\ViewBusinessModelResponse
 ```
 
 View Business Model
@@ -1158,14 +1234,18 @@ View Business Model
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer authorization: default
+$config = Stackflows\Clients\Stackflows\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $modelId = 1244a4d0-03f6-11ed-8757-598213407c67; // string | The ID of the model.
-$includeownercompanycategorytagscommentsCounttagsCountdiagrams = sunt; // string | Possible includes
+$includeownercompanycategorytagscommentsCounttagsCountdiagrams = nam; // string | Possible includes
 
 try {
     $result = $apiInstance->getBusinessModelsShow($modelId, $includeownercompanycategorytagscommentsCounttagsCountdiagrams);
@@ -1184,11 +1264,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\BusinessBaseModelModel**](../Model/BusinessBaseModelModel.md)
+[**\Stackflows\Clients\Stackflows\Model\ViewBusinessModelResponse**](../Model/ViewBusinessModelResponse.md)
 
 ### Authorization
 
-No authorization required
+[default](../../README.md#default)
 
 ### HTTP request headers
 
@@ -1202,7 +1282,7 @@ No authorization required
 ## `getBusinessModelsShowRevision()`
 
 ```php
-getBusinessModelsShowRevision($modelId, $revision): \Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramModel
+getBusinessModelsShowRevision($modelId, $revision): \Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse
 ```
 
 View Business Model Diagram
@@ -1216,14 +1296,18 @@ View Business Model Diagram
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer authorization: default
+$config = Stackflows\Clients\Stackflows\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $modelId = 1244a4d0-03f6-11ed-8757-598213407c67; // string | The ID of the model.
-$revision = aspernatur; // string | 
+$revision = et; // string | 
 
 try {
     $result = $apiInstance->getBusinessModelsShowRevision($modelId, $revision);
@@ -1242,11 +1326,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramModel**](../Model/BusinessBaseModelDiagramModel.md)
+[**\Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse**](../Model/ViewBusinessModelDiagramResponse.md)
 
 ### Authorization
 
-No authorization required
+[default](../../README.md#default)
 
 ### HTTP request headers
 
@@ -1260,7 +1344,7 @@ No authorization required
 ## `getBusinessModelsShowRevisions()`
 
 ```php
-getBusinessModelsShowRevisions($modelId): \Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramModel[]
+getBusinessModelsShowRevisions($modelId): \Stackflows\Clients\Stackflows\Model\ListBusinessModelDiagramsResponse
 ```
 
 List Business Model Diagrams
@@ -1274,11 +1358,15 @@ List Business Model Diagrams
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer authorization: default
+$config = Stackflows\Clients\Stackflows\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $modelId = 1244a4d0-03f6-11ed-8757-598213407c67; // string | The ID of the model.
 
@@ -1298,11 +1386,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramModel[]**](../Model/BusinessBaseModelDiagramModel.md)
+[**\Stackflows\Clients\Stackflows\Model\ListBusinessModelDiagramsResponse**](../Model/ListBusinessModelDiagramsResponse.md)
 
 ### Authorization
 
-No authorization required
+[default](../../README.md#default)
 
 ### HTTP request headers
 
@@ -1316,7 +1404,7 @@ No authorization required
 ## `getBusinessProcessesList()`
 
 ```php
-getBusinessProcessesList($includeprocessModels, $includeprocessModelsCount, $filterAutocompletetes, $filterSearchtes, $sortnameCreatedAtUpdatedAt): \Stackflows\Clients\Stackflows\Model\TagModel[]
+getBusinessProcessesList($includeprocessModels, $includeprocessModelsCount, $filterAutocompletetes, $filterSearchtes, $sortnameCreatedAtUpdatedAt): \Stackflows\Clients\Stackflows\Model\ListBusinessProcessTagsResponse
 ```
 
 List Business Process Tags
@@ -1330,17 +1418,21 @@ List Business Process Tags
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer authorization: default
+$config = Stackflows\Clients\Stackflows\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
-$includeprocessModels = laborum; // string | Will add process models to the response
-$includeprocessModelsCount = 3; // int | Will add process models count to the response
-$filterAutocompletetes = est; // string | Retrieve list that has \"tes\" at the start of their name
-$filterSearchtes = ab; // string | Retrieve list that has \"tes\" in their name
-$sortnameCreatedAtUpdatedAt = dolorem; // string | Sorting example
+$includeprocessModels = in; // string | Will add process models to the response
+$includeprocessModelsCount = 18; // int | Will add process models count to the response
+$filterAutocompletetes = sunt; // string | Retrieve list that has \"tes\" at the start of their name
+$filterSearchtes = quaerat; // string | Retrieve list that has \"tes\" in their name
+$sortnameCreatedAtUpdatedAt = quis; // string | Sorting example
 
 try {
     $result = $apiInstance->getBusinessProcessesList($includeprocessModels, $includeprocessModelsCount, $filterAutocompletetes, $filterSearchtes, $sortnameCreatedAtUpdatedAt);
@@ -1362,11 +1454,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\TagModel[]**](../Model/TagModel.md)
+[**\Stackflows\Clients\Stackflows\Model\ListBusinessProcessTagsResponse**](../Model/ListBusinessProcessTagsResponse.md)
 
 ### Authorization
 
-No authorization required
+[default](../../README.md#default)
 
 ### HTTP request headers
 
@@ -1380,7 +1472,7 @@ No authorization required
 ## `getBusinessProcessesShow()`
 
 ```php
-getBusinessProcessesShow($tagId, $includeprocessModels, $includeprocessModelsCount): \Stackflows\Clients\Stackflows\Model\TagModel
+getBusinessProcessesShow($tagId, $includeprocessModels, $includeprocessModelsCount): \Stackflows\Clients\Stackflows\Model\ViewBusinessProcessTagResponse
 ```
 
 View Business Process Tag
@@ -1394,15 +1486,19 @@ View Business Process Tag
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer authorization: default
+$config = Stackflows\Clients\Stackflows\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $tagId = 3; // int | The ID of the tag.
-$includeprocessModels = magni; // string | Will add process models to the response
-$includeprocessModelsCount = 7; // int | Will add process models count to the response
+$includeprocessModels = saepe; // string | Will add process models to the response
+$includeprocessModelsCount = 1; // int | Will add process models count to the response
 
 try {
     $result = $apiInstance->getBusinessProcessesShow($tagId, $includeprocessModels, $includeprocessModelsCount);
@@ -1422,11 +1518,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\TagModel**](../Model/TagModel.md)
+[**\Stackflows\Clients\Stackflows\Model\ViewBusinessProcessTagResponse**](../Model/ViewBusinessProcessTagResponse.md)
 
 ### Authorization
 
-No authorization required
+[default](../../README.md#default)
 
 ### HTTP request headers
 
@@ -1440,7 +1536,7 @@ No authorization required
 ## `getCategoriesList()`
 
 ```php
-getCategoriesList($filterRoot, $filterSiblings, $filterAutocomplete, $filterSearch, $fieldsBusinessProcessLatestDiagram, $include, $filterSearchBusinessModels, $sort): \Stackflows\Clients\Stackflows\Model\CategoryModel[]
+getCategoriesList($filterRoot, $filterSiblings, $filterAutocomplete, $filterSearch, $fieldsBusinessProcessLatestDiagram, $include, $filterSearchBusinessModels, $sort): \Stackflows\Clients\Stackflows\Model\ListCategoriesResponse
 ```
 
 List Categories
@@ -1454,11 +1550,15 @@ List Categories
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer authorization: default
+$config = Stackflows\Clients\Stackflows\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $filterRoot = true; // bool | Use combination with include=children for full tree list.
 $filterSiblings = 145; // int | ID of a category which siblings should be retrieved.
@@ -1492,11 +1592,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\CategoryModel[]**](../Model/CategoryModel.md)
+[**\Stackflows\Clients\Stackflows\Model\ListCategoriesResponse**](../Model/ListCategoriesResponse.md)
 
 ### Authorization
 
-No authorization required
+[default](../../README.md#default)
 
 ### HTTP request headers
 
@@ -1510,7 +1610,7 @@ No authorization required
 ## `getCategoriesShow()`
 
 ```php
-getCategoriesShow($id): \Stackflows\Clients\Stackflows\Model\CategoryModel
+getCategoriesShow($id): \Stackflows\Clients\Stackflows\Model\ViewCategoryResponse
 ```
 
 View Category
@@ -1524,11 +1624,15 @@ View Category
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer authorization: default
+$config = Stackflows\Clients\Stackflows\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $id = 1; // int | The ID of the category.
 
@@ -1548,11 +1652,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\CategoryModel**](../Model/CategoryModel.md)
+[**\Stackflows\Clients\Stackflows\Model\ViewCategoryResponse**](../Model/ViewCategoryResponse.md)
 
 ### Authorization
 
-No authorization required
+[default](../../README.md#default)
 
 ### HTTP request headers
 
@@ -1566,7 +1670,7 @@ No authorization required
 ## `getTagsList()`
 
 ```php
-getTagsList(): \Stackflows\Clients\Stackflows\Model\TagModel[]
+getTagsList(): \Stackflows\Clients\Stackflows\Model\ListTagsResponse
 ```
 
 List Tags
@@ -1580,11 +1684,15 @@ List Tags
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer authorization: default
+$config = Stackflows\Clients\Stackflows\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 
 try {
@@ -1601,11 +1709,11 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\TagModel[]**](../Model/TagModel.md)
+[**\Stackflows\Clients\Stackflows\Model\ListTagsResponse**](../Model/ListTagsResponse.md)
 
 ### Authorization
 
-No authorization required
+[default](../../README.md#default)
 
 ### HTTP request headers
 
@@ -1619,7 +1727,7 @@ No authorization required
 ## `getTagsShow()`
 
 ```php
-getTagsShow($id): \Stackflows\Clients\Stackflows\Model\TagModel
+getTagsShow($id): \Stackflows\Clients\Stackflows\Model\ViewTagResponse
 ```
 
 View Tag
@@ -1633,11 +1741,15 @@ View Tag
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer authorization: default
+$config = Stackflows\Clients\Stackflows\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $id = 3; // int | The ID of the tag.
 
@@ -1657,11 +1769,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\TagModel**](../Model/TagModel.md)
+[**\Stackflows\Clients\Stackflows\Model\ViewTagResponse**](../Model/ViewTagResponse.md)
 
 ### Authorization
 
-No authorization required
+[default](../../README.md#default)
 
 ### HTTP request headers
 
@@ -1675,7 +1787,7 @@ No authorization required
 ## `getTasksList()`
 
 ```php
-getTasksList(): \Stackflows\Clients\Stackflows\Model\TaskModel[]
+getTasksList(): \Stackflows\Clients\Stackflows\Model\ListTasksResponse
 ```
 
 List Tasks
@@ -1689,11 +1801,15 @@ List Tasks
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer authorization: default
+$config = Stackflows\Clients\Stackflows\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 
 try {
@@ -1710,11 +1826,11 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\TaskModel[]**](../Model/TaskModel.md)
+[**\Stackflows\Clients\Stackflows\Model\ListTasksResponse**](../Model/ListTasksResponse.md)
 
 ### Authorization
 
-No authorization required
+[default](../../README.md#default)
 
 ### HTTP request headers
 
@@ -1728,7 +1844,7 @@ No authorization required
 ## `getTasksShow()`
 
 ```php
-getTasksShow($id): \Stackflows\Clients\Stackflows\Model\TaskModel
+getTasksShow($id): \Stackflows\Clients\Stackflows\Model\ViewTaskResponse
 ```
 
 View Task
@@ -1742,11 +1858,15 @@ View Task
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer authorization: default
+$config = Stackflows\Clients\Stackflows\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $id = 4c854360-00e9-11ed-8a17-0910c50463b0; // string | The ID of the task.
 
@@ -1766,11 +1886,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\TaskModel**](../Model/TaskModel.md)
+[**\Stackflows\Clients\Stackflows\Model\ViewTaskResponse**](../Model/ViewTaskResponse.md)
 
 ### Authorization
 
-No authorization required
+[default](../../README.md#default)
 
 ### HTTP request headers
 
@@ -1784,7 +1904,7 @@ No authorization required
 ## `postBusinessModelDiagramsCommentsCreate()`
 
 ```php
-postBusinessModelDiagramsCommentsCreate($diagramId, $postBusinessModelDiagramsCommentsCreateRequest): \Stackflows\Clients\Stackflows\Model\CommentModel
+postBusinessModelDiagramsCommentsCreate($diagramId, $postBusinessModelDiagramsCommentsCreateRequest): \Stackflows\Clients\Stackflows\Model\CreateBusinessModelDiagramCommentResponse
 ```
 
 Create Business Model Diagram Comment
@@ -1798,11 +1918,15 @@ Create Business Model Diagram Comment
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer authorization: default
+$config = Stackflows\Clients\Stackflows\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $diagramId = 139b5820-048d-11ed-a920-d9cc122fb2b1; // string | The ID of the diagram.
 $postBusinessModelDiagramsCommentsCreateRequest = new \Stackflows\Clients\Stackflows\Model\PostBusinessModelDiagramsCommentsCreateRequest(); // \Stackflows\Clients\Stackflows\Model\PostBusinessModelDiagramsCommentsCreateRequest
@@ -1824,11 +1948,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\CommentModel**](../Model/CommentModel.md)
+[**\Stackflows\Clients\Stackflows\Model\CreateBusinessModelDiagramCommentResponse**](../Model/CreateBusinessModelDiagramCommentResponse.md)
 
 ### Authorization
 
-No authorization required
+[default](../../README.md#default)
 
 ### HTTP request headers
 
@@ -1842,7 +1966,7 @@ No authorization required
 ## `postBusinessModelDiagramsCreate()`
 
 ```php
-postBusinessModelDiagramsCreate($xml, $businessModelId, $snapshot): \Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel
+postBusinessModelDiagramsCreate($xml, $businessModelId, $snapshot): \Stackflows\Clients\Stackflows\Model\CreateBusinessModelDiagramResponse
 ```
 
 Create Business Model Diagram
@@ -1856,11 +1980,15 @@ Create Business Model Diagram
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer authorization: default
+$config = Stackflows\Clients\Stackflows\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $xml = 'xml_example'; // string | 
 $businessModelId = 'businessModelId_example'; // string | 
@@ -1884,11 +2012,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel**](../Model/BusinessProcessModelDiagramModel.md)
+[**\Stackflows\Clients\Stackflows\Model\CreateBusinessModelDiagramResponse**](../Model/CreateBusinessModelDiagramResponse.md)
 
 ### Authorization
 
-No authorization required
+[default](../../README.md#default)
 
 ### HTTP request headers
 
@@ -1902,7 +2030,7 @@ No authorization required
 ## `postBusinessModelDiagramsPublish()`
 
 ```php
-postBusinessModelDiagramsPublish($diagramId, $postEnvironmentBusinessModelDiagramsPublishRequest): \Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel
+postBusinessModelDiagramsPublish($diagramId, $postBusinessModelDiagramsPublishRequest): \Stackflows\Clients\Stackflows\Model\PublishBusinessModelDiagramResponse
 ```
 
 Publish Business Model Diagram
@@ -1916,17 +2044,21 @@ Publish Business Model Diagram
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer authorization: default
+$config = Stackflows\Clients\Stackflows\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $diagramId = 139b5820-048d-11ed-a920-d9cc122fb2b1; // string | The ID of the diagram.
-$postEnvironmentBusinessModelDiagramsPublishRequest = new \Stackflows\Clients\Stackflows\Model\PostEnvironmentBusinessModelDiagramsPublishRequest(); // \Stackflows\Clients\Stackflows\Model\PostEnvironmentBusinessModelDiagramsPublishRequest
+$postBusinessModelDiagramsPublishRequest = new \Stackflows\Clients\Stackflows\Model\PostBusinessModelDiagramsPublishRequest(); // \Stackflows\Clients\Stackflows\Model\PostBusinessModelDiagramsPublishRequest
 
 try {
-    $result = $apiInstance->postBusinessModelDiagramsPublish($diagramId, $postEnvironmentBusinessModelDiagramsPublishRequest);
+    $result = $apiInstance->postBusinessModelDiagramsPublish($diagramId, $postBusinessModelDiagramsPublishRequest);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OperationsApi->postBusinessModelDiagramsPublish: ', $e->getMessage(), PHP_EOL;
@@ -1938,15 +2070,15 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **diagramId** | **string**| The ID of the diagram. |
- **postEnvironmentBusinessModelDiagramsPublishRequest** | [**\Stackflows\Clients\Stackflows\Model\PostEnvironmentBusinessModelDiagramsPublishRequest**](../Model/PostEnvironmentBusinessModelDiagramsPublishRequest.md)|  | [optional]
+ **postBusinessModelDiagramsPublishRequest** | [**\Stackflows\Clients\Stackflows\Model\PostBusinessModelDiagramsPublishRequest**](../Model/PostBusinessModelDiagramsPublishRequest.md)|  | [optional]
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel**](../Model/BusinessProcessModelDiagramModel.md)
+[**\Stackflows\Clients\Stackflows\Model\PublishBusinessModelDiagramResponse**](../Model/PublishBusinessModelDiagramResponse.md)
 
 ### Authorization
 
-No authorization required
+[default](../../README.md#default)
 
 ### HTTP request headers
 
@@ -1960,7 +2092,7 @@ No authorization required
 ## `postBusinessModelExceptionsCreate()`
 
 ```php
-postBusinessModelExceptionsCreate($postBusinessModelExceptionsCreateRequest): \Stackflows\Clients\Stackflows\Model\BusinessBaseModelExceptionModel
+postBusinessModelExceptionsCreate($postBusinessModelExceptionsCreateRequest): \Stackflows\Clients\Stackflows\Model\CreateBusinessModelExceptionResponse
 ```
 
 Create Business Model Exception
@@ -1974,11 +2106,15 @@ Create Business Model Exception
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer authorization: default
+$config = Stackflows\Clients\Stackflows\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $postBusinessModelExceptionsCreateRequest = new \Stackflows\Clients\Stackflows\Model\PostBusinessModelExceptionsCreateRequest(); // \Stackflows\Clients\Stackflows\Model\PostBusinessModelExceptionsCreateRequest
 
@@ -1998,11 +2134,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\BusinessBaseModelExceptionModel**](../Model/BusinessBaseModelExceptionModel.md)
+[**\Stackflows\Clients\Stackflows\Model\CreateBusinessModelExceptionResponse**](../Model/CreateBusinessModelExceptionResponse.md)
 
 ### Authorization
 
-No authorization required
+[default](../../README.md#default)
 
 ### HTTP request headers
 
@@ -2016,7 +2152,7 @@ No authorization required
 ## `postBusinessModelsCreate()`
 
 ```php
-postBusinessModelsCreate($postBusinessModelsCreateRequest): \Stackflows\Clients\Stackflows\Model\BusinessBaseModelModel
+postBusinessModelsCreate($postBusinessModelsCreateRequest): \Stackflows\Clients\Stackflows\Model\CreateBusinessModelResponse
 ```
 
 Create Business Model
@@ -2030,11 +2166,15 @@ Create Business Model
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer authorization: default
+$config = Stackflows\Clients\Stackflows\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $postBusinessModelsCreateRequest = new \Stackflows\Clients\Stackflows\Model\PostBusinessModelsCreateRequest(); // \Stackflows\Clients\Stackflows\Model\PostBusinessModelsCreateRequest
 
@@ -2054,11 +2194,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\BusinessBaseModelModel**](../Model/BusinessBaseModelModel.md)
+[**\Stackflows\Clients\Stackflows\Model\CreateBusinessModelResponse**](../Model/CreateBusinessModelResponse.md)
 
 ### Authorization
 
-No authorization required
+[default](../../README.md#default)
 
 ### HTTP request headers
 
@@ -2072,7 +2212,7 @@ No authorization required
 ## `postBusinessModelsPostRevision()`
 
 ```php
-postBusinessModelsPostRevision($modelId, $xml, $snapshot): \Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramModel
+postBusinessModelsPostRevision($modelId, $xml, $snapshot): \Stackflows\Clients\Stackflows\Model\SubmitBusinessModelDiagramResponse
 ```
 
 Submit Business Model Diagram
@@ -2086,11 +2226,15 @@ Submit Business Model Diagram
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer authorization: default
+$config = Stackflows\Clients\Stackflows\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $modelId = 1244a4d0-03f6-11ed-8757-598213407c67; // string | The ID of the model.
 $xml = 'xml_example'; // string | An xml of a diagram.
@@ -2114,11 +2258,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramModel**](../Model/BusinessBaseModelDiagramModel.md)
+[**\Stackflows\Clients\Stackflows\Model\SubmitBusinessModelDiagramResponse**](../Model/SubmitBusinessModelDiagramResponse.md)
 
 ### Authorization
 
-No authorization required
+[default](../../README.md#default)
 
 ### HTTP request headers
 
@@ -2132,7 +2276,7 @@ No authorization required
 ## `postBusinessModelsTag()`
 
 ```php
-postBusinessModelsTag($taggableId, $postBusinessModelsTagRequest): \Stackflows\Clients\Stackflows\Model\TagModel
+postBusinessModelsTag($taggableId, $postBusinessModelsTagRequest): \Stackflows\Clients\Stackflows\Model\TagBusinessModelResponse
 ```
 
 Tag Business Model
@@ -2146,11 +2290,15 @@ Tag Business Model
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer authorization: default
+$config = Stackflows\Clients\Stackflows\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $taggableId = 1244a4d0-03f6-11ed-8757-598213407c67; // string | The ID of the taggable.
 $postBusinessModelsTagRequest = new \Stackflows\Clients\Stackflows\Model\PostBusinessModelsTagRequest(); // \Stackflows\Clients\Stackflows\Model\PostBusinessModelsTagRequest
@@ -2172,11 +2320,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\TagModel**](../Model/TagModel.md)
+[**\Stackflows\Clients\Stackflows\Model\TagBusinessModelResponse**](../Model/TagBusinessModelResponse.md)
 
 ### Authorization
 
-No authorization required
+[default](../../README.md#default)
 
 ### HTTP request headers
 
@@ -2190,7 +2338,7 @@ No authorization required
 ## `postBusinessProcessesCreate()`
 
 ```php
-postBusinessProcessesCreate($postBusinessProcessesCreateRequest): \Stackflows\Clients\Stackflows\Model\TagModel
+postBusinessProcessesCreate($postBusinessProcessesCreateRequest): \Stackflows\Clients\Stackflows\Model\CreateBusinessProcessTagResponse
 ```
 
 Create Business Process Tag
@@ -2204,11 +2352,15 @@ Create Business Process Tag
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer authorization: default
+$config = Stackflows\Clients\Stackflows\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $postBusinessProcessesCreateRequest = new \Stackflows\Clients\Stackflows\Model\PostBusinessProcessesCreateRequest(); // \Stackflows\Clients\Stackflows\Model\PostBusinessProcessesCreateRequest
 
@@ -2228,11 +2380,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\TagModel**](../Model/TagModel.md)
+[**\Stackflows\Clients\Stackflows\Model\CreateBusinessProcessTagResponse**](../Model/CreateBusinessProcessTagResponse.md)
 
 ### Authorization
 
-No authorization required
+[default](../../README.md#default)
 
 ### HTTP request headers
 
@@ -2246,7 +2398,7 @@ No authorization required
 ## `postCategoriesCreate()`
 
 ```php
-postCategoriesCreate($postCategoriesCreateRequest): \Stackflows\Clients\Stackflows\Model\CategoryModel
+postCategoriesCreate($postCategoriesCreateRequest): \Stackflows\Clients\Stackflows\Model\CreateCategoryResponse
 ```
 
 Create Category
@@ -2260,11 +2412,15 @@ Create Category
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer authorization: default
+$config = Stackflows\Clients\Stackflows\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $postCategoriesCreateRequest = new \Stackflows\Clients\Stackflows\Model\PostCategoriesCreateRequest(); // \Stackflows\Clients\Stackflows\Model\PostCategoriesCreateRequest
 
@@ -2284,11 +2440,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\CategoryModel**](../Model/CategoryModel.md)
+[**\Stackflows\Clients\Stackflows\Model\CreateCategoryResponse**](../Model/CreateCategoryResponse.md)
 
 ### Authorization
 
-No authorization required
+[default](../../README.md#default)
 
 ### HTTP request headers
 
@@ -2302,7 +2458,7 @@ No authorization required
 ## `postTagsCreate()`
 
 ```php
-postTagsCreate($postTagsCreateRequest): \Stackflows\Clients\Stackflows\Model\TagModel
+postTagsCreate($postTagsCreateRequest): \Stackflows\Clients\Stackflows\Model\CreateTagResponse
 ```
 
 Create Tag
@@ -2316,11 +2472,15 @@ Create Tag
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer authorization: default
+$config = Stackflows\Clients\Stackflows\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $postTagsCreateRequest = new \Stackflows\Clients\Stackflows\Model\PostTagsCreateRequest(); // \Stackflows\Clients\Stackflows\Model\PostTagsCreateRequest
 
@@ -2340,11 +2500,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\TagModel**](../Model/TagModel.md)
+[**\Stackflows\Clients\Stackflows\Model\CreateTagResponse**](../Model/CreateTagResponse.md)
 
 ### Authorization
 
-No authorization required
+[default](../../README.md#default)
 
 ### HTTP request headers
 
@@ -2358,7 +2518,7 @@ No authorization required
 ## `postTasksCreate()`
 
 ```php
-postTasksCreate($postTasksCreateRequest): \Stackflows\Clients\Stackflows\Model\TaskModel
+postTasksCreate($postTasksCreateRequest): \Stackflows\Clients\Stackflows\Model\CreateTaskResponse
 ```
 
 Create Task
@@ -2372,11 +2532,15 @@ Create Task
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer authorization: default
+$config = Stackflows\Clients\Stackflows\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $postTasksCreateRequest = new \Stackflows\Clients\Stackflows\Model\PostTasksCreateRequest(); // \Stackflows\Clients\Stackflows\Model\PostTasksCreateRequest
 
@@ -2396,11 +2560,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\TaskModel**](../Model/TaskModel.md)
+[**\Stackflows\Clients\Stackflows\Model\CreateTaskResponse**](../Model/CreateTaskResponse.md)
 
 ### Authorization
 
-No authorization required
+[default](../../README.md#default)
 
 ### HTTP request headers
 
@@ -2414,7 +2578,7 @@ No authorization required
 ## `putBusinessModelDiagramsUpdate()`
 
 ```php
-putBusinessModelDiagramsUpdate($diagramId, $xml, $snapshot): \Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel
+putBusinessModelDiagramsUpdate($diagramId, $xml, $snapshot): \Stackflows\Clients\Stackflows\Model\UpdateBusinessModelDiagramResponse
 ```
 
 Update Business Model Diagram
@@ -2428,11 +2592,15 @@ Update Business Model Diagram
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer authorization: default
+$config = Stackflows\Clients\Stackflows\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $diagramId = 139b5820-048d-11ed-a920-d9cc122fb2b1; // string | The ID of the diagram.
 $xml = 'xml_example'; // string | 
@@ -2456,11 +2624,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel**](../Model/BusinessProcessModelDiagramModel.md)
+[**\Stackflows\Clients\Stackflows\Model\UpdateBusinessModelDiagramResponse**](../Model/UpdateBusinessModelDiagramResponse.md)
 
 ### Authorization
 
-No authorization required
+[default](../../README.md#default)
 
 ### HTTP request headers
 
@@ -2474,7 +2642,7 @@ No authorization required
 ## `putBusinessModelExceptionsUpdate()`
 
 ```php
-putBusinessModelExceptionsUpdate($exceptionId, $putBusinessModelExceptionsUpdateRequest): \Stackflows\Clients\Stackflows\Model\BusinessBaseModelExceptionModel
+putBusinessModelExceptionsUpdate($exceptionId, $putBusinessModelExceptionsUpdateRequest): \Stackflows\Clients\Stackflows\Model\UpdateBusinessModelExceptionResponse
 ```
 
 Update Business Model Exception
@@ -2488,13 +2656,17 @@ Update Business Model Exception
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer authorization: default
+$config = Stackflows\Clients\Stackflows\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
-$exceptionId = ipsa; // string | The ID of the exception.
+$exceptionId = ab; // string | The ID of the exception.
 $putBusinessModelExceptionsUpdateRequest = new \Stackflows\Clients\Stackflows\Model\PutBusinessModelExceptionsUpdateRequest(); // \Stackflows\Clients\Stackflows\Model\PutBusinessModelExceptionsUpdateRequest
 
 try {
@@ -2514,11 +2686,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\BusinessBaseModelExceptionModel**](../Model/BusinessBaseModelExceptionModel.md)
+[**\Stackflows\Clients\Stackflows\Model\UpdateBusinessModelExceptionResponse**](../Model/UpdateBusinessModelExceptionResponse.md)
 
 ### Authorization
 
-No authorization required
+[default](../../README.md#default)
 
 ### HTTP request headers
 
@@ -2532,7 +2704,7 @@ No authorization required
 ## `putBusinessModelsUpdate()`
 
 ```php
-putBusinessModelsUpdate($modelId, $putBusinessModelsUpdateRequest): \Stackflows\Clients\Stackflows\Model\BusinessBaseModelModel
+putBusinessModelsUpdate($modelId, $putBusinessModelsUpdateRequest): \Stackflows\Clients\Stackflows\Model\UpdateBusinessModelResponse
 ```
 
 Update Business Model
@@ -2546,11 +2718,15 @@ Update Business Model
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer authorization: default
+$config = Stackflows\Clients\Stackflows\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $modelId = 1244a4d0-03f6-11ed-8757-598213407c67; // string | The ID of the model.
 $putBusinessModelsUpdateRequest = new \Stackflows\Clients\Stackflows\Model\PutBusinessModelsUpdateRequest(); // \Stackflows\Clients\Stackflows\Model\PutBusinessModelsUpdateRequest
@@ -2572,11 +2748,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\BusinessBaseModelModel**](../Model/BusinessBaseModelModel.md)
+[**\Stackflows\Clients\Stackflows\Model\UpdateBusinessModelResponse**](../Model/UpdateBusinessModelResponse.md)
 
 ### Authorization
 
-No authorization required
+[default](../../README.md#default)
 
 ### HTTP request headers
 
@@ -2590,7 +2766,7 @@ No authorization required
 ## `putBusinessProcessesUpdate()`
 
 ```php
-putBusinessProcessesUpdate($tagId, $putBusinessProcessesUpdateRequest): \Stackflows\Clients\Stackflows\Model\TagModel
+putBusinessProcessesUpdate($tagId, $putBusinessProcessesUpdateRequest): \Stackflows\Clients\Stackflows\Model\UpdateBusinessProcessTagResponse
 ```
 
 Update Business Process Tag
@@ -2604,11 +2780,15 @@ Update Business Process Tag
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer authorization: default
+$config = Stackflows\Clients\Stackflows\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $tagId = 3; // int | The ID of the tag.
 $putBusinessProcessesUpdateRequest = new \Stackflows\Clients\Stackflows\Model\PutBusinessProcessesUpdateRequest(); // \Stackflows\Clients\Stackflows\Model\PutBusinessProcessesUpdateRequest
@@ -2630,11 +2810,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\TagModel**](../Model/TagModel.md)
+[**\Stackflows\Clients\Stackflows\Model\UpdateBusinessProcessTagResponse**](../Model/UpdateBusinessProcessTagResponse.md)
 
 ### Authorization
 
-No authorization required
+[default](../../README.md#default)
 
 ### HTTP request headers
 
@@ -2648,7 +2828,7 @@ No authorization required
 ## `putCategoriesUpdate()`
 
 ```php
-putCategoriesUpdate($id, $putCategoriesUpdateRequest): \Stackflows\Clients\Stackflows\Model\CategoryModel
+putCategoriesUpdate($id, $putCategoriesUpdateRequest): \Stackflows\Clients\Stackflows\Model\UpdateCategoryResponse
 ```
 
 Update Category
@@ -2662,11 +2842,15 @@ Update Category
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer authorization: default
+$config = Stackflows\Clients\Stackflows\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $id = 1; // int | The ID of the category.
 $putCategoriesUpdateRequest = new \Stackflows\Clients\Stackflows\Model\PutCategoriesUpdateRequest(); // \Stackflows\Clients\Stackflows\Model\PutCategoriesUpdateRequest
@@ -2688,11 +2872,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\CategoryModel**](../Model/CategoryModel.md)
+[**\Stackflows\Clients\Stackflows\Model\UpdateCategoryResponse**](../Model/UpdateCategoryResponse.md)
 
 ### Authorization
 
-No authorization required
+[default](../../README.md#default)
 
 ### HTTP request headers
 
@@ -2706,7 +2890,7 @@ No authorization required
 ## `putTagsUpdate()`
 
 ```php
-putTagsUpdate($id, $putTagsUpdateRequest): \Stackflows\Clients\Stackflows\Model\TagModel
+putTagsUpdate($id, $putTagsUpdateRequest): \Stackflows\Clients\Stackflows\Model\UpdateTagResponse
 ```
 
 Update Tag
@@ -2720,11 +2904,15 @@ Update Tag
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer authorization: default
+$config = Stackflows\Clients\Stackflows\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $id = 3; // int | The ID of the tag.
 $putTagsUpdateRequest = new \Stackflows\Clients\Stackflows\Model\PutTagsUpdateRequest(); // \Stackflows\Clients\Stackflows\Model\PutTagsUpdateRequest
@@ -2746,11 +2934,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\TagModel**](../Model/TagModel.md)
+[**\Stackflows\Clients\Stackflows\Model\UpdateTagResponse**](../Model/UpdateTagResponse.md)
 
 ### Authorization
 
-No authorization required
+[default](../../README.md#default)
 
 ### HTTP request headers
 
@@ -2764,7 +2952,7 @@ No authorization required
 ## `putTasksUpdate()`
 
 ```php
-putTasksUpdate($id, $putTasksUpdateRequest): \Stackflows\Clients\Stackflows\Model\TaskModel
+putTasksUpdate($id, $putTasksUpdateRequest): \Stackflows\Clients\Stackflows\Model\UpdateTaskResponse
 ```
 
 Update Task
@@ -2778,11 +2966,15 @@ Update Task
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer authorization: default
+$config = Stackflows\Clients\Stackflows\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $id = 4c854360-00e9-11ed-8a17-0910c50463b0; // string | The ID of the task.
 $putTasksUpdateRequest = new \Stackflows\Clients\Stackflows\Model\PutTasksUpdateRequest(); // \Stackflows\Clients\Stackflows\Model\PutTasksUpdateRequest
@@ -2804,11 +2996,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\TaskModel**](../Model/TaskModel.md)
+[**\Stackflows\Clients\Stackflows\Model\UpdateTaskResponse**](../Model/UpdateTaskResponse.md)
 
 ### Authorization
 
-No authorization required
+[default](../../README.md#default)
 
 ### HTTP request headers
 

@@ -124,7 +124,7 @@ class TaggedApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Stackflows\Clients\Stackflows\Model\BusinessProcessModelModel[]
+     * @return \Stackflows\Clients\Stackflows\Model\StartsBusinessProcessModelsByTagResponse
      */
     public function postTaggedBusinessModelsStart($postTaggedBusinessModelsStartRequest)
     {
@@ -141,7 +141,7 @@ class TaggedApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Stackflows\Clients\Stackflows\Model\BusinessProcessModelModel[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Stackflows\Clients\Stackflows\Model\StartsBusinessProcessModelsByTagResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function postTaggedBusinessModelsStartWithHttpInfo($postTaggedBusinessModelsStartRequest)
     {
@@ -184,23 +184,23 @@ class TaggedApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Stackflows\Clients\Stackflows\Model\BusinessProcessModelModel[]' === '\SplFileObject') {
+                    if ('\Stackflows\Clients\Stackflows\Model\StartsBusinessProcessModelsByTagResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Stackflows\Clients\Stackflows\Model\BusinessProcessModelModel[]' !== 'string') {
+                        if ('\Stackflows\Clients\Stackflows\Model\StartsBusinessProcessModelsByTagResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\BusinessProcessModelModel[]', []),
+                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\StartsBusinessProcessModelsByTagResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessProcessModelModel[]';
+            $returnType = '\Stackflows\Clients\Stackflows\Model\StartsBusinessProcessModelsByTagResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -221,7 +221,7 @@ class TaggedApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Stackflows\Clients\Stackflows\Model\BusinessProcessModelModel[]',
+                        '\Stackflows\Clients\Stackflows\Model\StartsBusinessProcessModelsByTagResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -263,7 +263,7 @@ class TaggedApi
      */
     public function postTaggedBusinessModelsStartAsyncWithHttpInfo($postTaggedBusinessModelsStartRequest)
     {
-        $returnType = '\Stackflows\Clients\Stackflows\Model\BusinessProcessModelModel[]';
+        $returnType = '\Stackflows\Clients\Stackflows\Model\StartsBusinessProcessModelsByTagResponse';
         $request = $this->postTaggedBusinessModelsStartRequest($postTaggedBusinessModelsStartRequest);
 
         return $this->client
@@ -372,6 +372,10 @@ class TaggedApi
             }
         }
 
+        // this endpoint requires Bearer authentication (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {

@@ -1,6 +1,6 @@
 <?php
 /**
- * PostEnvironmentBusinessModelDiagramsPublishRequestTest
+ * CreateBusinessModelExceptionResponseTest
  *
  * PHP version 7.4
  *
@@ -31,15 +31,15 @@ namespace Stackflows\Clients\Stackflows\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * PostEnvironmentBusinessModelDiagramsPublishRequestTest Class Doc Comment
+ * CreateBusinessModelExceptionResponseTest Class Doc Comment
  *
  * @category    Class
- * @description PostEnvironmentBusinessModelDiagramsPublishRequest
+ * @description CreateBusinessModelExceptionResponse
  * @package     Stackflows\Clients\Stackflows
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class PostEnvironmentBusinessModelDiagramsPublishRequestTest extends TestCase
+class CreateBusinessModelExceptionResponseTest extends TestCase
 {
 
     /**
@@ -71,18 +71,18 @@ class PostEnvironmentBusinessModelDiagramsPublishRequestTest extends TestCase
     }
 
     /**
-     * Test "PostEnvironmentBusinessModelDiagramsPublishRequest"
+     * Test "CreateBusinessModelExceptionResponse"
      */
-    public function testPostEnvironmentBusinessModelDiagramsPublishRequest()
+    public function testCreateBusinessModelExceptionResponse()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "environmentIds"
+     * Test attribute "data"
      */
-    public function testPropertyEnvironmentIds()
+    public function testPropertyData()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

@@ -10,7 +10,7 @@ Method | HTTP request | Description
 ## `postTaggedBusinessModelsStart()`
 
 ```php
-postTaggedBusinessModelsStart($postTaggedBusinessModelsStartRequest): \Stackflows\Clients\Stackflows\Model\BusinessProcessModelModel[]
+postTaggedBusinessModelsStart($postTaggedBusinessModelsStartRequest): \Stackflows\Clients\Stackflows\Model\StartsBusinessProcessModelsByTagResponse
 ```
 
 Starts Business Process Models by Tag
@@ -24,11 +24,15 @@ Starts Business Process Models by Tag
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer authorization: default
+$config = Stackflows\Clients\Stackflows\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Stackflows\Clients\Stackflows\Api\TaggedApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $postTaggedBusinessModelsStartRequest = new \Stackflows\Clients\Stackflows\Model\PostTaggedBusinessModelsStartRequest(); // \Stackflows\Clients\Stackflows\Model\PostTaggedBusinessModelsStartRequest
 
@@ -48,11 +52,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\BusinessProcessModelModel[]**](../Model/BusinessProcessModelModel.md)
+[**\Stackflows\Clients\Stackflows\Model\StartsBusinessProcessModelsByTagResponse**](../Model/StartsBusinessProcessModelsByTagResponse.md)
 
 ### Authorization
 
-No authorization required
+[default](../../README.md#default)
 
 ### HTTP request headers
 

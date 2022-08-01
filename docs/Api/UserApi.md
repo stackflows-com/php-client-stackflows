@@ -20,7 +20,7 @@ Method | HTTP request | Description
 ## `deleteUserOrganizations()`
 
 ```php
-deleteUserOrganizations($organizationId, $organization): \Stackflows\Clients\Stackflows\Model\OrganizationUnitModel
+deleteUserOrganizations($organizationId, $organization): \Stackflows\Clients\Stackflows\Model\DeleteOrganizationResponse
 ```
 
 Delete Organization
@@ -34,11 +34,15 @@ Delete Organization
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer authorization: default
+$config = Stackflows\Clients\Stackflows\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Stackflows\Clients\Stackflows\Api\UserApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $organizationId = 05316710-0ac8-11ed-a9c9-1748e8abe9ab; // string | The ID of the organization.
 $organization = 3688e6c0-1a56-11ec-8366; // string | The ID of an organization.
@@ -60,11 +64,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel**](../Model/OrganizationUnitModel.md)
+[**\Stackflows\Clients\Stackflows\Model\DeleteOrganizationResponse**](../Model/DeleteOrganizationResponse.md)
 
 ### Authorization
 
-No authorization required
+[default](../../README.md#default)
 
 ### HTTP request headers
 
@@ -78,7 +82,7 @@ No authorization required
 ## `deleteUserRevoke()`
 
 ```php
-deleteUserRevoke(): \Stackflows\Clients\Stackflows\Model\UserModel
+deleteUserRevoke(): \Stackflows\Clients\Stackflows\Model\RevokeAllTokensResponse
 ```
 
 Revoke all tokens
@@ -92,11 +96,15 @@ Revoke all tokens
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer authorization: default
+$config = Stackflows\Clients\Stackflows\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Stackflows\Clients\Stackflows\Api\UserApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 
 try {
@@ -113,11 +121,11 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\UserModel**](../Model/UserModel.md)
+[**\Stackflows\Clients\Stackflows\Model\RevokeAllTokensResponse**](../Model/RevokeAllTokensResponse.md)
 
 ### Authorization
 
-No authorization required
+[default](../../README.md#default)
 
 ### HTTP request headers
 
@@ -131,7 +139,7 @@ No authorization required
 ## `getUserMe()`
 
 ```php
-getUserMe($includeorganizations): \Stackflows\Clients\Stackflows\Model\UserModel
+getUserMe($includeorganizations): \Stackflows\Clients\Stackflows\Model\MeResponse
 ```
 
 Me
@@ -145,13 +153,17 @@ Me
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer authorization: default
+$config = Stackflows\Clients\Stackflows\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Stackflows\Clients\Stackflows\Api\UserApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
-$includeorganizations = beatae; // string | Possible includes
+$includeorganizations = aut; // string | Possible includes
 
 try {
     $result = $apiInstance->getUserMe($includeorganizations);
@@ -169,11 +181,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\UserModel**](../Model/UserModel.md)
+[**\Stackflows\Clients\Stackflows\Model\MeResponse**](../Model/MeResponse.md)
 
 ### Authorization
 
-No authorization required
+[default](../../README.md#default)
 
 ### HTTP request headers
 
@@ -187,7 +199,7 @@ No authorization required
 ## `getUserOrganizationsList()`
 
 ```php
-getUserOrganizationsList(): \Stackflows\Clients\Stackflows\Model\OrganizationUnitModel[]
+getUserOrganizationsList(): \Stackflows\Clients\Stackflows\Model\ListOrganizationsResponse
 ```
 
 List Organizations
@@ -201,11 +213,15 @@ List Organizations
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer authorization: default
+$config = Stackflows\Clients\Stackflows\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Stackflows\Clients\Stackflows\Api\UserApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 
 try {
@@ -222,11 +238,11 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel[]**](../Model/OrganizationUnitModel.md)
+[**\Stackflows\Clients\Stackflows\Model\ListOrganizationsResponse**](../Model/ListOrganizationsResponse.md)
 
 ### Authorization
 
-No authorization required
+[default](../../README.md#default)
 
 ### HTTP request headers
 
@@ -240,7 +256,7 @@ No authorization required
 ## `getUserOrganizationsShow()`
 
 ```php
-getUserOrganizationsShow($id, $organization): \Stackflows\Clients\Stackflows\Model\OrganizationUnitModel
+getUserOrganizationsShow($id, $organization): \Stackflows\Clients\Stackflows\Model\ViewOrganizationResponse
 ```
 
 View Organization
@@ -254,11 +270,15 @@ View Organization
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer authorization: default
+$config = Stackflows\Clients\Stackflows\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Stackflows\Clients\Stackflows\Api\UserApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $id = 05316710-0ac8-11ed-a9c9-1748e8abe9ab; // string | The ID of the organization.
 $organization = 3688e6c0-1a56-11ec-8366; // string | The ID of an organization.
@@ -280,11 +300,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel**](../Model/OrganizationUnitModel.md)
+[**\Stackflows\Clients\Stackflows\Model\ViewOrganizationResponse**](../Model/ViewOrganizationResponse.md)
 
 ### Authorization
 
-No authorization required
+[default](../../README.md#default)
 
 ### HTTP request headers
 
@@ -298,7 +318,7 @@ No authorization required
 ## `postUserLogin()`
 
 ```php
-postUserLogin($postUserLoginRequest): \Stackflows\Clients\Stackflows\Model\UserModel
+postUserLogin($postUserLoginRequest): \Stackflows\Clients\Stackflows\Model\LoginResponse
 ```
 
 Login
@@ -312,11 +332,15 @@ Login
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer authorization: default
+$config = Stackflows\Clients\Stackflows\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Stackflows\Clients\Stackflows\Api\UserApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $postUserLoginRequest = new \Stackflows\Clients\Stackflows\Model\PostUserLoginRequest(); // \Stackflows\Clients\Stackflows\Model\PostUserLoginRequest
 
@@ -336,11 +360,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\UserModel**](../Model/UserModel.md)
+[**\Stackflows\Clients\Stackflows\Model\LoginResponse**](../Model/LoginResponse.md)
 
 ### Authorization
 
-No authorization required
+[default](../../README.md#default)
 
 ### HTTP request headers
 
@@ -354,7 +378,7 @@ No authorization required
 ## `postUserOrganizationsStore()`
 
 ```php
-postUserOrganizationsStore($postUserOrganizationsStoreRequest): \Stackflows\Clients\Stackflows\Model\OrganizationUnitModel
+postUserOrganizationsStore($postUserOrganizationsStoreRequest): \Stackflows\Clients\Stackflows\Model\CreateOrganizationResponse
 ```
 
 Create Organization
@@ -368,11 +392,15 @@ Create Organization
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer authorization: default
+$config = Stackflows\Clients\Stackflows\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Stackflows\Clients\Stackflows\Api\UserApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $postUserOrganizationsStoreRequest = new \Stackflows\Clients\Stackflows\Model\PostUserOrganizationsStoreRequest(); // \Stackflows\Clients\Stackflows\Model\PostUserOrganizationsStoreRequest
 
@@ -392,11 +420,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel**](../Model/OrganizationUnitModel.md)
+[**\Stackflows\Clients\Stackflows\Model\CreateOrganizationResponse**](../Model/CreateOrganizationResponse.md)
 
 ### Authorization
 
-No authorization required
+[default](../../README.md#default)
 
 ### HTTP request headers
 
@@ -410,7 +438,7 @@ No authorization required
 ## `postUserRegister()`
 
 ```php
-postUserRegister($postUserRegisterRequest): \Stackflows\Clients\Stackflows\Model\UserModel
+postUserRegister($postUserRegisterRequest): \Stackflows\Clients\Stackflows\Model\RegisterResponse
 ```
 
 Register
@@ -424,11 +452,15 @@ Register
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer authorization: default
+$config = Stackflows\Clients\Stackflows\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Stackflows\Clients\Stackflows\Api\UserApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $postUserRegisterRequest = new \Stackflows\Clients\Stackflows\Model\PostUserRegisterRequest(); // \Stackflows\Clients\Stackflows\Model\PostUserRegisterRequest
 
@@ -448,11 +480,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\UserModel**](../Model/UserModel.md)
+[**\Stackflows\Clients\Stackflows\Model\RegisterResponse**](../Model/RegisterResponse.md)
 
 ### Authorization
 
-No authorization required
+[default](../../README.md#default)
 
 ### HTTP request headers
 
@@ -480,11 +512,15 @@ Restore password
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer authorization: default
+$config = Stackflows\Clients\Stackflows\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Stackflows\Clients\Stackflows\Api\UserApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $postUserResetPasswordRequest = new \Stackflows\Clients\Stackflows\Model\PostUserResetPasswordRequest(); // \Stackflows\Clients\Stackflows\Model\PostUserResetPasswordRequest
 
@@ -507,7 +543,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[default](../../README.md#default)
 
 ### HTTP request headers
 
@@ -521,7 +557,7 @@ No authorization required
 ## `putUserOrganizationsUpdate()`
 
 ```php
-putUserOrganizationsUpdate($id, $organization, $putUserOrganizationsUpdateRequest): \Stackflows\Clients\Stackflows\Model\OrganizationUnitModel
+putUserOrganizationsUpdate($id, $organization, $putUserOrganizationsUpdateRequest): \Stackflows\Clients\Stackflows\Model\UpdateOrganizationResponse
 ```
 
 Update Organization
@@ -535,11 +571,15 @@ Update Organization
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer authorization: default
+$config = Stackflows\Clients\Stackflows\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Stackflows\Clients\Stackflows\Api\UserApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $id = 05316710-0ac8-11ed-a9c9-1748e8abe9ab; // string | The ID of the organization.
 $organization = 3688e6c0-1a56-11ec-8366; // string | The ID of an organization.
@@ -563,11 +603,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\OrganizationUnitModel**](../Model/OrganizationUnitModel.md)
+[**\Stackflows\Clients\Stackflows\Model\UpdateOrganizationResponse**](../Model/UpdateOrganizationResponse.md)
 
 ### Authorization
 
-No authorization required
+[default](../../README.md#default)
 
 ### HTTP request headers
 
@@ -581,7 +621,7 @@ No authorization required
 ## `putUserUpdate()`
 
 ```php
-putUserUpdate($putUserUpdateRequest): \Stackflows\Clients\Stackflows\Model\UserModel
+putUserUpdate($putUserUpdateRequest): \Stackflows\Clients\Stackflows\Model\UpdateResponse
 ```
 
 Update
@@ -595,11 +635,15 @@ Update
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer authorization: default
+$config = Stackflows\Clients\Stackflows\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Stackflows\Clients\Stackflows\Api\UserApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $putUserUpdateRequest = new \Stackflows\Clients\Stackflows\Model\PutUserUpdateRequest(); // \Stackflows\Clients\Stackflows\Model\PutUserUpdateRequest
 
@@ -619,11 +663,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\UserModel**](../Model/UserModel.md)
+[**\Stackflows\Clients\Stackflows\Model\UpdateResponse**](../Model/UpdateResponse.md)
 
 ### Authorization
 
-No authorization required
+[default](../../README.md#default)
 
 ### HTTP request headers
 

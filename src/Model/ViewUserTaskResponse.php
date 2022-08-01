@@ -1,6 +1,6 @@
 <?php
 /**
- * PostEnvironmentBusinessModelDiagramsPublishRequest
+ * ViewUserTaskResponse
  *
  * PHP version 7.4
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \Stackflows\Clients\Stackflows\ObjectSerializer;
 
 /**
- * PostEnvironmentBusinessModelDiagramsPublishRequest Class Doc Comment
+ * ViewUserTaskResponse Class Doc Comment
  *
  * @category Class
  * @package  Stackflows\Clients\Stackflows
@@ -40,7 +40,7 @@ use \Stackflows\Clients\Stackflows\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class PostEnvironmentBusinessModelDiagramsPublishRequest implements ModelInterface, ArrayAccess, \JsonSerializable
+class ViewUserTaskResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class PostEnvironmentBusinessModelDiagramsPublishRequest implements ModelInterfa
       *
       * @var string
       */
-    protected static $openAPIModelName = 'postEnvironmentBusinessModelDiagramsPublish_request';
+    protected static $openAPIModelName = 'View_User_Task_Response';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,7 +57,7 @@ class PostEnvironmentBusinessModelDiagramsPublishRequest implements ModelInterfa
       * @var string[]
       */
     protected static $openAPITypes = [
-        'environmentIds' => 'string[]'
+        'data' => '\Stackflows\Clients\Stackflows\Model\UserTaskType'
     ];
 
     /**
@@ -68,7 +68,7 @@ class PostEnvironmentBusinessModelDiagramsPublishRequest implements ModelInterfa
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'environmentIds' => null
+        'data' => null
     ];
 
     /**
@@ -98,7 +98,7 @@ class PostEnvironmentBusinessModelDiagramsPublishRequest implements ModelInterfa
      * @var string[]
      */
     protected static $attributeMap = [
-        'environmentIds' => 'environment_ids'
+        'data' => 'data'
     ];
 
     /**
@@ -107,7 +107,7 @@ class PostEnvironmentBusinessModelDiagramsPublishRequest implements ModelInterfa
      * @var string[]
      */
     protected static $setters = [
-        'environmentIds' => 'setEnvironmentIds'
+        'data' => 'setData'
     ];
 
     /**
@@ -116,7 +116,7 @@ class PostEnvironmentBusinessModelDiagramsPublishRequest implements ModelInterfa
      * @var string[]
      */
     protected static $getters = [
-        'environmentIds' => 'getEnvironmentIds'
+        'data' => 'getData'
     ];
 
     /**
@@ -176,7 +176,7 @@ class PostEnvironmentBusinessModelDiagramsPublishRequest implements ModelInterfa
      */
     public function __construct(array $data = null)
     {
-        $this->container['environmentIds'] = $data['environmentIds'] ?? null;
+        $this->container['data'] = $data['data'] ?? null;
     }
 
     /**
@@ -204,25 +204,25 @@ class PostEnvironmentBusinessModelDiagramsPublishRequest implements ModelInterfa
 
 
     /**
-     * Gets environmentIds
+     * Gets data
      *
-     * @return string[]|null
+     * @return \Stackflows\Clients\Stackflows\Model\UserTaskType|null
      */
-    public function getEnvironmentIds()
+    public function getData()
     {
-        return $this->container['environmentIds'];
+        return $this->container['data'];
     }
 
     /**
-     * Sets environmentIds
+     * Sets data
      *
-     * @param string[]|null $environmentIds 
+     * @param \Stackflows\Clients\Stackflows\Model\UserTaskType|null $data data
      *
      * @return self
      */
-    public function setEnvironmentIds($environmentIds)
+    public function setData($data)
     {
-        $this->container['environmentIds'] = $environmentIds;
+        $this->container['data'] = $data;
 
         return $this;
     }

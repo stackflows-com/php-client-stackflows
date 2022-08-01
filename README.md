@@ -49,11 +49,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
+// Configure Bearer authorization: default
+$config = Stackflows\Clients\Stackflows\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Stackflows\Clients\Stackflows\Api\EnvironmentApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $diagramId = 139b5820-048d-11ed-a920-d9cc122fb2b1; // string | The ID of the diagram.
 
@@ -182,17 +186,65 @@ Class | Method | HTTP request | Description
 - [BusinessProcessModelPublicationModel](docs/Model/BusinessProcessModelPublicationModel.md)
 - [CategoryModel](docs/Model/CategoryModel.md)
 - [CommentModel](docs/Model/CommentModel.md)
+- [CompleteUserTaskResponse](docs/Model/CompleteUserTaskResponse.md)
+- [CreateBusinessModelDiagramCommentResponse](docs/Model/CreateBusinessModelDiagramCommentResponse.md)
+- [CreateBusinessModelDiagramResponse](docs/Model/CreateBusinessModelDiagramResponse.md)
+- [CreateBusinessModelExceptionResponse](docs/Model/CreateBusinessModelExceptionResponse.md)
+- [CreateBusinessModelResponse](docs/Model/CreateBusinessModelResponse.md)
+- [CreateBusinessProcessTagResponse](docs/Model/CreateBusinessProcessTagResponse.md)
+- [CreateCategoryResponse](docs/Model/CreateCategoryResponse.md)
+- [CreateEngineResponse](docs/Model/CreateEngineResponse.md)
+- [CreateEnvironmentResponse](docs/Model/CreateEnvironmentResponse.md)
+- [CreateOrganizationResponse](docs/Model/CreateOrganizationResponse.md)
+- [CreateOrganzationUnitResponse](docs/Model/CreateOrganzationUnitResponse.md)
+- [CreateTagResponse](docs/Model/CreateTagResponse.md)
+- [CreateTaskResponse](docs/Model/CreateTaskResponse.md)
 - [DataAttributeType](docs/Model/DataAttributeType.md)
 - [DataPointCollection](docs/Model/DataPointCollection.md)
 - [DataPointType](docs/Model/DataPointType.md)
+- [DeleteBusinessModelDiagramCommentResponse](docs/Model/DeleteBusinessModelDiagramCommentResponse.md)
+- [DeleteBusinessModelDiagramResponse](docs/Model/DeleteBusinessModelDiagramResponse.md)
+- [DeleteBusinessModelExceptionResponse](docs/Model/DeleteBusinessModelExceptionResponse.md)
+- [DeleteBusinessModelResponse](docs/Model/DeleteBusinessModelResponse.md)
 - [DeleteBusinessModelsDeleteBulkRequest](docs/Model/DeleteBusinessModelsDeleteBulkRequest.md)
+- [DeleteBusinessModelsResponse](docs/Model/DeleteBusinessModelsResponse.md)
+- [DeleteBusinessProcessTagResponse](docs/Model/DeleteBusinessProcessTagResponse.md)
+- [DeleteBusinessProcessTagsResponse](docs/Model/DeleteBusinessProcessTagsResponse.md)
 - [DeleteBusinessProcessesDeleteBulkRequest](docs/Model/DeleteBusinessProcessesDeleteBulkRequest.md)
+- [DeleteCategoryResponse](docs/Model/DeleteCategoryResponse.md)
+- [DeleteEngineResponse](docs/Model/DeleteEngineResponse.md)
 - [DeleteEnvironmentsDeleteBulkRequest](docs/Model/DeleteEnvironmentsDeleteBulkRequest.md)
+- [DeleteEnvironmentsResponse](docs/Model/DeleteEnvironmentsResponse.md)
+- [DeleteOrganizationResponse](docs/Model/DeleteOrganizationResponse.md)
+- [DeleteOrganzationUnitResponse](docs/Model/DeleteOrganzationUnitResponse.md)
+- [DeleteTagResponse](docs/Model/DeleteTagResponse.md)
+- [DeleteTaskResponse](docs/Model/DeleteTaskResponse.md)
 - [EngineModel](docs/Model/EngineModel.md)
 - [EnvironmentModel](docs/Model/EnvironmentModel.md)
+- [EscalateUserTaskResponse](docs/Model/EscalateUserTaskResponse.md)
 - [EventType](docs/Model/EventType.md)
+- [ListBusinessModelCommentsResponse](docs/Model/ListBusinessModelCommentsResponse.md)
+- [ListBusinessModelDiagramCommentsResponse](docs/Model/ListBusinessModelDiagramCommentsResponse.md)
+- [ListBusinessModelDiagramResponse](docs/Model/ListBusinessModelDiagramResponse.md)
+- [ListBusinessModelDiagramsResponse](docs/Model/ListBusinessModelDiagramsResponse.md)
+- [ListBusinessModelExceptionsResponse](docs/Model/ListBusinessModelExceptionsResponse.md)
+- [ListBusinessModelPublicationsResponse](docs/Model/ListBusinessModelPublicationsResponse.md)
+- [ListBusinessModelsResponse](docs/Model/ListBusinessModelsResponse.md)
+- [ListBusinessProcessTagsResponse](docs/Model/ListBusinessProcessTagsResponse.md)
+- [ListCategoriesResponse](docs/Model/ListCategoriesResponse.md)
+- [ListEnginesResponse](docs/Model/ListEnginesResponse.md)
+- [ListEnvironmentsResponse](docs/Model/ListEnvironmentsResponse.md)
+- [ListOrganizationsResponse](docs/Model/ListOrganizationsResponse.md)
+- [ListOrganzationUnitsResponse](docs/Model/ListOrganzationUnitsResponse.md)
+- [ListTagsResponse](docs/Model/ListTagsResponse.md)
+- [ListTasksResponse](docs/Model/ListTasksResponse.md)
+- [ListUserTasksResponse](docs/Model/ListUserTasksResponse.md)
+- [LockServiceTasksResponse](docs/Model/LockServiceTasksResponse.md)
+- [LoginResponse](docs/Model/LoginResponse.md)
+- [MeResponse](docs/Model/MeResponse.md)
 - [OrganizationUnitModel](docs/Model/OrganizationUnitModel.md)
 - [PostBusinessModelDiagramsCommentsCreateRequest](docs/Model/PostBusinessModelDiagramsCommentsCreateRequest.md)
+- [PostBusinessModelDiagramsPublishRequest](docs/Model/PostBusinessModelDiagramsPublishRequest.md)
 - [PostBusinessModelExceptionsCreateRequest](docs/Model/PostBusinessModelExceptionsCreateRequest.md)
 - [PostBusinessModelsCreateRequest](docs/Model/PostBusinessModelsCreateRequest.md)
 - [PostBusinessModelsTagRequest](docs/Model/PostBusinessModelsTagRequest.md)
@@ -200,7 +252,6 @@ Class | Method | HTTP request | Description
 - [PostCategoriesCreateRequest](docs/Model/PostCategoriesCreateRequest.md)
 - [PostEnginesCreateRequest](docs/Model/PostEnginesCreateRequest.md)
 - [PostEnvironmentBusinessModelDiagramsCommentsCreateRequest](docs/Model/PostEnvironmentBusinessModelDiagramsCommentsCreateRequest.md)
-- [PostEnvironmentBusinessModelDiagramsPublishRequest](docs/Model/PostEnvironmentBusinessModelDiagramsPublishRequest.md)
 - [PostEnvironmentBusinessModelsCreateRequest](docs/Model/PostEnvironmentBusinessModelsCreateRequest.md)
 - [PostEnvironmentEventsMessageRequest](docs/Model/PostEnvironmentEventsMessageRequest.md)
 - [PostEnvironmentEventsSignalRequest](docs/Model/PostEnvironmentEventsSignalRequest.md)
@@ -220,6 +271,7 @@ Class | Method | HTTP request | Description
 - [PostUserOrganizationsStoreRequest](docs/Model/PostUserOrganizationsStoreRequest.md)
 - [PostUserRegisterRequest](docs/Model/PostUserRegisterRequest.md)
 - [PostUserResetPasswordRequest](docs/Model/PostUserResetPasswordRequest.md)
+- [PublishBusinessModelDiagramResponse](docs/Model/PublishBusinessModelDiagramResponse.md)
 - [PutBusinessModelExceptionsUpdateRequest](docs/Model/PutBusinessModelExceptionsUpdateRequest.md)
 - [PutBusinessModelsUpdateRequest](docs/Model/PutBusinessModelsUpdateRequest.md)
 - [PutBusinessProcessesUpdateRequest](docs/Model/PutBusinessProcessesUpdateRequest.md)
@@ -230,14 +282,50 @@ Class | Method | HTTP request | Description
 - [PutTasksUpdateRequest](docs/Model/PutTasksUpdateRequest.md)
 - [PutUserOrganizationsUpdateRequest](docs/Model/PutUserOrganizationsUpdateRequest.md)
 - [PutUserUpdateRequest](docs/Model/PutUserUpdateRequest.md)
+- [RegisterResponse](docs/Model/RegisterResponse.md)
+- [RevokeAllTokensResponse](docs/Model/RevokeAllTokensResponse.md)
+- [SendMessageResponse](docs/Model/SendMessageResponse.md)
+- [ServeServiceTaskResponse](docs/Model/ServeServiceTaskResponse.md)
 - [ServiceTaskType](docs/Model/ServiceTaskType.md)
+- [StartsBusinessProcessModelsByTagResponse](docs/Model/StartsBusinessProcessModelsByTagResponse.md)
+- [SubmitBusinessModelDiagramResponse](docs/Model/SubmitBusinessModelDiagramResponse.md)
+- [TagBusinessModelResponse](docs/Model/TagBusinessModelResponse.md)
 - [TagModel](docs/Model/TagModel.md)
 - [TaskModel](docs/Model/TaskModel.md)
+- [UnlockServiceTaskResponse](docs/Model/UnlockServiceTaskResponse.md)
+- [UpdateBusinessModelDiagramResponse](docs/Model/UpdateBusinessModelDiagramResponse.md)
+- [UpdateBusinessModelExceptionResponse](docs/Model/UpdateBusinessModelExceptionResponse.md)
+- [UpdateBusinessModelResponse](docs/Model/UpdateBusinessModelResponse.md)
+- [UpdateBusinessProcessTagResponse](docs/Model/UpdateBusinessProcessTagResponse.md)
+- [UpdateCategoryResponse](docs/Model/UpdateCategoryResponse.md)
+- [UpdateEngineResponse](docs/Model/UpdateEngineResponse.md)
+- [UpdateOrganizationResponse](docs/Model/UpdateOrganizationResponse.md)
+- [UpdateOrganzationUnitResponse](docs/Model/UpdateOrganzationUnitResponse.md)
+- [UpdateResponse](docs/Model/UpdateResponse.md)
+- [UpdateTagResponse](docs/Model/UpdateTagResponse.md)
+- [UpdateTaskResponse](docs/Model/UpdateTaskResponse.md)
 - [UserModel](docs/Model/UserModel.md)
 - [UserTaskType](docs/Model/UserTaskType.md)
+- [ViewBusinessModelDiagramResponse](docs/Model/ViewBusinessModelDiagramResponse.md)
+- [ViewBusinessModelDiagramResponse1](docs/Model/ViewBusinessModelDiagramResponse1.md)
+- [ViewBusinessModelExceptionResponse](docs/Model/ViewBusinessModelExceptionResponse.md)
+- [ViewBusinessModelPublicationResponse](docs/Model/ViewBusinessModelPublicationResponse.md)
+- [ViewBusinessModelResponse](docs/Model/ViewBusinessModelResponse.md)
+- [ViewBusinessProcessTagResponse](docs/Model/ViewBusinessProcessTagResponse.md)
+- [ViewCategoryResponse](docs/Model/ViewCategoryResponse.md)
+- [ViewEngineResponse](docs/Model/ViewEngineResponse.md)
+- [ViewOrganizationResponse](docs/Model/ViewOrganizationResponse.md)
+- [ViewOrganzationUnitResponse](docs/Model/ViewOrganzationUnitResponse.md)
+- [ViewTagResponse](docs/Model/ViewTagResponse.md)
+- [ViewTaskResponse](docs/Model/ViewTaskResponse.md)
+- [ViewUserTaskResponse](docs/Model/ViewUserTaskResponse.md)
 
 ## Authorization
-All endpoints do not require authorization.
+
+### default
+
+- **Type**: Bearer authentication
+
 ## Tests
 
 To run the tests, use:

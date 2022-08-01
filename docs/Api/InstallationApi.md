@@ -17,7 +17,7 @@ Method | HTTP request | Description
 ## `deleteEngines()`
 
 ```php
-deleteEngines($engineId): \Stackflows\Clients\Stackflows\Model\EngineModel
+deleteEngines($engineId): \Stackflows\Clients\Stackflows\Model\DeleteEngineResponse
 ```
 
 Delete Engine
@@ -31,11 +31,15 @@ Delete Engine
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer authorization: default
+$config = Stackflows\Clients\Stackflows\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Stackflows\Clients\Stackflows\Api\InstallationApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $engineId = 9d49d5f0-b566-11ec-979c-d3bcedb7b4c1; // string | The ID of the engine.
 
@@ -55,11 +59,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\EngineModel**](../Model/EngineModel.md)
+[**\Stackflows\Clients\Stackflows\Model\DeleteEngineResponse**](../Model/DeleteEngineResponse.md)
 
 ### Authorization
 
-No authorization required
+[default](../../README.md#default)
 
 ### HTTP request headers
 
@@ -73,7 +77,7 @@ No authorization required
 ## `deleteEnvironmentsDeleteBulk()`
 
 ```php
-deleteEnvironmentsDeleteBulk($deleteEnvironmentsDeleteBulkRequest): \Stackflows\Clients\Stackflows\Model\CategoryModel[]
+deleteEnvironmentsDeleteBulk($deleteEnvironmentsDeleteBulkRequest): \Stackflows\Clients\Stackflows\Model\DeleteEnvironmentsResponse
 ```
 
 Delete Environments
@@ -87,11 +91,15 @@ Delete Environments
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer authorization: default
+$config = Stackflows\Clients\Stackflows\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Stackflows\Clients\Stackflows\Api\InstallationApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $deleteEnvironmentsDeleteBulkRequest = new \Stackflows\Clients\Stackflows\Model\DeleteEnvironmentsDeleteBulkRequest(); // \Stackflows\Clients\Stackflows\Model\DeleteEnvironmentsDeleteBulkRequest
 
@@ -111,11 +119,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\CategoryModel[]**](../Model/CategoryModel.md)
+[**\Stackflows\Clients\Stackflows\Model\DeleteEnvironmentsResponse**](../Model/DeleteEnvironmentsResponse.md)
 
 ### Authorization
 
-No authorization required
+[default](../../README.md#default)
 
 ### HTTP request headers
 
@@ -129,7 +137,7 @@ No authorization required
 ## `getEngine()`
 
 ```php
-getEngine(): \Stackflows\Clients\Stackflows\Model\EngineModel[]
+getEngine(): \Stackflows\Clients\Stackflows\Model\ListEnginesResponse
 ```
 
 List Engines
@@ -143,11 +151,15 @@ List Engines
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer authorization: default
+$config = Stackflows\Clients\Stackflows\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Stackflows\Clients\Stackflows\Api\InstallationApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 
 try {
@@ -164,11 +176,11 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\EngineModel[]**](../Model/EngineModel.md)
+[**\Stackflows\Clients\Stackflows\Model\ListEnginesResponse**](../Model/ListEnginesResponse.md)
 
 ### Authorization
 
-No authorization required
+[default](../../README.md#default)
 
 ### HTTP request headers
 
@@ -182,7 +194,7 @@ No authorization required
 ## `getEnginesShow()`
 
 ```php
-getEnginesShow($id, $engine): \Stackflows\Clients\Stackflows\Model\EngineModel
+getEnginesShow($id, $engine): \Stackflows\Clients\Stackflows\Model\ViewEngineResponse
 ```
 
 View Engine
@@ -196,11 +208,15 @@ View Engine
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer authorization: default
+$config = Stackflows\Clients\Stackflows\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Stackflows\Clients\Stackflows\Api\InstallationApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $id = 9d49d5f0-b566-11ec-979c-d3bcedb7b4c1; // string | The ID of the engine.
 $engine = sunt; // string | ID of an engine
@@ -222,11 +238,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\EngineModel**](../Model/EngineModel.md)
+[**\Stackflows\Clients\Stackflows\Model\ViewEngineResponse**](../Model/ViewEngineResponse.md)
 
 ### Authorization
 
-No authorization required
+[default](../../README.md#default)
 
 ### HTTP request headers
 
@@ -240,7 +256,7 @@ No authorization required
 ## `getEnvironmentsList()`
 
 ```php
-getEnvironmentsList(): \Stackflows\Clients\Stackflows\Model\EnvironmentModel[]
+getEnvironmentsList(): \Stackflows\Clients\Stackflows\Model\ListEnvironmentsResponse
 ```
 
 List Environments
@@ -254,11 +270,15 @@ List Environments
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer authorization: default
+$config = Stackflows\Clients\Stackflows\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Stackflows\Clients\Stackflows\Api\InstallationApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 
 try {
@@ -275,11 +295,11 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\EnvironmentModel[]**](../Model/EnvironmentModel.md)
+[**\Stackflows\Clients\Stackflows\Model\ListEnvironmentsResponse**](../Model/ListEnvironmentsResponse.md)
 
 ### Authorization
 
-No authorization required
+[default](../../README.md#default)
 
 ### HTTP request headers
 
@@ -293,7 +313,7 @@ No authorization required
 ## `postEnginesCreate()`
 
 ```php
-postEnginesCreate($postEnginesCreateRequest): \Stackflows\Clients\Stackflows\Model\EngineModel
+postEnginesCreate($postEnginesCreateRequest): \Stackflows\Clients\Stackflows\Model\CreateEngineResponse
 ```
 
 Create Engine
@@ -307,11 +327,15 @@ Create Engine
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer authorization: default
+$config = Stackflows\Clients\Stackflows\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Stackflows\Clients\Stackflows\Api\InstallationApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $postEnginesCreateRequest = new \Stackflows\Clients\Stackflows\Model\PostEnginesCreateRequest(); // \Stackflows\Clients\Stackflows\Model\PostEnginesCreateRequest
 
@@ -331,11 +355,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\EngineModel**](../Model/EngineModel.md)
+[**\Stackflows\Clients\Stackflows\Model\CreateEngineResponse**](../Model/CreateEngineResponse.md)
 
 ### Authorization
 
-No authorization required
+[default](../../README.md#default)
 
 ### HTTP request headers
 
@@ -349,7 +373,7 @@ No authorization required
 ## `postEnvironmentsCreate()`
 
 ```php
-postEnvironmentsCreate($postEnvironmentsCreateRequest): \Stackflows\Clients\Stackflows\Model\CategoryModel
+postEnvironmentsCreate($postEnvironmentsCreateRequest): \Stackflows\Clients\Stackflows\Model\CreateEnvironmentResponse
 ```
 
 Create Environment
@@ -363,11 +387,15 @@ Create Environment
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer authorization: default
+$config = Stackflows\Clients\Stackflows\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Stackflows\Clients\Stackflows\Api\InstallationApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $postEnvironmentsCreateRequest = new \Stackflows\Clients\Stackflows\Model\PostEnvironmentsCreateRequest(); // \Stackflows\Clients\Stackflows\Model\PostEnvironmentsCreateRequest
 
@@ -387,11 +415,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\CategoryModel**](../Model/CategoryModel.md)
+[**\Stackflows\Clients\Stackflows\Model\CreateEnvironmentResponse**](../Model/CreateEnvironmentResponse.md)
 
 ### Authorization
 
-No authorization required
+[default](../../README.md#default)
 
 ### HTTP request headers
 
@@ -405,7 +433,7 @@ No authorization required
 ## `putEnginesUpdate()`
 
 ```php
-putEnginesUpdate($id, $engine, $putEnginesUpdateRequest): \Stackflows\Clients\Stackflows\Model\EngineModel
+putEnginesUpdate($id, $engine, $putEnginesUpdateRequest): \Stackflows\Clients\Stackflows\Model\UpdateEngineResponse
 ```
 
 Update Engine
@@ -419,11 +447,15 @@ Update Engine
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer authorization: default
+$config = Stackflows\Clients\Stackflows\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Stackflows\Clients\Stackflows\Api\InstallationApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $id = 9d49d5f0-b566-11ec-979c-d3bcedb7b4c1; // string | The ID of the engine.
 $engine = sunt; // string | ID of an engine
@@ -447,11 +479,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\EngineModel**](../Model/EngineModel.md)
+[**\Stackflows\Clients\Stackflows\Model\UpdateEngineResponse**](../Model/UpdateEngineResponse.md)
 
 ### Authorization
 
-No authorization required
+[default](../../README.md#default)
 
 ### HTTP request headers
 
