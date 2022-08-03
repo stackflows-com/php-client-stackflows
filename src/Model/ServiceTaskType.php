@@ -59,8 +59,8 @@ class ServiceTaskType implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'reference' => 'string',
         'topic' => 'string',
-        'suspended' => 'Bool',
-        'priority' => 'Int',
+        'suspended' => 'bool',
+        'priority' => 'int',
         'environment' => 'object',
         'activity' => '\Stackflows\Clients\Stackflows\Model\ActivityType',
         'instance' => '\Stackflows\Clients\Stackflows\Model\BusinessProcessInstanceType',
@@ -296,7 +296,7 @@ class ServiceTaskType implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets suspended
      *
-     * @return Bool|null
+     * @return bool|null
      */
     public function getSuspended()
     {
@@ -306,7 +306,7 @@ class ServiceTaskType implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets suspended
      *
-     * @param Bool|null $suspended suspended
+     * @param bool|null $suspended suspended
      *
      * @return self
      */
@@ -320,7 +320,7 @@ class ServiceTaskType implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets priority
      *
-     * @return Int|null
+     * @return int|null
      */
     public function getPriority()
     {
@@ -330,7 +330,7 @@ class ServiceTaskType implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets priority
      *
-     * @param Int|null $priority priority
+     * @param int|null $priority priority
      *
      * @return self
      */

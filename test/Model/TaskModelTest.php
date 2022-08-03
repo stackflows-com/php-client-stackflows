@@ -116,24 +116,6 @@ class TaskModelTest extends TestCase
     }
 
     /**
-     * Test attribute "fields"
-     */
-    public function testPropertyFields()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "fieldsValues"
-     */
-    public function testPropertyFieldsValues()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "status"
      */
     public function testPropertyStatus()

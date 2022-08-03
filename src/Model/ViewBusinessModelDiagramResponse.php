@@ -57,7 +57,7 @@ class ViewBusinessModelDiagramResponse implements ModelInterface, ArrayAccess, \
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramModel'
+        'data' => '\Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel'
     ];
 
     /**
@@ -206,7 +206,7 @@ class ViewBusinessModelDiagramResponse implements ModelInterface, ArrayAccess, \
     /**
      * Gets data
      *
-     * @return \Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramModel|null
+     * @return \Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel|null
      */
     public function getData()
     {
@@ -216,7 +216,7 @@ class ViewBusinessModelDiagramResponse implements ModelInterface, ArrayAccess, \
     /**
      * Sets data
      *
-     * @param \Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramModel|null $data data
+     * @param \Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel|null $data data
      *
      * @return self
      */

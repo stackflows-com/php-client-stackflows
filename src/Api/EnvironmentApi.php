@@ -1597,7 +1597,7 @@ class EnvironmentApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse1
+     * @return \Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse
      */
     public function getEnvironmentBusinessModelDiagramsShow($diagramId, $includesnapshotsdeploysdeploysStatistics = null)
     {
@@ -1615,7 +1615,7 @@ class EnvironmentApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse1, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getEnvironmentBusinessModelDiagramsShowWithHttpInfo($diagramId, $includesnapshotsdeploysdeploysStatistics = null)
     {
@@ -1658,23 +1658,23 @@ class EnvironmentApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse1' === '\SplFileObject') {
+                    if ('\Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse1' !== 'string') {
+                        if ('\Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse1', []),
+                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse1';
+            $returnType = '\Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1695,7 +1695,7 @@ class EnvironmentApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse1',
+                        '\Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1739,7 +1739,7 @@ class EnvironmentApi
      */
     public function getEnvironmentBusinessModelDiagramsShowAsyncWithHttpInfo($diagramId, $includesnapshotsdeploysdeploysStatistics = null)
     {
-        $returnType = '\Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse1';
+        $returnType = '\Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse';
         $request = $this->getEnvironmentBusinessModelDiagramsShowRequest($diagramId, $includesnapshotsdeploysdeploysStatistics);
 
         return $this->client
@@ -4054,15 +4054,15 @@ class EnvironmentApi
      * Publish Business Model Diagram
      *
      * @param  string $diagramId The ID of the diagram. (required)
-     * @param  \Stackflows\Clients\Stackflows\Model\PostBusinessModelDiagramsPublishRequest $postBusinessModelDiagramsPublishRequest postBusinessModelDiagramsPublishRequest (optional)
+     * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentBusinessModelDiagramsPublishRequest $postEnvironmentBusinessModelDiagramsPublishRequest postEnvironmentBusinessModelDiagramsPublishRequest (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\PublishBusinessModelDiagramResponse
      */
-    public function postEnvironmentBusinessModelDiagramsPublish($diagramId, $postBusinessModelDiagramsPublishRequest = null)
+    public function postEnvironmentBusinessModelDiagramsPublish($diagramId, $postEnvironmentBusinessModelDiagramsPublishRequest = null)
     {
-        list($response) = $this->postEnvironmentBusinessModelDiagramsPublishWithHttpInfo($diagramId, $postBusinessModelDiagramsPublishRequest);
+        list($response) = $this->postEnvironmentBusinessModelDiagramsPublishWithHttpInfo($diagramId, $postEnvironmentBusinessModelDiagramsPublishRequest);
         return $response;
     }
 
@@ -4072,15 +4072,15 @@ class EnvironmentApi
      * Publish Business Model Diagram
      *
      * @param  string $diagramId The ID of the diagram. (required)
-     * @param  \Stackflows\Clients\Stackflows\Model\PostBusinessModelDiagramsPublishRequest $postBusinessModelDiagramsPublishRequest (optional)
+     * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentBusinessModelDiagramsPublishRequest $postEnvironmentBusinessModelDiagramsPublishRequest (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\PublishBusinessModelDiagramResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postEnvironmentBusinessModelDiagramsPublishWithHttpInfo($diagramId, $postBusinessModelDiagramsPublishRequest = null)
+    public function postEnvironmentBusinessModelDiagramsPublishWithHttpInfo($diagramId, $postEnvironmentBusinessModelDiagramsPublishRequest = null)
     {
-        $request = $this->postEnvironmentBusinessModelDiagramsPublishRequest($diagramId, $postBusinessModelDiagramsPublishRequest);
+        $request = $this->postEnvironmentBusinessModelDiagramsPublishRequest($diagramId, $postEnvironmentBusinessModelDiagramsPublishRequest);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4172,14 +4172,14 @@ class EnvironmentApi
      * Publish Business Model Diagram
      *
      * @param  string $diagramId The ID of the diagram. (required)
-     * @param  \Stackflows\Clients\Stackflows\Model\PostBusinessModelDiagramsPublishRequest $postBusinessModelDiagramsPublishRequest (optional)
+     * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentBusinessModelDiagramsPublishRequest $postEnvironmentBusinessModelDiagramsPublishRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postEnvironmentBusinessModelDiagramsPublishAsync($diagramId, $postBusinessModelDiagramsPublishRequest = null)
+    public function postEnvironmentBusinessModelDiagramsPublishAsync($diagramId, $postEnvironmentBusinessModelDiagramsPublishRequest = null)
     {
-        return $this->postEnvironmentBusinessModelDiagramsPublishAsyncWithHttpInfo($diagramId, $postBusinessModelDiagramsPublishRequest)
+        return $this->postEnvironmentBusinessModelDiagramsPublishAsyncWithHttpInfo($diagramId, $postEnvironmentBusinessModelDiagramsPublishRequest)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4193,15 +4193,15 @@ class EnvironmentApi
      * Publish Business Model Diagram
      *
      * @param  string $diagramId The ID of the diagram. (required)
-     * @param  \Stackflows\Clients\Stackflows\Model\PostBusinessModelDiagramsPublishRequest $postBusinessModelDiagramsPublishRequest (optional)
+     * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentBusinessModelDiagramsPublishRequest $postEnvironmentBusinessModelDiagramsPublishRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postEnvironmentBusinessModelDiagramsPublishAsyncWithHttpInfo($diagramId, $postBusinessModelDiagramsPublishRequest = null)
+    public function postEnvironmentBusinessModelDiagramsPublishAsyncWithHttpInfo($diagramId, $postEnvironmentBusinessModelDiagramsPublishRequest = null)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\PublishBusinessModelDiagramResponse';
-        $request = $this->postEnvironmentBusinessModelDiagramsPublishRequest($diagramId, $postBusinessModelDiagramsPublishRequest);
+        $request = $this->postEnvironmentBusinessModelDiagramsPublishRequest($diagramId, $postEnvironmentBusinessModelDiagramsPublishRequest);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4243,12 +4243,12 @@ class EnvironmentApi
      * Create request for operation 'postEnvironmentBusinessModelDiagramsPublish'
      *
      * @param  string $diagramId The ID of the diagram. (required)
-     * @param  \Stackflows\Clients\Stackflows\Model\PostBusinessModelDiagramsPublishRequest $postBusinessModelDiagramsPublishRequest (optional)
+     * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentBusinessModelDiagramsPublishRequest $postEnvironmentBusinessModelDiagramsPublishRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function postEnvironmentBusinessModelDiagramsPublishRequest($diagramId, $postBusinessModelDiagramsPublishRequest = null)
+    public function postEnvironmentBusinessModelDiagramsPublishRequest($diagramId, $postEnvironmentBusinessModelDiagramsPublishRequest = null)
     {
         // verify the required parameter 'diagramId' is set
         if ($diagramId === null || (is_array($diagramId) && count($diagramId) === 0)) {
@@ -4288,11 +4288,11 @@ class EnvironmentApi
         }
 
         // for model (json/xml)
-        if (isset($postBusinessModelDiagramsPublishRequest)) {
+        if (isset($postEnvironmentBusinessModelDiagramsPublishRequest)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($postBusinessModelDiagramsPublishRequest));
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($postEnvironmentBusinessModelDiagramsPublishRequest));
             } else {
-                $httpBody = $postBusinessModelDiagramsPublishRequest;
+                $httpBody = $postEnvironmentBusinessModelDiagramsPublishRequest;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -6078,13 +6078,13 @@ class EnvironmentApi
      *
      * Starts Business Process Models by Tag
      *
-     * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentTaggedBusinessModelsStartRequest $postEnvironmentTaggedBusinessModelsStartRequest postEnvironmentTaggedBusinessModelsStartRequest (required)
+     * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentTaggedBusinessModelsStartRequest $postEnvironmentTaggedBusinessModelsStartRequest postEnvironmentTaggedBusinessModelsStartRequest (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\StartsBusinessProcessModelsByTagResponse
      */
-    public function postEnvironmentTaggedBusinessModelsStart($postEnvironmentTaggedBusinessModelsStartRequest)
+    public function postEnvironmentTaggedBusinessModelsStart($postEnvironmentTaggedBusinessModelsStartRequest = null)
     {
         list($response) = $this->postEnvironmentTaggedBusinessModelsStartWithHttpInfo($postEnvironmentTaggedBusinessModelsStartRequest);
         return $response;
@@ -6095,13 +6095,13 @@ class EnvironmentApi
      *
      * Starts Business Process Models by Tag
      *
-     * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentTaggedBusinessModelsStartRequest $postEnvironmentTaggedBusinessModelsStartRequest (required)
+     * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentTaggedBusinessModelsStartRequest $postEnvironmentTaggedBusinessModelsStartRequest (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\StartsBusinessProcessModelsByTagResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postEnvironmentTaggedBusinessModelsStartWithHttpInfo($postEnvironmentTaggedBusinessModelsStartRequest)
+    public function postEnvironmentTaggedBusinessModelsStartWithHttpInfo($postEnvironmentTaggedBusinessModelsStartRequest = null)
     {
         $request = $this->postEnvironmentTaggedBusinessModelsStartRequest($postEnvironmentTaggedBusinessModelsStartRequest);
 
@@ -6194,12 +6194,12 @@ class EnvironmentApi
      *
      * Starts Business Process Models by Tag
      *
-     * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentTaggedBusinessModelsStartRequest $postEnvironmentTaggedBusinessModelsStartRequest (required)
+     * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentTaggedBusinessModelsStartRequest $postEnvironmentTaggedBusinessModelsStartRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postEnvironmentTaggedBusinessModelsStartAsync($postEnvironmentTaggedBusinessModelsStartRequest)
+    public function postEnvironmentTaggedBusinessModelsStartAsync($postEnvironmentTaggedBusinessModelsStartRequest = null)
     {
         return $this->postEnvironmentTaggedBusinessModelsStartAsyncWithHttpInfo($postEnvironmentTaggedBusinessModelsStartRequest)
             ->then(
@@ -6214,12 +6214,12 @@ class EnvironmentApi
      *
      * Starts Business Process Models by Tag
      *
-     * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentTaggedBusinessModelsStartRequest $postEnvironmentTaggedBusinessModelsStartRequest (required)
+     * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentTaggedBusinessModelsStartRequest $postEnvironmentTaggedBusinessModelsStartRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postEnvironmentTaggedBusinessModelsStartAsyncWithHttpInfo($postEnvironmentTaggedBusinessModelsStartRequest)
+    public function postEnvironmentTaggedBusinessModelsStartAsyncWithHttpInfo($postEnvironmentTaggedBusinessModelsStartRequest = null)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\StartsBusinessProcessModelsByTagResponse';
         $request = $this->postEnvironmentTaggedBusinessModelsStartRequest($postEnvironmentTaggedBusinessModelsStartRequest);
@@ -6263,19 +6263,13 @@ class EnvironmentApi
     /**
      * Create request for operation 'postEnvironmentTaggedBusinessModelsStart'
      *
-     * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentTaggedBusinessModelsStartRequest $postEnvironmentTaggedBusinessModelsStartRequest (required)
+     * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentTaggedBusinessModelsStartRequest $postEnvironmentTaggedBusinessModelsStartRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function postEnvironmentTaggedBusinessModelsStartRequest($postEnvironmentTaggedBusinessModelsStartRequest)
+    public function postEnvironmentTaggedBusinessModelsStartRequest($postEnvironmentTaggedBusinessModelsStartRequest = null)
     {
-        // verify the required parameter 'postEnvironmentTaggedBusinessModelsStartRequest' is set
-        if ($postEnvironmentTaggedBusinessModelsStartRequest === null || (is_array($postEnvironmentTaggedBusinessModelsStartRequest) && count($postEnvironmentTaggedBusinessModelsStartRequest) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $postEnvironmentTaggedBusinessModelsStartRequest when calling postEnvironmentTaggedBusinessModelsStart'
-            );
-        }
 
         $resourcePath = '/api/v2/environment/tagged/business-process-models';
         $formParams = [];

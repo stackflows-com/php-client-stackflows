@@ -58,7 +58,7 @@ class DataPointType implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'attribute' => '\Stackflows\Clients\Stackflows\Model\DataAttributeType',
-        'value' => 'Mixed'
+        'value' => 'mixed'
     ];
 
     /**
@@ -236,7 +236,7 @@ class DataPointType implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets value
      *
-     * @return Mixed|null
+     * @return mixed|null
      */
     public function getValue()
     {
@@ -246,7 +246,7 @@ class DataPointType implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets value
      *
-     * @param Mixed|null $value value
+     * @param mixed|null $value value
      *
      * @return self
      */

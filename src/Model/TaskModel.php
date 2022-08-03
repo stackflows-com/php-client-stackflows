@@ -61,8 +61,6 @@ class TaskModel implements ModelInterface, ArrayAccess, \JsonSerializable
         'engineReference' => 'string',
         'name' => 'string',
         'description' => 'string',
-        'fields' => 'NULL',
-        'fieldsValues' => 'NULL',
         'status' => 'string',
         'followUpAt' => 'string',
         'dueAt' => 'string'
@@ -80,8 +78,6 @@ class TaskModel implements ModelInterface, ArrayAccess, \JsonSerializable
         'engineReference' => null,
         'name' => null,
         'description' => null,
-        'fields' => null,
-        'fieldsValues' => null,
         'status' => null,
         'followUpAt' => null,
         'dueAt' => null
@@ -118,8 +114,6 @@ class TaskModel implements ModelInterface, ArrayAccess, \JsonSerializable
         'engineReference' => 'engine_reference',
         'name' => 'name',
         'description' => 'description',
-        'fields' => 'fields',
-        'fieldsValues' => 'fields_values',
         'status' => 'status',
         'followUpAt' => 'follow_up_at',
         'dueAt' => 'due_at'
@@ -135,8 +129,6 @@ class TaskModel implements ModelInterface, ArrayAccess, \JsonSerializable
         'engineReference' => 'setEngineReference',
         'name' => 'setName',
         'description' => 'setDescription',
-        'fields' => 'setFields',
-        'fieldsValues' => 'setFieldsValues',
         'status' => 'setStatus',
         'followUpAt' => 'setFollowUpAt',
         'dueAt' => 'setDueAt'
@@ -152,8 +144,6 @@ class TaskModel implements ModelInterface, ArrayAccess, \JsonSerializable
         'engineReference' => 'getEngineReference',
         'name' => 'getName',
         'description' => 'getDescription',
-        'fields' => 'getFields',
-        'fieldsValues' => 'getFieldsValues',
         'status' => 'getStatus',
         'followUpAt' => 'getFollowUpAt',
         'dueAt' => 'getDueAt'
@@ -220,8 +210,6 @@ class TaskModel implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['engineReference'] = $data['engineReference'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
         $this->container['description'] = $data['description'] ?? null;
-        $this->container['fields'] = $data['fields'] ?? null;
-        $this->container['fieldsValues'] = $data['fieldsValues'] ?? null;
         $this->container['status'] = $data['status'] ?? null;
         $this->container['followUpAt'] = $data['followUpAt'] ?? null;
         $this->container['dueAt'] = $data['dueAt'] ?? null;
@@ -343,54 +331,6 @@ class TaskModel implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setDescription($description)
     {
         $this->container['description'] = $description;
-
-        return $this;
-    }
-
-    /**
-     * Gets fields
-     *
-     * @return NULL|null
-     */
-    public function getFields()
-    {
-        return $this->container['fields'];
-    }
-
-    /**
-     * Sets fields
-     *
-     * @param NULL|null $fields fields
-     *
-     * @return self
-     */
-    public function setFields($fields)
-    {
-        $this->container['fields'] = $fields;
-
-        return $this;
-    }
-
-    /**
-     * Gets fieldsValues
-     *
-     * @return NULL|null
-     */
-    public function getFieldsValues()
-    {
-        return $this->container['fieldsValues'];
-    }
-
-    /**
-     * Sets fieldsValues
-     *
-     * @param NULL|null $fieldsValues fieldsValues
-     *
-     * @return self
-     */
-    public function setFieldsValues($fieldsValues)
-    {
-        $this->container['fieldsValues'] = $fieldsValues;
 
         return $this;
     }

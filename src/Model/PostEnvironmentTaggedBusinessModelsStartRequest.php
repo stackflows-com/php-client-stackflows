@@ -57,6 +57,8 @@ class PostEnvironmentTaggedBusinessModelsStartRequest implements ModelInterface,
       * @var string[]
       */
     protected static $openAPITypes = [
+        'id' => 'string[]',
+        'engineModelReference' => 'string[]',
         'tags' => 'string[]',
         'submission' => 'string'
     ];
@@ -69,6 +71,8 @@ class PostEnvironmentTaggedBusinessModelsStartRequest implements ModelInterface,
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'id' => null,
+        'engineModelReference' => null,
         'tags' => null,
         'submission' => null
     ];
@@ -100,6 +104,8 @@ class PostEnvironmentTaggedBusinessModelsStartRequest implements ModelInterface,
      * @var string[]
      */
     protected static $attributeMap = [
+        'id' => 'id',
+        'engineModelReference' => 'engine_model_reference',
         'tags' => 'tags',
         'submission' => 'submission'
     ];
@@ -110,6 +116,8 @@ class PostEnvironmentTaggedBusinessModelsStartRequest implements ModelInterface,
      * @var string[]
      */
     protected static $setters = [
+        'id' => 'setId',
+        'engineModelReference' => 'setEngineModelReference',
         'tags' => 'setTags',
         'submission' => 'setSubmission'
     ];
@@ -120,6 +128,8 @@ class PostEnvironmentTaggedBusinessModelsStartRequest implements ModelInterface,
      * @var string[]
      */
     protected static $getters = [
+        'id' => 'getId',
+        'engineModelReference' => 'getEngineModelReference',
         'tags' => 'getTags',
         'submission' => 'getSubmission'
     ];
@@ -181,6 +191,8 @@ class PostEnvironmentTaggedBusinessModelsStartRequest implements ModelInterface,
      */
     public function __construct(array $data = null)
     {
+        $this->container['id'] = $data['id'] ?? null;
+        $this->container['engineModelReference'] = $data['engineModelReference'] ?? null;
         $this->container['tags'] = $data['tags'] ?? null;
         $this->container['submission'] = $data['submission'] ?? null;
     }
@@ -194,9 +206,6 @@ class PostEnvironmentTaggedBusinessModelsStartRequest implements ModelInterface,
     {
         $invalidProperties = [];
 
-        if ($this->container['tags'] === null) {
-            $invalidProperties[] = "'tags' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -213,9 +222,57 @@ class PostEnvironmentTaggedBusinessModelsStartRequest implements ModelInterface,
 
 
     /**
+     * Gets id
+     *
+     * @return string[]|null
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     *
+     * @param string[]|null $id 
+     *
+     * @return self
+     */
+    public function setId($id)
+    {
+        $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets engineModelReference
+     *
+     * @return string[]|null
+     */
+    public function getEngineModelReference()
+    {
+        return $this->container['engineModelReference'];
+    }
+
+    /**
+     * Sets engineModelReference
+     *
+     * @param string[]|null $engineModelReference 
+     *
+     * @return self
+     */
+    public function setEngineModelReference($engineModelReference)
+    {
+        $this->container['engineModelReference'] = $engineModelReference;
+
+        return $this;
+    }
+
+    /**
      * Gets tags
      *
-     * @return string[]
+     * @return string[]|null
      */
     public function getTags()
     {
@@ -225,7 +282,7 @@ class PostEnvironmentTaggedBusinessModelsStartRequest implements ModelInterface,
     /**
      * Sets tags
      *
-     * @param string[] $tags 
+     * @param string[]|null $tags 
      *
      * @return self
      */

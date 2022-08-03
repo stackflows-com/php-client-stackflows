@@ -41,6 +41,7 @@ Method | HTTP request | Description
 [**postBusinessModelsCreate()**](OperationsApi.md#postBusinessModelsCreate) | **POST** /api/v2/business-models | Create Business Model
 [**postBusinessModelsPostRevision()**](OperationsApi.md#postBusinessModelsPostRevision) | **POST** /api/v2/business-models/{model_id}/revisions | Submit Business Model Diagram
 [**postBusinessModelsTag()**](OperationsApi.md#postBusinessModelsTag) | **POST** /api/v2/business-models/{taggable_id}/tag | Tag Business Model
+[**postBusinessProcessModelsStart()**](OperationsApi.md#postBusinessProcessModelsStart) | **POST** /api/v2/business-process-models/{environment_id} | Starts Business Process Model
 [**postBusinessProcessesCreate()**](OperationsApi.md#postBusinessProcessesCreate) | **POST** /api/v2/business-processes | Create Business Process Tag
 [**postCategoriesCreate()**](OperationsApi.md#postCategoriesCreate) | **POST** /api/v2/categories | Create Category
 [**postTagsCreate()**](OperationsApi.md#postTagsCreate) | **POST** /api/v2/tags | Create Tag
@@ -207,7 +208,7 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$exceptionId = ab; // string | The ID of the exception.
+$exceptionId = animi; // string | The ID of the exception.
 
 try {
     $result = $apiInstance->deleteBusinessModelExceptions($exceptionId);
@@ -782,7 +783,7 @@ This endpoint does not need any parameter.
 ## `getBusinessModelDiagramsShow()`
 
 ```php
-getBusinessModelDiagramsShow($diagramId, $includesnapshotsdeploysdeploysStatistics): \Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse1
+getBusinessModelDiagramsShow($diagramId, $includesnapshotsdeploysdeploysStatistics): \Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse
 ```
 
 View Business Model Diagram
@@ -807,7 +808,7 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     $config
 );
 $diagramId = 139b5820-048d-11ed-a920-d9cc122fb2b1; // string | The ID of the diagram.
-$includesnapshotsdeploysdeploysStatistics = earum; // string | Possible includes
+$includesnapshotsdeploysdeploysStatistics = repellat; // string | Possible includes
 
 try {
     $result = $apiInstance->getBusinessModelDiagramsShow($diagramId, $includesnapshotsdeploysdeploysStatistics);
@@ -826,7 +827,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse1**](../Model/ViewBusinessModelDiagramResponse1.md)
+[**\Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse**](../Model/ViewBusinessModelDiagramResponse.md)
 
 ### Authorization
 
@@ -925,7 +926,7 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$exceptionId = ab; // string | The ID of the exception.
+$exceptionId = animi; // string | The ID of the exception.
 
 try {
     $result = $apiInstance->getBusinessModelExceptionsShow($exceptionId);
@@ -1043,7 +1044,7 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     $config
 );
 $publicationId = 04d74000-0489-11ed-b709-39eaa3b47ce0; // string | The ID of the publication.
-$appendstatisticsoutliers = exercitationem; // string | Possible appends
+$appendstatisticsoutliers = quos; // string | Possible appends
 
 try {
     $result = $apiInstance->getBusinessModelPublicationsShow($publicationId, $appendstatisticsoutliers);
@@ -1172,7 +1173,7 @@ $filterWithoutAnyTags = true; // bool | Will return list of all models that has 
 $filterAutocomplete = tes; // string | Retrieve list that has \"tes\" at the start of their name.
 $filterSearch = tes; // string | Retrieve list that has \"tes\" in their name.
 $filterCategories = 1,2; // string | Filter by specific categories.
-$filterType = non; // string | Filter by specific type. Example process,decision
+$filterType = nihil; // string | Filter by specific type. Example process,decision
 $filterUncategorized = true; // bool | boolean List only uncategorized process models.
 $filterSubscribable = true; // bool | List only subscribable process models.
 $sort = name,-created_at,-updated_at; // string | Sorting by specified criteria.
@@ -1245,7 +1246,7 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     $config
 );
 $modelId = 1244a4d0-03f6-11ed-8757-598213407c67; // string | The ID of the model.
-$includeownercompanycategorytagscommentsCounttagsCountdiagrams = nam; // string | Possible includes
+$includeownercompanycategorytagscommentsCounttagsCountdiagrams = nihil; // string | Possible includes
 
 try {
     $result = $apiInstance->getBusinessModelsShow($modelId, $includeownercompanycategorytagscommentsCounttagsCountdiagrams);
@@ -1282,7 +1283,7 @@ Name | Type | Description  | Notes
 ## `getBusinessModelsShowRevision()`
 
 ```php
-getBusinessModelsShowRevision($modelId, $revision): \Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse
+getBusinessModelsShowRevision($modelId, $revision): \Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse1
 ```
 
 View Business Model Diagram
@@ -1307,7 +1308,7 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     $config
 );
 $modelId = 1244a4d0-03f6-11ed-8757-598213407c67; // string | The ID of the model.
-$revision = et; // string | 
+$revision = repellat; // string | 
 
 try {
     $result = $apiInstance->getBusinessModelsShowRevision($modelId, $revision);
@@ -1326,7 +1327,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse**](../Model/ViewBusinessModelDiagramResponse.md)
+[**\Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse1**](../Model/ViewBusinessModelDiagramResponse1.md)
 
 ### Authorization
 
@@ -1428,11 +1429,11 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$includeprocessModels = in; // string | Will add process models to the response
-$includeprocessModelsCount = 18; // int | Will add process models count to the response
-$filterAutocompletetes = sunt; // string | Retrieve list that has \"tes\" at the start of their name
-$filterSearchtes = quaerat; // string | Retrieve list that has \"tes\" in their name
-$sortnameCreatedAtUpdatedAt = quis; // string | Sorting example
+$includeprocessModels = omnis; // string | Will add process models to the response
+$includeprocessModelsCount = 7; // int | Will add process models count to the response
+$filterAutocompletetes = eaque; // string | Retrieve list that has \"tes\" at the start of their name
+$filterSearchtes = in; // string | Retrieve list that has \"tes\" in their name
+$sortnameCreatedAtUpdatedAt = tempore; // string | Sorting example
 
 try {
     $result = $apiInstance->getBusinessProcessesList($includeprocessModels, $includeprocessModelsCount, $filterAutocompletetes, $filterSearchtes, $sortnameCreatedAtUpdatedAt);
@@ -1497,7 +1498,7 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     $config
 );
 $tagId = 3; // int | The ID of the tag.
-$includeprocessModels = saepe; // string | Will add process models to the response
+$includeprocessModels = dolores; // string | Will add process models to the response
 $includeprocessModelsCount = 1; // int | Will add process models count to the response
 
 try {
@@ -2030,7 +2031,7 @@ Name | Type | Description  | Notes
 ## `postBusinessModelDiagramsPublish()`
 
 ```php
-postBusinessModelDiagramsPublish($diagramId, $postBusinessModelDiagramsPublishRequest): \Stackflows\Clients\Stackflows\Model\PublishBusinessModelDiagramResponse
+postBusinessModelDiagramsPublish($diagramId, $postEnvironmentBusinessModelDiagramsPublishRequest): \Stackflows\Clients\Stackflows\Model\PublishBusinessModelDiagramResponse
 ```
 
 Publish Business Model Diagram
@@ -2055,10 +2056,10 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     $config
 );
 $diagramId = 139b5820-048d-11ed-a920-d9cc122fb2b1; // string | The ID of the diagram.
-$postBusinessModelDiagramsPublishRequest = new \Stackflows\Clients\Stackflows\Model\PostBusinessModelDiagramsPublishRequest(); // \Stackflows\Clients\Stackflows\Model\PostBusinessModelDiagramsPublishRequest
+$postEnvironmentBusinessModelDiagramsPublishRequest = new \Stackflows\Clients\Stackflows\Model\PostEnvironmentBusinessModelDiagramsPublishRequest(); // \Stackflows\Clients\Stackflows\Model\PostEnvironmentBusinessModelDiagramsPublishRequest
 
 try {
-    $result = $apiInstance->postBusinessModelDiagramsPublish($diagramId, $postBusinessModelDiagramsPublishRequest);
+    $result = $apiInstance->postBusinessModelDiagramsPublish($diagramId, $postEnvironmentBusinessModelDiagramsPublishRequest);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OperationsApi->postBusinessModelDiagramsPublish: ', $e->getMessage(), PHP_EOL;
@@ -2070,7 +2071,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **diagramId** | **string**| The ID of the diagram. |
- **postBusinessModelDiagramsPublishRequest** | [**\Stackflows\Clients\Stackflows\Model\PostBusinessModelDiagramsPublishRequest**](../Model/PostBusinessModelDiagramsPublishRequest.md)|  | [optional]
+ **postEnvironmentBusinessModelDiagramsPublishRequest** | [**\Stackflows\Clients\Stackflows\Model\PostEnvironmentBusinessModelDiagramsPublishRequest**](../Model/PostEnvironmentBusinessModelDiagramsPublishRequest.md)|  | [optional]
 
 ### Return type
 
@@ -2321,6 +2322,68 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\Stackflows\Clients\Stackflows\Model\TagBusinessModelResponse**](../Model/TagBusinessModelResponse.md)
+
+### Authorization
+
+[default](../../README.md#default)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `postBusinessProcessModelsStart()`
+
+```php
+postBusinessProcessModelsStart($environmentId, $postBusinessProcessModelsStartRequest): \Stackflows\Clients\Stackflows\Model\StartsBusinessProcessModelResponse
+```
+
+Starts Business Process Model
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure Bearer authorization: default
+$config = Stackflows\Clients\Stackflows\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$environmentId = 29f5e940-09b1-11ed-a9dc-231c42fef4e2; // string | The ID of the environment.
+$postBusinessProcessModelsStartRequest = new \Stackflows\Clients\Stackflows\Model\PostBusinessProcessModelsStartRequest(); // \Stackflows\Clients\Stackflows\Model\PostBusinessProcessModelsStartRequest
+
+try {
+    $result = $apiInstance->postBusinessProcessModelsStart($environmentId, $postBusinessProcessModelsStartRequest);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling OperationsApi->postBusinessProcessModelsStart: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **environmentId** | **string**| The ID of the environment. |
+ **postBusinessProcessModelsStartRequest** | [**\Stackflows\Clients\Stackflows\Model\PostBusinessProcessModelsStartRequest**](../Model/PostBusinessProcessModelsStartRequest.md)|  | [optional]
+
+### Return type
+
+[**\Stackflows\Clients\Stackflows\Model\StartsBusinessProcessModelResponse**](../Model/StartsBusinessProcessModelResponse.md)
 
 ### Authorization
 
@@ -2666,7 +2729,7 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$exceptionId = ab; // string | The ID of the exception.
+$exceptionId = animi; // string | The ID of the exception.
 $putBusinessModelExceptionsUpdateRequest = new \Stackflows\Clients\Stackflows\Model\PutBusinessModelExceptionsUpdateRequest(); // \Stackflows\Clients\Stackflows\Model\PutBusinessModelExceptionsUpdateRequest
 
 try {

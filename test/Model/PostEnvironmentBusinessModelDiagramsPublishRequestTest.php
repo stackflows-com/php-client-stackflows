@@ -1,6 +1,6 @@
 <?php
 /**
- * PostTaggedBusinessModelsStartRequestTest
+ * PostEnvironmentBusinessModelDiagramsPublishRequestTest
  *
  * PHP version 7.4
  *
@@ -31,15 +31,15 @@ namespace Stackflows\Clients\Stackflows\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * PostTaggedBusinessModelsStartRequestTest Class Doc Comment
+ * PostEnvironmentBusinessModelDiagramsPublishRequestTest Class Doc Comment
  *
  * @category    Class
- * @description PostTaggedBusinessModelsStartRequest
+ * @description PostEnvironmentBusinessModelDiagramsPublishRequest
  * @package     Stackflows\Clients\Stackflows
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class PostTaggedBusinessModelsStartRequestTest extends TestCase
+class PostEnvironmentBusinessModelDiagramsPublishRequestTest extends TestCase
 {
 
     /**
@@ -71,45 +71,18 @@ class PostTaggedBusinessModelsStartRequestTest extends TestCase
     }
 
     /**
-     * Test "PostTaggedBusinessModelsStartRequest"
+     * Test "PostEnvironmentBusinessModelDiagramsPublishRequest"
      */
-    public function testPostTaggedBusinessModelsStartRequest()
+    public function testPostEnvironmentBusinessModelDiagramsPublishRequest()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "id"
+     * Test attribute "environmentIds"
      */
-    public function testPropertyId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "engineModelReference"
-     */
-    public function testPropertyEngineModelReference()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "tags"
-     */
-    public function testPropertyTags()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "submission"
-     */
-    public function testPropertySubmission()
+    public function testPropertyEnvironmentIds()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

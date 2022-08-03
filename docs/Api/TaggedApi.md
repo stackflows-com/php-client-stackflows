@@ -48,7 +48,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **postTaggedBusinessModelsStartRequest** | [**\Stackflows\Clients\Stackflows\Model\PostTaggedBusinessModelsStartRequest**](../Model/PostTaggedBusinessModelsStartRequest.md)|  |
+ **postTaggedBusinessModelsStartRequest** | [**\Stackflows\Clients\Stackflows\Model\PostTaggedBusinessModelsStartRequest**](../Model/PostTaggedBusinessModelsStartRequest.md)|  | [optional]
 
 ### Return type
 

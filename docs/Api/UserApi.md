@@ -163,7 +163,7 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\UserApi(
     new GuzzleHttp\Client(),
     $config
 );
-$includeorganizations = aut; // string | Possible includes
+$includeorganizations = illo; // string | Possible includes
 
 try {
     $result = $apiInstance->getUserMe($includeorganizations);

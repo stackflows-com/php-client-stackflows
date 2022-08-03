@@ -3569,7 +3569,7 @@ class OperationsApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse1
+     * @return \Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse
      */
     public function getBusinessModelDiagramsShow($diagramId, $includesnapshotsdeploysdeploysStatistics = null)
     {
@@ -3587,7 +3587,7 @@ class OperationsApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse1, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getBusinessModelDiagramsShowWithHttpInfo($diagramId, $includesnapshotsdeploysdeploysStatistics = null)
     {
@@ -3630,23 +3630,23 @@ class OperationsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse1' === '\SplFileObject') {
+                    if ('\Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse1' !== 'string') {
+                        if ('\Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse1', []),
+                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse1';
+            $returnType = '\Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -3667,7 +3667,7 @@ class OperationsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse1',
+                        '\Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3711,7 +3711,7 @@ class OperationsApi
      */
     public function getBusinessModelDiagramsShowAsyncWithHttpInfo($diagramId, $includesnapshotsdeploysdeploysStatistics = null)
     {
-        $returnType = '\Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse1';
+        $returnType = '\Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse';
         $request = $this->getBusinessModelDiagramsShowRequest($diagramId, $includesnapshotsdeploysdeploysStatistics);
 
         return $this->client
@@ -5980,7 +5980,7 @@ class OperationsApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse
+     * @return \Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse1
      */
     public function getBusinessModelsShowRevision($modelId, $revision)
     {
@@ -5998,7 +5998,7 @@ class OperationsApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse1, HTTP status code, HTTP response headers (array of strings)
      */
     public function getBusinessModelsShowRevisionWithHttpInfo($modelId, $revision)
     {
@@ -6041,23 +6041,23 @@ class OperationsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse' === '\SplFileObject') {
+                    if ('\Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse1' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse' !== 'string') {
+                        if ('\Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse1' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse', []),
+                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse1', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse';
+            $returnType = '\Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse1';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -6078,7 +6078,7 @@ class OperationsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse',
+                        '\Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse1',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6122,7 +6122,7 @@ class OperationsApi
      */
     public function getBusinessModelsShowRevisionAsyncWithHttpInfo($modelId, $revision)
     {
-        $returnType = '\Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse';
+        $returnType = '\Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse1';
         $request = $this->getBusinessModelsShowRevisionRequest($modelId, $revision);
 
         return $this->client
@@ -9582,15 +9582,15 @@ class OperationsApi
      * Publish Business Model Diagram
      *
      * @param  string $diagramId The ID of the diagram. (required)
-     * @param  \Stackflows\Clients\Stackflows\Model\PostBusinessModelDiagramsPublishRequest $postBusinessModelDiagramsPublishRequest postBusinessModelDiagramsPublishRequest (optional)
+     * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentBusinessModelDiagramsPublishRequest $postEnvironmentBusinessModelDiagramsPublishRequest postEnvironmentBusinessModelDiagramsPublishRequest (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\PublishBusinessModelDiagramResponse
      */
-    public function postBusinessModelDiagramsPublish($diagramId, $postBusinessModelDiagramsPublishRequest = null)
+    public function postBusinessModelDiagramsPublish($diagramId, $postEnvironmentBusinessModelDiagramsPublishRequest = null)
     {
-        list($response) = $this->postBusinessModelDiagramsPublishWithHttpInfo($diagramId, $postBusinessModelDiagramsPublishRequest);
+        list($response) = $this->postBusinessModelDiagramsPublishWithHttpInfo($diagramId, $postEnvironmentBusinessModelDiagramsPublishRequest);
         return $response;
     }
 
@@ -9600,15 +9600,15 @@ class OperationsApi
      * Publish Business Model Diagram
      *
      * @param  string $diagramId The ID of the diagram. (required)
-     * @param  \Stackflows\Clients\Stackflows\Model\PostBusinessModelDiagramsPublishRequest $postBusinessModelDiagramsPublishRequest (optional)
+     * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentBusinessModelDiagramsPublishRequest $postEnvironmentBusinessModelDiagramsPublishRequest (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\PublishBusinessModelDiagramResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postBusinessModelDiagramsPublishWithHttpInfo($diagramId, $postBusinessModelDiagramsPublishRequest = null)
+    public function postBusinessModelDiagramsPublishWithHttpInfo($diagramId, $postEnvironmentBusinessModelDiagramsPublishRequest = null)
     {
-        $request = $this->postBusinessModelDiagramsPublishRequest($diagramId, $postBusinessModelDiagramsPublishRequest);
+        $request = $this->postBusinessModelDiagramsPublishRequest($diagramId, $postEnvironmentBusinessModelDiagramsPublishRequest);
 
         try {
             $options = $this->createHttpClientOption();
@@ -9700,14 +9700,14 @@ class OperationsApi
      * Publish Business Model Diagram
      *
      * @param  string $diagramId The ID of the diagram. (required)
-     * @param  \Stackflows\Clients\Stackflows\Model\PostBusinessModelDiagramsPublishRequest $postBusinessModelDiagramsPublishRequest (optional)
+     * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentBusinessModelDiagramsPublishRequest $postEnvironmentBusinessModelDiagramsPublishRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postBusinessModelDiagramsPublishAsync($diagramId, $postBusinessModelDiagramsPublishRequest = null)
+    public function postBusinessModelDiagramsPublishAsync($diagramId, $postEnvironmentBusinessModelDiagramsPublishRequest = null)
     {
-        return $this->postBusinessModelDiagramsPublishAsyncWithHttpInfo($diagramId, $postBusinessModelDiagramsPublishRequest)
+        return $this->postBusinessModelDiagramsPublishAsyncWithHttpInfo($diagramId, $postEnvironmentBusinessModelDiagramsPublishRequest)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -9721,15 +9721,15 @@ class OperationsApi
      * Publish Business Model Diagram
      *
      * @param  string $diagramId The ID of the diagram. (required)
-     * @param  \Stackflows\Clients\Stackflows\Model\PostBusinessModelDiagramsPublishRequest $postBusinessModelDiagramsPublishRequest (optional)
+     * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentBusinessModelDiagramsPublishRequest $postEnvironmentBusinessModelDiagramsPublishRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postBusinessModelDiagramsPublishAsyncWithHttpInfo($diagramId, $postBusinessModelDiagramsPublishRequest = null)
+    public function postBusinessModelDiagramsPublishAsyncWithHttpInfo($diagramId, $postEnvironmentBusinessModelDiagramsPublishRequest = null)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\PublishBusinessModelDiagramResponse';
-        $request = $this->postBusinessModelDiagramsPublishRequest($diagramId, $postBusinessModelDiagramsPublishRequest);
+        $request = $this->postBusinessModelDiagramsPublishRequest($diagramId, $postEnvironmentBusinessModelDiagramsPublishRequest);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -9771,12 +9771,12 @@ class OperationsApi
      * Create request for operation 'postBusinessModelDiagramsPublish'
      *
      * @param  string $diagramId The ID of the diagram. (required)
-     * @param  \Stackflows\Clients\Stackflows\Model\PostBusinessModelDiagramsPublishRequest $postBusinessModelDiagramsPublishRequest (optional)
+     * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentBusinessModelDiagramsPublishRequest $postEnvironmentBusinessModelDiagramsPublishRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function postBusinessModelDiagramsPublishRequest($diagramId, $postBusinessModelDiagramsPublishRequest = null)
+    public function postBusinessModelDiagramsPublishRequest($diagramId, $postEnvironmentBusinessModelDiagramsPublishRequest = null)
     {
         // verify the required parameter 'diagramId' is set
         if ($diagramId === null || (is_array($diagramId) && count($diagramId) === 0)) {
@@ -9816,11 +9816,11 @@ class OperationsApi
         }
 
         // for model (json/xml)
-        if (isset($postBusinessModelDiagramsPublishRequest)) {
+        if (isset($postEnvironmentBusinessModelDiagramsPublishRequest)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($postBusinessModelDiagramsPublishRequest));
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($postEnvironmentBusinessModelDiagramsPublishRequest));
             } else {
-                $httpBody = $postBusinessModelDiagramsPublishRequest;
+                $httpBody = $postEnvironmentBusinessModelDiagramsPublishRequest;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -10996,6 +10996,301 @@ class OperationsApi
                 $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($postBusinessModelsTagRequest));
             } else {
                 $httpBody = $postBusinessModelsTagRequest;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires Bearer authentication (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation postBusinessProcessModelsStart
+     *
+     * Starts Business Process Model
+     *
+     * @param  string $environmentId The ID of the environment. (required)
+     * @param  \Stackflows\Clients\Stackflows\Model\PostBusinessProcessModelsStartRequest $postBusinessProcessModelsStartRequest postBusinessProcessModelsStartRequest (optional)
+     *
+     * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Stackflows\Clients\Stackflows\Model\StartsBusinessProcessModelResponse
+     */
+    public function postBusinessProcessModelsStart($environmentId, $postBusinessProcessModelsStartRequest = null)
+    {
+        list($response) = $this->postBusinessProcessModelsStartWithHttpInfo($environmentId, $postBusinessProcessModelsStartRequest);
+        return $response;
+    }
+
+    /**
+     * Operation postBusinessProcessModelsStartWithHttpInfo
+     *
+     * Starts Business Process Model
+     *
+     * @param  string $environmentId The ID of the environment. (required)
+     * @param  \Stackflows\Clients\Stackflows\Model\PostBusinessProcessModelsStartRequest $postBusinessProcessModelsStartRequest (optional)
+     *
+     * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Stackflows\Clients\Stackflows\Model\StartsBusinessProcessModelResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function postBusinessProcessModelsStartWithHttpInfo($environmentId, $postBusinessProcessModelsStartRequest = null)
+    {
+        $request = $this->postBusinessProcessModelsStartRequest($environmentId, $postBusinessProcessModelsStartRequest);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\Stackflows\Clients\Stackflows\Model\StartsBusinessProcessModelResponse' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\Stackflows\Clients\Stackflows\Model\StartsBusinessProcessModelResponse' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\StartsBusinessProcessModelResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\Stackflows\Clients\Stackflows\Model\StartsBusinessProcessModelResponse';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Stackflows\Clients\Stackflows\Model\StartsBusinessProcessModelResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation postBusinessProcessModelsStartAsync
+     *
+     * Starts Business Process Model
+     *
+     * @param  string $environmentId The ID of the environment. (required)
+     * @param  \Stackflows\Clients\Stackflows\Model\PostBusinessProcessModelsStartRequest $postBusinessProcessModelsStartRequest (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function postBusinessProcessModelsStartAsync($environmentId, $postBusinessProcessModelsStartRequest = null)
+    {
+        return $this->postBusinessProcessModelsStartAsyncWithHttpInfo($environmentId, $postBusinessProcessModelsStartRequest)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation postBusinessProcessModelsStartAsyncWithHttpInfo
+     *
+     * Starts Business Process Model
+     *
+     * @param  string $environmentId The ID of the environment. (required)
+     * @param  \Stackflows\Clients\Stackflows\Model\PostBusinessProcessModelsStartRequest $postBusinessProcessModelsStartRequest (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function postBusinessProcessModelsStartAsyncWithHttpInfo($environmentId, $postBusinessProcessModelsStartRequest = null)
+    {
+        $returnType = '\Stackflows\Clients\Stackflows\Model\StartsBusinessProcessModelResponse';
+        $request = $this->postBusinessProcessModelsStartRequest($environmentId, $postBusinessProcessModelsStartRequest);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'postBusinessProcessModelsStart'
+     *
+     * @param  string $environmentId The ID of the environment. (required)
+     * @param  \Stackflows\Clients\Stackflows\Model\PostBusinessProcessModelsStartRequest $postBusinessProcessModelsStartRequest (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function postBusinessProcessModelsStartRequest($environmentId, $postBusinessProcessModelsStartRequest = null)
+    {
+        // verify the required parameter 'environmentId' is set
+        if ($environmentId === null || (is_array($environmentId) && count($environmentId) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $environmentId when calling postBusinessProcessModelsStart'
+            );
+        }
+
+        $resourcePath = '/api/v2/business-process-models/{environment_id}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($environmentId !== null) {
+            $resourcePath = str_replace(
+                '{' . 'environment_id' . '}',
+                ObjectSerializer::toPathValue($environmentId),
+                $resourcePath
+            );
+        }
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($postBusinessProcessModelsStartRequest)) {
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($postBusinessProcessModelsStartRequest));
+            } else {
+                $httpBody = $postBusinessProcessModelsStartRequest;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {

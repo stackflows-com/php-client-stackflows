@@ -80,6 +80,24 @@ class PostEnvironmentTaggedBusinessModelsStartRequestTest extends TestCase
     }
 
     /**
+     * Test attribute "id"
+     */
+    public function testPropertyId()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "engineModelReference"
+     */
+    public function testPropertyEngineModelReference()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "tags"
      */
     public function testPropertyTags()

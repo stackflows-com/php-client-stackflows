@@ -1,6 +1,6 @@
 <?php
 /**
- * PostTaggedBusinessModelsStartRequest
+ * PostBusinessProcessModelsStartRequest
  *
  * PHP version 7.4
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \Stackflows\Clients\Stackflows\ObjectSerializer;
 
 /**
- * PostTaggedBusinessModelsStartRequest Class Doc Comment
+ * PostBusinessProcessModelsStartRequest Class Doc Comment
  *
  * @category Class
  * @package  Stackflows\Clients\Stackflows
@@ -40,7 +40,7 @@ use \Stackflows\Clients\Stackflows\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class PostTaggedBusinessModelsStartRequest implements ModelInterface, ArrayAccess, \JsonSerializable
+class PostBusinessProcessModelsStartRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class PostTaggedBusinessModelsStartRequest implements ModelInterface, ArrayAcces
       *
       * @var string
       */
-    protected static $openAPIModelName = 'postTaggedBusinessModelsStart_request';
+    protected static $openAPIModelName = 'postBusinessProcessModelsStart_request';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,9 +57,8 @@ class PostTaggedBusinessModelsStartRequest implements ModelInterface, ArrayAcces
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'string[]',
-        'engineModelReference' => 'string[]',
-        'tags' => 'string[]',
+        'id' => 'string',
+        'engineModelReference' => 'string',
         'submission' => 'string'
     ];
 
@@ -73,7 +72,6 @@ class PostTaggedBusinessModelsStartRequest implements ModelInterface, ArrayAcces
     protected static $openAPIFormats = [
         'id' => null,
         'engineModelReference' => null,
-        'tags' => null,
         'submission' => null
     ];
 
@@ -106,7 +104,6 @@ class PostTaggedBusinessModelsStartRequest implements ModelInterface, ArrayAcces
     protected static $attributeMap = [
         'id' => 'id',
         'engineModelReference' => 'engine_model_reference',
-        'tags' => 'tags',
         'submission' => 'submission'
     ];
 
@@ -118,7 +115,6 @@ class PostTaggedBusinessModelsStartRequest implements ModelInterface, ArrayAcces
     protected static $setters = [
         'id' => 'setId',
         'engineModelReference' => 'setEngineModelReference',
-        'tags' => 'setTags',
         'submission' => 'setSubmission'
     ];
 
@@ -130,7 +126,6 @@ class PostTaggedBusinessModelsStartRequest implements ModelInterface, ArrayAcces
     protected static $getters = [
         'id' => 'getId',
         'engineModelReference' => 'getEngineModelReference',
-        'tags' => 'getTags',
         'submission' => 'getSubmission'
     ];
 
@@ -193,7 +188,6 @@ class PostTaggedBusinessModelsStartRequest implements ModelInterface, ArrayAcces
     {
         $this->container['id'] = $data['id'] ?? null;
         $this->container['engineModelReference'] = $data['engineModelReference'] ?? null;
-        $this->container['tags'] = $data['tags'] ?? null;
         $this->container['submission'] = $data['submission'] ?? null;
     }
 
@@ -224,7 +218,7 @@ class PostTaggedBusinessModelsStartRequest implements ModelInterface, ArrayAcces
     /**
      * Gets id
      *
-     * @return string[]|null
+     * @return string|null
      */
     public function getId()
     {
@@ -234,7 +228,7 @@ class PostTaggedBusinessModelsStartRequest implements ModelInterface, ArrayAcces
     /**
      * Sets id
      *
-     * @param string[]|null $id 
+     * @param string|null $id This field is required when <code>engine_model_reference</code> is <code>null</code>.
      *
      * @return self
      */
@@ -248,7 +242,7 @@ class PostTaggedBusinessModelsStartRequest implements ModelInterface, ArrayAcces
     /**
      * Gets engineModelReference
      *
-     * @return string[]|null
+     * @return string|null
      */
     public function getEngineModelReference()
     {
@@ -258,37 +252,13 @@ class PostTaggedBusinessModelsStartRequest implements ModelInterface, ArrayAcces
     /**
      * Sets engineModelReference
      *
-     * @param string[]|null $engineModelReference 
+     * @param string|null $engineModelReference This field is required when <code>id</code> is <code>null</code>.
      *
      * @return self
      */
     public function setEngineModelReference($engineModelReference)
     {
         $this->container['engineModelReference'] = $engineModelReference;
-
-        return $this;
-    }
-
-    /**
-     * Gets tags
-     *
-     * @return string[]|null
-     */
-    public function getTags()
-    {
-        return $this->container['tags'];
-    }
-
-    /**
-     * Sets tags
-     *
-     * @param string[]|null $tags 
-     *
-     * @return self
-     */
-    public function setTags($tags)
-    {
-        $this->container['tags'] = $tags;
 
         return $this;
     }

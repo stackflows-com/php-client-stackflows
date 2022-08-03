@@ -120,13 +120,13 @@ class TaggedApi
      *
      * Starts Business Process Models by Tag
      *
-     * @param  \Stackflows\Clients\Stackflows\Model\PostTaggedBusinessModelsStartRequest $postTaggedBusinessModelsStartRequest postTaggedBusinessModelsStartRequest (required)
+     * @param  \Stackflows\Clients\Stackflows\Model\PostTaggedBusinessModelsStartRequest $postTaggedBusinessModelsStartRequest postTaggedBusinessModelsStartRequest (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\StartsBusinessProcessModelsByTagResponse
      */
-    public function postTaggedBusinessModelsStart($postTaggedBusinessModelsStartRequest)
+    public function postTaggedBusinessModelsStart($postTaggedBusinessModelsStartRequest = null)
     {
         list($response) = $this->postTaggedBusinessModelsStartWithHttpInfo($postTaggedBusinessModelsStartRequest);
         return $response;
@@ -137,13 +137,13 @@ class TaggedApi
      *
      * Starts Business Process Models by Tag
      *
-     * @param  \Stackflows\Clients\Stackflows\Model\PostTaggedBusinessModelsStartRequest $postTaggedBusinessModelsStartRequest (required)
+     * @param  \Stackflows\Clients\Stackflows\Model\PostTaggedBusinessModelsStartRequest $postTaggedBusinessModelsStartRequest (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\StartsBusinessProcessModelsByTagResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postTaggedBusinessModelsStartWithHttpInfo($postTaggedBusinessModelsStartRequest)
+    public function postTaggedBusinessModelsStartWithHttpInfo($postTaggedBusinessModelsStartRequest = null)
     {
         $request = $this->postTaggedBusinessModelsStartRequest($postTaggedBusinessModelsStartRequest);
 
@@ -236,12 +236,12 @@ class TaggedApi
      *
      * Starts Business Process Models by Tag
      *
-     * @param  \Stackflows\Clients\Stackflows\Model\PostTaggedBusinessModelsStartRequest $postTaggedBusinessModelsStartRequest (required)
+     * @param  \Stackflows\Clients\Stackflows\Model\PostTaggedBusinessModelsStartRequest $postTaggedBusinessModelsStartRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postTaggedBusinessModelsStartAsync($postTaggedBusinessModelsStartRequest)
+    public function postTaggedBusinessModelsStartAsync($postTaggedBusinessModelsStartRequest = null)
     {
         return $this->postTaggedBusinessModelsStartAsyncWithHttpInfo($postTaggedBusinessModelsStartRequest)
             ->then(
@@ -256,12 +256,12 @@ class TaggedApi
      *
      * Starts Business Process Models by Tag
      *
-     * @param  \Stackflows\Clients\Stackflows\Model\PostTaggedBusinessModelsStartRequest $postTaggedBusinessModelsStartRequest (required)
+     * @param  \Stackflows\Clients\Stackflows\Model\PostTaggedBusinessModelsStartRequest $postTaggedBusinessModelsStartRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postTaggedBusinessModelsStartAsyncWithHttpInfo($postTaggedBusinessModelsStartRequest)
+    public function postTaggedBusinessModelsStartAsyncWithHttpInfo($postTaggedBusinessModelsStartRequest = null)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\StartsBusinessProcessModelsByTagResponse';
         $request = $this->postTaggedBusinessModelsStartRequest($postTaggedBusinessModelsStartRequest);
@@ -305,19 +305,13 @@ class TaggedApi
     /**
      * Create request for operation 'postTaggedBusinessModelsStart'
      *
-     * @param  \Stackflows\Clients\Stackflows\Model\PostTaggedBusinessModelsStartRequest $postTaggedBusinessModelsStartRequest (required)
+     * @param  \Stackflows\Clients\Stackflows\Model\PostTaggedBusinessModelsStartRequest $postTaggedBusinessModelsStartRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function postTaggedBusinessModelsStartRequest($postTaggedBusinessModelsStartRequest)
+    public function postTaggedBusinessModelsStartRequest($postTaggedBusinessModelsStartRequest = null)
     {
-        // verify the required parameter 'postTaggedBusinessModelsStartRequest' is set
-        if ($postTaggedBusinessModelsStartRequest === null || (is_array($postTaggedBusinessModelsStartRequest) && count($postTaggedBusinessModelsStartRequest) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $postTaggedBusinessModelsStartRequest when calling postTaggedBusinessModelsStart'
-            );
-        }
 
         $resourcePath = '/api/v2/tagged/business-models';
         $formParams = [];

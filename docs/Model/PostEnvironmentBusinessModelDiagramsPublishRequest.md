@@ -1,4 +1,4 @@
-# # PostBusinessModelDiagramsPublishRequest
+# # PostEnvironmentBusinessModelDiagramsPublishRequest
 
 ## Properties
 

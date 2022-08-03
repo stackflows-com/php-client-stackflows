@@ -1,6 +1,6 @@
 <?php
 /**
- * PostTaggedBusinessModelsStartRequestTest
+ * PostBusinessProcessModelsStartRequestTest
  *
  * PHP version 7.4
  *
@@ -31,15 +31,15 @@ namespace Stackflows\Clients\Stackflows\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * PostTaggedBusinessModelsStartRequestTest Class Doc Comment
+ * PostBusinessProcessModelsStartRequestTest Class Doc Comment
  *
  * @category    Class
- * @description PostTaggedBusinessModelsStartRequest
+ * @description PostBusinessProcessModelsStartRequest
  * @package     Stackflows\Clients\Stackflows
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class PostTaggedBusinessModelsStartRequestTest extends TestCase
+class PostBusinessProcessModelsStartRequestTest extends TestCase
 {
 
     /**
@@ -71,9 +71,9 @@ class PostTaggedBusinessModelsStartRequestTest extends TestCase
     }
 
     /**
-     * Test "PostTaggedBusinessModelsStartRequest"
+     * Test "PostBusinessProcessModelsStartRequest"
      */
-    public function testPostTaggedBusinessModelsStartRequest()
+    public function testPostBusinessProcessModelsStartRequest()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -92,15 +92,6 @@ class PostTaggedBusinessModelsStartRequestTest extends TestCase
      * Test attribute "engineModelReference"
      */
     public function testPropertyEngineModelReference()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "tags"
-     */
-    public function testPropertyTags()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

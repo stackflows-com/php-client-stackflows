@@ -145,6 +145,7 @@ Class | Method | HTTP request | Description
 *OperationsApi* | [**postBusinessModelsCreate**](docs/Api/OperationsApi.md#postbusinessmodelscreate) | **POST** /api/v2/business-models | Create Business Model
 *OperationsApi* | [**postBusinessModelsPostRevision**](docs/Api/OperationsApi.md#postbusinessmodelspostrevision) | **POST** /api/v2/business-models/{model_id}/revisions | Submit Business Model Diagram
 *OperationsApi* | [**postBusinessModelsTag**](docs/Api/OperationsApi.md#postbusinessmodelstag) | **POST** /api/v2/business-models/{taggable_id}/tag | Tag Business Model
+*OperationsApi* | [**postBusinessProcessModelsStart**](docs/Api/OperationsApi.md#postbusinessprocessmodelsstart) | **POST** /api/v2/business-process-models/{environment_id} | Starts Business Process Model
 *OperationsApi* | [**postBusinessProcessesCreate**](docs/Api/OperationsApi.md#postbusinessprocessescreate) | **POST** /api/v2/business-processes | Create Business Process Tag
 *OperationsApi* | [**postCategoriesCreate**](docs/Api/OperationsApi.md#postcategoriescreate) | **POST** /api/v2/categories | Create Category
 *OperationsApi* | [**postTagsCreate**](docs/Api/OperationsApi.md#posttagscreate) | **POST** /api/v2/tags | Create Tag
@@ -244,14 +245,15 @@ Class | Method | HTTP request | Description
 - [MeResponse](docs/Model/MeResponse.md)
 - [OrganizationUnitModel](docs/Model/OrganizationUnitModel.md)
 - [PostBusinessModelDiagramsCommentsCreateRequest](docs/Model/PostBusinessModelDiagramsCommentsCreateRequest.md)
-- [PostBusinessModelDiagramsPublishRequest](docs/Model/PostBusinessModelDiagramsPublishRequest.md)
 - [PostBusinessModelExceptionsCreateRequest](docs/Model/PostBusinessModelExceptionsCreateRequest.md)
 - [PostBusinessModelsCreateRequest](docs/Model/PostBusinessModelsCreateRequest.md)
 - [PostBusinessModelsTagRequest](docs/Model/PostBusinessModelsTagRequest.md)
+- [PostBusinessProcessModelsStartRequest](docs/Model/PostBusinessProcessModelsStartRequest.md)
 - [PostBusinessProcessesCreateRequest](docs/Model/PostBusinessProcessesCreateRequest.md)
 - [PostCategoriesCreateRequest](docs/Model/PostCategoriesCreateRequest.md)
 - [PostEnginesCreateRequest](docs/Model/PostEnginesCreateRequest.md)
 - [PostEnvironmentBusinessModelDiagramsCommentsCreateRequest](docs/Model/PostEnvironmentBusinessModelDiagramsCommentsCreateRequest.md)
+- [PostEnvironmentBusinessModelDiagramsPublishRequest](docs/Model/PostEnvironmentBusinessModelDiagramsPublishRequest.md)
 - [PostEnvironmentBusinessModelsCreateRequest](docs/Model/PostEnvironmentBusinessModelsCreateRequest.md)
 - [PostEnvironmentEventsMessageRequest](docs/Model/PostEnvironmentEventsMessageRequest.md)
 - [PostEnvironmentEventsSignalRequest](docs/Model/PostEnvironmentEventsSignalRequest.md)
@@ -287,6 +289,7 @@ Class | Method | HTTP request | Description
 - [SendMessageResponse](docs/Model/SendMessageResponse.md)
 - [ServeServiceTaskResponse](docs/Model/ServeServiceTaskResponse.md)
 - [ServiceTaskType](docs/Model/ServiceTaskType.md)
+- [StartsBusinessProcessModelResponse](docs/Model/StartsBusinessProcessModelResponse.md)
 - [StartsBusinessProcessModelsByTagResponse](docs/Model/StartsBusinessProcessModelsByTagResponse.md)
 - [SubmitBusinessModelDiagramResponse](docs/Model/SubmitBusinessModelDiagramResponse.md)
 - [TagBusinessModelResponse](docs/Model/TagBusinessModelResponse.md)

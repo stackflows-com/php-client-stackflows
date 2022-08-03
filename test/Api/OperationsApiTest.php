@@ -516,6 +516,18 @@ class OperationsApiTest extends TestCase
     }
 
     /**
+     * Test case for postBusinessProcessModelsStart
+     *
+     * Starts Business Process Model.
+     *
+     */
+    public function testPostBusinessProcessModelsStart()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for postBusinessProcessesCreate
      *
      * Create Business Process Tag.

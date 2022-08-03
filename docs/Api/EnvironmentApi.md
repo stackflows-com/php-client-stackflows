@@ -338,7 +338,7 @@ This endpoint does not need any parameter.
 ## `getEnvironmentBusinessModelDiagramsShow()`
 
 ```php
-getEnvironmentBusinessModelDiagramsShow($diagramId, $includesnapshotsdeploysdeploysStatistics): \Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse1
+getEnvironmentBusinessModelDiagramsShow($diagramId, $includesnapshotsdeploysdeploysStatistics): \Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse
 ```
 
 View Business Model Diagram
@@ -363,7 +363,7 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\EnvironmentApi(
     $config
 );
 $diagramId = 139b5820-048d-11ed-a920-d9cc122fb2b1; // string | The ID of the diagram.
-$includesnapshotsdeploysdeploysStatistics = repudiandae; // string | Possible includes
+$includesnapshotsdeploysdeploysStatistics = hic; // string | Possible includes
 
 try {
     $result = $apiInstance->getEnvironmentBusinessModelDiagramsShow($diagramId, $includesnapshotsdeploysdeploysStatistics);
@@ -382,7 +382,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse1**](../Model/ViewBusinessModelDiagramResponse1.md)
+[**\Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse**](../Model/ViewBusinessModelDiagramResponse.md)
 
 ### Authorization
 
@@ -492,7 +492,7 @@ $filterWithoutAnyTags = true; // bool | Will return list of all models that has 
 $filterAutocomplete = tes; // string | Retrieve list that has \"tes\" at the start of their name.
 $filterSearch = tes; // string | Retrieve list that has \"tes\" in their name.
 $filterCategories = 1,2; // string | Filter by specific categories.
-$filterType = commodi; // string | Filter by specific type. Example process,decision
+$filterType = consequatur; // string | Filter by specific type. Example process,decision
 $filterUncategorized = true; // bool | boolean List only uncategorized process models.
 $filterSubscribable = true; // bool | List only subscribable process models.
 $sort = name,-created_at,-updated_at; // string | Sorting by specified criteria.
@@ -565,7 +565,7 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\EnvironmentApi(
     $config
 );
 $modelId = 1244a4d0-03f6-11ed-8757-598213407c67; // string | The ID of the model.
-$includeownercompanycategorytagscommentsCounttagsCountdiagrams = omnis; // string | Possible includes
+$includeownercompanycategorytagscommentsCounttagsCountdiagrams = accusantium; // string | Possible includes
 
 try {
     $result = $apiInstance->getEnvironmentBusinessModelsShow($modelId, $includeownercompanycategorytagscommentsCounttagsCountdiagrams);
@@ -845,7 +845,7 @@ Name | Type | Description  | Notes
 ## `postEnvironmentBusinessModelDiagramsPublish()`
 
 ```php
-postEnvironmentBusinessModelDiagramsPublish($diagramId, $postBusinessModelDiagramsPublishRequest): \Stackflows\Clients\Stackflows\Model\PublishBusinessModelDiagramResponse
+postEnvironmentBusinessModelDiagramsPublish($diagramId, $postEnvironmentBusinessModelDiagramsPublishRequest): \Stackflows\Clients\Stackflows\Model\PublishBusinessModelDiagramResponse
 ```
 
 Publish Business Model Diagram
@@ -870,10 +870,10 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\EnvironmentApi(
     $config
 );
 $diagramId = 139b5820-048d-11ed-a920-d9cc122fb2b1; // string | The ID of the diagram.
-$postBusinessModelDiagramsPublishRequest = new \Stackflows\Clients\Stackflows\Model\PostBusinessModelDiagramsPublishRequest(); // \Stackflows\Clients\Stackflows\Model\PostBusinessModelDiagramsPublishRequest
+$postEnvironmentBusinessModelDiagramsPublishRequest = new \Stackflows\Clients\Stackflows\Model\PostEnvironmentBusinessModelDiagramsPublishRequest(); // \Stackflows\Clients\Stackflows\Model\PostEnvironmentBusinessModelDiagramsPublishRequest
 
 try {
-    $result = $apiInstance->postEnvironmentBusinessModelDiagramsPublish($diagramId, $postBusinessModelDiagramsPublishRequest);
+    $result = $apiInstance->postEnvironmentBusinessModelDiagramsPublish($diagramId, $postEnvironmentBusinessModelDiagramsPublishRequest);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling EnvironmentApi->postEnvironmentBusinessModelDiagramsPublish: ', $e->getMessage(), PHP_EOL;
@@ -885,7 +885,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **diagramId** | **string**| The ID of the diagram. |
- **postBusinessModelDiagramsPublishRequest** | [**\Stackflows\Clients\Stackflows\Model\PostBusinessModelDiagramsPublishRequest**](../Model/PostBusinessModelDiagramsPublishRequest.md)|  | [optional]
+ **postEnvironmentBusinessModelDiagramsPublishRequest** | [**\Stackflows\Clients\Stackflows\Model\PostEnvironmentBusinessModelDiagramsPublishRequest**](../Model/PostEnvironmentBusinessModelDiagramsPublishRequest.md)|  | [optional]
 
 ### Return type
 
@@ -1309,7 +1309,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **postEnvironmentTaggedBusinessModelsStartRequest** | [**\Stackflows\Clients\Stackflows\Model\PostEnvironmentTaggedBusinessModelsStartRequest**](../Model/PostEnvironmentTaggedBusinessModelsStartRequest.md)|  |
+ **postEnvironmentTaggedBusinessModelsStartRequest** | [**\Stackflows\Clients\Stackflows\Model\PostEnvironmentTaggedBusinessModelsStartRequest**](../Model/PostEnvironmentTaggedBusinessModelsStartRequest.md)|  | [optional]
 
 ### Return type
 

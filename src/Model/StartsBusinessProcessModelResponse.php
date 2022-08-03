@@ -1,6 +1,6 @@
 <?php
 /**
- * PostTaggedBusinessModelsStartRequest
+ * StartsBusinessProcessModelResponse
  *
  * PHP version 7.4
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \Stackflows\Clients\Stackflows\ObjectSerializer;
 
 /**
- * PostTaggedBusinessModelsStartRequest Class Doc Comment
+ * StartsBusinessProcessModelResponse Class Doc Comment
  *
  * @category Class
  * @package  Stackflows\Clients\Stackflows
@@ -40,7 +40,7 @@ use \Stackflows\Clients\Stackflows\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class PostTaggedBusinessModelsStartRequest implements ModelInterface, ArrayAccess, \JsonSerializable
+class StartsBusinessProcessModelResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class PostTaggedBusinessModelsStartRequest implements ModelInterface, ArrayAcces
       *
       * @var string
       */
-    protected static $openAPIModelName = 'postTaggedBusinessModelsStart_request';
+    protected static $openAPIModelName = 'Starts_Business_Process_Model_Response';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,10 +57,7 @@ class PostTaggedBusinessModelsStartRequest implements ModelInterface, ArrayAcces
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'string[]',
-        'engineModelReference' => 'string[]',
-        'tags' => 'string[]',
-        'submission' => 'string'
+        'data' => '\Stackflows\Clients\Stackflows\Model\BusinessProcessModelModel'
     ];
 
     /**
@@ -71,10 +68,7 @@ class PostTaggedBusinessModelsStartRequest implements ModelInterface, ArrayAcces
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
-        'engineModelReference' => null,
-        'tags' => null,
-        'submission' => null
+        'data' => null
     ];
 
     /**
@@ -104,10 +98,7 @@ class PostTaggedBusinessModelsStartRequest implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'engineModelReference' => 'engine_model_reference',
-        'tags' => 'tags',
-        'submission' => 'submission'
+        'data' => 'data'
     ];
 
     /**
@@ -116,10 +107,7 @@ class PostTaggedBusinessModelsStartRequest implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'engineModelReference' => 'setEngineModelReference',
-        'tags' => 'setTags',
-        'submission' => 'setSubmission'
+        'data' => 'setData'
     ];
 
     /**
@@ -128,10 +116,7 @@ class PostTaggedBusinessModelsStartRequest implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'engineModelReference' => 'getEngineModelReference',
-        'tags' => 'getTags',
-        'submission' => 'getSubmission'
+        'data' => 'getData'
     ];
 
     /**
@@ -191,10 +176,7 @@ class PostTaggedBusinessModelsStartRequest implements ModelInterface, ArrayAcces
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = $data['id'] ?? null;
-        $this->container['engineModelReference'] = $data['engineModelReference'] ?? null;
-        $this->container['tags'] = $data['tags'] ?? null;
-        $this->container['submission'] = $data['submission'] ?? null;
+        $this->container['data'] = $data['data'] ?? null;
     }
 
     /**
@@ -222,97 +204,25 @@ class PostTaggedBusinessModelsStartRequest implements ModelInterface, ArrayAcces
 
 
     /**
-     * Gets id
+     * Gets data
      *
-     * @return string[]|null
+     * @return \Stackflows\Clients\Stackflows\Model\BusinessProcessModelModel|null
      */
-    public function getId()
+    public function getData()
     {
-        return $this->container['id'];
+        return $this->container['data'];
     }
 
     /**
-     * Sets id
+     * Sets data
      *
-     * @param string[]|null $id 
+     * @param \Stackflows\Clients\Stackflows\Model\BusinessProcessModelModel|null $data data
      *
      * @return self
      */
-    public function setId($id)
+    public function setData($data)
     {
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets engineModelReference
-     *
-     * @return string[]|null
-     */
-    public function getEngineModelReference()
-    {
-        return $this->container['engineModelReference'];
-    }
-
-    /**
-     * Sets engineModelReference
-     *
-     * @param string[]|null $engineModelReference 
-     *
-     * @return self
-     */
-    public function setEngineModelReference($engineModelReference)
-    {
-        $this->container['engineModelReference'] = $engineModelReference;
-
-        return $this;
-    }
-
-    /**
-     * Gets tags
-     *
-     * @return string[]|null
-     */
-    public function getTags()
-    {
-        return $this->container['tags'];
-    }
-
-    /**
-     * Sets tags
-     *
-     * @param string[]|null $tags 
-     *
-     * @return self
-     */
-    public function setTags($tags)
-    {
-        $this->container['tags'] = $tags;
-
-        return $this;
-    }
-
-    /**
-     * Gets submission
-     *
-     * @return string|null
-     */
-    public function getSubmission()
-    {
-        return $this->container['submission'];
-    }
-
-    /**
-     * Sets submission
-     *
-     * @param string|null $submission 
-     *
-     * @return self
-     */
-    public function setSubmission($submission)
-    {
-        $this->container['submission'] = $submission;
+        $this->container['data'] = $data;
 
         return $this;
     }
