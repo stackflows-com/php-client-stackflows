@@ -64,7 +64,7 @@ class ServiceTaskType implements ModelInterface, ArrayAccess, \JsonSerializable
         'environment' => 'object',
         'activity' => '\Stackflows\Clients\Stackflows\Model\ActivityType',
         'instance' => '\Stackflows\Clients\Stackflows\Model\BusinessProcessInstanceType',
-        'attributes' => '\Stackflows\Clients\Stackflows\Model\DataPointCollection'
+        'attributes' => 'array<string,\Stackflows\Clients\Stackflows\Model\DataPointType>'
     ];
 
     /**
@@ -416,7 +416,7 @@ class ServiceTaskType implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets attributes
      *
-     * @return \Stackflows\Clients\Stackflows\Model\DataPointCollection|null
+     * @return array<string,\Stackflows\Clients\Stackflows\Model\DataPointType>|null
      */
     public function getAttributes()
     {
@@ -426,7 +426,7 @@ class ServiceTaskType implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets attributes
      *
-     * @param \Stackflows\Clients\Stackflows\Model\DataPointCollection|null $attributes attributes
+     * @param array<string,\Stackflows\Clients\Stackflows\Model\DataPointType>|null $attributes attributes
      *
      * @return self
      */

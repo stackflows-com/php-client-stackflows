@@ -98,9 +98,9 @@ class BusinessProcessInstanceTypeTest extends TestCase
     }
 
     /**
-     * Test attribute "contex"
+     * Test attribute "context"
      */
-    public function testPropertyContex()
+    public function testPropertyContext()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

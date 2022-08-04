@@ -2891,14 +2891,15 @@ class EnvironmentApi
      *
      * List User Tasks
      *
+     * @param  \Stackflows\Clients\Stackflows\Model\GetEnvironmentUserTasksListRequest $getEnvironmentUserTasksListRequest getEnvironmentUserTasksListRequest (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\ListUserTasksResponse
      */
-    public function getEnvironmentUserTasksList()
+    public function getEnvironmentUserTasksList($getEnvironmentUserTasksListRequest = null)
     {
-        list($response) = $this->getEnvironmentUserTasksListWithHttpInfo();
+        list($response) = $this->getEnvironmentUserTasksListWithHttpInfo($getEnvironmentUserTasksListRequest);
         return $response;
     }
 
@@ -2907,14 +2908,15 @@ class EnvironmentApi
      *
      * List User Tasks
      *
+     * @param  \Stackflows\Clients\Stackflows\Model\GetEnvironmentUserTasksListRequest $getEnvironmentUserTasksListRequest (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\ListUserTasksResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getEnvironmentUserTasksListWithHttpInfo()
+    public function getEnvironmentUserTasksListWithHttpInfo($getEnvironmentUserTasksListRequest = null)
     {
-        $request = $this->getEnvironmentUserTasksListRequest();
+        $request = $this->getEnvironmentUserTasksListRequest($getEnvironmentUserTasksListRequest);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3005,13 +3007,14 @@ class EnvironmentApi
      *
      * List User Tasks
      *
+     * @param  \Stackflows\Clients\Stackflows\Model\GetEnvironmentUserTasksListRequest $getEnvironmentUserTasksListRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getEnvironmentUserTasksListAsync()
+    public function getEnvironmentUserTasksListAsync($getEnvironmentUserTasksListRequest = null)
     {
-        return $this->getEnvironmentUserTasksListAsyncWithHttpInfo()
+        return $this->getEnvironmentUserTasksListAsyncWithHttpInfo($getEnvironmentUserTasksListRequest)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3024,14 +3027,15 @@ class EnvironmentApi
      *
      * List User Tasks
      *
+     * @param  \Stackflows\Clients\Stackflows\Model\GetEnvironmentUserTasksListRequest $getEnvironmentUserTasksListRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getEnvironmentUserTasksListAsyncWithHttpInfo()
+    public function getEnvironmentUserTasksListAsyncWithHttpInfo($getEnvironmentUserTasksListRequest = null)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\ListUserTasksResponse';
-        $request = $this->getEnvironmentUserTasksListRequest();
+        $request = $this->getEnvironmentUserTasksListRequest($getEnvironmentUserTasksListRequest);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3072,11 +3076,12 @@ class EnvironmentApi
     /**
      * Create request for operation 'getEnvironmentUserTasksList'
      *
+     * @param  \Stackflows\Clients\Stackflows\Model\GetEnvironmentUserTasksListRequest $getEnvironmentUserTasksListRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getEnvironmentUserTasksListRequest()
+    public function getEnvironmentUserTasksListRequest($getEnvironmentUserTasksListRequest = null)
     {
 
         $resourcePath = '/api/v2/environment/user-tasks';
@@ -3097,12 +3102,18 @@ class EnvironmentApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json'],
-                []
+                ['application/json']
             );
         }
 
         // for model (json/xml)
-        if (count($formParams) > 0) {
+        if (isset($getEnvironmentUserTasksListRequest)) {
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($getEnvironmentUserTasksListRequest));
+            } else {
+                $httpBody = $getEnvironmentUserTasksListRequest;
+            }
+        } elseif (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {

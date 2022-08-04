@@ -1,6 +1,6 @@
 <?php
 /**
- * DataPointCollection
+ * GetEnvironmentUserTasksListRequest
  *
  * PHP version 7.4
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \Stackflows\Clients\Stackflows\ObjectSerializer;
 
 /**
- * DataPointCollection Class Doc Comment
+ * GetEnvironmentUserTasksListRequest Class Doc Comment
  *
  * @category Class
  * @package  Stackflows\Clients\Stackflows
@@ -40,7 +40,7 @@ use \Stackflows\Clients\Stackflows\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class DataPointCollection implements ModelInterface, ArrayAccess, \JsonSerializable
+class GetEnvironmentUserTasksListRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class DataPointCollection implements ModelInterface, ArrayAccess, \JsonSerializa
       *
       * @var string
       */
-    protected static $openAPIModelName = 'DataPointCollection';
+    protected static $openAPIModelName = 'getEnvironmentUserTasksList_request';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,7 +57,11 @@ class DataPointCollection implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
-        'items' => '\Stackflows\Clients\Stackflows\Model\DataPointType[]'
+        'createdAtFrom' => 'string',
+        'createdAtTill' => 'string',
+        'activeOnly' => 'bool',
+        'offset' => 'int',
+        'limit' => 'int'
     ];
 
     /**
@@ -68,7 +72,11 @@ class DataPointCollection implements ModelInterface, ArrayAccess, \JsonSerializa
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'items' => null
+        'createdAtFrom' => null,
+        'createdAtTill' => null,
+        'activeOnly' => null,
+        'offset' => null,
+        'limit' => null
     ];
 
     /**
@@ -98,7 +106,11 @@ class DataPointCollection implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $attributeMap = [
-        'items' => 'items'
+        'createdAtFrom' => 'created_at_from',
+        'createdAtTill' => 'created_at_till',
+        'activeOnly' => 'active_only',
+        'offset' => 'offset',
+        'limit' => 'limit'
     ];
 
     /**
@@ -107,7 +119,11 @@ class DataPointCollection implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $setters = [
-        'items' => 'setItems'
+        'createdAtFrom' => 'setCreatedAtFrom',
+        'createdAtTill' => 'setCreatedAtTill',
+        'activeOnly' => 'setActiveOnly',
+        'offset' => 'setOffset',
+        'limit' => 'setLimit'
     ];
 
     /**
@@ -116,7 +132,11 @@ class DataPointCollection implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $getters = [
-        'items' => 'getItems'
+        'createdAtFrom' => 'getCreatedAtFrom',
+        'createdAtTill' => 'getCreatedAtTill',
+        'activeOnly' => 'getActiveOnly',
+        'offset' => 'getOffset',
+        'limit' => 'getLimit'
     ];
 
     /**
@@ -176,7 +196,11 @@ class DataPointCollection implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function __construct(array $data = null)
     {
-        $this->container['items'] = $data['items'] ?? null;
+        $this->container['createdAtFrom'] = $data['createdAtFrom'] ?? null;
+        $this->container['createdAtTill'] = $data['createdAtTill'] ?? null;
+        $this->container['activeOnly'] = $data['activeOnly'] ?? null;
+        $this->container['offset'] = $data['offset'] ?? null;
+        $this->container['limit'] = $data['limit'] ?? null;
     }
 
     /**
@@ -204,25 +228,121 @@ class DataPointCollection implements ModelInterface, ArrayAccess, \JsonSerializa
 
 
     /**
-     * Gets items
+     * Gets createdAtFrom
      *
-     * @return \Stackflows\Clients\Stackflows\Model\DataPointType[]|null
+     * @return string|null
      */
-    public function getItems()
+    public function getCreatedAtFrom()
     {
-        return $this->container['items'];
+        return $this->container['createdAtFrom'];
     }
 
     /**
-     * Sets items
+     * Sets createdAtFrom
      *
-     * @param \Stackflows\Clients\Stackflows\Model\DataPointType[]|null $items items
+     * @param string|null $createdAtFrom Must be a valid date.
      *
      * @return self
      */
-    public function setItems($items)
+    public function setCreatedAtFrom($createdAtFrom)
     {
-        $this->container['items'] = $items;
+        $this->container['createdAtFrom'] = $createdAtFrom;
+
+        return $this;
+    }
+
+    /**
+     * Gets createdAtTill
+     *
+     * @return string|null
+     */
+    public function getCreatedAtTill()
+    {
+        return $this->container['createdAtTill'];
+    }
+
+    /**
+     * Sets createdAtTill
+     *
+     * @param string|null $createdAtTill Must be a valid date.
+     *
+     * @return self
+     */
+    public function setCreatedAtTill($createdAtTill)
+    {
+        $this->container['createdAtTill'] = $createdAtTill;
+
+        return $this;
+    }
+
+    /**
+     * Gets activeOnly
+     *
+     * @return bool|null
+     */
+    public function getActiveOnly()
+    {
+        return $this->container['activeOnly'];
+    }
+
+    /**
+     * Sets activeOnly
+     *
+     * @param bool|null $activeOnly 
+     *
+     * @return self
+     */
+    public function setActiveOnly($activeOnly)
+    {
+        $this->container['activeOnly'] = $activeOnly;
+
+        return $this;
+    }
+
+    /**
+     * Gets offset
+     *
+     * @return int|null
+     */
+    public function getOffset()
+    {
+        return $this->container['offset'];
+    }
+
+    /**
+     * Sets offset
+     *
+     * @param int|null $offset 
+     *
+     * @return self
+     */
+    public function setOffset($offset)
+    {
+        $this->container['offset'] = $offset;
+
+        return $this;
+    }
+
+    /**
+     * Gets limit
+     *
+     * @return int|null
+     */
+    public function getLimit()
+    {
+        return $this->container['limit'];
+    }
+
+    /**
+     * Sets limit
+     *
+     * @param int|null $limit 
+     *
+     * @return self
+     */
+    public function setLimit($limit)
+    {
+        $this->container['limit'] = $limit;
 
         return $this;
     }

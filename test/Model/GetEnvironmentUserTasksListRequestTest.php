@@ -1,6 +1,6 @@
 <?php
 /**
- * DataPointCollectionTest
+ * GetEnvironmentUserTasksListRequestTest
  *
  * PHP version 7.4
  *
@@ -31,15 +31,15 @@ namespace Stackflows\Clients\Stackflows\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * DataPointCollectionTest Class Doc Comment
+ * GetEnvironmentUserTasksListRequestTest Class Doc Comment
  *
  * @category    Class
- * @description DataPointCollection
+ * @description GetEnvironmentUserTasksListRequest
  * @package     Stackflows\Clients\Stackflows
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class DataPointCollectionTest extends TestCase
+class GetEnvironmentUserTasksListRequestTest extends TestCase
 {
 
     /**
@@ -71,18 +71,54 @@ class DataPointCollectionTest extends TestCase
     }
 
     /**
-     * Test "DataPointCollection"
+     * Test "GetEnvironmentUserTasksListRequest"
      */
-    public function testDataPointCollection()
+    public function testGetEnvironmentUserTasksListRequest()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "items"
+     * Test attribute "createdAtFrom"
      */
-    public function testPropertyItems()
+    public function testPropertyCreatedAtFrom()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "createdAtTill"
+     */
+    public function testPropertyCreatedAtTill()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "activeOnly"
+     */
+    public function testPropertyActiveOnly()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "offset"
+     */
+    public function testPropertyOffset()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "limit"
+     */
+    public function testPropertyLimit()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

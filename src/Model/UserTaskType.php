@@ -63,8 +63,8 @@ class UserTaskType implements ModelInterface, ArrayAccess, \JsonSerializable
         'description' => 'string',
         'followUpAt' => 'object',
         'dueAt' => 'object',
-        'attributes' => '\Stackflows\Clients\Stackflows\Model\DataPointCollection',
-        'fields' => '\Stackflows\Clients\Stackflows\Model\DataPointCollection'
+        'attributes' => 'array<string,\Stackflows\Clients\Stackflows\Model\DataPointType>',
+        'fields' => 'array<string,\Stackflows\Clients\Stackflows\Model\DataPointType>'
     ];
 
     /**
@@ -392,7 +392,7 @@ class UserTaskType implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets attributes
      *
-     * @return \Stackflows\Clients\Stackflows\Model\DataPointCollection|null
+     * @return array<string,\Stackflows\Clients\Stackflows\Model\DataPointType>|null
      */
     public function getAttributes()
     {
@@ -402,7 +402,7 @@ class UserTaskType implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets attributes
      *
-     * @param \Stackflows\Clients\Stackflows\Model\DataPointCollection|null $attributes attributes
+     * @param array<string,\Stackflows\Clients\Stackflows\Model\DataPointType>|null $attributes attributes
      *
      * @return self
      */
@@ -416,7 +416,7 @@ class UserTaskType implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets fields
      *
-     * @return \Stackflows\Clients\Stackflows\Model\DataPointCollection|null
+     * @return array<string,\Stackflows\Clients\Stackflows\Model\DataPointType>|null
      */
     public function getFields()
     {
@@ -426,7 +426,7 @@ class UserTaskType implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets fields
      *
-     * @param \Stackflows\Clients\Stackflows\Model\DataPointCollection|null $fields fields
+     * @param array<string,\Stackflows\Clients\Stackflows\Model\DataPointType>|null $fields fields
      *
      * @return self
      */

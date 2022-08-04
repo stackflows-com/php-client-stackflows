@@ -9,8 +9,8 @@ Name | Type | Description | Notes
 **suspended** | **bool** |  | [optional]
 **priority** | **int** |  | [optional]
 **environment** | **object** |  | [optional]
-**activity** | [**\Stackflows\Clients\Stackflows\Model\ActivityType**](.md) |  | [optional]
-**instance** | [**\Stackflows\Clients\Stackflows\Model\BusinessProcessInstanceType**](.md) |  | [optional]
-**attributes** | [**\Stackflows\Clients\Stackflows\Model\DataPointCollection**](.md) |  | [optional]
+**activity** | [**\Stackflows\Clients\Stackflows\Model\ActivityType**](ActivityType.md) |  | [optional]
+**instance** | [**\Stackflows\Clients\Stackflows\Model\BusinessProcessInstanceType**](BusinessProcessInstanceType.md) |  | [optional]
+**attributes** | [**array<string,\Stackflows\Clients\Stackflows\Model\DataPointType>**](DataPointType.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

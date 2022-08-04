@@ -59,7 +59,7 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\EnvironmentApi(
     new GuzzleHttp\Client(),
     $config
 );
-$diagramId = 139b5820-048d-11ed-a920-d9cc122fb2b1; // string | The ID of the diagram.
+$diagramId = 078c96e0-13c7-11ed-9f88-2f5b1abeb570; // string | The ID of the diagram.
 
 try {
     $result = $apiInstance->deleteEnvironmentBusinessModelDiagrams($diagramId);
@@ -201,7 +201,6 @@ Class | Method | HTTP request | Description
 - [CreateTagResponse](docs/Model/CreateTagResponse.md)
 - [CreateTaskResponse](docs/Model/CreateTaskResponse.md)
 - [DataAttributeType](docs/Model/DataAttributeType.md)
-- [DataPointCollection](docs/Model/DataPointCollection.md)
 - [DataPointType](docs/Model/DataPointType.md)
 - [DeleteBusinessModelDiagramCommentResponse](docs/Model/DeleteBusinessModelDiagramCommentResponse.md)
 - [DeleteBusinessModelDiagramResponse](docs/Model/DeleteBusinessModelDiagramResponse.md)
@@ -224,6 +223,7 @@ Class | Method | HTTP request | Description
 - [EnvironmentModel](docs/Model/EnvironmentModel.md)
 - [EscalateUserTaskResponse](docs/Model/EscalateUserTaskResponse.md)
 - [EventType](docs/Model/EventType.md)
+- [GetEnvironmentUserTasksListRequest](docs/Model/GetEnvironmentUserTasksListRequest.md)
 - [ListBusinessModelCommentsResponse](docs/Model/ListBusinessModelCommentsResponse.md)
 - [ListBusinessModelDiagramCommentsResponse](docs/Model/ListBusinessModelDiagramCommentsResponse.md)
 - [ListBusinessModelDiagramResponse](docs/Model/ListBusinessModelDiagramResponse.md)

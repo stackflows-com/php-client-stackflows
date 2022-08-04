@@ -59,7 +59,7 @@ class BusinessProcessInstanceType implements ModelInterface, ArrayAccess, \JsonS
     protected static $openAPITypes = [
         'reference' => 'string',
         'publication' => 'object',
-        'contex' => 'string'
+        'context' => 'string'
     ];
 
     /**
@@ -72,7 +72,7 @@ class BusinessProcessInstanceType implements ModelInterface, ArrayAccess, \JsonS
     protected static $openAPIFormats = [
         'reference' => null,
         'publication' => null,
-        'contex' => null
+        'context' => null
     ];
 
     /**
@@ -104,7 +104,7 @@ class BusinessProcessInstanceType implements ModelInterface, ArrayAccess, \JsonS
     protected static $attributeMap = [
         'reference' => 'reference',
         'publication' => 'publication',
-        'contex' => 'contex'
+        'context' => 'context'
     ];
 
     /**
@@ -115,7 +115,7 @@ class BusinessProcessInstanceType implements ModelInterface, ArrayAccess, \JsonS
     protected static $setters = [
         'reference' => 'setReference',
         'publication' => 'setPublication',
-        'contex' => 'setContex'
+        'context' => 'setContext'
     ];
 
     /**
@@ -126,7 +126,7 @@ class BusinessProcessInstanceType implements ModelInterface, ArrayAccess, \JsonS
     protected static $getters = [
         'reference' => 'getReference',
         'publication' => 'getPublication',
-        'contex' => 'getContex'
+        'context' => 'getContext'
     ];
 
     /**
@@ -188,7 +188,7 @@ class BusinessProcessInstanceType implements ModelInterface, ArrayAccess, \JsonS
     {
         $this->container['reference'] = $data['reference'] ?? null;
         $this->container['publication'] = $data['publication'] ?? null;
-        $this->container['contex'] = $data['contex'] ?? null;
+        $this->container['context'] = $data['context'] ?? null;
     }
 
     /**
@@ -264,25 +264,25 @@ class BusinessProcessInstanceType implements ModelInterface, ArrayAccess, \JsonS
     }
 
     /**
-     * Gets contex
+     * Gets context
      *
      * @return string|null
      */
-    public function getContex()
+    public function getContext()
     {
-        return $this->container['contex'];
+        return $this->container['context'];
     }
 
     /**
-     * Sets contex
+     * Sets context
      *
-     * @param string|null $contex contex
+     * @param string|null $context context
      *
      * @return self
      */
-    public function setContex($contex)
+    public function setContext($context)
     {
-        $this->container['contex'] = $contex;
+        $this->container['context'] = $context;
 
         return $this;
     }

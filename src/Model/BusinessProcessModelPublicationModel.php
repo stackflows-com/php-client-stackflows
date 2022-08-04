@@ -58,9 +58,9 @@ class BusinessProcessModelPublicationModel implements ModelInterface, ArrayAcces
       */
     protected static $openAPITypes = [
         'businessModelDiagramId' => 'string',
-        'engineCamundaDeploymentReference' => 'string',
-        'engineCamundaDiagramReference' => 'string',
-        'engineCamundaModelReference' => 'string'
+        'engineDeploymentReference' => 'string',
+        'engineDiagramReference' => 'string',
+        'engineModelReference' => 'string'
     ];
 
     /**
@@ -72,9 +72,9 @@ class BusinessProcessModelPublicationModel implements ModelInterface, ArrayAcces
       */
     protected static $openAPIFormats = [
         'businessModelDiagramId' => null,
-        'engineCamundaDeploymentReference' => null,
-        'engineCamundaDiagramReference' => null,
-        'engineCamundaModelReference' => null
+        'engineDeploymentReference' => null,
+        'engineDiagramReference' => null,
+        'engineModelReference' => null
     ];
 
     /**
@@ -105,9 +105,9 @@ class BusinessProcessModelPublicationModel implements ModelInterface, ArrayAcces
      */
     protected static $attributeMap = [
         'businessModelDiagramId' => 'business_model_diagram_id',
-        'engineCamundaDeploymentReference' => 'engine_camunda_deployment_reference',
-        'engineCamundaDiagramReference' => 'engine_camunda_diagram_reference',
-        'engineCamundaModelReference' => 'engine_camunda_model_reference'
+        'engineDeploymentReference' => 'engine_deployment_reference',
+        'engineDiagramReference' => 'engine_diagram_reference',
+        'engineModelReference' => 'engine_model_reference'
     ];
 
     /**
@@ -117,9 +117,9 @@ class BusinessProcessModelPublicationModel implements ModelInterface, ArrayAcces
      */
     protected static $setters = [
         'businessModelDiagramId' => 'setBusinessModelDiagramId',
-        'engineCamundaDeploymentReference' => 'setEngineCamundaDeploymentReference',
-        'engineCamundaDiagramReference' => 'setEngineCamundaDiagramReference',
-        'engineCamundaModelReference' => 'setEngineCamundaModelReference'
+        'engineDeploymentReference' => 'setEngineDeploymentReference',
+        'engineDiagramReference' => 'setEngineDiagramReference',
+        'engineModelReference' => 'setEngineModelReference'
     ];
 
     /**
@@ -129,9 +129,9 @@ class BusinessProcessModelPublicationModel implements ModelInterface, ArrayAcces
      */
     protected static $getters = [
         'businessModelDiagramId' => 'getBusinessModelDiagramId',
-        'engineCamundaDeploymentReference' => 'getEngineCamundaDeploymentReference',
-        'engineCamundaDiagramReference' => 'getEngineCamundaDiagramReference',
-        'engineCamundaModelReference' => 'getEngineCamundaModelReference'
+        'engineDeploymentReference' => 'getEngineDeploymentReference',
+        'engineDiagramReference' => 'getEngineDiagramReference',
+        'engineModelReference' => 'getEngineModelReference'
     ];
 
     /**
@@ -192,9 +192,9 @@ class BusinessProcessModelPublicationModel implements ModelInterface, ArrayAcces
     public function __construct(array $data = null)
     {
         $this->container['businessModelDiagramId'] = $data['businessModelDiagramId'] ?? null;
-        $this->container['engineCamundaDeploymentReference'] = $data['engineCamundaDeploymentReference'] ?? null;
-        $this->container['engineCamundaDiagramReference'] = $data['engineCamundaDiagramReference'] ?? null;
-        $this->container['engineCamundaModelReference'] = $data['engineCamundaModelReference'] ?? null;
+        $this->container['engineDeploymentReference'] = $data['engineDeploymentReference'] ?? null;
+        $this->container['engineDiagramReference'] = $data['engineDiagramReference'] ?? null;
+        $this->container['engineModelReference'] = $data['engineModelReference'] ?? null;
     }
 
     /**
@@ -246,73 +246,73 @@ class BusinessProcessModelPublicationModel implements ModelInterface, ArrayAcces
     }
 
     /**
-     * Gets engineCamundaDeploymentReference
+     * Gets engineDeploymentReference
      *
      * @return string|null
      */
-    public function getEngineCamundaDeploymentReference()
+    public function getEngineDeploymentReference()
     {
-        return $this->container['engineCamundaDeploymentReference'];
+        return $this->container['engineDeploymentReference'];
     }
 
     /**
-     * Sets engineCamundaDeploymentReference
+     * Sets engineDeploymentReference
      *
-     * @param string|null $engineCamundaDeploymentReference engineCamundaDeploymentReference
+     * @param string|null $engineDeploymentReference engineDeploymentReference
      *
      * @return self
      */
-    public function setEngineCamundaDeploymentReference($engineCamundaDeploymentReference)
+    public function setEngineDeploymentReference($engineDeploymentReference)
     {
-        $this->container['engineCamundaDeploymentReference'] = $engineCamundaDeploymentReference;
+        $this->container['engineDeploymentReference'] = $engineDeploymentReference;
 
         return $this;
     }
 
     /**
-     * Gets engineCamundaDiagramReference
+     * Gets engineDiagramReference
      *
      * @return string|null
      */
-    public function getEngineCamundaDiagramReference()
+    public function getEngineDiagramReference()
     {
-        return $this->container['engineCamundaDiagramReference'];
+        return $this->container['engineDiagramReference'];
     }
 
     /**
-     * Sets engineCamundaDiagramReference
+     * Sets engineDiagramReference
      *
-     * @param string|null $engineCamundaDiagramReference engineCamundaDiagramReference
+     * @param string|null $engineDiagramReference engineDiagramReference
      *
      * @return self
      */
-    public function setEngineCamundaDiagramReference($engineCamundaDiagramReference)
+    public function setEngineDiagramReference($engineDiagramReference)
     {
-        $this->container['engineCamundaDiagramReference'] = $engineCamundaDiagramReference;
+        $this->container['engineDiagramReference'] = $engineDiagramReference;
 
         return $this;
     }
 
     /**
-     * Gets engineCamundaModelReference
+     * Gets engineModelReference
      *
      * @return string|null
      */
-    public function getEngineCamundaModelReference()
+    public function getEngineModelReference()
     {
-        return $this->container['engineCamundaModelReference'];
+        return $this->container['engineModelReference'];
     }
 
     /**
-     * Sets engineCamundaModelReference
+     * Sets engineModelReference
      *
-     * @param string|null $engineCamundaModelReference engineCamundaModelReference
+     * @param string|null $engineModelReference engineModelReference
      *
      * @return self
      */
-    public function setEngineCamundaModelReference($engineCamundaModelReference)
+    public function setEngineModelReference($engineModelReference)
     {
-        $this->container['engineCamundaModelReference'] = $engineCamundaModelReference;
+        $this->container['engineModelReference'] = $engineModelReference;
 
         return $this;
     }

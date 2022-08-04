@@ -32,7 +32,6 @@ docs/Model/CreateOrganzationUnitResponse.md
 docs/Model/CreateTagResponse.md
 docs/Model/CreateTaskResponse.md
 docs/Model/DataAttributeType.md
-docs/Model/DataPointCollection.md
 docs/Model/DataPointType.md
 docs/Model/DeleteBusinessModelDiagramCommentResponse.md
 docs/Model/DeleteBusinessModelDiagramResponse.md
@@ -55,6 +54,7 @@ docs/Model/EngineModel.md
 docs/Model/EnvironmentModel.md
 docs/Model/EscalateUserTaskResponse.md
 docs/Model/EventType.md
+docs/Model/GetEnvironmentUserTasksListRequest.md
 docs/Model/ListBusinessModelCommentsResponse.md
 docs/Model/ListBusinessModelDiagramCommentsResponse.md
 docs/Model/ListBusinessModelDiagramResponse.md
@@ -188,7 +188,6 @@ src/Model/CreateOrganzationUnitResponse.php
 src/Model/CreateTagResponse.php
 src/Model/CreateTaskResponse.php
 src/Model/DataAttributeType.php
-src/Model/DataPointCollection.php
 src/Model/DataPointType.php
 src/Model/DeleteBusinessModelDiagramCommentResponse.php
 src/Model/DeleteBusinessModelDiagramResponse.php
@@ -211,6 +210,7 @@ src/Model/EngineModel.php
 src/Model/EnvironmentModel.php
 src/Model/EscalateUserTaskResponse.php
 src/Model/EventType.php
+src/Model/GetEnvironmentUserTasksListRequest.php
 src/Model/ListBusinessModelCommentsResponse.php
 src/Model/ListBusinessModelDiagramCommentsResponse.php
 src/Model/ListBusinessModelDiagramResponse.php
@@ -341,7 +341,6 @@ test/Model/CreateOrganzationUnitResponseTest.php
 test/Model/CreateTagResponseTest.php
 test/Model/CreateTaskResponseTest.php
 test/Model/DataAttributeTypeTest.php
-test/Model/DataPointCollectionTest.php
 test/Model/DataPointTypeTest.php
 test/Model/DeleteBusinessModelDiagramCommentResponseTest.php
 test/Model/DeleteBusinessModelDiagramResponseTest.php
@@ -364,6 +363,7 @@ test/Model/EngineModelTest.php
 test/Model/EnvironmentModelTest.php
 test/Model/EscalateUserTaskResponseTest.php
 test/Model/EventTypeTest.php
+test/Model/GetEnvironmentUserTasksListRequestTest.php
 test/Model/ListBusinessModelCommentsResponseTest.php
 test/Model/ListBusinessModelDiagramCommentsResponseTest.php
 test/Model/ListBusinessModelDiagramResponseTest.php

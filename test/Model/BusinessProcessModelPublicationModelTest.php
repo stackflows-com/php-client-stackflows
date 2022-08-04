@@ -89,27 +89,27 @@ class BusinessProcessModelPublicationModelTest extends TestCase
     }
 
     /**
-     * Test attribute "engineCamundaDeploymentReference"
+     * Test attribute "engineDeploymentReference"
      */
-    public function testPropertyEngineCamundaDeploymentReference()
+    public function testPropertyEngineDeploymentReference()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "engineCamundaDiagramReference"
+     * Test attribute "engineDiagramReference"
      */
-    public function testPropertyEngineCamundaDiagramReference()
+    public function testPropertyEngineDiagramReference()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "engineCamundaModelReference"
+     * Test attribute "engineModelReference"
      */
-    public function testPropertyEngineCamundaModelReference()
+    public function testPropertyEngineModelReference()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
