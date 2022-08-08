@@ -52,6 +52,7 @@ docs/Model/DeleteTagResponse.md
 docs/Model/DeleteTaskResponse.md
 docs/Model/EngineModel.md
 docs/Model/EnvironmentModel.md
+docs/Model/ErrorizeUserTaskResponse.md
 docs/Model/EscalateUserTaskResponse.md
 docs/Model/EventType.md
 docs/Model/GetEnvironmentUserTasksListRequest.md
@@ -92,9 +93,9 @@ docs/Model/PostEnvironmentServiceTasksLockRequest.md
 docs/Model/PostEnvironmentServiceTasksServeRequest.md
 docs/Model/PostEnvironmentServiceTasksUnlockRequest.md
 docs/Model/PostEnvironmentTaggedBusinessModelsStartRequest.md
+docs/Model/PostEnvironmentUserTasksCompleteRequest.md
 docs/Model/PostEnvironmentUserTasksErrorizeRequest.md
 docs/Model/PostEnvironmentUserTasksEscalateRequest.md
-docs/Model/PostEnvironmentUserTasksEscalateRequestVariablesInner.md
 docs/Model/PostEnvironmentsCreateRequest.md
 docs/Model/PostOrganizationUnitsCreateRequest.md
 docs/Model/PostTaggedBusinessModelsStartRequest.md
@@ -208,6 +209,7 @@ src/Model/DeleteTagResponse.php
 src/Model/DeleteTaskResponse.php
 src/Model/EngineModel.php
 src/Model/EnvironmentModel.php
+src/Model/ErrorizeUserTaskResponse.php
 src/Model/EscalateUserTaskResponse.php
 src/Model/EventType.php
 src/Model/GetEnvironmentUserTasksListRequest.php
@@ -249,9 +251,9 @@ src/Model/PostEnvironmentServiceTasksLockRequest.php
 src/Model/PostEnvironmentServiceTasksServeRequest.php
 src/Model/PostEnvironmentServiceTasksUnlockRequest.php
 src/Model/PostEnvironmentTaggedBusinessModelsStartRequest.php
+src/Model/PostEnvironmentUserTasksCompleteRequest.php
 src/Model/PostEnvironmentUserTasksErrorizeRequest.php
 src/Model/PostEnvironmentUserTasksEscalateRequest.php
-src/Model/PostEnvironmentUserTasksEscalateRequestVariablesInner.php
 src/Model/PostEnvironmentsCreateRequest.php
 src/Model/PostOrganizationUnitsCreateRequest.php
 src/Model/PostTaggedBusinessModelsStartRequest.php
@@ -361,6 +363,7 @@ test/Model/DeleteTagResponseTest.php
 test/Model/DeleteTaskResponseTest.php
 test/Model/EngineModelTest.php
 test/Model/EnvironmentModelTest.php
+test/Model/ErrorizeUserTaskResponseTest.php
 test/Model/EscalateUserTaskResponseTest.php
 test/Model/EventTypeTest.php
 test/Model/GetEnvironmentUserTasksListRequestTest.php
@@ -401,9 +404,9 @@ test/Model/PostEnvironmentServiceTasksLockRequestTest.php
 test/Model/PostEnvironmentServiceTasksServeRequestTest.php
 test/Model/PostEnvironmentServiceTasksUnlockRequestTest.php
 test/Model/PostEnvironmentTaggedBusinessModelsStartRequestTest.php
+test/Model/PostEnvironmentUserTasksCompleteRequestTest.php
 test/Model/PostEnvironmentUserTasksErrorizeRequestTest.php
 test/Model/PostEnvironmentUserTasksEscalateRequestTest.php
-test/Model/PostEnvironmentUserTasksEscalateRequestVariablesInnerTest.php
 test/Model/PostEnvironmentsCreateRequestTest.php
 test/Model/PostOrganizationUnitsCreateRequestTest.php
 test/Model/PostTaggedBusinessModelsStartRequestTest.php

@@ -38,7 +38,7 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OrganizationApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organizationUnitId = nesciunt; // string | The ID of the organizationUnit.
+$organizationUnitId = quod; // string | The ID of the organizationUnit.
 
 try {
     $result = $apiInstance->deleteOrganizationUnits($organizationUnitId);
@@ -98,8 +98,8 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OrganizationApi(
     new GuzzleHttp\Client(),
     $config
 );
-$filterRoot1 = qui; // string | Retrieve only root nodes
-$includechildren = atque; // string | Load children
+$filterRoot1 = accusantium; // string | Retrieve only root nodes
+$includechildren = velit; // string | Load children
 
 try {
     $result = $apiInstance->getOrganizationUnitsList($filterRoot1, $includechildren);
@@ -160,7 +160,7 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OrganizationApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organizationUnitId = nesciunt; // string | The ID of the organizationUnit.
+$organizationUnitId = quod; // string | The ID of the organizationUnit.
 
 try {
     $result = $apiInstance->getOrganizationUnitsShow($organizationUnitId);
@@ -280,7 +280,7 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OrganizationApi(
     new GuzzleHttp\Client(),
     $config
 );
-$organizationUnitId = nesciunt; // string | The ID of the organizationUnit.
+$organizationUnitId = quod; // string | The ID of the organizationUnit.
 $putOrganizationUnitsUpdateRequest = new \Stackflows\Clients\Stackflows\Model\PutOrganizationUnitsUpdateRequest(); // \Stackflows\Clients\Stackflows\Model\PutOrganizationUnitsUpdateRequest
 
 try {

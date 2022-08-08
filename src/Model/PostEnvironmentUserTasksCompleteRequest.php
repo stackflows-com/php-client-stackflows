@@ -1,6 +1,6 @@
 <?php
 /**
- * GetEnvironmentUserTasksListRequest
+ * PostEnvironmentUserTasksCompleteRequest
  *
  * PHP version 7.4
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \Stackflows\Clients\Stackflows\ObjectSerializer;
 
 /**
- * GetEnvironmentUserTasksListRequest Class Doc Comment
+ * PostEnvironmentUserTasksCompleteRequest Class Doc Comment
  *
  * @category Class
  * @package  Stackflows\Clients\Stackflows
@@ -40,7 +40,7 @@ use \Stackflows\Clients\Stackflows\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class GetEnvironmentUserTasksListRequest implements ModelInterface, ArrayAccess, \JsonSerializable
+class PostEnvironmentUserTasksCompleteRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class GetEnvironmentUserTasksListRequest implements ModelInterface, ArrayAccess,
       *
       * @var string
       */
-    protected static $openAPIModelName = 'getEnvironmentUserTasksList_request';
+    protected static $openAPIModelName = 'postEnvironmentUserTasksComplete_request';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,12 +57,7 @@ class GetEnvironmentUserTasksListRequest implements ModelInterface, ArrayAccess,
       * @var string[]
       */
     protected static $openAPITypes = [
-        'activity' => 'string',
-        'createdAtFrom' => 'string',
-        'createdAtTill' => 'string',
-        'activeOnly' => 'bool',
-        'offset' => 'int',
-        'limit' => 'int'
+        'submission' => 'string'
     ];
 
     /**
@@ -73,12 +68,7 @@ class GetEnvironmentUserTasksListRequest implements ModelInterface, ArrayAccess,
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'activity' => null,
-        'createdAtFrom' => null,
-        'createdAtTill' => null,
-        'activeOnly' => null,
-        'offset' => null,
-        'limit' => null
+        'submission' => null
     ];
 
     /**
@@ -108,12 +98,7 @@ class GetEnvironmentUserTasksListRequest implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static $attributeMap = [
-        'activity' => 'activity',
-        'createdAtFrom' => 'created_at_from',
-        'createdAtTill' => 'created_at_till',
-        'activeOnly' => 'active_only',
-        'offset' => 'offset',
-        'limit' => 'limit'
+        'submission' => 'submission'
     ];
 
     /**
@@ -122,12 +107,7 @@ class GetEnvironmentUserTasksListRequest implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static $setters = [
-        'activity' => 'setActivity',
-        'createdAtFrom' => 'setCreatedAtFrom',
-        'createdAtTill' => 'setCreatedAtTill',
-        'activeOnly' => 'setActiveOnly',
-        'offset' => 'setOffset',
-        'limit' => 'setLimit'
+        'submission' => 'setSubmission'
     ];
 
     /**
@@ -136,12 +116,7 @@ class GetEnvironmentUserTasksListRequest implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static $getters = [
-        'activity' => 'getActivity',
-        'createdAtFrom' => 'getCreatedAtFrom',
-        'createdAtTill' => 'getCreatedAtTill',
-        'activeOnly' => 'getActiveOnly',
-        'offset' => 'getOffset',
-        'limit' => 'getLimit'
+        'submission' => 'getSubmission'
     ];
 
     /**
@@ -201,12 +176,7 @@ class GetEnvironmentUserTasksListRequest implements ModelInterface, ArrayAccess,
      */
     public function __construct(array $data = null)
     {
-        $this->container['activity'] = $data['activity'] ?? null;
-        $this->container['createdAtFrom'] = $data['createdAtFrom'] ?? null;
-        $this->container['createdAtTill'] = $data['createdAtTill'] ?? null;
-        $this->container['activeOnly'] = $data['activeOnly'] ?? null;
-        $this->container['offset'] = $data['offset'] ?? null;
-        $this->container['limit'] = $data['limit'] ?? null;
+        $this->container['submission'] = $data['submission'] ?? null;
     }
 
     /**
@@ -234,145 +204,25 @@ class GetEnvironmentUserTasksListRequest implements ModelInterface, ArrayAccess,
 
 
     /**
-     * Gets activity
+     * Gets submission
      *
      * @return string|null
      */
-    public function getActivity()
+    public function getSubmission()
     {
-        return $this->container['activity'];
+        return $this->container['submission'];
     }
 
     /**
-     * Sets activity
+     * Sets submission
      *
-     * @param string|null $activity 
+     * @param string|null $submission 
      *
      * @return self
      */
-    public function setActivity($activity)
+    public function setSubmission($submission)
     {
-        $this->container['activity'] = $activity;
-
-        return $this;
-    }
-
-    /**
-     * Gets createdAtFrom
-     *
-     * @return string|null
-     */
-    public function getCreatedAtFrom()
-    {
-        return $this->container['createdAtFrom'];
-    }
-
-    /**
-     * Sets createdAtFrom
-     *
-     * @param string|null $createdAtFrom Must be a valid date.
-     *
-     * @return self
-     */
-    public function setCreatedAtFrom($createdAtFrom)
-    {
-        $this->container['createdAtFrom'] = $createdAtFrom;
-
-        return $this;
-    }
-
-    /**
-     * Gets createdAtTill
-     *
-     * @return string|null
-     */
-    public function getCreatedAtTill()
-    {
-        return $this->container['createdAtTill'];
-    }
-
-    /**
-     * Sets createdAtTill
-     *
-     * @param string|null $createdAtTill Must be a valid date.
-     *
-     * @return self
-     */
-    public function setCreatedAtTill($createdAtTill)
-    {
-        $this->container['createdAtTill'] = $createdAtTill;
-
-        return $this;
-    }
-
-    /**
-     * Gets activeOnly
-     *
-     * @return bool|null
-     */
-    public function getActiveOnly()
-    {
-        return $this->container['activeOnly'];
-    }
-
-    /**
-     * Sets activeOnly
-     *
-     * @param bool|null $activeOnly 
-     *
-     * @return self
-     */
-    public function setActiveOnly($activeOnly)
-    {
-        $this->container['activeOnly'] = $activeOnly;
-
-        return $this;
-    }
-
-    /**
-     * Gets offset
-     *
-     * @return int|null
-     */
-    public function getOffset()
-    {
-        return $this->container['offset'];
-    }
-
-    /**
-     * Sets offset
-     *
-     * @param int|null $offset 
-     *
-     * @return self
-     */
-    public function setOffset($offset)
-    {
-        $this->container['offset'] = $offset;
-
-        return $this;
-    }
-
-    /**
-     * Gets limit
-     *
-     * @return int|null
-     */
-    public function getLimit()
-    {
-        return $this->container['limit'];
-    }
-
-    /**
-     * Sets limit
-     *
-     * @param int|null $limit 
-     *
-     * @return self
-     */
-    public function setLimit($limit)
-    {
-        $this->container['limit'] = $limit;
+        $this->container['submission'] = $submission;
 
         return $this;
     }

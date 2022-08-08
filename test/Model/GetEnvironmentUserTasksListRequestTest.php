@@ -80,6 +80,15 @@ class GetEnvironmentUserTasksListRequestTest extends TestCase
     }
 
     /**
+     * Test attribute "activity"
+     */
+    public function testPropertyActivity()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "createdAtFrom"
      */
     public function testPropertyCreatedAtFrom()

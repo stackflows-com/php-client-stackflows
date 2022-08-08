@@ -57,8 +57,8 @@ class PostEnvironmentUserTasksEscalateRequest implements ModelInterface, ArrayAc
       * @var string[]
       */
     protected static $openAPITypes = [
-        'escalationCode' => 'string',
-        'variables' => '\Stackflows\Clients\Stackflows\Model\PostEnvironmentUserTasksEscalateRequestVariablesInner[]'
+        'code' => 'string',
+        'submission' => 'string'
     ];
 
     /**
@@ -69,8 +69,8 @@ class PostEnvironmentUserTasksEscalateRequest implements ModelInterface, ArrayAc
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'escalationCode' => null,
-        'variables' => null
+        'code' => null,
+        'submission' => null
     ];
 
     /**
@@ -100,8 +100,8 @@ class PostEnvironmentUserTasksEscalateRequest implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $attributeMap = [
-        'escalationCode' => 'escalationCode',
-        'variables' => 'variables'
+        'code' => 'code',
+        'submission' => 'submission'
     ];
 
     /**
@@ -110,8 +110,8 @@ class PostEnvironmentUserTasksEscalateRequest implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $setters = [
-        'escalationCode' => 'setEscalationCode',
-        'variables' => 'setVariables'
+        'code' => 'setCode',
+        'submission' => 'setSubmission'
     ];
 
     /**
@@ -120,8 +120,8 @@ class PostEnvironmentUserTasksEscalateRequest implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $getters = [
-        'escalationCode' => 'getEscalationCode',
-        'variables' => 'getVariables'
+        'code' => 'getCode',
+        'submission' => 'getSubmission'
     ];
 
     /**
@@ -181,8 +181,8 @@ class PostEnvironmentUserTasksEscalateRequest implements ModelInterface, ArrayAc
      */
     public function __construct(array $data = null)
     {
-        $this->container['escalationCode'] = $data['escalationCode'] ?? null;
-        $this->container['variables'] = $data['variables'] ?? null;
+        $this->container['code'] = $data['code'] ?? null;
+        $this->container['submission'] = $data['submission'] ?? null;
     }
 
     /**
@@ -194,8 +194,8 @@ class PostEnvironmentUserTasksEscalateRequest implements ModelInterface, ArrayAc
     {
         $invalidProperties = [];
 
-        if ($this->container['escalationCode'] === null) {
-            $invalidProperties[] = "'escalationCode' can't be null";
+        if ($this->container['code'] === null) {
+            $invalidProperties[] = "'code' can't be null";
         }
         return $invalidProperties;
     }
@@ -213,49 +213,49 @@ class PostEnvironmentUserTasksEscalateRequest implements ModelInterface, ArrayAc
 
 
     /**
-     * Gets escalationCode
+     * Gets code
      *
      * @return string
      */
-    public function getEscalationCode()
+    public function getCode()
     {
-        return $this->container['escalationCode'];
+        return $this->container['code'];
     }
 
     /**
-     * Sets escalationCode
+     * Sets code
      *
-     * @param string $escalationCode An escalation code that indicates the predefined escalation.
+     * @param string $code 
      *
      * @return self
      */
-    public function setEscalationCode($escalationCode)
+    public function setCode($code)
     {
-        $this->container['escalationCode'] = $escalationCode;
+        $this->container['code'] = $code;
 
         return $this;
     }
 
     /**
-     * Gets variables
+     * Gets submission
      *
-     * @return \Stackflows\Clients\Stackflows\Model\PostEnvironmentUserTasksEscalateRequestVariablesInner[]|null
+     * @return string|null
      */
-    public function getVariables()
+    public function getSubmission()
     {
-        return $this->container['variables'];
+        return $this->container['submission'];
     }
 
     /**
-     * Sets variables
+     * Sets submission
      *
-     * @param \Stackflows\Clients\Stackflows\Model\PostEnvironmentUserTasksEscalateRequestVariablesInner[]|null $variables optional Where key is variable name
+     * @param string|null $submission 
      *
      * @return self
      */
-    public function setVariables($variables)
+    public function setSubmission($submission)
     {
-        $this->container['variables'] = $variables;
+        $this->container['submission'] = $submission;
 
         return $this;
     }

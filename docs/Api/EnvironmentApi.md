@@ -363,7 +363,7 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\EnvironmentApi(
     $config
 );
 $diagramId = 078c96e0-13c7-11ed-9f88-2f5b1abeb570; // string | The ID of the diagram.
-$includesnapshotsdeploysdeploysStatistics = reiciendis; // string | Possible includes
+$includesnapshotsdeploysdeploysStatistics = nesciunt; // string | Possible includes
 
 try {
     $result = $apiInstance->getEnvironmentBusinessModelDiagramsShow($diagramId, $includesnapshotsdeploysdeploysStatistics);
@@ -492,7 +492,7 @@ $filterWithoutAnyTags = true; // bool | Will return list of all models that has 
 $filterAutocomplete = tes; // string | Retrieve list that has \"tes\" at the start of their name.
 $filterSearch = tes; // string | Retrieve list that has \"tes\" in their name.
 $filterCategories = 1,2; // string | Filter by specific categories.
-$filterType = dolores; // string | Filter by specific type. Example process,decision
+$filterType = quae; // string | Filter by specific type. Example process,decision
 $filterUncategorized = true; // bool | boolean List only uncategorized process models.
 $filterSubscribable = true; // bool | List only subscribable process models.
 $sort = name,-created_at,-updated_at; // string | Sorting by specified criteria.
@@ -565,7 +565,7 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\EnvironmentApi(
     $config
 );
 $modelId = 1244a4d0-03f6-11ed-8757-598213407c67; // string | The ID of the model.
-$includeownercompanycategorytagscommentsCounttagsCountdiagrams = inventore; // string | Possible includes
+$includeownercompanycategorytagscommentsCounttagsCountdiagrams = voluptatum; // string | Possible includes
 
 try {
     $result = $apiInstance->getEnvironmentBusinessModelsShow($modelId, $includeownercompanycategorytagscommentsCounttagsCountdiagrams);
@@ -686,7 +686,7 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\EnvironmentApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 32489ac2-800a-11ec-1234-0242ac120002; // string | The id of the task.
+$id = enim; // string | The ID of the user task.
 
 try {
     $result = $apiInstance->getEnvironmentUserTasksView($id);
@@ -700,7 +700,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| The id of the task. |
+ **id** | **string**| The ID of the user task. |
 
 ### Return type
 
@@ -1334,7 +1334,7 @@ Name | Type | Description  | Notes
 ## `postEnvironmentUserTasksComplete()`
 
 ```php
-postEnvironmentUserTasksComplete($id): \Stackflows\Clients\Stackflows\Model\CompleteUserTaskResponse
+postEnvironmentUserTasksComplete($id, $postEnvironmentUserTasksCompleteRequest): \Stackflows\Clients\Stackflows\Model\CompleteUserTaskResponse
 ```
 
 Complete User Task
@@ -1358,10 +1358,11 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\EnvironmentApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 32489ac2-800a-11ec-1234-0242ac120002; // string | The id of the task.
+$id = vel; // string | The ID of the user task.
+$postEnvironmentUserTasksCompleteRequest = new \Stackflows\Clients\Stackflows\Model\PostEnvironmentUserTasksCompleteRequest(); // \Stackflows\Clients\Stackflows\Model\PostEnvironmentUserTasksCompleteRequest
 
 try {
-    $result = $apiInstance->postEnvironmentUserTasksComplete($id);
+    $result = $apiInstance->postEnvironmentUserTasksComplete($id, $postEnvironmentUserTasksCompleteRequest);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling EnvironmentApi->postEnvironmentUserTasksComplete: ', $e->getMessage(), PHP_EOL;
@@ -1372,7 +1373,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| The id of the task. |
+ **id** | **string**| The ID of the user task. |
+ **postEnvironmentUserTasksCompleteRequest** | [**\Stackflows\Clients\Stackflows\Model\PostEnvironmentUserTasksCompleteRequest**](../Model/PostEnvironmentUserTasksCompleteRequest.md)|  | [optional]
 
 ### Return type
 
@@ -1384,7 +1386,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
@@ -1394,7 +1396,7 @@ Name | Type | Description  | Notes
 ## `postEnvironmentUserTasksErrorize()`
 
 ```php
-postEnvironmentUserTasksErrorize($id, $postEnvironmentUserTasksErrorizeRequest)
+postEnvironmentUserTasksErrorize($id, $postEnvironmentUserTasksErrorizeRequest): \Stackflows\Clients\Stackflows\Model\ErrorizeUserTaskResponse
 ```
 
 Errorize User Task
@@ -1418,11 +1420,12 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\EnvironmentApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 3688e6c0-1a56-11ec-8366-4de337119e3a; // string | The id of the task.
+$id = modi; // string | The ID of the user task.
 $postEnvironmentUserTasksErrorizeRequest = new \Stackflows\Clients\Stackflows\Model\PostEnvironmentUserTasksErrorizeRequest(); // \Stackflows\Clients\Stackflows\Model\PostEnvironmentUserTasksErrorizeRequest
 
 try {
-    $apiInstance->postEnvironmentUserTasksErrorize($id, $postEnvironmentUserTasksErrorizeRequest);
+    $result = $apiInstance->postEnvironmentUserTasksErrorize($id, $postEnvironmentUserTasksErrorizeRequest);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling EnvironmentApi->postEnvironmentUserTasksErrorize: ', $e->getMessage(), PHP_EOL;
 }
@@ -1432,12 +1435,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| The id of the task. |
+ **id** | **string**| The ID of the user task. |
  **postEnvironmentUserTasksErrorizeRequest** | [**\Stackflows\Clients\Stackflows\Model\PostEnvironmentUserTasksErrorizeRequest**](../Model/PostEnvironmentUserTasksErrorizeRequest.md)|  |
 
 ### Return type
 
-void (empty response body)
+[**\Stackflows\Clients\Stackflows\Model\ErrorizeUserTaskResponse**](../Model/ErrorizeUserTaskResponse.md)
 
 ### Authorization
 
@@ -1446,7 +1449,7 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: `application/json`
-- **Accept**: Not defined
+- **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -1479,7 +1482,7 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\EnvironmentApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 3688e6c0-1a56-11ec-8366-4de337119e3a; // string | The id of the task.
+$id = veniam; // string | The ID of the user task.
 $postEnvironmentUserTasksEscalateRequest = new \Stackflows\Clients\Stackflows\Model\PostEnvironmentUserTasksEscalateRequest(); // \Stackflows\Clients\Stackflows\Model\PostEnvironmentUserTasksEscalateRequest
 
 try {
@@ -1494,7 +1497,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| The id of the task. |
+ **id** | **string**| The ID of the user task. |
  **postEnvironmentUserTasksEscalateRequest** | [**\Stackflows\Clients\Stackflows\Model\PostEnvironmentUserTasksEscalateRequest**](../Model/PostEnvironmentUserTasksEscalateRequest.md)|  |
 
 ### Return type

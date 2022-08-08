@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**activity** | **string** |  | [optional]
 **createdAtFrom** | **string** | Must be a valid date. | [optional]
 **createdAtTill** | **string** | Must be a valid date. | [optional]
 **activeOnly** | **bool** |  | [optional]

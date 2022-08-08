@@ -80,27 +80,27 @@ class PostEnvironmentUserTasksErrorizeRequestTest extends TestCase
     }
 
     /**
-     * Test attribute "errorCode"
+     * Test attribute "code"
      */
-    public function testPropertyErrorCode()
+    public function testPropertyCode()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "errorMessage"
+     * Test attribute "message"
      */
-    public function testPropertyErrorMessage()
+    public function testPropertyMessage()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "variables"
+     * Test attribute "submission"
      */
-    public function testPropertyVariables()
+    public function testPropertySubmission()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

@@ -3167,7 +3167,7 @@ class EnvironmentApi
      *
      * View User Task
      *
-     * @param  string $id The id of the task. (required)
+     * @param  string $id The ID of the user task. (required)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -3184,7 +3184,7 @@ class EnvironmentApi
      *
      * View User Task
      *
-     * @param  string $id The id of the task. (required)
+     * @param  string $id The ID of the user task. (required)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -3283,7 +3283,7 @@ class EnvironmentApi
      *
      * View User Task
      *
-     * @param  string $id The id of the task. (required)
+     * @param  string $id The ID of the user task. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -3303,7 +3303,7 @@ class EnvironmentApi
      *
      * View User Task
      *
-     * @param  string $id The id of the task. (required)
+     * @param  string $id The ID of the user task. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -3352,7 +3352,7 @@ class EnvironmentApi
     /**
      * Create request for operation 'getEnvironmentUserTasksView'
      *
-     * @param  string $id The id of the task. (required)
+     * @param  string $id The ID of the user task. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -6365,15 +6365,16 @@ class EnvironmentApi
      *
      * Complete User Task
      *
-     * @param  string $id The id of the task. (required)
+     * @param  string $id The ID of the user task. (required)
+     * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentUserTasksCompleteRequest $postEnvironmentUserTasksCompleteRequest postEnvironmentUserTasksCompleteRequest (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\CompleteUserTaskResponse
      */
-    public function postEnvironmentUserTasksComplete($id)
+    public function postEnvironmentUserTasksComplete($id, $postEnvironmentUserTasksCompleteRequest = null)
     {
-        list($response) = $this->postEnvironmentUserTasksCompleteWithHttpInfo($id);
+        list($response) = $this->postEnvironmentUserTasksCompleteWithHttpInfo($id, $postEnvironmentUserTasksCompleteRequest);
         return $response;
     }
 
@@ -6382,15 +6383,16 @@ class EnvironmentApi
      *
      * Complete User Task
      *
-     * @param  string $id The id of the task. (required)
+     * @param  string $id The ID of the user task. (required)
+     * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentUserTasksCompleteRequest $postEnvironmentUserTasksCompleteRequest (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\CompleteUserTaskResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postEnvironmentUserTasksCompleteWithHttpInfo($id)
+    public function postEnvironmentUserTasksCompleteWithHttpInfo($id, $postEnvironmentUserTasksCompleteRequest = null)
     {
-        $request = $this->postEnvironmentUserTasksCompleteRequest($id);
+        $request = $this->postEnvironmentUserTasksCompleteRequest($id, $postEnvironmentUserTasksCompleteRequest);
 
         try {
             $options = $this->createHttpClientOption();
@@ -6481,14 +6483,15 @@ class EnvironmentApi
      *
      * Complete User Task
      *
-     * @param  string $id The id of the task. (required)
+     * @param  string $id The ID of the user task. (required)
+     * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentUserTasksCompleteRequest $postEnvironmentUserTasksCompleteRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postEnvironmentUserTasksCompleteAsync($id)
+    public function postEnvironmentUserTasksCompleteAsync($id, $postEnvironmentUserTasksCompleteRequest = null)
     {
-        return $this->postEnvironmentUserTasksCompleteAsyncWithHttpInfo($id)
+        return $this->postEnvironmentUserTasksCompleteAsyncWithHttpInfo($id, $postEnvironmentUserTasksCompleteRequest)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -6501,15 +6504,16 @@ class EnvironmentApi
      *
      * Complete User Task
      *
-     * @param  string $id The id of the task. (required)
+     * @param  string $id The ID of the user task. (required)
+     * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentUserTasksCompleteRequest $postEnvironmentUserTasksCompleteRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postEnvironmentUserTasksCompleteAsyncWithHttpInfo($id)
+    public function postEnvironmentUserTasksCompleteAsyncWithHttpInfo($id, $postEnvironmentUserTasksCompleteRequest = null)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\CompleteUserTaskResponse';
-        $request = $this->postEnvironmentUserTasksCompleteRequest($id);
+        $request = $this->postEnvironmentUserTasksCompleteRequest($id, $postEnvironmentUserTasksCompleteRequest);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -6550,12 +6554,13 @@ class EnvironmentApi
     /**
      * Create request for operation 'postEnvironmentUserTasksComplete'
      *
-     * @param  string $id The id of the task. (required)
+     * @param  string $id The ID of the user task. (required)
+     * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentUserTasksCompleteRequest $postEnvironmentUserTasksCompleteRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function postEnvironmentUserTasksCompleteRequest($id)
+    public function postEnvironmentUserTasksCompleteRequest($id, $postEnvironmentUserTasksCompleteRequest = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -6590,12 +6595,18 @@ class EnvironmentApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json'],
-                []
+                ['application/json']
             );
         }
 
         // for model (json/xml)
-        if (count($formParams) > 0) {
+        if (isset($postEnvironmentUserTasksCompleteRequest)) {
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($postEnvironmentUserTasksCompleteRequest));
+            } else {
+                $httpBody = $postEnvironmentUserTasksCompleteRequest;
+            }
+        } elseif (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
@@ -6649,16 +6660,17 @@ class EnvironmentApi
      *
      * Errorize User Task
      *
-     * @param  string $id The id of the task. (required)
+     * @param  string $id The ID of the user task. (required)
      * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentUserTasksErrorizeRequest $postEnvironmentUserTasksErrorizeRequest postEnvironmentUserTasksErrorizeRequest (required)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return void
+     * @return \Stackflows\Clients\Stackflows\Model\ErrorizeUserTaskResponse
      */
     public function postEnvironmentUserTasksErrorize($id, $postEnvironmentUserTasksErrorizeRequest)
     {
-        $this->postEnvironmentUserTasksErrorizeWithHttpInfo($id, $postEnvironmentUserTasksErrorizeRequest);
+        list($response) = $this->postEnvironmentUserTasksErrorizeWithHttpInfo($id, $postEnvironmentUserTasksErrorizeRequest);
+        return $response;
     }
 
     /**
@@ -6666,12 +6678,12 @@ class EnvironmentApi
      *
      * Errorize User Task
      *
-     * @param  string $id The id of the task. (required)
+     * @param  string $id The ID of the user task. (required)
      * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentUserTasksErrorizeRequest $postEnvironmentUserTasksErrorizeRequest (required)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Stackflows\Clients\Stackflows\Model\ErrorizeUserTaskResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function postEnvironmentUserTasksErrorizeWithHttpInfo($id, $postEnvironmentUserTasksErrorizeRequest)
     {
@@ -6712,10 +6724,50 @@ class EnvironmentApi
                 );
             }
 
-            return [null, $statusCode, $response->getHeaders()];
+            switch($statusCode) {
+                case 200:
+                    if ('\Stackflows\Clients\Stackflows\Model\ErrorizeUserTaskResponse' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\Stackflows\Clients\Stackflows\Model\ErrorizeUserTaskResponse' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\ErrorizeUserTaskResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\Stackflows\Clients\Stackflows\Model\ErrorizeUserTaskResponse';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Stackflows\Clients\Stackflows\Model\ErrorizeUserTaskResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
             }
             throw $e;
         }
@@ -6726,7 +6778,7 @@ class EnvironmentApi
      *
      * Errorize User Task
      *
-     * @param  string $id The id of the task. (required)
+     * @param  string $id The ID of the user task. (required)
      * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentUserTasksErrorizeRequest $postEnvironmentUserTasksErrorizeRequest (required)
      *
      * @throws \InvalidArgumentException
@@ -6747,7 +6799,7 @@ class EnvironmentApi
      *
      * Errorize User Task
      *
-     * @param  string $id The id of the task. (required)
+     * @param  string $id The ID of the user task. (required)
      * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentUserTasksErrorizeRequest $postEnvironmentUserTasksErrorizeRequest (required)
      *
      * @throws \InvalidArgumentException
@@ -6755,14 +6807,27 @@ class EnvironmentApi
      */
     public function postEnvironmentUserTasksErrorizeAsyncWithHttpInfo($id, $postEnvironmentUserTasksErrorizeRequest)
     {
-        $returnType = '';
+        $returnType = '\Stackflows\Clients\Stackflows\Model\ErrorizeUserTaskResponse';
         $request = $this->postEnvironmentUserTasksErrorizeRequest($id, $postEnvironmentUserTasksErrorizeRequest);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -6784,7 +6849,7 @@ class EnvironmentApi
     /**
      * Create request for operation 'postEnvironmentUserTasksErrorize'
      *
-     * @param  string $id The id of the task. (required)
+     * @param  string $id The ID of the user task. (required)
      * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentUserTasksErrorizeRequest $postEnvironmentUserTasksErrorizeRequest (required)
      *
      * @throws \InvalidArgumentException
@@ -6826,11 +6891,11 @@ class EnvironmentApi
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
-                []
+                ['application/json']
             );
         } else {
             $headers = $this->headerSelector->selectHeaders(
-                [],
+                ['application/json'],
                 ['application/json']
             );
         }
@@ -6896,7 +6961,7 @@ class EnvironmentApi
      *
      * Escalate User Task
      *
-     * @param  string $id The id of the task. (required)
+     * @param  string $id The ID of the user task. (required)
      * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentUserTasksEscalateRequest $postEnvironmentUserTasksEscalateRequest postEnvironmentUserTasksEscalateRequest (required)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
@@ -6914,7 +6979,7 @@ class EnvironmentApi
      *
      * Escalate User Task
      *
-     * @param  string $id The id of the task. (required)
+     * @param  string $id The ID of the user task. (required)
      * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentUserTasksEscalateRequest $postEnvironmentUserTasksEscalateRequest (required)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
@@ -7014,7 +7079,7 @@ class EnvironmentApi
      *
      * Escalate User Task
      *
-     * @param  string $id The id of the task. (required)
+     * @param  string $id The ID of the user task. (required)
      * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentUserTasksEscalateRequest $postEnvironmentUserTasksEscalateRequest (required)
      *
      * @throws \InvalidArgumentException
@@ -7035,7 +7100,7 @@ class EnvironmentApi
      *
      * Escalate User Task
      *
-     * @param  string $id The id of the task. (required)
+     * @param  string $id The ID of the user task. (required)
      * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentUserTasksEscalateRequest $postEnvironmentUserTasksEscalateRequest (required)
      *
      * @throws \InvalidArgumentException
@@ -7085,7 +7150,7 @@ class EnvironmentApi
     /**
      * Create request for operation 'postEnvironmentUserTasksEscalate'
      *
-     * @param  string $id The id of the task. (required)
+     * @param  string $id The ID of the user task. (required)
      * @param  \Stackflows\Clients\Stackflows\Model\PostEnvironmentUserTasksEscalateRequest $postEnvironmentUserTasksEscalateRequest (required)
      *
      * @throws \InvalidArgumentException

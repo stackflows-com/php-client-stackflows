@@ -208,7 +208,7 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$exceptionId = ut; // string | The ID of the exception.
+$exceptionId = neque; // string | The ID of the exception.
 
 try {
     $result = $apiInstance->deleteBusinessModelExceptions($exceptionId);
@@ -808,7 +808,7 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     $config
 );
 $diagramId = 078c96e0-13c7-11ed-9f88-2f5b1abeb570; // string | The ID of the diagram.
-$includesnapshotsdeploysdeploysStatistics = voluptas; // string | Possible includes
+$includesnapshotsdeploysdeploysStatistics = eveniet; // string | Possible includes
 
 try {
     $result = $apiInstance->getBusinessModelDiagramsShow($diagramId, $includesnapshotsdeploysdeploysStatistics);
@@ -926,7 +926,7 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$exceptionId = ut; // string | The ID of the exception.
+$exceptionId = neque; // string | The ID of the exception.
 
 try {
     $result = $apiInstance->getBusinessModelExceptionsShow($exceptionId);
@@ -1044,7 +1044,7 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     $config
 );
 $publicationId = 04d74000-0489-11ed-b709-39eaa3b47ce0; // string | The ID of the publication.
-$appendstatisticsoutliers = sed; // string | Possible appends
+$appendstatisticsoutliers = qui; // string | Possible appends
 
 try {
     $result = $apiInstance->getBusinessModelPublicationsShow($publicationId, $appendstatisticsoutliers);
@@ -1173,7 +1173,7 @@ $filterWithoutAnyTags = true; // bool | Will return list of all models that has 
 $filterAutocomplete = tes; // string | Retrieve list that has \"tes\" at the start of their name.
 $filterSearch = tes; // string | Retrieve list that has \"tes\" in their name.
 $filterCategories = 1,2; // string | Filter by specific categories.
-$filterType = tenetur; // string | Filter by specific type. Example process,decision
+$filterType = labore; // string | Filter by specific type. Example process,decision
 $filterUncategorized = true; // bool | boolean List only uncategorized process models.
 $filterSubscribable = true; // bool | List only subscribable process models.
 $sort = name,-created_at,-updated_at; // string | Sorting by specified criteria.
@@ -1246,7 +1246,7 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     $config
 );
 $modelId = 1244a4d0-03f6-11ed-8757-598213407c67; // string | The ID of the model.
-$includeownercompanycategorytagscommentsCounttagsCountdiagrams = saepe; // string | Possible includes
+$includeownercompanycategorytagscommentsCounttagsCountdiagrams = ut; // string | Possible includes
 
 try {
     $result = $apiInstance->getBusinessModelsShow($modelId, $includeownercompanycategorytagscommentsCounttagsCountdiagrams);
@@ -1308,7 +1308,7 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     $config
 );
 $modelId = 1244a4d0-03f6-11ed-8757-598213407c67; // string | The ID of the model.
-$revision = voluptas; // string | 
+$revision = et; // string | 
 
 try {
     $result = $apiInstance->getBusinessModelsShowRevision($modelId, $revision);
@@ -1429,11 +1429,11 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$includeprocessModels = sunt; // string | Will add process models to the response
-$includeprocessModelsCount = 8; // int | Will add process models count to the response
-$filterAutocompletetes = nobis; // string | Retrieve list that has \"tes\" at the start of their name
+$includeprocessModels = eius; // string | Will add process models to the response
+$includeprocessModelsCount = 9; // int | Will add process models count to the response
+$filterAutocompletetes = earum; // string | Retrieve list that has \"tes\" at the start of their name
 $filterSearchtes = ea; // string | Retrieve list that has \"tes\" in their name
-$sortnameCreatedAtUpdatedAt = fuga; // string | Sorting example
+$sortnameCreatedAtUpdatedAt = perferendis; // string | Sorting example
 
 try {
     $result = $apiInstance->getBusinessProcessesList($includeprocessModels, $includeprocessModelsCount, $filterAutocompletetes, $filterSearchtes, $sortnameCreatedAtUpdatedAt);
@@ -1498,8 +1498,8 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     $config
 );
 $tagId = 3; // int | The ID of the tag.
-$includeprocessModels = sit; // string | Will add process models to the response
-$includeprocessModelsCount = 10; // int | Will add process models count to the response
+$includeprocessModels = qui; // string | Will add process models to the response
+$includeprocessModelsCount = 1; // int | Will add process models count to the response
 
 try {
     $result = $apiInstance->getBusinessProcessesShow($tagId, $includeprocessModels, $includeprocessModelsCount);
@@ -2729,7 +2729,7 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\OperationsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$exceptionId = ut; // string | The ID of the exception.
+$exceptionId = neque; // string | The ID of the exception.
 $putBusinessModelExceptionsUpdateRequest = new \Stackflows\Clients\Stackflows\Model\PutBusinessModelExceptionsUpdateRequest(); // \Stackflows\Clients\Stackflows\Model\PutBusinessModelExceptionsUpdateRequest
 
 try {

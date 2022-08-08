@@ -1,6 +1,6 @@
 <?php
 /**
- * PostEnvironmentUserTasksEscalateRequestTest
+ * ErrorizeUserTaskResponseTest
  *
  * PHP version 7.4
  *
@@ -31,15 +31,15 @@ namespace Stackflows\Clients\Stackflows\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * PostEnvironmentUserTasksEscalateRequestTest Class Doc Comment
+ * ErrorizeUserTaskResponseTest Class Doc Comment
  *
  * @category    Class
- * @description PostEnvironmentUserTasksEscalateRequest
+ * @description ErrorizeUserTaskResponse
  * @package     Stackflows\Clients\Stackflows
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class PostEnvironmentUserTasksEscalateRequestTest extends TestCase
+class ErrorizeUserTaskResponseTest extends TestCase
 {
 
     /**
@@ -71,27 +71,27 @@ class PostEnvironmentUserTasksEscalateRequestTest extends TestCase
     }
 
     /**
-     * Test "PostEnvironmentUserTasksEscalateRequest"
+     * Test "ErrorizeUserTaskResponse"
      */
-    public function testPostEnvironmentUserTasksEscalateRequest()
+    public function testErrorizeUserTaskResponse()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "code"
+     * Test attribute "data"
      */
-    public function testPropertyCode()
+    public function testPropertyData()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "submission"
+     * Test attribute "meta"
      */
-    public function testPropertySubmission()
+    public function testPropertyMeta()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

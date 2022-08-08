@@ -1,6 +1,6 @@
 <?php
 /**
- * PostEnvironmentUserTasksEscalateRequestVariablesInnerTest
+ * PostEnvironmentUserTasksCompleteRequestTest
  *
  * PHP version 7.4
  *
@@ -31,15 +31,15 @@ namespace Stackflows\Clients\Stackflows\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * PostEnvironmentUserTasksEscalateRequestVariablesInnerTest Class Doc Comment
+ * PostEnvironmentUserTasksCompleteRequestTest Class Doc Comment
  *
  * @category    Class
- * @description PostEnvironmentUserTasksEscalateRequestVariablesInner
+ * @description PostEnvironmentUserTasksCompleteRequest
  * @package     Stackflows\Clients\Stackflows
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class PostEnvironmentUserTasksEscalateRequestVariablesInnerTest extends TestCase
+class PostEnvironmentUserTasksCompleteRequestTest extends TestCase
 {
 
     /**
@@ -71,27 +71,18 @@ class PostEnvironmentUserTasksEscalateRequestVariablesInnerTest extends TestCase
     }
 
     /**
-     * Test "PostEnvironmentUserTasksEscalateRequestVariablesInner"
+     * Test "PostEnvironmentUserTasksCompleteRequest"
      */
-    public function testPostEnvironmentUserTasksEscalateRequestVariablesInner()
+    public function testPostEnvironmentUserTasksCompleteRequest()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "value"
+     * Test attribute "submission"
      */
-    public function testPropertyValue()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "type"
-     */
-    public function testPropertyType()
+    public function testPropertySubmission()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

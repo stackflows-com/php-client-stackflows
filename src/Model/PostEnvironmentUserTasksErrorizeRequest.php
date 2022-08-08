@@ -57,9 +57,9 @@ class PostEnvironmentUserTasksErrorizeRequest implements ModelInterface, ArrayAc
       * @var string[]
       */
     protected static $openAPITypes = [
-        'errorCode' => 'string',
-        'errorMessage' => 'string',
-        'variables' => '\Stackflows\Clients\Stackflows\Model\PostEnvironmentUserTasksEscalateRequestVariablesInner[]'
+        'code' => 'string',
+        'message' => 'string',
+        'submission' => 'string'
     ];
 
     /**
@@ -70,9 +70,9 @@ class PostEnvironmentUserTasksErrorizeRequest implements ModelInterface, ArrayAc
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'errorCode' => null,
-        'errorMessage' => null,
-        'variables' => null
+        'code' => null,
+        'message' => null,
+        'submission' => null
     ];
 
     /**
@@ -102,9 +102,9 @@ class PostEnvironmentUserTasksErrorizeRequest implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $attributeMap = [
-        'errorCode' => 'errorCode',
-        'errorMessage' => 'errorMessage',
-        'variables' => 'variables'
+        'code' => 'code',
+        'message' => 'message',
+        'submission' => 'submission'
     ];
 
     /**
@@ -113,9 +113,9 @@ class PostEnvironmentUserTasksErrorizeRequest implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $setters = [
-        'errorCode' => 'setErrorCode',
-        'errorMessage' => 'setErrorMessage',
-        'variables' => 'setVariables'
+        'code' => 'setCode',
+        'message' => 'setMessage',
+        'submission' => 'setSubmission'
     ];
 
     /**
@@ -124,9 +124,9 @@ class PostEnvironmentUserTasksErrorizeRequest implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $getters = [
-        'errorCode' => 'getErrorCode',
-        'errorMessage' => 'getErrorMessage',
-        'variables' => 'getVariables'
+        'code' => 'getCode',
+        'message' => 'getMessage',
+        'submission' => 'getSubmission'
     ];
 
     /**
@@ -186,9 +186,9 @@ class PostEnvironmentUserTasksErrorizeRequest implements ModelInterface, ArrayAc
      */
     public function __construct(array $data = null)
     {
-        $this->container['errorCode'] = $data['errorCode'] ?? null;
-        $this->container['errorMessage'] = $data['errorMessage'] ?? null;
-        $this->container['variables'] = $data['variables'] ?? null;
+        $this->container['code'] = $data['code'] ?? null;
+        $this->container['message'] = $data['message'] ?? null;
+        $this->container['submission'] = $data['submission'] ?? null;
     }
 
     /**
@@ -200,11 +200,11 @@ class PostEnvironmentUserTasksErrorizeRequest implements ModelInterface, ArrayAc
     {
         $invalidProperties = [];
 
-        if ($this->container['errorCode'] === null) {
-            $invalidProperties[] = "'errorCode' can't be null";
+        if ($this->container['code'] === null) {
+            $invalidProperties[] = "'code' can't be null";
         }
-        if ($this->container['errorMessage'] === null) {
-            $invalidProperties[] = "'errorMessage' can't be null";
+        if ($this->container['message'] === null) {
+            $invalidProperties[] = "'message' can't be null";
         }
         return $invalidProperties;
     }
@@ -222,73 +222,73 @@ class PostEnvironmentUserTasksErrorizeRequest implements ModelInterface, ArrayAc
 
 
     /**
-     * Gets errorCode
+     * Gets code
      *
      * @return string
      */
-    public function getErrorCode()
+    public function getCode()
     {
-        return $this->container['errorCode'];
+        return $this->container['code'];
     }
 
     /**
-     * Sets errorCode
+     * Sets code
      *
-     * @param string $errorCode An error code that indicates the predefined error. It is used to identify the BPMN error handler.
+     * @param string $code 
      *
      * @return self
      */
-    public function setErrorCode($errorCode)
+    public function setCode($code)
     {
-        $this->container['errorCode'] = $errorCode;
+        $this->container['code'] = $code;
 
         return $this;
     }
 
     /**
-     * Gets errorMessage
+     * Gets message
      *
      * @return string
      */
-    public function getErrorMessage()
+    public function getMessage()
     {
-        return $this->container['errorMessage'];
+        return $this->container['message'];
     }
 
     /**
-     * Sets errorMessage
+     * Sets message
      *
-     * @param string $errorMessage An error message that describes the error.
+     * @param string $message 
      *
      * @return self
      */
-    public function setErrorMessage($errorMessage)
+    public function setMessage($message)
     {
-        $this->container['errorMessage'] = $errorMessage;
+        $this->container['message'] = $message;
 
         return $this;
     }
 
     /**
-     * Gets variables
+     * Gets submission
      *
-     * @return \Stackflows\Clients\Stackflows\Model\PostEnvironmentUserTasksEscalateRequestVariablesInner[]|null
+     * @return string|null
      */
-    public function getVariables()
+    public function getSubmission()
     {
-        return $this->container['variables'];
+        return $this->container['submission'];
     }
 
     /**
-     * Sets variables
+     * Sets submission
      *
-     * @param \Stackflows\Clients\Stackflows\Model\PostEnvironmentUserTasksEscalateRequestVariablesInner[]|null $variables optional Where key is variable name
+     * @param string|null $submission 
      *
      * @return self
      */
-    public function setVariables($variables)
+    public function setSubmission($submission)
     {
-        $this->container['variables'] = $variables;
+        $this->container['submission'] = $submission;
 
         return $this;
     }

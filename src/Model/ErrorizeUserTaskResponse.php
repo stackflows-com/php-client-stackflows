@@ -1,6 +1,6 @@
 <?php
 /**
- * PostEnvironmentUserTasksEscalateRequestVariablesInner
+ * ErrorizeUserTaskResponse
  *
  * PHP version 7.4
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \Stackflows\Clients\Stackflows\ObjectSerializer;
 
 /**
- * PostEnvironmentUserTasksEscalateRequestVariablesInner Class Doc Comment
+ * ErrorizeUserTaskResponse Class Doc Comment
  *
  * @category Class
  * @package  Stackflows\Clients\Stackflows
@@ -40,7 +40,7 @@ use \Stackflows\Clients\Stackflows\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class PostEnvironmentUserTasksEscalateRequestVariablesInner implements ModelInterface, ArrayAccess, \JsonSerializable
+class ErrorizeUserTaskResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class PostEnvironmentUserTasksEscalateRequestVariablesInner implements ModelInte
       *
       * @var string
       */
-    protected static $openAPIModelName = 'postEnvironmentUserTasksEscalate_request_variables_inner';
+    protected static $openAPIModelName = 'Errorize_User_Task_Response';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,8 +57,8 @@ class PostEnvironmentUserTasksEscalateRequestVariablesInner implements ModelInte
       * @var string[]
       */
     protected static $openAPITypes = [
-        'value' => 'bool',
-        'type' => 'string'
+        'data' => '\Stackflows\Clients\Stackflows\Model\UserTaskType',
+        'meta' => 'array<string,mixed>'
     ];
 
     /**
@@ -69,8 +69,8 @@ class PostEnvironmentUserTasksEscalateRequestVariablesInner implements ModelInte
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'value' => null,
-        'type' => null
+        'data' => null,
+        'meta' => null
     ];
 
     /**
@@ -100,8 +100,8 @@ class PostEnvironmentUserTasksEscalateRequestVariablesInner implements ModelInte
      * @var string[]
      */
     protected static $attributeMap = [
-        'value' => 'value',
-        'type' => 'type'
+        'data' => 'data',
+        'meta' => 'meta'
     ];
 
     /**
@@ -110,8 +110,8 @@ class PostEnvironmentUserTasksEscalateRequestVariablesInner implements ModelInte
      * @var string[]
      */
     protected static $setters = [
-        'value' => 'setValue',
-        'type' => 'setType'
+        'data' => 'setData',
+        'meta' => 'setMeta'
     ];
 
     /**
@@ -120,8 +120,8 @@ class PostEnvironmentUserTasksEscalateRequestVariablesInner implements ModelInte
      * @var string[]
      */
     protected static $getters = [
-        'value' => 'getValue',
-        'type' => 'getType'
+        'data' => 'getData',
+        'meta' => 'getMeta'
     ];
 
     /**
@@ -181,8 +181,8 @@ class PostEnvironmentUserTasksEscalateRequestVariablesInner implements ModelInte
      */
     public function __construct(array $data = null)
     {
-        $this->container['value'] = $data['value'] ?? null;
-        $this->container['type'] = $data['type'] ?? null;
+        $this->container['data'] = $data['data'] ?? null;
+        $this->container['meta'] = $data['meta'] ?? null;
     }
 
     /**
@@ -194,9 +194,6 @@ class PostEnvironmentUserTasksEscalateRequestVariablesInner implements ModelInte
     {
         $invalidProperties = [];
 
-        if ($this->container['type'] === null) {
-            $invalidProperties[] = "'type' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -213,49 +210,49 @@ class PostEnvironmentUserTasksEscalateRequestVariablesInner implements ModelInte
 
 
     /**
-     * Gets value
+     * Gets data
      *
-     * @return bool|null
+     * @return \Stackflows\Clients\Stackflows\Model\UserTaskType|null
      */
-    public function getValue()
+    public function getData()
     {
-        return $this->container['value'];
+        return $this->container['data'];
     }
 
     /**
-     * Sets value
+     * Sets data
      *
-     * @param bool|null $value optional
+     * @param \Stackflows\Clients\Stackflows\Model\UserTaskType|null $data data
      *
      * @return self
      */
-    public function setValue($value)
+    public function setData($data)
     {
-        $this->container['value'] = $value;
+        $this->container['data'] = $data;
 
         return $this;
     }
 
     /**
-     * Gets type
+     * Gets meta
      *
-     * @return string
+     * @return array<string,mixed>|null
      */
-    public function getType()
+    public function getMeta()
     {
-        return $this->container['type'];
+        return $this->container['meta'];
     }
 
     /**
-     * Sets type
+     * Sets meta
      *
-     * @param string $type 
+     * @param array<string,mixed>|null $meta meta
      *
      * @return self
      */
-    public function setType($type)
+    public function setMeta($meta)
     {
-        $this->container['type'] = $type;
+        $this->container['meta'] = $meta;
 
         return $this;
     }
