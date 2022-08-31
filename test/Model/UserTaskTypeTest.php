@@ -116,6 +116,15 @@ class UserTaskTypeTest extends TestCase
     }
 
     /**
+     * Test attribute "createdAt"
+     */
+    public function testPropertyCreatedAt()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "followUpAt"
      */
     public function testPropertyFollowUpAt()

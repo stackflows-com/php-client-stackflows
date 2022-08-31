@@ -59,7 +59,7 @@ class PostBusinessProcessModelsStartRequest implements ModelInterface, ArrayAcce
     protected static $openAPITypes = [
         'id' => 'string',
         'engineModelReference' => 'string',
-        'submission' => 'string'
+        'submission' => '\Stackflows\Clients\Stackflows\Model\PostEnvironmentUserTasksErrorizeRequestSubmissionInner[]'
     ];
 
     /**
@@ -266,7 +266,7 @@ class PostBusinessProcessModelsStartRequest implements ModelInterface, ArrayAcce
     /**
      * Gets submission
      *
-     * @return string|null
+     * @return \Stackflows\Clients\Stackflows\Model\PostEnvironmentUserTasksErrorizeRequestSubmissionInner[]|null
      */
     public function getSubmission()
     {
@@ -276,7 +276,7 @@ class PostBusinessProcessModelsStartRequest implements ModelInterface, ArrayAcce
     /**
      * Sets submission
      *
-     * @param string|null $submission 
+     * @param \Stackflows\Clients\Stackflows\Model\PostEnvironmentUserTasksErrorizeRequestSubmissionInner[]|null $submission 
      *
      * @return self
      */

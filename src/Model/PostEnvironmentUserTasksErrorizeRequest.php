@@ -59,7 +59,7 @@ class PostEnvironmentUserTasksErrorizeRequest implements ModelInterface, ArrayAc
     protected static $openAPITypes = [
         'code' => 'string',
         'message' => 'string',
-        'submission' => 'string'
+        'submission' => '\Stackflows\Clients\Stackflows\Model\PostEnvironmentUserTasksErrorizeRequestSubmissionInner[]'
     ];
 
     /**
@@ -203,9 +203,6 @@ class PostEnvironmentUserTasksErrorizeRequest implements ModelInterface, ArrayAc
         if ($this->container['code'] === null) {
             $invalidProperties[] = "'code' can't be null";
         }
-        if ($this->container['message'] === null) {
-            $invalidProperties[] = "'message' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -248,7 +245,7 @@ class PostEnvironmentUserTasksErrorizeRequest implements ModelInterface, ArrayAc
     /**
      * Gets message
      *
-     * @return string
+     * @return string|null
      */
     public function getMessage()
     {
@@ -258,7 +255,7 @@ class PostEnvironmentUserTasksErrorizeRequest implements ModelInterface, ArrayAc
     /**
      * Sets message
      *
-     * @param string $message 
+     * @param string|null $message 
      *
      * @return self
      */
@@ -272,7 +269,7 @@ class PostEnvironmentUserTasksErrorizeRequest implements ModelInterface, ArrayAc
     /**
      * Gets submission
      *
-     * @return string|null
+     * @return \Stackflows\Clients\Stackflows\Model\PostEnvironmentUserTasksErrorizeRequestSubmissionInner[]|null
      */
     public function getSubmission()
     {
@@ -282,7 +279,7 @@ class PostEnvironmentUserTasksErrorizeRequest implements ModelInterface, ArrayAc
     /**
      * Sets submission
      *
-     * @param string|null $submission 
+     * @param \Stackflows\Clients\Stackflows\Model\PostEnvironmentUserTasksErrorizeRequestSubmissionInner[]|null $submission 
      *
      * @return self
      */

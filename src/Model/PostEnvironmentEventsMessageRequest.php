@@ -59,7 +59,7 @@ class PostEnvironmentEventsMessageRequest implements ModelInterface, ArrayAccess
     protected static $openAPITypes = [
         'reference' => 'string',
         'context' => 'string',
-        'submission' => 'string[]'
+        'submission' => '\Stackflows\Clients\Stackflows\Model\PostEnvironmentTaggedBusinessModelsStartRequestSubmissionInner[]'
     ];
 
     /**
@@ -272,7 +272,7 @@ class PostEnvironmentEventsMessageRequest implements ModelInterface, ArrayAccess
     /**
      * Gets submission
      *
-     * @return string[]|null
+     * @return \Stackflows\Clients\Stackflows\Model\PostEnvironmentTaggedBusinessModelsStartRequestSubmissionInner[]|null
      */
     public function getSubmission()
     {
@@ -282,7 +282,7 @@ class PostEnvironmentEventsMessageRequest implements ModelInterface, ArrayAccess
     /**
      * Sets submission
      *
-     * @param string[]|null $submission 
+     * @param \Stackflows\Clients\Stackflows\Model\PostEnvironmentTaggedBusinessModelsStartRequestSubmissionInner[]|null $submission 
      *
      * @return self
      */

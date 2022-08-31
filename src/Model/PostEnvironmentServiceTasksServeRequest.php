@@ -58,7 +58,7 @@ class PostEnvironmentServiceTasksServeRequest implements ModelInterface, ArrayAc
       */
     protected static $openAPITypes = [
         'lock' => 'string',
-        'submission' => 'string[]'
+        'submission' => '\Stackflows\Clients\Stackflows\Model\PostEnvironmentServiceTasksServeRequestSubmissionInner[]'
     ];
 
     /**
@@ -239,7 +239,7 @@ class PostEnvironmentServiceTasksServeRequest implements ModelInterface, ArrayAc
     /**
      * Gets submission
      *
-     * @return string[]|null
+     * @return \Stackflows\Clients\Stackflows\Model\PostEnvironmentServiceTasksServeRequestSubmissionInner[]|null
      */
     public function getSubmission()
     {
@@ -249,7 +249,7 @@ class PostEnvironmentServiceTasksServeRequest implements ModelInterface, ArrayAc
     /**
      * Sets submission
      *
-     * @param string[]|null $submission 
+     * @param \Stackflows\Clients\Stackflows\Model\PostEnvironmentServiceTasksServeRequestSubmissionInner[]|null $submission 
      *
      * @return self
      */

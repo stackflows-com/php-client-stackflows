@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **reference** | **string** |  | [optional]
 **subject** | **string** |  | [optional]
 **description** | **string** |  | [optional]
+**createdAt** | **object** |  | [optional]
 **followUpAt** | **object** |  | [optional]
 **dueAt** | **object** |  | [optional]
 **attributes** | [**array<string,\Stackflows\Clients\Stackflows\Model\DataPointType>**](DataPointType.md) |  | [optional]

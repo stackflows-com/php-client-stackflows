@@ -61,6 +61,7 @@ class UserTaskType implements ModelInterface, ArrayAccess, \JsonSerializable
         'reference' => 'string',
         'subject' => 'string',
         'description' => 'string',
+        'createdAt' => 'object',
         'followUpAt' => 'object',
         'dueAt' => 'object',
         'attributes' => 'array<string,\Stackflows\Clients\Stackflows\Model\DataPointType>',
@@ -79,6 +80,7 @@ class UserTaskType implements ModelInterface, ArrayAccess, \JsonSerializable
         'reference' => null,
         'subject' => null,
         'description' => null,
+        'createdAt' => null,
         'followUpAt' => null,
         'dueAt' => null,
         'attributes' => null,
@@ -116,6 +118,7 @@ class UserTaskType implements ModelInterface, ArrayAccess, \JsonSerializable
         'reference' => 'reference',
         'subject' => 'subject',
         'description' => 'description',
+        'createdAt' => 'createdAt',
         'followUpAt' => 'followUpAt',
         'dueAt' => 'dueAt',
         'attributes' => 'attributes',
@@ -132,6 +135,7 @@ class UserTaskType implements ModelInterface, ArrayAccess, \JsonSerializable
         'reference' => 'setReference',
         'subject' => 'setSubject',
         'description' => 'setDescription',
+        'createdAt' => 'setCreatedAt',
         'followUpAt' => 'setFollowUpAt',
         'dueAt' => 'setDueAt',
         'attributes' => 'setAttributes',
@@ -148,6 +152,7 @@ class UserTaskType implements ModelInterface, ArrayAccess, \JsonSerializable
         'reference' => 'getReference',
         'subject' => 'getSubject',
         'description' => 'getDescription',
+        'createdAt' => 'getCreatedAt',
         'followUpAt' => 'getFollowUpAt',
         'dueAt' => 'getDueAt',
         'attributes' => 'getAttributes',
@@ -215,6 +220,7 @@ class UserTaskType implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['reference'] = $data['reference'] ?? null;
         $this->container['subject'] = $data['subject'] ?? null;
         $this->container['description'] = $data['description'] ?? null;
+        $this->container['createdAt'] = $data['createdAt'] ?? null;
         $this->container['followUpAt'] = $data['followUpAt'] ?? null;
         $this->container['dueAt'] = $data['dueAt'] ?? null;
         $this->container['attributes'] = $data['attributes'] ?? null;
@@ -337,6 +343,30 @@ class UserTaskType implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setDescription($description)
     {
         $this->container['description'] = $description;
+
+        return $this;
+    }
+
+    /**
+     * Gets createdAt
+     *
+     * @return object|null
+     */
+    public function getCreatedAt()
+    {
+        return $this->container['createdAt'];
+    }
+
+    /**
+     * Sets createdAt
+     *
+     * @param object|null $createdAt createdAt
+     *
+     * @return self
+     */
+    public function setCreatedAt($createdAt)
+    {
+        $this->container['createdAt'] = $createdAt;
 
         return $this;
     }

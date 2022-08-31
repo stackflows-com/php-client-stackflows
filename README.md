@@ -59,7 +59,7 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\EnvironmentApi(
     new GuzzleHttp\Client(),
     $config
 );
-$diagramId = 078c96e0-13c7-11ed-9f88-2f5b1abeb570; // string | The ID of the diagram.
+$diagramId = consequatur; // string | The ID of the diagram.
 
 try {
     $result = $apiInstance->deleteEnvironmentBusinessModelDiagrams($diagramId);
@@ -182,7 +182,6 @@ Class | Method | HTTP request | Description
 - [BusinessBaseModelExceptionModel](docs/Model/BusinessBaseModelExceptionModel.md)
 - [BusinessBaseModelModel](docs/Model/BusinessBaseModelModel.md)
 - [BusinessProcessInstanceType](docs/Model/BusinessProcessInstanceType.md)
-- [BusinessProcessModelDiagramModel](docs/Model/BusinessProcessModelDiagramModel.md)
 - [BusinessProcessModelModel](docs/Model/BusinessProcessModelModel.md)
 - [BusinessProcessModelPublicationModel](docs/Model/BusinessProcessModelPublicationModel.md)
 - [CategoryModel](docs/Model/CategoryModel.md)
@@ -260,14 +259,19 @@ Class | Method | HTTP request | Description
 - [PostEnvironmentEventsSignalRequest](docs/Model/PostEnvironmentEventsSignalRequest.md)
 - [PostEnvironmentServiceTasksLockRequest](docs/Model/PostEnvironmentServiceTasksLockRequest.md)
 - [PostEnvironmentServiceTasksServeRequest](docs/Model/PostEnvironmentServiceTasksServeRequest.md)
+- [PostEnvironmentServiceTasksServeRequestSubmissionInner](docs/Model/PostEnvironmentServiceTasksServeRequestSubmissionInner.md)
 - [PostEnvironmentServiceTasksUnlockRequest](docs/Model/PostEnvironmentServiceTasksUnlockRequest.md)
 - [PostEnvironmentTaggedBusinessModelsStartRequest](docs/Model/PostEnvironmentTaggedBusinessModelsStartRequest.md)
+- [PostEnvironmentTaggedBusinessModelsStartRequestSubmissionInner](docs/Model/PostEnvironmentTaggedBusinessModelsStartRequestSubmissionInner.md)
 - [PostEnvironmentUserTasksCompleteRequest](docs/Model/PostEnvironmentUserTasksCompleteRequest.md)
+- [PostEnvironmentUserTasksCompleteRequestSubmissionInner](docs/Model/PostEnvironmentUserTasksCompleteRequestSubmissionInner.md)
 - [PostEnvironmentUserTasksErrorizeRequest](docs/Model/PostEnvironmentUserTasksErrorizeRequest.md)
+- [PostEnvironmentUserTasksErrorizeRequestSubmissionInner](docs/Model/PostEnvironmentUserTasksErrorizeRequestSubmissionInner.md)
 - [PostEnvironmentUserTasksEscalateRequest](docs/Model/PostEnvironmentUserTasksEscalateRequest.md)
 - [PostEnvironmentsCreateRequest](docs/Model/PostEnvironmentsCreateRequest.md)
 - [PostOrganizationUnitsCreateRequest](docs/Model/PostOrganizationUnitsCreateRequest.md)
 - [PostTaggedBusinessModelsStartRequest](docs/Model/PostTaggedBusinessModelsStartRequest.md)
+- [PostTaggedBusinessModelsStartRequestSubmissionInner](docs/Model/PostTaggedBusinessModelsStartRequestSubmissionInner.md)
 - [PostTagsCreateRequest](docs/Model/PostTagsCreateRequest.md)
 - [PostTasksCreateRequest](docs/Model/PostTasksCreateRequest.md)
 - [PostUserLoginRequest](docs/Model/PostUserLoginRequest.md)
@@ -311,7 +315,6 @@ Class | Method | HTTP request | Description
 - [UserModel](docs/Model/UserModel.md)
 - [UserTaskType](docs/Model/UserTaskType.md)
 - [ViewBusinessModelDiagramResponse](docs/Model/ViewBusinessModelDiagramResponse.md)
-- [ViewBusinessModelDiagramResponse1](docs/Model/ViewBusinessModelDiagramResponse1.md)
 - [ViewBusinessModelExceptionResponse](docs/Model/ViewBusinessModelExceptionResponse.md)
 - [ViewBusinessModelPublicationResponse](docs/Model/ViewBusinessModelPublicationResponse.md)
 - [ViewBusinessModelResponse](docs/Model/ViewBusinessModelResponse.md)

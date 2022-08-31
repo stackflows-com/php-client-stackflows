@@ -57,7 +57,7 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\EnvironmentApi(
     new GuzzleHttp\Client(),
     $config
 );
-$diagramId = 078c96e0-13c7-11ed-9f88-2f5b1abeb570; // string | The ID of the diagram.
+$diagramId = consequatur; // string | The ID of the diagram.
 
 try {
     $result = $apiInstance->deleteEnvironmentBusinessModelDiagrams($diagramId);
@@ -117,7 +117,7 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\EnvironmentApi(
     new GuzzleHttp\Client(),
     $config
 );
-$diagramId = 078c96e0-13c7-11ed-9f88-2f5b1abeb570; // string | The ID of the diagram.
+$diagramId = eius; // string | The ID of the diagram.
 $commentId = 1; // int | The ID of the comment.
 $diagram = 3688e6c0-1a56-11ec-8366; // string | The ID of an diagram.
 $comment = 3688e6c0-1a56-11ec-8366; // string | The ID of an comment.
@@ -243,7 +243,7 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\EnvironmentApi(
     new GuzzleHttp\Client(),
     $config
 );
-$diagramId = 078c96e0-13c7-11ed-9f88-2f5b1abeb570; // string | The ID of the diagram.
+$diagramId = provident; // string | The ID of the diagram.
 $include = commenter; // string | Specify a list of includes.
 
 try {
@@ -338,7 +338,7 @@ This endpoint does not need any parameter.
 ## `getEnvironmentBusinessModelDiagramsShow()`
 
 ```php
-getEnvironmentBusinessModelDiagramsShow($diagramId, $includesnapshotsdeploysdeploysStatistics): \Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse
+getEnvironmentBusinessModelDiagramsShow($diagramId, $includesnapshotspublicationspublicationsStatistics): \Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse
 ```
 
 View Business Model Diagram
@@ -362,11 +362,11 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\EnvironmentApi(
     new GuzzleHttp\Client(),
     $config
 );
-$diagramId = 078c96e0-13c7-11ed-9f88-2f5b1abeb570; // string | The ID of the diagram.
-$includesnapshotsdeploysdeploysStatistics = nesciunt; // string | Possible includes
+$diagramId = consequatur; // string | The ID of the diagram.
+$includesnapshotspublicationspublicationsStatistics = molestias; // string | Possible includes
 
 try {
-    $result = $apiInstance->getEnvironmentBusinessModelDiagramsShow($diagramId, $includesnapshotsdeploysdeploysStatistics);
+    $result = $apiInstance->getEnvironmentBusinessModelDiagramsShow($diagramId, $includesnapshotspublicationspublicationsStatistics);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling EnvironmentApi->getEnvironmentBusinessModelDiagramsShow: ', $e->getMessage(), PHP_EOL;
@@ -378,7 +378,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **diagramId** | **string**| The ID of the diagram. |
- **includesnapshotsdeploysdeploysStatistics** | **string**| Possible includes | [optional]
+ **includesnapshotspublicationspublicationsStatistics** | **string**| Possible includes | [optional]
 
 ### Return type
 
@@ -492,7 +492,7 @@ $filterWithoutAnyTags = true; // bool | Will return list of all models that has 
 $filterAutocomplete = tes; // string | Retrieve list that has \"tes\" at the start of their name.
 $filterSearch = tes; // string | Retrieve list that has \"tes\" in their name.
 $filterCategories = 1,2; // string | Filter by specific categories.
-$filterType = quae; // string | Filter by specific type. Example process,decision
+$filterType = quis; // string | Filter by specific type. Example process,decision
 $filterUncategorized = true; // bool | boolean List only uncategorized process models.
 $filterSubscribable = true; // bool | List only subscribable process models.
 $sort = name,-created_at,-updated_at; // string | Sorting by specified criteria.
@@ -565,7 +565,7 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\EnvironmentApi(
     $config
 );
 $modelId = 1244a4d0-03f6-11ed-8757-598213407c67; // string | The ID of the model.
-$includeownercompanycategorytagscommentsCounttagsCountdiagrams = voluptatum; // string | Possible includes
+$includeownercompanycategorytagscommentsCounttagsCountdiagrams = modi; // string | Possible includes
 
 try {
     $result = $apiInstance->getEnvironmentBusinessModelsShow($modelId, $includeownercompanycategorytagscommentsCounttagsCountdiagrams);
@@ -686,7 +686,7 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\EnvironmentApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = enim; // string | The ID of the user task.
+$id = distinctio; // string | The ID of the user task.
 
 try {
     $result = $apiInstance->getEnvironmentUserTasksView($id);
@@ -746,7 +746,7 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\EnvironmentApi(
     new GuzzleHttp\Client(),
     $config
 );
-$diagramId = 078c96e0-13c7-11ed-9f88-2f5b1abeb570; // string | The ID of the diagram.
+$diagramId = provident; // string | The ID of the diagram.
 $postEnvironmentBusinessModelDiagramsCommentsCreateRequest = new \Stackflows\Clients\Stackflows\Model\PostEnvironmentBusinessModelDiagramsCommentsCreateRequest(); // \Stackflows\Clients\Stackflows\Model\PostEnvironmentBusinessModelDiagramsCommentsCreateRequest
 
 try {
@@ -872,7 +872,7 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\EnvironmentApi(
     new GuzzleHttp\Client(),
     $config
 );
-$diagramId = 078c96e0-13c7-11ed-9f88-2f5b1abeb570; // string | The ID of the diagram.
+$diagramId = sint; // string | The ID of the diagram.
 $postEnvironmentBusinessModelDiagramsPublishRequest = new \Stackflows\Clients\Stackflows\Model\PostEnvironmentBusinessModelDiagramsPublishRequest(); // \Stackflows\Clients\Stackflows\Model\PostEnvironmentBusinessModelDiagramsPublishRequest
 
 try {
@@ -1358,7 +1358,7 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\EnvironmentApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = vel; // string | The ID of the user task.
+$id = eos; // string | The ID of the user task.
 $postEnvironmentUserTasksCompleteRequest = new \Stackflows\Clients\Stackflows\Model\PostEnvironmentUserTasksCompleteRequest(); // \Stackflows\Clients\Stackflows\Model\PostEnvironmentUserTasksCompleteRequest
 
 try {
@@ -1420,7 +1420,7 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\EnvironmentApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = modi; // string | The ID of the user task.
+$id = et; // string | The ID of the user task.
 $postEnvironmentUserTasksErrorizeRequest = new \Stackflows\Clients\Stackflows\Model\PostEnvironmentUserTasksErrorizeRequest(); // \Stackflows\Clients\Stackflows\Model\PostEnvironmentUserTasksErrorizeRequest
 
 try {
@@ -1482,7 +1482,7 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\EnvironmentApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = veniam; // string | The ID of the user task.
+$id = laudantium; // string | The ID of the user task.
 $postEnvironmentUserTasksEscalateRequest = new \Stackflows\Clients\Stackflows\Model\PostEnvironmentUserTasksEscalateRequest(); // \Stackflows\Clients\Stackflows\Model\PostEnvironmentUserTasksEscalateRequest
 
 try {

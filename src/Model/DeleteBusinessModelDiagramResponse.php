@@ -57,7 +57,7 @@ class DeleteBusinessModelDiagramResponse implements ModelInterface, ArrayAccess,
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel',
+        'data' => '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramModel',
         'meta' => 'array<string,mixed>'
     ];
 
@@ -212,7 +212,7 @@ class DeleteBusinessModelDiagramResponse implements ModelInterface, ArrayAccess,
     /**
      * Gets data
      *
-     * @return \Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel|null
+     * @return \Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramModel|null
      */
     public function getData()
     {
@@ -222,7 +222,7 @@ class DeleteBusinessModelDiagramResponse implements ModelInterface, ArrayAccess,
     /**
      * Sets data
      *
-     * @param \Stackflows\Clients\Stackflows\Model\BusinessProcessModelDiagramModel|null $data data
+     * @param \Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramModel|null $data data
      *
      * @return self
      */

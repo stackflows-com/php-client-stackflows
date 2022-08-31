@@ -1,6 +1,6 @@
 <?php
 /**
- * PublishBusinessModelDiagramResponse
+ * PostTaggedBusinessModelsStartRequestSubmissionInner
  *
  * PHP version 7.4
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \Stackflows\Clients\Stackflows\ObjectSerializer;
 
 /**
- * PublishBusinessModelDiagramResponse Class Doc Comment
+ * PostTaggedBusinessModelsStartRequestSubmissionInner Class Doc Comment
  *
  * @category Class
  * @package  Stackflows\Clients\Stackflows
@@ -40,7 +40,7 @@ use \Stackflows\Clients\Stackflows\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class PublishBusinessModelDiagramResponse implements ModelInterface, ArrayAccess, \JsonSerializable
+class PostTaggedBusinessModelsStartRequestSubmissionInner implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class PublishBusinessModelDiagramResponse implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Publish_Business_Model_Diagram_Response';
+    protected static $openAPIModelName = 'postTaggedBusinessModelsStart_request_submission_inner';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,8 +57,8 @@ class PublishBusinessModelDiagramResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramModel',
-        'meta' => 'array<string,mixed>'
+        'type' => 'string',
+        'value' => 'string'
     ];
 
     /**
@@ -69,8 +69,8 @@ class PublishBusinessModelDiagramResponse implements ModelInterface, ArrayAccess
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'data' => null,
-        'meta' => null
+        'type' => null,
+        'value' => null
     ];
 
     /**
@@ -100,8 +100,8 @@ class PublishBusinessModelDiagramResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'data' => 'data',
-        'meta' => 'meta'
+        'type' => 'type',
+        'value' => 'value'
     ];
 
     /**
@@ -110,8 +110,8 @@ class PublishBusinessModelDiagramResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'data' => 'setData',
-        'meta' => 'setMeta'
+        'type' => 'setType',
+        'value' => 'setValue'
     ];
 
     /**
@@ -120,8 +120,8 @@ class PublishBusinessModelDiagramResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'data' => 'getData',
-        'meta' => 'getMeta'
+        'type' => 'getType',
+        'value' => 'getValue'
     ];
 
     /**
@@ -181,8 +181,8 @@ class PublishBusinessModelDiagramResponse implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['data'] = $data['data'] ?? null;
-        $this->container['meta'] = $data['meta'] ?? null;
+        $this->container['type'] = $data['type'] ?? null;
+        $this->container['value'] = $data['value'] ?? null;
     }
 
     /**
@@ -194,6 +194,9 @@ class PublishBusinessModelDiagramResponse implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['type'] === null) {
+            $invalidProperties[] = "'type' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -210,49 +213,49 @@ class PublishBusinessModelDiagramResponse implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets data
+     * Gets type
      *
-     * @return \Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramModel|null
+     * @return string
      */
-    public function getData()
+    public function getType()
     {
-        return $this->container['data'];
+        return $this->container['type'];
     }
 
     /**
-     * Sets data
+     * Sets type
      *
-     * @param \Stackflows\Clients\Stackflows\Model\BusinessBaseModelDiagramModel|null $data data
+     * @param string $type Must be one of <code>collection</code>, <code>object</code>, <code>string</code>, <code>integer</code>, <code>float</code>, <code>double</code>, <code>boolean</code>, or <code>date_time</code>.
      *
      * @return self
      */
-    public function setData($data)
+    public function setType($type)
     {
-        $this->container['data'] = $data;
+        $this->container['type'] = $type;
 
         return $this;
     }
 
     /**
-     * Gets meta
+     * Gets value
      *
-     * @return array<string,mixed>|null
+     * @return string|null
      */
-    public function getMeta()
+    public function getValue()
     {
-        return $this->container['meta'];
+        return $this->container['value'];
     }
 
     /**
-     * Sets meta
+     * Sets value
      *
-     * @param array<string,mixed>|null $meta meta
+     * @param string|null $value 
      *
      * @return self
      */
-    public function setMeta($meta)
+    public function setValue($value)
     {
-        $this->container['meta'] = $meta;
+        $this->container['value'] = $value;
 
         return $this;
     }

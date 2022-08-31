@@ -60,7 +60,7 @@ class PostTaggedBusinessModelsStartRequest implements ModelInterface, ArrayAcces
         'id' => 'string[]',
         'engineModelReference' => 'string[]',
         'tags' => 'string[]',
-        'submission' => 'string'
+        'submission' => '\Stackflows\Clients\Stackflows\Model\PostTaggedBusinessModelsStartRequestSubmissionInner[]'
     ];
 
     /**
@@ -296,7 +296,7 @@ class PostTaggedBusinessModelsStartRequest implements ModelInterface, ArrayAcces
     /**
      * Gets submission
      *
-     * @return string|null
+     * @return \Stackflows\Clients\Stackflows\Model\PostTaggedBusinessModelsStartRequestSubmissionInner[]|null
      */
     public function getSubmission()
     {
@@ -306,7 +306,7 @@ class PostTaggedBusinessModelsStartRequest implements ModelInterface, ArrayAcces
     /**
      * Sets submission
      *
-     * @param string|null $submission 
+     * @param \Stackflows\Clients\Stackflows\Model\PostTaggedBusinessModelsStartRequestSubmissionInner[]|null $submission 
      *
      * @return self
      */

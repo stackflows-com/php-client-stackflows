@@ -219,7 +219,7 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\InstallationApi(
     $config
 );
 $id = 9d49d5f0-b566-11ec-979c-d3bcedb7b4c1; // string | The ID of the engine.
-$engine = repellat; // string | ID of an engine
+$engine = nulla; // string | ID of an engine
 
 try {
     $result = $apiInstance->getEnginesShow($id, $engine);
@@ -458,7 +458,7 @@ $apiInstance = new Stackflows\Clients\Stackflows\Api\InstallationApi(
     $config
 );
 $id = 9d49d5f0-b566-11ec-979c-d3bcedb7b4c1; // string | The ID of the engine.
-$engine = repellat; // string | ID of an engine
+$engine = nulla; // string | ID of an engine
 $putEnginesUpdateRequest = new \Stackflows\Clients\Stackflows\Model\PutEnginesUpdateRequest(); // \Stackflows\Clients\Stackflows\Model\PutEnginesUpdateRequest
 
 try {

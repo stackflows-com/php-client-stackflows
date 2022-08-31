@@ -1,6 +1,6 @@
 <?php
 /**
- * ViewBusinessModelDiagramResponse1Test
+ * PostEnvironmentUserTasksCompleteRequestSubmissionInnerTest
  *
  * PHP version 7.4
  *
@@ -31,15 +31,15 @@ namespace Stackflows\Clients\Stackflows\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * ViewBusinessModelDiagramResponse1Test Class Doc Comment
+ * PostEnvironmentUserTasksCompleteRequestSubmissionInnerTest Class Doc Comment
  *
  * @category    Class
- * @description ViewBusinessModelDiagramResponse1
+ * @description PostEnvironmentUserTasksCompleteRequestSubmissionInner
  * @package     Stackflows\Clients\Stackflows
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class ViewBusinessModelDiagramResponse1Test extends TestCase
+class PostEnvironmentUserTasksCompleteRequestSubmissionInnerTest extends TestCase
 {
 
     /**
@@ -71,27 +71,27 @@ class ViewBusinessModelDiagramResponse1Test extends TestCase
     }
 
     /**
-     * Test "ViewBusinessModelDiagramResponse1"
+     * Test "PostEnvironmentUserTasksCompleteRequestSubmissionInner"
      */
-    public function testViewBusinessModelDiagramResponse1()
+    public function testPostEnvironmentUserTasksCompleteRequestSubmissionInner()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "data"
+     * Test attribute "type"
      */
-    public function testPropertyData()
+    public function testPropertyType()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "meta"
+     * Test attribute "value"
      */
-    public function testPropertyMeta()
+    public function testPropertyValue()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

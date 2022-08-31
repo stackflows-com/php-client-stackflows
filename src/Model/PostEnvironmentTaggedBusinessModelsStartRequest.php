@@ -60,7 +60,7 @@ class PostEnvironmentTaggedBusinessModelsStartRequest implements ModelInterface,
         'id' => 'string[]',
         'engineModelReference' => 'string[]',
         'tags' => 'string[]',
-        'submission' => 'string'
+        'submission' => '\Stackflows\Clients\Stackflows\Model\PostEnvironmentTaggedBusinessModelsStartRequestSubmissionInner[]'
     ];
 
     /**
@@ -296,7 +296,7 @@ class PostEnvironmentTaggedBusinessModelsStartRequest implements ModelInterface,
     /**
      * Gets submission
      *
-     * @return string|null
+     * @return \Stackflows\Clients\Stackflows\Model\PostEnvironmentTaggedBusinessModelsStartRequestSubmissionInner[]|null
      */
     public function getSubmission()
     {
@@ -306,7 +306,7 @@ class PostEnvironmentTaggedBusinessModelsStartRequest implements ModelInterface,
     /**
      * Sets submission
      *
-     * @param string|null $submission 
+     * @param \Stackflows\Clients\Stackflows\Model\PostEnvironmentTaggedBusinessModelsStartRequestSubmissionInner[]|null $submission 
      *
      * @return self
      */

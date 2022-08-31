@@ -1593,15 +1593,15 @@ class EnvironmentApi
      * View Business Model Diagram
      *
      * @param  string $diagramId The ID of the diagram. (required)
-     * @param  string $includesnapshotsdeploysdeploysStatistics Possible includes (optional)
+     * @param  string $includesnapshotspublicationspublicationsStatistics Possible includes (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse
      */
-    public function getEnvironmentBusinessModelDiagramsShow($diagramId, $includesnapshotsdeploysdeploysStatistics = null)
+    public function getEnvironmentBusinessModelDiagramsShow($diagramId, $includesnapshotspublicationspublicationsStatistics = null)
     {
-        list($response) = $this->getEnvironmentBusinessModelDiagramsShowWithHttpInfo($diagramId, $includesnapshotsdeploysdeploysStatistics);
+        list($response) = $this->getEnvironmentBusinessModelDiagramsShowWithHttpInfo($diagramId, $includesnapshotspublicationspublicationsStatistics);
         return $response;
     }
 
@@ -1611,15 +1611,15 @@ class EnvironmentApi
      * View Business Model Diagram
      *
      * @param  string $diagramId The ID of the diagram. (required)
-     * @param  string $includesnapshotsdeploysdeploysStatistics Possible includes (optional)
+     * @param  string $includesnapshotspublicationspublicationsStatistics Possible includes (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getEnvironmentBusinessModelDiagramsShowWithHttpInfo($diagramId, $includesnapshotsdeploysdeploysStatistics = null)
+    public function getEnvironmentBusinessModelDiagramsShowWithHttpInfo($diagramId, $includesnapshotspublicationspublicationsStatistics = null)
     {
-        $request = $this->getEnvironmentBusinessModelDiagramsShowRequest($diagramId, $includesnapshotsdeploysdeploysStatistics);
+        $request = $this->getEnvironmentBusinessModelDiagramsShowRequest($diagramId, $includesnapshotspublicationspublicationsStatistics);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1711,14 +1711,14 @@ class EnvironmentApi
      * View Business Model Diagram
      *
      * @param  string $diagramId The ID of the diagram. (required)
-     * @param  string $includesnapshotsdeploysdeploysStatistics Possible includes (optional)
+     * @param  string $includesnapshotspublicationspublicationsStatistics Possible includes (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getEnvironmentBusinessModelDiagramsShowAsync($diagramId, $includesnapshotsdeploysdeploysStatistics = null)
+    public function getEnvironmentBusinessModelDiagramsShowAsync($diagramId, $includesnapshotspublicationspublicationsStatistics = null)
     {
-        return $this->getEnvironmentBusinessModelDiagramsShowAsyncWithHttpInfo($diagramId, $includesnapshotsdeploysdeploysStatistics)
+        return $this->getEnvironmentBusinessModelDiagramsShowAsyncWithHttpInfo($diagramId, $includesnapshotspublicationspublicationsStatistics)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1732,15 +1732,15 @@ class EnvironmentApi
      * View Business Model Diagram
      *
      * @param  string $diagramId The ID of the diagram. (required)
-     * @param  string $includesnapshotsdeploysdeploysStatistics Possible includes (optional)
+     * @param  string $includesnapshotspublicationspublicationsStatistics Possible includes (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getEnvironmentBusinessModelDiagramsShowAsyncWithHttpInfo($diagramId, $includesnapshotsdeploysdeploysStatistics = null)
+    public function getEnvironmentBusinessModelDiagramsShowAsyncWithHttpInfo($diagramId, $includesnapshotspublicationspublicationsStatistics = null)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse';
-        $request = $this->getEnvironmentBusinessModelDiagramsShowRequest($diagramId, $includesnapshotsdeploysdeploysStatistics);
+        $request = $this->getEnvironmentBusinessModelDiagramsShowRequest($diagramId, $includesnapshotspublicationspublicationsStatistics);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1782,12 +1782,12 @@ class EnvironmentApi
      * Create request for operation 'getEnvironmentBusinessModelDiagramsShow'
      *
      * @param  string $diagramId The ID of the diagram. (required)
-     * @param  string $includesnapshotsdeploysdeploysStatistics Possible includes (optional)
+     * @param  string $includesnapshotspublicationspublicationsStatistics Possible includes (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getEnvironmentBusinessModelDiagramsShowRequest($diagramId, $includesnapshotsdeploysdeploysStatistics = null)
+    public function getEnvironmentBusinessModelDiagramsShowRequest($diagramId, $includesnapshotspublicationspublicationsStatistics = null)
     {
         // verify the required parameter 'diagramId' is set
         if ($diagramId === null || (is_array($diagramId) && count($diagramId) === 0)) {
@@ -1805,8 +1805,8 @@ class EnvironmentApi
 
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $includesnapshotsdeploysdeploysStatistics,
-            'include&#x3D;snapshots,deploys,deploys.statistics', // param base name
+            $includesnapshotspublicationspublicationsStatistics,
+            'include&#x3D;snapshots,publications,publications.statistics', // param base name
             'string', // openApiType
             'form', // style
             true, // explode

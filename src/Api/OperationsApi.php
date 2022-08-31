@@ -3565,15 +3565,15 @@ class OperationsApi
      * View Business Model Diagram
      *
      * @param  string $diagramId The ID of the diagram. (required)
-     * @param  string $includesnapshotsdeploysdeploysStatistics Possible includes (optional)
+     * @param  string $includesnapshotspublicationspublicationsStatistics Possible includes (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse
      */
-    public function getBusinessModelDiagramsShow($diagramId, $includesnapshotsdeploysdeploysStatistics = null)
+    public function getBusinessModelDiagramsShow($diagramId, $includesnapshotspublicationspublicationsStatistics = null)
     {
-        list($response) = $this->getBusinessModelDiagramsShowWithHttpInfo($diagramId, $includesnapshotsdeploysdeploysStatistics);
+        list($response) = $this->getBusinessModelDiagramsShowWithHttpInfo($diagramId, $includesnapshotspublicationspublicationsStatistics);
         return $response;
     }
 
@@ -3583,15 +3583,15 @@ class OperationsApi
      * View Business Model Diagram
      *
      * @param  string $diagramId The ID of the diagram. (required)
-     * @param  string $includesnapshotsdeploysdeploysStatistics Possible includes (optional)
+     * @param  string $includesnapshotspublicationspublicationsStatistics Possible includes (optional)
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getBusinessModelDiagramsShowWithHttpInfo($diagramId, $includesnapshotsdeploysdeploysStatistics = null)
+    public function getBusinessModelDiagramsShowWithHttpInfo($diagramId, $includesnapshotspublicationspublicationsStatistics = null)
     {
-        $request = $this->getBusinessModelDiagramsShowRequest($diagramId, $includesnapshotsdeploysdeploysStatistics);
+        $request = $this->getBusinessModelDiagramsShowRequest($diagramId, $includesnapshotspublicationspublicationsStatistics);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3683,14 +3683,14 @@ class OperationsApi
      * View Business Model Diagram
      *
      * @param  string $diagramId The ID of the diagram. (required)
-     * @param  string $includesnapshotsdeploysdeploysStatistics Possible includes (optional)
+     * @param  string $includesnapshotspublicationspublicationsStatistics Possible includes (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getBusinessModelDiagramsShowAsync($diagramId, $includesnapshotsdeploysdeploysStatistics = null)
+    public function getBusinessModelDiagramsShowAsync($diagramId, $includesnapshotspublicationspublicationsStatistics = null)
     {
-        return $this->getBusinessModelDiagramsShowAsyncWithHttpInfo($diagramId, $includesnapshotsdeploysdeploysStatistics)
+        return $this->getBusinessModelDiagramsShowAsyncWithHttpInfo($diagramId, $includesnapshotspublicationspublicationsStatistics)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3704,15 +3704,15 @@ class OperationsApi
      * View Business Model Diagram
      *
      * @param  string $diagramId The ID of the diagram. (required)
-     * @param  string $includesnapshotsdeploysdeploysStatistics Possible includes (optional)
+     * @param  string $includesnapshotspublicationspublicationsStatistics Possible includes (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getBusinessModelDiagramsShowAsyncWithHttpInfo($diagramId, $includesnapshotsdeploysdeploysStatistics = null)
+    public function getBusinessModelDiagramsShowAsyncWithHttpInfo($diagramId, $includesnapshotspublicationspublicationsStatistics = null)
     {
         $returnType = '\Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse';
-        $request = $this->getBusinessModelDiagramsShowRequest($diagramId, $includesnapshotsdeploysdeploysStatistics);
+        $request = $this->getBusinessModelDiagramsShowRequest($diagramId, $includesnapshotspublicationspublicationsStatistics);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3754,12 +3754,12 @@ class OperationsApi
      * Create request for operation 'getBusinessModelDiagramsShow'
      *
      * @param  string $diagramId The ID of the diagram. (required)
-     * @param  string $includesnapshotsdeploysdeploysStatistics Possible includes (optional)
+     * @param  string $includesnapshotspublicationspublicationsStatistics Possible includes (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getBusinessModelDiagramsShowRequest($diagramId, $includesnapshotsdeploysdeploysStatistics = null)
+    public function getBusinessModelDiagramsShowRequest($diagramId, $includesnapshotspublicationspublicationsStatistics = null)
     {
         // verify the required parameter 'diagramId' is set
         if ($diagramId === null || (is_array($diagramId) && count($diagramId) === 0)) {
@@ -3777,8 +3777,8 @@ class OperationsApi
 
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $includesnapshotsdeploysdeploysStatistics,
-            'include&#x3D;snapshots,deploys,deploys.statistics', // param base name
+            $includesnapshotspublicationspublicationsStatistics,
+            'include&#x3D;snapshots,publications,publications.statistics', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -5980,7 +5980,7 @@ class OperationsApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse1
+     * @return \Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse
      */
     public function getBusinessModelsShowRevision($modelId, $revision)
     {
@@ -5998,7 +5998,7 @@ class OperationsApi
      *
      * @throws \Stackflows\Clients\Stackflows\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse1, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getBusinessModelsShowRevisionWithHttpInfo($modelId, $revision)
     {
@@ -6041,23 +6041,23 @@ class OperationsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse1' === '\SplFileObject') {
+                    if ('\Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse1' !== 'string') {
+                        if ('\Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse1', []),
+                        ObjectSerializer::deserialize($content, '\Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse1';
+            $returnType = '\Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -6078,7 +6078,7 @@ class OperationsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse1',
+                        '\Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6122,7 +6122,7 @@ class OperationsApi
      */
     public function getBusinessModelsShowRevisionAsyncWithHttpInfo($modelId, $revision)
     {
-        $returnType = '\Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse1';
+        $returnType = '\Stackflows\Clients\Stackflows\Model\ViewBusinessModelDiagramResponse';
         $request = $this->getBusinessModelsShowRevisionRequest($modelId, $revision);
 
         return $this->client

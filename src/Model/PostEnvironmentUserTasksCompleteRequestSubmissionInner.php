@@ -1,6 +1,6 @@
 <?php
 /**
- * BusinessProcessModelDiagramModel
+ * PostEnvironmentUserTasksCompleteRequestSubmissionInner
  *
  * PHP version 7.4
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \Stackflows\Clients\Stackflows\ObjectSerializer;
 
 /**
- * BusinessProcessModelDiagramModel Class Doc Comment
+ * PostEnvironmentUserTasksCompleteRequestSubmissionInner Class Doc Comment
  *
  * @category Class
  * @package  Stackflows\Clients\Stackflows
@@ -40,7 +40,7 @@ use \Stackflows\Clients\Stackflows\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class BusinessProcessModelDiagramModel implements ModelInterface, ArrayAccess, \JsonSerializable
+class PostEnvironmentUserTasksCompleteRequestSubmissionInner implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class BusinessProcessModelDiagramModel implements ModelInterface, ArrayAccess, \
       *
       * @var string
       */
-    protected static $openAPIModelName = 'BusinessProcessModelDiagramModel';
+    protected static $openAPIModelName = 'postEnvironmentUserTasksComplete_request_submission_inner';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,9 +57,8 @@ class BusinessProcessModelDiagramModel implements ModelInterface, ArrayAccess, \
       * @var string[]
       */
     protected static $openAPITypes = [
-        'businessModelId' => 'string',
-        'xml' => 'string',
-        'version' => 'int'
+        'type' => 'string',
+        'value' => 'string'
     ];
 
     /**
@@ -70,9 +69,8 @@ class BusinessProcessModelDiagramModel implements ModelInterface, ArrayAccess, \
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'businessModelId' => null,
-        'xml' => null,
-        'version' => null
+        'type' => null,
+        'value' => null
     ];
 
     /**
@@ -102,9 +100,8 @@ class BusinessProcessModelDiagramModel implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static $attributeMap = [
-        'businessModelId' => 'business_model_id',
-        'xml' => 'xml',
-        'version' => 'version'
+        'type' => 'type',
+        'value' => 'value'
     ];
 
     /**
@@ -113,9 +110,8 @@ class BusinessProcessModelDiagramModel implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static $setters = [
-        'businessModelId' => 'setBusinessModelId',
-        'xml' => 'setXml',
-        'version' => 'setVersion'
+        'type' => 'setType',
+        'value' => 'setValue'
     ];
 
     /**
@@ -124,9 +120,8 @@ class BusinessProcessModelDiagramModel implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static $getters = [
-        'businessModelId' => 'getBusinessModelId',
-        'xml' => 'getXml',
-        'version' => 'getVersion'
+        'type' => 'getType',
+        'value' => 'getValue'
     ];
 
     /**
@@ -186,9 +181,8 @@ class BusinessProcessModelDiagramModel implements ModelInterface, ArrayAccess, \
      */
     public function __construct(array $data = null)
     {
-        $this->container['businessModelId'] = $data['businessModelId'] ?? null;
-        $this->container['xml'] = $data['xml'] ?? null;
-        $this->container['version'] = $data['version'] ?? null;
+        $this->container['type'] = $data['type'] ?? null;
+        $this->container['value'] = $data['value'] ?? null;
     }
 
     /**
@@ -200,6 +194,9 @@ class BusinessProcessModelDiagramModel implements ModelInterface, ArrayAccess, \
     {
         $invalidProperties = [];
 
+        if ($this->container['type'] === null) {
+            $invalidProperties[] = "'type' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -216,73 +213,49 @@ class BusinessProcessModelDiagramModel implements ModelInterface, ArrayAccess, \
 
 
     /**
-     * Gets businessModelId
+     * Gets type
      *
-     * @return string|null
+     * @return string
      */
-    public function getBusinessModelId()
+    public function getType()
     {
-        return $this->container['businessModelId'];
+        return $this->container['type'];
     }
 
     /**
-     * Sets businessModelId
+     * Sets type
      *
-     * @param string|null $businessModelId businessModelId
+     * @param string $type Must be one of <code>collection</code>, <code>object</code>, <code>string</code>, <code>integer</code>, <code>float</code>, <code>double</code>, <code>boolean</code>, or <code>date_time</code>.
      *
      * @return self
      */
-    public function setBusinessModelId($businessModelId)
+    public function setType($type)
     {
-        $this->container['businessModelId'] = $businessModelId;
+        $this->container['type'] = $type;
 
         return $this;
     }
 
     /**
-     * Gets xml
+     * Gets value
      *
      * @return string|null
      */
-    public function getXml()
+    public function getValue()
     {
-        return $this->container['xml'];
+        return $this->container['value'];
     }
 
     /**
-     * Sets xml
+     * Sets value
      *
-     * @param string|null $xml xml
+     * @param string|null $value 
      *
      * @return self
      */
-    public function setXml($xml)
+    public function setValue($value)
     {
-        $this->container['xml'] = $xml;
-
-        return $this;
-    }
-
-    /**
-     * Gets version
-     *
-     * @return int|null
-     */
-    public function getVersion()
-    {
-        return $this->container['version'];
-    }
-
-    /**
-     * Sets version
-     *
-     * @param int|null $version version
-     *
-     * @return self
-     */
-    public function setVersion($version)
-    {
-        $this->container['version'] = $version;
+        $this->container['value'] = $value;
 
         return $this;
     }

@@ -58,7 +58,7 @@ class PostEnvironmentEventsSignalRequest implements ModelInterface, ArrayAccess,
       */
     protected static $openAPITypes = [
         'reference' => 'string',
-        'submission' => 'string[]'
+        'submission' => '\Stackflows\Clients\Stackflows\Model\PostEnvironmentUserTasksCompleteRequestSubmissionInner[]'
     ];
 
     /**
@@ -239,7 +239,7 @@ class PostEnvironmentEventsSignalRequest implements ModelInterface, ArrayAccess,
     /**
      * Gets submission
      *
-     * @return string[]|null
+     * @return \Stackflows\Clients\Stackflows\Model\PostEnvironmentUserTasksCompleteRequestSubmissionInner[]|null
      */
     public function getSubmission()
     {
@@ -249,7 +249,7 @@ class PostEnvironmentEventsSignalRequest implements ModelInterface, ArrayAccess,
     /**
      * Sets submission
      *
-     * @param string[]|null $submission 
+     * @param \Stackflows\Clients\Stackflows\Model\PostEnvironmentUserTasksCompleteRequestSubmissionInner[]|null $submission 
      *
      * @return self
      */

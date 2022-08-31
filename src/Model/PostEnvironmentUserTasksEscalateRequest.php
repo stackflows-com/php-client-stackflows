@@ -58,7 +58,7 @@ class PostEnvironmentUserTasksEscalateRequest implements ModelInterface, ArrayAc
       */
     protected static $openAPITypes = [
         'code' => 'string',
-        'submission' => 'string'
+        'submission' => '\Stackflows\Clients\Stackflows\Model\PostEnvironmentTaggedBusinessModelsStartRequestSubmissionInner[]'
     ];
 
     /**
@@ -239,7 +239,7 @@ class PostEnvironmentUserTasksEscalateRequest implements ModelInterface, ArrayAc
     /**
      * Gets submission
      *
-     * @return string|null
+     * @return \Stackflows\Clients\Stackflows\Model\PostEnvironmentTaggedBusinessModelsStartRequestSubmissionInner[]|null
      */
     public function getSubmission()
     {
@@ -249,7 +249,7 @@ class PostEnvironmentUserTasksEscalateRequest implements ModelInterface, ArrayAc
     /**
      * Sets submission
      *
-     * @param string|null $submission 
+     * @param \Stackflows\Clients\Stackflows\Model\PostEnvironmentTaggedBusinessModelsStartRequestSubmissionInner[]|null $submission 
      *
      * @return self
      */

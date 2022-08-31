@@ -1,6 +1,6 @@
 <?php
 /**
- * BusinessProcessModelDiagramModelTest
+ * PostTaggedBusinessModelsStartRequestSubmissionInnerTest
  *
  * PHP version 7.4
  *
@@ -31,15 +31,15 @@ namespace Stackflows\Clients\Stackflows\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * BusinessProcessModelDiagramModelTest Class Doc Comment
+ * PostTaggedBusinessModelsStartRequestSubmissionInnerTest Class Doc Comment
  *
  * @category    Class
- * @description BusinessProcessModelDiagramModel
+ * @description PostTaggedBusinessModelsStartRequestSubmissionInner
  * @package     Stackflows\Clients\Stackflows
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class BusinessProcessModelDiagramModelTest extends TestCase
+class PostTaggedBusinessModelsStartRequestSubmissionInnerTest extends TestCase
 {
 
     /**
@@ -71,36 +71,27 @@ class BusinessProcessModelDiagramModelTest extends TestCase
     }
 
     /**
-     * Test "BusinessProcessModelDiagramModel"
+     * Test "PostTaggedBusinessModelsStartRequestSubmissionInner"
      */
-    public function testBusinessProcessModelDiagramModel()
+    public function testPostTaggedBusinessModelsStartRequestSubmissionInner()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "businessModelId"
+     * Test attribute "type"
      */
-    public function testPropertyBusinessModelId()
+    public function testPropertyType()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "xml"
+     * Test attribute "value"
      */
-    public function testPropertyXml()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "version"
-     */
-    public function testPropertyVersion()
+    public function testPropertyValue()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

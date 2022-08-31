@@ -57,7 +57,7 @@ class PostEnvironmentUserTasksCompleteRequest implements ModelInterface, ArrayAc
       * @var string[]
       */
     protected static $openAPITypes = [
-        'submission' => 'string'
+        'submission' => '\Stackflows\Clients\Stackflows\Model\PostEnvironmentUserTasksCompleteRequestSubmissionInner[]'
     ];
 
     /**
@@ -206,7 +206,7 @@ class PostEnvironmentUserTasksCompleteRequest implements ModelInterface, ArrayAc
     /**
      * Gets submission
      *
-     * @return string|null
+     * @return \Stackflows\Clients\Stackflows\Model\PostEnvironmentUserTasksCompleteRequestSubmissionInner[]|null
      */
     public function getSubmission()
     {
@@ -216,7 +216,7 @@ class PostEnvironmentUserTasksCompleteRequest implements ModelInterface, ArrayAc
     /**
      * Sets submission
      *
-     * @param string|null $submission 
+     * @param \Stackflows\Clients\Stackflows\Model\PostEnvironmentUserTasksCompleteRequestSubmissionInner[]|null $submission 
      *
      * @return self
      */
